@@ -14,7 +14,7 @@ function jucf(\Closure $f, array $a = [], array $tags = [], $unique = true, $off
 	$b = debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS, 2 + $offset)[1 + $offset]; /** @var array(string => string) $b */
 	/** @var string $k */
 	$k = (!isset($b['class']) ? null : $b['class'] . '::') . $b['function']
-		. (!$a ? null : '--' . df_hash_a($a))
+		. (!$a ? null : '--' . ju_hash_a($a))
 		. ($unique ? null : '--' . spl_object_hash($f))
 	;
 	$r = df_ram(); /** @var RAM $r */
