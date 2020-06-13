@@ -4,6 +4,11 @@ use Magento\Framework\App\RequestInterface as IRequest;
 
 /**
  * 2020-06-13 "Port the `df_request` function": https://github.com/justuno-com/core/issues/1
+ * @used-by \Justuno\M2\Controller\Cart\Add::execute()
+ * @used-by \Justuno\M2\Controller\Cart\Add::product()
+ * @used-by \Justuno\M2\Filter::byDate()
+ * @used-by \Justuno\M2\Filter::byProduct()
+ * @used-by \Justuno\M2\Filter::p()
  * @param string|string[]|null $k [optional]
  * @param string|null|callable $d [optional]
  * @return string|array(string => string)
