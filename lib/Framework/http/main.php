@@ -21,4 +21,4 @@ function ju_request($k = null, $d = null) {$o = ju_request_o(); return is_null($
  * 2020-06-13 "Port the `df_request_o` function": https://github.com/justuno-com/core/issues/2
  * @return IRequest|RequestHttp
  */
-function ju_request_o() {return df_o(IRequest::class);}
+function ju_request_o() {return ju_o(IRequest::class);}
