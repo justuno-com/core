@@ -7,6 +7,7 @@
  * https://3v4l.org/MfmCj
  *	is_callable('intval') возвращает true
  * @used-by ju_if1()
+ * @used-by jua()
  * @param mixed|callable $v
  * @param mixed ...$a [optional]
  * @return mixed
