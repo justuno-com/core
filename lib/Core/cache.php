@@ -1,5 +1,5 @@
 <?php
-use Df\Core\RAM;
+use Justuno\Core\RAM;
 /**
  * 2020-06-13 "Port the `dfcf` function": https://github.com/justuno-com/core/issues/5
  * @used-by ju_o()
