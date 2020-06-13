@@ -8,7 +8,45 @@
  * @return mixed|null|array(string => mixed)
  */
 function jua(array $a, $k, $d = null) {return
-	is_null($k) ? $a : (is_array($k) ? dfa_select_ordered($a, $k) : (isset($a[$k]) ? $a[$k] : (
+	is_null($k) ? $a : (is_array($k) ? jua_select_ordered($a, $k) : (isset($a[$k]) ? $a[$k] : (
 		df_contains($k, '/') ? dfa_deep($a, $k, $d) : df_call_if($d, $k)
 	)))
 ;}
+
+/**
+ * 2020-06-13 "Port the `jua_select_ordered` function": https://github.com/justuno-com/core/issues/13
+ * 1) It returns a subset of $a with $k keys in the same order as in $k.
+ * 2) Normally, you should use @see jua() instead because it is shorter and calls jua_select_ordered() internally.
+ * @used-by jua()
+ * @param array(string => string)|T $a
+ * @param string[] $k
+ * @return array(string => string)
+ */
+function jua_select_ordered($a, array $k)  {
+	$resultKeys = array_fill_keys($k, null); /** @var array(string => null) $resultKeys */
+	/**
+	 * 2017-10-28
+	 * During the last 2.5 years, I had the following code here:
+	 * 		array_merge($resultKeys, df_ita($source))
+	 * It worked wronly, if $source contained SOME numeric-string keys like "99":
+	 * https://github.com/mage2pro/core/issues/40#issuecomment-340139933
+	 *
+	 * «A key may be either an integer or a string.
+	 * If a key is the standard representation of an integer, it will be interpreted as such
+	 * (i.e. "8" will be interpreted as 8, while "08" will be interpreted as "08").»
+	 * https://php.net/manual/language.types.array.php
+	 *
+	 * «If, however, the arrays contain numeric keys, the later value will not overwrite the original value,
+	 * but will be appended.
+	 * Values in the input array with numeric keys will be renumbered
+	 * with incrementing keys starting from zero in the result array.»
+	 * https://php.net/manual/function.array-merge.php
+	 * https://github.com/mage2pro/core/issues/40#issuecomment-340140297
+	 * `df_ita($source) + $resultKeys` does not solve the problem,
+	 * because the result keys are ordered in the `$source` order, not in the `$resultKeys` order:
+	 * https://github.com/mage2pro/core/issues/40#issuecomment-340140766
+	 * @var array(string => string) $resultWithGarbage
+	 */
+	$resultWithGarbage = dfa_merge_numeric($resultKeys, df_ita($a));
+	return array_intersect_key($resultWithGarbage, $resultKeys);
+}
