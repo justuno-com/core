@@ -8,7 +8,7 @@ use Magento\Framework\ObjectManagerInterface as IOM;
  * @param string $t
  * @return mixed
  */
-function ju_o($t) {return dfcf(function($t) {return ju_om()->get($t);}, [$t]);}
+function ju_o($t) {return jucf(function($t) {return ju_om()->get($t);}, [$t]);}
 
 /**
  * 2020-06-13 "Port the `df_om` function": https://github.com/justuno-com/core/issues/4
