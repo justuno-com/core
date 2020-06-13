@@ -17,7 +17,7 @@ function jucf(\Closure $f, array $a = [], array $tags = [], $unique = true, $off
 		. (!$a ? null : '--' . ju_hash_a($a))
 		. ($unique ? null : '--' . spl_object_hash($f))
 	;
-	$r = df_ram(); /** @var RAM $r */
+	$r = ju_ram(); /** @var RAM $r */
 	/**
 	 * 2017-01-12
 	 * The following code will return `3`:
@@ -28,3 +28,10 @@ function jucf(\Closure $f, array $a = [], array $tags = [], $unique = true, $off
 	 */
 	return $r->exists($k) ? $r->get($k) : $r->set($k, $f(...$a), $tags);
 }
+
+/**
+ * 2020-06-13 "Port the `df_ram` function": https://github.com/justuno-com/core/issues/8
+ * @used-by jucf()
+ * @return RAM
+ */
+function ju_ram() {return RAM::s();}
