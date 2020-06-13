@@ -7,4 +7,4 @@
  * @param mixed|null $onFalse [optional]
  * @return mixed
  */
-function ju_if1($cond, $onTrue, $onFalse = null) {return $cond ? df_call_if($onTrue) : $onFalse;}
+function ju_if1($cond, $onTrue, $onFalse = null) {return $cond ? ju_call_if($onTrue) : $onFalse;}
