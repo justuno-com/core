@@ -14,7 +14,7 @@ use Magento\Framework\App\RequestInterface as IRequest;
  * @return string|array(string => string)
  */
 function ju_request($k = null, $d = null) {$o = ju_request_o(); return is_null($k) ? $o->getParams() : (
-	is_array($k) ? dfa($o->getParams(), $k) : df_if1(is_null($r = $o->getParam($k)) || '' === $r, $d, $r)
+	is_array($k) ? dfa($o->getParams(), $k) : ju_if1(is_null($r = $o->getParam($k)) || '' === $r, $d, $r)
 );}
 
 /**
