@@ -47,6 +47,6 @@ function jua_select_ordered($a, array $k)  {
 	 * https://github.com/mage2pro/core/issues/40#issuecomment-340140766
 	 * @var array(string => string) $resultWithGarbage
 	 */
-	$resultWithGarbage = jua_merge_numeric($resultKeys, df_ita($a));
+	$resultWithGarbage = jua_merge_numeric($resultKeys, ju_ita($a));
 	return array_intersect_key($resultWithGarbage, $resultKeys);
 }
