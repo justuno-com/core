@@ -22,7 +22,7 @@ function jua_deep(array $a, $path, $d = null) {/** @var mixed|null $r */
 			$r = $a[$path];
 		}
 		else {
-			$pathParts = df_explode_xpath($path); /** @var string[] $pathParts */
+			$pathParts = ju_explode_xpath($path); /** @var string[] $pathParts */
 		}
 	}
 	if (!isset($r)) {
