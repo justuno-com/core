@@ -9,7 +9,7 @@
  */
 function jua(array $a, $k, $d = null) {return
 	is_null($k) ? $a : (is_array($k) ? jua_select_ordered($a, $k) : (isset($a[$k]) ? $a[$k] : (
-		ju_contains($k, '/') ? dfa_deep($a, $k, $d) : ju_call_if($d, $k)
+		ju_contains($k, '/') ? jua_deep($a, $k, $d) : ju_call_if($d, $k)
 	)))
 ;}
 
