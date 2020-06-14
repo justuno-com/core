@@ -1,6 +1,19 @@
 <?php
 
 /**
+ * 2020-06-14 "Port the `dfa_flatten` function": https://github.com/justuno-com/core/issues/17
+ * http://stackoverflow.com/a/1320156
+ * @used-by ju_contains()
+ * @param array $a
+ * @return mixed[]
+ */
+function jua_flatten(array $a) {
+	$r = []; /** @var mixed[] $r */
+	array_walk_recursive($a, function($a) use(&$r) {$r[]= $a;});
+	return $r;
+}
+
+/**
  * 2020-06-13 "Port the `df_ita` function": https://github.com/justuno-com/core/issues/15
  * @param \Traversable|array $t
  * @return array
