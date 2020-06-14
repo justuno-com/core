@@ -9,6 +9,7 @@ function ju_array($v) {return is_array($v) ? $v : [$v];}
 
 /**
  * 2020-06-13 "Port the `df_ita` function": https://github.com/justuno-com/core/issues/15
+ * @used-by jua_select_ordered()
  * @param \Traversable|array $t
  * @return array
  */
