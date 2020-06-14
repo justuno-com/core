@@ -10,7 +10,7 @@ use Df\Core\Exception as DFE;
  * @throws DFE
  */
 function jua_deep(array $a, $path, $d = null) {/** @var mixed|null $r */
-	if (df_nes($path)) {
+	if (ju_nes($path)) {
 		$r = $a;
 	}
 	else if (is_array($path)) {
