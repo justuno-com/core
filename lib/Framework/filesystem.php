@@ -20,9 +20,17 @@ function ju_adjust_paths_in_message($m) {
 		$m =
 			mb_substr($m, 0, $begin)
 			// 2016-12-23 + 1, чтобы отсечь «/» или «\» после BP
-			. df_path_n(mb_substr($m, $begin + $bpLen + 1, $end - $begin - $bpLen - 1))
+			. ju_path_n(mb_substr($m, $begin + $bpLen + 1, $end - $begin - $bpLen - 1))
 			. mb_substr($m, $end)
 		;
 	} while(true);
 	return $m;
 }
+
+/**
+ * 2020-06-15 "Port the `df_path_n` function": https://github.com/justuno-com/core/issues/26
+ * @used-by ju_adjust_paths_in_message()
+ * @param string $p
+ * @return string
+ */
+function ju_path_n($p) {return str_replace('//', '/', str_replace('\\', '/', $p));}
