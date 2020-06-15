@@ -9,11 +9,6 @@ use Magento\Framework\Phrase;
  */
 class Exception extends LE implements \ArrayAccess {
 	/**
-	 * Обратите внимание, что PHP разрешает сигнатуре конструктора класса-потомка
-	 * отличаться от сигнатуры конструктора класса родителя:
-	 * http://3v4l.org/qQdJ3
-	 * @see \Df\API\Exception\HTTP::__construct()
-	 * @see \Df\API\Response\Validator::__construct()
 	 * @param mixed ...$args
 	 */
 	function __construct(...$args) {
@@ -57,8 +52,6 @@ class Exception extends LE implements \ArrayAccess {
 
 	/**
 	 * @used-by __construct()
-	 * @used-by Df_Shipping_Collector::call()
-	 * @used-by Df_Core_Validator::resolveForProperty()
 	 * @param mixed ...$args
 	 */
 	function comment(...$args) {$this->_comments[]= df_format($args);}
