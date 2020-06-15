@@ -17,7 +17,7 @@ function jua_deep(array $a, $path, $d = null) {/** @var mixed|null $r */
 		$pathParts = $path;
 	}
 	else {
-		df_param_sne($path, 1);
+		ju_param_sne($path, 1);
 		if (isset($a[$path])) {
 			$r = $a[$path];
 		}
