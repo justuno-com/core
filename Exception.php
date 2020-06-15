@@ -12,7 +12,7 @@ class Exception extends LE implements \ArrayAccess {
 	 * @param mixed ...$args
 	 */
 	function __construct(...$args) {
-		$arg0 = dfa($args, 0); /** @var string|Phrase|E|array(string => mixed)|null $arg0 */
+		$arg0 = jua($args, 0); /** @var string|Phrase|E|array(string => mixed)|null $arg0 */
 		$prev = null; /** @var E|LE|null $prev */
 		$m = null;  /** @var Phrase|null $m */
 		// 2015-10-10
@@ -28,7 +28,7 @@ class Exception extends LE implements \ArrayAccess {
 		elseif ($arg0 instanceof E) {
 			$prev = $arg0;
 		}
-		$arg1 = dfa($args, 1); /** @var int|string|E|Phrase|null $arg1 */
+		$arg1 = jua($args, 1); /** @var int|string|E|Phrase|null $arg1 */
 		if (!is_null($arg1)) {
 			if ($arg1 instanceof E) {
 				$prev = $arg1;
@@ -180,7 +180,7 @@ class Exception extends LE implements \ArrayAccess {
 	 * @param string $offset
 	 * @return mixed
 	 */
-	function offsetGet($offset) {return dfa($this->_data, $offset);}
+	function offsetGet($offset) {return jua($this->_data, $offset);}
 
 	/**
 	 * 2015-10-10
