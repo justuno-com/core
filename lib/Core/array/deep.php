@@ -29,7 +29,7 @@ function jua_deep(array $a, $path, $d = null) {/** @var mixed|null $r */
 		$r = null;
 		/** @noinspection PhpUndefinedVariableInspection */
 		while ($pathParts) {
-			$r = dfa($a, array_shift($pathParts));
+			$r = jua($a, array_shift($pathParts));
 			if (is_array($r)) {
 				$a = $r;
 			}
