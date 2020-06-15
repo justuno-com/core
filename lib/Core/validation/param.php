@@ -1,5 +1,5 @@
 <?php
-use Df\Core\Exception as DFE;
+use Justuno\Core\Exception as DFE;
 use Df\Qa\Method as Q;
 
 /**
