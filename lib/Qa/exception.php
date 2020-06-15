@@ -8,6 +8,6 @@ use Magento\Framework\Phrase;
  * @param E|string|Phrase $e
  * @return string|Phrase
  */
-function ju_ets($e) {return df_adjust_paths_in_message(
+function ju_ets($e) {return ju_adjust_paths_in_message(
 	!$e instanceof E ? $e : ($e instanceof DFE ? $e->message() : $e->getMessage())
 );}
