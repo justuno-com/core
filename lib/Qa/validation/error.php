@@ -35,7 +35,7 @@ function ju_error(...$args) {
  * @return DFE
  */
 function ju_error_create($m = null) {return
-	$m instanceof E ? df_ewrap($m) :
+	$m instanceof E ? ju_ewrap($m) :
 		new DFE($m instanceof Phrase ? $m : (
 			/**
 			 * 2019-12-16
