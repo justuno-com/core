@@ -29,3 +29,34 @@ function jua_flatten(array $a) {
 	array_walk_recursive($a, function($a) use(&$r) {$r[]= $a;});
 	return $r;
 }
+
+/**
+ * 2020-06-16 "Port the `dfaf` function": https://github.com/justuno-com/core/issues/32
+ * @used-by ju_find
+ * @param array|callable|\Traversable $a
+ * @param array|callable|\Traversable $b
+ * @return array(int|string => mixed)
+ */
+function juaf($a, $b) {
+	// 2020-02-15
+	// «A variable is expected to be a traversable or an array, but actually it is a «object»»:
+	// https://github.com/tradefurniturecompany/site/issues/36
+	$ca = is_callable($a); /** @var bool $ca */
+	$cb = is_callable($b); /** @var bool $ca */
+	if (!$ca || !$cb) {
+		df_assert($ca || $cb);
+		$r = $ca ? [df_assert_traversable($b), $a] : [df_assert_traversable($a), $b];
+	}
+	else {
+		$ta = df_check_traversable($a); /** @var bool $ta */
+		$tb = df_check_traversable($b); /** @var bool $tb */
+		if ($ta && $tb) {
+			df_error('dfaf(): both arguments are callable and traversable: %s and %s.',
+				df_type($a), df_type($b)
+			);
+		}
+		df_assert($ta || $tb);
+		$r = $ta ? [$a, $b] : [$b, $a];
+	}
+	return $r;
+}
