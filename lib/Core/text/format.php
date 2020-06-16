@@ -18,10 +18,8 @@ function ju_format(...$args) { /** @var string $r */
 			$r = $args[0];
 			break;
 		case 2:
-			/** @var mixed $params */
-			$params = $args[1];
-			if (is_array($params)) {
-				$r = strtr($args[0], $params);
+			if (is_array($args[1])) {
+				$r = strtr($args[0], $args[1]);
 			}
 			break;
 	}
