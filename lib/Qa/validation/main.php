@@ -22,4 +22,4 @@ use Exception as E;
  * @return mixed
  * @throws DFE
  */
-function ju_assert($cond, $m = null) {return $cond ?: df_error($m);}
+function ju_assert($cond, $m = null) {return $cond ?: ju_error($m);}
