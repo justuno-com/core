@@ -55,12 +55,12 @@ class Exception extends LE implements \ArrayAccess {
 	 * @used-by __construct()
 	 * @param mixed ...$args
 	 */
-	function comment(...$args) {$this->_comments[]= df_format($args);}
+	function comment(...$args) {$this->_comments[]= ju_format($args);}
 
 	/**
 	 * @param mixed ...$args
 	 */
-	function commentPrepend(...$args) {array_unshift($this->_comments, df_format($args));}
+	function commentPrepend(...$args) {array_unshift($this->_comments, ju_format($args));}
 
 	/**
 	 * @used-by Df_Qa_Message_Failure_Exception::preface()
