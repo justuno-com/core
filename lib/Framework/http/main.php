@@ -3,6 +3,12 @@ use Magento\Framework\App\Request\Http as RequestHttp;
 use Magento\Framework\App\RequestInterface as IRequest;
 
 /**
+ * 2020-06-17 "Port the `df_header_utf` function": https://github.com/justuno-com/core/issues/35
+ * @used-by ju_error()
+ */
+function ju_header_utf() {df_is_cli() || headers_sent() ?: header('Content-Type: text/html; charset=UTF-8');}
+
+/**
  * 2020-06-13 "Port the `df_request` function": https://github.com/justuno-com/core/issues/1
  * @used-by \Justuno\M2\Controller\Cart\Add::execute()
  * @used-by \Justuno\M2\Controller\Cart\Add::product()

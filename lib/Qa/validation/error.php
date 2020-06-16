@@ -7,7 +7,7 @@ use Df\Core\Exception as DFE;
  * @throws DFE
  */
 function ju_error(...$args) {
-	df_header_utf();
+	ju_header_utf();
 	$e = df_error_create(...$args); /** @var DFE $e */
 	/**
 	 * 2020-02-15
