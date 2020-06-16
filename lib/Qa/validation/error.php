@@ -1,5 +1,7 @@
 <?php
 use Df\Core\Exception as DFE;
+use Exception as E;
+use Magento\Framework\Phrase;
 
 /**
  * 2020-06-17 "Port the `df_error` function": https://github.com/justuno-com/core/issues/34
@@ -8,7 +10,7 @@ use Df\Core\Exception as DFE;
  */
 function ju_error(...$args) {
 	ju_header_utf();
-	$e = df_error_create(...$args); /** @var DFE $e */
+	$e = ju_error_create(...$args); /** @var DFE $e */
 	/**
 	 * 2020-02-15
 	 * 1) "The Cron log (`magento.cron.log`) should contain a backtrace for every exception logged":
@@ -23,3 +25,35 @@ function ju_error(...$args) {
 	}
 	throw $e;
 }
+
+/**
+ * 2016-07-31
+ * 2020-06-17 "Port the `df_error_create` function": https://github.com/justuno-com/core/issues/37
+ * @used-by ju_error()
+ * @used-by \Df\API\Client::_p()
+ * @param string|string[]|mixed|E|Phrase|null $m [optional]
+ * @return DFE
+ */
+function ju_error_create($m = null) {return
+	$m instanceof E ? df_ewrap($m) :
+		new DFE($m instanceof Phrase ? $m : (
+			/**
+			 * 2019-12-16
+			 * I have changed `!$m` to `is_null($m)`.
+			 * It passes an empty string ('') directly to @uses \Df\Core\Exception::__construct()
+			 * and it prevents @uses \Df\Core\Exception::__construct() from calling @see df_bt()
+			 * @see \Df\Core\Exception::__construct():
+			 *		if (is_null($m)) {
+			 *			$m = __($prev ? df_ets($prev) : 'No message');
+			 *			// 2017-02-20 To facilite the «No message» diagnostics.
+			 *			if (!$prev) {
+			 *				df_bt();
+			 *			}
+			 *		}
+			 */
+			is_null($m) ? null : (is_array($m) ? implode("\n\n", $m) : (
+				df_contains($m, '%1') ? __($m, ...df_tail(func_get_args())) :
+					df_format(func_get_args())
+			))
+		))
+;}
