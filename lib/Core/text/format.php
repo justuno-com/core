@@ -8,7 +8,7 @@
  * @return string
  */
 function ju_format(...$args) { /** @var string $r */
-	$args = df_args($args);
+	$args = ju_args($args);
 	$r = null;
 	switch (count($args)) {
 		case 0:
