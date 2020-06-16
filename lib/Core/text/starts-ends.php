@@ -7,7 +7,7 @@
  * @return bool
  */
 function ju_starts_with($haystack, $needle) {return is_array($needle)
-	? null !== df_find($needle, __FUNCTION__, [], [$haystack])
+	? null !== ju_find($needle, __FUNCTION__, [], [$haystack])
 	: $needle === mb_substr($haystack, 0, mb_strlen($needle))
 ;}
 
