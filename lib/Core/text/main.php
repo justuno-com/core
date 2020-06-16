@@ -2,6 +2,7 @@
 /**
  * 2020-06-13 "Port the `df_contains` function": https://github.com/justuno-com/core/issues/16
  * @used-by jua()
+ * @used-by ju_error_create()
  * @param string $haystack
  * @param string|string[] ...$n
  * @return bool

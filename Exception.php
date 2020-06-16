@@ -9,6 +9,7 @@ use Magento\Framework\Phrase;
  */
 class Exception extends LE implements \ArrayAccess {
 	/**
+	 * @used-by ju_error_create()
 	 * @param mixed ...$args
 	 */
 	function __construct(...$args) {
