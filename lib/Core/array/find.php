@@ -18,7 +18,7 @@ function ju_find($a1, $a2, $pAppend = [], $pPrepend = [], $keyPosition = 0) {
 	// https://github.com/mage2pro/core/issues/96#issuecomment-593392100
 	// We should support PHP 7.0.
 	[$a, $f] = dfaf($a1, $a2); /** @var array|\Traversable $a */ /** @var callable $f */
-	$pAppend = df_array($pAppend); $pPrepend = df_array($pPrepend);
+	$pAppend = ju_array($pAppend); $pPrepend = ju_array($pPrepend);
 	$r = null; /** @var mixed|null $r */
 	foreach ($a as $k => $v) {/** @var int|string $k */ /** @var mixed $v */ /** @var mixed[] $primaryArgument */
 		switch ($keyPosition) {
