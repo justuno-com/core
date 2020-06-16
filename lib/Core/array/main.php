@@ -44,7 +44,7 @@ function juaf($a, $b) {
 	$ca = is_callable($a); /** @var bool $ca */
 	$cb = is_callable($b); /** @var bool $ca */
 	if (!$ca || !$cb) {
-		df_assert($ca || $cb);
+		ju_assert($ca || $cb);
 		$r = $ca ? [df_assert_traversable($b), $a] : [df_assert_traversable($a), $b];
 	}
 	else {
@@ -55,7 +55,7 @@ function juaf($a, $b) {
 				df_type($a), df_type($b)
 			);
 		}
-		df_assert($ta || $tb);
+		ju_assert($ta || $tb);
 		$r = $ta ? [$a, $b] : [$b, $a];
 	}
 	return $r;
