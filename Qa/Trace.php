@@ -25,7 +25,7 @@ final class Trace implements \IteratorAggregate, \Countable {
 			 * Однако мне в стеке вызовов в любом случае не нужна бинарная каша,
 			 * поэтому я отсекаю ту часть стека, которая находится внутри Phar.
 			 */
-			if (df_starts_with(jua($frameA, 'file'), 'phar://')) {
+			if (ju_starts_with(jua($frameA, 'file'), 'phar://')) {
 				break;
 			}
 			$this->_frames[]= $prev = F::i($frameA, $prev);
