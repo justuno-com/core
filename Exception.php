@@ -292,8 +292,7 @@ class Exception extends LE implements \ArrayAccess {
 	private $_stackLevelsCountToSkip = 0;
 
 	/**
-	 * @used-by Df_Qa_Message_Failure_Exception::e()
-	 * @used-by Df_Shipping_Collector::call()
+	 * @used-by ju_ewrap()
 	 * @param \Exception $e
 	 * @return $this
 	 */
