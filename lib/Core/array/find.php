@@ -22,10 +22,10 @@ function ju_find($a1, $a2, $pAppend = [], $pPrepend = [], $keyPosition = 0) {
 	$r = null; /** @var mixed|null $r */
 	foreach ($a as $k => $v) {/** @var int|string $k */ /** @var mixed $v */ /** @var mixed[] $primaryArgument */
 		switch ($keyPosition) {
-			case DF_BEFORE:
+			case JU_BEFORE:
 				$primaryArgument = [$k, $v];
 				break;
-			case DF_AFTER:
+			case JU_AFTER:
 				$primaryArgument = [$v, $k];
 				break;
 			default:
