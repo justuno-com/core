@@ -52,7 +52,7 @@ function ju_error_create($m = null) {return
 			 *		}
 			 */
 			is_null($m) ? null : (is_array($m) ? implode("\n\n", $m) : (
-				ju_contains($m, '%1') ? __($m, ...df_tail(func_get_args())) :
+				ju_contains($m, '%1') ? __($m, ...ju_tail(func_get_args())) :
 					df_format(func_get_args())
 			))
 		))
