@@ -23,4 +23,3 @@ use Exception as E;
  * @throws DFE
  */
 function ju_assert($cond, $m = null) {return $cond ?: df_error($m);}
-
