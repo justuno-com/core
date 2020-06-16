@@ -1,5 +1,5 @@
 <?php
-use Df\Core\Exception as DFE;
+use Justuno\Core\Exception as DFE;
 use Exception as E;
 use Magento\Framework\Phrase;
 
