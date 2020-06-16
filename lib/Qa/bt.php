@@ -1,6 +1,6 @@
 <?php
 use Exception as E;
-use Df\Qa\Trace;
+use Justuno\Core\Qa\Trace;
 use Df\Qa\Trace\Formatter;
 
 /**
