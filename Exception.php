@@ -44,7 +44,7 @@ class Exception extends LE implements \ArrayAccess {
 			$m = __($prev ? ju_ets($prev) : 'No message');
 			// 2017-02-20 To facilite the «No message» diagnostics.
 			if (!$prev) {
-				df_bt();
+				ju_bt();
 			}
 		}
 		parent::__construct($m, $prev);
