@@ -11,6 +11,7 @@ function ju_array($v) {return is_array($v) ? $v : [$v];}
 
 /**
  * 2020-06-13 "Port the `df_ita` function": https://github.com/justuno-com/core/issues/15
+ * @used-by ju_filter()
  * @used-by ju_map()
  * @used-by jua_select_ordered()
  * @param \Traversable|array $t
@@ -34,6 +35,7 @@ function jua_flatten(array $a) {
 
 /**
  * 2020-06-16 "Port the `dfaf` function": https://github.com/justuno-com/core/issues/32
+ * @used-by ju_filter()
  * @used-by ju_find()
  * @used-by ju_map()
  * @param array|callable|\Traversable $a

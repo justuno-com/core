@@ -47,9 +47,9 @@ function ju_filter($a1, $a2) { /** @var array $r */
 	// The square bracket syntax for array destructuring assignment (`[…] = […]`) requires PHP ≥ 7.1:
 	// https://github.com/mage2pro/core/issues/96#issuecomment-593392100
 	// We should support PHP 7.0.
-	list($a, $f) = dfaf($a1, $a2); /** @var array|\Traversable $a */ /** @var callable $f */
-	$a = df_ita($a);
-	$r = array_filter(df_ita($a), $f);
+	list($a, $f) = juaf($a1, $a2); /** @var array|\Traversable $a */ /** @var callable $f */
+	$a = ju_ita($a);
+	$r = array_filter(ju_ita($a), $f);
 	/**
 	 * 2017-02-16
 	 * Если исходный массив был неассоциативным, то после удаления из него элементов в индексах будут бреши.
