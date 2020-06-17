@@ -22,7 +22,7 @@ function ju_error(...$args) {
 	 * So we have a correct backtrace even without throwing the exception.
 	 * 2020-02-17 @see \Df\Cron\Plugin\Console\Command\CronCommand::aroundRun()
 	 */
-	if (df_is_cron()) {
+	if (ju_is_cron()) {
 		df_log_e($e, 'Df_Cron');
 	}
 	throw $e;
