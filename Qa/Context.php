@@ -3,7 +3,6 @@ namespace Justuno\Core\Qa;
 // 2020-06-17 "Port the `Df\Qa\Context` class": https://github.com/justuno-com/core/issues/55
 class Context {
 	/**
-	 * @used-by df_context()
 	 * @param string $label
 	 * @param string $value
 	 * @param int $weight [optional]
