@@ -27,6 +27,19 @@ function ju_format(...$args) { /** @var string $r */
 }
 
 /**
+ * 2017-07-09
+ * 2020-06-18 "Port the `df_kv` class": https://github.com/justuno-com/core/issues/56
+ * @used-by \Justuno\Core\Qa\Context::render()
+ * @param array(string => string) $a
+ * @param int|null $pad [optional]
+ * @return string
+ */
+function ju_kv(array $a, $pad = null) {return df_cc_n(df_map_k(df_clean($a), function($k, $v) use($pad) {return
+	(!$pad ? "$k: " : df_pad("$k:", $pad))
+	.(is_array($v) || (is_object($v) && !method_exists($v, '__toString')) ? "\n" . df_json_encode($v) : $v)
+;}));}
+
+/**
  * 2020-06-17 "Port the `df_sprintf` function": https://github.com/justuno-com/core/issues/42
  * @used-by ju_format()
  * @param string|mixed[] $s
