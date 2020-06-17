@@ -39,7 +39,42 @@ function ju_sprintf($s) {/** @var string $r */ /** @var mixed[] $args */
 	// https://github.com/mage2pro/core/issues/96#issuecomment-593392100
 	// We should support PHP 7.0.
 	list($s, $args) = is_array($s) ? [ju_first($s), $s] : [$s, func_get_args()];
-	try {$r = df_sprintf_strict($args);}
+	try {$r = ju_sprintf_strict($args);}
 	catch (Exception $e) {$r = $s;}
+	return $r;
+}
+
+/**
+ * 2020-06-17 "Port the `df_sprintf_strict` function": https://github.com/justuno-com/core/issues/44
+ * @used-by ju_sprintf()
+ * @param string|mixed[] $s
+ * @return string
+ * @throws \Exception
+ */
+function ju_sprintf_strict($s) {/** @var string $r */ /** @var mixed[] $args */
+	// 2020-03-02
+	// The square bracket syntax for array destructuring assignment (`[…] = […]`) requires PHP ≥ 7.1:
+	// https://github.com/mage2pro/core/issues/96#issuecomment-593392100
+	// We should support PHP 7.0.
+	list($s, $args) = is_array($s) ? [ju_first($s), $s] : [$s, func_get_args()];
+	if (1 === count($args)) {
+		$r = $s;
+	}
+	else {
+		try {$r = vsprintf($s, ju_tail($args));}
+		catch (Exception $e) {/** @var bool $inProcess */
+			static $inProcess = false;
+			if (!$inProcess) {
+				$inProcess = true;
+				df_error(
+					'df_sprintf_strict failed: «{message}».'
+					. "\nPattern: {$s}."
+					. "\nParameters:\n{params}."
+					,['{message}' => ju_ets($e), '{params}' => print_r(ju_tail($args), true)]
+				);
+				$inProcess = false;
+			}
+		}
+	}
 	return $r;
 }
