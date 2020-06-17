@@ -39,7 +39,7 @@ function ju_log_l($m, $p2, $p3 = [], $suf = null) {
 			)
 		]);
 	}
-	$d = !$d ? null : (is_string($d) ? $d : df_json_encode($d));
+	$d = !$d ? null : (is_string($d) ? $d : ju_json_encode($d));
 	df_report(
 		df_ccc('--', 'mage2.pro/' . df_ccc('-', df_report_prefix($m), '{date}--{time}'), $suf) .  '.log'
 		,df_cc_n(
