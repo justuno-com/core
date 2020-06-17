@@ -22,7 +22,7 @@ class Context {
 			$r = '';
 		}
 		else {
-			uasort(self::$_items, [__CLASS__, 'sort']); /** @uses \Df\Qa\Context::sort() */
+			uasort(self::$_items, [__CLASS__, 'sort']); /** @uses Context::sort() */
 			$padSize = 2 + max(array_map('mb_strlen', array_keys(self::$_items))); /** @var int $padSize */
 			$r = df_kv(df_each(self::$_items, self::$VALUE), $padSize);
 		}
