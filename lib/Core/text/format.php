@@ -35,7 +35,7 @@ function ju_format(...$args) { /** @var string $r */
  * @return string
  */
 function ju_kv(array $a, $pad = null) {return ju_cc_n(df_map_k(ju_clean($a), function($k, $v) use($pad) {return
-	(!$pad ? "$k: " : df_pad("$k:", $pad))
+	(!$pad ? "$k: " : ju_pad("$k:", $pad))
 	.(is_array($v) || (is_object($v) && !method_exists($v, '__toString')) ? "\n" . df_json_encode($v) : $v)
 ;}));}
 
