@@ -1,6 +1,7 @@
 <?php
 /**
  * 2020-06-17 "Port the `df_ends_with` function": https://github.com/justuno-com/core/issues/47
+ * @used-by ju_is_bin_magento()
  * @param string $haystack
  * @param string|string[] $needle
  * @return bool
