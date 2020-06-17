@@ -1,5 +1,13 @@
 <?php
 /**
+ * 2020-06-17 "Port the `df_first` function": https://github.com/justuno-com/core/issues/43
+ * @used-by ju_sprintf()
+ * @param array $a
+ * @return mixed|null
+ */
+function ju_first(array $a) {return !$a ? null : reset($a);}
+
+/**
  * 2020-06-17 "Port the `df_tail` function": https://github.com/justuno-com/core/issues/39
  * @used-by ju_error_create()
  * @param mixed[] $a

@@ -38,7 +38,7 @@ function ju_sprintf($s) {/** @var string $r */ /** @var mixed[] $args */
 	// The square bracket syntax for array destructuring assignment (`[…] = […]`) requires PHP ≥ 7.1:
 	// https://github.com/mage2pro/core/issues/96#issuecomment-593392100
 	// We should support PHP 7.0.
-	list($s, $args) = is_array($s) ? [df_first($s), $s] : [$s, func_get_args()];
+	list($s, $args) = is_array($s) ? [ju_first($s), $s] : [$s, func_get_args()];
 	try {$r = df_sprintf_strict($args);}
 	catch (Exception $e) {$r = $s;}
 	return $r;
