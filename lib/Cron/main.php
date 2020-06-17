@@ -6,4 +6,4 @@
  * @used-by df_error()
  * @return bool
  */
-function ju_is_cron() {return ju_is_bin_magento() && 'cron:run' === df_cli_argv(1);}
+function ju_is_cron() {return ju_is_bin_magento() && 'cron:run' === ju_cli_argv(1);}

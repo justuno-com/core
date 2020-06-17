@@ -3,6 +3,7 @@
  * 2017-03-15
  * 2020-06-17 "Port the `df_cli_argv` function": https://github.com/justuno-com/core/issues/49
  * @used-by ju_cli_script()
+ * @used-by ju_is_cron()
  * @param int $i [optional]
  * @return string|string[]
  */
