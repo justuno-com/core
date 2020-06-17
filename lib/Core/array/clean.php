@@ -28,7 +28,7 @@ function ju_clean_r(array $r, $k = [], $req = true) {/** @var mixed[] $r */
 	/** 2020-02-05 @see array_unique() does not work correctly here, even with the @see SORT_REGULAR flag. */
 	$k = array_merge($k, ['', null, []]);
 	if ($req) {
-		$r = df_map($r, function($v) use($k) {return !is_array($v) ? $v : ju_clean_r($v, $k);});
+		$r = ju_map($r, function($v) use($k) {return !is_array($v) ? $v : ju_clean_r($v, $k);});
 	}
 	return df_filter($r, function($v) use($k) {return !in_array($v, $k, true);});
 }
