@@ -4,7 +4,7 @@
  * @param string|string[] ...$args
  * @return string
  */
-function ju_cc_n(...$args) {return ju_ccc("\n", dfa_flatten($args));}
+function ju_cc_n(...$args) {return ju_ccc("\n", jua_flatten($args));}
 
 /**
  * 2020-06-18 "Port the `df_ccc` function": https://github.com/justuno-com/core/issues/57
