@@ -32,7 +32,6 @@ function ju_error(...$args) {
  * 2016-07-31
  * 2020-06-17 "Port the `df_error_create` function": https://github.com/justuno-com/core/issues/37
  * @used-by ju_error()
- * @used-by \Df\API\Client::_p()
  * @param string|string[]|mixed|E|Phrase|null $m [optional]
  * @return DFE
  */
