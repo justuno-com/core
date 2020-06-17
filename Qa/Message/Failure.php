@@ -7,7 +7,7 @@ use Df\Qa\Trace\Formatter;
  * @see \Df\Qa\Message\Failure\Error
  * @see \Df\Qa\Message\Failure\Exception
  */
-abstract class Failure extends \Df\Qa\Message {
+abstract class Failure extends \Justuno\Core\Qa\Message {
 	/**
 	 * @abstract
 	 * @used-by postface()
