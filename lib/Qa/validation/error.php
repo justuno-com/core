@@ -5,6 +5,8 @@ use Magento\Framework\Phrase;
 
 /**
  * 2020-06-17 "Port the `df_error` function": https://github.com/justuno-com/core/issues/34
+ * @used-by ju_assert()
+ * @used-by ju_sprintf_strict()
  * @param string ...$args
  * @throws DFE
  */

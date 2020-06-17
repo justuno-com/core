@@ -66,7 +66,7 @@ function ju_sprintf_strict($s) {/** @var string $r */ /** @var mixed[] $args */
 			static $inProcess = false;
 			if (!$inProcess) {
 				$inProcess = true;
-				df_error(
+				ju_error(
 					'df_sprintf_strict failed: «{message}».'
 					. "\nPattern: {$s}."
 					. "\nParameters:\n{params}."
