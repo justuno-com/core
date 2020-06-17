@@ -1,7 +1,7 @@
 <?php
 namespace Justuno\Core\Qa\Message\Failure;
-// 2020-06-17 "Port the `df_log_e` function": https://github.com/justuno-com/core/issues/50
-final class Exception extends \Df\Qa\Message\Failure {
+// 2020-06-17 "Port the `Df\Qa\Message\Failure\Exception` class": https://github.com/justuno-com/core/issues/52
+final class Exception extends \Justuno\Core\Qa\Message\Failure {
 	/**
 	 * @override
 	 * @see \Df\Qa\Message::main()
@@ -34,16 +34,16 @@ final class Exception extends \Df\Qa\Message\Failure {
 
 	/**
 	 * @override
-	 * @see \Df\Qa\Message\Failure::stackLevel()
-	 * @used-by \Df\Qa\Message\Failure::frames()
+	 * @see \Justuno\Core\Qa\Message\Failure::stackLevel()
+	 * @used-by \Justuno\Core\Qa\Message\Failure::frames()
 	 * @return int
 	 */
 	protected function stackLevel() {return $this->e()->getStackLevelsCountToSkip();}
 
 	/**
 	 * @override
-	 * @see \Df\Qa\Message\Failure::trace()
-	 * @used-by \Df\Qa\Message\Failure::frames()
+	 * @see \Justuno\Core\Qa\Message\Failure::trace()
+	 * @used-by \Justuno\Core\Qa\Message\Failure::frames()
 	 * @return array(array(string => string|int))
 	 */
 	protected function trace() {return df_ef($this->e())->getTrace();}
@@ -52,7 +52,7 @@ final class Exception extends \Df\Qa\Message\Failure {
 	 * @used-by main()
 	 * @used-by stackLevel()
 	 * @used-by trace()
-	 * @return \Df\Core\Exception
+	 * @return \Justuno\Core\Exception
 	 */
 	private function e() {return dfc($this, function() {return df_ewrap($this[self::P__EXCEPTION]);});}
 

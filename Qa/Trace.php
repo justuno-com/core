@@ -7,6 +7,7 @@ final class Trace implements \IteratorAggregate, \Countable {
 	/**
 	 * 2020-02-27
 	 * @used-by ju_bt_s()
+	 * @used-by \Justuno\Core\Qa\Message\Failure::postface()
 	 * @param array(string => int|string) $frames
 	 */
 	function __construct(array $frames) {
