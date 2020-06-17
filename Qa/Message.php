@@ -8,16 +8,16 @@ namespace Justuno\Core\Qa;
 abstract class Message extends \Df\Core\OLegacy {
 	/**
 	 * @used-by report()
-	 * @see \Df\Qa\Message\Failure\Error::main()
-	 * @see \Df\Qa\Message\Failure\Exception::main()
-	 * @see \Df\Qa\Message\Notification::main()
+	 * @see \Justuno\Core\Qa\Message\Failure\Error::main()
+	 * @see \Justuno\Core\Qa\Message\Failure\Exception::main()
+	 * @see \Justuno\Core\Qa\Message\Notification::main()
 	 * @return string
 	 */
 	abstract protected function main();
 
 	/**
 	 * @used-by df_notify_exception()
-	 * @used-by \Df\Qa\Message\Failure\Error::check()
+	 * @used-by \Justuno\Core\Qa\Message\Failure\Error::check()
 	 * @throws \Exception
 	 */
 	public final function log() {
@@ -47,7 +47,7 @@ abstract class Message extends \Df\Core\OLegacy {
 
 	/**
 	 * @used-by report()
-	 * @see \Df\Qa\Message\Failure::postface()
+	 * @see \Justuno\Core\Qa\Message\Failure::postface()
 	 * @return string
 	 */
 	protected function postface() {return '';}
@@ -60,7 +60,7 @@ abstract class Message extends \Df\Core\OLegacy {
 
 	/**
 	 * 2016-08-20
-	 * @used-by \Df\Qa\Message::log()
+	 * @used-by \Justuno\Core\Qa\Message::log()
 	 * @return string
 	 */
 	protected function reportName() {return
@@ -77,7 +77,7 @@ abstract class Message extends \Df\Core\OLegacy {
 
 	/**
 	 * @used-by report()
-	 * @used-by \Df\Qa\Message\Failure\Exception::postface()
+	 * @used-by \Justuno\Core\Qa\Message\Failure\Exception::postface()
 	 * @param string|string[] $items
 	 * @return string
 	 */
