@@ -13,4 +13,4 @@ function ju_cc_n(...$args) {return ju_ccc("\n", dfa_flatten($args));}
  * @param string|string[] ...$elements
  * @return string
  */
-function ju_ccc($glue, ...$elements) {return implode($glue, ju_clean(dfa_flatten($elements)));}
+function ju_ccc($glue, ...$elements) {return implode($glue, ju_clean(jua_flatten($elements)));}
