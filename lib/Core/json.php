@@ -22,7 +22,7 @@ function ju_json_encode($v, $flags = 0) {return json_encode(ju_json_sort($v),
  * @param mixed $v
  * @return mixed
  */
-function ju_json_sort($v) {return !is_array($v) ? $v : (ju_is_assoc($v) ? df_ksort_r_ci($v) :
+function ju_json_sort($v) {return !is_array($v) ? $v : (ju_is_assoc($v) ? ju_ksort_r_ci($v) :
 	/**
 	 * 2017-09-08
 	 * @todo It would be nice to use df_sort($v) here,
