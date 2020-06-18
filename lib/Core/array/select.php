@@ -29,7 +29,7 @@ function jua(array $a, $k, $d = null) {return
  * @param mixed|callable|null $d [optional]
  * @return _DO|AE|mixed
  */
-function juad($o, $k = null, $d = null) {return is_null($k) ? $o : jua(df_gd($o), $k, $d);}
+function juad($o, $k = null, $d = null) {return is_null($k) ? $o : jua(ju_gd($o), $k, $d);}
 
 /**
  * 2020-06-13 "Port the `jua_select_ordered` function": https://github.com/justuno-com/core/issues/13
