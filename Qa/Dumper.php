@@ -9,11 +9,11 @@ final class Dumper {
 	 * @return string
 	 */
 	function dump($v) {return is_object($v) ? $this->dumpObject($v) : (
-		is_array($v) ? $this->dumpArray($v) : (is_bool($v) ? df_bts($v) : (is_string($v) ? $v : print_r($v, true)))
+		is_array($v) ? $this->dumpArray($v) : (is_bool($v) ? ju_bts($v) : (is_string($v) ? $v : print_r($v, true)))
 	);}
 
 	/**
-	 * 2015-01-25 @uses df_ksort() для удобства сравнения двух версий массива/объекта в Araxis Merge.
+	 * 2015-01-25
 	 * @see df_kv()
 	 * @used-by df_print_params()
 	 * @used-by dumpArray()
