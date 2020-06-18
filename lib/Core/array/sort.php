@@ -3,6 +3,7 @@
  * 2016-01-29
  * 2020-06-18 "Port the `df_ksort` function": https://github.com/justuno-com/core/issues/69
  * @used-by ju_ksort_r()
+ * @used-by \Justuno\Core\Qa\Dumper::dumpArrayElements()
  * @param array(int|string => mixed) $a
  * @param callable|null $f [optional]
  * @return array(int|string => mixed)

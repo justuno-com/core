@@ -92,6 +92,7 @@ function ju_map($a1, $a2, $pAppend = [], $pPrepend = [], $keyPosition = 0, $retu
  * 2020-06-18 "Port the `df_map_k` function": https://github.com/justuno-com/core/issues/70
  * @used-by ju_ksort_r()
  * @used-by ju_kv()
+ * @used-by \Justuno\Core\Qa\Dumper::dumpArrayElements()
  * @param array|callable|\Traversable $a1
  * @param array|callable|\Traversable $a2
  * @return array(int|string => mixed)

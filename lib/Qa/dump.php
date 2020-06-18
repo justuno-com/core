@@ -1,5 +1,5 @@
 <?php
-use Df\Qa\Dumper;
+use Justuno\Core\Qa\Dumper;
 
 /**
  * 2020-06-18 "Port the `df_dump` function": https://github.com/justuno-com/core/issues/81
