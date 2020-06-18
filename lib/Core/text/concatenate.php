@@ -2,6 +2,7 @@
 /**
  * 2020-06-18 "Port the `df_cc_n` function": https://github.com/justuno-com/core/issues/63
  * @used-by ju_kv()
+ * @used-by ju_tab_multiline()
  * @used-by \Justuno\Core\Qa\Dumper::dumpArrayElements()
  * @param string|string[] ...$args
  * @return string

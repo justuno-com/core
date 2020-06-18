@@ -30,7 +30,7 @@ final class Dumper {
 	 * @param mixed $a
 	 * @return string
 	 */
-	private function dumpArray(array $a) {return "[\n" . df_tab_multiline($this->dumpArrayElements($a)) . "\n]";}
+	private function dumpArray(array $a) {return "[\n" . ju_tab_multiline($this->dumpArrayElements($a)) . "\n]";}
 
 	/**
 	 * @used-by dump()

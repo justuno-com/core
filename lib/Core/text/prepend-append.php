@@ -44,3 +44,11 @@ function ju_pad($phrase, $length, $pattern = ' ', $position = STR_PAD_RIGHT) {/*
 	}
 	return $r;
 }
+
+/**
+ * 2020-06-18 "Port the `df_tab_multiline` function": https://github.com/justuno-com/core/issues/84
+ * @used-by \Justuno\Core\Qa\Dumper::dumpArray()
+ * @param string $text
+ * @return string
+ */
+function ju_tab_multiline($text) {return ju_cc_n(df_tab(df_explode_n($text)));}
