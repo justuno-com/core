@@ -24,7 +24,7 @@ class Context {
 		else {
 			uasort(self::$_items, [__CLASS__, 'sort']); /** @uses Context::sort() */
 			$padSize = 2 + max(array_map('mb_strlen', array_keys(self::$_items))); /** @var int $padSize */
-			$r = ju_kv(df_each(self::$_items, self::$VALUE), $padSize);
+			$r = ju_kv(ju_each(self::$_items, self::$VALUE), $padSize);
 		}
 		return $r;
 	}
