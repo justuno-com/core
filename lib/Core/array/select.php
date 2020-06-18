@@ -1,6 +1,7 @@
 <?php
 /**
  * 2020-06-13 "Port the `dfa` function": https://github.com/justuno-com/core/issues/12
+ * @used-by ju_call()
  * @used-by ju_cli_argv()
  * @used-by ju_request()
  * @param array(int|string => mixed) $a

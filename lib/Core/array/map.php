@@ -33,7 +33,7 @@ const JU_BEFORE = -1;
  * @param mixed ...$p
  * @return mixed[]|string[]
  */
-function ju_each($c, $f, ...$p) {return ju_map(function($v) use($f, $p) {return df_call($v, $f, $p);}, $c);}
+function ju_each($c, $f, ...$p) {return ju_map(function($v) use($f, $p) {return ju_call($v, $f, $p);}, $c);}
 
 /**
  * 2015-02-11
