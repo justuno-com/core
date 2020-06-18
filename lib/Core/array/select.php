@@ -1,4 +1,9 @@
 <?php
+use Closure as F;
+use Magento\Config\Model\Config\Structure\AbstractElement as AE;
+use Magento\Framework\DataObject as _DO;
+use Traversable as T;
+
 /**
  * 2020-06-13 "Port the `dfa` function": https://github.com/justuno-com/core/issues/12
  * @used-by ju_call()
@@ -14,6 +19,17 @@ function jua(array $a, $k, $d = null) {return
 		ju_contains($k, '/') ? jua_deep($a, $k, $d) : ju_call_if($d, $k)
 	)))
 ;}
+
+/**
+ * 2020-01-29
+ * 2020-06-18 "Port the `dfad` function": https://github.com/justuno-com/core/issues/73
+ * @used-by ju_call()
+ * @param _DO|AE $o
+ * @param string|string[]|null $k [optional]
+ * @param mixed|callable|null $d [optional]
+ * @return _DO|AE|mixed
+ */
+function juad($o, $k = null, $d = null) {return is_null($k) ? $o : jua(df_gd($o), $k, $d);}
 
 /**
  * 2020-06-13 "Port the `jua_select_ordered` function": https://github.com/justuno-com/core/issues/13

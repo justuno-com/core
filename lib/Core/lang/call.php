@@ -43,7 +43,7 @@ function ju_call($o, $m, $p = []) {/** @var mixed $r */
 			$r = call_user_func_array($callable, $p);
 		}
 		else if (df_has_gd($o)) {
-			$r = dfad($o, $m);
+			$r = juad($o, $m);
 		}
 		elseif (!$functionExists) {
 			ju_error("Unable to call «{$m}».");
