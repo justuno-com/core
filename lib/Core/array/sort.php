@@ -18,7 +18,7 @@ function ju_ksort(array $a, $f = null) {$f ? uksort($a, $f) : ksort($a); return 
  * @param callable|null $f [optional]
  * @return array(int|string => mixed)
  */
-function ju_ksort_r(array $a, $f = null) {return ju_ksort(df_map_k(function($k, $v) use($f) {return
+function ju_ksort_r(array $a, $f = null) {return ju_ksort(ju_map_k(function($k, $v) use($f) {return
 	!is_array($v) ? $v : ju_ksort_r($v, $f)
 ;}, $a), $f);}
 

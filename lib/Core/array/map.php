@@ -15,6 +15,7 @@ const JU_AFTER = 1;
  * http://www.codingforums.com/php/303927-unexpected-t_const-php-version-5-2-17-a.html#post1363452
  * @used-by ju_find()
  * @used-by ju_map()
+ * @used-by ju_map_k()
  */
 const JU_BEFORE = -1;
 
@@ -22,6 +23,7 @@ const JU_BEFORE = -1;
  * 2015-02-11
  * 2020-06-18 "Port the `df_map` function": https://github.com/justuno-com/core/issues/60
  * @used-by ju_clean_r()
+ * @used-by ju_map_k()
  * @param array|callable|\Traversable $a1
  * @param array|callable|\Traversable $a2
  * @param mixed|mixed[] $pAppend [optional]
@@ -66,3 +68,13 @@ function ju_map($a1, $a2, $pAppend = [], $pPrepend = [], $keyPosition = 0, $retu
 	}
 	return $r;
 }
+
+/**
+ * 2016-08-09
+ * 2020-06-18 "Port the `df_map_k` function": https://github.com/justuno-com/core/issues/70
+ * @used-by ju_ksort_r()
+ * @param array|callable|\Traversable $a1
+ * @param array|callable|\Traversable $a2
+ * @return array(int|string => mixed)
+ */
+function ju_map_k($a1, $a2) {return ju_map($a1, $a2, [], [], JU_BEFORE);}
