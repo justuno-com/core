@@ -8,6 +8,7 @@ use Magento\Framework\Phrase;
  * @used-by ju_assert()
  * @used-by ju_call()
  * @used-by ju_sprintf_strict()
+ * @used-by ju_try()
  * @param string ...$args
  * @throws DFE
  */

@@ -12,4 +12,4 @@ use Magento\Framework\DataObject as _DO;
  * @param F|bool|mixed $onE [optional]
  * @return array(string => mixed)
  */
-function ju_gd($v, $onE = true) {return df_try(function() use($v) {return df_assert_gd($v)->getData();}, $onE);}
+function ju_gd($v, $onE = true) {return ju_try(function() use($v) {return df_assert_gd($v)->getData();}, $onE);}
