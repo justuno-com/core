@@ -13,7 +13,7 @@ use Magento\Framework\DataObject as _DO;
  * @throws DFE
  */
 function ju_assert_gd($v) {return ju_has_gd($v) ? $v : ju_error(ju_ucfirst(
-	'%s does not support a proper getData().', df_type($v)
+	'%s does not support a proper getData().', ju_type($v)
 ));}
 
 /**
