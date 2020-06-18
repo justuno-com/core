@@ -5,6 +5,6 @@
  * @param string ...$args
  * @return string|string[]
  */
-function ju_ucfirst(...$args) {return df_call_a(function($s) {return
+function ju_ucfirst(...$args) {return ju_call_a(function($s) {return
 	mb_strtoupper(mb_substr($s, 0, 1)) . mb_substr($s, 1)
 ;}, $args);}

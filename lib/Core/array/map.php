@@ -41,6 +41,7 @@ function ju_each($c, $f, ...$p) {return ju_map(function($v) use($f, $p) {return 
  * @used-by ju_clean_r()
  * @used-by ju_each()
  * @used-by ju_map_k()
+ * @used-by ju_call_a()
  * @param array|callable|\Traversable $a1
  * @param array|callable|\Traversable $a2
  * @param mixed|mixed[] $pAppend [optional]
