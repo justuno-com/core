@@ -56,7 +56,7 @@ function ju_tab(...$args) {return ju_call_a(function($text) {return "\t" . $text
 /**
  * 2020-06-18 "Port the `df_tab_multiline` function": https://github.com/justuno-com/core/issues/84
  * @used-by \Justuno\Core\Qa\Dumper::dumpArray()
- * @param string $text
+ * @param string $s
  * @return string
  */
-function ju_tab_multiline($text) {return ju_cc_n(ju_tab(df_explode_n($text)));}
+function ju_tab_multiline($s) {return ju_cc_n(ju_tab(ju_explode_n($s)));}
