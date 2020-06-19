@@ -47,10 +47,11 @@ function ju_pad($phrase, $length, $pattern = ' ', $position = STR_PAD_RIGHT) {/*
 
 /**
  * 2020-06-18 "Port the `df_tab` function": https://github.com/justuno-com/core/issues/85
+ * @used-by ju_tab_multiline()
  * @param string ...$args
  * @return string|string[]|array(string => string)
  */
-function df_tab(...$args) {return ju_call_a(function($text) {return "\t" . $text;}, $args);}
+function ju_tab(...$args) {return ju_call_a(function($text) {return "\t" . $text;}, $args);}
 
 /**
  * 2020-06-18 "Port the `df_tab_multiline` function": https://github.com/justuno-com/core/issues/84
@@ -58,4 +59,4 @@ function df_tab(...$args) {return ju_call_a(function($text) {return "\t" . $text
  * @param string $text
  * @return string
  */
-function ju_tab_multiline($text) {return ju_cc_n(df_tab(df_explode_n($text)));}
+function ju_tab_multiline($text) {return ju_cc_n(ju_tab(df_explode_n($text)));}
