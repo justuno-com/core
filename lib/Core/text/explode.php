@@ -6,7 +6,7 @@
  * @param string $s
  * @return string[]
  */
-function ju_explode_n($s) {return explode("\n", df_normalize(df_trim($s)));}
+function ju_explode_n($s) {return explode("\n", ju_normalize(df_trim($s)));}
 
 /**
  * 2020-06-14 "Port the `df_explode_xpath` function": https://github.com/justuno-com/core/issues/20
