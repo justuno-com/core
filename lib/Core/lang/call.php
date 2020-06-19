@@ -59,6 +59,7 @@ function ju_call($o, $m, $p = []) {/** @var mixed $r */
  * 2016-01-14
  * 2019-06-05 Parent functions with multiple different arguments are not supported!
  * 2020-06-18 "Port the `df_call_a` function": https://github.com/justuno-com/core/issues/79
+ * @used-by df_tab()
  * @used-by ju_ucfirst()
  * @param callable $f
  * @param mixed[]|mixed[][] $parentArgs

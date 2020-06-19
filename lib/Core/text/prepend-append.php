@@ -46,6 +46,13 @@ function ju_pad($phrase, $length, $pattern = ' ', $position = STR_PAD_RIGHT) {/*
 }
 
 /**
+ * 2020-06-18 "Port the `df_tab` function": https://github.com/justuno-com/core/issues/85
+ * @param string ...$args
+ * @return string|string[]|array(string => string)
+ */
+function df_tab(...$args) {return ju_call_a(function($text) {return "\t" . $text;}, $args);}
+
+/**
  * 2020-06-18 "Port the `df_tab_multiline` function": https://github.com/justuno-com/core/issues/84
  * @used-by \Justuno\Core\Qa\Dumper::dumpArray()
  * @param string $text
