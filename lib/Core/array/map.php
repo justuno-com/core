@@ -56,7 +56,7 @@ function ju_map($a1, $a2, $pAppend = [], $pPrepend = [], $keyPosition = 0, $retu
 	// The square bracket syntax for array destructuring assignment (`[…] = […]`) requires PHP ≥ 7.1:
 	// https://github.com/mage2pro/core/issues/96#issuecomment-593392100
 	// We should support PHP 7.0.
-	[$a, $f] = juaf($a1, $a2); /** @var array|\Traversable $a */ /** @var callable $f */
+	list($a, $f) = juaf($a1, $a2); /** @var array|\Traversable $a */ /** @var callable $f */
 	/** @var array(int|string => mixed) $r */
 	if (!$pAppend && !$pPrepend && 0 === $keyPosition && !$returnKey) {
 		$r = array_map($f, ju_ita($a));
