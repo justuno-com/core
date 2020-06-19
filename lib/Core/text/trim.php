@@ -28,7 +28,7 @@ function ju_trim($s, $charlist = null, $throw = false) {return ju_try(function()
 		/** @var \Df\Zf\Filter\StringTrim $filter */
 		$filter = new \Df\Zf\Filter\StringTrim($charlist);
 		$r = $filter->filter($s);
-		$r = df_nts($r);
+		$r = ju_nts($r);
 		if (' ' === $r) {
 			$r = '';
 		}
