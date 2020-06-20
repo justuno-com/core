@@ -51,3 +51,22 @@ function ju_log_l($m, $p2, $p3 = [], $suf = null) {
 		)
 	);
 }
+
+/**
+ * 2017-04-03
+ * 2018-07-06 The `$append` parameter has been added.
+ * 2020-02-14 If $append is `true`, then $m will be written on a new line.
+ * 2020-06-20 "Port the `df_report` function": https://github.com/justuno-com/core/issues/93
+ * @used-by \Justuno\Core\Qa\Message::log()
+ * @param string $f
+ * @param string $m
+ * @param bool $append [optional]
+ */
+function ju_report($f, $m, $append = false) {
+	if ('' !== $m) {
+		ju_param_s($m, 1);
+		$f = df_file_ext_def($f, 'log');
+		$p = BP . '/var/log'; /** @var string $p */
+		df_file_write($append ? "$p/$f" : df_file_name($p, $f), $m, $append);
+	}
+}

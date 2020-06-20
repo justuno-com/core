@@ -24,7 +24,7 @@ abstract class Message extends \Df\Core\OLegacy {
 		if (!$inProcess) {
 			$inProcess = true;
 			try {
-				df_report($this->reportName(), $this->report());
+				ju_report($this->reportName(), $this->report());
 				$inProcess = false;
 			}
 			catch (\Exception $e) {
