@@ -25,8 +25,8 @@ function ju_trim($s, $charlist = null, $throw = false) {return ju_try(function()
 				}
 			}
 		}
-		/** @var \Df\Zf\Filter\StringTrim $filter */
-		$filter = new \Df\Zf\Filter\StringTrim($charlist);
+		/** @var \Justuno\Core\Zf\Filter\StringTrim $filter */
+		$filter = new \Justuno\Core\Zf\Filter\StringTrim($charlist);
 		$r = $filter->filter($s);
 		$r = ju_nts($r);
 		if (' ' === $r) {

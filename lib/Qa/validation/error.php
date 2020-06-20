@@ -10,6 +10,7 @@ use Magento\Framework\Phrase;
  * @used-by ju_call()
  * @used-by ju_sprintf_strict()
  * @used-by ju_try()
+ * @used-by \Justuno\Core\Zf\Filter\StringTrim::_splitUtf8()
  * @param string ...$args
  * @throws DFE
  */
