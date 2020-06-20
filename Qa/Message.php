@@ -16,7 +16,6 @@ abstract class Message extends \Df\Core\OLegacy {
 	abstract protected function main();
 
 	/**
-	 * @used-by df_notify_exception()
 	 * @used-by \Justuno\Core\Qa\Message\Failure\Error::check()
 	 * @throws \Exception
 	 */
