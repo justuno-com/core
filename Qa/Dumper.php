@@ -14,8 +14,7 @@ final class Dumper {
 
 	/**
 	 * 2015-01-25
-	 * @see df_kv()
-	 * @used-by df_print_params()
+	 * @see ju_kv()
 	 * @used-by dumpArray()
 	 * @used-by dumpObject()
 	 * @param mixed[]|array(string => mixed) $a
