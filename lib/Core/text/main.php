@@ -34,3 +34,21 @@ function ju_contains($haystack, ...$n) {/** @var bool $r */
 	}
 	return $r;
 }
+
+/**
+ * 2020-06-20 "Port the `df_string` function": https://github.com/justuno-com/core/issues/92
+ * @used-by ju_type()
+ * @param mixed $v
+ * @return string
+ */
+function ju_string($v) {
+	if (is_object($v)) {
+		if (!method_exists($v, '__toString')) {
+			ju_error('The developer wrongly treats an object of the class %s as a string.', get_class($v));
+		}
+	}
+	elseif (is_array($v)) {
+		ju_error('The developer wrongly treats an array as a string.');
+	}
+	return strval($v);
+}
