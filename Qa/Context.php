@@ -13,7 +13,7 @@ class Context {
 	}
 
 	/**
-	 * @used-by \Df\Qa\Message::report()
+	 * @used-by \Justuno\Core\Qa\Message::report()
 	 * @return string
 	 */
 	static function render() {/** @var string $r */
