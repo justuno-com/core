@@ -45,7 +45,7 @@ final class Dumper {
 		else {
 			$this->_dumped[$hash] = true;
 			$r = !ju_has_gd($o)
-				? sprintf("%s %s", get_class($o), df_json_encode_partial($o))
+				? sprintf("%s %s", get_class($o), ju_json_encode_partial($o))
 				: sprintf("%s(%s\n)", get_class($o), ju_tab_multiline($this->dumpArrayElements($o->getData())))
 			;
 		}

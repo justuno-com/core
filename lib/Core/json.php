@@ -2,6 +2,7 @@
 /**
  * 2015-12-06
  * 2020-06-18 "Port the `df_json_encode` function": https://github.com/justuno-com/core/issues/65
+ * @used-by ju_json_encode_partial()
  * @used-by ju_kv()
  * @used-by ju_log_l()
  * @param mixed $v
@@ -11,6 +12,15 @@
 function ju_json_encode($v, $flags = 0) {return json_encode(ju_json_sort($v),
 	JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE | $flags
 );}
+
+/**
+ * 2020-02-15
+ * 2020-06-18 "Port the `df_json_encode_partial` function": https://github.com/justuno-com/core/issues/91
+ * @used-by \Justuno\Core\Qa\Dumper::dumpObject()
+ * @param mixed $v
+ * @return string
+ */
+function ju_json_encode_partial($v) {return ju_json_encode($v, JSON_PARTIAL_OUTPUT_ON_ERROR);}
 
 /**
  * 2017-09-07
