@@ -4,6 +4,9 @@
  * @used-by ju_kv()
  * @used-by ju_tab_multiline()
  * @used-by \Justuno\Core\Qa\Dumper::dumpArrayElements()
+ * @used-by \Justuno\Core\Qa\Method::raiseErrorParam()
+ * @used-by \Justuno\Core\Qa\Method::raiseErrorResult()
+ * @used-by \Justuno\Core\Qa\Method::raiseErrorVariable()
  * @param string|string[] ...$args
  * @return string
  */
