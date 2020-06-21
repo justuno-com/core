@@ -11,6 +11,7 @@ function ju_bts($v) {return $v ? 'true' : 'false';}
 /**
  * 2020-06-13 "Port the `df_contains` function": https://github.com/justuno-com/core/issues/16
  * @used-by ju_error_create()
+ * @used-by ju_file_name()
  * @used-by ju_trim()
  * @used-by jua()
  * @param string $haystack

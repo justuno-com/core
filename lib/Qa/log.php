@@ -67,6 +67,6 @@ function ju_report($f, $m, $append = false) {
 		ju_param_s($m, 1);
 		$f = ju_file_ext_def($f, 'log');
 		$p = BP . '/var/log'; /** @var string $p */
-		ju_file_write($append ? "$p/$f" : df_file_name($p, $f), $m, $append);
+		ju_file_write($append ? "$p/$f" : ju_file_name($p, $f), $m, $append);
 	}
 }

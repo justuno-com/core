@@ -1,6 +1,7 @@
 <?php
 /**
  * 2020-06-17 "Port the `df_first` function": https://github.com/justuno-com/core/issues/43
+ * @used-by ju_file_name()
  * @used-by ju_sprintf()
  * @used-by ju_sprintf_strict()
  * @param array $a
