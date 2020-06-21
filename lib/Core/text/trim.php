@@ -35,3 +35,13 @@ function ju_trim($s, $charlist = null, $throw = false) {return ju_try(function()
 	}
 	return $r;
 }, false === $throw ? $s : $throw);}
+
+/**
+ * 2017-08-18 Today I have noticed that $charlist = null does not work for @uses rtrim()
+ * 2020-06-21 "Port the `df_trim_right` function": https://github.com/justuno-com/core/issues/98
+ * @used-by ju_file_ext_def()
+ * @param string $s
+ * @param string $charlist [optional]
+ * @return string
+ */
+function ju_trim_right($s, $charlist = null) {return rtrim($s, $charlist ?: " \t\n\r\0\x0B");}

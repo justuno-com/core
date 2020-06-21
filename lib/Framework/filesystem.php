@@ -44,7 +44,7 @@ function ju_file_ext($f) {return pathinfo($f, PATHINFO_EXTENSION);}
  * @param string $ext
  * @return string
  */
-function ju_file_ext_def($f, $ext) {return ($e = ju_file_ext($f)) ? $f : df_trim_right($f, '.') . ".$ext";}
+function ju_file_ext_def($f, $ext) {return ($e = ju_file_ext($f)) ? $f : ju_trim_right($f, '.') . ".$ext";}
 
 /**
  * 2020-06-15 "Port the `df_path_n` function": https://github.com/justuno-com/core/issues/26
