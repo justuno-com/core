@@ -4,6 +4,7 @@ use Magento\Framework\ObjectManagerInterface as IOM;
 
 /**
  * 2020-06-13 "Port the `df_o` function": https://github.com/justuno-com/core/issues/3
+ * @used-by ju_fs()
  * @used-by ju_request_o()
  * @param string $t
  * @return mixed

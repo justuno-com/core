@@ -1,5 +1,6 @@
 <?php
 use Magento\Framework\App\Filesystem\DirectoryList as DL;
+use Magento\Framework\Filesystem;
 use Magento\Framework\Filesystem\Directory\Read as DirectoryRead;
 use Magento\Framework\Filesystem\Directory\ReadFactory as DirectoryReadFactory;
 use Magento\Framework\Filesystem\Directory\ReadInterface as IDirectoryRead;
@@ -143,13 +144,21 @@ function ju_file_write($p, $contents, $append = false) {
 
 /**
  * 2015-11-29
+ * 2020-06-21 "Port the `df_fs` function": https://github.com/justuno-com/core/issues/101
+ * @used-by ju_fs_w()
+ * @return Filesystem
+ */
+function ju_fs() {return ju_o(Filesystem::class);}
+
+/**
+ * 2015-11-29
  * 2017-04-03 The possible directory types for filesystem operations: https://mage2.pro/t/3591
  * 2020-06-21 "Port the `df_fs_w` function": https://github.com/justuno-com/core/issues/100
  * @used-by ju_file_write()
  * @param string $type
  * @return DirectoryWrite|IDirectoryWrite
  */
-function ju_fs_w($type) {return df_fs()->getDirectoryWrite($type);}
+function ju_fs_w($type) {return ju_fs()->getDirectoryWrite($type);}
 
 /**
  * 2020-06-15 "Port the `df_path_n` function": https://github.com/justuno-com/core/issues/26
