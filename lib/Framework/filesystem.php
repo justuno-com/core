@@ -85,7 +85,7 @@ function ju_file_write($p, $contents, $append = false) {
 	// https://github.com/mage2pro/core/issues/96#issuecomment-593392100
 	// We should support PHP 7.0.
 	list($type, $relative) = is_array($p) ? $p : [DL::ROOT, df_path_relative($p)];
-	$writer = df_fs_w($type); /** @var DirectoryWrite|IDirectoryWrite $writer */
+	$writer = ju_fs_w($type); /** @var DirectoryWrite|IDirectoryWrite $writer */
 	/**
 	 * 2018-07-06
 	 * Note 1.
@@ -140,6 +140,16 @@ function ju_file_write($p, $contents, $append = false) {
 	}
 	finally {$file->close();}
 }
+
+/**
+ * 2015-11-29
+ * 2017-04-03 The possible directory types for filesystem operations: https://mage2.pro/t/3591
+ * 2020-06-21 "Port the `df_fs_w` function": https://github.com/justuno-com/core/issues/100
+ * @used-by ju_file_write()
+ * @param string $type
+ * @return DirectoryWrite|IDirectoryWrite
+ */
+function ju_fs_w($type) {return df_fs()->getDirectoryWrite($type);}
 
 /**
  * 2020-06-15 "Port the `df_path_n` function": https://github.com/justuno-com/core/issues/26
