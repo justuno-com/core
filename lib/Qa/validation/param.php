@@ -5,6 +5,7 @@ use Justuno\Core\Exception as DFE;
 /**
  * 2017-04-22
  * 2020-06-20 "Port the `df_param_s` function": https://github.com/justuno-com/core/issues/94
+ * @used-by ju_file_write()
  * @used-by ju_report()
  * @param string $v
  * @param int $ord	zero-based
