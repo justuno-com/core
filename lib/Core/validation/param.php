@@ -1,6 +1,6 @@
 <?php
 use Justuno\Core\Exception as DFE;
-use Df\Qa\Method as Q;
+use Justuno\Core\Qa\Method as Q;
 
 /**
  * 2020-06-15 "Port the `df_param_sne` function": https://github.com/justuno-com/core/issues/22
