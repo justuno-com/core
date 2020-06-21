@@ -193,6 +193,7 @@ final class Method {
 	static function assertValueIsIso2($v, $sl = 0) {return self::vv(VIso2::s(), $v, ++$sl);}
 
 	/**
+	 * @used-by ju_param_s()
 	 * @used-by ju_param_sne()
 	 * @param string $v
 	 * @param int $sl [optional]
@@ -202,6 +203,7 @@ final class Method {
 	static function assertValueIsString($v, $sl = 0) {return self::vv(VString::s(), $v, ++$sl);}
 
 	/**
+	 * @used-by ju_param_s()
 	 * @used-by ju_param_sne()
 	 * @used-by vp()
 	 * @param string $method
