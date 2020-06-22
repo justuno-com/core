@@ -4,6 +4,14 @@ use Exception as E;
 use Magento\Framework\DataObject as _DO;
 
 /**
+ * 2020-06-22 "Port the `df_log` function": https://github.com/justuno-com/core/issues/117
+ * @used-by \Justuno\Core\Qa\Message::log()
+ * @param _DO|mixed[]|mixed|E $v
+ * @param string|object|null $m [optional]
+ */
+function ju_log($v, $m = null) {ju_log_l($m, $v); df_sentry($m, $v);}
+
+/**
  * 2017-01-11
  * 2020-06-17 "Port the `df_log_e` function": https://github.com/justuno-com/core/issues/50
  * @used-by ju_error()
@@ -17,6 +25,7 @@ function ju_log_e($e, $m = null, $d = [], $suf = null) {ju_log_l($m, $e, $d, !is
 /**
  * 2017-01-11
  * 2020-06-17 "Port the `df_log_l` function": https://github.com/justuno-com/core/issues/51
+ * @used-by ju_log()
  * @used-by ju_log_e()
  * @param string|object|null $m
  * @param string|mixed[]|E $p2
