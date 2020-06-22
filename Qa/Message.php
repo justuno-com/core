@@ -28,7 +28,7 @@ abstract class Message extends \Df\Core\OLegacy {
 				$inProcess = false;
 			}
 			catch (\Exception $e) {
-				df_log(df_ets($e));
+				df_log(ju_ets($e));
 				throw $e;
 			}
 		}
