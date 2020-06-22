@@ -9,7 +9,7 @@ use Justuno\Core\Qa\Method as Q;
  * @return string
  * @throws DFE
  */
-function ju_result_s($v, $sl = 0) {return df_check_s($v) ? $v : Q::raiseErrorResult(
+function ju_result_s($v, $sl = 0) {return ju_check_s($v) ? $v : Q::raiseErrorResult(
 	__FUNCTION__, [sprintf('A string is required, but got %s.', ju_type($v))], ++$sl
 );}
 
