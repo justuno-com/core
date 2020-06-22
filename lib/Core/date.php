@@ -13,6 +13,6 @@ use Zend_Date as ZD;
  * @param Zend_Locale|string|null $locale [optional]
  * @return string
  */
-function ju_dts(ZD $date = null, $format = null, $locale = null) {return df_result_sne(
+function ju_dts(ZD $date = null, $format = null, $locale = null) {return ju_result_sne(
 	df_date($date)->toString($format, $type = null, $locale)
 );}

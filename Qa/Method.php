@@ -228,8 +228,8 @@ final class Method {
 	}
 
 	/**
-	 * @used-by df_result_s()
-	 * @used-by df_result_sne()
+	 * @used-by ju_result_s()
+	 * @used-by ju_result_sne()
 	 * @used-by vr()
 	 * @param string $vd
 	 * @param array $messages
@@ -266,9 +266,8 @@ final class Method {
 
 	/**
 	 * 2017-01-12
-	 * @used-by df_assert_sne()
-	 * @used-by df_param_sne()
-	 * @used-by df_result_sne()
+	 * @used-by ju_param_sne()
+	 * @used-by ju_result_sne()
 	 */
 	const NES = 'A non-empty string is required, but got an empty one.';
 
