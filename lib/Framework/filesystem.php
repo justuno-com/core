@@ -87,7 +87,7 @@ function ju_file_name($directory, $template, $ds = '-') { /** @var string $r */
 	$now = \Zend_Date::now()->setTimezone('Europe/Moscow'); /** @var \Zend_Date $now */
 	/** @var array(string => string) $vars */
 	$vars = ju_map_k(function($k, $v) use($ds, $now) {return
-		df_dts($now, implode($ds, $v))
+		ju_dts($now, implode($ds, $v))
 	;}, ['date' => ['y', 'MM', 'dd'], 'time' => ['HH', 'mm'], 'time-full' => ['HH', 'mm', 'ss']]);
 	$vars['time-full-ms'] = implode($ds, [$vars['time-full'], sprintf(
 		'%02d', round(100 * ju_first(explode(' ', microtime())))
