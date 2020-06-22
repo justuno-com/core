@@ -113,7 +113,7 @@ function ju_file_name($directory, $template, $ds = '-') { /** @var string $r */
 					$secondFromLastPartIndex =  max(0, count($fileNameTemplateExploded) - 2);
 					/** @var string $secondFromLastPart */
 					$secondFromLastPart = jua($fileNameTemplateExploded, $secondFromLastPartIndex);
-					df_assert_sne($secondFromLastPart);
+					ju_assert_sne($secondFromLastPart);
 					$fileNameTemplateExploded[$secondFromLastPartIndex] =
 						implode('--', [$secondFromLastPart, '{ordering}'])
 					;

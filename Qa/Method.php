@@ -193,6 +193,7 @@ final class Method {
 	static function assertValueIsIso2($v, $sl = 0) {return self::vv(VIso2::s(), $v, ++$sl);}
 
 	/**
+	 * @used-by ju_assert_sne()
 	 * @used-by ju_param_s()
 	 * @used-by ju_param_sne()
 	 * @param string $v
@@ -247,7 +248,7 @@ final class Method {
 	}
 
 	/**
-	 * @used-by df_assert_sne()
+	 * @used-by ju_assert_sne()
 	 * @used-by vv()
 	 * @param string $vd
 	 * @param array $messages
@@ -266,6 +267,7 @@ final class Method {
 
 	/**
 	 * 2017-01-12
+	 * @used-by ju_assert_sne()
 	 * @used-by ju_param_sne()
 	 * @used-by ju_result_sne()
 	 */
