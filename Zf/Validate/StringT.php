@@ -1,7 +1,7 @@
 <?php
 namespace Justuno\Core\Zf\Validate;
 use Magento\Framework\Phrase;
-// 2020-06-22 "Port the `Df\Zf\Validate\StringT` function": https://github.com/justuno-com/core/issues/110
+// 2020-06-22 "Port the `Df\Zf\Validate\StringT` class": https://github.com/justuno-com/core/issues/110
 class StringT extends Type implements \Zend_Filter_Interface {
 	/**
 	 * @override
