@@ -94,7 +94,7 @@ function ju_file_name($directory, $template, $ds = '-') { /** @var string $r */
 	)]);
 	while (true) {
 		/** @var string $fileName */
-		$fileName = df_var($template, ['ordering' => sprintf('%03d', $counter)] + $vars);
+		$fileName = ju_var($template, ['ordering' => sprintf('%03d', $counter)] + $vars);
 		$fileFullPath = $directory . DS . $fileName; /** @var string $fileFullPath */
 		if (!file_exists($fileFullPath)) {
 			$r = $fileFullPath;

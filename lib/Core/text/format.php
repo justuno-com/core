@@ -91,3 +91,17 @@ function ju_sprintf_strict($s) {/** @var string $r */ /** @var mixed[] $args */
 	}
 	return $r;
 }
+
+/**
+ * 2020-06-22 "Port the `df_var` function": https://github.com/justuno-com/core/issues/104
+ * @used-by ju_file_name()
+ * @param string $s
+ * @param array(string => string) $variables
+ * @param string|callable|null $onUnknown
+ * @return string
+ */
+function ju_var($s, array $variables, $onUnknown = null) {return preg_replace_callback(
+	'#\{([^\}]*)\}#ui', function($m) use($variables, $onUnknown) {return
+		jua($variables, jua($m, 1, ''), $onUnknown)
+	;}, $s
+);}
