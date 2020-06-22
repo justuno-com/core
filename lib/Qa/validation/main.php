@@ -28,7 +28,20 @@ use Justuno\Core\Qa\Method as Q;
 function ju_assert($cond, $m = null) {return $cond ?: ju_error($m);}
 
 /**
- * 2020-06-17 "Port the `df_assert_sne` function": https://github.com/justuno-com/core/issues/115
+ * 2020-06-22 "Port the `df_assert_ne` function": https://github.com/justuno-com/core/issues/116
+ * @used-by ju_file_name()
+ * @param string|int|float|bool $neResult
+ * @param string|int|float|bool $v
+ * @param string|E $m [optional]
+ * @return string|int|float|bool
+ * @throws DFE
+ */
+function ju_assert_ne($neResult, $v, $m = null) {return $neResult !== $v ? $v : ju_error($m ?:
+	"The value {$v} is rejected, any other is allowed."
+);}
+
+/**
+ * 2020-06-22 "Port the `df_assert_sne` function": https://github.com/justuno-com/core/issues/115
  * @used-by ju_file_name()
  * @param string $v
  * @param int $sl [optional]

@@ -117,7 +117,7 @@ function ju_file_name($directory, $template, $ds = '-') { /** @var string $r */
 					$fileNameTemplateExploded[$secondFromLastPartIndex] =
 						implode('--', [$secondFromLastPart, '{ordering}'])
 					;
-					$template = df_assert_ne($template, implode('.', $fileNameTemplateExploded));
+					$template = ju_assert_ne($template, implode('.', $fileNameTemplateExploded));
 				}
 			}
 		}
