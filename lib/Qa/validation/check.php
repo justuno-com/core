@@ -5,4 +5,4 @@
  * @param string $v
  * @return bool
  */
-function ju_check_s($v) {return \Df\Zf\Validate\StringT::s()->isValid($v);}
+function ju_check_s($v) {return \Justuno\Core\Zf\Validate\StringT::s()->isValid($v);}
