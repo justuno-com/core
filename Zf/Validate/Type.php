@@ -18,7 +18,7 @@ abstract class Type extends \Justuno\Core\Zf\Validate {
 	/** @return string */
 	private function getDiagnosticMessageForNotNull() {return strtr(
 		'Unable to recognize the value «{value}» of type «{type}» as {expected type}.', [
-			'{value}' => df_string_debug($this->getValue()),
+			'{value}' => ju_string_debug($this->getValue()),
 			'{type}' => gettype($this->getValue()),
 			'{expected type}' => $this->getExpectedTypeInAccusativeCase()
 		]

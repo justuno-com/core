@@ -53,3 +53,28 @@ function ju_string($v) {
 	}
 	return strval($v);
 }
+
+/**
+ * 2020-06-20 "Port the `df_string_debug` function": https://github.com/justuno-com/core/issues/113
+ * @used-by \Justuno\Core\Zf\Validate\Type::getDiagnosticMessageForNotNull()
+ * @param mixed $v
+ * @return string
+ */
+function ju_string_debug($v) {
+	$r = ''; /** @var string $r */
+	if (is_object($v)) {
+		if (!method_exists($v, '__toString')) {
+			$r = get_class($v);
+		}
+	}
+	elseif (is_array($v)) {
+		$r = sprintf('<an array of %d elements>', count($v));
+	}
+	elseif (is_bool($v)) {
+		$r = $v ? 'logical <yes>' : 'logical <no>';
+	}
+	else {
+		$r = strval($v);
+	}
+	return $r;
+}
