@@ -14,6 +14,7 @@ class StringT extends Type implements \Zend_Filter_Interface {
 	/**
 	 * @override
 	 * @see \Zend_Validate_Interface::isValid()
+	 * @used-by ju_check_s()
 	 * @param mixed $v
 	 * @return bool
 	 */
