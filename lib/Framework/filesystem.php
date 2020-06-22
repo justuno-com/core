@@ -80,7 +80,7 @@ function ju_file_name($directory, $template, $ds = '-') { /** @var string $r */
 	if (ju_contains($template, '/')) {
 		$templateA = explode('/', $template); /** @var string[] $templateA */
 		$template = array_pop($templateA);
-		$directory = df_cc_path($directory, $templateA);
+		$directory = ju_cc_path($directory, $templateA);
 	}
 	$counter = 1; /** @var int $counter */
 	$hasOrderingPosition = ju_contains($template, '{ordering}');/** @var bool $hasOrderingPosition */
