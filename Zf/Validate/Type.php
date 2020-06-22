@@ -1,6 +1,6 @@
 <?php
 namespace Justuno\Core\Zf\Validate;
-// 2020-06-22 "Port the `Df\Zf\Validate\Type` function": https://github.com/justuno-com/core/issues/111
+// 2020-06-22 "Port the `Df\Zf\Validate\Type` class": https://github.com/justuno-com/core/issues/111
 abstract class Type extends \Df\Zf\Validate {
 	/** @return string */
 	abstract protected function getExpectedTypeInAccusativeCase();
