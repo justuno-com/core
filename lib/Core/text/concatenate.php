@@ -24,6 +24,7 @@ function ju_cc_path(...$args) {return ju_ccc('/', jua_flatten($args));}
  * 2020-06-18 "Port the `df_ccc` function": https://github.com/justuno-com/core/issues/57
  * @used-by ju_cc_n()
  * @used-by ju_cc_path()
+ * @used-by \Justuno\Core\Qa\Message::reportName()
  * @param string $glue
  * @param string|string[] ...$elements
  * @return string

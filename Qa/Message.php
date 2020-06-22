@@ -63,7 +63,7 @@ abstract class Message extends \Df\Core\OLegacy {
 	 * @return string
 	 */
 	protected function reportName() {return
-		'mage2.pro/' . df_ccc('-', $this->reportNamePrefix(), '{date}--{time}.log')
+		'mage2.pro/' . ju_ccc('-', $this->reportNamePrefix(), '{date}--{time}.log')
 	;}
 
 	/**
