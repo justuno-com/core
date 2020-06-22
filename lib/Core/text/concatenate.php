@@ -13,8 +13,17 @@
 function ju_cc_n(...$args) {return ju_ccc("\n", jua_flatten($args));}
 
 /**
+ * 2020-06-21 "Port the `df_cc_path` function": https://github.com/justuno-com/core/issues/103
+ * @used-by ju_file_name()
+ * @param string|string[] ...$args
+ * @return string
+ */
+function ju_cc_path(...$args) {return ju_ccc('/', jua_flatten($args));}
+
+/**
  * 2020-06-18 "Port the `df_ccc` function": https://github.com/justuno-com/core/issues/57
- * @used-by ju_cc_n
+ * @used-by ju_cc_n()
+ * @used-by ju_cc_path()
  * @param string $glue
  * @param string|string[] ...$elements
  * @return string
