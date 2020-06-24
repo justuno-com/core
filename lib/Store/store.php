@@ -12,6 +12,35 @@ use Magento\Store\Model\StoreManagerInterface as IStoreManager;
 use Magento\Store\Model\StoreResolver;
 
 /**
+ * 2015-02-04
+ * 2015-11-04
+ * By analogy with @see \Magento\Store\Model\StoreResolver::getCurrentStoreId()
+ * https://github.com/magento/magento2/blob/2.0.0/app/code/Magento/Store/Model/StoreResolver.php#L82
+ * 2020-06-24 "Port the `df_store` function": https://github.com/justuno-com/core/issues/122
+ * @used-by ju_store_url()
+ * @param int|string|null|bool|IStore|O $v [optional]
+ * @return IStore|Store
+ * @throws NSE|\Exception
+ */
+function ju_store($v = null) {/** @var string|null $c */return
+	!is_null($v) ? (df_is_o($v) ? $v->getStore() : (is_object($v) ? $v : df_store_m()->getStore($v))) :
+		df_store_m()->getStore(!is_null($c = df_request(StoreResolver::PARAM_NAME)) ? $c : (
+			// 2017-08-02
+			// The store ID specified in the current URL should have priority over the value from the cookie.
+			// Violating this rule led us to the following failure:
+			// https://github.com/mage2pro/markdown/issues/1
+			// Today I was saving a product in the backend, the URL looked like:
+			// https://site.com/admin/catalog/product/save/id/45/type/simple/store/0/set/20/key/<key>/back/edit
+			// But at the same time I had another store value in the cookie (a frontend store code).
+			!is_null($c = ju_request('store-view')) ? $c : (
+				df_is_backend() ? ju_request('store', 'admin') : (
+					!is_null($c = df_store_cookie_m()->getStoreCodeFromCookie()) ? $c : null
+				)
+			)
+		))
+;}
+
+/**
  * 2017-03-15 Returns an empty string if the store's root URL is absent in the Magento database.
  * 2020-06-24 "Port the `df_store_url` function": https://github.com/justuno-com/core/issues/121
  * @used-by ju_store_url_web()
@@ -19,7 +48,7 @@ use Magento\Store\Model\StoreResolver;
  * @param string $type
  * @return string
  */
-function ju_store_url($s, $type) {return df_store($s)->getBaseUrl($type);}
+function ju_store_url($s, $type) {return ju_store($s)->getBaseUrl($type);}
 
 /**
  * 2017-03-15 Returns an empty string if the store's root URL is absent in the Magento database.
