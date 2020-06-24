@@ -10,7 +10,7 @@ use Magento\Framework\App\Area as A;
  * @throws \Exception
  */
 function ju_area_code($throw = true) {
-	try {return df_app_state()->getAreaCode();}
+	try {return ju_app_state()->getAreaCode();}
 	catch (\Exception $e) {
 		if ($throw) {
 			throw $e;
