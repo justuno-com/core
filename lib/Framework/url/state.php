@@ -16,8 +16,8 @@ use Magento\Store\Api\Data\StoreInterface as IStore;
  * @param bool $www [optional]
  * @return string|null
  */
-function ju_domain_current($s = null, $www = false) {return dfcf(function($s = null, $www = false) {return
-	!($base = df_store_url_web($s)) || !($r = df_domain($base, false)) ? null : (
+function ju_domain_current($s = null, $www = false) {return jucf(function($s = null, $www = false) {return
+	!($base = ju_store_url_web($s)) || !($r = df_domain($base, false)) ? null : (
 		$www ? $r : df_trim_text_left($r, 'www.')
 	)
 ;}, func_get_args());}
