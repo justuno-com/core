@@ -23,8 +23,8 @@ use Magento\Store\Model\StoreResolver;
  * @throws NSE|\Exception
  */
 function ju_store($v = null) {/** @var string|null $c */return
-	!is_null($v) ? (ju_is_o($v) ? $v->getStore() : (is_object($v) ? $v : df_store_m()->getStore($v))) :
-		df_store_m()->getStore(!is_null($c = df_request(StoreResolver::PARAM_NAME)) ? $c : (
+	!is_null($v) ? (ju_is_o($v) ? $v->getStore() : (is_object($v) ? $v : ju_store_m()->getStore($v))) :
+		ju_store_m()->getStore(!is_null($c = df_request(StoreResolver::PARAM_NAME)) ? $c : (
 			// 2017-08-02
 			// The store ID specified in the current URL should have priority over the value from the cookie.
 			// Violating this rule led us to the following failure:
@@ -39,6 +39,14 @@ function ju_store($v = null) {/** @var string|null $c */return
 			)
 		))
 ;}
+
+/**
+ * 2017-02-07
+ * 2020-06-24 "Port the `df_store_m` function": https://github.com/justuno-com/core/issues/124
+ * @used-by ju_store()
+ * @return IStoreManager|StoreManager
+ */
+function ju_store_m() {return df_o(IStoreManager::class);}
 
 /**
  * 2017-03-15 Returns an empty string if the store's root URL is absent in the Magento database.
