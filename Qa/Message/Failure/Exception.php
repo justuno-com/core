@@ -58,19 +58,19 @@ final class Exception extends \Justuno\Core\Qa\Message\Failure {
 
 	/**
 	 * @used-by e()
-	 * @used-by df_log_e()
+	 * @used-by ju_log_l()
 	 */
 	const P__EXCEPTION = 'exception';
 
 	/**
 	 * 2020-01-31
-	 * @used-by df_log_e()
+	 * @used-by ju_log_l()
 	 * @used-by reportNamePrefix()
 	 */
 	const P__REPORT_NAME_PREFIX = 'reportNamePrefix';
 
 	/**
-	 * @used-by df_log_e()
+	 * @used-by ju_log_l()
 	 * @param array(string => mixed) $p [optional]
 	 * @return self
 	 */
