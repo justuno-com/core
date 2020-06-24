@@ -16,5 +16,16 @@ use Zend_Uri_Http as zUriH;
  * @throws E|zUriE
  */
 function ju_domain($u, $www = false, $throw = true) {return
-	!($r = df_zuri($u, $throw)->getHost()) ? null : ($www ? $r : df_trim_text_left($r, 'www.'))
+	!($r = ju_zuri($u, $throw)->getHost()) ? null : ($www ? $r : df_trim_text_left($r, 'www.'))
 ;}
+
+/**
+ * 2016-05-30
+ * 2020-06-24 "Port the `df_zuri` function": https://github.com/justuno-com/core/issues/134
+ * @used-by ju_domain()
+ * @param string $u
+ * @param F|bool|mixed $throw [optional]
+ * @return zUri|zUriH|mixed
+ * @throws E|zUriE
+ */
+function ju_zuri($u, $throw = true) {return ju_try(function() use($u) {return zUri::factory($u);}, $throw);}
