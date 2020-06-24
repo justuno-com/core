@@ -24,7 +24,7 @@ use Magento\Store\Model\StoreResolver;
  */
 function ju_store($v = null) {/** @var string|null $c */return
 	!is_null($v) ? (ju_is_o($v) ? $v->getStore() : (is_object($v) ? $v : ju_store_m()->getStore($v))) :
-		ju_store_m()->getStore(!is_null($c = df_request(StoreResolver::PARAM_NAME)) ? $c : (
+		ju_store_m()->getStore(!is_null($c = ju_request(StoreResolver::PARAM_NAME)) ? $c : (
 			// 2017-08-02
 			// The store ID specified in the current URL should have priority over the value from the cookie.
 			// Violating this rule led us to the following failure:
