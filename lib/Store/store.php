@@ -46,7 +46,7 @@ function ju_store($v = null) {/** @var string|null $c */return
  * @used-by ju_store()
  * @return IStoreManager|StoreManager
  */
-function ju_store_m() {return df_o(IStoreManager::class);}
+function ju_store_m() {return ju_o(IStoreManager::class);}
 
 /**
  * 2017-03-15 Returns an empty string if the store's root URL is absent in the Magento database.
