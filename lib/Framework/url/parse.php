@@ -16,7 +16,7 @@ use Zend_Uri_Http as zUriH;
  * @throws E|zUriE
  */
 function ju_domain($u, $www = false, $throw = true) {return
-	!($r = ju_zuri($u, $throw)->getHost()) ? null : ($www ? $r : df_trim_text_left($r, 'www.'))
+	!($r = ju_zuri($u, $throw)->getHost()) ? null : ($www ? $r : ju_trim_text_left($r, 'www.'))
 ;}
 
 /**
