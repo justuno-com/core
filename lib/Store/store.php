@@ -34,7 +34,7 @@ function ju_store($v = null) {/** @var string|null $c */return
 			// But at the same time I had another store value in the cookie (a frontend store code).
 			!is_null($c = ju_request('store-view')) ? $c : (
 				ju_is_backend() ? ju_request('store', 'admin') : (
-					!is_null($c = df_store_cookie_m()->getStoreCodeFromCookie()) ? $c : null
+					!is_null($c = ju_store_cookie_m()->getStoreCodeFromCookie()) ? $c : null
 				)
 			)
 		))
