@@ -3,6 +3,7 @@ use Justuno\Core\Qa\Dumper;
 
 /**
  * 2020-06-18 "Port the `df_dump` function": https://github.com/justuno-com/core/issues/81
+ * @used-by ju_sentry()
  * @used-by ju_type()
  * @param \Magento\Framework\DataObject|mixed[]|mixed $v
  * @return string

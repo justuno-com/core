@@ -19,11 +19,11 @@ use Magento\User\Model\User;
  */
 function ju_sentry($m, $v, array $context = []) {
 	static $domainsToSkip = []; /** @var string[] $domainsToSkip */
-	if ($v instanceof E || !in_array(df_domain_current(), $domainsToSkip)) {
+	if ($v instanceof E || !in_array(ju_domain_current(), $domainsToSkip)) {
 		$m = df_sentry_module($m);
 		static $d; /** @var array(string => mixed) $d */
 		$d = $d ?: ['extra' => [], 'fingerprint' => [
-			df_core_version(), df_domain_current(), df_magento_version(), df_package_version($m), df_store_code()
+			df_core_version(), ju_domain_current(), df_magento_version(), df_package_version($m), df_store_code()
 		]];
 		// 2017-01-09
 		if ($v instanceof DFE) {
@@ -35,10 +35,10 @@ function ju_sentry($m, $v, array $context = []) {
 			df_sentry_m($m)->captureException($v, $context);
 		}
 		else {
-			$v = df_dump($v);
+			$v = ju_dump($v);
 			// 2016-12-22 https://docs.sentry.io/clients/php/usage/#reporting-other-errors
 			df_sentry_m($m)->captureMessage($v, [], [
-				'fingerprint' => array_merge(dfa($context, 'fingerprint', []), [$v])
+				'fingerprint' => array_merge(jua($context, 'fingerprint', []), [$v])
 				,'level' => Sentry::DEBUG
 			] + $context);
 		}
