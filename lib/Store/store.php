@@ -14,8 +14,7 @@ use Magento\Store\Model\StoreResolver;
 /**
  * 2017-03-15 Returns an empty string if the store's root URL is absent in the Magento database.
  * 2020-06-24 "Port the `df_store_url` function": https://github.com/justuno-com/core/issues/121
- * @used-by df_store_url_link()
- * @used-by df_store_url_web()
+ * @used-by ju_store_url_web()
  * @param int|string|null|bool|IStore $s
  * @param string $type
  * @return string
@@ -25,7 +24,7 @@ function ju_store_url($s, $type) {return df_store($s)->getBaseUrl($type);}
 /**
  * 2017-03-15 Returns an empty string if the store's root URL is absent in the Magento database.
  * 2020-06-24 "Port the `df_store_url_web` function": https://github.com/justuno-com/core/issues/120
- * @used-by df_domain_current()
+ * @used-by ju_domain_current()
  * @param int|string|null|bool|IStore $s [optional]
  * @return string
  */
