@@ -35,4 +35,4 @@ function ju_area_code_is(...$values) {return ($a = ju_area_code(false)) && in_ar
  * @used-by ju_store()
  * @return bool
  */
-function ju_is_backend() {return ju_area_code_is(A::AREA_ADMINHTML) || ju_is_ajax() && df_backend_user();}
+function ju_is_backend() {return ju_area_code_is(A::AREA_ADMINHTML) || ju_is_ajax() && ju_backend_user();}
