@@ -14,7 +14,7 @@
  * 1) a module name: «A_B»
  * 2) a class name: «A\B\C».
  * 3) an object: it comes down to the case 2 via @see get_class()
- * 4) `null`: it comes down to the case 1 with the «Df_Core» module name.
+ * 4) `null`: it comes down to the case 1 with the «Justuno_Core» module name.
  *
  * 2020-06-26 "Port the `ju_module_name` function": https://github.com/justuno-com/core/issues/138
  *
