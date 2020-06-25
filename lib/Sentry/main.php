@@ -52,4 +52,4 @@ function ju_sentry($m, $v, array $context = []) {
  * @param string|object|null $m [optional]
  * @return string
  */
-function ju_sentry_module($m = null) {return !$m ? 'Justuno_Core' : df_module_name($m);}
+function ju_sentry_module($m = null) {return !$m ? 'Justuno_Core' : ju_module_name($m);}
