@@ -19,6 +19,7 @@ use Justuno\Core\Qa\Method as Q;
  *		}
  * https://github.com/mage2pro/core/blob/5.5.7/Core/Exception.php#L61-L67
  * 2020-06-17 "Port the `df_assert` function": https://github.com/justuno-com/core/issues/33
+ * @used-by ju_module_dir()
  * @used-by juaf()
  * @param mixed $cond
  * @param string|E|null $m [optional]
