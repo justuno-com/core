@@ -25,4 +25,4 @@
  */
 function ju_module_name($c = null, $del = '_') {return jucf(function($c, $del) {return implode($del, array_slice(
 	ju_explode_class($c), 0, 2
-));}, [$c ? df_cts($c) : 'Justuno\Core', $del]);}
+));}, [$c ? ju_cts($c) : 'Justuno\Core', $del]);}
