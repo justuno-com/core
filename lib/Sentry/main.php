@@ -20,7 +20,7 @@ use Magento\User\Model\User;
 function ju_sentry($m, $v, array $context = []) {
 	static $domainsToSkip = []; /** @var string[] $domainsToSkip */
 	if ($v instanceof E || !in_array(ju_domain_current(), $domainsToSkip)) {
-		$m = df_sentry_module($m);
+		$m = ju_sentry_module($m);
 		static $d; /** @var array(string => mixed) $d */
 		$d = $d ?: ['extra' => [], 'fingerprint' => [
 			df_core_version(), ju_domain_current(), df_magento_version(), df_package_version($m), df_store_code()
@@ -44,3 +44,12 @@ function ju_sentry($m, $v, array $context = []) {
 		}
 	}
 }
+
+/**
+ * 2017-03-15
+ * 2020-06-25 "Port the `df_sentry_module` function": https://github.com/justuno-com/core/issues/137
+ * @used-by ju_sentry()
+ * @param string|object|null $m [optional]
+ * @return string
+ */
+function ju_sentry_module($m = null) {return !$m ? 'Justuno_Core' : df_module_name($m);}
