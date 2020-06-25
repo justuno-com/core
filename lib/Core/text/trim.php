@@ -51,6 +51,7 @@ function ju_trim_right($s, $charlist = null) {return rtrim($s, $charlist ?: " \t
  * 2016-10-28
  * 2020-06-25 "Port the `df_trim_text_a` function": https://github.com/justuno-com/core/issues/136
  * @used-by ju_trim_text_left()
+ * @used-by ju_trim_text_right()
  * @param string $s
  * @param string[] $trimA
  * @param callable $f
@@ -78,4 +79,17 @@ function ju_trim_text_a($s, array $trimA, callable $f) {
  */
 function ju_trim_text_left($s, $trim) {return is_array($trim) ? ju_trim_text_a($s, $trim, __FUNCTION__) : (
 	$trim === mb_substr($s, 0, $l = mb_strlen($trim)) ? mb_substr($s, $l) : $s
+);}
+
+/**
+ * It chops the $trim ending from the $s string.
+ * 2016-10-28 It now supports multiple $trim.
+ * 2020-06-26 "Port the `df_trim_text_right` function": https://github.com/justuno-com/core/issues/142
+ * @used-by ju_cts()
+ * @param string $s
+ * @param string|string[] $trim
+ * @return string
+ */
+function ju_trim_text_right($s, $trim) {return is_array($trim) ? ju_trim_text_a($s, $trim, __FUNCTION__) : (
+	0 !== ($l = mb_strlen($trim)) && $trim === mb_substr($s, -$l) ? mb_substr($s, 0, -$l) : $s
 );}

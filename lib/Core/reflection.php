@@ -17,7 +17,7 @@ use ReflectionClass as RC;
  * @return string
  */
 function ju_cts($c, $del = '\\') {/** @var string $r */
-	$r = df_trim_text_right(is_object($c) ? get_class($c) : ltrim($c, '\\'), '\Interceptor');
+	$r = ju_trim_text_right(is_object($c) ? get_class($c) : ltrim($c, '\\'), '\Interceptor');
 	return '\\' === $del ? $r : str_replace('\\', $del, $r);
 }
 
