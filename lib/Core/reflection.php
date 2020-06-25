@@ -9,4 +9,4 @@ use ReflectionClass as RC;
  * @param string|object $c
  * @return string[]
  */
-function ju_explode_class($c) {return df_explode_multiple(['\\', '_'], df_cts($c));}
+function ju_explode_class($c) {return ju_explode_multiple(['\\', '_'], df_cts($c));}
