@@ -48,12 +48,32 @@ function ju_trim($s, $charlist = null, $throw = false) {return ju_try(function()
 function ju_trim_right($s, $charlist = null) {return rtrim($s, $charlist ?: " \t\n\r\0\x0B");}
 
 /**
+ * 2016-10-28
+ * 2020-06-25 "Port the `df_trim_text_a` function": https://github.com/justuno-com/core/issues/136
+ * @used-by ju_trim_text_left()
+ * @param string $s
+ * @param string[] $trimA
+ * @param callable $f
+ * @return string
+ */
+function ju_trim_text_a($s, array $trimA, callable $f) {
+	$r = $s; /** @var string $r */
+	$l = mb_strlen($r); /** @var int $l */
+	foreach ($trimA as $trim) {/** @var string $trim */
+		if ($l !== mb_strlen($r = call_user_func($f, $r, $trim))) {
+			break;
+		}
+	}
+	return $r;
+}
+
+/**
  * 2020-06-24 "Port the `df_trim_text_left` function": https://github.com/justuno-com/core/issues/135
  * @used-by ju_domain()
  * @param string $s
  * @param string|string[] $trim
  * @return string
  */
-function ju_trim_text_left($s, $trim) {return is_array($trim) ? df_trim_text_a($s, $trim, __FUNCTION__) : (
+function ju_trim_text_left($s, $trim) {return is_array($trim) ? ju_trim_text_a($s, $trim, __FUNCTION__) : (
 	$trim === mb_substr($s, 0, $l = mb_strlen($trim)) ? mb_substr($s, $l) : $s
 );}
