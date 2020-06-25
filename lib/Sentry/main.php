@@ -23,7 +23,7 @@ function ju_sentry($m, $v, array $context = []) {
 		$m = ju_sentry_module($m);
 		static $d; /** @var array(string => mixed) $d */
 		$d = $d ?: ['extra' => [], 'fingerprint' => [
-			df_core_version(), ju_domain_current(), df_magento_version(), df_package_version($m), df_store_code()
+			ju_core_version(), ju_domain_current(), df_magento_version(), df_package_version($m), df_store_code()
 		]];
 		// 2017-01-09
 		if ($v instanceof DFE) {
