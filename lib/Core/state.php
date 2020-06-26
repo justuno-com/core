@@ -27,8 +27,7 @@ function ju_is_ajax() {static $r; return !is_null($r) ? $r : $r = ju_request_o()
  * 2) Now Magento 2.3 (installed with Git) returns the «dev-2.3-develop» string from the
  * @see \Magento\Framework\App\ProductMetadata::getVersion() method.
  * 2020-06-26 "Port the `df_magento_version` function": https://github.com/justuno-com/core/issues/153
- * @used-by df_log_l()
- * @used-by df_sentry()
+ * @used-by ju_sentry()
  */
 function ju_magento_version() {return jucf(function() {return ju_trim_text_left(
 	df_magento_version_m()->getVersion()
