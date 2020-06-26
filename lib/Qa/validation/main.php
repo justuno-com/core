@@ -31,6 +31,7 @@ function ju_assert($cond, $m = null) {return $cond ?: ju_error($m);}
 /**
  * 2020-06-22 "Port the `df_assert_ne` function": https://github.com/justuno-com/core/issues/116
  * @used-by ju_file_name()
+ * @used-by ju_json_decode()
  * @param string|int|float|bool $neResult
  * @param string|int|float|bool $v
  * @param string|E $m [optional]

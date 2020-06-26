@@ -33,7 +33,7 @@ function ju_package($m = null, $k = null, $d = null) {
 			$packagePath = dirname($packagePath);
 		}
 		$filePath = "$packagePath/composer.json"; /** @var string $filePath */
-		$cache[$m] = !file_exists($filePath) ? [] : df_json_decode(file_get_contents($filePath));
+		$cache[$m] = !file_exists($filePath) ? [] : ju_json_decode(file_get_contents($filePath));
 	}
 	return jua($cache[$m], $k, $d);
 }
