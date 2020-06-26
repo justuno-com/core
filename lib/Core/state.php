@@ -18,3 +18,18 @@ function ju_app_state() {return ju_o(State::class);}
  * @return bool
  */
 function ju_is_ajax() {static $r; return !is_null($r) ? $r : $r = ju_request_o()->isXmlHttpRequest();}
+
+/**
+ * 2016-06-25 https://mage2.pro/t/543
+ * 2018-04-17
+ * 1) «Magento 2.3 has removed its version information from the `composer.json` files since 2018-04-05»:
+ * https://mage2.pro/t/5480
+ * 2) Now Magento 2.3 (installed with Git) returns the «dev-2.3-develop» string from the
+ * @see \Magento\Framework\App\ProductMetadata::getVersion() method.
+ * 2020-06-26 "Port the `df_magento_version` function": https://github.com/justuno-com/core/issues/153
+ * @used-by df_log_l()
+ * @used-by df_sentry()
+ */
+function ju_magento_version() {return jucf(function() {return ju_trim_text_left(
+	df_magento_version_m()->getVersion()
+, 'dev-');});}

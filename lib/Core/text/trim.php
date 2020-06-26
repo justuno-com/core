@@ -73,6 +73,7 @@ function ju_trim_text_a($s, array $trimA, callable $f) {
  * 2016-10-28 It now supports multiple $trim.
  * 2020-06-24 "Port the `df_trim_text_left` function": https://github.com/justuno-com/core/issues/135
  * @used-by ju_domain()
+ * @used-by ju_magento_version()
  * @param string $s
  * @param string|string[] $trim
  * @return string
