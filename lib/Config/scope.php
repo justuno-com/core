@@ -52,7 +52,15 @@ use Magento\Store\Model\Store;
  */
 function ju_scope_code($scope = null, $scopeType = SS::SCOPE_STORE) {
 	if (($scope === null || is_numeric($scope)) && $scopeType !== IScopeConfig::SCOPE_TYPE_DEFAULT) {
-		$scope = df_scope_resolver_pool()->get($scopeType)->getScope($scope);
+		$scope = ju_scope_resolver_pool()->get($scopeType)->getScope($scope);
 	}
 	return $scope instanceof ScopeA ? $scope->getCode() : $scope;
 }
+
+/**
+ * 2016-12-16
+ * 2020-06-26 "Port the `df_scope_resolver_pool` function": https://github.com/justuno-com/core/issues/157
+ * @used-by ju_scope_code()
+ * @return ScopeResolverPool
+ */
+function ju_scope_resolver_pool() {return ju_o(ScopeResolverPool::class);}
