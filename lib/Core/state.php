@@ -30,5 +30,13 @@ function ju_is_ajax() {static $r; return !is_null($r) ? $r : $r = ju_request_o()
  * @used-by ju_sentry()
  */
 function ju_magento_version() {return jucf(function() {return ju_trim_text_left(
-	df_magento_version_m()->getVersion()
+	ju_magento_version_m()->getVersion()
 , 'dev-');});}
+
+/**
+ * 2016-06-25
+ * 2020-06-26 "Port the `df_magento_version_m` function": https://github.com/justuno-com/core/issues/154
+ * @used-by ju_magento_version()
+ * @return ProductMetadata|ProductMetadataInterface
+ */
+function ju_magento_version_m() {return ju_o(ProductMetadataInterface::class);}
