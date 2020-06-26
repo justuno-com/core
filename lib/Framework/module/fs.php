@@ -63,6 +63,14 @@ function ju_module_dir($m, $type = '') {
 }
 
 /**
+ * 2019-12-31
+ * 2020-06-26 "Port the `df_module_dir_reader` function": https://github.com/justuno-com/core/issues/148
+ * @used-by ju_module_dir()
+ * @return Reader
+ */
+function ju_module_dir_reader() {return ju_o(Reader::class);}
+
+/**
  * 2015-11-15
  * 2015-09-02
  * @uses df_module_dir() and indirectly called @see \Magento\Framework\Module\Dir\Reader::getModuleDir()
@@ -81,11 +89,3 @@ function ju_module_dir($m, $type = '') {
  * @throws \InvalidArgumentException
  */
 function ju_module_path($m, $localPath = '') {return ju_cc_path(ju_module_dir($m), $localPath);}
-
-/**
- * 2019-12-31
- * 2020-06-26 "Port the `df_module_dir_reader` function": https://github.com/justuno-com/core/issues/148
- * @used-by ju_module_dir()
- * @return Reader
- */
-function ju_module_dir_reader() {return ju_o(Reader::class);}
