@@ -1,4 +1,6 @@
 <?php
+use Justuno\Core\Helper\Text;
+
 /**
  * 2020-06-18 "Port the `df_bts` function": https://github.com/justuno-com/core/issues/83
  * @used-by \Justuno\Core\Qa\Dumper::dump()
@@ -78,3 +80,10 @@ function ju_string_debug($v) {
 	}
 	return $r;
 }
+
+/**
+ * 2020-06-26 "Port the `df_t` function": https://github.com/justuno-com/core/issues/159
+ * @used-by ju_extend()
+ * @return Text
+ */
+function ju_t() {return Text::s();}

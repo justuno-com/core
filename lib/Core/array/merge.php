@@ -39,7 +39,7 @@ function ju_extend(array $defaults, array $newValues) {/** @var array(string => 
 						. ' with the value {newValue} of type «{newType}».'
 						. "\nThe new value should be an array or `null`."
 						,[
-							'{defaultValue}' => df_t()->singleLine(ju_dump($defaultValue))
+							'{defaultValue}' => ju_t()->singleLine(ju_dump($defaultValue))
 							,'{newType}' => gettype($newValue)
 							,'{newValue}' => ju_dump($newValue)
 						]
