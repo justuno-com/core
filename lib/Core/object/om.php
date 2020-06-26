@@ -7,6 +7,7 @@ use Magento\Framework\ObjectManagerInterface as IOM;
  * @used-by ju_app_state()
  * @used-by ju_backend_session()
  * @used-by ju_fs()
+ * @used-by ju_module_dir_reader()
  * @used-by ju_request_o()
  * @used-by ju_store_cookie_m()
  * @used-by ju_store_m()
