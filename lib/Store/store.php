@@ -47,7 +47,7 @@ function ju_store($v = null) {/** @var string|null $c */return
  * @param null|string|int|IScope $s [optional]
  * @return string
  */
-function ju_store_code($s = null) {return df_scope_code($s);}
+function ju_store_code($s = null) {return ju_scope_code($s);}
 
 /**
  * 2017-02-07
