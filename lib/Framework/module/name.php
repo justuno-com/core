@@ -18,6 +18,7 @@
  *
  * 2020-06-26 "Port the `ju_module_name` function": https://github.com/justuno-com/core/issues/138
  *
+ * @used-by ju_module_dir()
  * @used-by ju_package()
  * @used-by ju_sentry_module()
  * @param string|object|null $c [optional]

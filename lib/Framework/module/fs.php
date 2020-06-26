@@ -51,7 +51,7 @@ use Magento\Framework\Module\Dir\Reader;
  * @throws \InvalidArgumentException
  */
 function ju_module_dir($m, $type = '') {
-	if ('Magento_Framework' !== ($m = df_module_name($m))) {
+	if ('Magento_Framework' !== ($m = ju_module_name($m))) {
 		$r = df_module_dir_reader()->getModuleDir($type, $m);
 	}
 	else {
