@@ -1,7 +1,7 @@
 <?php
-use Df\Core\Exception as DFE;
 use Df\Sentry\Client as Sentry;
 use Exception as E;
+use Justuno\Core\Exception as DFE;
 use Magento\Framework\DataObject as _DO;
 use Magento\User\Model\User;
 /**
