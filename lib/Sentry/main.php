@@ -27,9 +27,9 @@ function ju_sentry($m, $v, array $context = []) {
 		]];
 		// 2017-01-09
 		if ($v instanceof DFE) {
-			$context = df_extend($context, $v->sentryContext());
+			$context = ju_extend($context, $v->sentryContext());
 		}
-		$context = df_extend($d, $context);
+		$context = ju_extend($d, $context);
 		if ($v instanceof E) {
 			// 2016-12-22 https://docs.sentry.io/clients/php/usage/#reporting-exceptions
 			df_sentry_m($m)->captureException($v, $context);
