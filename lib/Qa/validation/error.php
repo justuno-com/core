@@ -12,6 +12,7 @@ use Magento\Framework\Phrase;
  * @used-by ju_extend()
  * @used-by ju_file_name()
  * @used-by ju_json_decode()
+ * @used-by ju_sentry_m()
  * @used-by ju_sprintf_strict()
  * @used-by ju_string()
  * @used-by ju_try()

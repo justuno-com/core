@@ -28,6 +28,8 @@ function ju_is_ajax() {static $r; return !is_null($r) ? $r : $r = ju_request_o()
  * @see \Magento\Framework\App\ProductMetadata::getVersion() method.
  * 2020-06-26 "Port the `df_magento_version` function": https://github.com/justuno-com/core/issues/153
  * @used-by ju_sentry()
+ * @used-by ju_sentry_m()
+ * @return string
  */
 function ju_magento_version() {return jucf(function() {return ju_trim_text_left(
 	ju_magento_version_m()->getVersion()

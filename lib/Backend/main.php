@@ -17,6 +17,7 @@ function ju_backend_session() {return ju_o(SessionB::class);}
  * 2016-12-23
  * 2020-06-24 "Port the `df_backend_user` function": https://github.com/justuno-com/core/issues/130
  * @used-by ju_is_backend()
+ * @used-by ju_sentry_m()
  * @return User|null
  */
 function ju_backend_user() {return ju_backend_session()->getUser();}
