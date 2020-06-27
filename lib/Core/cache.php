@@ -5,6 +5,7 @@ use Justuno\Core\RAM;
  * @used-by ju_core_version()
  * @used-by ju_domain_current()
  * @used-by ju_magento_version()
+ * @used-by ju_module_file()
  * @used-by ju_module_name()
  * @used-by ju_o()
  * @param \Closure $f
