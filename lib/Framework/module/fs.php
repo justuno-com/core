@@ -45,6 +45,7 @@ use Magento\Framework\Module\Dir\Reader;
  * 2020-06-26 "Port the `df_module_dir` function": https://github.com/justuno-com/core/issues/147
  *
  * @used-by ju_module_path()
+ * @used-by ju_module_path_etc()
  * @param string|object|null $m
  * @param string $type [optional]
  * @return string
@@ -71,9 +72,50 @@ function ju_module_dir($m, $type = '') {
 function ju_module_dir_reader() {return ju_o(Reader::class);}
 
 /**
+ * 2017-09-01
+ * $m could be:
+ * 1) a module name: «A_B»
+ * 2) a class name: «A\B\C».
+ * 3) an object: it comes down to the case 2 via @see get_class()
+ * 4) `null`: it comes down to the case 1 with the «Justuno_Core» module name.
+ * 2020-06-27 "Port the `df_module_file` function": https://github.com/justuno-com/core/issues/163
+ * @used-by ju_module_json()
+ * @param string|object|null $m
+ * @param string $name
+ * @param string $ext
+ * @param bool $req
+ * @param \Closure $parser
+ * @return array(string => mixed)
+ */
+function ju_module_file($m, $name, $ext, $req, \Closure $parser) {return jucf(
+	function($m, $name, $ext, $req, $parser) {return
+		file_exists($f = ju_module_path_etc($m, "$name.$ext")) ? $parser($f) :
+			(!$req ? [] : ju_error('The required file «%1» is absent.', $f))
+	;}, func_get_args()
+);}
+
+/**
+ * 2017-01-27
+ * $m could be:
+ * 1) a module name: «A_B»
+ * 2) a class name: «A\B\C».
+ * 3) an object: it comes down to the case 2 via @see get_class()
+ * 4) `null`: it comes down to the case 1 with the «Justuno_Core» module name.
+ * 2020-06-27 "Port the `df_module_json` function": https://github.com/justuno-com/core/issues/162
+ * @used-by ju_sentry_m()
+ * @param string|object|null $m
+ * @param string $name
+ * @param bool $req [optional]
+ * @return array(string => mixed)
+ */
+function ju_module_json($m, $name, $req = true) {return ju_module_file($m, $name, 'json', $req, function($f) {return
+	ju_json_decode(file_get_contents($f)
+);});}
+
+/**
  * 2015-11-15
  * 2015-09-02
- * @uses df_module_dir() and indirectly called @see \Magento\Framework\Module\Dir\Reader::getModuleDir()
+ * @uses ju_module_dir() and indirectly called @see \Magento\Framework\Module\Dir\Reader::getModuleDir()
  * use `/` insteads @see DIRECTORY_SEPARATOR as a path separator, so I use `/` too.
  * 2016-11-17
  * $m could be:
@@ -89,3 +131,23 @@ function ju_module_dir_reader() {return ju_o(Reader::class);}
  * @throws \InvalidArgumentException
  */
 function ju_module_path($m, $localPath = '') {return ju_cc_path(ju_module_dir($m), $localPath);}
+
+/**
+ * 2016-07-19
+ * 2015-09-02
+ * @uses ju_module_dir() and indirectly called @see \Magento\Framework\Module\Dir\Reader::getModuleDir()
+ * use `/` insteads @see DIRECTORY_SEPARATOR as the path separator, so I use `/` too.
+ * 2016-11-17
+ * $m could be:
+ * 1) a module name: «A_B»
+ * 2) a class name: «A\B\C».
+ * 3) an object: it comes down to the case 2 via @see get_class()
+ * 4) `null`: it comes down to the case 1 with the «Justuno_Core» module name.
+ * 2020-06-27 "Port the `df_module_path_etc` function": https://github.com/justuno-com/core/issues/164
+ * @used-by ju_module_file()
+ * @param string|object|null $m
+ * @param string $localPath [optional]
+ * @return string
+ * @throws \InvalidArgumentException
+ */
+function ju_module_path_etc($m, $localPath = '') {return ju_cc_path(ju_module_dir($m, Dir::MODULE_ETC_DIR), $localPath);}

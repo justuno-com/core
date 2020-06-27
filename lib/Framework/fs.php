@@ -222,47 +222,6 @@ function ju_fs() {return ju_o(Filesystem::class);}
 function ju_fs_w($type) {return ju_fs()->getDirectoryWrite($type);}
 
 /**
- * 2017-09-01
- * $m could be:
- * 1) a module name: «A_B»
- * 2) a class name: «A\B\C».
- * 3) an object: it comes down to the case 2 via @see get_class()
- * 4) `null`: it comes down to the case 1 with the «Justuno_Core» module name.
- * 2020-06-27 "Port the `df_module_file` function": https://github.com/justuno-com/core/issues/163
- * @used-by ju_module_json()
- * @param string|object|null $m
- * @param string $name
- * @param string $ext
- * @param bool $req
- * @param \Closure $parser
- * @return array(string => mixed)
- */
-function ju_module_file($m, $name, $ext, $req, \Closure $parser) {return jucf(
-	function($m, $name, $ext, $req, $parser) {return
-		file_exists($f = df_module_path_etc($m, "$name.$ext")) ? $parser($f) :
-			(!$req ? [] : ju_error('The required file «%1» is absent.', $f))
-	;}, func_get_args()
-);}
-
-/**
- * 2017-01-27
- * $m could be:
- * 1) a module name: «A_B»
- * 2) a class name: «A\B\C».
- * 3) an object: it comes down to the case 2 via @see get_class()
- * 4) `null`: it comes down to the case 1 with the «Justuno_Core» module name.
- * 2020-06-27 "Port the `df_module_json` function": https://github.com/justuno-com/core/issues/162
- * @used-by ju_sentry_m()
- * @param string|object|null $m
- * @param string $name
- * @param bool $req [optional]
- * @return array(string => mixed)
- */
-function ju_module_json($m, $name, $req = true) {return ju_module_file($m, $name, 'json', $req, function($f) {return
-	ju_json_decode(file_get_contents($f)
-);});}
-
-/**
  * 2020-06-15 "Port the `df_path_n` function": https://github.com/justuno-com/core/issues/26
  * @used-by ju_adjust_paths_in_message()
  * @used-by ju_file_name()
