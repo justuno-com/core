@@ -6,6 +6,7 @@ use Justuno\Core\Exception as DFE;
  * NULL is returned if the json cannot be decoded or if the encoded data is deeper than the recursion limit.»
  * http://php.net/manual/function.json-decode.php
  * 2020-06-26 "Port the `df_json_decode` function": https://github.com/justuno-com/core/issues/152
+ * @used-by ju_module_json()
  * @used-by ju_package()
  * @param string|null $s
  * @param bool $throw [optional]
