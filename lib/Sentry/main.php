@@ -101,8 +101,8 @@ function ju_sentry_m($m) {return dfcf(function($m) {
 			,'PHP' => phpversion()
 		]);
 	}
-	return $r ?: ($m !== 'Df_Core' ? ju_sentry_m('Df_Core') :
-		ju_error('Sentry settings for Df_Core are absent.')
+	return $r ?: ($m !== 'Justuno_Core' ? ju_sentry_m('Justuno_Core') :
+		ju_error('Sentry settings for Justuno_Core are absent.')
 	);
 }, [df_sentry_module($m)]);}
 
