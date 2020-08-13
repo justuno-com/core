@@ -70,7 +70,7 @@ function ju_sentry_m($m) {return jucf(function($m) {
 				'email' => $u->getEmail(), 'id' => $u->getId(), 'username' => $u->getUserName()
 			] : (!ju_is_frontend() ? [] : (($c = df_customer())
 				? ['email' => $c->getEmail(), 'id' => $c->getId(), 'username' => $c->getName()]
-				: ['id' => df_customer_session_id()]
+				: ['id' => ju_customer_session_id()]
 			))
 			)) + ['ip_address' => df_visitor_ip()], false);
 		$r->tags([
