@@ -1,5 +1,14 @@
 <?php
 /**
+ * 2020-01-29
+ * 2020-08-14 "Port the `df_etn` function" https://github.com/justuno-com/core/issues/181
+ * @used-by ju_customer_session_id()
+ * @param mixed $v
+ * @return mixed|null
+ */
+function ju_etn($v) {return $v ?: null;}
+
+/**
  * 2020-06-14 "Port the `df_nes` function": https://github.com/justuno-com/core/issues/19
  * @used-by jua_deep()
  * @param mixed $v

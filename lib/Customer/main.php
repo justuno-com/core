@@ -78,4 +78,4 @@
  * @used-by ju_sentry_m()
  * @return string|null
  */
-function ju_customer_session_id() {return df_etn(df_customer_session()->getSessionId());}
+function ju_customer_session_id() {return ju_etn(df_customer_session()->getSessionId());}
