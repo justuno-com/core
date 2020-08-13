@@ -63,10 +63,10 @@ final class Client {
 	 * Hieroglyphs (e.g. «歐付寶 O'Pay (allPay)») can not be used too:
 	 * it leads to the «Discarded invalid value for parameter 'tags'» error.
 	 * @used-by ju_sentry_tags()
-	 * @uses df_translit_url()
+	 * @uses ju_translit_url()
 	 * @param array(string => string) $a
 	 */
-	function tags(array $a) {$this->context->tags = juak_transform($a, 'df_translit_url') + $this->context->tags;}
+	function tags(array $a) {$this->context->tags = juak_transform($a, 'ju_translit_url') + $this->context->tags;}
 
 	/**
 	 * @used-by ju_sentry_m()
