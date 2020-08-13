@@ -69,9 +69,7 @@ final class Client {
 	function tags(array $a) {$this->context->tags = juak_transform($a, 'df_translit_url') + $this->context->tags;}
 
 	/**
-	 * @used-by df_sentry_m()
-	 * @used-by \Dfe\CheckoutCom\Controller\Index\Index::webhook()
-	 * @used-by \Df\Payment\W\Handler::log()
+	 * @used-by ju_sentry_m()
 	 * @param array(string => mixed) $data
 	 * @param bool $merge [optional]
 	 */
