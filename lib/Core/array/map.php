@@ -42,6 +42,7 @@ function ju_each($c, $f, ...$p) {return ju_map(function($v) use($f, $p) {return 
  * @used-by ju_clean_r()
  * @used-by ju_each()
  * @used-by ju_map_k()
+ * @used-by ju_map_kr()
  * @used-by ju_trim()
  * @param array|callable|\Traversable $a1
  * @param array|callable|\Traversable $a2
@@ -100,3 +101,14 @@ function ju_map($a1, $a2, $pAppend = [], $pPrepend = [], $keyPosition = 0, $retu
  * @return array(int|string => mixed)
  */
 function ju_map_k($a1, $a2) {return ju_map($a1, $a2, [], [], JU_BEFORE);}
+
+/**
+ * 2016-11-08
+ * 2020-08-13 "Port the `df_map_kr` function" https://github.com/justuno-com/core/issues/167
+ * @used-by juak_transform()
+ * @param array|callable|\Traversable $a1
+ * @param array|callable|\Traversable $a2
+ * @return array(int|string => mixed)
+ * @throws DFE
+ */
+function ju_map_kr($a1, $a2) {return ju_map($a1, $a2, [], [], DF_BEFORE, true);}
