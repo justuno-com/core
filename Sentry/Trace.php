@@ -47,7 +47,7 @@ final class Trace {
 				'context_line' => $serializer->serialize($context['line'])
 				,'filename' => ju_path_relative($context['filename'])
 				,'function' => jua($next, 'function')
-				,'in_app' => df_path_is_internal($file)
+				,'in_app' => ju_path_is_internal($file)
 				,'lineno' => (int) $context['lineno']
 				,'post_context' => $serializer->serialize($context['suffix'])
 				,'pre_context' => $serializer->serialize($context['prefix'])
