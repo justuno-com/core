@@ -6,8 +6,7 @@
  * df_csv_pretty(['aaa', 'bbb']) → 'aaa, bbb, ccc'
  * 2) "Port the `df_csv_pretty` function" https://github.com/justuno-com/core/issues/170
  * @see df_csv()
- * @used-by dfe_modules_log()
- * @used-by \Df\Sentry\Client::send()
+ * @used-by \Justuno\Core\Sentry\Client::send()
  * @param string ...$args
  * @return string
  */
