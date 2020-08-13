@@ -17,6 +17,9 @@ use Traversable as T;
  * @used-by \Justuno\Core\Sentry\Client::capture()
  * @used-by \Justuno\Core\Sentry\Client::captureException()
  * @used-by \Justuno\Core\Sentry\Client::needSkipFrame()
+ * @used-by \Justuno\Core\Sentry\Trace::get_default_context()
+ * @used-by \Justuno\Core\Sentry\Trace::get_frame_context()
+ * @used-by \Justuno\Core\Sentry\Trace::info()
  * @used-by \Justuno\Core\Zf\Validate::cfg()
  * @param array(int|string => mixed) $a
  * @param string|string[]|int|null $k

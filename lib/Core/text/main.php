@@ -16,6 +16,7 @@ function ju_bts($v) {return $v ? 'true' : 'false';}
  * @used-by ju_file_name()
  * @used-by ju_trim()
  * @used-by jua()
+ * @used-by \Justuno\Core\Sentry\Trace::get_frame_context()
  * @param string $haystack
  * @param string|string[] ...$n
  * @return bool

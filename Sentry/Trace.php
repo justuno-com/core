@@ -2,6 +2,7 @@
 namespace Justuno\Core\Sentry;
 use ReflectionFunction as RF;
 use ReflectionMethod as RM;
+# 2020-08-13 "Port the `Df\Sentry\Trace` class" https://github.com/justuno-com/core/issues/173
 final class Trace {
 	/**
 	 * 2020-06-27
@@ -45,7 +46,7 @@ final class Trace {
 			$data = [
 				'context_line' => $serializer->serialize($context['line'])
 				,'filename' => df_path_relative($context['filename'])
-				,'function' => dfa($next, 'function')
+				,'function' => jua($next, 'function')
 				,'in_app' => df_path_is_internal($file)
 				,'lineno' => (int) $context['lineno']
 				,'post_context' => $serializer->serialize($context['suffix'])
@@ -141,7 +142,7 @@ final class Trace {
 	private static function get_default_context($frame) {
 		$r = []; /** @var array(string => mixed) $r */
 		$i = 1; /** @var int $i */
-		foreach (dfa($frame, 'args', []) as $arg) {
+		foreach (jua($frame, 'args', []) as $arg) {
 			if (is_string($arg) || is_numeric($arg)) {
 				$arg = substr($arg, 0, Client::MESSAGE_LIMIT);
 			}
@@ -160,12 +161,12 @@ final class Trace {
 	private static function get_frame_context(array $frame) {
 		$r = []; /** @var array(string => mixed) $r */
 		if (isset($frame['args'])) {
-			$args = dfa($frame, 'args'); /** @var array $args */
-			$c = dfa($frame, 'class'); /** @var string|null $c */
-			$f = dfa($frame, 'function'); /** @var string|null $f */
+			$args = jua($frame, 'args'); /** @var array $args */
+			$c = jua($frame, 'class'); /** @var string|null $c */
+			$f = jua($frame, 'function'); /** @var string|null $f */
 			// The reflection API seems more appropriate if we associate it with the frame
 			// where the function is actually called (since we're treating them as function context)
-			if (!$f || df_contains($f, '__lambda_func') || 'Closure' === $c || df_ends_with($f, '{closure}')) {
+			if (!$f || ju_contains($f, '__lambda_func') || 'Closure' === $c || ju_ends_with($f, '{closure}')) {
 				$r = self::get_default_context($frame);
 			}
 			else if (in_array($f, ['include', 'include_once', 'require', 'require_once'])) {
