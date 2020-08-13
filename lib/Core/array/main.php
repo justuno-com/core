@@ -27,6 +27,7 @@ function ju_ita($t) {return is_array($t) ? $t : iterator_to_array($t);}
  * @used-by ju_cc_path()
  * @used-by ju_ccc()
  * @used-by ju_contains()
+ * @used-by ju_csv_pretty()
  * @used-by ju_explode_xpath()
  * @param array $a
  * @return mixed[]
