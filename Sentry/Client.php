@@ -79,7 +79,7 @@ final class Client {
 
 	/**
 	 * 2020-06-28
-	 * @used-by df_sentry()
+	 * @used-by ju_sentry()
 	 * @param E|DFE $e
 	 * @param array(string => mixed) $data
 	 */
@@ -131,7 +131,7 @@ final class Client {
 		];
 		// dont set this as an empty array as PHP will treat it as a numeric array
 		// instead of a mapping which goes against the defined Sentry spec
-		if (!empty($post = df_request_o()->getPost()->toArray())) {
+		if (!empty($post = ju_request_o()->getPost()->toArray())) {
 			$result['data'] = $post;
 		}
 		// 2017-01-03 Отсюда куки тоже нужно удалить, потому что Sentry пытается их отсюда взять.
@@ -193,30 +193,15 @@ final class Client {
 			,'tags' => $this->tags
 			,'timestamp' => gmdate('Y-m-d\TH:i:s\Z')
 		];
-		if (!df_is_cli()) {
+		if (!ju_is_cli()) {
 			$data += $this->get_http_data();
 		}
 		$data += $this->get_user_data();
-		/**
-		 * 2017-01-10
-		 * 1) $this->tags — это теги, которые были заданы в конструкторе:
-		 * @see \Justuno\Core\Sentry\Client::__construct()
-		 * Они имеют наинизший приоритет.
-		 * 2) Намеренно использую здесь + вместо @see df_extend(),
-		 * потому что массив tags должен быть одномерным (и поэтому для него + достаточно),
-		 * а массив extra хоть и может быть многомерен, однако вряд ли для нас имеет смысл
-		 * слияние его элементов на внутренних уровнях вложенности.
-		 */
 		$data['tags'] += $this->context->tags + $this->tags;
 		/** @var array(string => mixed) $extra */
 		$extra = $data['extra'] + $this->context->extra + $this->extra_data;
-		// 2017-01-03
-		// Этот полный JSON в конце массива может быть обрублен в интерфейсе Sentry
-		// (и, соответственно, так же обрублен при просмотре события в формате JSON
-		// по ссылке в шапке экрана события в Sentry),
-		// однако всё равно удобно видеть данные в JSON, пусть даже в обрубленном виде.
-		$data['extra'] = Extra::adjust($extra) + ['_json' => df_json_encode($extra)];
-		$data = df_clean($data);
+		$data['extra'] = Extra::adjust($extra) + ['_json' => ju_json_encode($extra)];
+		$data = ju_clean($data);
 		if ($trace && !isset($data['stacktrace']) && !isset($data['exception'])) {
 			$data['stacktrace'] = ['frames' => Trace::info($trace)];
 		}
@@ -232,7 +217,7 @@ final class Client {
 	 * @return string
 	 */
 	private function encode(&$data) {
-		$r = df_json_encode($data);
+		$r = ju_json_encode($data);
 		if (function_exists('gzcompress')) {
 			$r = gzcompress($r);
 		}
@@ -251,7 +236,7 @@ final class Client {
 		$this->send_http("https://$domain/api/{$this->_projectId}/store/", $this->encode($data), [
 			'Content-Type' => 'application/octet-stream'
 			,'User-Agent' => $this->getUserAgent()
-			,'X-Sentry-Auth' => 'Sentry ' . df_csv_pretty(df_map_k(df_clean([
+			,'X-Sentry-Auth' => 'Sentry ' . df_csv_pretty(ju_map_k(ju_clean([
 				'sentry_timestamp' => sprintf('%F', microtime(true))
 				,'sentry_client' => $this->getUserAgent()
 				,'sentry_version' => self::PROTOCOL
