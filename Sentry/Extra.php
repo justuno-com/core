@@ -1,7 +1,8 @@
 <?php
-// 2017-01-03
-// https://forum.sentry.io/t/694
-// https://docs.sentry.io/learn/quotas/#attributes-limits
+# 2017-01-03
+# https://forum.sentry.io/t/694
+# https://docs.sentry.io/learn/quotas/#attributes-limits
+# 2020-08-13 "Port the `Df\Sentry\Extra` class" https://github.com/justuno-com/core/issues/172
 namespace Justuno\Core\Sentry;
 final class Extra {
 	/**
