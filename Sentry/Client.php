@@ -235,7 +235,7 @@ final class Client {
 		$this->send_http("https://$domain/api/{$this->_projectId}/store/", $this->encode($data), [
 			'Content-Type' => 'application/octet-stream'
 			,'User-Agent' => $this->getUserAgent()
-			,'X-Sentry-Auth' => 'Sentry ' . df_csv_pretty(ju_map_k(ju_clean([
+			,'X-Sentry-Auth' => 'Sentry ' . ju_csv_pretty(ju_map_k(ju_clean([
 				'sentry_timestamp' => sprintf('%F', microtime(true))
 				,'sentry_client' => $this->getUserAgent()
 				,'sentry_version' => self::PROTOCOL
