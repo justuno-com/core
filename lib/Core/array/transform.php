@@ -5,7 +5,7 @@
  * 2020-02-04
  * It does not change keys of a non-associative array,
  * but it is applied recursively to nested arrays, so it could change keys their keys.
- * 2020-08-13 "Port the `dfak_transform` function": https://github.com/justuno-com/core/issues/166
+ * 2020-08-13 "Port the `dfak_transform` function" https://github.com/justuno-com/core/issues/166
  * @used-by juak_transform()
  * @used-by \Df\Framework\Request::extra()
  * @used-by \Justuno\Core\Sentry\Client::tags()
