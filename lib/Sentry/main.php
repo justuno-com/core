@@ -68,7 +68,7 @@ function ju_sentry_m($m) {return jucf(function($m) {
 		$r->user((ju_is_cli() ? ['username' => ju_cli_user()] : (
 			($u = ju_backend_user()) ? [
 				'email' => $u->getEmail(), 'id' => $u->getId(), 'username' => $u->getUserName()
-			] : (!df_is_frontend() ? [] : (($c = df_customer())
+			] : (!ju_is_frontend() ? [] : (($c = df_customer())
 				? ['email' => $c->getEmail(), 'id' => $c->getId(), 'username' => $c->getName()]
 				: ['id' => df_customer_session_id()]
 			))

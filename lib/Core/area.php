@@ -24,6 +24,7 @@ function ju_area_code($throw = true) {
  * 2017-04-02 «Area code is not set» on a df_area_code_is() call: https://mage2.pro/t/3581
  * 2020-06-24 "Port the `df_area_code_is` function": https://github.com/justuno-com/core/issues/126
  * @used-by ju_is_backend()
+ * @used-by ju_is_frontend()
  * @param string ...$values
  * @return bool
  */
@@ -36,3 +37,16 @@ function ju_area_code_is(...$values) {return ($a = ju_area_code(false)) && in_ar
  * @return bool
  */
 function ju_is_backend() {return ju_area_code_is(A::AREA_ADMINHTML) || ju_is_ajax() && ju_backend_user();}
+
+/**
+ * 2016-06-02 By analogy with @see ju_is_backend()
+ * 2016-09-30
+ * Today I have noticed that @uses \Magento\Framework\App\State::getAreaCode()
+ * returns @see \Magento\Framework\App\Area::AREA_WEBAPI_REST during a frontend payment.
+ * 2016-09-30
+ * The used constant is available since Magento 2.0.0:
+ * https://github.com/magento/magento2/blob/2.0.0/lib/internal/Magento/Framework/App/Area.php
+ * 2020-08-13 "Port the `df_is_frontend` function" https://github.com/justuno-com/core/issues/179
+ * @return bool
+ */
+function ju_is_frontend() {return ju_area_code_is(A::AREA_FRONTEND) || ju_is_ajax() && df_customer_session_id();}
