@@ -1,5 +1,6 @@
 <?php
 namespace Justuno\Core\Sentry;
+# 2020-08-13 "Port the `Df\Sentry\Context` class" https://github.com/justuno-com/core/issues/171
 class Context {
 	/**
 	 * 2020-06-27
