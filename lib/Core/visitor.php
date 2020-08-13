@@ -7,5 +7,5 @@ use Magento\Framework\HTTP\PhpEnvironment\RemoteAddress as RA;
  * @return string
  */
 function ju_visitor_ip() {
-	/** @var RA $a */ $a = ju_o(RA::class); return df_my_local() ? '92.243.166.8' : $a->getRemoteAddress();
+	/** @var RA $a */ $a = ju_o(RA::class); return ju_my_local() ? '92.243.166.8' : $a->getRemoteAddress();
 }

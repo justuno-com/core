@@ -8,6 +8,7 @@ use Justuno\Core\RAM;
  * @used-by ju_magento_version()
  * @used-by ju_module_file()
  * @used-by ju_module_name()
+ * @used-by ju_my_local()
  * @used-by ju_o()
  * @used-by ju_sentry_m()
  * @param \Closure $f

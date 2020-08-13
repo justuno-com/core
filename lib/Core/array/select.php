@@ -9,6 +9,7 @@ use Traversable as T;
  * @used-by ju_call()
  * @used-by ju_cli_argv()
  * @used-by ju_extend()
+ * @used-by ju_my_local()
  * @used-by ju_package()
  * @used-by ju_request()
  * @used-by ju_sentry()

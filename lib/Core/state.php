@@ -43,3 +43,21 @@ function ju_magento_version() {return jucf(function() {return ju_trim_text_left(
  * @return ProductMetadata|ProductMetadataInterface
  */
 function ju_magento_version_m() {return ju_o(ProductMetadataInterface::class);}
+
+/**
+ * 2017-04-17
+ * @used-by ju_my_local()
+ * @return bool
+ */
+function ju_my() {return isset($_SERVER['DF_DEVELOPER']);}
+
+/**
+ * 2017-06-09 «dfediuk» is the CLI user name on my localhost.
+ * 2020-08-14 "Port the `df_my_local` function" https://github.com/justuno-com/core/issues/184
+ * @used-by ju_visitor_ip()
+ * @used-by \Justuno\M2\Response::p()
+ * @return bool
+ */
+function ju_my_local() {return jucf(function() {return
+	ju_my() && (df_is_localhost() || 'dfediuk' === jua($_SERVER, 'USERNAME'))
+;});}
