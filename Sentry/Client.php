@@ -37,7 +37,7 @@ final class Client {
 
 	/**
 	 * 2020-06-27
-	 * @used-by df_sentry()
+	 * @used-by ju_sentry()
 	 * @param string $m
 	 * @param array $d
 	 */
@@ -48,21 +48,21 @@ final class Client {
 	/**
 	 * 2017-01-10
 	 * 2019-05-20
-	 * I intentionally use array_merge_recursive() instead of @see df_extend()
+	 * I intentionally use array_merge_recursive() instead of @see ju_extend()
 	 * because I want values to be merged for a duplicate key.
-	 * I is needed for @see df_sentry_extra_f()
-	 * @used-by df_sentry_extra()
-	 * @used-by df_sentry_extra_f()
+	 * I is needed for @see ju_sentry_extra_f()
+	 * @used-by ju_sentry_extra()
+	 * @used-by ju_sentry_extra_f()
 	 * @param array(string => mixed) $a
 	 */
 	function extra(array $a) {$this->context->extra = array_merge_recursive($this->context->extra, $a);}
 
 	/**
-	 * 2017-01-10 К сожалению, использовать «/» в имени тега нельзя.
+	 * 2017-01-10 «/» can not be used in a tag.
 	 * 2017-02-09
-	 * Иероглифы использовать тоже нельзя:
-	 * попытка использовать тег «歐付寶 O'Pay (allPay)» приводит к сбою «Discarded invalid value for parameter 'tags'».
-	 * @used-by df_sentry_tags()
+	 * Hieroglyphs (e.g. «歐付寶 O'Pay (allPay)») can not be used too:
+	 * it leads to the «Discarded invalid value for parameter 'tags'» error.
+	 * @used-by ju_sentry_tags()
 	 * @uses df_translit_url()
 	 * @param array(string => string) $a
 	 */
