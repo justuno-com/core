@@ -1,4 +1,12 @@
 <?php
+use Magento\Customer\Model\Session;
+
+/**
+ * 2020-08-14 "Port the `df_customer_session` function" https://github.com/justuno-com/core/issues/181
+ * @used-by ju_customer_session_id()
+ * @return Session
+ */
+function ju_customer_session() {return ju_o(Session::class);}
 
 /**
  * 2020-01-25
@@ -78,4 +86,4 @@
  * @used-by ju_sentry_m()
  * @return string|null
  */
-function ju_customer_session_id() {return ju_etn(df_customer_session()->getSessionId());}
+function ju_customer_session_id() {return ju_etn(ju_customer_session()->getSessionId());}
