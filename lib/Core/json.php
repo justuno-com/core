@@ -38,6 +38,7 @@ function ju_json_decode($s, $throw = true) {/** @var mixed|bool|null $r */
  * @used-by ju_log_l()
  * @used-by \Justuno\Core\Sentry\Client::capture()
  * @used-by \Justuno\Core\Sentry\Client::encode()
+ * @used-by \Justuno\Core\Sentry\Extra::adjust()
  * @param mixed $v
  * @param int $flags [optional]
  * @return string
