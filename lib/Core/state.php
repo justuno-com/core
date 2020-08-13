@@ -21,6 +21,15 @@ function ju_app_state() {return ju_o(State::class);}
 function ju_is_ajax() {static $r; return !is_null($r) ? $r : $r = ju_request_o()->isXmlHttpRequest();}
 
 /**
+ * 2016-05-15 http://stackoverflow.com/a/2053295
+ * 2017-06-09 It intentionally returns false in the CLI mode.
+ * 2020-08-14 "Port the `df_is_localhost` function" https://github.com/justuno-com/core/issues/186
+ * @used-by ju_my_local()
+ * @return bool
+ */
+function ju_is_localhost() {return in_array(jua($_SERVER, 'REMOTE_ADDR', []), ['127.0.0.1', '::1']);}
+
+/**
  * 2016-06-25 https://mage2.pro/t/543
  * 2018-04-17
  * 1) «Magento 2.3 has removed its version information from the `composer.json` files since 2018-04-05»:
@@ -59,5 +68,5 @@ function ju_my() {return isset($_SERVER['DF_DEVELOPER']);}
  * @return bool
  */
 function ju_my_local() {return jucf(function() {return
-	ju_my() && (df_is_localhost() || 'dfediuk' === jua($_SERVER, 'USERNAME'))
+	ju_my() && (ju_is_localhost() || 'dfediuk' === jua($_SERVER, 'USERNAME'))
 ;});}
