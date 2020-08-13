@@ -83,12 +83,13 @@ function ju_sentry_m($m) {return jucf(function($m) {
 	return $r ?: ($m !== 'Justuno_Core' ? ju_sentry_m('Justuno_Core') :
 		ju_error('Sentry settings for Justuno_Core are absent.')
 	);
-}, [df_sentry_module($m)]);}
+}, [ju_sentry_module($m)]);}
 
 /**
  * 2017-03-15
  * 2020-06-25 "Port the `df_sentry_module` function": https://github.com/justuno-com/core/issues/137
  * @used-by ju_sentry()
+ * @used-by ju_sentry_m()
  * @param string|object|null $m [optional]
  * @return string
  */
