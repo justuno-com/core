@@ -24,4 +24,4 @@
  * @param string $s
  * @return string
  */
-function ju_translit_url($s) {return trim(preg_replace('#[^0-9a-z]+#i', '-', df_translit($s)), '-');}
+function ju_translit_url($s) {return trim(preg_replace('#[^0-9a-z]+#i', '-', ju_translit($s)), '-');}
