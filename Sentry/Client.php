@@ -27,7 +27,7 @@ final class Client {
 		$this->timeout = 2;
 		$this->trust_x_forwarded_proto = null;
 
-		$this->sdk = ['name' => 'mage2.pro', 'version' => df_core_version()];
+		$this->sdk = ['name' => 'mage2.pro', 'version' => ju_core_version()];
 		$this->serializer = new Serializer;
 		$this->transaction = new TransactionStack;
 		if (!ju_is_cli() && isset($_SERVER['PATH_INFO'])) {

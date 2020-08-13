@@ -6,6 +6,7 @@ use Magento\Framework\Config\Composer\Package;
  * 2020-06-26 "Port the `df_core_version` function": https://github.com/justuno-com/core/issues/143
  * @used-by ju_sentry()
  * @used-by ju_sentry_m()
+ * @used-by \Justuno\Core\Sentry\Client::__construct()
  * @return string
  */
 function ju_core_version() {return jucf(function() {return ju_package_version('Justuno_Core');});}
