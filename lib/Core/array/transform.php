@@ -20,9 +20,9 @@ function juak_transform($a1, $a2, $req = false) {
 	// The square bracket syntax for array destructuring assignment (`[…] = […]`) requires PHP ≥ 7.1:
 	// https://github.com/mage2pro/core/issues/96#issuecomment-593392100
 	// We should support PHP 7.0.
-	list($a, $f) = dfaf($a1, $a2); /** @var array|\Traversable $a */ /** @var callable $f */
-	$a = df_ita($a);
-	$as = df_is_assoc($a); /** @var bool $as */
+	list($a, $f) = juaf($a1, $a2); /** @var array|\Traversable $a */ /** @var callable $f */
+	$a = ju_ita($a);
+	$as = ju_is_assoc($a); /** @var bool $as */
 	return df_map_kr($a, function($k, $v) use($f, $req, $as) {return [
 		!$as ? $k : $f($k), !$req || !is_array($v) ? $v : juak_transform($v, $f, $req)
 	];});

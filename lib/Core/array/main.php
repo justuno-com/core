@@ -14,6 +14,7 @@ function ju_array($v) {return is_array($v) ? $v : [$v];}
  * @used-by ju_filter()
  * @used-by ju_map()
  * @used-by jua_select_ordered()
+ * @used-by juak_transform()
  * @param \Traversable|array $t
  * @return array
  */
@@ -41,6 +42,7 @@ function jua_flatten(array $a) {
  * @used-by ju_filter()
  * @used-by ju_find()
  * @used-by ju_map()
+ * @used-by juak_transform()
  * @param array|callable|\Traversable $a
  * @param array|callable|\Traversable $b
  * @return array(int|string => mixed)
