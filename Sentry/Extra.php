@@ -31,7 +31,7 @@ final class Extra {
 					// JSON не укладывается в 512 байтов,
 					// поэтому переносим элементы массива $v на уровень выше (на уровень $a),
 					// прибавляя к их ключам приставку $k.
-					$r = array_merge($r, self::adjust(dfak_transform($v, function($vk) use($k) {return "$k/$vk";})));
+					$r = array_merge($r, self::adjust(juak_transform($v, function($vk) use($k) {return "$k/$vk";})));
 				}
 			}
 		}
