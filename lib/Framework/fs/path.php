@@ -33,7 +33,23 @@ function ju_adjust_paths_in_message($m) {
  * 2020-06-15 "Port the `df_path_n` function": https://github.com/justuno-com/core/issues/26
  * @used-by ju_adjust_paths_in_message()
  * @used-by ju_file_name()
+ * @used-by ju_path_relative()
  * @param string $p
  * @return string
  */
 function ju_path_n($p) {return str_replace('//', '/', str_replace('\\', '/', $p));}
+
+/**
+ * 2015-12-06
+ * It trims the ending «/».
+ * @uses \Magento\Framework\Filesystem\Directory\Read::getAbsolutePath() produces a result with a trailing «/».
+ * 2020-08-13 "Port the `df_path_relative` function" https://github.com/justuno-com/core/issues/174
+ * @used-by ju_file_write()
+ * @used-by \Justuno\Core\Sentry\Trace::info()
+ * @param string $p
+ * @param string $b [optional]
+ * @return string
+ */
+function ju_path_relative($p, $b = DL::ROOT) {return ju_trim_text_left(df_trim_ds_left(
+	ju_path_n($p)), df_trim_ds_left(df_fs_r($b)->getAbsolutePath()
+));}

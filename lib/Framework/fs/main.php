@@ -34,7 +34,7 @@ function ju_file_write($p, $contents, $append = false) {
 	// The square bracket syntax for array destructuring assignment (`[…] = […]`) requires PHP ≥ 7.1:
 	// https://github.com/mage2pro/core/issues/96#issuecomment-593392100
 	// We should support PHP 7.0.
-	list($type, $relative) = is_array($p) ? $p : [DL::ROOT, df_path_relative($p)];
+	list($type, $relative) = is_array($p) ? $p : [DL::ROOT, ju_path_relative($p)];
 	$writer = ju_fs_w($type); /** @var DirectoryWrite|IDirectoryWrite $writer */
 	/**
 	 * 2018-07-06

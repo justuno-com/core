@@ -45,7 +45,7 @@ final class Trace {
 			$vars = !$next ? [] : self::get_frame_context($next);
 			$data = [
 				'context_line' => $serializer->serialize($context['line'])
-				,'filename' => df_path_relative($context['filename'])
+				,'filename' => ju_path_relative($context['filename'])
 				,'function' => jua($next, 'function')
 				,'in_app' => df_path_is_internal($file)
 				,'lineno' => (int) $context['lineno']
