@@ -2,7 +2,7 @@
 use Magento\Customer\Model\Session;
 
 /**
- * 2020-08-14 "Port the `df_customer_session` function" https://github.com/justuno-com/core/issues/181
+ * 2020-08-14 "Port the `df_customer_session` function" https://github.com/justuno-com/core/issues/182
  * @used-by ju_customer_session_id()
  * @return Session
  */
