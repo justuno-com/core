@@ -10,4 +10,4 @@ if (!defined('DS')) {
  * @param string $p
  * @return string
  */
-function ju_trim_ds_left($p) {return df_trim_left($p, '/\\');}
+function ju_trim_ds_left($p) {return ju_trim_left($p, '/\\');}
