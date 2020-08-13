@@ -58,14 +58,14 @@ function ju_sentry($m, $v, array $context = []) {
  * @param string|object|null $m
  * @return Sentry
  */
-function ju_sentry_m($m) {return dfcf(function($m) {
+function ju_sentry_m($m) {return jucf(function($m) {
 	$r = null; /** @var Sentry $r */
 	/** @var array(string => $r) $a */ /** @var array(string => string)|null $sa */
 	if (($a = ju_module_json($m, 'df', false)) && ($sa = jua($a, 'sentry'))) {
 		$r = new Sentry(intval($sa['id']), $sa['key1'], $sa['key2']);
 		// 2016-12-23 https://docs.sentry.io/clientdev/interfaces/user
 		/** @var User|null $u */
-		$r->user((ju_is_cli() ? ['username' => df_cli_user()] : (
+		$r->user((ju_is_cli() ? ['username' => ju_cli_user()] : (
 			($u = ju_backend_user()) ? [
 				'email' => $u->getEmail(), 'id' => $u->getId(), 'username' => $u->getUserName()
 			] : (!df_is_frontend() ? [] : (($c = df_customer())

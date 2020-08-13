@@ -2,12 +2,14 @@
 use Justuno\Core\RAM;
 /**
  * 2020-06-13 "Port the `dfcf` function": https://github.com/justuno-com/core/issues/5
+ * @used-by ju_cli_user()
  * @used-by ju_core_version()
  * @used-by ju_domain_current()
  * @used-by ju_magento_version()
  * @used-by ju_module_file()
  * @used-by ju_module_name()
  * @used-by ju_o()
+ * @used-by ju_sentry_m()
  * @param \Closure $f
  * @param mixed[] $a [optional]
  * @param string[] $tags [optional]
