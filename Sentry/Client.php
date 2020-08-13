@@ -433,7 +433,7 @@ final class Client {
 	 * @used-by get_curl_options()
 	 * @return string
 	 */
-	private function getUserAgent() {return 'mage2.pro/' . df_core_version();}
+	private function getUserAgent() {return 'mage2.pro/' . ju_core_version();}
 
 	/**
 	 * 2016-12-23
