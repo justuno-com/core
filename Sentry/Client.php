@@ -256,9 +256,9 @@ final class Client {
 	private function send_http($url, $data, $headers = []) {
 		$c = curl_init($url); /** @var resource $c */
 		try {
-			curl_setopt($c, CURLOPT_HTTPHEADER, df_map_k(
+			curl_setopt($c, CURLOPT_HTTPHEADER, ju_map_k(
 				// 2020-06-28 The `Expect` headers prevents the `100-continue` response form server (Fixes GH-216)
-				function($k, $v) {return df_kv([$k => $v]);}, $headers + ['Expect' => ''])
+				function($k, $v) {return ju_kv([$k => $v]);}, $headers + ['Expect' => ''])
 			);
 			curl_setopt($c, CURLOPT_POST, 1);
 			curl_setopt($c, CURLOPT_POSTFIELDS, $data);
@@ -268,7 +268,7 @@ final class Client {
 			$errno = curl_errno($c);
 			// CURLE_SSL_CACERT || CURLE_SSL_CACERT_BADFILE
 			if ($errno == 60 || $errno == 77) {
-				curl_setopt($c, CURLOPT_CAINFO, df_module_file($this, 'cacert.pem'));
+				curl_setopt($c, CURLOPT_CAINFO, ju_module_file($this, 'cacert.pem'));
 				curl_exec($c);
 			}
 		}
