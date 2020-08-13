@@ -2,10 +2,11 @@
 namespace Justuno\Core\Sentry;
 use Justuno\Core\Exception as DFE;
 use \Exception as E;
+# 2020-08-13 "Port the `Df\Sentry\Client` class" https://github.com/justuno-com/core/issues/165
 final class Client {
 	/**
 	 * 2020-06-27
-	 * @used-by df_sentry_m()
+	 * @used-by ju_sentry_m()
 	 * @param int $projectId
 	 * @param string $keyPublic
 	 * @param string $keyPrivate
