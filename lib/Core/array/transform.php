@@ -23,7 +23,7 @@ function juak_transform($a1, $a2, $req = false) {
 	list($a, $f) = juaf($a1, $a2); /** @var array|\Traversable $a */ /** @var callable $f */
 	$a = ju_ita($a);
 	$as = ju_is_assoc($a); /** @var bool $as */
-	return df_map_kr($a, function($k, $v) use($f, $req, $as) {return [
+	return ju_map_kr($a, function($k, $v) use($f, $req, $as) {return [
 		!$as ? $k : $f($k), !$req || !is_array($v) ? $v : juak_transform($v, $f, $req)
 	];});
 }
