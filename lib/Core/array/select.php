@@ -13,6 +13,10 @@ use Traversable as T;
  * @used-by ju_request()
  * @used-by ju_sentry()
  * @used-by ju_sentry_m()
+ * @used-by \Justuno\Core\Sentry\Client::__construct()
+ * @used-by \Justuno\Core\Sentry\Client::capture()
+ * @used-by \Justuno\Core\Sentry\Client::captureException()
+ * @used-by \Justuno\Core\Sentry\Client::needSkipFrame()
  * @used-by \Justuno\Core\Zf\Validate::cfg()
  * @param array(int|string => mixed) $a
  * @param string|string[]|int|null $k

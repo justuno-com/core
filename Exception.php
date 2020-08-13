@@ -149,7 +149,7 @@ class Exception extends LE implements \ArrayAccess {
 	/**
 	 * 2017-01-09
 	 * Сообщение для Sentry.
-	 * @used-by \Df\Sentry\Client::captureException()
+	 * @used-by \Justuno\Core\Sentry\Client::captureException()
 	 * @see \Dfe\Omise\Exception\Charge::messageSentry()
 	 * @return string
 	 */
@@ -216,7 +216,7 @@ class Exception extends LE implements \ArrayAccess {
 
 	/**
 	 * 2017-10-03
-	 * @used-by \Df\Sentry\Client::captureException()
+	 * @used-by \Justuno\Core\Sentry\Client::captureException()
 	 * @see \Df\PaypalClone\W\Exception\InvalidSignature::sentryType()
 	 * @return string
 	 */

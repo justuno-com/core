@@ -31,6 +31,7 @@ function ju_is_bin_magento() {return ju_ends_with(ju_cli_script(), 'bin/magento'
  * 2016-10-25 http://stackoverflow.com/a/1042533
  * 2020-06-17 "Port the `df_is_cli` function": https://github.com/justuno-com/core/issues/36
  * @used-by ju_header_utf()
+ * @used-by \Justuno\Core\Sentry\Client::__construct()
  * @return bool
  */
 function ju_is_cli() {return 'cli' === php_sapi_name();}

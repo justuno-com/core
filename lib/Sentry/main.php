@@ -1,5 +1,5 @@
 <?php
-use Df\Sentry\Client as Sentry;
+use Justuno\Core\Sentry\Client as Sentry;
 use Exception as E;
 use Justuno\Core\Exception as DFE;
 use Magento\Framework\DataObject as _DO;
@@ -67,14 +67,14 @@ function ju_sentry_m($m) {return dfcf(function($m) {
 		$r = new Sentry("https://{$sa['key1']}:{$sa['key2']}@$domain/{$sa['id']}", [
 			/**
 			 * 2016-12-22
-			 * i do not use @see \Df\Sentry\Client::getDefaultPrefixes()
+			 * i do not use @see \Justuno\Core\Sentry\Client::getDefaultPrefixes()
 			 * because it includes all @see get_include_path()
 			 * including system folders inside the Magento root folder (e.g. `lib\internal`),
 			 * and a path like `C:\work\mage2.pro\store\lib\internal\Magento\Framework\App\ErrorHandler.php`
 			 * will be chopped as `Magento\Framework\App\ErrorHandler.php`
 			 */
 			'prefixes' => [BP . DIRECTORY_SEPARATOR]
-			,'processors' => [] /** 2016-12-25 To skip @see \Df\Sentry\SanitizeDataProcessor */
+			,'processors' => [] /** 2016-12-25 To skip @see \Justuno\Core\Sentry\SanitizeDataProcessor */
 		]);
 		/**
 		 * 2016-12-22
