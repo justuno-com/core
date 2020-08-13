@@ -72,7 +72,7 @@ function ju_sentry_m($m) {return jucf(function($m) {
 				? ['email' => $c->getEmail(), 'id' => $c->getId(), 'username' => $c->getName()]
 				: ['id' => ju_customer_session_id()]
 			))
-			)) + ['ip_address' => df_visitor_ip()], false);
+			)) + ['ip_address' => ju_visitor_ip()], false);
 		$r->tags([
 			'Core' => ju_core_version()
 			,'Magento' => ju_magento_version()
