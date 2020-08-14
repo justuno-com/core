@@ -3,7 +3,8 @@ use Magento\Framework\Model\AbstractModel as M;
 /**
  * 2020-06-13 "Port the `df_hash_a` function": https://github.com/justuno-com/core/issues/6
  * @used-by ju_hash_a()
- * @used-by jucf() 
+ * @used-by juc()
+ * @used-by jucf()
  * @param mixed[] $a
  * @return string
  */

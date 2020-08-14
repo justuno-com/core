@@ -40,7 +40,7 @@ abstract class Message extends \Df\Core\OLegacy {
 	 * @used-by df_log_l()
 	 * @return string
 	 */
-	final function report() {return dfc($this, function() {return $this->sections(
+	final function report() {return juc($this, function() {return $this->sections(
 		Context::render(), $this->preface(), $this->main(), $this->postface()
 	);});}
 

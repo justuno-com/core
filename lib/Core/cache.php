@@ -1,5 +1,28 @@
 <?php
 use Justuno\Core\RAM;
+
+/**
+ * 2016-08-31
+ * 2020-08-14 "Port the `dfc` function" https://github.com/justuno-com/core/issues/194
+ * @used-by \Justuno\Core\Qa\Message::report()
+ * @param object $o
+ * @param \Closure $m
+ * @param mixed[] $a [optional]
+ * @param bool $unique [optional]
+ * @param int $offset [optional]
+ * @return mixed
+ */
+function juc($o, \Closure $m, array $a = [], $unique = true, $offset = 0) {
+	$b = debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS, 2 + $offset)[1 + $offset]; /** @var array(string => string) $b */
+	if (!isset($b['class'], $b['function'])) {
+		ju_error("[juc] Invalid backtrace frame:\n" . ju_dump($b)); // 2017-01-02 Usually it means that $offset is wrong.
+	}
+	/** @var string $k */
+	$k = "{$b['class']}::{$b['function']}" . (!$a ? null : ju_hash_a($a)) . ($unique ? null : spl_object_hash($m));
+	// 2017-01-12 https://3v4l.org/0shto
+	return property_exists($o, $k) ? $o->$k : $o->$k = $m(...$a);
+}
+
 /**
  * 2020-06-13 "Port the `dfcf` function": https://github.com/justuno-com/core/issues/5
  * @used-by ju_cli_user()

@@ -6,6 +6,7 @@ use Justuno\Core\Qa\Dumper;
  * @used-by ju_extend()
  * @used-by ju_sentry()
  * @used-by ju_type()
+ * @used-by juc()
  * @param \Magento\Framework\DataObject|mixed[]|mixed $v
  * @return string
  */
