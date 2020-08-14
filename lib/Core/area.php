@@ -33,6 +33,7 @@ function ju_area_code_is(...$values) {return ($a = ju_area_code(false)) && in_ar
 /**
  * 2015-08-14
  * 2020-06-24 "Port the `df_is_backend` function": https://github.com/justuno-com/core/issues/125
+ * @used-by ju_customer_id()
  * @used-by ju_store()
  * @return bool
  */

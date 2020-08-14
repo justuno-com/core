@@ -1,8 +1,65 @@
 <?php
+use Justuno\Core\Exception as DFE;
+use Magento\Customer\Model\Customer as C;
+use Magento\Customer\Model\CustomerRegistry;
+use Magento\Customer\Model\Data\Customer as DC;
 use Magento\Customer\Model\Session;
+use Magento\Framework\Exception\NoSuchEntityException;
+use Magento\Sales\Model\Order as O;
+
+/**
+ * 2016-04-05
+ * How to get a customer by his ID? https://mage2.pro/t/1136
+ * How to get a customer by his ID with the @uses \Magento\Customer\Model\CustomerRegistry::retrieve()?
+ * https://mage2.pro/t/1137
+ * How to get a customer by his ID with the @see \Magento\Customer\Api\CustomerRepositoryInterface::getById()?
+ * https://mage2.pro/t/1138
+ * 2017-06-14 The $throw argument is not used for now.
+ * @used-by ju_customer()
+ * @used-by ju_sentry_m()
+ * @param string|int|DC|C|null $c [optional]
+ * @param bool $throw [optional]
+ * @return C|O|null|false
+ * @throws NoSuchEntityException|DFE
+ * 2020-08-14 "Port the `df_customer` function" https://github.com/justuno-com/core/issues/187
+ */
+function ju_customer($c = null, $throw = false) {return ju_try(function() use($c) {return
+	/** @var int|string|null $id */
+	/**
+	 * 2016-08-22
+	 * I do not use @see \Magento\Customer\Model\Session::getCustomer()
+	 * because it does not use the customers repository, and loads a customer directly from the database.
+	 */
+	!$c ? (
+		ju_customer_session()->isLoggedIn()
+			? ju_customer(ju_customer_id())
+			: ju_error('ju_customer(): the argument is null and the visitor is anonymous.')
+		) : ($c instanceof C ? $c : (
+		($id =
+			$c instanceof O ? $c->getCustomerId() : (
+			is_int($c) || is_string($c) ? $c : (
+			$c instanceof DC ? $c->getId() : null)
+		))
+			? df_customer_registry()->retrieve($id)
+			: ju_error('ju_customer(): the argument of type %s is unrecognizable.', df_type($c))
+	))
+;}, $throw);}
+
+/**
+ * 2016-12-04
+ * 2020-08-14 "Port the `df_customer_id` function" https://github.com/justuno-com/core/issues/188
+ * @used-by ju_customer()
+ * @param C|DC|int|null $c [optional]
+ * @return int|null
+ */
+function ju_customer_id($c = null) {return !$c && !ju_is_backend() ? ju_customer_session()->getId() : (
+	$c instanceof C || $c instanceof DC ? $c->getId() : $c
+);}
 
 /**
  * 2020-08-14 "Port the `df_customer_session` function" https://github.com/justuno-com/core/issues/182
+ * @used-by ju_customer()
+ * @used-by ju_customer_id()
  * @used-by ju_customer_session_id()
  * @return Session
  */

@@ -25,6 +25,7 @@ function ju_if1($cond, $onTrue, $onFalse = null) {return $cond ? ju_call_if($onT
 /**
  * 2017-04-15
  * 2020-06-18 "Port the `df_try` function": https://github.com/justuno-com/core/issues/75
+ * @used-by ju_customer()
  * @used-by ju_gd()
  * @used-by ju_trim()
  * @used-by ju_zuri()
