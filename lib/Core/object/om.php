@@ -9,6 +9,7 @@ use Magento\Framework\ObjectManagerInterface as IOM;
  * @used-by ju_component_r()
  * @used-by ju_customer_registry()
  * @used-by ju_customer_session()
+ * @used-by ju_db_resource()
  * @used-by ju_fs()
  * @used-by ju_magento_version_m()
  * @used-by ju_module_dir_reader()
