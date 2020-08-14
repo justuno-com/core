@@ -37,7 +37,7 @@ abstract class Message extends \Df\Core\OLegacy {
 	/**
 	 * @used-by log()
 	 * @used-by mail()
-	 * @used-by df_log_l()
+	 * @used-by ju_log_l()
 	 * @return string
 	 */
 	final function report() {return juc($this, function() {return $this->sections(
@@ -68,8 +68,8 @@ abstract class Message extends \Df\Core\OLegacy {
 
 	/**
 	 * 2016-08-20
-	 * @used-by \Df\Qa\Message::reportName()
-	 * @see \Df\Qa\Message\Failure\Exception::reportNamePrefix()
+	 * @used-by reportName()
+	 * @see \Justuno\Core\Qa\Message\Failure\Exception::reportNamePrefix()
 	 * @return string|string[]
 	 */
 	protected function reportNamePrefix() {return [];}
