@@ -40,7 +40,7 @@ function ju_customer($c = null, $throw = false) {return ju_try(function() use($c
 			is_int($c) || is_string($c) ? $c : (
 			$c instanceof DC ? $c->getId() : null)
 		))
-			? df_customer_registry()->retrieve($id)
+			? ju_customer_registry()->retrieve($id)
 			: ju_error('ju_customer(): the argument of type %s is unrecognizable.', ju_type($c))
 	))
 ;}, $throw);}
@@ -55,6 +55,14 @@ function ju_customer($c = null, $throw = false) {return ju_try(function() use($c
 function ju_customer_id($c = null) {return !$c && !ju_is_backend() ? ju_customer_session()->getId() : (
 	$c instanceof C || $c instanceof DC ? $c->getId() : $c
 );}
+
+/**
+ * 2016-04-05
+ * 2020-08-14 "Port the `df_customer_registry` function" https://github.com/justuno-com/core/issues/189
+ * @used-by ju_customer()
+ * @return CustomerRegistry
+ */
+function ju_customer_registry() {return ju_o(CustomerRegistry::class);}
 
 /**
  * 2020-08-14 "Port the `df_customer_session` function" https://github.com/justuno-com/core/issues/182
