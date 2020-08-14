@@ -7,4 +7,4 @@
  * https://github.com/magento/magento2/blob/2.1.3/app/code/Magento/Backup/Model/ResourceModel/Helper.php#L178
  * @return string
  */
-function ju_db_version() {return jucf(function() {return df_conn()->fetchRow("SHOW VARIABLES LIKE 'version'")['Value'];});}
+function ju_db_version() {return jucf(function() {return ju_conn()->fetchRow("SHOW VARIABLES LIKE 'version'")['Value'];});}
