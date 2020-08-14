@@ -76,7 +76,7 @@ function ju_sentry_m($m) {return jucf(function($m) {
 		$r->tags([
 			'Core' => ju_core_version()
 			,'Magento' => ju_magento_version()
-			,'MySQL' => df_db_version()
+			,'MySQL' => ju_db_version()
 			,'PHP' => phpversion()
 		]);
 	}
