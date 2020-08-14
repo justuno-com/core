@@ -41,7 +41,7 @@ function ju_customer($c = null, $throw = false) {return ju_try(function() use($c
 			$c instanceof DC ? $c->getId() : null)
 		))
 			? df_customer_registry()->retrieve($id)
-			: ju_error('ju_customer(): the argument of type %s is unrecognizable.', df_type($c))
+			: ju_error('ju_customer(): the argument of type %s is unrecognizable.', ju_type($c))
 	))
 ;}, $throw);}
 
