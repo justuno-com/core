@@ -86,6 +86,6 @@ abstract class Message extends \Df\Core\OLegacy {
 		}
 		/** @var string $s */
 		static $s; if (!$s) {$s = "\n" . str_repeat('*', 36) . "\n";};
-		return implode($s, array_filter(ju_trim(df_xml_output_plain($items))));
+		return implode($s, array_filter(ju_trim(ju_xml_output_plain($items))));
 	}
 }
