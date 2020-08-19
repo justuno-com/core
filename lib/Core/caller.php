@@ -35,6 +35,19 @@ function ju_caller_entry($o = 0) {
 
 /**
  * 2016-08-10
+ * The original (not used now) implementation: https://github.com/mage2pro/core/blob/6.7.3/Core/lib/caller.php#L109-L111
+ * 2017-01-12
+ * The df_caller_ff() implementation: https://github.com/mage2pro/core/blob/6.7.3/Core/lib/caller.php#L113-L123
+ * 2020-07-08 The function's new implementation is from the previous df_caller_ff() function.
+ * 2020-08-19 "Port the `df_caller_f` function" https://github.com/justuno-com/core/issues/206
+ * @used-by ju_prop()
+ * @param int $o [optional]
+ * @return string
+ */
+function ju_caller_f($o = 0) {return ju_caller_entry(++$o)['function'];}
+
+/**
+ * 2016-08-10
  * The original (not used now) implementation: https://github.com/mage2pro/core/blob/6.7.3/Core/lib/caller.php#L125-L136
  * 2017-03-28
  * The df_caller_mm() implementation: https://github.com/mage2pro/core/blob/6.7.3/Core/lib/caller.php#L155-L169

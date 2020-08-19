@@ -45,7 +45,7 @@ function ju_prop($o, $v, $d = null, $type = null) {/** @var object|mixed|null $r
 		}
 	}
 	else {
-		$k = df_caller_f();
+		$k = ju_caller_f();
 		if ($o instanceof \ArrayAccess) {
 			if ($isGet) {
 				$r = !$o->offsetExists($k) ? $d : $o->offsetGet($k);
