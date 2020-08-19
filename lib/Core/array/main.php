@@ -49,9 +49,9 @@ function jua_flatten(array $a) {
  * @return array(int|string => mixed)
  */
 function juaf($a, $b) {
-	// 2020-02-15
-	// «A variable is expected to be a traversable or an array, but actually it is a «object»»:
-	// https://github.com/tradefurniturecompany/site/issues/36
+	# 2020-02-15
+	# «A variable is expected to be a traversable or an array, but actually it is a «object»»:
+	# https://github.com/tradefurniturecompany/site/issues/36
 	$ca = is_callable($a); /** @var bool $ca */
 	$cb = is_callable($b); /** @var bool $ca */
 	if (!$ca || !$cb) {

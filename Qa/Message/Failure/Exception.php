@@ -1,6 +1,6 @@
 <?php
 namespace Justuno\Core\Qa\Message\Failure;
-// 2020-06-17 "Port the `Df\Qa\Message\Failure\Exception` class": https://github.com/justuno-com/core/issues/52
+# 2020-06-17 "Port the `Df\Qa\Message\Failure\Exception` class": https://github.com/justuno-com/core/issues/52
 final class Exception extends \Justuno\Core\Qa\Message\Failure {
 	/**
 	 * @override

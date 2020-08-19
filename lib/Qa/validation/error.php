@@ -60,7 +60,7 @@ function ju_error_create($m = null) {return
 			 * @see \Justuno\Core\Exception::__construct():
 			 *		if (is_null($m)) {
 			 *			$m = __($prev ? df_ets($prev) : 'No message');
-			 *			// 2017-02-20 To facilite the «No message» diagnostics.
+			 *			# 2017-02-20 To facilite the «No message» diagnostics.
 			 *			if (!$prev) {
 			 *				df_bt();
 			 *			}

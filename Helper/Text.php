@@ -1,6 +1,6 @@
 <?php
 namespace Justuno\Core\Helper;
-// 2020-06-26 "Port the `Df\Core\Helper\Text` class": https://github.com/justuno-com/core/issues/160
+# 2020-06-26 "Port the `Df\Core\Helper\Text` class": https://github.com/justuno-com/core/issues/160
 class Text {
 	/**
 	 * 2015-03-03

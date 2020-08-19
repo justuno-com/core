@@ -11,7 +11,7 @@ use Df\Zf\Validate\StringT\Iso2 as VIso2;
 use Exception as E;
 use ReflectionParameter as RP;
 use Zend_Validate_Interface as Vd;
-// 2020-06-20 "Port the `Df\Qa\Method` class": https://github.com/justuno-com/core/issues/95
+# 2020-06-20 "Port the `Df\Qa\Method` class": https://github.com/justuno-com/core/issues/95
 final class Method {
 	/**
 	 * @param array $v

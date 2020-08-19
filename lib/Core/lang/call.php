@@ -82,11 +82,11 @@ function ju_call_a(callable $f, array $parentArgs, $pAppend = [], $pPrepend = []
 	 * We should return an array in the 1st and 3rd cases, and a scalar result in the 2nd case.
 	 */
 	if (1 === count($parentArgs)) {
-		// 2019-06-05 It is the 1st or the 2nd case: a single argument (a scalar or an array).
+		# 2019-06-05 It is the 1st or the 2nd case: a single argument (a scalar or an array).
 		$parentArgs = $parentArgs[0];
 	}
 	return
-		// 2019-06-05 It is the 2nd case: a single scalar (non-array) argument
+		# 2019-06-05 It is the 2nd case: a single scalar (non-array) argument
 		!is_array($parentArgs)
 		? call_user_func_array($f, array_merge($pPrepend, [$parentArgs], $pAppend))
 		: ju_map($f, $parentArgs, $pAppend, $pPrepend, $keyPosition

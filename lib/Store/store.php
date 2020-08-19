@@ -25,13 +25,13 @@ use Magento\Store\Model\StoreResolver;
 function ju_store($v = null) {/** @var string|null $c */return
 	!is_null($v) ? (ju_is_o($v) ? $v->getStore() : (is_object($v) ? $v : ju_store_m()->getStore($v))) :
 		ju_store_m()->getStore(!is_null($c = ju_request(StoreResolver::PARAM_NAME)) ? $c : (
-			// 2017-08-02
-			// The store ID specified in the current URL should have priority over the value from the cookie.
-			// Violating this rule led us to the following failure:
-			// https://github.com/mage2pro/markdown/issues/1
-			// Today I was saving a product in the backend, the URL looked like:
-			// https://site.com/admin/catalog/product/save/id/45/type/simple/store/0/set/20/key/<key>/back/edit
-			// But at the same time I had another store value in the cookie (a frontend store code).
+			# 2017-08-02
+			# The store ID specified in the current URL should have priority over the value from the cookie.
+			# Violating this rule led us to the following failure:
+			# https://github.com/mage2pro/markdown/issues/1
+			# Today I was saving a product in the backend, the URL looked like:
+			# https://site.com/admin/catalog/product/save/id/45/type/simple/store/0/set/20/key/<key>/back/edit
+			# But at the same time I had another store value in the cookie (a frontend store code).
 			!is_null($c = ju_request('store-view')) ? $c : (
 				ju_is_backend() ? ju_request('store', 'admin') : (
 					!is_null($c = ju_store_cookie_m()->getStoreCodeFromCookie()) ? $c : null

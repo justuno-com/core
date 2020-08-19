@@ -36,12 +36,12 @@ final class Trace {
 					,'suffix' => ''
 				];
 			}
-			// 2020-07-08
-			// «Argument 1 passed to Justuno\Core\Sentry\Trace::get_frame_context()
-			// must be of the type array, null given,
-			// called in vendor/mage2pro/core/Sentry/Trace.php on line 38
-			// and defined in vendor/mage2pro/core/Sentry/Trace.php:156»:
-			// https://github.com/mage2pro/core/issues/103
+			# 2020-07-08
+			# «Argument 1 passed to Justuno\Core\Sentry\Trace::get_frame_context()
+			# must be of the type array, null given,
+			# called in vendor/mage2pro/core/Sentry/Trace.php on line 38
+			# and defined in vendor/mage2pro/core/Sentry/Trace.php:156»:
+			# https://github.com/mage2pro/core/issues/103
 			$vars = !$next ? [] : self::get_frame_context($next);
 			$data = [
 				'context_line' => $serializer->serialize($context['line'])
@@ -52,8 +52,8 @@ final class Trace {
 				,'post_context' => $serializer->serialize($context['suffix'])
 				,'pre_context' => $serializer->serialize($context['prefix'])
 			];
-			// dont set this as an empty array as PHP will treat it as a numeric array
-			// instead of a mapping which goes against the defined Sentry spec
+			# dont set this as an empty array as PHP will treat it as a numeric array
+			# instead of a mapping which goes against the defined Sentry spec
 			if (!empty($vars)) {
 				$cleanVars = [];
 				foreach ($vars as $key => $value) {
@@ -92,15 +92,15 @@ final class Trace {
 		/** @var array(string => mixed) $r */
 		$r = ['filename' => $file, 'line' => '', 'lineno' => $line, 'prefix' => [], 'suffix' => []];
 		if (!is_null($file) && !is_null($line)) {
-			// Code which is eval'ed have a modified filename.. Extract the
-			// correct filename + linenumber from the string.
+			# Code which is eval'ed have a modified filename.. Extract the
+			# correct filename + linenumber from the string.
 			$matches = [];
 			if ($matched = preg_match("/^(.*?)\((\d+)\) : eval\(\)'d code$/", $file, $matches)) {
 				$r = ['filename' => $file = $matches[1], 'lineno' => $line = $matches[2]] + $r;
 			}
-			// In the case of an anonymous function, the filename is sent as:
-			// "</path/to/filename>(<lineno>) : runtime-created function"
-			// Extract the correct filename + linenumber from the string.
+			# In the case of an anonymous function, the filename is sent as:
+			# "</path/to/filename>(<lineno>) : runtime-created function"
+			# Extract the correct filename + linenumber from the string.
 			$matches = [];
 			if ($matched = preg_match("/^(.*?)\((\d+)\) : runtime-created function$/", $file, $matches)) {
 				$r = ['filename' => $file = $matches[1], 'lineno' => $line = $matches[2]] + $r;
@@ -164,8 +164,8 @@ final class Trace {
 			$args = jua($frame, 'args'); /** @var array $args */
 			$c = jua($frame, 'class'); /** @var string|null $c */
 			$f = jua($frame, 'function'); /** @var string|null $f */
-			// The reflection API seems more appropriate if we associate it with the frame
-			// where the function is actually called (since we're treating them as function context)
+			# The reflection API seems more appropriate if we associate it with the frame
+			# where the function is actually called (since we're treating them as function context)
 			if (!$f || ju_contains($f, '__lambda_func') || 'Closure' === $c || ju_ends_with($f, '{closure}')) {
 				$r = self::get_default_context($frame);
 			}
@@ -184,7 +184,7 @@ final class Trace {
 							$r["param$i"] = $arg;
 						}
 						else {
-							// Assign the argument by the parameter name
+							# Assign the argument by the parameter name
 							if (is_array($arg)) {
 								foreach ($arg as $key => $value) {
 									if (is_string($value) || is_numeric($value)) {

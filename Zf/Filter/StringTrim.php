@@ -1,6 +1,6 @@
 <?php
 namespace Justuno\Core\Zf\Filter;
-// 2020-06-20 "Port the `Justuno\Core\Zf\Filter\StringTrim` class": https://github.com/justuno-com/core/issues/90
+# 2020-06-20 "Port the `Justuno\Core\Zf\Filter\StringTrim` class": https://github.com/justuno-com/core/issues/90
 /** @used-by ju_trim() */
 class StringTrim extends \Zend_Filter_StringTrim {
 	/**

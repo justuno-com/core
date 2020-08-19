@@ -46,10 +46,10 @@ function ju_clean_r(array $r, $k = [], $req = true) {/** @var mixed[] $r */
  * @return array(int|string => mixed)
  */
 function ju_filter($a1, $a2) { /** @var array $r */
-	// 2020-03-02
-	// The square bracket syntax for array destructuring assignment (`[…] = […]`) requires PHP ≥ 7.1:
-	// https://github.com/mage2pro/core/issues/96#issuecomment-593392100
-	// We should support PHP 7.0.
+	# 2020-03-02
+	# The square bracket syntax for array destructuring assignment (`[…] = […]`) requires PHP ≥ 7.1:
+	# https://github.com/mage2pro/core/issues/96#issuecomment-593392100
+	# We should support PHP 7.0.
 	list($a, $f) = juaf($a1, $a2); /** @var array|\Traversable $a */ /** @var callable $f */
 	$a = ju_ita($a);
 	$r = array_filter(ju_ita($a), $f);

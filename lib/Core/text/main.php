@@ -22,7 +22,7 @@ function ju_bts($v) {return $v ? 'true' : 'false';}
  * @return bool
  */
 function ju_contains($haystack, ...$n) {/** @var bool $r */
-	// 2017-07-10 This branch is exclusively for optimization.
+	# 2017-07-10 This branch is exclusively for optimization.
 	if (1 === count($n) && !is_array($n0 = $n[0])) {
 		$r = false !== strpos($haystack, $n0);
 	}

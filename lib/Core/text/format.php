@@ -48,10 +48,10 @@ function ju_kv(array $a, $pad = null) {return ju_cc_n(ju_map_k(ju_clean($a), fun
  * @throws Exception
  */
 function ju_sprintf($s) {/** @var string $r */ /** @var mixed[] $args */
-	// 2020-03-02
-	// The square bracket syntax for array destructuring assignment (`[…] = […]`) requires PHP ≥ 7.1:
-	// https://github.com/mage2pro/core/issues/96#issuecomment-593392100
-	// We should support PHP 7.0.
+	# 2020-03-02
+	# The square bracket syntax for array destructuring assignment (`[…] = […]`) requires PHP ≥ 7.1:
+	# https://github.com/mage2pro/core/issues/96#issuecomment-593392100
+	# We should support PHP 7.0.
 	list($s, $args) = is_array($s) ? [ju_first($s), $s] : [$s, func_get_args()];
 	try {$r = ju_sprintf_strict($args);}
 	catch (Exception $e) {$r = $s;}
@@ -66,10 +66,10 @@ function ju_sprintf($s) {/** @var string $r */ /** @var mixed[] $args */
  * @throws \Exception
  */
 function ju_sprintf_strict($s) {/** @var string $r */ /** @var mixed[] $args */
-	// 2020-03-02
-	// The square bracket syntax for array destructuring assignment (`[…] = […]`) requires PHP ≥ 7.1:
-	// https://github.com/mage2pro/core/issues/96#issuecomment-593392100
-	// We should support PHP 7.0.
+	# 2020-03-02
+	# The square bracket syntax for array destructuring assignment (`[…] = […]`) requires PHP ≥ 7.1:
+	# https://github.com/mage2pro/core/issues/96#issuecomment-593392100
+	# We should support PHP 7.0.
 	list($s, $args) = is_array($s) ? [ju_first($s), $s] : [$s, func_get_args()];
 	if (1 === count($args)) {
 		$r = $s;

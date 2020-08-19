@@ -31,7 +31,7 @@ function ju_package($m = null, $k = null, $d = null) {
 	static $cache; /** @var array(string => array(string => mixed)) $cache */
 	if (!isset($cache[$m = ju_module_name($m)])) {
 		$packagePath = ju_module_path($m); /** @var string $packagePath */
-		// 2017-01-10 All `Df_*` modules share the common `composer.json` located in the parent folder.
+		# 2017-01-10 All `Df_*` modules share the common `composer.json` located in the parent folder.
 		if (ju_starts_with($m, 'Df_')) {
 			$packagePath = dirname($packagePath);
 		}

@@ -1,6 +1,6 @@
 <?php
 namespace Justuno\Core\Zf;
-// 2020-06-22 "Port the `Df\Zf\Validate` class": https://github.com/justuno-com/core/issues/112
+# 2020-06-22 "Port the `Df\Zf\Validate` class": https://github.com/justuno-com/core/issues/112
 abstract class Validate implements \Zend_Validate_Interface {
 	/** @return string */
 	abstract protected function getMessageInternal();

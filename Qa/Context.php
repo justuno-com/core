@@ -1,6 +1,6 @@
 <?php
 namespace Justuno\Core\Qa;
-// 2020-06-17 "Port the `Df\Qa\Context` class": https://github.com/justuno-com/core/issues/55
+# 2020-06-17 "Port the `Df\Qa\Context` class": https://github.com/justuno-com/core/issues/55
 class Context {
 	/**
 	 * @param string $label
@@ -17,7 +17,7 @@ class Context {
 	 * @return string
 	 */
 	static function render() {/** @var string $r */
-		// 2015-09-02 Warning: max(): Array must contain at least one element.
+		# 2015-09-02 Warning: max(): Array must contain at least one element.
 		if (!self::$_items) {
 			$r = '';
 		}

@@ -57,7 +57,7 @@ function ju_module_dir($m, $type = '') {
 	}
 	else {
 		$r = ju_framework_path();
-		// 2019-12-31 'Magento_Framework' is not a module, so it does not have subpaths specific for modules.
+		# 2019-12-31 'Magento_Framework' is not a module, so it does not have subpaths specific for modules.
 		ju_assert(!$type);
 	}
 	return $r;

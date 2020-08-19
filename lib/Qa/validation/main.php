@@ -12,7 +12,7 @@ use Justuno\Core\Qa\Method as Q;
  * @see \Df\Core\Exception::__construct():
  *		if (is_null($m)) {
  *			$m = __($prev ? df_ets($prev) : 'No message');
- *			// 2017-02-20 To facilite the «No message» diagnostics.
+ *			# 2017-02-20 To facilite the «No message» diagnostics.
  *			if (!$prev) {
  *				df_bt();
  *			}
@@ -53,6 +53,6 @@ function ju_assert_ne($neResult, $v, $m = null) {return $neResult !== $v ? $v : 
 function ju_assert_sne($v, $sl = 0) {
 	$sl++;
 	Q::assertValueIsString($v, $sl);
-	// The previous code `if (!$v)` was wrong because it rejected the '0' string.
+	# The previous code `if (!$v)` was wrong because it rejected the '0' string.
 	return '' !== strval($v) ? $v : Q::raiseErrorVariable(__FUNCTION__, $ms = [Q::NES], $sl);
 }

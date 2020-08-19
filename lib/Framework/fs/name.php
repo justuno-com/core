@@ -9,8 +9,8 @@
  * @return string
  */
 function ju_file_name($directory, $template, $ds = '-') { /** @var string $r */
-	// 2016-11-09
-	// If $template contains the file's path, when it will be removed from $template and added to $directory.
+	# 2016-11-09
+	# If $template contains the file's path, when it will be removed from $template and added to $directory.
 	$directory = ju_path_n($directory);
 	$template = ju_path_n($template);
 	if (ju_contains($template, '/')) {

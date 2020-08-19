@@ -25,18 +25,18 @@ function ju_sentry($m, $v, array $context = []) {
 		$d = $d ?: ['extra' => [], 'fingerprint' => [
 			ju_core_version(), ju_domain_current(), ju_magento_version(), ju_package_version($m), ju_store_code()
 		]];
-		// 2017-01-09
+		# 2017-01-09
 		if ($v instanceof DFE) {
 			$context = ju_extend($context, $v->sentryContext());
 		}
 		$context = ju_extend($d, $context);
 		if ($v instanceof E) {
-			// 2016-12-22 https://docs.sentry.io/clients/php/usage/#reporting-exceptions
+			# 2016-12-22 https://docs.sentry.io/clients/php/usage/#reporting-exceptions
 			ju_sentry_m($m)->captureException($v, $context);
 		}
 		else {
 			$v = ju_dump($v);
-			// 2016-12-22 https://docs.sentry.io/clients/php/usage/#reporting-other-errors
+			# 2016-12-22 https://docs.sentry.io/clients/php/usage/#reporting-other-errors
 			ju_sentry_m($m)->captureMessage($v, [], [
 				'fingerprint' => array_merge(jua($context, 'fingerprint', []), [$v])
 				,'level' => Sentry::DEBUG
@@ -63,7 +63,7 @@ function ju_sentry_m($m) {return jucf(function($m) {
 	/** @var array(string => $r) $a */ /** @var array(string => string)|null $sa */
 	if (($a = ju_module_json($m, 'df', false)) && ($sa = jua($a, 'sentry'))) {
 		$r = new Sentry(intval($sa['id']), $sa['key1'], $sa['key2']);
-		// 2016-12-23 https://docs.sentry.io/clientdev/interfaces/user
+		# 2016-12-23 https://docs.sentry.io/clientdev/interfaces/user
 		/** @var User|null $u */
 		$r->user((ju_is_cli() ? ['username' => ju_cli_user()] : (
 			($u = ju_backend_user()) ? [

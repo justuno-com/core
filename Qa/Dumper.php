@@ -1,6 +1,6 @@
 <?php
 namespace Justuno\Core\Qa;
-// 2020-06-18 "Port the `Df\Qa\Dumper` class": https://github.com/justuno-com/core/issues/82
+# 2020-06-18 "Port the `Df\Qa\Dumper` class": https://github.com/justuno-com/core/issues/82
 final class Dumper {
 	/**
 	 * @used-by ju_dump()
