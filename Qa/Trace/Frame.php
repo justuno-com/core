@@ -50,7 +50,7 @@ final class Frame extends \Justuno\Core\O {
 	/**
 	 * 2015-04-03 Путь к файлу отсутствует при вызовах типа @see call_user_func()
 	 * @used-by context()
-	 * @used-by \Df\Qa\Trace\Formatter::frame()
+	 * @used-by \Justuno\Core\Qa\Trace\Formatter::frame()
 	 * @return string|null
 	 */
 	function filePath() {return $this['file'];}
@@ -58,7 +58,7 @@ final class Frame extends \Justuno\Core\O {
 	/**
 	 * 2015-04-03 Строка отсутствует при вызовах типа @see call_user_func()
 	 * @used-by context()
-	 * @used-by \Df\Qa\Trace\Formatter::frame()
+	 * @used-by \Justuno\Core\Qa\Trace\Formatter::frame()
 	 * @return int|null
 	 */
 	function line() {return $this['line'];}
@@ -91,15 +91,15 @@ final class Frame extends \Justuno\Core\O {
 	 * 2015-04-03 Для простых функций (не методов) вернёт название функции.
 	 * @used-by __toString()
 	 * @used-by methodParameter()
-	 * @used-by \Df\Qa\Method::raiseErrorParam()
-	 * @used-by \Df\Qa\Method::raiseErrorResult()
-	 * @used-by \Df\Qa\Method::raiseErrorVariable()
+	 * @used-by \Justuno\Core\Qa\Method::raiseErrorParam()
+	 * @used-by \Justuno\Core\Qa\Method::raiseErrorResult()
+	 * @used-by \Justuno\Core\Qa\Method::raiseErrorVariable()
 	 * @return string
 	 */
 	function methodName() {return ju_cc_method($this->className(), $this->functionName());}
 
 	/**
-	 * @used-by \Df\Qa\Method::raiseErrorParam()
+	 * @used-by \Justuno\Core\Qa\Method::raiseErrorParam()
 	 * @param int $ordering  		zero-based
 	 * @return RP
 	 */
@@ -121,7 +121,7 @@ final class Frame extends \Justuno\Core\O {
 	 * 2020-02-27
 	 * @used-by __toString()
 	 * @used-by i()
-	 * @used-by \Df\Qa\Trace\Formatter::p()
+	 * @used-by \Justuno\Core\Qa\Trace\Formatter::p()
 	 * @param string $v
 	 * @return bool|null
 	 */
@@ -179,8 +179,8 @@ final class Frame extends \Justuno\Core\O {
 
 	/**           
 	 * 2020-02-27 `self $previous` works even in PHP 5.0.0: https://3v4l.org/pTl8l
-	 * @used-by \Df\Qa\Method::caller()
-	 * @used-by \Df\Qa\Message\Failure::frames()
+	 * @used-by \Justuno\Core\Qa\Method::caller()
+	 * @used-by \Justuno\Core\Qa\Message\Failure::frames()
 	 * @param array(string => string|int) $frameA
 	 * @param self|null $previous [optional]
 	 * @param bool $showContext [optional]
