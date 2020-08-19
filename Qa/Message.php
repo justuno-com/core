@@ -3,9 +3,8 @@ namespace Justuno\Core\Qa;
 /**
  * 2020-06-17 "Port the `Df\Qa\Message` class": https://github.com/justuno-com/core/issues/54
  * @see \Justuno\Core\Qa\Message\Failure
- * @see \Justuno\Core\Qa\Message\Notification
  */
-abstract class Message extends \Df\Core\O {
+abstract class Message extends \Justuno\Core\O {
 	/**
 	 * @used-by report()
 	 * @see \Justuno\Core\Qa\Message\Failure\Error::main()
