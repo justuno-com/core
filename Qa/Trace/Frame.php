@@ -112,7 +112,7 @@ final class Frame extends \Justuno\Core\O {
 				,count($m->getParameters())
 			);
 		}
-		df_assert_lt(count($m->getParameters()), $ordering);
+		ju_assert_lt(count($m->getParameters()), $ordering);
 		ju_assert(($r = jua($m->getParameters(), $ordering)) instanceof RP);
 		return $r;
 	}, [$ordering]);}
