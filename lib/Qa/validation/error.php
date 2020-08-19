@@ -20,6 +20,7 @@ use Magento\Framework\Phrase;
  * @used-by ju_try()
  * @used-by juc()
  * @used-by \Justuno\Core\Qa\Method::throwException()
+ * @used-by \Justuno\Core\Qa\Trace\Frame::methodParameter()
  * @used-by \Justuno\Core\Zf\Filter\StringTrim::_splitUtf8()
  * @param string ...$args
  * @throws DFE

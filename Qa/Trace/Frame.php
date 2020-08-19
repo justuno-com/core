@@ -4,12 +4,13 @@ use ReflectionFunction as RF;
 use ReflectionFunctionAbstract as RFA;
 use ReflectionMethod as RM;
 use ReflectionParameter as RP;
-final class Frame extends \Df\Core\O {
+# 2020-08-19 "Port the `Df\Qa\Trace\Frame` class" https://github.com/justuno-com/core/issues/197
+final class Frame extends \Justuno\Core\O {
 	/**
 	 * @used-by \Justuno\Core\Qa\Trace\Formatter::frame()
 	 * @return string
 	 */
-	function context() {return dfc($this, function() {
+	function context() {return juc($this, function() {
 		$r = ''; /** @var string $r */
 		if (is_file($this->filePath()) && $this->line()) {
 			$fileContents = file($this->filePath());/** @var string[] $fileContents */
@@ -40,7 +41,7 @@ final class Frame extends \Df\Core\O {
 						$end = min($end, $fEnd);
 					}
 				}
-				$r = df_trim(implode(array_slice($fileContents, $start, $end - $start)));
+				$r = ju_trim(implode(array_slice($fileContents, $start, $end - $start)));
 			}
 		}
 		return $r;
@@ -80,9 +81,9 @@ final class Frame extends \Df\Core\O {
 	 * @used-by \Df\Qa\Method::raiseErrorParam()
 	 * @return RM|null
 	 */
-	function method() {return dfc($this, function() {return
+	function method() {return juc($this, function() {return
 		($c = $this->className()) && ($f = $this->functionName()) && !$this->isClosure()
-			? df_try(function() use($c, $f) {return new RM($c, $f);}, null)
+			? ju_try(function() use($c, $f) {return new RM($c, $f);}, null)
 			: null
 	;});}
 
@@ -102,18 +103,18 @@ final class Frame extends \Df\Core\O {
 	 * @param int $ordering  		zero-based
 	 * @return RP
 	 */
-	function methodParameter($ordering) {return dfc($this, function($ordering) {/** @var RP $r */
+	function methodParameter($ordering) {return juc($this, function($ordering) {/** @var RP $r */
 		df_param_integer($ordering, 0);
-		df_assert($m = $this->method()); /** @var RM|null $m */
+		ju_assert($m = $this->method()); /** @var RM|null $m */
 		if ($ordering >= count($m->getParameters())) { # Параметр должен существовать
-			df_error(
+			ju_error(
 				"Программист ошибочно пытается получить значение параметра с индексом {$ordering}"
 				." метода «{$this->methodName()}», хотя этот метод принимает всего %d параметров."
 				,count($m->getParameters())
 			);
 		}
 		df_assert_lt(count($m->getParameters()), $ordering);
-		df_assert(($r = dfa($m->getParameters(), $ordering)) instanceof RP);
+		ju_assert(($r = jua($m->getParameters(), $ordering)) instanceof RP);
 		return $r;
 	}, [$ordering]);}
 
@@ -132,7 +133,7 @@ final class Frame extends \Df\Core\O {
 	 * @used-by methodName()
 	 * @return string
 	 */
-	private function className() {return df_nts($this['class']);}
+	private function className() {return ju_nts($this['class']);}
 
 	/**
 	 * 2016-07-31 Без проверки на closure будет сбой: «Function Df\Config\{closure}() does not exist».
@@ -151,8 +152,8 @@ final class Frame extends \Df\Core\O {
 	 * @used-by context()
 	 * @return RFA|RF|RM|null
 	 */
-	private function functionA() {return dfc($this, function() {return $this->method() ?: (
-		(!($f = $this->functionName())) || $this->isClosure() ? null : df_try(function() use($f) {return new RF($f);}, null)
+	private function functionA() {return juc($this, function() {return $this->method() ?: (
+		(!($f = $this->functionName())) || $this->isClosure() ? null : ju_try(function() use($f) {return new RF($f);}, null)
 	);});}
 	
 	/**
@@ -160,7 +161,7 @@ final class Frame extends \Df\Core\O {
 	 * @used-by methodName()
 	 * @return string
 	 */
-	private function functionName() {return df_nts($this['function']);}
+	private function functionName() {return ju_nts($this['function']);}
 
 	/**
 	 * 2016-07-31
@@ -168,7 +169,7 @@ final class Frame extends \Df\Core\O {
 	 * @used-by method()
 	 * @return bool
 	 */
-	private function isClosure() {return df_ends_with($this->functionName(), '{closure}');}
+	private function isClosure() {return ju_ends_with($this->functionName(), '{closure}');}
 
 	/**
 	 * @used-by context()

@@ -5,6 +5,7 @@
  * @used-by ju_explode_n()
  * @used-by ju_trim()
  * @used-by \Justuno\Core\Qa\Message::sections()
+ * @used-by \Justuno\Core\Qa\Trace\Frame::context()
  * @param string|string[] $s
  * @param string $charlist [optional]
  * @param bool|mixed|\Closure $throw [optional]

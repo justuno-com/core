@@ -4,6 +4,7 @@ namespace Justuno\Core;
  * 2017-07-13
  * 2020-08-19 "Port the `Df\Core\O` class" https://github.com/justuno-com/core/issues/195
  * @see \Justuno\Core\Qa\Message
+ * @see \Justuno\Core\Qa\Trace\Frame
  */
 class O implements \ArrayAccess {
 	/**

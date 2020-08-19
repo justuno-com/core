@@ -5,6 +5,10 @@ use Justuno\Core\RAM;
  * 2016-08-31
  * 2020-08-14 "Port the `dfc` function" https://github.com/justuno-com/core/issues/194
  * @used-by \Justuno\Core\Qa\Message::report()
+ * @used-by \Justuno\Core\Qa\Trace\Frame::context()
+ * @used-by \Justuno\Core\Qa\Trace\Frame::functionA()
+ * @used-by \Justuno\Core\Qa\Trace\Frame::method()
+ * @used-by \Justuno\Core\Qa\Trace\Frame::methodParameter()
  * @param object $o
  * @param \Closure $m
  * @param mixed[] $a [optional]

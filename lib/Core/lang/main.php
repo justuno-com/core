@@ -29,6 +29,8 @@ function ju_if1($cond, $onTrue, $onFalse = null) {return $cond ? ju_call_if($onT
  * @used-by ju_gd()
  * @used-by ju_trim()
  * @used-by ju_zuri()
+ * @used-by \Justuno\Core\Qa\Trace\Frame::functionA()
+ * @used-by \Justuno\Core\Qa\Trace\Frame::method()
  * @param F $try
  * @param F|bool|mixed $onE [optional]
  * @return mixed

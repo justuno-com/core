@@ -21,6 +21,8 @@ use Justuno\Core\Qa\Method as Q;
  * 2020-06-17 "Port the `df_assert` function": https://github.com/justuno-com/core/issues/33
  * @used-by ju_module_dir()
  * @used-by juaf()
+ * @used-by \Justuno\Core\Qa\Trace\Frame::methodParameter()
+ * @used-by \Justuno\Core\Qa\Trace\Frame::methodParameter()
  * @param mixed $cond
  * @param string|E|null $m [optional]
  * @return mixed
