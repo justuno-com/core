@@ -4,6 +4,21 @@ use Justuno\Core\Exception as DFE;
 use ReflectionClass as RC;
 
 /**
+ * 2016-08-10
+ * 2020-08-19 "Port the `df_cc_method` function" https://github.com/justuno-com/core/issues/202
+ * @used-by \Justuno\Core\Qa\Trace\Frame::methodName()
+ * @param string|object|null|array(object|string)|array(string = string) $a1
+ * @param string|null $a2 [optional]
+ * @return string
+ */
+function ju_cc_method($a1, $a2 = null) {return ju_ccc('::',
+	$a2 ? [ju_cts($a1), $a2] : (
+		!isset($a1['function']) ? $a1 :
+			[jua($a1, 'class'), $a1['function']]
+	)
+);}
+
+/**
  * 2015-12-29
  * 2016-10-20
  * Нельзя делать параметр $c опциональным, потому что иначе получим сбой:
@@ -23,6 +38,7 @@ function ju_class_l($c) {return ju_last(ju_explode_class($c));}
  * 		echo ltrim('\\Путь\\Путь\\Путь', '\\');  => Путь\Путь\Путь
  * 2016-10-20 $c is required here because it is used by @used-by get_class(): https://3v4l.org/k6Hd5
  * 2020-06-26 "Port the `df_cts` function": https://github.com/justuno-com/core/issues/141
+ * @used-by ju_cc_method()
  * @used-by ju_explode_class()
  * @used-by ju_module_name()
  * @param string|object $c

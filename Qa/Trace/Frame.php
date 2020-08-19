@@ -96,7 +96,7 @@ final class Frame extends \Justuno\Core\O {
 	 * @used-by \Df\Qa\Method::raiseErrorVariable()
 	 * @return string
 	 */
-	function methodName() {return df_cc_method($this->className(), $this->functionName());}
+	function methodName() {return ju_cc_method($this->className(), $this->functionName());}
 
 	/**
 	 * @used-by \Df\Qa\Method::raiseErrorParam()

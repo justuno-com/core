@@ -7,6 +7,7 @@ use Traversable as T;
 /**
  * 2020-06-13 "Port the `dfa` function": https://github.com/justuno-com/core/issues/12
  * @used-by ju_call()
+ * @used-by ju_cc_method()
  * @used-by ju_cli_argv()
  * @used-by ju_extend()
  * @used-by ju_is_localhost()
