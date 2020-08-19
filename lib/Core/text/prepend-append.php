@@ -2,6 +2,7 @@
 /**
  * 2020-06-18 "Port the `df_pad` function": https://github.com/justuno-com/core/issues/64
  * @used-by ju_kv()
+ * @used-by \Justuno\Core\Qa\Trace\Formatter::param()
  * @param string $phrase
  * @param int $length
  * @param string $pattern

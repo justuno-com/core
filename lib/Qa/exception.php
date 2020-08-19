@@ -7,6 +7,7 @@ use Magento\Framework\Phrase;
  * @used-by ju_sprintf_strict()
  * @used-by \Justuno\Core\Exception::__construct()
  * @used-by \Justuno\Core\Qa\Message::log()
+ * @used-by \Justuno\Core\Qa\Trace\Formatter::frame()
  * @param E|string|Phrase $e
  * @return string|Phrase
  */

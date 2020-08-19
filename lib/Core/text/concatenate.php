@@ -7,6 +7,7 @@
  * @used-by \Justuno\Core\Qa\Method::raiseErrorParam()
  * @used-by \Justuno\Core\Qa\Method::raiseErrorResult()
  * @used-by \Justuno\Core\Qa\Method::raiseErrorVariable()
+ * @used-by \Justuno\Core\Qa\Trace\Formatter::frame()
  * @param string|string[] ...$args
  * @return string
  */

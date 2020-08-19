@@ -1,7 +1,7 @@
 <?php
 use Exception as E;
 use Justuno\Core\Qa\Trace;
-use Df\Qa\Trace\Formatter;
+use Justuno\Core\Qa\Trace\Formatter;
 
 /**
  * 2020-06-16 "Port the `df_bt` function": https://github.com/justuno-com/core/issues/27

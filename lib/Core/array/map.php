@@ -96,6 +96,7 @@ function ju_map($a1, $a2, $pAppend = [], $pPrepend = [], $keyPosition = 0, $retu
  * @used-by ju_ksort_r()
  * @used-by ju_kv()
  * @used-by \Justuno\Core\Qa\Dumper::dumpArrayElements()
+ * @used-by \Justuno\Core\Qa\Trace\Formatter::p()
  * @used-by \Justuno\Core\Sentry\Client::send()
  * @used-by \Justuno\Core\Sentry\Client::send_http()
  * @param array|callable|\Traversable $a1
