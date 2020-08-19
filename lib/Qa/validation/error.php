@@ -8,6 +8,7 @@ use Magento\Framework\Phrase;
  * @used-by ju_assert()
  * @used-by ju_assert_gd()
  * @used-by ju_assert_ne()
+ * @used-by ju_assert_nef()
  * @used-by ju_call()
  * @used-by ju_customer()
  * @used-by ju_extend()

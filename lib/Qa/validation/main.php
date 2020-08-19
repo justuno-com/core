@@ -1,6 +1,4 @@
 <?php
-use Df\Zf\Validate\StringT\FloatT;
-use Df\Zf\Validate\StringT\IntT;
 use Exception as E;
 use Justuno\Core\Exception as DFE;
 use Justuno\Core\Qa\Method as Q;
@@ -42,6 +40,19 @@ function ju_assert($cond, $m = null) {return $cond ?: ju_error($m);}
  */
 function ju_assert_ne($neResult, $v, $m = null) {return $neResult !== $v ? $v : ju_error($m ?:
 	"The value {$v} is rejected, any other is allowed."
+);}
+
+/**
+ * 2017-01-14
+ * 2020-08-19 "Port the `df_assert_nef` function" https://github.com/justuno-com/core/issues/201
+ * @used-by \Justuno\Core\Qa\Trace\Frame::context()
+ * @param mixed $v
+ * @param string|E $m [optional]
+ * @return mixed
+ * @throws DFE
+ */
+function ju_assert_nef($v, $m = null) {return false !== $v ? $v : ju_error($m ?:
+	'The «false» value is rejected, any others are allowed.'
 );}
 
 /**

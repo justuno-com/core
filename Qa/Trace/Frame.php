@@ -32,8 +32,8 @@ final class Frame extends \Justuno\Core\O {
 					 * isInternal() === TRUE means ->getFileName() and ->getStartLine() will return FALSE
 					 */
 					if ($func && !$func->isInternal()) {
-						$fStart = df_assert_nef($func->getStartLine()); /** @var int $fStart */
-						$fEnd = df_assert_nef($func->getEndLine()); /** @var int $fEnd */
+						$fStart = ju_assert_nef($func->getStartLine()); /** @var int $fStart */
+						$fEnd = ju_assert_nef($func->getEndLine()); /** @var int $fEnd */
 						# 2016-07-31
 						# http://stackoverflow.com/a/7027198
 						# It's actually - 1, otherwise you wont get the function() block.
