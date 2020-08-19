@@ -13,6 +13,7 @@ use Traversable as T;
  * @used-by ju_is_localhost()
  * @used-by ju_my_local()
  * @used-by ju_package()
+ * @used-by ju_prop()
  * @used-by ju_request()
  * @used-by ju_sentry()
  * @used-by ju_sentry_m()
