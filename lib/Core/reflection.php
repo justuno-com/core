@@ -4,6 +4,19 @@ use Justuno\Core\Exception as DFE;
 use ReflectionClass as RC;
 
 /**
+ * 2015-12-29
+ * 2016-10-20
+ * Нельзя делать параметр $c опциональным, потому что иначе получим сбой:
+ * «get_class() called without object from outside a class»
+ * https://3v4l.org/k6Hd5
+ * 2020-08-19 "Port the `df_class_l` function" https://github.com/justuno-com/core/issues/199
+ * @used-by \Justuno\Core\Qa\Trace\Formatter::frame()
+ * @param string|object $c
+ * @return string
+ */
+function ju_class_l($c) {return df_last(ju_explode_class($c));}
+
+/**
  * 2015-08-14 @uses get_class() does not add the leading slash `\` before the class name: http://3v4l.org/HPF9R
  * 2015-09-01
  * @uses ltrim() correctly handles Cyrillic letters: https://3v4l.org/rrNL9
@@ -23,6 +36,7 @@ function ju_cts($c, $del = '\\') {/** @var string $r */
 
 /**
  * 2020-06-26 "Port the `df_explode_class` function": https://github.com/justuno-com/core/issues/139
+ * @used-by ju_class_l()
  * @used-by ju_module_name()
  * @param string|object $c
  * @return string[]

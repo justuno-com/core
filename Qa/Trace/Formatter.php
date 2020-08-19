@@ -58,7 +58,7 @@ final class Formatter {
 			 */
 			static $loop = false;
 			if ($loop) {
-				ju_log_l(__CLASS__, "$r\n{$e->getTraceAsString()}", df_class_l(__CLASS__));
+				ju_log_l(__CLASS__, "$r\n{$e->getTraceAsString()}", ju_class_l(__CLASS__));
 			}
 			else {
 				$loop = true;
