@@ -104,7 +104,6 @@ final class Frame extends \Justuno\Core\O {
 	 * @return RP
 	 */
 	function methodParameter($ordering) {return juc($this, function($ordering) {/** @var RP $r */
-		df_param_integer($ordering, 0);
 		ju_assert($m = $this->method()); /** @var RM|null $m */
 		if ($ordering >= count($m->getParameters())) { # Параметр должен существовать
 			ju_error(
