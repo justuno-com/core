@@ -14,7 +14,7 @@ use ReflectionClass as RC;
  * @param string|object $c
  * @return string
  */
-function ju_class_l($c) {return df_last(ju_explode_class($c));}
+function ju_class_l($c) {return ju_last(ju_explode_class($c));}
 
 /**
  * 2015-08-14 @uses get_class() does not add the leading slash `\` before the class name: http://3v4l.org/HPF9R
