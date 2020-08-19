@@ -61,7 +61,7 @@ function ju_caller_m($o = 0) {
 	$bt = ju_caller_entry(++$o); /** @var array(string => int) $bt */
 	$class = jua($bt, 'class'); /** @var string $class */
 	if (!$class) {
-		ju_log_l(null, $m = "df_caller_m(): no class.\nbt is:\n$bt", __FUNCTION__); /** @var string $m */
+		ju_log_l(null, $m = "ju_caller_m(): no class.\nbt is:\n$bt", __FUNCTION__); /** @var string $m */
 		ju_error($m);
 	}
 	return "$class::{$bt['function']}";
