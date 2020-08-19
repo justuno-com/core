@@ -13,7 +13,7 @@ final class Formatter {
 	 * @param bool $showContext [optional]
 	 * @return string
 	 */
-	static function p(T $t, $showContext = false) {return dfcf(function($t, $showContext) {
+	static function p(T $t, $showContext = false) {return jucf(function($t, $showContext) {
 		$count = count($t); /** @var int $count */
 		return implode(ju_map_k($t, function($index, F $frame) use($count, $showContext) {
 			$index++;
