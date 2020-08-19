@@ -26,7 +26,7 @@ function ju_prop($o, $v, $d = null, $type = null) {/** @var object|mixed|null $r
 	 * 2) My 2nd solution was using @see func_num_args():
 	 * «How to tell if optional parameter in PHP method/function was set or not?»
 	 * https://stackoverflow.com/a/3471863
-	 * It is wrong because the $v argument is alwaus passed to df_prop()
+	 * It is wrong because the $v argument is alwaus passed to ju_prop()
 	 */
 	$isGet = DF_N === $v; /** @vae bool $isGet */
 	if ('int' === $d) {
