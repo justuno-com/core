@@ -34,7 +34,7 @@ function ju_prop($o, $v, $d = null, $type = null) {/** @var object|mixed|null $r
 	}
 	/** @var string $k */
 	if (is_null($o)) { # 2019-09-08 A static call.
-		$k = df_caller_m();
+		$k = ju_caller_m();
 		static $s; /** @var array(string => mixed) $s */
 		if ($isGet) {
 			$r = jua($s, $k, $d);

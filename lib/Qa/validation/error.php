@@ -11,6 +11,7 @@ use Magento\Framework\Phrase;
  * @used-by ju_assert_ne()
  * @used-by ju_assert_nef()
  * @used-by ju_call()
+ * @used-by ju_caller_m()
  * @used-by ju_customer()
  * @used-by ju_extend()
  * @used-by ju_file_name()

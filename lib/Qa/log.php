@@ -26,6 +26,7 @@ function ju_log_e($e, $m = null, $d = [], $suf = null) {ju_log_l($m, $e, $d, !is
 /**
  * 2017-01-11
  * 2020-06-17 "Port the `df_log_l` function": https://github.com/justuno-com/core/issues/51
+ * @used-by ju_caller_m()
  * @used-by ju_log()
  * @used-by ju_log_e()
  * @used-by \Justuno\Core\Qa\Trace\Formatter::frame()
