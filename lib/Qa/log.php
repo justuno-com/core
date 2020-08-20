@@ -52,7 +52,7 @@ function ju_log_l($m, $p2, $p3 = [], $suf = null) {
 		]);
 	}
 	$d = !$d ? null : (is_string($d) ? $d : ju_json_encode($d));
-	df_report(
+	ju_report(
 		df_ccc('--', 'mage2.pro/' . df_ccc('-', df_report_prefix($m), '{date}--{time}'), $suf) .  '.log'
 		,df_cc_n(
 			$d
@@ -69,6 +69,7 @@ function ju_log_l($m, $p2, $p3 = [], $suf = null) {
  * 2018-07-06 The `$append` parameter has been added.
  * 2020-02-14 If $append is `true`, then $m will be written on a new line.
  * 2020-06-20 "Port the `df_report` function": https://github.com/justuno-com/core/issues/93
+ * @used-by ju_log_l()
  * @used-by \Justuno\Core\Qa\Message::log()
  * @param string $f
  * @param string $m
