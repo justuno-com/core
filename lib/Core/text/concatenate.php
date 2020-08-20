@@ -12,6 +12,7 @@ function ju_cc($glue, ...$elements) {return implode($glue, jua_flatten($elements
 /**
  * 2020-06-18 "Port the `df_cc_n` function": https://github.com/justuno-com/core/issues/63
  * @used-by ju_kv()
+ * @used-by ju_log_l()
  * @used-by ju_tab_multiline()
  * @used-by \Justuno\Core\Qa\Dumper::dumpArrayElements()
  * @used-by \Justuno\Core\Qa\Method::raiseErrorParam()
