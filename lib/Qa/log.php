@@ -53,7 +53,7 @@ function ju_log_l($m, $p2, $p3 = [], $suf = null) {
 	}
 	$d = !$d ? null : (is_string($d) ? $d : ju_json_encode($d));
 	ju_report(
-		df_ccc('--', 'mage2.pro/' . df_ccc('-', df_report_prefix($m), '{date}--{time}'), $suf) .  '.log'
+		ju_ccc('--', 'mage2.pro/' . ju_ccc('-', df_report_prefix($m), '{date}--{time}'), $suf) .  '.log'
 		,df_cc_n(
 			$d
 			,!$e ? null : ['EXCEPTION', QE::i([
