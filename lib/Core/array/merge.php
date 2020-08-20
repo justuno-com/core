@@ -5,6 +5,7 @@ use Justuno\Core\Exception as DFE;
  * 2015-02-18
  * 2020-06-26 "Port the `df_extend` function": https://github.com/justuno-com/core/issues/158
  * @used-by ju_extend()
+ * @used-by ju_log_l()
  * @used-by ju_sentry()
  * @param array(string => mixed) $defaults
  * @param array(string => mixed) $newValues

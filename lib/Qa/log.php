@@ -40,7 +40,7 @@ function ju_log_l($m, $p2, $p3 = [], $suf = null) {
 	list($e, $d, $suf) = $p2 instanceof E ? [$p2, $p3, $suf] : [null, $p2, $p3];
 	$suf = $suf ?: ju_caller_f();
 	if (is_array($d)) {
-		$d = df_extend($d, ['Mage2.PRO' =>
+		$d = ju_extend($d, ['Mage2.PRO' =>
 			['mage2pro/core' => df_core_version(), 'Magento' => df_magento_version(), 'PHP' => phpversion()]
 			+ (df_is_cli()
 				? ['Command' => df_cli_cmd()]
