@@ -46,7 +46,7 @@ function ju_log_l($m, $p2, $p3 = [], $suf = null) {
 				? ['Command' => ju_cli_cmd()]
 				: (
 					['Referer' => df_referer(), 'URL' => df_current_url()]
-					+ (!df_request_o()->isPost() ? [] : ['Post' => $_POST])
+					+ (!ju_request_o()->isPost() ? [] : ['Post' => $_POST])
 				)
 			)
 		]);
