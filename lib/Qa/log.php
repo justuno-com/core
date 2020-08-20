@@ -42,7 +42,7 @@ function ju_log_l($m, $p2, $p3 = [], $suf = null) {
 	if (is_array($d)) {
 		$d = ju_extend($d, ['Mage2.PRO' =>
 			['mage2pro/core' => ju_core_version(), 'Magento' => ju_magento_version(), 'PHP' => phpversion()]
-			+ (df_is_cli()
+			+ (ju_is_cli()
 				? ['Command' => df_cli_cmd()]
 				: (
 					['Referer' => df_referer(), 'URL' => df_current_url()]
