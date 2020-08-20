@@ -37,6 +37,7 @@ function ju_is_localhost() {return in_array(jua($_SERVER, 'REMOTE_ADDR', []), ['
  * 2) Now Magento 2.3 (installed with Git) returns the «dev-2.3-develop» string from the
  * @see \Magento\Framework\App\ProductMetadata::getVersion() method.
  * 2020-06-26 "Port the `df_magento_version` function": https://github.com/justuno-com/core/issues/153
+ * @used-by ju_log_l()
  * @used-by ju_sentry()
  * @used-by ju_sentry_m()
  * @return string
