@@ -41,7 +41,7 @@ function ju_log_l($m, $p2, $p3 = [], $suf = null) {
 	$suf = $suf ?: ju_caller_f();
 	if (is_array($d)) {
 		$d = ju_extend($d, ['Mage2.PRO' =>
-			['mage2pro/core' => df_core_version(), 'Magento' => df_magento_version(), 'PHP' => phpversion()]
+			['mage2pro/core' => ju_core_version(), 'Magento' => df_magento_version(), 'PHP' => phpversion()]
 			+ (df_is_cli()
 				? ['Command' => df_cli_cmd()]
 				: (
