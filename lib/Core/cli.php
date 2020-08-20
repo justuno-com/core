@@ -17,7 +17,7 @@ function ju_cli_argv($i = null) {return jua(jua($_SERVER, 'argv', []), $i);}
  * @return string
  *
  */
-function ju_cli_cmd() {return df_cc_s(ju_cli_argv());}
+function ju_cli_cmd() {return ju_cc_s(ju_cli_argv());}
 
 /**
  * 2020-02-15
