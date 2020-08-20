@@ -4,8 +4,8 @@ namespace Justuno\Core\Qa\Message\Failure;
 final class Exception extends \Justuno\Core\Qa\Message\Failure {
 	/**
 	 * @override
-	 * @see \Df\Qa\Message::main()
-	 * @used-by \Df\Qa\Message::report()
+	 * @see \Justuno\Core\Qa\Message::main()
+	 * @used-by \Justuno\Core\Qa\Message::report()
 	 * @return string
 	 */
 	protected function main() {
@@ -15,19 +15,17 @@ final class Exception extends \Justuno\Core\Qa\Message\Failure {
 
 	/**
 	 * @override
-	 * @see \Df\Qa\Message\Failure::postface()
-	 * @used-by \Df\Qa\Message::report()
+	 * @see \Justuno\Core\Qa\Message\Failure::postface()
+	 * @used-by \Justuno\Core\Qa\Message::report()
 	 * @return string
 	 */
-	protected function postface() {return $this->sections(
-		$this->sections($this->e()->comments()), parent::postface()
-	);}
+	protected function postface() {return $this->sections($this->sections($this->e()->comments()), parent::postface());}
 
 	/**
 	 * 2016-08-20
 	 * @override
-	 * @see \Df\Qa\Message::reportNamePrefix()
-	 * @used-by \Df\Qa\Message::reportName()
+	 * @see \Justuno\Core\Qa\Message::reportNamePrefix()
+	 * @used-by \Justuno\Core\Qa\Message::reportName()
 	 * @return string|string[]
 	 */
 	protected function reportNamePrefix() {return $this[self::P__REPORT_NAME_PREFIX] ?: $this->e()->reportNamePrefix();}
