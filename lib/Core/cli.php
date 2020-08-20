@@ -2,12 +2,22 @@
 /**
  * 2017-03-15
  * 2020-06-17 "Port the `df_cli_argv` function": https://github.com/justuno-com/core/issues/49
+ * @used-by ju_cli_cmd()
  * @used-by ju_cli_script()
  * @used-by ju_is_cron()
- * @param int $i [optional]
+ * @param int|null $i [optional]
  * @return string|string[]
  */
 function ju_cli_argv($i = null) {return jua(jua($_SERVER, 'argv', []), $i);}
+
+/**
+ * 2020-05-24
+ * 2020-08-21 "Port the `df_cli_cmd` function" https://github.com/justuno-com/core/issues/209
+ * @used-by ju_log_l()
+ * @return string
+ *
+ */
+function ju_cli_cmd() {return df_cc_s(ju_cli_argv());}
 
 /**
  * 2020-02-15

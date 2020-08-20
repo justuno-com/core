@@ -43,7 +43,7 @@ function ju_log_l($m, $p2, $p3 = [], $suf = null) {
 		$d = ju_extend($d, ['Mage2.PRO' =>
 			['mage2pro/core' => ju_core_version(), 'Magento' => ju_magento_version(), 'PHP' => phpversion()]
 			+ (ju_is_cli()
-				? ['Command' => df_cli_cmd()]
+				? ['Command' => ju_cli_cmd()]
 				: (
 					['Referer' => df_referer(), 'URL' => df_current_url()]
 					+ (!df_request_o()->isPost() ? [] : ['Post' => $_POST])
