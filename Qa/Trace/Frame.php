@@ -15,8 +15,6 @@ final class Frame extends \Justuno\Core\O {
 		if (is_file($this->filePath()) && $this->line()) {
 			$fileContents = file($this->filePath());/** @var string[] $fileContents */
 			if (is_array($fileContents)) {
-				# Перенос строки здесь не нужен, потому что строки с кодом уже содержат переносы на следующую стоку:
-				# http://php.net/manual/function.file.php
 				$fileLength = count($fileContents); /** @var int $fileLength */
 				$radius = 8; /** @var int $radius */
 				$start = max(0, $this->line() - $radius); /** @var int $start */
@@ -78,7 +76,7 @@ final class Frame extends \Justuno\Core\O {
 	 * @see functionA()
 	 * @used-by functionA()
 	 * @used-by methodParameter()
-	 * @used-by \Df\Qa\Method::raiseErrorParam()
+	 * @used-by \Justuno\Core\Qa\Method::raiseErrorParam()
 	 * @return RM|null
 	 */
 	function method() {return juc($this, function() {return
