@@ -52,7 +52,7 @@ final class Exception extends \Justuno\Core\Qa\Message\Failure {
 	 * @used-by trace()
 	 * @return \Justuno\Core\Exception
 	 */
-	private function e() {return dfc($this, function() {return df_ewrap($this[self::P__EXCEPTION]);});}
+	private function e() {return juc($this, function() {return ju_ewrap($this[self::P__EXCEPTION]);});}
 
 	/**
 	 * @used-by e()

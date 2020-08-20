@@ -16,6 +16,7 @@ function ju_ef(E $e) {while ($e->getPrevious()) {$e = $e->getPrevious();} return
  * @used-by ju_sprintf_strict()
  * @used-by \Justuno\Core\Exception::__construct()
  * @used-by \Justuno\Core\Qa\Message::log()
+ * @used-by \Justuno\Core\Qa\Message\Failure\Exception::e()
  * @used-by \Justuno\Core\Qa\Trace\Formatter::frame()
  * @param E|string|Phrase $e
  * @return string|Phrase
