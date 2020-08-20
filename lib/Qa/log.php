@@ -59,7 +59,7 @@ function ju_log_l($m, $p2, $p3 = [], $suf = null) {
 			,!$e ? null : ['EXCEPTION', QE::i([
 				QE::P__EXCEPTION => $e, QE::P__REPORT_NAME_PREFIX => df_report_prefix($m), QE::P__SHOW_CODE_CONTEXT => false
 			])->report(), "\n\n"]
-			,df_bt_s(1)
+			,ju_bt_s(1)
 		)
 	);
 }

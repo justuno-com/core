@@ -13,6 +13,7 @@ function ju_bt($levelsToSkip = 0) {df_report('bt-{date}-{time}.log', ju_bt_s(++$
 /**
  * 2020-06-16 "Port the `df_bt_s` function": https://github.com/justuno-com/core/issues/28
  * @used-by ju_bt()
+ * @used-by ju_log_l()
  * @param int|E $p
  * @return string
  */
