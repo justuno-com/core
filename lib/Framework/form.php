@@ -18,7 +18,7 @@ function ju_fe_init(AE $e, $class = null, $css = [], $params = [], $path = null)
 	$class = ju_cts($class ?: $e);
 	$moduleName = ju_module_name($class); /** @var string $moduleName */
 	if (is_null($path)) {
-		$classA = df_explode_class_lc($class); /** @var string[] $classA */
+		$classA = ju_explode_class_lc($class); /** @var string[] $classA */
 		$classLast = array_pop($classA);
 		switch ($classLast) {
 			case 'formElement':
