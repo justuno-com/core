@@ -9,4 +9,4 @@ use Magento\Framework\UrlInterface as IUrl;
  * @used-by ju_current_url()
  * @return IUrl|Url|IUrlBackend|UrlBackend
  */
-function ju_url_o() {return df_o(IUrl::class);}
+function ju_url_o() {return ju_o(IUrl::class);}

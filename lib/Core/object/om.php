@@ -17,6 +17,7 @@ use Magento\Framework\ObjectManagerInterface as IOM;
  * @used-by ju_scope_resolver_pool()
  * @used-by ju_store_cookie_m()
  * @used-by ju_store_m()
+ * @used-by ju_url_o()
  * @used-by ju_visitor_ip()
  * @param string $t
  * @return mixed
