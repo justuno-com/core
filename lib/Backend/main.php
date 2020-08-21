@@ -1,8 +1,5 @@
 <?php
-use Df\Backend\Model\Auth;
-use Df\Customer\Model\Session as DfSessionC;
 use Magento\Backend\Model\Auth\Session as SessionB;
-use Magento\Customer\Model\Session as SessionC;
 use Magento\User\Model\User;
 
 /**
