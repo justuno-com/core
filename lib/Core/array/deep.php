@@ -1,5 +1,5 @@
 <?php
-use Df\Core\Exception as DFE;
+use Justuno\Core\Exception as DFE;
 /**
  * 2020-06-14 "Port the `dfa_deep` function": https://github.com/justuno-com/core/issues/18
  * @used-by jua()
