@@ -10,7 +10,7 @@ use Magento\Setup\Module\Setup;
  * 2020-08-21 "Port the `Df\Framework\Upgrade\Schema` class" https://github.com/justuno-com/core/issues/227
  * @see \Justuno\M2\Setup\UpgradeSchema
  */
-abstract class Schema extends \Df\Framework\Upgrade implements IUpgradeSchema {
+abstract class Schema extends \Justuno\Core\Framework\Upgrade implements IUpgradeSchema {
 	/**
 	 * 2016-08-14
 	 * @override
