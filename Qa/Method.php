@@ -90,7 +90,7 @@ final class Method {
 
 	/**
 	 * 2017-04-22
-	 * @used-by df_param_s()
+	 * @used-by ju_param_s()
 	 */
 	const S = 'A string is required.';
 
