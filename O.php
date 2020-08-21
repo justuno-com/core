@@ -59,7 +59,7 @@ class O implements \ArrayAccess {
 	 * @param string $k
 	 * @param mixed $v
 	 */
-	function offsetSet($k, $v) {dfa_deep_set($this->_a, $k, $v);}
+	function offsetSet($k, $v) {jua_deep_set($this->_a, $k, $v);}
 
 	/**
 	 * 2017-07-13

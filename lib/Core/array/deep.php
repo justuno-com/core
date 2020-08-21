@@ -46,3 +46,29 @@ function jua_deep(array $a, $path, $d = null) {/** @var mixed|null $r */
 	return is_null($r) ? $d : $r;
 }
 
+/**
+ * 2015-12-07
+ * 2020-08-21 "Port the `dfa_deep_set` function" https://github.com/justuno-com/core/issues/224
+ * @used-by \Justuno\Core\O::offsetSet()
+ * @param array(string => mixed) $array
+ * @param string|string[] $path
+ * @param mixed $value
+ * @return array(string => mixed)
+ * @throws DFE
+ */
+function jua_deep_set(array &$array, $path, $value) {
+	$pathParts = ju_explode_xpath($path); /** @var string[] $pathParts */
+	$a = &$array; /** @var array(string => mixed) $a */
+	while ($pathParts) {
+		$key = array_shift($pathParts); /** @var string $key */
+		if (!isset($a[$key])) {
+			$a[$key] = [];
+		}
+		$a = &$a[$key];
+		if (!is_array($a)) {
+			$a = [];
+		}
+	}
+	$a = $value;
+	return $array;
+}

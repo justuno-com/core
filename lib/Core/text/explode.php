@@ -82,6 +82,7 @@ function ju_explode_n($s) {return explode("\n", ju_normalize(ju_trim($s)));}
 /**
  * 2020-06-14 "Port the `df_explode_xpath` function": https://github.com/justuno-com/core/issues/20
  * @used-by jua_deep()
+ * @used-by jua_deep_set()
  * @param string|string[] $p
  * @return string[]
  */
