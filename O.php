@@ -41,7 +41,7 @@ class O implements \ArrayAccess {
 	 * @param string $k
 	 * @return bool
 	 */
-	function offsetExists($k) {return !is_null(dfa_deep($this->_a, $k));}
+	function offsetExists($k) {return !is_null(jua_deep($this->_a, $k));}
 
 	/**
 	 * 2017-07-13

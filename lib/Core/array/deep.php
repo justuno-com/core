@@ -3,6 +3,7 @@ use Df\Core\Exception as DFE;
 /**
  * 2020-06-14 "Port the `dfa_deep` function": https://github.com/justuno-com/core/issues/18
  * @used-by jua()
+ * @used-by \Justuno\Core\O::offsetExists()
  * @param array(string => mixed) $a
  * @param string|string[]|null $path
  * @param mixed $d [optional]
