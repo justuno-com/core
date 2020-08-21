@@ -1,6 +1,6 @@
 <?php
 namespace Justuno\Core\Qa;
-use Df\Qa\Trace\Frame;
+use Justuno\Core\Qa\Trace\Frame;
 use Df\Zf\Validate\ArrayT as VArray;
 use Df\Zf\Validate\Between as VBetween;
 use Df\Zf\Validate\Boolean as VBoolean;
