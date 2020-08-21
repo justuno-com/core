@@ -1,8 +1,4 @@
 <?php
-use Df\Core\R\ConT;
-use Justuno\Core\Exception as DFE;
-use ReflectionClass as RC;
-
 /**
  * 2016-08-10
  * 2020-08-19 "Port the `df_cc_method` function" https://github.com/justuno-com/core/issues/202
