@@ -2,6 +2,18 @@
 use Magento\Framework\View\Asset\File;
 use Magento\Framework\View\Asset\Source;
 /**
+ * 2015-10-27 http://stackoverflow.com/questions/4659345
+ * 2020-08-22 "Port the `df_asset_create` function" https://github.com/justuno-com/core/issues/249
+ * @used-by ju_asset_exists()
+ * @param string $u
+ * @return File
+ */
+function ju_asset_create($u) {$a = df_asset(); return !df_check_url_absolute($u)
+	? $a->createAsset($u)
+	: $a->createRemoteAsset($u, jua(['css' => 'text/css', 'js' => 'application/javascript'], ju_file_ext($u)))
+;}
+
+/**
  * 2015-12-29
  * By analogy with @see \Magento\Framework\View\Asset\File::getSourceFile():
  * https://github.com/magento/magento2/blob/2.0.0/lib/internal/Magento/Framework/View/Asset/File.php#L147-L156
@@ -17,7 +29,7 @@ use Magento\Framework\View\Asset\Source;
  */
 function ju_asset_exists($name, $m = null, $ext = null) {return jucf(
 	function($name, $m = null, $ext = null) {return
-		!!ju_asset_source()->findSource(df_asset_create(df_asset_name($name, $m, $ext)))
+		!!ju_asset_source()->findSource(ju_asset_create(df_asset_name($name, $m, $ext)))
 	;}
 , func_get_args());}
 
