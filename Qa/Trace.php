@@ -1,6 +1,6 @@
 <?php
 namespace Justuno\Core\Qa;
-use Df\Qa\Trace\Frame as F;
+use Justuno\Core\Qa\Trace\Frame as F;
 use ArrayIterator as AI;
 # 2020-06-16 "Port the `Df\Qa\Trace` class": https://github.com/justuno-com/core/issues/29
 final class Trace implements \IteratorAggregate, \Countable {
