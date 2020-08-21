@@ -19,6 +19,7 @@ use Traversable as T;
  * @used-by ju_request()
  * @used-by ju_sentry()
  * @used-by ju_sentry_m()
+ * @used-by \Justuno\Core\O::a()
  * @used-by \Justuno\Core\Qa\Trace\Frame::methodParameter()
  * @used-by \Justuno\Core\Sentry\Client::__construct()
  * @used-by \Justuno\Core\Sentry\Client::capture()
