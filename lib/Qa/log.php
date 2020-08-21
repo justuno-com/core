@@ -21,7 +21,7 @@ function ju_log($v, $m = null) {ju_log_l($m, $v); ju_sentry($m, $v);}
  * @param string|mixed[] $d [optional]
  * @param string|bool|null $suf [optional]
  */
-function ju_log_e($e, $m = null, $d = [], $suf = null) {ju_log_l($m, $e, $d, !is_null($suf) ? $suf : df_caller_f());}
+function ju_log_e($e, $m = null, $d = [], $suf = null) {ju_log_l($m, $e, $d, !is_null($suf) ? $suf : ju_caller_f());}
 
 /**
  * 2017-01-11
