@@ -50,7 +50,7 @@ class O implements \ArrayAccess {
 	 * @param string $k
 	 * @return array(string => mixed)|mixed|null
 	 */
-	function offsetGet($k) {return dfa_deep($this->_a, $k);}
+	function offsetGet($k) {return jua_deep($this->_a, $k);}
 
 	/**
 	 * 2017-07-13
