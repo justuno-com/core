@@ -11,6 +11,7 @@ function ju_cc($glue, ...$elements) {return implode($glue, jua_flatten($elements
 
 /**
  * 2020-06-18 "Port the `df_cc_n` function": https://github.com/justuno-com/core/issues/63
+ * @used-by ju_fe_init()
  * @used-by ju_kv()
  * @used-by ju_log_l()
  * @used-by ju_tab_multiline()
@@ -49,6 +50,7 @@ function ju_cc_s(...$args) {return ju_ccc(' ', jua_flatten($args));}
  * @used-by ju_cc_n()
  * @used-by ju_cc_path()
  * @used-by ju_cc_s()
+ * @used-by ju_fe_init()
  * @used-by ju_log_l()
  * @used-by \Justuno\Core\Qa\Message::reportName()
  * @used-by \Justuno\M2\Setup\UpgradeSchema::tr()

@@ -37,6 +37,7 @@ function ju_class_l($c) {return ju_last(ju_explode_class($c));}
  * @used-by ju_cc_method()
  * @used-by ju_explode_class()
  * @used-by ju_explode_class_camel()
+ * @used-by ju_fe_init()
  * @used-by ju_module_name()
  * @param string|object $c
  * @param string $del [optional]

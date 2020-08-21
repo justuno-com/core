@@ -2,6 +2,7 @@
 /**
  * 2020-06-14 "Port the `df_array` function": https://github.com/justuno-com/core/issues/21
  * @used-by ju_explode_xpath()
+ * @used-by ju_fe_init()
  * @used-by ju_find()
  * @used-by ju_map()
  * @param mixed|mixed[] $v

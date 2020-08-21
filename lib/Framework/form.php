@@ -15,8 +15,8 @@ use Magento\Framework\Data\Form\Element\AbstractElement as AE;
  * @param string|null $path [optional]
  */
 function ju_fe_init(AE $e, $class = null, $css = [], $params = [], $path = null) {
-	$class = df_cts($class ?: $e);
-	$moduleName = df_module_name($class); /** @var string $moduleName */
+	$class = ju_cts($class ?: $e);
+	$moduleName = ju_module_name($class); /** @var string $moduleName */
 	if (is_null($path)) {
 		$classA = df_explode_class_lc($class); /** @var string[] $classA */
 		$classLast = array_pop($classA);
@@ -31,12 +31,12 @@ function ju_fe_init(AE $e, $class = null, $css = [], $params = [], $path = null)
 				$path = $classLast;
 		}
 	}
-	$path = df_ccc('/', 'formElement', $path, 'main');
-	$css = df_array($css);
+	$path = ju_ccc('/', 'formElement', $path, 'main');
+	$css = ju_array($css);
 	if (df_asset_exists($path, $moduleName, 'less')) {
 		$css[]= df_asset_name($path, $moduleName, 'css');
 	}
-	$e['before_element_html'] .= df_cc_n(
+	$e['before_element_html'] .= ju_cc_n(
 		!df_asset_exists($path, $moduleName, 'js') ? null : df_js(
 			$moduleName, $path, ['id' => $e->getHtmlId()] + $params
 		)
