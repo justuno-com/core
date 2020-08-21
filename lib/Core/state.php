@@ -16,7 +16,7 @@ function ju_app_state() {return ju_o(State::class);}
  * @used-by ju_log_l()
  * @return string
  */
-function ju_current_url() {return df_url_o()->getCurrentUrl();}
+function ju_current_url() {return ju_url_o()->getCurrentUrl();}
 
 /**
  * https://mage2.ru/t/94
