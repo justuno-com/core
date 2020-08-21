@@ -44,4 +44,4 @@ function ju_module_name($c = null, $del = '_') {return jucf(function($c, $del) {
  * @param string $del [optional]
  * @return string
  */
-function ju_module_name_lc($c, $del = '_') {return implode($del, df_explode_class_lc_camel(df_module_name_c($c)));}
+function ju_module_name_lc($c, $del = '_') {return implode($del, ju_explode_class_lc_camel(df_module_name_c($c)));}
