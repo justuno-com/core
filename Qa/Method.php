@@ -6,7 +6,7 @@ use Df\Zf\Validate\Between as VBetween;
 use Df\Zf\Validate\Boolean as VBoolean;
 use Df\Zf\Validate\FloatT as VFloat;
 use Df\Zf\Validate\IntT as VInt;
-use Df\Zf\Validate\StringT as VString;
+use Justuno\Core\Zf\Validate\StringT as VString;
 use Df\Zf\Validate\StringT\Iso2 as VIso2;
 use Exception as E;
 use ReflectionParameter as RP;
