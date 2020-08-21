@@ -53,11 +53,11 @@ function ju_log_l($m, $p2, $p3 = [], $suf = null) {
 	}
 	$d = !$d ? null : (is_string($d) ? $d : ju_json_encode($d));
 	ju_report(
-		ju_ccc('--', 'mage2.pro/' . ju_ccc('-', df_report_prefix($m), '{date}--{time}'), $suf) .  '.log'
+		ju_ccc('--', 'mage2.pro/' . ju_ccc('-', ju_report_prefix($m), '{date}--{time}'), $suf) .  '.log'
 		,ju_cc_n(
 			$d
 			,!$e ? null : ['EXCEPTION', QE::i([
-				QE::P__EXCEPTION => $e, QE::P__REPORT_NAME_PREFIX => df_report_prefix($m), QE::P__SHOW_CODE_CONTEXT => false
+				QE::P__EXCEPTION => $e, QE::P__REPORT_NAME_PREFIX => ju_report_prefix($m), QE::P__SHOW_CODE_CONTEXT => false
 			])->report(), "\n\n"]
 			,ju_bt_s(1)
 		)
@@ -83,3 +83,12 @@ function ju_report($f, $m, $append = false) {
 		ju_file_write($append ? "$p/$f" : ju_file_name($p, $f), $m, $append);
 	}
 }
+
+/**
+ * 2020-01-31
+ * 2020-08-21 "Port the `df_report_prefix` function" https://github.com/justuno-com/core/issues/214
+ * @used-by ju_log_l()
+ * @param string|object|null $m [optional]
+ * @return string|null
+ */
+function ju_report_prefix($m = null) {return !$m ? null : (df_package_name_l($m) ?: df_module_name_lc($m, '-'));}
