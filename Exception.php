@@ -179,7 +179,7 @@ class Exception extends LE implements \ArrayAccess {
 
 	/**
 	 * 2017-01-09
-	 * @used-by df_sentry()
+	 * @used-by ju_sentry()
 	 * @return array(string => mixed)
 	 */
 	function sentryContext() {return [];}
@@ -187,7 +187,6 @@ class Exception extends LE implements \ArrayAccess {
 	/**
 	 * 2017-10-03
 	 * @used-by \Justuno\Core\Sentry\Client::captureException()
-	 * @see \Df\PaypalClone\W\Exception\InvalidSignature::sentryType()
 	 * @return string
 	 */
 	function sentryType() {return get_class($this);}
@@ -195,18 +194,16 @@ class Exception extends LE implements \ArrayAccess {
 	/**
 	 * 2015-11-27
 	 * Мы не можем перекрыть метод @see \Exception::getMessage(), потому что он финальный.
-	 * С другой стороны, наш метод @see \Df\Core\Exception::message()
+	 * С другой стороны, наш метод @see \Justuno\Core\Exception::message()
 	 * не будет понят стандартной средой,
 	 * и мы в стандартной среде не будем иметь диагностического сообщения вовсе.
 	 * Поэтому если мы сами не в состоянии обработать исключительную ситуацию,
-	 * то вызываем метод @see \Df\Core\Exception::standard().
+	 * то вызываем метод @see \Justuno\Core\Exception::standard().
 	 * Этот метод конвертирует исключительную ситуацию в стандартную,
 	 * и стандартная среда её успешно обработает.
 	 * @return \Exception
 	 */
-	function standard() {return dfc($this, function() {return new \Exception(
-		$this->message(), 0, $this
-	);});}
+	function standard() {return juc($this, function() {return new \Exception($this->message(), 0, $this);});}
 
 	/**
 	 * 2017-10-03
