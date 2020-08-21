@@ -82,3 +82,16 @@ function ju_assert_sne($v, $sl = 0) {
 	# The previous code `if (!$v)` was wrong because it rejected the '0' string.
 	return '' !== strval($v) ? $v : Q::raiseErrorVariable(__FUNCTION__, $ms = [Q::NES], $sl);
 }
+
+/**
+ * 2016-08-09
+ * 2020-08-21 "Port the `ju_assert_traversable` function" https://github.com/justuno-com/core/issues/222
+ * @used-by juaf()
+ * @param \Traversable|array $v
+ * @param string|E $m [optional]
+ * @return \Traversable|array
+ * @throws DFE
+ */
+function ju_assert_traversable($v, $m = null) {return df_check_traversable($v) ? $v : ju_error($m ?:
+	'A variable is expected to be a traversable or an array, ' . 'but actually it is %s.', ju_type($v)
+);}

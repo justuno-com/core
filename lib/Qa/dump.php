@@ -16,6 +16,7 @@ function ju_dump($v) {return Dumper::i()->dump($v);}
  * 2015-04-05
  * 2020-06-18 "Port the `df_type` function": https://github.com/justuno-com/core/issues/80
  * @used-by ju_assert_gd()
+ * @used-by ju_assert_traversable()
  * @used-by ju_customer()
  * @used-by ju_result_s()
  * @used-by juaf()
