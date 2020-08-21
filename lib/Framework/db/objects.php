@@ -28,4 +28,4 @@ function ju_db_resource() {return ju_o(RC::class);}
  * @used-by \Justuno\M2\Setup\UpgradeSchema::tr()
  * @return Trigger
  */
-function ju_trigger() {return df_new_om(Trigger::class);}
+function ju_trigger() {return ju_new_om(Trigger::class);}
