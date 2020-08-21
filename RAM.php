@@ -1,6 +1,6 @@
 <?php
 namespace Justuno\Core;
-use Df\Core\ICached;
+use Justuno\Core\ICached;
 # 2020-06-13 "Port the `Df\Core\RAM` class": https://github.com/justuno-com/core/issues/9
 final class RAM {
 	/**
