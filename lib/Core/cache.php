@@ -41,6 +41,7 @@ function juc($o, \Closure $m, array $a = [], $unique = true, $offset = 0) {
  * @used-by ju_my_local()
  * @used-by ju_o()
  * @used-by ju_sentry_m()
+ * @used-by ju_table()
  * @used-by \Justuno\Core\Qa\Trace\Formatter::p()
  * @param \Closure $f
  * @param mixed[] $a [optional]
