@@ -40,6 +40,7 @@ function ju_class_l($c) {return ju_last(ju_explode_class($c));}
  * 2020-06-26 "Port the `df_cts` function": https://github.com/justuno-com/core/issues/141
  * @used-by ju_cc_method()
  * @used-by ju_explode_class()
+ * @used-by ju_explode_class_camel()
  * @used-by ju_module_name()
  * @param string|object $c
  * @param string $del [optional]
@@ -60,6 +61,17 @@ function ju_cts($c, $del = '\\') {/** @var string $r */
 function ju_explode_class($c) {return ju_explode_multiple(['\\', '_'], ju_cts($c));}
 
 /**
+ * 2016-04-11 Dfe_CheckoutCom => [Dfe, Checkout, Com]
+ * 2016-10-20
+ * Making $c optional leads to the error «get_class() called without object from outside a class»: https://3v4l.org/k6Hd5
+ * 2020-08-21 "Port the `df_explode_class_camel` function" https://github.com/justuno-com/core/issues/220
+ * @used-by ju_explode_class_lc_camel()
+ * @param string|object $c
+ * @return string[]
+ */
+function ju_explode_class_camel($c) {return jua_flatten(df_explode_camel(explode('\\', ju_cts($c))));}
+
+/**
  * 2016-04-11
  * 2016-10-20
  * 1) Making $c optional leads to the error «get_class() called without object from outside a class»: https://3v4l.org/k6Hd5
@@ -69,4 +81,4 @@ function ju_explode_class($c) {return ju_explode_multiple(['\\', '_'], ju_cts($c
  * @param string|object $c
  * @return string[]
  */
-function ju_explode_class_lc_camel($c) {return ju_lcfirst(df_explode_class_camel($c));}
+function ju_explode_class_lc_camel($c) {return ju_lcfirst(ju_explode_class_camel($c));}
