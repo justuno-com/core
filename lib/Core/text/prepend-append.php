@@ -31,7 +31,7 @@ function ju_pad($phrase, $length, $pattern = ' ', $position = STR_PAD_RIGHT) {/*
 				$right_pad = $num_pad_chars - $left_pad;
 				break;
 			default:
-				df_error();
+				ju_error();
 				break;
 		}
 		$r = '';
