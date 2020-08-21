@@ -11,7 +11,6 @@ class O implements \ArrayAccess {
 	 * 2017-07-13
 	 * @used-by \Justuno\Core\Qa\Message\Failure\Error::i()
 	 * @used-by \Justuno\Core\Qa\Message\Failure\Exception::i()
-	 * @used-by \Df\Xml\G::p()
 	 * @param array(string => mixed) $a [optional]
 	 */
 	final function __construct(array $a = []) {$this->_a = $a;}
@@ -29,7 +28,7 @@ class O implements \ArrayAccess {
 	 * 2017-07-13
 	 * @return string
 	 */
-	function j() {return df_json_encode($this->_a);}
+	function j() {return ju_json_encode($this->_a);}
 
 	/**
 	 * 2017-07-13
