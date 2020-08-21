@@ -73,15 +73,6 @@ abstract class Upgrade {
 	}
 
 	/**
-	 * 2016-08-14
-	 * @param string $c [optional]
-	 * @return EavSetup
-	 */
-	final protected function sEav($c = EavSetup::class) {return dfc($this, function($c) {return
-		df_new_om($c, ['setup' => $this->_setup])
-	;}, [$c]);}
-
-	/**
 	 * 2018-03-21
 	 * @return FSetup|SSetup
 	 */

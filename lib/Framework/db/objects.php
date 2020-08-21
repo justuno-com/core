@@ -9,6 +9,7 @@ use Magento\Framework\DB\Transaction;
 /**
  * 2020-08-14 "Port the `df_conn` function" https://github.com/justuno-com/core/issues/191
  * @used-by ju_db_version()
+ * @used-by ju_table_exists()
  * @return Mysql|IAdapter
  */
 function ju_conn() {return ju_db_resource()->getConnection();}
