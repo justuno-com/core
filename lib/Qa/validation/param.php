@@ -20,6 +20,7 @@ function ju_param_s($v, $ord, $sl = 0) {$sl++;
 /**
  * 2020-06-15 "Port the `df_param_sne` function": https://github.com/justuno-com/core/issues/22
  * @used-by jua_deep()
+ * @used-by jua_deep_unset()
  * @param string $v
  * @param int $ord	zero-based
  * @param int $sl [optional]

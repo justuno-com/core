@@ -72,3 +72,33 @@ function jua_deep_set(array &$array, $path, $value) {
 	$a = $value;
 	return $array;
 }
+
+/**
+ * 2017-07-13
+ * 2020-08-21 "Port the `dfa_deep_unset` function" https://github.com/justuno-com/core/issues/225
+ * @see jua_unset()
+ * @used-by jua_deep_unset()
+ * @used-by \Justuno\Core\O::offsetUnset()
+ * @param array(string => mixed) $a
+ * @param string|string[] $path
+ * @throws DFE
+ */
+function jua_deep_unset(array &$a, $path) {
+	if (!is_array($path)) {
+		ju_param_sne($path, 1);
+		$path = ju_explode_xpath($path);
+	}
+	/**
+	 * 2017-07-13
+	 * @uses array_shift не выдаёт предупреждений для пустого массива.
+	 * @var string|null $first
+	 */
+	if ($first = array_shift($path)) {
+		if (!$path) {
+			unset($a[$first]);
+		}
+		else {
+			jua_deep_unset($a[$first], $path);
+		}
+	}
+}
