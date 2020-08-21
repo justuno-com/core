@@ -1,5 +1,6 @@
 <?php
 use Magento\Framework\View\Asset\File;
+use Magento\Framework\View\Asset\Source;
 /**
  * 2015-12-29
  * By analogy with @see \Magento\Framework\View\Asset\File::getSourceFile():
@@ -16,6 +17,14 @@ use Magento\Framework\View\Asset\File;
  */
 function ju_asset_exists($name, $m = null, $ext = null) {return jucf(
 	function($name, $m = null, $ext = null) {return
-		!!df_asset_source()->findSource(df_asset_create(df_asset_name($name, $m, $ext)))
+		!!ju_asset_source()->findSource(df_asset_create(df_asset_name($name, $m, $ext)))
 	;}
 , func_get_args());}
+
+/**
+ * 2015-12-29
+ * 2020-08-22 "Port the `df_asset_source` function" https://github.com/justuno-com/core/issues/248
+ * @used-by ju_asset_exists()
+ * @return Source
+ */
+function ju_asset_source() {return ju_o(Source::class);}
