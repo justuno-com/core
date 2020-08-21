@@ -3,8 +3,6 @@ use Magento\Framework\App\ResourceConnection as RC;
 use Magento\Framework\DB\Adapter\AdapterInterface as IAdapter;
 use Magento\Framework\DB\Adapter\Pdo\Mysql;
 use Magento\Framework\DB\Ddl\Trigger;
-use Magento\Framework\DB\Select;
-use Magento\Framework\DB\Transaction;
 
 /**
  * 2020-08-14 "Port the `df_conn` function" https://github.com/justuno-com/core/issues/191
@@ -23,3 +21,11 @@ function ju_conn() {return ju_db_resource()->getConnection();}
  * @return RC
  */
 function ju_db_resource() {return ju_o(RC::class);}
+
+/**
+ * 2019-11-22
+ * 2020-08-21 "Port the `df_trigger` function" https://github.com/justuno-com/core/issues/231
+ * @used-by \Justuno\M2\Setup\UpgradeSchema::tr()
+ * @return Trigger
+ */
+function ju_trigger() {return df_new_om(Trigger::class);}
