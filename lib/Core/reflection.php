@@ -69,7 +69,7 @@ function ju_explode_class($c) {return ju_explode_multiple(['\\', '_'], ju_cts($c
  * @param string|object $c
  * @return string[]
  */
-function ju_explode_class_camel($c) {return jua_flatten(df_explode_camel(explode('\\', ju_cts($c))));}
+function ju_explode_class_camel($c) {return jua_flatten(ju_explode_camel(explode('\\', ju_cts($c))));}
 
 /**
  * 2016-04-11
