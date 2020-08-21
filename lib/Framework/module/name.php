@@ -28,3 +28,20 @@
 function ju_module_name($c = null, $del = '_') {return jucf(function($c, $del) {return implode($del, array_slice(
 	ju_explode_class($c), 0, 2
 ));}, [$c ? ju_cts($c) : 'Justuno\Core', $del]);}
+
+/**
+ * 2016-02-16 «Dfe\CheckoutCom\Method» => «dfe_checkout_com»
+ * 2016-10-20
+ * Making $c optional leads to the error «get_class() called without object from outside a class»: https://3v4l.org/k6Hd5
+ * 2017-10-03
+ * $c could be:
+ * 1) a module name. E.g.: «A_B».
+ * 2) a class name. E.g.: «A\B\C».
+ * 3) an object. It will be treated as case 2 after @see get_class()
+ * 2020-08-21 "Port the `df_module_name_lc` function" https://github.com/justuno-com/core/issues/216
+ * @used-by ju_report_prefix()
+ * @param string|object $c
+ * @param string $del [optional]
+ * @return string
+ */
+function ju_module_name_lc($c, $del = '_') {return implode($del, df_explode_class_lc_camel(df_module_name_c($c)));}
