@@ -17,7 +17,7 @@ function ju_file_ext($f) {return pathinfo($f, PATHINFO_EXTENSION);}
  * @param string|null $ext
  * @return string
  */
-function ju_file_ext_add($f, $ext) {return !$ext ? $f : df_append($f, ".$ext");}
+function ju_file_ext_add($f, $ext) {return !$ext ? $f : ju_append($f, ".$ext");}
 
 /**
  * 2018-07-06
