@@ -94,10 +94,20 @@ function ju_file_write($p, $contents, $append = false) {
 /**
  * 2015-11-29
  * 2020-06-21 "Port the `df_fs` function": https://github.com/justuno-com/core/issues/101
+ * @used-by ju_fs_r()
  * @used-by ju_fs_w()
  * @return Filesystem
  */
 function ju_fs() {return ju_o(Filesystem::class);}
+
+/**
+ * 2015-11-30
+ * 2020-08-21 "Port the `df_fs_r` function" https://github.com/justuno-com/core/issues/226
+ * @used-by ju_path_relative()
+ * @param string $p
+ * @return DirectoryRead|IDirectoryRead
+ */
+function ju_fs_r($p) {return ju_fs()->getDirectoryRead($p);}
 
 /**
  * 2015-11-29

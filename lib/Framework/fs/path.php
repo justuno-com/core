@@ -62,5 +62,5 @@ function ju_path_n($p) {return str_replace('//', '/', str_replace('\\', '/', $p)
  * @return string
  */
 function ju_path_relative($p, $b = DL::ROOT) {return ju_trim_text_left(ju_trim_ds_left(
-	ju_path_n($p)), ju_trim_ds_left(df_fs_r($b)->getAbsolutePath()
+	ju_path_n($p)), ju_trim_ds_left(ju_fs_r($b)->getAbsolutePath()
 ));}
