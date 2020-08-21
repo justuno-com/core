@@ -54,6 +54,7 @@ function ju_module_name_c($c = null) {return ju_module_name($c, '\\');}
  * 3) an object. It will be treated as case 2 after @see get_class()
  * 2020-08-21 "Port the `df_module_name_lc` function" https://github.com/justuno-com/core/issues/216
  * @used-by ju_report_prefix()
+ * @used-by \Justuno\Core\Exception::reportNamePrefix()
  * @param string|object $c
  * @param string $del [optional]
  * @return string
