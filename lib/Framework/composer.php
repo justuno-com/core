@@ -22,6 +22,7 @@ function ju_core_version() {return jucf(function() {return ju_package_version('J
  * 3) an object: it comes down to the case 2 via @see get_class()
  * 4) `null`: it comes down to the case 1 with the «Justuno_Core» module name.
  * 2020-06-26 "Port the `df_package` function": https://github.com/justuno-com/core/issues/145
+ * @used-by ju_package_name_l()
  * @used-by ju_package_version()
  * @param string|object|null $m [optional]
  * @param string|string[]|null $k [optional]
@@ -41,6 +42,15 @@ function ju_package($m = null, $k = null, $d = null) {
 	}
 	return jua($cache[$m], $k, $d);
 }
+
+/**
+ * 2017-04-16
+ * 2020-08-21 "Port the `df_package_name_l` function" https://github.com/justuno-com/core/issues/215
+ * @used-by ju_report_prefix()
+ * @param string|object|null $m [optional]
+ * @return string|null
+ */
+function ju_package_name_l($m = null) {return ju_last(explode('/', ju_package($m, 'name')));}
 
 /**
  * 2016-06-26

@@ -91,4 +91,4 @@ function ju_report($f, $m, $append = false) {
  * @param string|object|null $m [optional]
  * @return string|null
  */
-function ju_report_prefix($m = null) {return !$m ? null : (df_package_name_l($m) ?: df_module_name_lc($m, '-'));}
+function ju_report_prefix($m = null) {return !$m ? null : (ju_package_name_l($m) ?: df_module_name_lc($m, '-'));}
