@@ -32,7 +32,7 @@ function ju_block($c, $data = [], $template = null, array $vars = []) {
 		$r->assign($vars);
 	}
 	if ($template && $r instanceof Template) {
-		$r->setTemplate(df_file_ext_add($template, 'phtml'));
+		$r->setTemplate(ju_file_ext_add($template, 'phtml'));
 	}
 	return $r;
 }
