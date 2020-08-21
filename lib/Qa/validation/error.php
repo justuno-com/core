@@ -44,7 +44,7 @@ function ju_error(...$args) {
 	 * 2020-02-17 @see \Df\Cron\Plugin\Console\Command\CronCommand::aroundRun()
 	 */
 	if (ju_is_cron()) {
-		ju_log_e($e, 'Df_Cron');
+		ju_log_e($e);
 	}
 	throw $e;
 }
