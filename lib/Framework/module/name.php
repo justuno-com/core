@@ -19,6 +19,7 @@
  * 2020-06-26 "Port the `ju_module_name` function": https://github.com/justuno-com/core/issues/138
  *
  * @used-by ju_module_dir()
+ * @used-by ju_module_name_c()
  * @used-by ju_package()
  * @used-by ju_sentry_module()
  * @param string|object|null $c [optional]
@@ -28,6 +29,19 @@
 function ju_module_name($c = null, $del = '_') {return jucf(function($c, $del) {return implode($del, array_slice(
 	ju_explode_class($c), 0, 2
 ));}, [$c ? ju_cts($c) : 'Justuno\Core', $del]);}
+
+/**
+ * 2017-01-04
+ * $c could be:
+ * 1) a module name. E.g.: «A_B».
+ * 2) a class name. E.g.: «A\B\C».
+ * 3) an object. It will be treated as case 2 after @see get_class()
+ * 2020-08-21 "Port the `df_module_name_c` function" https://github.com/justuno-com/core/issues/218
+ * @used-by ju_module_name_lc()
+ * @param string|object|null $c [optional]
+ * @return string
+ */
+function ju_module_name_c($c = null) {return ju_module_name($c, '\\');}
 
 /**
  * 2016-02-16 «Dfe\CheckoutCom\Method» => «dfe_checkout_com»
@@ -44,4 +58,4 @@ function ju_module_name($c = null, $del = '_') {return jucf(function($c, $del) {
  * @param string $del [optional]
  * @return string
  */
-function ju_module_name_lc($c, $del = '_') {return implode($del, ju_explode_class_lc_camel(df_module_name_c($c)));}
+function ju_module_name_lc($c, $del = '_') {return implode($del, ju_explode_class_lc_camel(ju_module_name_c($c)));}
