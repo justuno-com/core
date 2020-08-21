@@ -18,6 +18,7 @@ function ju_dump($v) {return Dumper::i()->dump($v);}
  * @used-by ju_assert_gd()
  * @used-by ju_customer()
  * @used-by ju_result_s()
+ * @used-by juaf()
  * @param mixed $v
  * @return string
  */

@@ -21,6 +21,7 @@ use Magento\Framework\Phrase;
  * @used-by ju_sprintf_strict()
  * @used-by ju_string()
  * @used-by ju_try()
+ * @used-by juaf()
  * @used-by juc()
  * @used-by \Justuno\Core\Qa\Method::throwException()
  * @used-by \Justuno\Core\Qa\Trace\Frame::methodParameter()
