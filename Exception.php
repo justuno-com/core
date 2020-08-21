@@ -212,7 +212,6 @@ class Exception extends LE implements \ArrayAccess {
 	 * 2) A class name. E.g.: «A\B\C».
 	 * 3) An object. It will be treated as case 2 after @see get_class()
 	 * @used-by reportNamePrefix()
-	 * @see \Df\Payment\W\Exception::module()
 	 * @return string|object
 	 */
 	protected function module() {return $this;}
@@ -254,7 +253,7 @@ class Exception extends LE implements \ArrayAccess {
 	 * Это значение становится положительным,
 	 * когда исключительная ситуация возбуждается не в момент её возникновения,
 	 * а в некоей вспомогательной функции-обработчике, вызываемой в сбойном участке:
-	 * @see Df_Qa_Method::throwException()
+	 * @see \Justuno\Core\Qa\Method::throwException()
 	 * @var int
 	 */
 	private $_stackLevelsCountToSkip = 0;
