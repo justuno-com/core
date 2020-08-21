@@ -33,11 +33,11 @@ function ju_fe_init(AE $e, $class = null, $css = [], $params = [], $path = null)
 	}
 	$path = ju_ccc('/', 'formElement', $path, 'main');
 	$css = ju_array($css);
-	if (df_asset_exists($path, $moduleName, 'less')) {
+	if (ju_asset_exists($path, $moduleName, 'less')) {
 		$css[]= df_asset_name($path, $moduleName, 'css');
 	}
 	$e['before_element_html'] .= ju_cc_n(
-		!df_asset_exists($path, $moduleName, 'js') ? null : df_js(
+		!ju_asset_exists($path, $moduleName, 'js') ? null : df_js(
 			$moduleName, $path, ['id' => $e->getHtmlId()] + $params
 		)
 		,df_link_inline($css)
