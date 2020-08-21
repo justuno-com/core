@@ -23,7 +23,7 @@ function ju_block($c, $data = [], $template = null, array $vars = []) {
 		$data = [];
 	}
 	/** @var AbstractBlock|BlockInterface|Template $r */
-	$r = df_layout()->createBlock($c, dfa($data, 'name'), ['data' => $data]);
+	$r = df_layout()->createBlock($c, jua($data, 'name'), ['data' => $data]);
 	# 2019-06-11
 	if ($r instanceof Template) {
 		# 2016-11-22
