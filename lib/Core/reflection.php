@@ -69,4 +69,4 @@ function ju_explode_class($c) {return ju_explode_multiple(['\\', '_'], ju_cts($c
  * @param string|object $c
  * @return string[]
  */
-function ju_explode_class_lc_camel($c) {return df_lcfirst(df_explode_class_camel($c));}
+function ju_explode_class_lc_camel($c) {return ju_lcfirst(df_explode_class_camel($c));}
