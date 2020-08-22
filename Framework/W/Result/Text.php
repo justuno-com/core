@@ -86,8 +86,8 @@ class Text extends \Justuno\Core\Framework\W\Result {
 	 * @return self
 	 */
 	static function i($body) {
-		$result = new static; /** @var self $result */
-		$result->_body = $result->prepare($body);
-		return $result;
+		$r = new static; /** @var self $r */
+		$r->_body = $r->prepare($body);
+		return $r;
 	}
 }
