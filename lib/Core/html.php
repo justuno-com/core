@@ -8,9 +8,7 @@ use Justuno\Core\Format\Html\Tag;
  * @return string
  */
 function ju_link_inline(...$args) {return ju_call_a(function($res) {return df_resource_inline(
-	$res, function($url) {return ju_tag(
-		'link', ['href' => $url, 'rel' => 'stylesheet', 'type' => 'text/css'], null, false
-	);}
+	$res, function($url) {return ju_tag('link', ['href' => $url, 'rel' => 'stylesheet', 'type' => 'text/css'], null, false);}
 );}, $args);}
 
 /**
