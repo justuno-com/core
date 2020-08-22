@@ -17,7 +17,7 @@ namespace Justuno\Core\Config;
 abstract class Source extends \Df\Config\SourceBase {
 	/**
 	 * 2015-11-14
-	 * @used-by \Df\Config\Source::toOptionArray()
+	 * @used-by toOptionArray()
 	 * @return array(<value> => <label>)
 	 */
 	abstract protected function map();
