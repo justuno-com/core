@@ -17,5 +17,5 @@ final class SourceFactory {
 	 * @param string $c
 	 * @return \Magento\Framework\Option\ArrayInterface|mixed
 	 */
-	function aroundCreate(Sb $sb, \Closure $f, $c) {return df_class_my($c) ? new $c : $f($c);}
+	function aroundCreate(Sb $sb, \Closure $f, $c) {return ju_class_my($c) ? new $c : $f($c);}
 }

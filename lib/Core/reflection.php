@@ -28,6 +28,18 @@ function ju_cc_method($a1, $a2 = null) {return ju_ccc('::',
 function ju_class_l($c) {return ju_last(ju_explode_class($c));}
 
 /**
+ * 2016-01-01
+ * 2016-10-20
+ * Making $c optional leads to the error «get_class() called without object from outside a class»: https://3v4l.org/k6Hd5
+ * https://3v4l.org/k6Hd5
+ * 2020-08-22 "Port the `df_class_my` function" https://github.com/justuno-com/core/issues/263
+ * @used-by \Justuno\Core\Config\Plugin\Model\Config\SourceFactory::aroundCreate()
+ * @param string|object $c
+ * @return bool
+ */
+function ju_class_my($c) {return in_array(df_class_f($c), ['Df', 'Dfe', 'Dfr', 'Justuno']);}
+
+/**
  * 2015-08-14 @uses get_class() does not add the leading slash `\` before the class name: http://3v4l.org/HPF9R
  * 2015-09-01
  * @uses ltrim() correctly handles Cyrillic letters: https://3v4l.org/rrNL9
