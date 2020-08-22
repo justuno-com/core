@@ -21,7 +21,7 @@ use Magento\Framework\DB\Select;
  * @param string|null $schema [optional]
  * @return Select|\Zend_Db_Select
  */
-function ju_db_from($t, $cols = '*', $schema = null) {return df_select()->from(
+function ju_db_from($t, $cols = '*', $schema = null) {return ju_select()->from(
 	$t instanceof Entity ? $t->getEntityTable() : (is_array($t) ? $t : ju_table($t)), $cols, $schema
 );}
 
