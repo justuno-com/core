@@ -28,8 +28,8 @@ final class Tag extends \Justuno\Core\O {
 		$this->tag()
 		,$this->shouldAttributesBeMultiline() ? "\n" : null
 		,call_user_func(
-			/** @uses df_nop() */
-			$this->shouldAttributesBeMultiline() ? 'ju_tab_multiline' : 'df_nop'
+			/** @uses ju_nop() */
+			$this->shouldAttributesBeMultiline() ? 'ju_tab_multiline' : 'ju_nop'
 			,implode(
 				$this->shouldAttributesBeMultiline() ? "\n" :  ' '
 				,ju_clean(ju_map_k(function($name, $value) {
