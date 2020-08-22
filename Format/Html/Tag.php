@@ -16,32 +16,30 @@ final class Tag extends \Justuno\Core\O {
 	 * @used-by _render()
 	 * @return string
 	 */
-	private function content() {return dfc($this, function() {
-		$c = df_trim(df_cc_n($this[self::$P__CONTENT]), "\n"); /** @var string $c */
-		return $this->tagIs('pre', 'code') || !df_contains($c, "\n") ? $c :
-			"\n" . df_tab_multiline($c) . "\n"
+	private function content() {return juc($this, function() {
+		$c = ju_trim(ju_cc_n($this[self::$P__CONTENT]), "\n"); /** @var string $c */
+		return $this->tagIs('pre', 'code') || !ju_contains($c, "\n") ? $c :
+			"\n" . ju_tab_multiline($c) . "\n"
 		;
 	});}
 	
 	/** @return string */
-	private function openTagWithAttributesAsText() {return df_cc_s(
+	private function openTagWithAttributesAsText() {return ju_cc_s(
 		$this->tag()
 		,$this->shouldAttributesBeMultiline() ? "\n" : null
 		,call_user_func(
-			$this->shouldAttributesBeMultiline() ? 'df_tab_multiline' : 'df_nop'
+			/** @uses df_nop() */
+			$this->shouldAttributesBeMultiline() ? 'ju_tab_multiline' : 'df_nop'
 			,implode(
 				$this->shouldAttributesBeMultiline() ? "\n" :  ' '
-				,df_clean(df_map_k(function($name, $value) {
-					df_param_sne($name, 0);
+				,ju_clean(ju_map_k(function($name, $value) {
+					ju_param_sne($name, 0);
 					/**
-					 * 2015-04-16
-					 * Передавать в качестве $value массив имеет смысл, например, для атрибута «class».
-					 *
+					 * 2015-04-16 Передавать в качестве $value массив имеет смысл, например, для атрибута «class».
 					 * 2016-11-29
 					 * Не использую @see df_e(), чтобы сохранить двойные кавычки (data-mage-init)
 					 * и в то же время сконвертировать одинарные
 					 * (потому что значения атрибутов мы ниже обрамляем именно одинарными).
-					 *
 					 * 2017-09-11
 					 * Today I have notices that `&apos;` does not work for me
 					 * on the Magento 2 backend configuration pages:
@@ -50,7 +48,7 @@ final class Tag extends \Justuno\Core\O {
 					 * «How do I escape a single quote?» https://stackoverflow.com/a/2428595
 					 */
 					$value = htmlspecialchars(
-						str_replace("'", '&#39;', !is_array($value) ? $value : df_cc_s($value))
+						str_replace("'", '&#39;', !is_array($value) ? $value : ju_cc_s($value))
 						,ENT_NOQUOTES
 						,'UTF-8'
 						,false
@@ -71,7 +69,7 @@ final class Tag extends \Justuno\Core\O {
 	private function shortTagAllowed() {return !$this->tagIs('div', 'script', 'span');}
 
 	/** @return bool */
-	private function shouldAttributesBeMultiline() {return dfc($this, function() {/** @var bool|null $r */return
+	private function shouldAttributesBeMultiline() {return juc($this, function() {/** @var bool|null $r */return
 		!is_null($r = $this[self::$P__MULTILINE]) ? $r : 1 < count($this->attributes())
 	;});}
 
@@ -79,7 +77,7 @@ final class Tag extends \Justuno\Core\O {
 	 * 2016-08-05
 	 * @return string
 	 */
-	private function tag() {return dfc($this, function() {return strtolower($this[self::$P__TAG]);});}
+	private function tag() {return juc($this, function() {return strtolower($this[self::$P__TAG]);});}
 
 	/**
 	 * 2016-08-05
@@ -101,8 +99,8 @@ final class Tag extends \Justuno\Core\O {
 	 * @used-by ju_tag()
 	 * @param string $tag
 	 * @param array(string => string) $attrs [optional]
-	 * @param string|string[] $content [optional]
-	 * @param bool $multiline [optional]
+	 * @param string|null|string[] $content [optional]
+	 * @param bool|null $multiline [optional]
 	 * @return string
 	 */
 	static function render($tag, array $attrs = [], $content = null, $multiline = null) {return (new self([

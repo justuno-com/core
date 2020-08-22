@@ -4,10 +4,11 @@
  * 2020-06-20 "Port the `df_trim` function": https://github.com/justuno-com/core/issues/88
  * @used-by ju_explode_n()
  * @used-by ju_trim()
+ * @used-by \Justuno\Core\Format\Html\Tag::content()
  * @used-by \Justuno\Core\Qa\Message::sections()
  * @used-by \Justuno\Core\Qa\Trace\Frame::context()
  * @param string|string[] $s
- * @param string $charlist [optional]
+ * @param string|null $charlist [optional]
  * @param bool|mixed|\Closure $throw [optional]
  * @return string|string[]
  */
