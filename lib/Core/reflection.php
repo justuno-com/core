@@ -15,6 +15,17 @@ function ju_cc_method($a1, $a2 = null) {return ju_ccc('::',
 );}
 
 /**
+ * 2016-01-01
+ * 2016-10-20
+ * Making $c optional leads to the error «get_class() called without object from outside a class»: https://3v4l.org/k6Hd5
+ * 2020-08-22 "Port the `ju_class_f` function" https://github.com/justuno-com/core/issues/264
+ * @used-by ju_class_my()
+ * @param string|object $c
+ * @return string
+ */
+function ju_class_f($c) {return ju_first(ju_explode_class($c));}
+
+/**
  * 2015-12-29
  * 2016-10-20
  * Нельзя делать параметр $c опциональным, потому что иначе получим сбой:
@@ -62,6 +73,7 @@ function ju_cts($c, $del = '\\') {/** @var string $r */
 
 /**
  * 2020-06-26 "Port the `df_explode_class` function": https://github.com/justuno-com/core/issues/139
+ * @used-by ju_class_f()
  * @used-by ju_class_l()
  * @used-by ju_explode_class_lc()
  * @used-by ju_module_name()
