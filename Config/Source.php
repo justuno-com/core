@@ -14,7 +14,7 @@ namespace Justuno\Core\Config;
  * 2020-08-22 "Port the `Df\Config\Source` class" https://github.com/justuno-com/core/issues/257
  * @see \Justuno\M2\Source\Brand
  */
-abstract class Source extends \Df\Config\SourceBase {
+abstract class Source extends SourceBase {
 	/**
 	 * 2015-11-14
 	 * @used-by toOptionArray()
