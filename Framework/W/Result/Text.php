@@ -81,26 +81,7 @@ class Text extends \Justuno\Core\Framework\W\Result {
 
 	/**
 	 * 2016-07-04
-	 * @used-by \Df\Payment\W\Responder::defaultError()
-	 * @used-by \Df\Payment\W\Responder::notForUs()
-	 * @used-by \Df\Payment\W\Responder::setIgnored()
-	 * @used-by \Df\Payment\W\Responder::setSoftFailure()
-	 * @used-by \Df\Payment\W\Responder::success()
-	 * @used-by \Dfe\AllPay\W\Responder::error()
-	 * @used-by \Dfe\AllPay\W\Responder::success()
-	 * @used-by \Dfe\Dragonpay\W\Responder::success()
-	 * @used-by \Dfe\IPay88\W\Responder::success()
-	 * @used-by \Dfe\Robokassa\W\Responder::success()
-	 * @used-by \Dfe\Sift\Controller\Index\Index::execute()
-	 * @used-by \Doormall\Shipping\Controller\Index\Index::execute()
-	 * @used-by \Inkifi\Pwinty\Controller\Index\Index::execute()
 	 * @used-by \Justuno\M2\Response::p()
-	 * @used-by \Mangoit\MediaclipHub\Controller\Index\GetPriceEndpoint::execute()
-	 * @used-by \Mangoit\MediaclipHub\Controller\Index\RenewMediaclipToken::execute()
-	 * @used-by \Wolf\Filter\Controller\Garage\Clean::execute()
-	 * @used-by \Wolf\Filter\Controller\Garage\Index::execute()
-	 * @used-by \Wolf\Filter\Controller\Garage\Remove::execute()
-	 * @used-by \Wolf\Filter\Controller\Index\Change::execute()
 	 * @param mixed $body
 	 * @return self
 	 */
