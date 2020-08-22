@@ -7,9 +7,24 @@ use Justuno\Core\Format\Html\Tag;
  * @param string ...$args
  * @return string
  */
-function ju_link_inline(...$args) {return ju_call_a(function($res) {return df_resource_inline(
+function ju_link_inline(...$args) {return ju_call_a(function($res) {return ju_resource_inline(
 	$res, function($url) {return ju_tag('link', ['href' => $url, 'rel' => 'stylesheet', 'type' => 'text/css'], null, false);}
 );}, $args);}
+
+/**
+ * 2015-12-11
+ * 2020-08-22 "Port the `df_resource_inline` function" https://github.com/justuno-com/core/issues/256
+ * @used-by ju_link_inline()
+ * @param string $r
+ * @param \Closure $f
+ * @return string
+ */
+function ju_resource_inline($r, \Closure $f) {
+	static $c; /** @var array(string => bool) $c */
+	if (!$r || isset($c[$r])) {$result = '';}
+	else {$c[$r] = true; $result = $f(ju_asset_create($r)->getUrl());}
+	return $result;
+}
 
 /**
  * 2015-04-16

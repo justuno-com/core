@@ -15,6 +15,7 @@ function ju_asset() {return ju_o(Repository::class);}
  * 2015-10-27 http://stackoverflow.com/questions/4659345
  * 2020-08-22 "Port the `df_asset_create` function" https://github.com/justuno-com/core/issues/249
  * @used-by ju_asset_exists()
+ * @used-by ju_resource_inline()
  * @param string $u
  * @return File
  */
