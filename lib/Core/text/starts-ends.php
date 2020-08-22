@@ -16,6 +16,7 @@ function ju_ends_with($haystack, $needle) {return is_array($needle)
 
 /**
  * 2020-06-16 "Port the `df_starts_with` function": https://github.com/justuno-com/core/issues/30
+ * @used-by ju_check_url_absolute()
  * @used-by ju_package()
  * @used-by ju_path_is_internal()
  * @used-by \Justuno\Core\Qa\Trace::__construct()
