@@ -42,7 +42,7 @@ abstract class Source extends \Df\Config\SourceBase {
 	 * @used-by \Magento\Config\Model\Config\Structure\Element\Field::_getOptionsFromSourceModel()
 	 * @return array(array('label' => string, 'value' => int|string))
 	 */
-	final function toOptionArray() {return df_map_to_options_t($this->map());}
+	final function toOptionArray() {return ju_map_to_options_t($this->map());}
 
 	/**
 	 * 2017-03-28
