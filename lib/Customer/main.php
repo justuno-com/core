@@ -49,6 +49,7 @@ function ju_customer($c = null, $throw = false) {return ju_try(function() use($c
  * 2016-12-04
  * 2020-08-14 "Port the `df_customer_id` function" https://github.com/justuno-com/core/issues/188
  * @used-by ju_customer()
+ * @used-by \Justuno\Core\Customer\Plugin\Js\CustomerId::afterGetSectionData()
  * @param C|DC|int|null $c [optional]
  * @return int|null
  */
