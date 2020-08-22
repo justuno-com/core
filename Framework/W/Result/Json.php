@@ -6,7 +6,7 @@ namespace Justuno\Core\Framework\W\Result;
  * 2020-08-23 "Port the `Df\Framework\W\Result\Json` class" https://github.com/justuno-com/core/issues/270
  * @used-by \Justuno\M2\Controller\Cart\Add()
  */
-class Json extends \Df\Framework\W\Result\Text {
+class Json extends \Justuno\Core\Framework\W\Result\Text {
 	/**
 	 * 2016-08-24
 	 * 2016-03-18
