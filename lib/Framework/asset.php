@@ -1,6 +1,16 @@
 <?php
 use Magento\Framework\View\Asset\File;
+use Magento\Framework\View\Asset\Repository;
 use Magento\Framework\View\Asset\Source;
+
+/**
+ * 2015-10-27
+ * 2020-08-22 "Port the `df_asset` function" https://github.com/justuno-com/core/issues/250
+ * @used-by ju_asset_create()
+ * @return Repository
+ */
+function ju_asset() {return ju_o(Repository::class);}
+
 /**
  * 2015-10-27 http://stackoverflow.com/questions/4659345
  * 2020-08-22 "Port the `df_asset_create` function" https://github.com/justuno-com/core/issues/249
@@ -8,7 +18,7 @@ use Magento\Framework\View\Asset\Source;
  * @param string $u
  * @return File
  */
-function ju_asset_create($u) {$a = df_asset(); return !df_check_url_absolute($u)
+function ju_asset_create($u) {$a = ju_asset(); return !df_check_url_absolute($u)
 	? $a->createAsset($u)
 	: $a->createRemoteAsset($u, jua(['css' => 'text/css', 'js' => 'application/javascript'], ju_file_ext($u)))
 ;}
