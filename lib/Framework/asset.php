@@ -39,7 +39,7 @@ function ju_asset_create($u) {$a = ju_asset(); return !ju_check_url_absolute($u)
  */
 function ju_asset_exists($name, $m = null, $ext = null) {return jucf(
 	function($name, $m = null, $ext = null) {return
-		!!ju_asset_source()->findSource(ju_asset_create(df_asset_name($name, $m, $ext)))
+		!!ju_asset_source()->findSource(ju_asset_create(ju_asset_name($name, $m, $ext)))
 	;}
 , func_get_args());}
 
