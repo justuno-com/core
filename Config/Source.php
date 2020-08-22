@@ -23,17 +23,12 @@ abstract class Source extends \Df\Config\SourceBase {
 	abstract protected function map();
 	/**
 	 * 2016-07-05
-	 * @used-by \Df\Payment\Settings\Options::denied()
-	 * @used-by \KingPalm\B2B\Block\Registration::_toHtml()
-	 * @see \Df\Payment\Metadata::keys()
 	 * @return string[]
 	 */
 	function keys() {return dfc($this, function() {return array_keys($this->map());});}
 
 	/**
 	 * 2016-08-07
-	 * @used-by \Df\GingerPaymentsBase\Source\Option::optionsTest()
-	 * @used-by \Df\Payment\Settings\Options::o()
 	 * @param string[]|null $k [optional]
 	 * @return array(<value> => <label>)
 	 */
@@ -63,8 +58,8 @@ abstract class Source extends \Df\Config\SourceBase {
 
 	/**
 	 * 2015-11-14
-	 * Возаращает по имени атрибут или содержимое дочернего тега для настроечного поля.
-	 * Например, пусть есть поле:
+	 * It returns the value of the attribute $k or the child node $k.
+	 * Let we have a field:
 	 *		<field
 	 *			id='visibility'
 	 *			translate='label'
@@ -78,8 +73,7 @@ abstract class Source extends \Df\Config\SourceBase {
 	 *			<source_model>Dfe\Sku\ConfigSource\Visibility</source_model>
 	 *			<comment><![CDATA[<a href='https://mage2.pro/t/197'>Documentation.</a>]]></comment>
 	 *		</field>
-	 * Тогда
-	 * df_config_field()->getData() вернёт такой массив:
+	 * Then df_config_field()->getData() returns an array which contais all attributes and children of `<field>`:
 	 *	array(
 	 *		[_elementType] => field
 	 *		[comment] => <a href='https://mage2.pro/t/197'>Documentation.</a>
@@ -94,10 +88,7 @@ abstract class Source extends \Df\Config\SourceBase {
 	 *		[translate] => label
 	 *		[type] => select
 	 *	)
-	 * Обратите внимание: массив содержит и атрибуты, и детей.
-	 *
-	 * @used-by \Df\Config\Source\LetterCase::map()
-	 *
+	 * And f() allows us to retrieve a particular attribute or a child.
 	 * @param string $k
 	 * @return string|null
 	 */
@@ -109,9 +100,7 @@ abstract class Source extends \Df\Config\SourceBase {
 	 * @param string $k
 	 * @return string
 	 */
-	final protected function sibling($k) {return df_cfg(
-		df_cc_path(df_head($this->pathA()), $k), df_scope()
-	);}
+	final protected function sibling($k) {return df_cfg(df_cc_path(df_head($this->pathA()), $k), df_scope());}
 
 	/**
 	 * 2017-03-28
@@ -120,9 +109,7 @@ abstract class Source extends \Df\Config\SourceBase {
 	 * @used-by \Df\ZohoBI\Source\Organization::app()
 	 * @return string[]
 	 */
-	final protected function pathA() {return dfc($this, function() {return df_explode_path(
-		$this->_path
-	);});}
+	final protected function pathA() {return dfc($this, function() {return df_explode_path($this->_path);});}
 
 	/**
 	 * 2016-07-12
