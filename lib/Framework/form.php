@@ -40,6 +40,6 @@ function ju_fe_init(AE $e, $class = null, $css = [], $params = [], $path = null)
 		!ju_asset_exists($path, $moduleName, 'js') ? null : df_js(
 			$moduleName, $path, ['id' => $e->getHtmlId()] + $params
 		)
-		,df_link_inline($css)
+		,ju_link_inline($css)
 	);
 }
