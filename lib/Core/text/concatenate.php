@@ -46,6 +46,7 @@ function ju_cc_s(...$args) {return ju_ccc(' ', jua_flatten($args));}
 
 /**
  * 2020-06-18 "Port the `df_ccc` function": https://github.com/justuno-com/core/issues/57
+ * @used-by ju_asset_name()
  * @used-by ju_cc_method()
  * @used-by ju_cc_n()
  * @used-by ju_cc_path()
