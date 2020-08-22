@@ -48,7 +48,7 @@ function ju_class_l($c) {return ju_last(ju_explode_class($c));}
  * @param string|object $c
  * @return bool
  */
-function ju_class_my($c) {return in_array(df_class_f($c), ['Df', 'Dfe', 'Dfr', 'Justuno']);}
+function ju_class_my($c) {return in_array(ju_class_f($c), ['Df', 'Dfe', 'Dfr', 'Justuno']);}
 
 /**
  * 2015-08-14 @uses get_class() does not add the leading slash `\` before the class name: http://3v4l.org/HPF9R
