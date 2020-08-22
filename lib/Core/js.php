@@ -40,7 +40,7 @@ function ju_js($m, $s = null, array $p = []) {$s = $s ?: 'main'; return ju_js_x(
  * @param array(string => mixed) $p [optional]
  * @return string
  */
-function ju_js_x($selector, $m, $s = null, array $p = []) {return df_tag(
+function ju_js_x($selector, $m, $s = null, array $p = []) {return ju_tag(
 	'script', ['type' => 'text/x-magento-init'], ju_json_encode([$selector => [
 		ju_cc_path(is_null($m) ? null : ju_module_name($m), $s ?: 'main') => $p
 	]])
