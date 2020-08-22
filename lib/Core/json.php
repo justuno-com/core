@@ -33,6 +33,7 @@ function ju_json_decode($s, $throw = true) {/** @var mixed|bool|null $r */
 /**
  * 2015-12-06
  * 2020-06-18 "Port the `df_json_encode` function": https://github.com/justuno-com/core/issues/65
+ * @used-by ju_js_x()
  * @used-by ju_json_encode_partial()
  * @used-by ju_kv()
  * @used-by ju_log_l()

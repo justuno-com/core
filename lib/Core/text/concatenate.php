@@ -28,6 +28,7 @@ function ju_cc_n(...$args) {return ju_ccc("\n", jua_flatten($args));}
 /**
  * 2020-06-21 "Port the `df_cc_path` function": https://github.com/justuno-com/core/issues/103
  * @used-by ju_file_name()
+ * @used-by ju_js_x()
  * @used-by ju_module_path()
  * @used-by ju_module_path_etc()
  * @param string|string[] ...$args

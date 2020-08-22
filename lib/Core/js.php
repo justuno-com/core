@@ -21,6 +21,27 @@
  * @param array(string => mixed) $p [optional]
  * @return string
  */
-function ju_js($m, $s = null, array $p = []) {$s = $s ?: 'main'; return df_js_x(
+function ju_js($m, $s = null, array $p = []) {$s = $s ?: 'main'; return ju_js_x(
 	'*', ju_check_url_absolute($s) ? null : $m, $s, $p
+);}
+
+/**
+ * 2019-06-01
+ * 2020-08-22 "Port the `df_js_x` function" https://github.com/justuno-com/core/issues/252
+ * @used-by ju_js()
+ * @param string $selector
+ * @param string|object|null $m
+ * $m could be:
+ * 1) A module name: «A_B»
+ * 2) A class name: «A\B\C».
+ * 3) An object: it comes down to the case 2 via @see get_class()
+ * 4) `null`.
+ * @param string|null $s [optional]
+ * @param array(string => mixed) $p [optional]
+ * @return string
+ */
+function ju_js_x($selector, $m, $s = null, array $p = []) {return df_tag(
+	'script', ['type' => 'text/x-magento-init'], ju_json_encode([$selector => [
+		ju_cc_path(is_null($m) ? null : ju_module_name($m), $s ?: 'main') => $p
+	]])
 );}

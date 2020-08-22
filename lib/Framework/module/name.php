@@ -20,6 +20,7 @@
  *
  * @used-by ju_asset_name()
  * @used-by ju_fe_init()
+ * @used-by ju_js_x()
  * @used-by ju_module_dir()
  * @used-by ju_module_name_c()
  * @used-by ju_package()
