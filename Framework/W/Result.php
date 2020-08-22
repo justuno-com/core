@@ -35,7 +35,7 @@ use Magento\Framework\Controller\ResultInterface;
 abstract class Result implements ResultInterface {
 	/**
 	 * 2017-03-30
-	 * @used-by \Df\Payment\W\Action::execute()
+	 * @used-by \Justuno\M2\W\Result\Js::render()
 	 * @see \Justuno\M2\W\Result\Js::__toString()
 	 * @return string
 	 */
