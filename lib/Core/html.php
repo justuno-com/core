@@ -1,5 +1,5 @@
 <?php
-use Df\Core\Format\Html\Tag;
+use Justuno\Core\Format\Html\Tag;
 /**
  * 2015-04-16
  * From now on you can pass an array as an attribute's value: @see \Df\Core\Format\Html\Tag::getAttributeAsText()
