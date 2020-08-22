@@ -105,8 +105,6 @@ abstract class Source extends \Df\Config\SourceBase {
 	/**
 	 * 2017-03-28
 	 * @used-by sibling()
-	 * @used-by \Df\Payment\Source\API\Key\Testable::_test()
-	 * @used-by \Df\ZohoBI\Source\Organization::app()
 	 * @return string[]
 	 */
 	final protected function pathA() {return dfc($this, function() {return df_explode_path($this->_path);});}
@@ -114,24 +112,16 @@ abstract class Source extends \Df\Config\SourceBase {
 	/**
 	 * 2016-07-12
 	 * @final I do not use the PHP «final» keyword here to allow refine the return type using PHPDoc.
-	 * @used-by \Dfe\IPay88\ConfigProvider::options()
-	 * @used-by \Dfe\IPay88\W\Event::optionTitle()
-	 * @used-by \KingPalm\B2B\Block\Registration::_toHtml()
 	 * @return self
 	 */
 	static function s() {return dfcf(function($c) {return new $c;}, [static::class]);}
 
 	/**
 	 * 2017-02-05
-	 * @used-by \Dfe\Paymill\Source\Prefill\With3DS::map()
-	 * @used-by \Dfe\Paymill\Source\Prefill\Without3DS::map()
-	 * @used-by \Dfe\Spryng\Source\Prefill::map()
 	 * @param array(string => string) $a
 	 * @return array(string => string)
 	 */
-	final protected static function addKeysToValues(array $a) {return df_map_k(
-		$a, function($k, $v) {return "$v: $k";}
-	);}
+	final protected static function addKeysToValues(array $a) {return df_map_k($a, function($k, $v) {return "$v: $k";});}
 
 	/**
 	 * 2017-03-28
