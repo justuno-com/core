@@ -14,7 +14,7 @@ use Magento\Framework\DB\Select as S;
 function ju_fetch($t, $cols = '*', $compareK = null, $compareV = null) {
 	$s = ju_db_from($t, $cols); /** @var S $s */
 	if (!is_null($compareV)) {
-		$s->where($compareK . ' ' . df_sql_predicate_simple($compareV), $compareV);
+		$s->where($compareK . ' ' . ju_sql_predicate_simple($compareV), $compareV);
 	}
 	return ju_conn()->fetchAll($s);
 }
