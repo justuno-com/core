@@ -18,7 +18,7 @@ use Magento\Framework\App\Response\HttpInterface as IHttpResponse;
  * protected function render(HttpResponseInterface $response)
  *
  * Поэтому мы не можем универсально перекрыть метод render (чтобы это работало сразу во всех версиях):
- * Fatal error: Declaration of Df\Framework\W\Result\Json::render()
+ * Fatal error: Declaration of Justuno\Core\Framework\W\Result\Json::render()
  * must be compatible with Magento\Framework\Controller\AbstractResult::render
  * (Magento\Framework\App\Response\HttpInterface $response)
  * in C:\work\mage2.pro\store\vendor\mage2pro\core\Framework\Controller\Result\Json.php on line 5
