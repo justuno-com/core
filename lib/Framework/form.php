@@ -34,7 +34,7 @@ function ju_fe_init(AE $e, $class = null, $css = [], $params = [], $path = null)
 	$path = ju_ccc('/', 'formElement', $path, 'main');
 	$css = ju_array($css);
 	if (ju_asset_exists($path, $moduleName, 'less')) {
-		$css[]= df_asset_name($path, $moduleName, 'css');
+		$css[]= ju_asset_name($path, $moduleName, 'css');
 	}
 	$e['before_element_html'] .= ju_cc_n(
 		!ju_asset_exists($path, $moduleName, 'js') ? null : df_js(

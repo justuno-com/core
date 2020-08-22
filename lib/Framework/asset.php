@@ -50,6 +50,7 @@ function ju_asset_exists($name, $m = null, $ext = null) {return jucf(
  * 2) a full name composed with @see ju_asset_name(). In this case, the function returns $name without changes.
  * 2020-08-22 "Port the `df_asset_name` function" https://github.com/justuno-com/core/issues/245
  * @used-by ju_asset_exists()
+ * @used-by ju_fe_init()
  * @param string|null $name [optional]
  * @param string|object|null $m [optional]
  * @param string|null $extension [optional]
