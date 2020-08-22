@@ -1,5 +1,15 @@
 <?php
 /**
+ * 2018-01-29
+ * 2020-08-22 "Port the `df_map_0` function" https://github.com/justuno-com/core/issues/265
+ * @used-by \Justuno\M2\Source\Brand::map()
+ * @param array(string => string) $tail
+ * @param string|null $l [optional]
+ * @return array(int => string)
+ */
+function ju_map_0(array $tail, $l = null) {return [0 => $l ?: '-- select a value --'] + $tail;}
+
+/**
  * 2015-11-13
  * 2020-08-22 "Port the `df_map_to_options_t` function" https://github.com/justuno-com/core/issues/260
  * @used-by \Justuno\Core\Config\Source::toOptionArray()
