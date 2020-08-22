@@ -15,8 +15,8 @@ class Json extends \Justuno\Core\Framework\W\Result\Text {
 	 * so not-latin characters are rendered incorrectly by all the modern browsers»
 	 * https://mage2.pro/t/976
 	 * @override
-	 * @see \Df\Framework\W\Result\Text::contentType()
-	 * @used-by \Df\Framework\W\Result\Text::render()
+	 * @see \Justuno\Core\Framework\W\Result\Text::contentType()
+	 * @used-by \Justuno\Core\Framework\W\Result\Text::render()
 	 * @return mixed
 	 */
 	final protected function contentType() {return 'application/json';}
@@ -24,10 +24,10 @@ class Json extends \Justuno\Core\Framework\W\Result\Text {
 	/**
 	 * 2016-08-24
 	 * @override
-	 * @see \Df\Framework\W\Result\Text::prepare()
-	 * @used-by \Df\Framework\W\Result\Text::i()
+	 * @see \Justuno\Core\Framework\W\Result\Text::prepare()
+	 * @used-by \Justuno\Core\Framework\W\Result\Text::i()
 	 * @param string|object|mixed[] $b
 	 * @return string
 	 */
-	final protected function prepare($b) {return !is_array($b) && !is_object($b) ? $b : df_json_encode($b);}
+	final protected function prepare($b) {return !is_array($b) && !is_object($b) ? $b : ju_json_encode($b);}
 }
