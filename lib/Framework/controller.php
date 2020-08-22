@@ -33,6 +33,7 @@ function ju_response($r = null) {return $r ?: ju_o(IResponse::class);}
  * I pass the 3rd argument ($replace = true) to @uses \Magento\Framework\HTTP\PhpEnvironment\Response::setHeader()
  * because the `Content-Type` headed can be already set.
  * 2020-08-21 "Port the `df_response_content_type` function" https://github.com/justuno-com/core/issues/234
+ * @used-by \Justuno\Core\Framework\W\Result\Text::render()
  * @used-by \Justuno\M2\W\Result\Js::render()
  * @param string $contentType
  * @param IResult|wResult|IHttpResponse|HttpResponse|null $r [optional]

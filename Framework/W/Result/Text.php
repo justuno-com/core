@@ -36,8 +36,7 @@ class Text extends \Justuno\Core\Framework\W\Result {
 	 * We can use the PHP «final» keyword here,
 	 * because the method is absent in @see \Magento\Framework\Controller\ResultInterface
 	 * @override
-	 * @see \Df\Framework\W\Result::__toString()
-	 * @used-by \Df\Payment\W\Action::execute()
+	 * @see \Justuno\Core\Framework\W\Result::__toString()
 	 * @return string
 	 */
 	final function __toString() {return $this->_body;}
@@ -45,7 +44,7 @@ class Text extends \Justuno\Core\Framework\W\Result {
 	/**
 	 * 2016-08-24
 	 * @used-by render()
-	 * @see \Df\Framework\W\Result\Json::contentType()
+	 * @see \Justuno\Core\Framework\W\Result\Json::contentType()
 	 * @return string
 	 */
 	protected function contentType() {return 'text/plain';}
@@ -53,7 +52,7 @@ class Text extends \Justuno\Core\Framework\W\Result {
 	/**
 	 * 2016-08-24
 	 * @used-by i()
-	 * @see \Df\Framework\W\Result\Json::prepare()
+	 * @see \Justuno\Core\Framework\W\Result\Json::prepare()
 	 * @param mixed $body
 	 * @return string
 	 */
@@ -62,13 +61,13 @@ class Text extends \Justuno\Core\Framework\W\Result {
 	/**
 	 * 2016-07-04
 	 * @override
-	 * @see \Df\Framework\W\Result::render()
-	 * @used-by \Df\Framework\W\Result::renderResult()
+	 * @see \Justuno\Core\Framework\W\Result::render()
+	 * @used-by \Justuno\Core\Framework\W\Result::renderResult()
 	 * @param IHttpResponse|HttpResponse $r
 	 */
 	final protected function render(IHttpResponse $r) {
 		$r->setBody($this->_body);
-		df_response_content_type(implode('; ', [$this->contentType(), 'charset=utf-8']), $r);
+		ju_response_content_type(implode('; ', [$this->contentType(), 'charset=utf-8']), $r);
 	}
 
 	/**
