@@ -8,4 +8,4 @@ use Magento\Catalog\Model\Product as P;
  * @param P|int $p
  * @return int
  */
-function ju_product_id($p) {return df_int($p instanceof P ? $p->getId() : $p);}
+function ju_product_id($p) {return ju_int($p instanceof P ? $p->getId() : $p);}

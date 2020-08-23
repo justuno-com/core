@@ -96,3 +96,39 @@ function ju_assert_sne($v, $sl = 0) {
 function ju_assert_traversable($v, $m = null) {return ju_check_traversable($v) ? $v : ju_error($m ?:
 	'A variable is expected to be a traversable or an array, ' . 'but actually it is %s.', ju_type($v)
 );}
+
+/**
+ * 2020-08-23 "Port the `ju_int` function" https://github.com/justuno-com/core/issues/287
+ * @used-by ju_product_id()
+ * @param mixed|mixed[] $v
+ * @param bool $allowNull [optional]
+ * @return int|int[]
+ * @throws DFE
+ */
+function ju_int($v, $allowNull = true) {/** @var int|int[] $r */
+	if (is_array($v)) {
+		$r = df_map(__FUNCTION__, $v, $allowNull);
+	}
+	else {
+		if (is_int($v)) {
+			$r = $v;
+		}
+		elseif (is_bool($v)) {
+			$r = $v ? 1 : 0;
+		}
+		else {
+			if ($allowNull && (is_null($v) || ('' === $v))) {
+				$r = 0;
+			}
+			else {
+				if (!IntT::s()->isValid($v)) {
+					df_error(IntT::s()->getMessage());
+				}
+				else {
+					$r = (int)$v;
+				}
+			}
+		}
+	}
+	return $r;
+}
