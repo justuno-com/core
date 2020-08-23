@@ -17,6 +17,7 @@ use Magento\Framework\ObjectManagerInterface as IOM;
  * @used-by ju_magento_version_m()
  * @used-by ju_module_dir_reader()
  * @used-by ju_module_m()
+ * @used-by ju_msi_allowed_for_pt()
  * @used-by ju_new_om()
  * @used-by ju_qty()
  * @used-by ju_request_o()
