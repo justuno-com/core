@@ -121,6 +121,6 @@ function ju_int($v, $allowNull = true) {/** @var int|int[] $r */
  */
 function ju_nat($v, $allow0 = false) {/** @var int $r */
 	$r = ju_int($v, $allow0);
-	$allow0 ? df_assert_ge(0, $r) : ju_assert_gt0($r);
+	$allow0 ? ju_assert_ge(0, $r) : ju_assert_gt0($r);
 	return $r;
 }

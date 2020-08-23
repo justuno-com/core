@@ -1,6 +1,18 @@
 <?php
 use Exception as E;
 use Justuno\Core\Exception as DFE;
+/**
+ * 2020-08-23 "Port the `df_assert_ge` function" https://github.com/justuno-com/core/issues/290
+ * @used-by ju_nat()
+ * @param int|float $lowBound
+ * @param int|float $v
+ * @param string|E|null $m [optional]
+ * @return int|float
+ * @throws DFE
+ */
+function ju_assert_ge($lowBound, $v, $m = null) {return $lowBound <= $v ? $v : ju_error($m ?:
+	"A number >= {$lowBound} is expected, but got {$v}."
+);}
 
 /**
  * 2020-08-23 "Port the `ju_assert_gt0` function" https://github.com/justuno-com/core/issues/291

@@ -7,6 +7,7 @@ use Magento\Framework\Phrase;
  * 2020-06-17 "Port the `df_error` function": https://github.com/justuno-com/core/issues/34
  * @used-by ju_assert()
  * @used-by ju_assert_gd()
+ * @used-by ju_assert_ge()
  * @used-by ju_assert_gt0()
  * @used-by ju_assert_lt()
  * @used-by ju_assert_ne()
