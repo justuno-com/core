@@ -30,7 +30,7 @@ function ju_assert_qty_supported(P $p) {
  *		"virtual": true
  *	}
  * 2020-08-23 "Port the `df_msi_allowed_for_pt` function" https://github.com/justuno-com/core/issues/280
- * @used-by df_assert_qty_supported()
+ * @used-by ju_assert_qty_supported()
  * @return IAllowedForPT|AllowedForPT
  */
 function ju_msi_allowed_for_pt() {return ju_o(IAllowedForPT::class);}
