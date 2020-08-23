@@ -12,4 +12,4 @@ use Magento\Store\Model\Website as W;
  * @used-by ju_qty()
  * @return bool
  */
-function ju_msi() {return jucf(function() {return df_module_enabled('Magento_Inventory');});}
+function ju_msi() {return jucf(function() {return ju_module_enabled('Magento_Inventory');});}
