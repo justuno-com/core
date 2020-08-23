@@ -111,6 +111,7 @@ function ju_map_k($a1, $a2) {return ju_map($a1, $a2, [], [], JU_BEFORE);}
  * 2016-11-08
  * 2020-08-13 "Port the `df_map_kr` function" https://github.com/justuno-com/core/issues/167
  * @used-by juak_transform()
+ * @used-by \Justuno\M2\Catalog\Variants::variant()
  * @param array|callable|\Traversable $a1
  * @param array|callable|\Traversable $a2
  * @return array(int|string => mixed)
