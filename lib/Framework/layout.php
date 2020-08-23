@@ -1,6 +1,6 @@
 <?php
-use Df\Theme\Model\View\Design as DfDesign;
 use Justuno\Core\O;
+use Justuno\Core\Theme\Model\View\Design as DfDesign;
 use Magento\Backend\Block\Template as BackendTemplate;
 use Magento\Framework\View\Element\AbstractBlock;
 use Magento\Framework\View\Element\BlockInterface;
