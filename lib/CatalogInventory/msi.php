@@ -47,4 +47,4 @@ function ju_msi_stock_ids(P $p) {return array_filter(array_unique(array_map('ju_
 function ju_msi_website2stockId($v = null) {return jucf(function($c) {
 	$i = ju_o(StockIdForWebsite::class); /** @var IStockIdForWebsite|StockIdForWebsite $i */
 	return $i->execute($c);
-}, [df_website_code($v)]);}
+}, [ju_website_code($v)]);}
