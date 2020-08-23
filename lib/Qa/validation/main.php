@@ -1,8 +1,8 @@
 <?php
-use Df\Zf\Validate\StringT\IntT;
 use Exception as E;
 use Justuno\Core\Exception as DFE;
 use Justuno\Core\Qa\Method as Q;
+use Justuno\Core\Zf\Validate\IntT;
 
 /**
  * 2019-12-14
