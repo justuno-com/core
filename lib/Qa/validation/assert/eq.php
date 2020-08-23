@@ -3,6 +3,16 @@ use Exception as E;
 use Justuno\Core\Exception as DFE;
 
 /**
+ * 2020-08-23 "Port the `ju_assert_gt0` function" https://github.com/justuno-com/core/issues/291
+ * @used-by ju_nat()
+ * @param int|float $v
+ * @param string|E|null $m [optional]
+ * @return int|float
+ * @throws DFE
+ */
+function ju_assert_gt0($v, $m = null) {return 0 <= $v ? $v : ju_error($m ?: "A positive number is expected, but got {$v}.");}
+
+/**
  * 2020-08-19 "Port the `df_assert_lt` function" https://github.com/justuno-com/core/issues/203
  * @used-by \Justuno\Core\Qa\Trace\Frame::methodParameter()
  * @param int|float $highBound
