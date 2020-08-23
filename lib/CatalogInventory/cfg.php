@@ -14,7 +14,7 @@ use Magento\InventoryConfigurationApi\Model\IsSourceItemManagementAllowedForProd
  */
 function ju_assert_qty_supported(P $p) {
 	$t = $p->getTypeId(); /** @var string $t */
-	ju_assert(df_msi() ? df_msi_allowed_for_pt()->execute($t) : df_stock_cfg()->isQty($t),
+	ju_assert(ju_msi() ? df_msi_allowed_for_pt()->execute($t) : df_stock_cfg()->isQty($t),
 		"Products of type `$t` do not have a quantity."
 	);
 }

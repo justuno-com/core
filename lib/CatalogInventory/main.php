@@ -17,7 +17,7 @@ use Magento\InventorySalesApi\Api\GetProductSalableQtyInterface as IQty;
 function ju_qty($p) {
 	ju_assert_qty_supported($p);
 	# 2019-11-21 https://devdocs.magento.com/guides/v2.3/inventory/reservations.html#checkout-services
-	if (!df_msi()) {
+	if (!ju_msi()) {
 		$r = df_stock_r()->getStockItem(df_product_id($p))->getQty();
 	}
 	else {
