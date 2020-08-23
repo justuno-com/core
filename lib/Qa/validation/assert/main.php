@@ -19,6 +19,7 @@ use Justuno\Core\Zf\Validate\StringT\IntT;
  * https://github.com/mage2pro/core/blob/5.5.7/Core/Exception.php#L61-L67
  * 2020-06-17 "Port the `df_assert` function": https://github.com/justuno-com/core/issues/33
  * @used-by ju_assert_qty_supported()
+ * @used-by ju_layout_update()
  * @used-by ju_module_dir()
  * @used-by juaf()
  * @used-by \Justuno\Core\Qa\Trace\Frame::methodParameter()

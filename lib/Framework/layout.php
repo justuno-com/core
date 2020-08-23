@@ -44,6 +44,7 @@ function ju_block($c, $data = [], $template = null, array $vars = []) {
 /**
  * 2020-08-22 "Port the `df_layout` function" https://github.com/justuno-com/core/issues/239
  * @used-by ju_block()
+ * @used-by ju_layout_update()
  * @return Layout|ILayout
  */
 function ju_layout() {return ju_o(ILayout::class);}
@@ -55,9 +56,9 @@ function ju_layout() {return ju_o(ILayout::class);}
  * @param \Closure|bool|mixed $onError [optional]
  * @return IProcessor|Merge
  */
-function ju_layout_update($onError = true) {return df_try(function() {
-	df_assert(DfDesign::isThemeInitialized(),
+function ju_layout_update($onError = true) {return ju_try(function() {
+	ju_assert(DfDesign::isThemeInitialized(),
 		'This attempt to call Magento\Framework\View\Layout::getUpdate() can break the Magento frontend.'
 	);
-	return df_layout()->getUpdate();
+	return ju_layout()->getUpdate();
 }, $onError);}
