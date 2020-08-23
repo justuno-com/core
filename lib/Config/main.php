@@ -52,7 +52,7 @@ function ju_cfg($k, $scope = null, $d = null) {
 	$r = $scope instanceof IConfigData ? $scope->getValue($k) : ju_cfg_m()->getValue($k, ...(
 		is_array($scope) ? [$scope[0], $scope[1]] : [SS::SCOPE_STORE, $scope])
 	);
-	return df_if(df_cfg_empty($r), $d, $r);
+	return ju_if(df_cfg_empty($r), $d, $r);
 }
 
 /**
