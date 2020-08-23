@@ -17,7 +17,7 @@ use Magento\Store\Model\Website as W;
  * @return W
  * @throws NSE|\Exception
  */
-function ju_website($v = null) {return $v instanceof Store ? $v->getWebsite() : df_store_m()->getWebsite($v);}
+function ju_website($v = null) {return $v instanceof Store ? $v->getWebsite() : ju_store_m()->getWebsite($v);}
 
 /**
  * 2019-11-22
