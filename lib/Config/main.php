@@ -52,8 +52,17 @@ function ju_cfg($k, $scope = null, $d = null) {
 	$r = $scope instanceof IConfigData ? $scope->getValue($k) : ju_cfg_m()->getValue($k, ...(
 		is_array($scope) ? [$scope[0], $scope[1]] : [SS::SCOPE_STORE, $scope])
 	);
-	return ju_if(df_cfg_empty($r), $d, $r);
+	return ju_if(ju_cfg_empty($r), $d, $r);
 }
+
+/**
+ * 2016-11-12
+ * 2020-08-23 "Port the `df_cfg_empty` function" https://github.com/justuno-com/core/issues/295
+ * @used-by ju_cfg()
+ * @param array|string|null|mixed $v
+ * @return bool
+ */
+function ju_cfg_empty($v) {return is_null($v) || '' === $v;}
 
 /**
  * 2016-02-09
