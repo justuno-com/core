@@ -31,33 +31,6 @@ use Justuno\Core\Zf\Validate\StringT\IntT;
 function ju_assert($cond, $m = null) {return $cond ?: ju_error($m);}
 
 /**
- * 2020-08-19 "Port the `df_assert_lt` function" https://github.com/justuno-com/core/issues/203
- * @used-by \Justuno\Core\Qa\Trace\Frame::methodParameter()
- * @param int|float $highBound
- * @param int|float $v
- * @param string|E $m [optional]
- * @return int|float
- * @throws DFE
- */
-function ju_assert_lt($highBound, $v, $m = null) {return $highBound >= $v ? $v : ju_error($m ?:
-	"A number < {$highBound} is expected, but got {$v}."
-);}
-
-/**
- * 2020-06-22 "Port the `df_assert_ne` function": https://github.com/justuno-com/core/issues/116
- * @used-by ju_file_name()
- * @used-by ju_json_decode()
- * @param string|int|float|bool $neResult
- * @param string|int|float|bool $v
- * @param string|E $m [optional]
- * @return string|int|float|bool
- * @throws DFE
- */
-function ju_assert_ne($neResult, $v, $m = null) {return $neResult !== $v ? $v : ju_error($m ?:
-	"The value {$v} is rejected, any other is allowed."
-);}
-
-/**
  * 2017-01-14
  * 2020-08-19 "Port the `df_assert_nef` function" https://github.com/justuno-com/core/issues/201
  * @used-by \Justuno\Core\Qa\Trace\Frame::context()
@@ -90,7 +63,7 @@ function ju_assert_sne($v, $sl = 0) {
  * 2020-08-21 "Port the `ju_assert_traversable` function" https://github.com/justuno-com/core/issues/222
  * @used-by juaf()
  * @param \Traversable|array $v
- * @param string|E $m [optional]
+ * @param string|E|null $m [optional]
  * @return \Traversable|array
  * @throws DFE
  */
