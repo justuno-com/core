@@ -1,5 +1,4 @@
 <?php
-use Df\Config\Settings;
 use Magento\Framework\App\Config;
 use Magento\Framework\App\Config\Data as ConfigData;
 use Magento\Framework\App\Config\DataInterface as IConfigData;
@@ -46,7 +45,7 @@ use Magento\Store\Model\Store;
  */
 function ju_cfg($k, $scope = null, $d = null) {
 	if (is_array($k)) {
-		$k = df_cc_path($k);
+		$k = ju_cc_path($k);
 	}
 	/** @var array|string|null|mixed $r */
 	$r = $scope instanceof IConfigData ? $scope->getValue($k) : df_cfg_m()->getValue($k, ...(
