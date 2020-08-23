@@ -38,7 +38,7 @@ function ju_msi_stock_ids(P $p) {return array_filter(array_unique(array_map('ju_
  * *) null or absert: the current website
  * *) true: the default website
  * 2020-08-23 "Port the `df_msi_website2stockId` function" https://github.com/justuno-com/core/issues/284
- * @used-by df_msi_stock_ids()
+ * @used-by ju_msi_stock_ids()
  * @param W|Store|int|string|null|bool $v [optional]
  * @return int|null
  * @throws Exception
