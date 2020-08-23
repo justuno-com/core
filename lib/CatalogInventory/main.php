@@ -18,7 +18,7 @@ function ju_qty($p) {
 	ju_assert_qty_supported($p);
 	# 2019-11-21 https://devdocs.magento.com/guides/v2.3/inventory/reservations.html#checkout-services
 	if (!ju_msi()) {
-		$r = ju_stock_r()->getStockItem(df_product_id($p))->getQty();
+		$r = ju_stock_r()->getStockItem(ju_product_id($p))->getQty();
 	}
 	else {
 		$i = ju_o(IQty::class); /** @var IQty|Qty $i */
