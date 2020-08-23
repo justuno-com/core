@@ -1,4 +1,5 @@
 <?php
+use Df\Zf\Validate\StringT\IntT;
 use Exception as E;
 use Justuno\Core\Exception as DFE;
 use Justuno\Core\Qa\Method as Q;
@@ -107,7 +108,7 @@ function ju_assert_traversable($v, $m = null) {return ju_check_traversable($v) ?
  */
 function ju_int($v, $allowNull = true) {/** @var int|int[] $r */
 	if (is_array($v)) {
-		$r = df_map(__FUNCTION__, $v, $allowNull);
+		$r = ju_map(__FUNCTION__, $v, $allowNull);
 	}
 	else {
 		if (is_int($v)) {
@@ -122,7 +123,7 @@ function ju_int($v, $allowNull = true) {/** @var int|int[] $r */
 			}
 			else {
 				if (!IntT::s()->isValid($v)) {
-					df_error(IntT::s()->getMessage());
+					ju_error(IntT::s()->getMessage());
 				}
 				else {
 					$r = (int)$v;
