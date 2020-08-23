@@ -18,7 +18,7 @@ function ju_qty($p) {
 	ju_assert_qty_supported($p);
 	# 2019-11-21 https://devdocs.magento.com/guides/v2.3/inventory/reservations.html#checkout-services
 	if (!ju_msi()) {
-		$r = df_stock_r()->getStockItem(df_product_id($p))->getQty();
+		$r = ju_stock_r()->getStockItem(df_product_id($p))->getQty();
 	}
 	else {
 		$i = ju_o(IQty::class); /** @var IQty|Qty $i */
@@ -27,3 +27,11 @@ function ju_qty($p) {
 	}
 	return $r;
 }
+
+/**
+ * 2018-06-04
+ * 2020-08-23 "Port the `df_stock_r` function" https://github.com/justuno-com/core/issues/277
+ * @used-by ju_qty()
+ * @return IStockRegistry|StockRegistry
+ */
+function ju_stock_r() {return ju_o(IStockRegistry::class);}
