@@ -29,6 +29,7 @@ use Magento\Framework\Phrase;
  * @used-by \Justuno\Core\Qa\Method::throwException()
  * @used-by \Justuno\Core\Qa\Trace\Frame::methodParameter()
  * @used-by \Justuno\Core\Zf\Filter\StringTrim::_splitUtf8()
+ * @used-by \Justuno\Core\Zf\Validate\IntT::filter()
  * @param string ...$args
  * @throws DFE
  */

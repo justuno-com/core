@@ -2,7 +2,7 @@
 use Exception as E;
 use Justuno\Core\Exception as DFE;
 use Justuno\Core\Qa\Method as Q;
-use Justuno\Core\Zf\Validate\IntT;
+use Justuno\Core\Zf\Validate\StringT\IntT;
 
 /**
  * 2019-12-14
@@ -101,6 +101,7 @@ function ju_assert_traversable($v, $m = null) {return ju_check_traversable($v) ?
 /**
  * 2020-08-23 "Port the `ju_int` function" https://github.com/justuno-com/core/issues/287
  * @used-by ju_product_id()
+ * @used-by \Justuno\Core\Zf\Validate\IntT::filter()
  * @param mixed|mixed[] $v
  * @param bool $allowNull [optional]
  * @return int|int[]

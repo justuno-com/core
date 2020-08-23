@@ -20,6 +20,7 @@ function ju_ends_with($haystack, $needle) {return is_array($needle)
  * @used-by ju_package()
  * @used-by ju_path_is_internal()
  * @used-by \Justuno\Core\Qa\Trace::__construct()
+ * @used-by \Justuno\Core\Zf\Validate\StringT\IntT::isValid()
  * @param string $haystack
  * @param string|string[] $needle
  * @return bool
