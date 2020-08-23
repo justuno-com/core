@@ -100,6 +100,7 @@ function ju_assert_traversable($v, $m = null) {return ju_check_traversable($v) ?
 
 /**
  * 2020-08-23 "Port the `ju_int` function" https://github.com/justuno-com/core/issues/287
+ * @used-by ju_nat()
  * @used-by ju_product_id()
  * @used-by \Justuno\Core\Zf\Validate\IntT::filter()
  * @param mixed|mixed[] $v
@@ -132,5 +133,21 @@ function ju_int($v, $allowNull = true) {/** @var int|int[] $r */
 			}
 		}
 	}
+	return $r;
+}
+
+/**
+ * 2020-08-23 "Port the `df_nat` function" https://github.com/justuno-com/core/issues/289
+ * @used-by \Justuno\M2\Controller\Cart\Add::execute()
+ * @used-by \Justuno\M2\Controller\Cart\Add::product()
+ * @see df_is_nat()
+ * @param mixed $v
+ * @param bool $allow0 [optional]
+ * @return int
+ * @throws DFE
+ */
+function ju_nat($v, $allow0 = false) {/** @var int $r */
+	$r = ju_int($v, $allow0);
+	$allow0 ? df_assert_ge(0, $r) : df_assert_gt0($r);
 	return $r;
 }
