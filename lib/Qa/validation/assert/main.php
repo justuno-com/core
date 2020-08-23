@@ -113,7 +113,6 @@ function ju_int($v, $allowNull = true) {/** @var int|int[] $r */
  * 2020-08-23 "Port the `df_nat` function" https://github.com/justuno-com/core/issues/289
  * @used-by \Justuno\M2\Controller\Cart\Add::execute()
  * @used-by \Justuno\M2\Controller\Cart\Add::product()
- * @see df_is_nat()
  * @param mixed $v
  * @param bool $allow0 [optional]
  * @return int
