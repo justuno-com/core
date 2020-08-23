@@ -23,7 +23,7 @@ function ju_qty($p) {
 	else {
 		$i = ju_o(IQty::class); /** @var IQty|Qty $i */
 		$sku = $p->getSku(); /** @var string $sku */
-		$r = array_sum(array_map(function($sid) use($i, $sku) {return $i->execute($sku, $sid);}, df_msi_stock_ids($p)));
+		$r = array_sum(array_map(function($sid) use($i, $sku) {return $i->execute($sku, $sid);}, ju_msi_stock_ids($p)));
 	}
 	return $r;
 }

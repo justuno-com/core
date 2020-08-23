@@ -13,3 +13,13 @@ use Magento\Store\Model\Website as W;
  * @return bool
  */
 function ju_msi() {return jucf(function() {return ju_module_enabled('Magento_Inventory');});}
+
+/**
+ * 2019-11-22
+ * 2020-08-23 "Port the `df_msi_stock_ids` function" https://github.com/justuno-com/core/issues/279
+ * @used-by ju_qty()
+ * @uses df_msi_website2stockId()
+ * @param P $p
+ * @return int[]
+ */
+function ju_msi_stock_ids(P $p) {return array_filter(array_unique(array_map('df_msi_website2stockId', $p->getWebsiteIds())));}
