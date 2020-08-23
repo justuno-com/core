@@ -8,6 +8,8 @@ use Magento\Framework\ObjectManagerInterface as IOM;
  * @used-by ju_asset()
  * @used-by ju_asset_source()
  * @used-by ju_backend_session()
+ * @used-by ju_catalog_image_h()
+ * @used-by ju_cfg_m()
  * @used-by ju_component_r()
  * @used-by ju_customer_registry()
  * @used-by ju_customer_session()
@@ -30,7 +32,6 @@ use Magento\Framework\ObjectManagerInterface as IOM;
  * @used-by ju_store_m()
  * @used-by ju_url_o()
  * @used-by ju_visitor_ip()
- * @used-by ju_cfg_m()
  * @param string $t
  * @return mixed
  */
