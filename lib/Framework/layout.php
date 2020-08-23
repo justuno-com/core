@@ -1,4 +1,5 @@
 <?php
+use Df\Theme\Model\View\Design as DfDesign;
 use Justuno\Core\O;
 use Magento\Backend\Block\Template as BackendTemplate;
 use Magento\Framework\View\Element\AbstractBlock;
@@ -6,6 +7,9 @@ use Magento\Framework\View\Element\BlockInterface;
 use Magento\Framework\View\Element\Template;
 use Magento\Framework\View\Layout;
 use Magento\Framework\View\LayoutInterface as ILayout;
+use Magento\Framework\View\Layout\ProcessorInterface as IProcessor;
+use Magento\Framework\View\Model\Layout\Merge;
+
 /**
  * 2020-08-22 "Port the `df_block` function" https://github.com/justuno-com/core/issues/238
  * @used-by \Justuno\M2\Block\GenerateToken::getElementHtml()
@@ -43,3 +47,17 @@ function ju_block($c, $data = [], $template = null, array $vars = []) {
  * @return Layout|ILayout
  */
 function ju_layout() {return ju_o(ILayout::class);}
+
+/**
+ * 2017-10-16
+ * 2020-08-23 "Port the `df_layout_update` function" https://github.com/justuno-com/core/issues/301
+ * @used-by ju_handles()
+ * @param \Closure|bool|mixed $onError [optional]
+ * @return IProcessor|Merge
+ */
+function ju_layout_update($onError = true) {return df_try(function() {
+	df_assert(DfDesign::isThemeInitialized(),
+		'This attempt to call Magento\Framework\View\Layout::getUpdate() can break the Magento frontend.'
+	);
+	return df_layout()->getUpdate();
+}, $onError);}

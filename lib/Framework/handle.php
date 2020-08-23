@@ -14,4 +14,4 @@ function ju_handle($n) {return in_array($n, ju_handles());}
  * @used-by ju_handle()
  * @return string[]
  */
-function ju_handles() {return ($u = df_layout_update(null)) ? $u->getHandles() : [];}
+function ju_handles() {return ($u = ju_layout_update(null)) ? $u->getHandles() : [];}
