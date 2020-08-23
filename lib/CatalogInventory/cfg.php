@@ -14,7 +14,7 @@ use Magento\InventoryConfigurationApi\Model\IsSourceItemManagementAllowedForProd
  */
 function ju_assert_qty_supported(P $p) {
 	$t = $p->getTypeId(); /** @var string $t */
-	ju_assert(ju_msi() ? ju_msi_allowed_for_pt()->execute($t) : df_stock_cfg()->isQty($t),
+	ju_assert(ju_msi() ? ju_msi_allowed_for_pt()->execute($t) : ju_stock_cfg()->isQty($t),
 		"Products of type `$t` do not have a quantity."
 	);
 }
@@ -34,3 +34,11 @@ function ju_assert_qty_supported(P $p) {
  * @return IAllowedForPT|AllowedForPT
  */
 function ju_msi_allowed_for_pt() {return ju_o(IAllowedForPT::class);}
+
+/**
+ * 2019-11-22
+ * 2020-08-23 "Port the `df_stock_cfg` function" https://github.com/justuno-com/core/issues/281
+ * @used-by ju_assert_qty_supported()
+ * @return ICfg|Cfg
+ */
+function ju_stock_cfg() {return ju_o(ICfg::class);}
