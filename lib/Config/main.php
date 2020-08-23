@@ -2,6 +2,7 @@
 use Magento\Framework\App\Config;
 use Magento\Framework\App\Config\Data as ConfigData;
 use Magento\Framework\App\Config\DataInterface as IConfigData;
+use Magento\Framework\App\Config\ScopeConfigInterface as IConfig;
 use Magento\Framework\App\ScopeInterface as ScopeA;
 use Magento\Store\Model\ScopeInterface as SS;
 use Magento\Store\Model\Store;
@@ -48,8 +49,19 @@ function ju_cfg($k, $scope = null, $d = null) {
 		$k = ju_cc_path($k);
 	}
 	/** @var array|string|null|mixed $r */
-	$r = $scope instanceof IConfigData ? $scope->getValue($k) : df_cfg_m()->getValue($k, ...(
+	$r = $scope instanceof IConfigData ? $scope->getValue($k) : ju_cfg_m()->getValue($k, ...(
 		is_array($scope) ? [$scope[0], $scope[1]] : [SS::SCOPE_STORE, $scope])
 	);
 	return df_if(df_cfg_empty($r), $d, $r);
 }
+
+/**
+ * 2016-02-09
+ * https://mage2.pro/t/639
+ * The default implementation of the @see \Magento\Framework\App\Config\ScopeConfigInterface
+ * is @see \Magento\Framework\App\Config
+ * 2020-08-23 "Port the `ju_cfg_m` function" https://github.com/justuno-com/core/issues/293
+ * @used-by ju_cfg()
+ * @return IConfig|Config
+ */
+function ju_cfg_m() {return ju_o(IConfig::class);}
