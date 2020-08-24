@@ -32,6 +32,7 @@ use Magento\Framework\ObjectManagerInterface as IOM;
  * @used-by ju_store_m()
  * @used-by ju_url_o()
  * @used-by ju_visitor_ip()
+ * @used-by \Justuno\Core\Theme\Model\View\Design::isThemeInitialized()
  * @param string $t
  * @return mixed
  */
