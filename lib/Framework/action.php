@@ -1,5 +1,14 @@
 <?php
 /**
+ * 2015-09-02
+ * 2017-03-15 @uses \Magento\Framework\App\Request\Http::getFullActionName() returns «__» in the CLI case.
+ * 2020-08-24 "Port the `df_action_name` function" https://github.com/justuno-com/core/issues/304
+ * @used-by \Justuno\M2\Block\Js::_toHtml()
+ * @return string|null
+ */
+function ju_action_name() {return ju_is_cli() ? null : ju_request_o()->getFullActionName();}
+
+/**
  * 2019-12-26
  * 2020-08-21 "Port the `df_referer` function" https://github.com/justuno-com/core/issues/211
  * @see \Magento\Store\App\Response\Redirect::getRefererUrl():

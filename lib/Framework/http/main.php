@@ -39,10 +39,10 @@ function ju_request_header($k) {return ju_request_o()->getHeader($k);}
 
 /**
  * 2020-06-13 "Port the `df_request_o` function": https://github.com/justuno-com/core/issues/2
+ * @used-by ju_action_name()
  * @used-by ju_is_ajax()
  * @used-by ju_log_l()
  * @used-by ju_request()
- * @used-by ju_request_o()
  * @return IRequest|RequestHttp
  */
 function ju_request_o() {return ju_o(IRequest::class);}
