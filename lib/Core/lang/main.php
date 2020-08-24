@@ -46,6 +46,7 @@ function ju_nop($v) {return $v;}
  * @used-by ju_customer()
  * @used-by ju_gd()
  * @used-by ju_layout_update()
+ * @used-by ju_product_current()
  * @used-by ju_trim()
  * @used-by ju_zuri()
  * @used-by \Justuno\Core\Qa\Trace\Frame::functionA()
