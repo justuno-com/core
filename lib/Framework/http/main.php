@@ -26,10 +26,23 @@ function ju_request($k = null, $d = null) {$o = ju_request_o(); return is_null($
 );}
 
 /**
+ * 2016-12-25
+ * The @uses \Laminas\Http\Request::getHeader() method is insensitive to the argument's letter case:
+ * @see \Laminas\Http\Headers::createKey()
+ * https://github.com/zendframework/zendframework/blob/release-2.4.6/library/Zend/Http/Headers.php#L462-L471
+ * 2020-08-24 "Port the `df_request_header` function" https://github.com/justuno-com/core/issues/303
+ * @used-by \Justuno\M2\Response::p()
+ * @param string $k
+ * @return string|false
+ */
+function ju_request_header($k) {return ju_request_o()->getHeader($k);}
+
+/**
  * 2020-06-13 "Port the `df_request_o` function": https://github.com/justuno-com/core/issues/2
  * @used-by ju_is_ajax()
  * @used-by ju_log_l()
  * @used-by ju_request()
+ * @used-by ju_request_o()
  * @return IRequest|RequestHttp
  */
 function ju_request_o() {return ju_o(IRequest::class);}
