@@ -123,7 +123,7 @@ final class Frame extends \Justuno\Core\O {
 	 * @param string $v
 	 * @return bool|null
 	 */
-	function showContext($v = DF_N) {return ju_prop($this, $v);}
+	function showContext($v = JU_N) {return ju_prop($this, $v);}
 
 	/**
 	 * @used-by method()

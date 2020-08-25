@@ -5,7 +5,7 @@
  * @used-by ju_prop()
  * @used-by \Justuno\Core\Qa\Trace\Frame::showContext()
  */
-const DF_N = 'df-null';
+const JU_N = 'df-null';
 
 /**
  * 2019-04-05
@@ -28,7 +28,7 @@ function ju_prop($o, $v, $d = null, $type = null) {/** @var object|mixed|null $r
 	 * https://stackoverflow.com/a/3471863
 	 * It is wrong because the $v argument is alwaus passed to ju_prop()
 	 */
-	$isGet = DF_N === $v; /** @vae bool $isGet */
+	$isGet = JU_N === $v; /** @vae bool $isGet */
 	if ('int' === $d) {
 		$type = $d; $d = null;
 	}
