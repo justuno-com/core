@@ -11,7 +11,7 @@ use Magento\Framework\Exception\NotFoundException as NotFound;
  * @throws NotFound|\Exception
  */
 function ju_product_current($onError = null) {return ju_try(function() {return
-	ju_is_backend() ? ju_catalog_locator()->getProduct() : (df_registry('current_product') ?: ju_error())
+	ju_is_backend() ? ju_catalog_locator()->getProduct() : (ju_registry('current_product') ?: ju_error())
 ;}, $onError);}
 
 /**
