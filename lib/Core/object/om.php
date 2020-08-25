@@ -24,6 +24,7 @@ use Magento\Framework\ObjectManagerInterface as IOM;
  * @used-by ju_msi_website2stockId()
  * @used-by ju_new_om()
  * @used-by ju_qty()
+ * @used-by ju_registry_o()
  * @used-by ju_request_o()
  * @used-by ju_response()
  * @used-by ju_scope_resolver_pool()
