@@ -5,6 +5,7 @@
  * @used-by ju_is_bin_magento()
  * @used-by \Justuno\Core\Qa\Trace\Frame::isClosure()
  * @used-by \Justuno\Core\Sentry\Trace::get_frame_context()
+ * @used-by \Justuno\M2\Plugin\App\Router\ActionList::aroundGet()
  * @param string $haystack
  * @param string|string[] $needle
  * @return bool
