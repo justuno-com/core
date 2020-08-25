@@ -1,4 +1,5 @@
 <?php
+use Magento\Catalog\Api\ProductRepositoryInterface as IProductRepository;
 use Magento\Catalog\Model\Product as P;
 use Magento\Catalog\Model\ProductRepository;
 use Magento\Framework\Exception\NoSuchEntityException as NSE;
@@ -29,7 +30,7 @@ use Magento\Store\Api\Data\StoreInterface as IStore;
  * @return P
  * @throws NSE
  */
-function ju_product($p, $s = false) {return $p instanceof P ? $p : df_product_r()->getById(
+function ju_product($p, $s = false) {return $p instanceof P ? $p : ju_product_r()->getById(
 	/**
 	 * 2020-02-05
 	 * 1) I do not use @see \Magento\Sales\Model\Order\Item::getProduct()
@@ -71,3 +72,11 @@ function ju_product_current_id() {return !($p = ju_product_current() /** @var P 
  * @return int
  */
 function ju_product_id($p) {return ju_int($p instanceof P ? $p->getId() : $p);}
+
+/**
+ * 2019-02-26
+ * 2020-08-24 "Port the `ju_product_r` function" https://github.com/justuno-com/core/issues/318
+ * @used-by ju_product()
+ * @return IProductRepository|ProductRepository
+ */
+function ju_product_r() {return ju_o(IProductRepository::class);}
