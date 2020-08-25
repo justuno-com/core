@@ -1,4 +1,5 @@
 <?php
+use Magento\Quote\Model\Quote\Item as QI;
 use Magento\Sales\Model\Order as O;
 use Magento\Sales\Model\Order\Item as OI;
 
@@ -27,5 +28,13 @@ function ju_is_oi($v) {return $v instanceof OI;}
  * @param mixed $v
  * @return bool
  */
-function ju_is_oqi($v) {return ju_is_oi($v) || df_is_qi($v);}
+function ju_is_oqi($v) {return ju_is_oi($v) || ju_is_qi($v);}
 
+/**
+ * 2017-04-20
+ * 2020-08-24 "Port the `df_is_qi` function" https://github.com/justuno-com/core/issues/322
+ * @used-by ju_is_oqi()
+ * @param mixed $v
+ * @return bool
+ */
+function ju_is_qi($v) {return $v instanceof QI;}
