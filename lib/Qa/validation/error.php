@@ -34,6 +34,7 @@ use Magento\Framework\Phrase;
  * @used-by \Justuno\Core\Qa\Trace\Frame::methodParameter()
  * @used-by \Justuno\Core\Zf\Filter\StringTrim::_splitUtf8()
  * @used-by \Justuno\Core\Zf\Validate\IntT::filter()
+ * @used-by \Justuno\M2\Response::p()
  * @param string ...$args
  * @throws DFE
  */
