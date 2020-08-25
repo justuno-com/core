@@ -16,6 +16,7 @@
  * 2.4) 2017-10-16: `null`, if $script is an absolute URL.
  * 2020-08-22 "Port the `df_js` function" https://github.com/justuno-com/core/issues/246
  * @used-by ju_fe_init()
+ * @used-by \Justuno\M2\Block\Js::_toHtml()
  * @param string|object|null $m
  * @param string|null $s [optional]
  * @param array(string => mixed) $p [optional]
