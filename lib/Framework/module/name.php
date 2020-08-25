@@ -25,6 +25,7 @@
  * @used-by ju_module_name_c()
  * @used-by ju_package()
  * @used-by ju_sentry_module()
+ * @used-by \Justuno\M2\Plugin\App\Router\ActionList::aroundGet()
  * @param string|object|null $c [optional]
  * @param string $del [optional]
  * @return string
