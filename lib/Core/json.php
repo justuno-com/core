@@ -70,15 +70,4 @@ function ju_json_encode_partial($v) {return ju_json_encode($v, JSON_PARTIAL_OUTP
  * @param mixed $v
  * @return mixed
  */
-function ju_json_sort($v) {return !is_array($v) ? $v : (ju_is_assoc($v) ? ju_ksort_r_ci($v) :
-	/**
-	 * 2017-09-08
-	 * @todo It would be nice to use df_sort($v) here,
-	 * but now it will break the «Sales Documents Numeration» extension,
-	 * because @see \Df\Config\Settings::_matrix() relies on an exact items ordering, e.g:
-	 * [["ORD-{Y/m}-",null],["INV-",null],["SHIP-{Y-M}",null],["RET-{STORE-ID}-",null]]
-	 * If we reorder these values, the «Sales Documents Numeration» extension will work incorrectly.
-	 * I need to think how to improve it.
-	 */
-	$v
-);}
+function ju_json_sort($v) {return !is_array($v) ? $v : ju_ksort_r_ci($v);}

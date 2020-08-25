@@ -5,7 +5,7 @@
  * 2020-06-18 "Port the `df_is_assoc` function": https://github.com/justuno-com/core/issues/62
  * @used-by ju_call()
  * @used-by ju_filter()
- * @used-by ju_json_sort()
+ * @used-by ju_ksort()
  * @used-by ju_ksort_r_ci()
  * @used-by juak_transform()
  * @param array(int|string => mixed) $a
