@@ -15,6 +15,7 @@ use Magento\Store\Model\StoreResolver;
  * By analogy with @see \Magento\Store\Model\StoreResolver::getCurrentStoreId()
  * https://github.com/magento/magento2/blob/2.0.0/app/code/Magento/Store/Model/StoreResolver.php#L82
  * 2020-06-24 "Port the `df_store` function": https://github.com/justuno-com/core/issues/122
+ * @used-by ju_store_id()
  * @used-by ju_store_url()
  * @param int|string|null|bool|IStore|O $v [optional]
  * @return IStore|Store
@@ -46,6 +47,15 @@ function ju_store($v = null) {/** @var string|null $c */return
  * @return string
  */
 function ju_store_code($s = null) {return ju_scope_code($s);}
+
+/**
+ * 2016-01-11
+ * 2020-08-24 "Port the `df_store_id` function" https://github.com/justuno-com/core/issues/320
+ * @used-by ju_product()
+ * @param int|string|null|bool|IStore $store [optional]
+ * @return int
+ */
+function ju_store_id($store = null) {return ju_store($store)->getId();}
 
 /**
  * 2017-02-07

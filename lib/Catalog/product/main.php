@@ -40,7 +40,7 @@ function ju_product($p, $s = false) {return $p instanceof P ? $p : ju_product_r(
 	 */
 	ju_is_oqi($p) ? $p->getProductId() : $p
 	,false
-	,false === $s ? null : df_store_id(true === $s ? null : $s)
+	,false === $s ? null : ju_store_id(true === $s ? null : $s)
 	,true === $s
 );}
 
