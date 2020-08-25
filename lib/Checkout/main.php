@@ -1,8 +1,17 @@
 <?php
 use Justuno\Core\Checkout\Model\Session as DfSession;
 use Justuno\Core\Exception as DFE;
+use Magento\Checkout\Model\Cart;
 use Magento\Checkout\Model\Session;
 use Magento\Sales\Model\Order as O;
+/**
+ * 2019-04-17
+ * 2020-08-24 "Port the `df_cart` function" https://github.com/justuno-com/core/issues/315
+ * @used-by \Justuno\M2\Controller\Cart\Add::execute()
+ * @return Cart
+ */
+function ju_cart() {return ju_o(Cart::class);}
+
 /**
  * 2016-05-06
  * 2020-08-24 "Port the `df_checkout_session` function" https://github.com/justuno-com/core/issues/312
