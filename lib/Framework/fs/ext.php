@@ -29,3 +29,16 @@ function ju_file_ext_add($f, $ext) {return !$ext ? $f : ju_append($f, ".$ext");}
  * @return string
  */
 function ju_file_ext_def($f, $ext) {return ($e = ju_file_ext($f)) ? $f : ju_trim_right($f, '.') . ".$ext";}
+
+/**
+ * 2015-04-01
+ * 2019-08-09
+ * 1) `preg_replace('#\.[^.]*$#', '', $file)` preserves the full path.
+ * 2) `pathinfo($file, PATHINFO_FILENAME)` (https://stackoverflow.com/a/22537165)
+ * strips the full path and returns the base name only.
+ * 2020-08-24 "Port the `df_strip_ext` function" https://github.com/justuno-com/core/issues/323
+ * @used-by \Justuno\M2\Controller\Js::execute()
+ * @param string $s
+ * @return mixed
+ */
+function ju_strip_ext($s) {return preg_replace('#\.[^.]*$#', '', $s);}
