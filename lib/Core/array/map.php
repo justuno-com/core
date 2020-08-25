@@ -47,6 +47,7 @@ function ju_each($c, $f, ...$p) {return ju_map(function($v) use($f, $p) {return 
  * @used-by ju_trim()
  * @used-by \Justuno\M2\Controller\Response\Catalog::execute()
  * @used-by \Justuno\M2\Controller\Response\Inventory::execute()
+ * @used-by \Justuno\M2\Inventory\Variants::p()
  * @param array|callable|\Traversable $a1
  * @param array|callable|\Traversable $a2
  * @param mixed|mixed[] $pAppend [optional]
