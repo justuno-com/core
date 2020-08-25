@@ -7,4 +7,4 @@ use Magento\Catalog\Model\ResourceModel\Product\Collection as C;
  * @used-by \Justuno\M2\Controller\Response\Inventory::execute()
  * @return C
  */
-function ju_product_c() {return df_new_om(C::class);}
+function ju_product_c() {return ju_new_om(C::class);}
