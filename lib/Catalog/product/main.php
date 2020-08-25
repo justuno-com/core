@@ -68,6 +68,7 @@ function ju_product_current_id() {return !($p = ju_product_current() /** @var P 
  * 2019-11-18
  * 2020-08-23 "Port the `df_product_id` function" https://github.com/justuno-com/core/issues/278
  * @used-by ju_qty()
+ * @used-by ju_review_summary()
  * @param P|int $p
  * @return int
  */
