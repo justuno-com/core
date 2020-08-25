@@ -21,6 +21,7 @@ use Magento\Framework\Phrase;
  * @used-by ju_int()
  * @used-by ju_json_decode()
  * @used-by ju_module_file()
+ * @used-by ju_order_last()
  * @used-by ju_pad()
  * @used-by ju_product_current()
  * @used-by ju_sentry_m()
