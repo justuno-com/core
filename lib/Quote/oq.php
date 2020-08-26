@@ -25,6 +25,15 @@ function ju_is_o($v) {return $v instanceof O;}
 function ju_is_oi($v) {return $v instanceof OI;}
 
 /**
+ * 2017-04-08
+ * 2020-08-26 "Port the `ju_is_oq` function" https://github.com/justuno-com/core/issues/343
+ * @used-by ju_currency_base()
+ * @param mixed $v
+ * @return bool
+ */
+function ju_is_oq($v) {return df_is_o($v) || df_is_q($v);}
+
+/**
  * 2020-02-05
  * 2020-08-24 "Port the `df_is_oqi` function" https://github.com/justuno-com/core/issues/319
  * @used-by ju_product()

@@ -44,5 +44,5 @@ function ju_currency($c = null) {/** @var C $r */
  * @return C
  */
 function ju_currency_base($s = null) {return ju_currency(ju_assert_sne(ju_cfg(
-	C::XML_PATH_CURRENCY_BASE, df_is_oq($s) ? $s->getStore() : $s
+	C::XML_PATH_CURRENCY_BASE, ju_is_oq($s) ? $s->getStore() : $s
 )));}
