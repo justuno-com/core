@@ -101,6 +101,7 @@ function ju_trim_text_left($s, $trim) {return is_array($trim) ? ju_trim_text_a($
  * 2016-10-28 It now supports multiple $trim.
  * 2020-06-26 "Port the `df_trim_text_right` function": https://github.com/justuno-com/core/issues/142
  * @used-by ju_cts()
+ * @used-by ju_oqi_amount()
  * @param string $s
  * @param string|string[] $trim
  * @return string
