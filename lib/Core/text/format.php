@@ -81,7 +81,7 @@ function ju_sprintf_strict($s) {/** @var string $r */ /** @var mixed[] $args */
 			if (!$inProcess) {
 				$inProcess = true;
 				ju_error(
-					'df_sprintf_strict failed: «{message}».'
+					'ju_sprintf_strict failed: «{message}».'
 					. "\nPattern: {$s}."
 					. "\nParameters:\n{params}."
 					,['{message}' => ju_ets($e), '{params}' => print_r(ju_tail($args), true)]
