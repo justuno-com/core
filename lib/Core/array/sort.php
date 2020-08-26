@@ -73,7 +73,7 @@ function ju_ksort_r_ci(array $a) {return
  * @return array(int|string => mixed)
  */
 function ju_sort(array $a, $f = null) {
-	$isAssoc = df_is_assoc($a); /** @var bool $isAssoc */
+	$isAssoc = ju_is_assoc($a); /** @var bool $isAssoc */
 	if (!$f) {
 		$isAssoc ? asort($a) : sort($a);
 	}

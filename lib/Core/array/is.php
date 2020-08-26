@@ -7,6 +7,7 @@
  * @used-by ju_filter()
  * @used-by ju_ksort()
  * @used-by ju_ksort_r_ci()
+ * @used-by ju_sort()
  * @used-by juak_transform()
  * @param array(int|string => mixed) $a
  * @return bool
