@@ -157,3 +157,12 @@ function ju_oqi_price($i, $withTax = false, $withDiscount = false) {/** @var flo
  * @return int
  */
 function ju_oqi_qty($i) {return intval(ju_is_oi($i) ? $i->getQtyOrdered() : (ju_is_qi($i) ? $i->getQty() : ju_error()));}
+
+/**
+ * 2016-08-18
+ * 2020-08-26 "Port the `df_oqi_top` function" https://github.com/justuno-com/core/issues/346
+ * @used-by ju_oqi_amount()
+ * @param OI|QI $i
+ * @return OI|QI
+ */
+function ju_oqi_top($i) {return $i->getParentItem() ?: $i;}
