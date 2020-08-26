@@ -18,6 +18,7 @@ function ju_is_o($v) {return $v instanceof O;}
  * 2020-08-24 "Port the `df_is_oi` function" https://github.com/justuno-com/core/issues/321
  * @used-by ju_is_oqi()
  * @used-by ju_oqi_is_leaf()
+ * @used-by ju_oqi_price()
  * @param mixed $v
  * @return bool
  */
