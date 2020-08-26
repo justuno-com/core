@@ -5,6 +5,24 @@ use Magento\Sales\Model\Order as O;
 use Magento\Sales\Model\Order\Item as OI;
 
 /**
+ * 2019-11-20
+ * 1) It returns a value for the whole row.
+ * 2) We should use @uses df_oqi_top() because money amounts are absent for configurable children.
+ * 2020-08-26 "Port the `df_oqi_amount` function" https://github.com/justuno-com/core/issues/345
+ * @used-by ju_oqi_discount_b()
+ * @param OI|QI $i
+ * @return float
+ */
+function ju_oqi_amount($i) {
+	$k0 = df_trim_text_left(df_caller_f(), 'ju_oqi_'); /** @var string $k0 */
+	$k1 = df_trim_text_right($k0, '_b'); /** @var string $k1 */
+	$i = df_oqi_top($i);
+	$k = ($k1 === $k0 ? '' : 'base_') . "{$k1}_amount"; /** @var string $k */
+	df_assert($i->offsetExists($k), "[ju_oqi_amount] Invalid key: `$k`.");
+	return (float)$i[$k];
+}
+
+/**
  * 2019-11-20 It returns a value for the whole row.
  * 2020-08-26 "Port the `df_oqi_discount_b` function" https://github.com/justuno-com/core/issues/339
  * @see ju_oqi_discount()
@@ -12,7 +30,7 @@ use Magento\Sales\Model\Order\Item as OI;
  * @param OI|QI $i
  * @return float
  */
-function ju_oqi_discount_b($i) {return df_oqi_amount($i);}
+function ju_oqi_discount_b($i) {return ju_oqi_amount($i);}
 
 /**
  * 2016-09-07
