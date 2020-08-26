@@ -57,6 +57,38 @@ function ju_ksort_r_ci(array $a) {return
 ;}
 
 /**
+ * 2016-07-18
+ * 2016-08-10
+ * С сегодняшнего дня я использую функцию @see df_caller_f(),
+ * которая, в свою очередь, использует @debug_backtrace()
+ * Это приводит к сбою: «Warning: usort(): Array was modified by the user comparison function».
+ * http://stackoverflow.com/questions/3235387
+ * https://bugs.php.net/bug.php?id=50688
+ * По этой причине добавил собаку.
+ * 2020-08-26 "Port the `df_sort` function" https://github.com/justuno-com/core/issues/334
+ * @see df_ksort()
+ * @used-by ju_sort_names()
+ * @param array(int|string => mixed) $a
+ * @param \Closure|string|null $f [optional]
+ * @return array(int|string => mixed)
+ */
+function ju_sort(array $a, $f = null) {
+	$isAssoc = df_is_assoc($a); /** @var bool $isAssoc */
+	if (!$f) {
+		$isAssoc ? asort($a) : sort($a);
+	}
+	else {
+		if (!$f instanceof \Closure) {
+			$m = $f ?: 'getId'; /** @var string $m */ /** @uses \Magento\Framework\Model\AbstractModel::getId() */
+			$f = function($a, $b) use($m) {return !is_object($a) ? $a - $b : $a->$m() - $b->$m();};
+		}
+		/** @noinspection PhpUsageOfSilenceOperatorInspection */
+		$isAssoc ? @uasort($a, $f) : @usort($a, $f);
+	}
+	return $a;
+}
+
+/**
  * 2017-02-02 http://stackoverflow.com/a/7930575
  * 2020-08-26 "Port the `df_sort_names` function" https://github.com/justuno-com/core/issues/332
  * @used-by ju_oqi_leafs()
@@ -67,5 +99,5 @@ function ju_ksort_r_ci(array $a) {return
  */
 function ju_sort_names(array $a, $locale = null, callable $get = null) {
 	$c = new \Collator($locale); /** @var \Collator $c */
-	return df_sort($a, function($a, $b) use($c, $get) {return $c->compare(!$get ? $a : $get($a), !$get ? $b : $get($b));});
+	return ju_sort($a, function($a, $b) use($c, $get) {return $c->compare(!$get ? $a : $get($a), !$get ? $b : $get($b));});
 }
