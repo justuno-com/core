@@ -17,6 +17,7 @@ function ju_is_o($v) {return $v instanceof O;}
  * 2017-04-20
  * 2020-08-24 "Port the `df_is_oi` function" https://github.com/justuno-com/core/issues/321
  * @used-by ju_is_oqi()
+ * @used-by ju_oqi_is_leaf()
  * @param mixed $v
  * @return bool
  */
@@ -35,7 +36,17 @@ function ju_is_oqi($v) {return ju_is_oi($v) || ju_is_qi($v);}
  * 2017-04-20
  * 2020-08-24 "Port the `df_is_qi` function" https://github.com/justuno-com/core/issues/322
  * @used-by ju_is_oqi()
+ * @used-by ju_oqi_is_leaf()
  * @param mixed $v
  * @return bool
  */
 function ju_is_qi($v) {return $v instanceof QI;}
+
+/**
+ * 2017-04-20
+ * 2020-08-26 "Port the `ju_oqi_is_leaf` function" https://github.com/justuno-com/core/issues/333
+ * @used-by ju_oqi_is_leaf()
+ * @param OI|QI $i
+ * @return bool
+ */
+function ju_oqi_is_leaf($i) {return ju_is_oi($i) ? !$i->getChildrenItems() : (ju_is_qi($i) ? !$i->getChildren() : ju_error());}
