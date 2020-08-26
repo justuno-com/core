@@ -16,6 +16,7 @@ use Magento\Framework\DB\Select;
  * I added @see \Zend_Db_Select to the PHPDoc return type declaration just for my IDE convenience.
  * 2020-08-22 "Port the `ju_db_from` function" https://github.com/justuno-com/core/issues/267
  * @used-by ju_fetch()
+ * @used-by ju_fetch_one()
  * @param string|Entity|array(string => string) $t
  * @param string|string[] $cols [optional]
  * @param string|null $schema [optional]

@@ -29,7 +29,7 @@ function ju_fetch($t, $cols = '*', $compareK = null, $compareV = null) {
  * @return string|null|array(string => mixed)
  */
 function ju_fetch_one($t, $cols, $compare) {
-	$s = df_db_from($t, $cols); /** @var S $s */
+	$s = ju_db_from($t, $cols); /** @var S $s */
 	foreach ($compare as $c => $v) {/** @var string $c */ /** @var string $v */
 		$s->where('? = ' . $c, $v);
 	}
