@@ -14,4 +14,4 @@ use Magento\Store\Model\Store;
  * @param null|string|int|ScopeA|Store|ConfigData|IConfigData $s [optional]
  * @return float
  */
-function ju_currency_convert_from_base($a, $to, $s = null) {return df_currency_base($s)->convert($a, $to);}
+function ju_currency_convert_from_base($a, $to, $s = null) {return ju_currency_base($s)->convert($a, $to);}
