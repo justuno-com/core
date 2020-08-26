@@ -9,6 +9,7 @@ use Magento\Sales\Model\Order\Item as OI;
  * 1) It returns a value for the whole row.
  * 2) We should use @uses df_oqi_top() because money amounts are absent for configurable children.
  * 2020-08-26 "Port the `df_oqi_amount` function" https://github.com/justuno-com/core/issues/345
+ * @used-by ju_oqi_discount()
  * @used-by ju_oqi_discount_b()
  * @param OI|QI $i
  * @return float
@@ -21,6 +22,17 @@ function ju_oqi_amount($i) {
 	ju_assert($i->offsetExists($k), "[ju_oqi_amount] Invalid key: `$k`.");
 	return (float)$i[$k];
 }
+
+/**
+ * 2019-11-20 It returns a value for the whole row.
+ * 2020-08-26 "Port the `df_oqi_discount` function" https://github.com/justuno-com/core/issues/337
+ * @see ju_oqi_discount_b()
+ * @used-by ju_oqi_price()
+ * @used-by \Justuno\M2\Controller\Response\Orders::execute()
+ * @param OI|QI $i
+ * @return float
+ */
+function ju_oqi_discount($i) {return ju_oqi_amount($i);}
 
 /**
  * 2019-11-20 It returns a value for the whole row.
@@ -139,7 +151,7 @@ function ju_oqi_price($i, $withTax = false, $withDiscount = false) {/** @var flo
 			# 2017-04-20 У меня $i->getPrice() для quote item возвращает значение в учётной валюте: видимо, из-за дефекта ядра.
 			ju_currency_convert_from_base($i->getBasePrice(), $i->getQuote()->getQuoteCurrencyCode())
 	)) ?: ($i->getParentItem() ? ju_oqi_price($i->getParentItem(), $withTax) : .0);
-	return !$withDiscount ? $r : ($r - (ju_is_oi($i) ? df_oqi_discount($i) :
+	return !$withDiscount ? $r : ($r - (ju_is_oi($i) ? ju_oqi_discount($i) :
 		ju_currency_convert_from_base(ju_oqi_discount_b($i), $i->getQuote()->getQuoteCurrencyCode())
 	) / ju_oqi_qty($i));
 }
