@@ -9,6 +9,14 @@
 function ju_etn($v) {return $v ?: null;}
 
 /**
+ * 2020-08-26 "Port the `df_ftn` function" https://github.com/justuno-com/core/issues/328
+ * @used-by ju_fetch_one()
+ * @param mixed|false $v
+ * @return mixed|null
+ */
+function ju_ftn($v) {return (false === $v) ? null : $v;}
+
+/**
  * 2020-06-14 "Port the `df_nes` function": https://github.com/justuno-com/core/issues/19
  * @used-by jua_deep()
  * @param mixed $v
