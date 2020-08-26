@@ -18,6 +18,6 @@ use Magento\Store\Model\Store;
  * @param ScopeA|Store|ConfigData|IConfigData|O|Q|array(int|string)|null|string|int $s [optional]
  * @return C
  */
-function ju_currency_base($s = null) {return df_currency(df_assert_sne(df_cfg(
+function ju_currency_base($s = null) {return df_currency(df_assert_sne(ju_cfg(
 	C::XML_PATH_CURRENCY_BASE, df_is_oq($s) ? $s->getStore() : $s
 )));}
