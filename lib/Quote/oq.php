@@ -1,4 +1,5 @@
 <?php
+use Magento\Quote\Model\Quote as Q;
 use Magento\Quote\Model\Quote\Item as QI;
 use Magento\Sales\Model\Order as O;
 use Magento\Sales\Model\Order\Item as OI;
@@ -6,6 +7,7 @@ use Magento\Sales\Model\Order\Item as OI;
 /**
  * 2017-04-10
  * 2020-06-24 "Port the `ju_is_o` function": https://github.com/justuno-com/core/issues/123
+ * @used-by ju_is_oq()
  * @used-by ju_oqi_leafs()
  * @used-by ju_store()
  * @param mixed $v
@@ -31,7 +33,7 @@ function ju_is_oi($v) {return $v instanceof OI;}
  * @param mixed $v
  * @return bool
  */
-function ju_is_oq($v) {return df_is_o($v) || df_is_q($v);}
+function ju_is_oq($v) {return ju_is_o($v) || ju_is_q($v);}
 
 /**
  * 2020-02-05
@@ -41,6 +43,15 @@ function ju_is_oq($v) {return df_is_o($v) || df_is_q($v);}
  * @return bool
  */
 function ju_is_oqi($v) {return ju_is_oi($v) || ju_is_qi($v);}
+
+/**
+ * 2017-04-10
+ * 2020-08-26 "Port the `df_is_q` function" https://github.com/justuno-com/core/issues/344
+ * @used-by ju_is_oq()
+ * @param mixed $v
+ * @return bool
+ */
+function ju_is_q($v) {return $v instanceof Q;}
 
 /**
  * 2017-04-20
