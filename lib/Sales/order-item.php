@@ -18,7 +18,7 @@ function ju_oqi_amount($i) {
 	$k1 = df_trim_text_right($k0, '_b'); /** @var string $k1 */
 	$i = df_oqi_top($i);
 	$k = ($k1 === $k0 ? '' : 'base_') . "{$k1}_amount"; /** @var string $k */
-	df_assert($i->offsetExists($k), "[ju_oqi_amount] Invalid key: `$k`.");
+	ju_assert($i->offsetExists($k), "[ju_oqi_amount] Invalid key: `$k`.");
 	return (float)$i[$k];
 }
 
