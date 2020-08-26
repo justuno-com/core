@@ -34,7 +34,7 @@ use Magento\Sales\Model\Order\Item as OI;
  * @return array(int => mixed)|OI[]|QI[]
  */
 function ju_oqi_leafs($oq, \Closure $f = null, $locale = null) {
-	$r = df_sort_names(array_values(array_filter(
+	$r = ju_sort_names(array_values(array_filter(
 		$oq->getItems(), function($i) {/** @var OI|QI $i */ return df_oqi_is_leaf($i);}
 	)), $locale, function($i) {/** @var OI|QI $i */ return $i->getName();}); /** @var OI[]|QI[] $r */
 	/**

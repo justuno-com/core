@@ -55,3 +55,17 @@ function ju_ksort_r_ci(array $a) {return
 	? $a
 	: ju_ksort_r($a, 'strcasecmp')
 ;}
+
+/**
+ * 2017-02-02 http://stackoverflow.com/a/7930575
+ * 2020-08-26 "Port the `df_sort_names` function" https://github.com/justuno-com/core/issues/332
+ * @used-by ju_oqi_leafs()
+ * @param string[]|mixed[] $a
+ * @param string|null $locale
+ * @param callable|null $get
+ * @return string[]|mixed[]
+ */
+function ju_sort_names(array $a, $locale = null, callable $get = null) {
+	$c = new \Collator($locale); /** @var \Collator $c */
+	return df_sort($a, function($a, $b) use($c, $get) {return $c->compare(!$get ? $a : $get($a), !$get ? $b : $get($b));});
+}
