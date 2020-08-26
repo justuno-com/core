@@ -118,5 +118,14 @@ function ju_oqi_price($i, $withTax = false, $withDiscount = false) {/** @var flo
 	 */
 	return !$withDiscount ? $r : ($r - (ju_is_oi($i) ? df_oqi_discount($i) :
 		ju_currency_convert_from_base(df_oqi_discount_b($i), $i->getQuote()->getQuoteCurrencyCode())
-	) / df_oqi_qty($i));
+	) / ju_oqi_qty($i));
 }
+
+/**
+ * 2017-03-06
+ * 2020-08-26 "Port the `ju_oqi_qty` function" https://github.com/justuno-com/core/issues/340
+ * @used-by ju_oqi_price()
+ * @param OI|QI $i
+ * @return int
+ */
+function ju_oqi_qty($i) {return intval(df_is_oi($i) ? $i->getQtyOrdered() : (df_is_qi($i) ? $i->getQty() : ju_error()));}
