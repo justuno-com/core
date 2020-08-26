@@ -43,7 +43,7 @@ function ju_oqi_leafs($oq, \Closure $f = null, $locale = null) {
 	 * and order items are not yet associated with the order.
 	 * I associate order items with the order manually to make @see OI::getOrder() working properly.
 	 */
-	if (df_is_o($oq)) {
+	if (ju_is_o($oq)) {
 		foreach ($r as $i) {/** @var OI $i */
 			if (!$i->getOrderId()) {
 				$i->setOrder($oq);

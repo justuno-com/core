@@ -6,6 +6,7 @@ use Magento\Sales\Model\Order\Item as OI;
 /**
  * 2017-04-10
  * 2020-06-24 "Port the `ju_is_o` function": https://github.com/justuno-com/core/issues/123
+ * @used-by ju_oqi_leafs()
  * @used-by ju_store()
  * @param mixed $v
  * @return bool
