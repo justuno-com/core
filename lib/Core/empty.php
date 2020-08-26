@@ -1,5 +1,20 @@
 <?php
 /**
+ * 2017-04-26
+ * 2020-08-26 "Port the `df_eta` function" https://github.com/justuno-com/core/issues/329
+ * @used-by ju_fetch_one()
+ * @param mixed|null $v
+ * @return mixed[]
+ */
+function ju_eta($v) {
+	if (!is_array($v)) {
+		ju_assert(empty($v));
+		$v = [];
+	}
+	return $v;
+}
+
+/**
  * 2020-01-29
  * 2020-08-14 "Port the `df_etn` function" https://github.com/justuno-com/core/issues/181
  * @used-by ju_customer_session_id()

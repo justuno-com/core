@@ -20,6 +20,7 @@ use Justuno\Core\Zf\Validate\StringT\IntT;
  * 2020-06-17 "Port the `df_assert` function": https://github.com/justuno-com/core/issues/33
  * @used-by ju_assert_qty_supported()
  * @used-by ju_catalog_locator()
+ * @used-by ju_eta()
  * @used-by ju_layout_update()
  * @used-by ju_module_dir()
  * @used-by juaf()
