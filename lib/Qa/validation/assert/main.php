@@ -48,6 +48,7 @@ function ju_assert_nef($v, $m = null) {return false !== $v ? $v : ju_error($m ?:
 
 /**
  * 2020-06-22 "Port the `df_assert_sne` function": https://github.com/justuno-com/core/issues/115
+ * @used-by ju_currency_base()
  * @used-by ju_file_name()
  * @param string $v
  * @param int $sl [optional]
