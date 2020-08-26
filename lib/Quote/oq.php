@@ -21,6 +21,7 @@ function ju_is_o($v) {return $v instanceof O;}
  * @used-by ju_is_oqi()
  * @used-by ju_oqi_is_leaf()
  * @used-by ju_oqi_price()
+ * @used-by ju_oqi_qty()
  * @param mixed $v
  * @return bool
  */
