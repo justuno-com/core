@@ -42,6 +42,7 @@ function ju_caller_entry($o = 0) {
  * 2020-08-19 "Port the `df_caller_f` function" https://github.com/justuno-com/core/issues/206
  * @used-by ju_log_e()
  * @used-by ju_log_l()
+ * @used-by ju_oqi_amount()
  * @used-by ju_prop()
  * @param int $o [optional]
  * @return string

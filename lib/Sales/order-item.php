@@ -14,7 +14,7 @@ use Magento\Sales\Model\Order\Item as OI;
  * @return float
  */
 function ju_oqi_amount($i) {
-	$k0 = df_trim_text_left(df_caller_f(), 'ju_oqi_'); /** @var string $k0 */
+	$k0 = df_trim_text_left(ju_caller_f(), 'ju_oqi_'); /** @var string $k0 */
 	$k1 = df_trim_text_right($k0, '_b'); /** @var string $k1 */
 	$i = df_oqi_top($i);
 	$k = ($k1 === $k0 ? '' : 'base_') . "{$k1}_amount"; /** @var string $k */
