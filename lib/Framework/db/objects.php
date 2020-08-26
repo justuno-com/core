@@ -9,6 +9,7 @@ use Magento\Framework\DB\Select;
  * 2020-08-14 "Port the `df_conn` function" https://github.com/justuno-com/core/issues/191
  * @used-by ju_db_version()
  * @used-by ju_fetch()
+ * @used-by ju_fetch_one()
  * @used-by ju_select()
  * @used-by ju_table_exists()
  * @used-by \Justuno\M2\Setup\UpgradeSchema::tr()
