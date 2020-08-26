@@ -128,4 +128,4 @@ function ju_oqi_price($i, $withTax = false, $withDiscount = false) {/** @var flo
  * @param OI|QI $i
  * @return int
  */
-function ju_oqi_qty($i) {return intval(ju_is_oi($i) ? $i->getQtyOrdered() : (df_is_qi($i) ? $i->getQty() : ju_error()));}
+function ju_oqi_qty($i) {return intval(ju_is_oi($i) ? $i->getQtyOrdered() : (ju_is_qi($i) ? $i->getQty() : ju_error()));}

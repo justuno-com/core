@@ -59,6 +59,7 @@ function ju_is_q($v) {return $v instanceof Q;}
  * 2020-08-24 "Port the `df_is_qi` function" https://github.com/justuno-com/core/issues/322
  * @used-by ju_is_oqi()
  * @used-by ju_oqi_is_leaf()
+ * @used-by ju_oqi_qty()
  * @param mixed $v
  * @return bool
  */
