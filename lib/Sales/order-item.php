@@ -5,6 +5,16 @@ use Magento\Sales\Model\Order as O;
 use Magento\Sales\Model\Order\Item as OI;
 
 /**
+ * 2019-11-20 It returns a value for the whole row.
+ * 2020-08-26 "Port the `df_oqi_discount_b` function" https://github.com/justuno-com/core/issues/339
+ * @see ju_oqi_discount()
+ * @used-by ju_oqi_price()
+ * @param OI|QI $i
+ * @return float
+ */
+function ju_oqi_discount_b($i) {return df_oqi_amount($i);}
+
+/**
  * 2016-09-07
  * Если товар является настраиваемым, то @uses \Magento\Sales\Model\Order::getItems()
  * будет содержать как настраиваемый товар, так и его простой вариант.
@@ -117,7 +127,7 @@ function ju_oqi_price($i, $withTax = false, $withDiscount = false) {/** @var flo
 	 * are not filled for the configurable children.
 	 */
 	return !$withDiscount ? $r : ($r - (ju_is_oi($i) ? df_oqi_discount($i) :
-		ju_currency_convert_from_base(df_oqi_discount_b($i), $i->getQuote()->getQuoteCurrencyCode())
+		ju_currency_convert_from_base(ju_oqi_discount_b($i), $i->getQuote()->getQuoteCurrencyCode())
 	) / ju_oqi_qty($i));
 }
 
