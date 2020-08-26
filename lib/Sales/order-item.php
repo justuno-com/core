@@ -139,11 +139,6 @@ function ju_oqi_price($i, $withTax = false, $withDiscount = false) {/** @var flo
 			# 2017-04-20 У меня $i->getPrice() для quote item возвращает значение в учётной валюте: видимо, из-за дефекта ядра.
 			ju_currency_convert_from_base($i->getBasePrice(), $i->getQuote()->getQuoteCurrencyCode())
 	)) ?: ($i->getParentItem() ? ju_oqi_price($i->getParentItem(), $withTax) : .0);
-	/**
-	 * 2017-09-30
-	 * We should use @uses df_oqi_top(), because the `discount_amount` and `base_discount_amount` fields
-	 * are not filled for the configurable children.
-	 */
 	return !$withDiscount ? $r : ($r - (ju_is_oi($i) ? df_oqi_discount($i) :
 		ju_currency_convert_from_base(ju_oqi_discount_b($i), $i->getQuote()->getQuoteCurrencyCode())
 	) / ju_oqi_qty($i));
