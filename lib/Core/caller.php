@@ -26,7 +26,7 @@ function ju_caller_entry($o = 0) {
 	$bt = array_slice(debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS), 2 + $o);
 	while ($r = array_shift($bt) /** @var array(string => string|int) $r */) {
 		$f = $r['function']; /** @var string $f */
-		if (!ju_contains($f, '{closure}') && !in_array($f, ['dfc', 'dfcf'])) {
+		if (!ju_contains($f, '{closure}') && !in_array($f, ['juc', 'jucf'])) {
 			break;
 		}
 	}
