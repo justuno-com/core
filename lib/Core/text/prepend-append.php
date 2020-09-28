@@ -57,6 +57,15 @@ function ju_pad($phrase, $length, $pattern = ' ', $position = STR_PAD_RIGHT) {/*
 }
 
 /**
+ * 2016-03-08 It adds the $head prefix to the $s string if the prefix is absent in $s.
+ * @used-by \Justuno\Core\Framework\Plugin\Data\Form\Element\AbstractElement::afterGetElementHtml()
+ * @param string $s
+ * @param string $head
+ * @return string
+ */
+function ju_prepend($s, $head) {return ju_starts_with($s, $head) ? $s : $head . $s;}
+
+/**
  * 2020-06-18 "Port the `df_tab` function": https://github.com/justuno-com/core/issues/85
  * @used-by ju_tab_multiline()
  * @param string ...$args
