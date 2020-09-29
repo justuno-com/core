@@ -68,6 +68,7 @@ function ju_ksort_r_ci(array $a) {return
  * 2020-08-26 "Port the `df_sort` function" https://github.com/justuno-com/core/issues/334
  * @see df_ksort()
  * @used-by ju_sort_names()
+ * @used-by \Justuno\M2\Catalog\Images::p()
  * @param array(int|string => mixed) $a
  * @param \Closure|string|null $f [optional]
  * @return array(int|string => mixed)

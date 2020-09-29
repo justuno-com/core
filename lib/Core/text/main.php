@@ -19,6 +19,7 @@ function ju_bts($v) {return $v ? 'true' : 'false';}
  * @used-by jua()
  * @used-by \Justuno\Core\Format\Html\Tag::content()
  * @used-by \Justuno\Core\Sentry\Trace::get_frame_context()
+ * @used-by \Justuno\M2\Catalog\Images::p()
  * @param string $haystack
  * @param string|string[] ...$n
  * @return bool
