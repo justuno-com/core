@@ -8,7 +8,7 @@ use Magento\Framework\DataObject as _DO;
  * @see df_new_omd()
  * @used-by ju_currency()
  * @used-by ju_order_c()
- * @used-by ju_product_c()
+ * @used-by ju_pc()
  * @used-by ju_review_summary()
  * @used-by ju_trigger()
  * @used-by \Justuno\M2\Controller\Response\Orders::customer()
