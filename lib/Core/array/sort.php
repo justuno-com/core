@@ -69,6 +69,7 @@ function ju_ksort_r_ci(array $a) {return
  * @see df_ksort()
  * @used-by ju_sort_names()
  * @used-by \Justuno\M2\Catalog\Images::p()
+ * @used-by \Justuno\M2\Response::store()
  * @param array(int|string => mixed) $a
  * @param \Closure|string|null $f [optional]
  * @return array(int|string => mixed)

@@ -3,14 +3,20 @@ use Closure as F;
 use Justuno\Core\Catalog\Plugin\Model\Indexer\Product\Flat\State as PFlat;
 use Justuno\Core\InventoryCatalog\Plugin\Model\ResourceModel\AddStockDataToCollection as PAddStock;
 use Magento\Catalog\Model\ResourceModel\Product\Collection as C;
+use Magento\Store\Api\Data\StoreInterface as IS;
 /**
  * 2019-09-18
  * 2020-08-24 "Port the `df_product_c` function" https://github.com/justuno-com/core/issues/325
  * @used-by \Justuno\M2\Controller\Response\Catalog::execute()
  * @used-by \Justuno\M2\Controller\Response\Inventory::execute()
+ * @param IS|null $s [optional]
  * @return C
  */
-function ju_pc() {return ju_new_om(C::class);}
+function ju_pc(IS $s = null) {
+	$r = ju_new_om(C::class); /** @var C $r */
+	$r->addStoreFilter($s);
+	return $r;
+}
 
 /**
  * 2020-11-24

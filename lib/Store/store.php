@@ -17,6 +17,7 @@ use Magento\Store\Model\StoreResolver;
  * 2020-06-24 "Port the `df_store` function": https://github.com/justuno-com/core/issues/122
  * @used-by ju_store_id()
  * @used-by ju_store_url()
+ * @used-by \Justuno\M2\Response::store()
  * @param int|string|null|bool|IStore|O $v [optional]
  * @return IStore|Store
  * @throws NSE|\Exception
@@ -61,6 +62,7 @@ function ju_store_id($store = null) {return ju_store($store)->getId();}
  * 2017-02-07
  * 2020-06-24 "Port the `df_store_m` function": https://github.com/justuno-com/core/issues/124
  * @used-by ju_store()
+ * @used-by \Justuno\M2\Response::store()
  * @return IStoreManager|StoreManager
  */
 function ju_store_m() {return ju_o(IStoreManager::class);}

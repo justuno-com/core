@@ -21,6 +21,7 @@ use Traversable as T;
  * @used-by ju_request()
  * @used-by ju_sentry()
  * @used-by ju_sentry_m()
+ * @used-by jutr()
  * @used-by \Justuno\Core\O::a()
  * @used-by \Justuno\Core\Qa\Trace\Frame::methodParameter()
  * @used-by \Justuno\Core\Sentry\Client::__construct()
@@ -31,6 +32,7 @@ use Traversable as T;
  * @used-by \Justuno\Core\Sentry\Trace::get_frame_context()
  * @used-by \Justuno\Core\Sentry\Trace::info()
  * @used-by \Justuno\Core\Zf\Validate::cfg()
+ * @used-by \Justuno\M2\Response::store()
  * @param array(int|string => mixed) $a
  * @param string|string[]|int|null $k
  * @param mixed|callable $d

@@ -73,3 +73,12 @@ function juaf($a, $b) {
 	}
 	return $r;
 }
+
+/**
+ * 2021-01-28
+ * @used-by \Justuno\M2\Response::store()
+ * @param int|string $v
+ * @param array(int|string => mixed) $map
+ * @return int|string|mixed
+ */
+function jutr($v, array $map) {return jua($map, $v, $v);}

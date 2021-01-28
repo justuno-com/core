@@ -20,6 +20,25 @@ function ju_fetch($t, $cols = '*', $compareK = null, $compareV = null) {
 }
 
 /**
+ * 2015-04-13
+ * 2021-01-28 @deprecated It is unused.
+ * @param string $t
+ * @param string $col
+ * @param string|null $compareK [optional]
+ * @param int|string|int[]|string[]|null $compareV [optional]
+ * @param bool $distinct [optional]
+ * @return int[]|string[]
+ */
+function ju_fetch_col($t, $col, $compareK = null, $compareV = null, $distinct = false) {
+	$s = ju_db_from($t, $col); /** @var S $s */
+	if (!is_null($compareV)) {
+		$s->where(($compareK ?: $col) . ' ' . ju_sql_predicate_simple($compareV), $compareV);
+	}
+	$s->distinct($distinct);
+	return ju_conn()->fetchCol($s, $col);
+}
+
+/**
  * 2015-11-03
  * 2020-08-24 "Port the `df_fetch_one` function" https://github.com/justuno-com/core/issues/327
  * @used-by \Justuno\M2\Controller\Response\Orders::stat()

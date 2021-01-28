@@ -26,7 +26,7 @@ use Justuno\Core\Zf\Validate\StringT\IntT;
  * @used-by ju_oqi_amount()
  * @used-by juaf()
  * @used-by \Justuno\Core\Qa\Trace\Frame::methodParameter()
- * @used-by \Justuno\Core\Qa\Trace\Frame::methodParameter()
+ * @used-by \Justuno\M2\Response::store()
  * @param mixed $cond
  * @param string|E|null $m [optional]
  * @return mixed
