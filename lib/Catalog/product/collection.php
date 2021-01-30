@@ -14,7 +14,7 @@ use Magento\Store\Api\Data\StoreInterface as IS;
  */
 function ju_pc(IS $s = null) {
 	$r = ju_new_om(C::class); /** @var C $r */
-	$r->addStoreFilter($s);
+	$r->addStoreFilter($s); # 2021-01-28 "Make the module multi-store aware": https://github.com/justuno-com/m2/issues/24
 	return $r;
 }
 
