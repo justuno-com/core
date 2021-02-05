@@ -41,7 +41,7 @@ function ju_fetch_col($t, $col, $compareK = null, $compareV = null, $distinct = 
 /**
  * 2015-11-03
  * 2020-08-24 "Port the `df_fetch_one` function" https://github.com/justuno-com/core/issues/327
- * @used-by \Justuno\M2\Controller\Response\Orders::stat()
+ * 2021-02-05 @deprecated It is unused.
  * @param string $t
  * @param string|string[] $cols
  * @param array(string => string) $compare

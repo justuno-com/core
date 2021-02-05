@@ -11,7 +11,6 @@ use Magento\Framework\DataObject as _DO;
  * @used-by ju_pc()
  * @used-by ju_review_summary()
  * @used-by ju_trigger()
- * @used-by \Justuno\M2\Controller\Response\Orders::customer()
  * @param string $c
  * @param array(string => mixed) $p [optional]
  * @return _DO|object
