@@ -37,9 +37,8 @@ function ju_sentry($m, $v, array $context = []) {
 		else {
 			$v = ju_dump($v);
 			# 2016-12-22 https://docs.sentry.io/clients/php/usage/#reporting-other-errors
-			ju_sentry_m($m)->captureMessage($v, [], [
-				'fingerprint' => array_merge(jua($context, 'fingerprint', []), [$v])
-				,'level' => Sentry::DEBUG
+			ju_sentry_m($m)->captureMessage($v, [
+				'fingerprint' => array_merge(jua($context, 'fingerprint', []), [$v]), 'level' => Sentry::DEBUG
 			] + $context);
 		}
 	}
