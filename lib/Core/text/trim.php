@@ -1,7 +1,18 @@
 <?php
+/**
+ * 2017-06-09
+ * 2021-02-22
+ * @param string $s
+ * @param int|null $max [optional]
+ * @return string
+ */
+function ju_chop($s, $max = null) {return !$max || (mb_strlen($s = ju_trim($s)) <= $max) ? $s :
+	ju_trim_right(mb_substr($s, 0, $max - 1)) . '…'
+;}
 
 /**
  * 2020-06-20 "Port the `df_trim` function": https://github.com/justuno-com/core/issues/88
+ * @used-by ju_chop()
  * @used-by ju_explode_n()
  * @used-by ju_trim()
  * @used-by \Justuno\Core\Format\Html\Tag::content()
@@ -52,6 +63,7 @@ function ju_trim_left($s, $charlist = null) {return ltrim($s, $charlist ?: " \t\
 /**
  * 2017-08-18 Today I have noticed that $charlist = null does not work for @uses rtrim()
  * 2020-06-21 "Port the `df_trim_right` function": https://github.com/justuno-com/core/issues/98
+ * @used-by ju_chop()
  * @used-by ju_file_ext_def()
  * @param string $s
  * @param string $charlist [optional]
