@@ -1,0 +1,12 @@
+<?xml version='1.0'?>
+<config
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd"
+>
+<!-- 2021-02-22 "Implement a database diagnostic tool": https://github.com/justuno-com/core/issues/347 -->
+	<router id='standard'>
+		<route frontName='justuno-core' id='Justuno_Core'>
+			<module name='Justuno_Core'/>
+		</route>
+	</router>
+</config>
