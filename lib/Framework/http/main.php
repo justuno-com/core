@@ -44,7 +44,26 @@ function ju_request_header($k) {return ju_request_o()->getHeader($k);}
  * @used-by ju_log_l()
  * @used-by ju_request()
  * @used-by ju_request_header()
+ * @used-by ju_rp_has()
  * @used-by \Justuno\Core\Sentry\Client::get_http_data()
  * @return IRequest|RequestHttp
  */
 function ju_request_o() {return ju_o(IRequest::class);}
+
+/**
+ * 2022-02-23
+ * 1) Sometimes @see df_action_has() does not work because the following methods are not yet called by Magento:
+ * @see \Magento\Framework\App\Request\Http::setRouteName()
+ * @see \Magento\Framework\HTTP\PhpEnvironment\Request::setActionName()
+ * @see \Magento\Framework\HTTP\PhpEnvironment\Request::setControllerName()
+ * In this case, use df_rp_has().
+ * 2) @uses \Magento\Framework\App\Request\Http::getPathInfo() starts with `/`.
+ * 3) `df_request_o()->getPathInfo()` seems to be the same as `dfa($_SERVER, 'REQUEST_URI')`:
+ * 4) 2018-05-11
+ * df_contains(df_url(), $s)) does not work properly for some requests.
+ * E.g.: df_url() for the `/us/stores/store/switch/___store/uk` request will return `<website>/us/`
+ * @used-by \Justuno\Core\Framework\Plugin\Session\SessionStartChecker::afterCheck()
+ * @param string $s
+ * @return bool
+ */
+function ju_rp_has($s) {return ju_contains(ju_request_o()->getPathInfo(), $s);}

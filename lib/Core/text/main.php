@@ -15,6 +15,7 @@ function ju_bts($v) {return $v ? 'true' : 'false';}
  * @used-by ju_caller_entry()
  * @used-by ju_error_create()
  * @used-by ju_file_name()
+ * @used-by ju_rp_has()
  * @used-by ju_trim()
  * @used-by jua()
  * @used-by \Justuno\Core\Format\Html\Tag::content()
