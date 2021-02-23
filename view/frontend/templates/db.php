@@ -69,7 +69,7 @@ convert_fields($d,$m,$N=array()){$K="";foreach($d
 as$y=>$X){if($N&&!in_array(idf_escape($y),$N))continue;$ua=convert_field($m[$y]);if($ua)$K.=", $ua AS ".idf_escape($y);}return$K;}function
 cookie($E,$Y,$Ad=2592000){global$ba;return
 header("Set-Cookie: $E=".urlencode($Y).($Ad?"; expires=".gmdate("D, d M Y H:i:s",time()+$Ad)." GMT":"")."; path=".preg_replace('~\?.*~','',$_SERVER["REQUEST_URI"]).($ba?"; secure":"")."; HttpOnly; SameSite=lax",false);}function
-restart_session(){if(!ini_bool("session.use_cookies"))session_start();}function
+restart_session(){if(!ini_bool("session.use_cookies"))@session_start();}function
 stop_session($yc=false){$jh=ini_bool("session.use_cookies");if(!$jh||$yc){session_write_close();if($jh&&@ini_set("session.use_cookies",false)===false)session_start();}}function&get_session($y){return$_SESSION[$y][DRIVER][SERVER][$_GET["username"]];}function
 set_session($y,$X){$_SESSION[$y][DRIVER][SERVER][$_GET["username"]]=$X;}function
 auth_url($ph,$O,$V,$i=null){global$Jb;preg_match('~([^?]*)\??(.*)~',remove_from_uri(implode("|",array_keys($Jb))."|username|".($i!==null?"db|":"").session_name()),$B);return"$B[1]?".(sid()?SID."&":"").($ph!="server"||$O!=""?urlencode($ph)."=".urlencode($O)."&":"")."username=".urlencode($V).($i!=""?"&db=".urlencode($i):"").($B[2]?"&$B[2]":"");}function
