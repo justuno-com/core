@@ -62,8 +62,9 @@ function ju_request_o() {return ju_o(IRequest::class);}
  * 4) 2018-05-11
  * df_contains(df_url(), $s)) does not work properly for some requests.
  * E.g.: df_url() for the `/us/stores/store/switch/___store/uk` request will return `<website>/us/`
+ * @used-by \Justuno\Core\Framework\Plugin\App\ActionInterface::beforeExecute()
  * @used-by \Justuno\Core\Framework\Plugin\Session\SessionStartChecker::afterCheck()
- * @param string $s
+ * @param string ...$s
  * @return bool
  */
-function ju_rp_has($s) {return ju_contains(ju_request_o()->getPathInfo(), $s);}
+function ju_rp_has(...$s) {return ju_contains(ju_request_o()->getPathInfo(), ...$s);}
