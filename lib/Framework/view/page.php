@@ -10,7 +10,7 @@ use Magento\Framework\View\Result\PageFactory;
  * «How is the root HTML template (Magento_Theme::root.phtml) declared and implemented?»
  * https://mage2.pro/t/3900
  * 2022-02-22 "Implement a database diagnostic tool": https://github.com/justuno-com/core/issues/347
- * @used-by \Justuno\Core\Controller\Db\Index::execute()
+ * @used-by \Justuno\M2\Controller\Db\Index::execute()
  * @param string|null $template [optional]
  * @param string ...$handles [optional]
  * @return ResultPage
