@@ -33,6 +33,7 @@ function ju_class_f($c) {return ju_first(ju_explode_class($c));}
  * https://3v4l.org/k6Hd5
  * 2020-08-19 "Port the `df_class_l` function" https://github.com/justuno-com/core/issues/199
  * @used-by \Justuno\Core\Qa\Trace\Formatter::frame()
+ * @used-by \Justuno\M2\Response::p()
  * @param string|object $c
  * @return string
  */
@@ -114,3 +115,11 @@ function ju_explode_class_lc($c) {return ju_lcfirst(ju_explode_class($c));}
  * @return string[]
  */
 function ju_explode_class_lc_camel($c) {return ju_lcfirst(ju_explode_class_camel($c));}
+
+/**
+ * 2021-02-24
+ * @used-by ju_caller_c()
+ * @param string $m
+ * @return string[]
+ */
+function ju_explode_method($m) {return explode('::', $m);}

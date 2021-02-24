@@ -46,6 +46,7 @@ function ju_request_header($k) {return ju_request_o()->getHeader($k);}
  * @used-by ju_request_header()
  * @used-by ju_rp_has()
  * @used-by \Justuno\Core\Sentry\Client::get_http_data()
+ * @used-by \Justuno\M2\Response::p()
  * @return IRequest|RequestHttp
  */
 function ju_request_o() {return ju_o(IRequest::class);}

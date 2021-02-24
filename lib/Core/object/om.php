@@ -18,6 +18,7 @@ use Magento\Framework\ObjectManagerInterface as IOM;
  * @used-by ju_customer_session()
  * @used-by ju_db_resource()
  * @used-by ju_default_stock_provider()
+ * @used-by ju_deployment_cfg()
  * @used-by ju_dispatch()
  * @used-by ju_fs()
  * @used-by ju_layout()

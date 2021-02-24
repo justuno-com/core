@@ -12,6 +12,7 @@ use Traversable as T;
  * @used-by ju_caller_m()
  * @used-by ju_cc_method()
  * @used-by ju_cli_argv()
+ * @used-by ju_deployment_cfg()
  * @used-by ju_extend()
  * @used-by ju_is_localhost()
  * @used-by ju_my_local()

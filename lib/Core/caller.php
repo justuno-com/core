@@ -1,5 +1,14 @@
 <?php
 /**
+ * 2017-11-19
+ * 2021-02-24
+ * @used-by \Justuno\M2\Response::p()
+ * @param int $o [optional]
+ * @return string
+ */
+function ju_caller_c($o = 0) {return ju_first(ju_explode_method(ju_caller_m(++$o)));}
+
+/**
  * 2017-03-28 If the function is called from a closure, then it will go up through the stask until it leaves all closures.
  * 2020-08-19 "Port the `df_caller_entry` function" https://github.com/justuno-com/core/issues/207
  * @used-by ju_caller_f()
@@ -56,6 +65,7 @@ function ju_caller_f($o = 0) {return ju_caller_entry(++$o)['function'];}
  * The df_caller_mm() implementation: https://github.com/mage2pro/core/blob/6.7.3/Core/lib/caller.php#L155-L169
  * 2020-07-08 The function's new implementation is from the previous df_caller_mm() function.
  * 2020-08-19 "Port the `df_caller_m` function" https://github.com/justuno-com/core/issues/205
+ * @used-by ju_caller_c()
  * @used-by ju_prop()
  * @param int $o [optional]
  * @return string
