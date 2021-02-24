@@ -18,7 +18,7 @@ use Magento\Framework\DB\Select;
  * @used-by ju_fetch()
  * @used-by ju_fetch_col()
  * @used-by ju_fetch_one()
- * @used-by \Justuno\M2\Response::store()
+ * @used-by \Justuno\M2\Store::v()
  * @param string|Entity|array(string => string) $t
  * @param string|string[] $cols [optional]
  * @param string|null $schema [optional]

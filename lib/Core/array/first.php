@@ -6,7 +6,7 @@
  * @used-by ju_file_name()
  * @used-by ju_sprintf()
  * @used-by ju_sprintf_strict()
- * @used-by \Justuno\M2\Response::store()
+ * @used-by \Justuno\M2\Store::v()
  * @param array $a
  * @return mixed|null
  */

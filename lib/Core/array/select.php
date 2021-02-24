@@ -33,7 +33,7 @@ use Traversable as T;
  * @used-by \Justuno\Core\Sentry\Trace::get_frame_context()
  * @used-by \Justuno\Core\Sentry\Trace::info()
  * @used-by \Justuno\Core\Zf\Validate::cfg()
- * @used-by \Justuno\M2\Response::store()
+ * @used-by \Justuno\M2\Store::v()
  * @param array(int|string => mixed) $a
  * @param string|string[]|int|null $k
  * @param mixed|callable $d

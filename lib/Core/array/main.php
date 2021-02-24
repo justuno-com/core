@@ -76,7 +76,7 @@ function juaf($a, $b) {
 
 /**
  * 2021-01-28
- * @used-by \Justuno\M2\Response::store()
+ * @used-by \Justuno\M2\Store::v()
  * @param int|string $v
  * @param array(int|string => mixed) $map
  * @return int|string|mixed

@@ -13,7 +13,7 @@ use Magento\Framework\DB\Select;
  * @used-by ju_fetch_one()
  * @used-by ju_select()
  * @used-by ju_table_exists()
- * @used-by \Justuno\M2\Response::store()
+ * @used-by \Justuno\M2\Store::v()
  * @used-by \Justuno\M2\Setup\UpgradeSchema::tr()
  * @return Mysql|IAdapter
  */
