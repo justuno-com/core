@@ -16,10 +16,10 @@ final class AddStockDataToCollection {
 	 * 2020-11-23
 	 * @see \Magento\InventoryCatalog\Model\ResourceModel\AddStockDataToCollection::execute()
 	 * @param Sb $sb
+	 * @param F $f
 	 * @param C $c
 	 * @param bool $skipAbsent
 	 * @param int $stockId
-	 * @return mixed[]
 	 */
 	function aroundExecute(Sb $sb, F $f, C $c, $skipAbsent, $stockId) {
 		if (!self::$PRESERVE_ABSENT_F && !$c->getFlag(self::PRESERVE_ABSENT)) {
@@ -32,8 +32,8 @@ final class AddStockDataToCollection {
 			 * because the method uses `JOIN` insteaf of `LEFT JOIN` for the `cataloginventory_stock_status` table.
 			 * But the table is empty if the `cataloginventory/options/show_out_of_stock` option is false.
 			 * So I am forced to reimplement the whole method to just replace `JOIN` with `LEFT JOIN`.
-			 * Interestingly, the same solution is used by the deprecated
-			 * @see \Magento\CatalogInventory\Model\ResourceModel\Stock\Status::addStockDataToCollection() method:
+			 * Interestingly, the same solution is used by the deprecated method
+			 * @see \Magento\CatalogInventory\Model\ResourceModel\Stock\Status::addStockDataToCollection():
 			 *	$method = $isFilterInStock ? 'join' : 'joinLeft';
 			 *	$collection->getSelect()->$method(
 			 *		['stock_status_index' => $this->getMainTable()],
