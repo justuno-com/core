@@ -19,6 +19,7 @@ function ju_param_s($v, $ord, $sl = 0) {$sl++;
 
 /**
  * 2020-06-15 "Port the `df_param_sne` function": https://github.com/justuno-com/core/issues/22
+ * @used-by ju_date_from_db()
  * @used-by jua_deep()
  * @used-by jua_deep_unset()
  * @used-by \Justuno\Core\Format\Html\Tag::openTagWithAttributesAsText()
