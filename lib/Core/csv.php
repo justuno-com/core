@@ -7,6 +7,7 @@
  * 2) "Port the `df_csv_pretty` function" https://github.com/justuno-com/core/issues/170
  * @see df_csv()
  * @used-by \Justuno\Core\Sentry\Client::send()
+ * @used-by \Justuno\M2\Catalog\Diagnostic::p()
  * @param string ...$args
  * @return string
  */

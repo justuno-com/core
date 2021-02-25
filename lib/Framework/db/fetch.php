@@ -21,7 +21,7 @@ function ju_fetch($t, $cols = '*', $compareK = null, $compareV = null) {
 
 /**
  * 2015-04-13
- * 2021-01-28 @deprecated It is unused.
+ * @used-by ju_fetch_col_int()
  * @param string $t
  * @param string $col
  * @param string|null $compareK [optional]
@@ -39,9 +39,24 @@ function ju_fetch_col($t, $col, $compareK = null, $compareV = null, $distinct = 
 }
 
 /**
+ * 2015-04-13
+ * @used-by \Justuno\M2\Catalog\Diagnostic::p()
+ * @param string $t
+ * @param string $cSelect
+ * @param string|null $compareK [optional]
+ * @param int|string|int[]|string[]|null $compareV [optional]
+ * @param bool $distinct [optional]
+ * @return int[]|string[]
+ */
+function ju_fetch_col_int($t, $cSelect, $compareK = null, $compareV = null, $distinct = false) {return
+	/** I intentionally do not use @see df_int() to gain speed */
+	ju_int_simple(ju_fetch_col($t, $cSelect, $compareK, $compareV, $distinct))
+;}
+
+/**
  * 2015-11-03
  * 2020-08-24 "Port the `df_fetch_one` function" https://github.com/justuno-com/core/issues/327
- * 2021-02-05 @deprecated It is unused.
+ * @used-by \Justuno\M2\Catalog\Diagnostic::p()
  * @param string $t
  * @param string|string[] $cols
  * @param array(string => string) $compare

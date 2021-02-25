@@ -12,6 +12,7 @@ function ju_header_utf() {ju_is_cli() || headers_sent() ?: header('Content-Type:
  * 2020-06-13 "Port the `df_request` function": https://github.com/justuno-com/core/issues/1
  * @used-by ju_store()
  * @used-by \Justuno\Core\Sentry\Client::get_http_data()
+ * @used-by \Justuno\M2\Catalog\Diagnostic::p()
  * @used-by \Justuno\M2\Controller\Cart\Add::execute()
  * @used-by \Justuno\M2\Controller\Cart\Add::product()
  * @used-by \Justuno\M2\Filter::byDate()

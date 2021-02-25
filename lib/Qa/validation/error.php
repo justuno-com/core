@@ -33,10 +33,12 @@ use Magento\Framework\Phrase;
  * @used-by ju_try()
  * @used-by juaf()
  * @used-by juc()
+ * @used-by \Justuno\Core\Helper\Text::quote()
  * @used-by \Justuno\Core\Qa\Method::throwException()
  * @used-by \Justuno\Core\Qa\Trace\Frame::methodParameter()
  * @used-by \Justuno\Core\Zf\Filter\StringTrim::_splitUtf8()
  * @used-by \Justuno\Core\Zf\Validate\IntT::filter()
+ * @used-by \Justuno\M2\Catalog\Diagnostic::p()
  * @used-by \Justuno\M2\Store::v()
  * @param string ...$args
  * @throws DFE

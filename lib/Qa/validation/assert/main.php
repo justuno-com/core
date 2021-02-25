@@ -115,6 +115,17 @@ function ju_int($v, $allowNull = true) {/** @var int|int[] $r */
 }
 
 /**
+ * 2015-04-13
+ * 1) It does not validate item types (unlike @see df_int() )
+ * 2) It works only with arrays.
+ * 3) Keys are preserved: http://3v4l.org/NHgdK
+ * @used-by ju_fetch_col_int()
+ * @param mixed[] $values
+ * @return int[]
+ */
+function ju_int_simple(array $values) {return array_map('intval', $values);}
+
+/**
  * 2020-08-23 "Port the `df_nat` function" https://github.com/justuno-com/core/issues/289
  * @used-by \Justuno\M2\Controller\Cart\Add::execute()
  * @used-by \Justuno\M2\Controller\Cart\Add::product()
