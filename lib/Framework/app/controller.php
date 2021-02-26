@@ -4,6 +4,11 @@ use Magento\Framework\App\Response\Http as HttpResponse;
 use Magento\Framework\App\Response\HttpInterface as IHttpResponse;
 use Magento\Framework\App\ResponseInterface as IResponse;
 use Magento\Framework\Controller\ResultInterface as IResult;
+/**
+ * 2021-02-26
+ * @used-by \Justuno\M2\Controller\Db\Index::execute()
+ */
+function ju_403() {ju_response_code(403);}
 
 /**
  * 2017-02-01
@@ -23,11 +28,19 @@ use Magento\Framework\Controller\ResultInterface as IResult;
  * 2) "[Question] To ResultInterface or not ResultInterface": https://github.com/magento/magento2/issues/1355
  * https://github.com/magento/magento2/issues/1355
  * 2020-08-21 "Port the `ju_response` function" https://github.com/justuno-com/core/issues/235
+ * @used-by ju_response_code()
  * @used-by ju_response_content_type()
  * @param IResult|wResult|IResponse|HttpResponse|null $r [optional]
  * @return IResponse|IHttpResponse|HttpResponse|IResult|wResult
  */
 function ju_response($r = null) {return $r ?: ju_o(IResponse::class);}
+
+/**
+ * 2015-11-29
+ * @used-by ju_403()
+ * @param int $v
+ */
+function ju_response_code($v) {ju_response()->setHttpResponseCode($v);}
 
 /**
  * I pass the 3rd argument ($replace = true) to @uses \Magento\Framework\HTTP\PhpEnvironment\Response::setHeader()

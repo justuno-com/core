@@ -37,6 +37,7 @@ use Magento\Store\Model\Store;
  *
  * @used-by ju_currency_base()
  * @used-by \Justuno\M2\Block\Js::_toHtml()
+ * @used-by \Justuno\M2\Controller\Db\Index::execute()
  * @used-by \Justuno\M2\Controller\Response\Catalog::execute()
  * @used-by \Justuno\M2\Filter::byDate()
  * @used-by \Justuno\M2\Response::p()
