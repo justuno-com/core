@@ -84,6 +84,7 @@ function ju_explode_n($s) {return explode("\n", ju_normalize(ju_trim($s)));}
  * @used-by jua_deep()
  * @used-by jua_deep_set()
  * @used-by jua_deep_unset()
+ * @used-by \Justuno\Core\Config\Backend::value()
  * @param string|string[] $p
  * @return string[]
  */
