@@ -4,6 +4,7 @@
  * @used-by ju_db_from()
  * @used-by ju_table_exists()
  * @used-by \Justuno\Core\InventoryCatalog\Plugin\Model\ResourceModel\AddStockDataToCollection::aroundExecute()
+ * @used-by \Justuno\M2\Setup\UpgradeSchema::_process()
  * @used-by \Justuno\M2\Setup\UpgradeSchema::tr()
  * @param string|string[] $n
  * @return string
