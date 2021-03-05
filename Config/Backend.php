@@ -12,6 +12,7 @@ namespace Justuno\Core\Config;
  * a `value` can be passed from the database to the configuration screen without a validation with the backend model.
  * In Magento < 2.1.0 a backend model is created in any case, and it seems to be correct:
  * https://github.com/magento/magento2/blob/2.0.8/app/code/Magento/Config/Block/System/Config/Form.php#L330-L342
+ * @see \Justuno\M2\Config\Backend\Debug
  * @method mixed|null getValue()
  * @method $this setStore($value)
  * @method $this setWebsite($value)

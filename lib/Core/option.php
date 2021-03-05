@@ -2,7 +2,7 @@
 /**
  * 2018-01-29
  * 2020-08-22 "Port the `df_map_0` function" https://github.com/justuno-com/core/issues/265
- * @used-by \Justuno\M2\Source\Brand::map()
+ * @used-by \Justuno\M2\Config\Source\Brand::map()
  * @param array(string => string) $tail
  * @param string|null $l [optional]
  * @return array(int => string)

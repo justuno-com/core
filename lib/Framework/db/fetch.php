@@ -4,7 +4,7 @@ use Magento\Framework\DB\Select as S;
 /**
  * 2019-11-15
  * 2020-08-22 "Port the `ju_fetch` function" https://github.com/justuno-com/core/issues/266
- * @used-by \Justuno\M2\Source\Brand::map()
+ * @used-by \Justuno\M2\Config\Source\Brand::map()
  * @param string $t
  * @param string|string[] $cols [optional]
  * @param string|null $compareK [optional]

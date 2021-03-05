@@ -12,7 +12,7 @@ namespace Justuno\Core\Config;
  *		}
  * https://github.com/magento/magento2/blob/2.1.5/app/code/Magento/Config/Model/Config/Structure/Element/Field.php#L435-L438
  * 2020-08-22 "Port the `Df\Config\Source` class" https://github.com/justuno-com/core/issues/257
- * @see \Justuno\M2\Source\Brand
+ * @see \Justuno\M2\Config\Source\Brand
  */
 abstract class Source extends SourceBase {
 	/**
