@@ -20,10 +20,11 @@ function ju_message_add($s, $type) {ju_message_m()->addMessage(
 
 /**
  * 2016-08-02
+ * 2021-03-06 "Port the `df_message_error` function": https://github.com/justuno-com/core/issues/349
  * @used-by \Justuno\Core\Config\Backend::save()
  * @param string|P|\Exception $m
  */
-function ju_message_error($m) {ju_message_add(df_ets($m), IM::TYPE_ERROR);}
+function ju_message_error($m) {ju_message_add(ju_ets($m), IM::TYPE_ERROR);}
 
 /**
  * 2016-08-02 https://mage2.pro/t/974
