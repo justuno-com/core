@@ -43,6 +43,23 @@ function jua_flatten(array $a) {
 }
 
 /**
+ * 2016-09-02
+ * @see dfa_deep_unset()
+ * @uses array_flip() correctly handles empty arrays.
+ * 2019-11-15
+ * Previously, it was used as:
+ * 		$this->_data = dfa_unset($this->_data, 'can_use_default_value', 'can_use_website_value', 'scope');
+ * I replaced it with:
+ * 		$this->unsetData(['can_use_default_value', 'can_use_website_value', 'scope']);
+ * 2021-03-06 "Port the `dfa_unset` function": https://github.com/justuno-com/core/issues/350
+ * @used-by \Justuno\Core\Config\Backend::value()
+ * @param array(string => mixed) $a
+ * @param string ...$k
+ * @return array(string => mixed)
+ */
+function jua_unset(array $a, ...$k) {return array_diff_key($a, array_flip(ju_args($k)));}
+
+/**
  * 2020-06-16 "Port the `dfaf` function": https://github.com/justuno-com/core/issues/32
  * @used-by ju_filter()
  * @used-by ju_find()

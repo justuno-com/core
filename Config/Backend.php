@@ -130,7 +130,7 @@ class Backend extends \Magento\Framework\App\Config\Value {
 		# If the value is being saved in a non-default scope,
 		# then the value's configration path in the `$this->_data` array contains the `inherit` key.
 		# I delete it.
-		return dfa_unset(
+		return jua_unset(
 			jua_deep($this->_data, ju_cc_path(
 				'groups', implode('/groups/', array_slice(ju_explode_xpath($c['path']), 1)), 'fields', $c['id']
 			))
