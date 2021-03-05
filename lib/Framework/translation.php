@@ -3,6 +3,7 @@ use Magento\Framework\Phrase as P;
 /**
  * 2016-07-14
  * 2021-03-06 "Port the `df_phrase` function": https://github.com/justuno-com/core/issues/353
+ * @used-by ju_message_add()
  * @param P|string $s
  * @return P
  */

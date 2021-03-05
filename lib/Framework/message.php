@@ -16,7 +16,7 @@ use Magento\Framework\Phrase;
  */
 function ju_message_add($text, $type) {
 	$m = ju_message_m()->createMessage($type, 'non-existent'); /** @var IM $m */
-	$m->setText(df_phrase($text));
+	$m->setText(ju_phrase($text));
 	ju_message_m()->addMessage($m, null);
 }
 
