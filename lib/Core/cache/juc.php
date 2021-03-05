@@ -77,10 +77,3 @@ function jucf(\Closure $f, array $a = [], array $tags = [], $unique = true, $off
 	 */
 	return $r->exists($k) ? $r->get($k) : $r->set($k, $f(...$a), $tags);
 }
-
-/**
- * 2020-06-13 "Port the `df_ram` function": https://github.com/justuno-com/core/issues/8
- * @used-by jucf()
- * @return RAM
- */
-function ju_ram() {return RAM::s();}
