@@ -72,6 +72,7 @@ function ju_cfg_empty($v) {return is_null($v) || '' === $v;}
  * The default implementation of the @see \Magento\Framework\App\Config\ScopeConfigInterface
  * is @see \Magento\Framework\App\Config
  * 2020-08-23 "Port the `ju_cfg_m` function" https://github.com/justuno-com/core/issues/293
+ * @used-by ju_cache_clean()
  * @used-by ju_cfg()
  * @return IConfig|Config
  */

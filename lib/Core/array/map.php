@@ -38,6 +38,7 @@ function ju_each($c, $f, ...$p) {return ju_map(function($v) use($f, $p) {return 
 /**
  * 2015-02-11
  * 2020-06-18 "Port the `df_map` function": https://github.com/justuno-com/core/issues/60
+ * @used-by ju_cache_clean()
  * @used-by ju_call_a()
  * @used-by ju_clean_r()
  * @used-by ju_each()
