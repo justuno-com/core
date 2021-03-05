@@ -1,7 +1,7 @@
 <?php
 use Justuno\Core\Exception as DFE;
 use Exception as E;
-use Magento\Framework\Phrase;
+use Magento\Framework\Phrase as P;
 /**
  * 2016-07-18
  * 2020-08-21 "Port the `df_ef` function" https://github.com/justuno-com/core/issues/208
@@ -19,8 +19,8 @@ function ju_ef(E $e) {while ($e->getPrevious()) {$e = $e->getPrevious();} return
  * @used-by \Justuno\Core\Qa\Message\Failure\Exception::e()
  * @used-by \Justuno\Core\Qa\Trace\Formatter::frame()
  * @used-by \Justuno\Core\Zf\Validate\IntT::filter()
- * @param E|string|Phrase $e
- * @return string|Phrase
+ * @param E|P|string $e
+ * @return P|string
  */
 function ju_ets($e) {return ju_adjust_paths_in_message(
 	!$e instanceof E ? $e : ($e instanceof DFE ? $e->message() : $e->getMessage())
