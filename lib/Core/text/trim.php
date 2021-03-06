@@ -54,6 +54,7 @@ function ju_trim($s, $charlist = null, $throw = false) {return ju_try(function()
  * 2017-08-18 Today I have noticed that $charlist = null does not work for @uses ltrim()
  * 2020-08-13 "Port the `df_trim_left` function" https://github.com/justuno-com/core/issues/176
  * @used-by ju_trim_ds_left()
+ * @used-by \Justuno\Core\Config\Settings::phpNameToKey()
  * @param string $s
  * @param string $charlist [optional]
  * @return string

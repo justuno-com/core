@@ -17,6 +17,7 @@ use Magento\Store\Model\StoreResolver;
  * 2020-06-24 "Port the `df_store` function": https://github.com/justuno-com/core/issues/122
  * @used-by ju_store_id()
  * @used-by ju_store_url()
+ * @used-by \Justuno\Core\Config\Settings::s()
  * @used-by \Justuno\M2\Store::v()
  * @param int|string|null|bool|IStore|O $v [optional]
  * @return IStore|Store

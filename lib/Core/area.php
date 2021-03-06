@@ -38,6 +38,7 @@ function ju_area_code_is(...$values) {return ($a = ju_area_code(false)) && in_ar
  * @used-by ju_customer_id()
  * @used-by ju_product_current()
  * @used-by ju_store()
+ * @used-by \Justuno\Core\Config\Settings::scope()
  * @return bool
  */
 function ju_is_backend() {return ju_area_code_is(A::AREA_ADMINHTML) || ju_is_ajax() && ju_backend_user();}

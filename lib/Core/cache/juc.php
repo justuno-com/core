@@ -50,6 +50,7 @@ function juc($o, \Closure $m, array $a = [], $unique = true, $offset = 0) {
  * @used-by ju_o()
  * @used-by ju_sentry_m()
  * @used-by ju_table()
+ * @used-by \Justuno\Core\Config\Settings::s()
  * @used-by \Justuno\Core\Qa\Trace\Formatter::p()
  * @used-by \Justuno\M2\Store::v()
  * @param \Closure $f

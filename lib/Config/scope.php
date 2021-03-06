@@ -14,7 +14,7 @@ use Magento\Store\Model\Store;
  *
  * 2015-12-26
  * I use @see \Magento\Store\Model\ScopeInterface::SCOPE_STORE as the default value for $scopeType
- * for compatibility with @see \Df\Config\Settings::v()
+ * for compatibility with @see \Justuno\Core\Config\Settings::v()
  * https://mage2.pro/t/128
  * https://github.com/magento/magento2/issues/2064
  *

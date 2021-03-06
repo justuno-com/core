@@ -1,16 +1,16 @@
 <?php
-namespace Df\Config;
+namespace Justuno\Core\Config;
 use Magento\Framework\App\ScopeInterface as S;
 use Magento\Store\Model\Store;
 /**
  * 2015-11-09
- * 2021-03-06 "Port the `Df\Config\Settings` class": https://github.com/justuno-com/core/issues/355
+ * 2021-03-06 "Port the `Justuno\Core\Config\Settings` class": https://github.com/justuno-com/core/issues/355
  */
 abstract class Settings {
 	/**
 	 * 2015-11-09
 	 * 2016-11-24 From now on, the value should not include the trailing `/`.
-	 * @used-by \Df\Config\Settings::v()
+	 * @used-by \Justuno\Core\Config\Settings::v()
 	 * @return string
 	 */
 	abstract protected function prefix();
@@ -22,7 +22,7 @@ abstract class Settings {
 	 * @param bool $d [optional]
 	 * @return int
 	 */
-	final function b($k = null, $s = null, $d = false) {return df_bool($this->v($k ?: df_caller_f(), $s, $d));}
+	final function b($k = null, $s = null, $d = false) {return df_bool($this->v($k ?: ju_caller_f(), $s, $d));}
 
 	/**
 	 * 2016-03-08
@@ -39,7 +39,7 @@ abstract class Settings {
 	 * @return null|string|int|S|Store|array(string, int)
 	 */
 	final function scope($s = null) {return !is_null($s) ? $s : (
-		df_is_backend() && df_is_system_config() ? df_scope() : $this->scopeDefault()
+		ju_is_backend() && df_is_system_config() ? df_scope() : $this->scopeDefault()
 	);}
 
 	/**
@@ -49,8 +49,8 @@ abstract class Settings {
 	 * @param mixed|callable $d [optional]
 	 * @return array|string|null|mixed
 	 */
-	final function v($k = null, $s = null, $d = null) {return df_cfg(
-		$this->prefix() . '/' . self::phpNameToKey($k ?: df_caller_f()), $this->scope($s), $d
+	final function v($k = null, $s = null, $d = null) {return ju_cfg(
+		$this->prefix() . '/' . self::phpNameToKey($k ?: ju_caller_f()), $this->scope($s), $d
 	);}
 
 	/**
@@ -81,8 +81,8 @@ abstract class Settings {
 	 * @param string $c [optional]
 	 * @return self
 	 */
-	static function s($s = null, $c = null) {return dfcf(
-		function($s, $c) {return new $c($s);}, [df_store($s), $c ?: static::class]
+	static function s($s = null, $c = null) {return jucf(
+		function($s, $c) {return new $c($s);}, [ju_store($s), $c ?: static::class]
 	);}
 
 	/**
@@ -94,5 +94,5 @@ abstract class Settings {
 	 * @param string $name
 	 * @return string
 	 */
-	final protected static function phpNameToKey($name) {return df_trim_left($name, '_');}
+	final protected static function phpNameToKey($name) {return ju_trim_left($name, '_');}
 }
