@@ -75,8 +75,7 @@ abstract class Settings {
 	private $_scope;
 
 	/**
-	 * 2016-07-12
-	 * http://php.net/manual/function.get-called-class.php#115790
+	 * 2016-07-12 http://php.net/manual/function.get-called-class.php#115790
 	 * @param Store|int|null $s [optional]
 	 * @param string $c [optional]
 	 * @return self
