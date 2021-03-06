@@ -22,7 +22,7 @@ abstract class Settings {
 	 * @param bool $d [optional]
 	 * @return int
 	 */
-	final function b($k = null, $s = null, $d = false) {return df_bool($this->v($k ?: ju_caller_f(), $s, $d));}
+	final function b($k = null, $s = null, $d = false) {return ju_bool($this->v($k ?: ju_caller_f(), $s, $d));}
 
 	/**
 	 * 2016-03-08
