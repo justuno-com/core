@@ -5,18 +5,21 @@ use Magento\Store\Model\Store;
 /**
  * 2015-11-09
  * 2021-03-06 "Port the `Justuno\Core\Config\Settings` class": https://github.com/justuno-com/core/issues/355
+ * @see \Justuno\M2\Settings
  */
 abstract class Settings {
 	/**
 	 * 2015-11-09
 	 * 2016-11-24 From now on, the value should not include the trailing `/`.
 	 * @used-by \Justuno\Core\Config\Settings::v()
+	 * @see \Justuno\M2\Settings::prefix()
 	 * @return string
 	 */
 	abstract protected function prefix();
 
 	/**
 	 * 2015-11-09
+	 * @used-by \Justuno\M2\Settings::debug()
 	 * @param string|null $k [optional]
 	 * @param null|string|int|S|Store $s [optional]
 	 * @param bool $d [optional]
@@ -44,6 +47,7 @@ abstract class Settings {
 
 	/**
 	 * @used-by b()
+	 * @used-by \Justuno\M2\Settings::accid()
 	 * @param string|null $k [optional]
 	 * @param null|string|int|S|Store|array(string, int) $s [optional]
 	 * @param mixed|callable $d [optional]
@@ -76,6 +80,9 @@ abstract class Settings {
 
 	/**
 	 * 2016-07-12 http://php.net/manual/function.get-called-class.php#115790
+	 * @used-by \Justuno\M2\Block\Js::_toHtml()
+	 * @used-by \Justuno\M2\Controller\Db\Index::execute()
+	 * @used-by \Justuno\M2\Controller\Response\Catalog::execute()
 	 * @param Store|int|null $s [optional]
 	 * @param string $c [optional]
 	 * @return self
