@@ -39,7 +39,7 @@ abstract class Settings {
 	 * @return null|string|int|S|Store|array(string, int)
 	 */
 	final function scope($s = null) {return !is_null($s) ? $s : (
-		ju_is_backend() && ju_is_system_config() ? df_scope() : $this->scopeDefault()
+		ju_is_backend() && ju_is_system_config() ? ju_scope() : $this->scopeDefault()
 	);}
 
 	/**
