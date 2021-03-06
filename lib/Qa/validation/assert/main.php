@@ -8,7 +8,7 @@ use Justuno\Core\Zf\Validate\StringT\IntT;
  * 2019-12-14
  * If you do not want the exception to be logged via @see df_bt(),
  * then you can pass an empty string (instead of `null`) as the second argument:
- * @see \Df\Core\Exception::__construct():
+ * @see \Justuno\Core\Exception::__construct():
  *		if (is_null($m)) {
  *			$m = __($prev ? df_ets($prev) : 'No message');
  *			# 2017-02-20 To facilite the «No message» diagnostics.
