@@ -10,6 +10,7 @@ use Justuno\Core\Exception as DFE;
  * @see \Magento\Framework\HTTP\PhpEnvironment\Request::setActionName()
  * @see \Magento\Framework\HTTP\PhpEnvironment\Request::setControllerName()
  * In this case, use `ju_request_o()->getPathInfo()`: @see ju_rp_has()
+ * @used-by ju_action_prefix()
  * @used-by \Justuno\M2\Block\Js::_toHtml()
  * @return string|null
  * @throws DFE
@@ -17,6 +18,15 @@ use Justuno\Core\Exception as DFE;
 function ju_action_name() {return ju_is_cli() ? null : ju_assert_ne('__', ju_request_o()->getFullActionName(),
 	'`Magento\Framework\App\Request\Http::getFullActionName()` is called to early (the underlying object is not yet initialized).'
 );}
+
+/**
+ * 2017-08-28
+ * 2021-03-06 "Port the `df_action_prefix` function": https://github.com/justuno-com/core/issues/359
+ * @used-by ju_is_system_config()
+ * @param string|string[] $p
+ * @return bool
+ */
+function ju_action_prefix($p) {return ju_starts_with(ju_action_name(), $p);}
 
 /**
  * 2019-12-26
