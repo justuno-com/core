@@ -70,7 +70,7 @@ abstract class Settings {
 	/**
 	 * 2019-01-11
 	 * @used-by scopeDefault()
-	 * @var int|S|Store|null|string
+	 * @var int|S|Store|string|null
 	 */
 	private $_scope;
 
