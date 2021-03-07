@@ -33,6 +33,7 @@ function ju_resource_inline($r, \Closure $f) {
  * 2016-05-30 From now on $attrs could be a string. It is the same as ['class' => $attrs].
  * 2020-08-22 "Port the `df_tag` function" https://github.com/justuno-com/core/issues/253
  * @used-by ju_js_x()
+ * @used-by ju_kv_table()
  * @used-by ju_link_inline()
  * @param string $tag
  * @param string|array(string => string|string[]|int|null) $attrs [optional]

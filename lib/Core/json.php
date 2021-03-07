@@ -36,6 +36,7 @@ function ju_json_decode($s, $throw = true) {/** @var mixed|bool|null $r */
  * @used-by ju_js_x()
  * @used-by ju_json_encode_partial()
  * @used-by ju_kv()
+ * @used-by ju_kv_table()
  * @used-by ju_log_l()
  * @used-by \Justuno\Core\Framework\W\Result\Json::prepare()
  * @used-by \Justuno\Core\O::j()
