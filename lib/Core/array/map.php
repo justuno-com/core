@@ -43,6 +43,7 @@ function ju_each($c, $f, ...$p) {return ju_map(function($v) use($f, $p) {return 
  * @used-by ju_clean_r()
  * @used-by ju_each()
  * @used-by ju_int()
+ * @used-by ju_mail()
  * @used-by ju_map_k()
  * @used-by ju_map_kr()
  * @used-by ju_trim()

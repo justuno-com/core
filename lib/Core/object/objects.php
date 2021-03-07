@@ -7,6 +7,7 @@ use Magento\Framework\DataObject as _DO;
  * 2020-08-21 "Port the `ju_new_om` function" https://github.com/justuno-com/core/issues/232
  * @see df_new_omd()
  * @used-by ju_currency()
+ * @used-by ju_mail()
  * @used-by ju_order_c()
  * @used-by ju_pc()
  * @used-by ju_review_summary()
