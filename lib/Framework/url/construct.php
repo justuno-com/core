@@ -11,6 +11,6 @@ use Magento\Store\Model\Store;
  * @param Store|int|string|null $store [optional]
  * @return string
  */
-function ju_url_frontend($path = null, array $p = [], $store = null) {return df_url_trim_index(
+function ju_url_frontend($path = null, array $p = [], $store = null) {return ju_url_trim_index(
 	df_url_frontend_o()->getUrl($path, df_nosid() + $p + (is_null($store) ? [] : ['_store' => ju_store($store)]))
 );}
