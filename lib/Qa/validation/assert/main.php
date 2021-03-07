@@ -79,6 +79,7 @@ function ju_assert_traversable($v, $m = null) {return ju_check_traversable($v) ?
 /**
  * 2021-03-06 "Port the `df_bool` function": https://github.com/justuno-com/core/issues/356
  * @used-by \Justuno\Core\Config\Settings::b()
+ * @used-by \Justuno\M2\Config\Backend\Debug::dfSaveAfter()
  * @param mixed $v
  * @return bool
  */

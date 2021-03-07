@@ -55,7 +55,6 @@ function ju_sentry($m, $v, array $context = []) {
  * 2.3) An object: it comes down to the case 2 via @see get_class()
  * 2.4) `null`: it comes down to the case 1 with the «Justuno_Core» module name.
  * 2021-02-22
- * @used-by \Justuno\Core\Framework\Plugin\App\ActionInterface::beforeExecute()
  * @used-by \Justuno\M2\Store::v()
  * @param string|object|null $m
  * @param mixed ...$v

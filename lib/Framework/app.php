@@ -2,7 +2,6 @@
 use Magento\Framework\App\DeploymentConfig as DC;
 /**
  * 2021-02-24
- * @used-by \Justuno\Core\Framework\Plugin\App\ActionInterface::beforeExecute()
  * @param string|string[]|null $k [optional]
  * @return DC|string|string[]|null
  */

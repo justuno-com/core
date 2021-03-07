@@ -19,10 +19,4 @@ https://github.com/mage2pro/sift/blob/0.0.3/view/frontend/web/main.js#L8
 https://github.com/justuno-com/m2/blob/1.2.3/view/frontend/web/main.js#L30 -->
 		<plugin disabled='true' name='Justuno\Core\Customer\Js\CustomerId' type='Justuno\Core\Customer\Plugin\Js\CustomerId'/>
 	</type>
-<!-- 2021-02-23 "Implement a database diagnostic tool": https://github.com/justuno-com/core/issues/347 -->
-	<type name='Magento\Framework\App\ActionInterface'>
-		<plugin
-			name='Justuno\Core\Framework\Plugin\App\ActionInterface' type='Justuno\Core\Framework\Plugin\App\ActionInterface'
-		/>
-	</type>
 </config>
