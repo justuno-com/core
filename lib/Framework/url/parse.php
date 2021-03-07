@@ -38,7 +38,7 @@ function ju_url_bp($u) {
 	else {
 		$z = ju_zuri($u); /** @var zUriH $z */
 		$base = ju_ccc(':', "{$z->getScheme()}://{$z->getHost()}", jutr($z->getPort(), ['80' => '']));
-		$path = df_trim_ds($z->getPath());
+		$path = ju_trim_ds($z->getPath());
 	}
 	return [$base, $path];
 }
