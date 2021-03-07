@@ -12,6 +12,7 @@ use Magento\Store\Api\Data\StoreInterface as IStore;
  * 2) The store's root URL is absent in the Magento database.
  * 2020-06-24 "Port the `df_domain_current` function": https://github.com/justuno-com/core/issues/119
  * @used-by ju_sentry()
+ * @used-by \Justuno\M2\Config\Backend\Debug::dfSaveBefore()
  * @param int|string|null|bool|IStore $s [optional]
  * @param bool $www [optional]
  * @return string|null
