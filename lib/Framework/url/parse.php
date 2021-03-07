@@ -28,7 +28,7 @@ function ju_domain($u, $www = false, $throw = true) {return
  */
 function ju_url_bp($u) {
 	/** @var string $base */ /** @var string $path */
-	if (!df_check_url($u)) {
+	if (!ju_check_url($u)) {
 		# 2020-03-02
 		# The square bracket syntax for array destructuring assignment (`[…] = […]`) requires PHP ≥ 7.1:
 		# https://github.com/mage2pro/core/issues/96#issuecomment-593392100
