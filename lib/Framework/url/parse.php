@@ -56,7 +56,7 @@ function ju_url_trim_index($u) {
 	# https://github.com/mage2pro/core/issues/96#issuecomment-593392100
 	# We should support PHP 7.0.
 	list($base, $path) = ju_url_bp($u); /** @var string $base */ /** @var string $path */
-	$a = df_explode_path($path); /** @var string[] $a */
+	$a = ju_explode_path($path); /** @var string[] $a */
 	$i = count($a) - 1; /** @var int $i */
 	while ($a && in_array($a[$i--], ['', 'index'], true)) {array_pop($a);}
 	return ju_cc_path($base, ju_cc_path($a));

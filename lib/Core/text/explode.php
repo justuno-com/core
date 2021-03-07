@@ -80,7 +80,17 @@ function ju_explode_multiple(array $delimiters, $s) {
 function ju_explode_n($s) {return explode("\n", ju_normalize(ju_trim($s)));}
 
 /**
+ * 2016-09-03 Another implementation: df_explode_multiple(['/', DS], $path)
+ * 2021-03-07 "Port the `df_explode_path` function": https://github.com/justuno-com/core/issues/368
+ * @used-by ju_url_trim_index()
+ * @param string $p
+ * @return string[]
+ */
+function ju_explode_path($p) {return ju_explode_xpath(ju_path_n($p));}
+
+/**
  * 2020-06-14 "Port the `df_explode_xpath` function": https://github.com/justuno-com/core/issues/20
+ * @used-by ju_explode_path()
  * @used-by jua_deep()
  * @used-by jua_deep_set()
  * @used-by jua_deep_unset()
