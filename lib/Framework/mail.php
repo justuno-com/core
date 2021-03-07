@@ -14,7 +14,7 @@ function ju_mail($to, $subject, $body) {
 	$msg = ju_new_om(Msg::class); /** @var Msg $msg */
 	ju_map(function($to) use($msg) {
 		$msg->addTo($to);
-	}, jua_flatten(array_map('df_csv_parse', is_array($to) ? $to : [$to])));
+	}, jua_flatten(array_map('ju_csv_parse', is_array($to) ? $to : [$to]))); /** @uses ju_csv_parse() */
 	$msg
 		->setBodyHtml($body)
 		->setFrom(ju_cfg('trans_email/ident_general/email'))
