@@ -4,7 +4,6 @@ use Magento\Framework\ObjectManagerInterface as IOM;
 
 /**
  * 2020-06-13 "Port the `df_o` function": https://github.com/justuno-com/core/issues/3
- * @used-by df_message_m()
  * @used-by ju_app_state()
  * @used-by ju_asset()
  * @used-by ju_asset_source()
@@ -25,6 +24,7 @@ use Magento\Framework\ObjectManagerInterface as IOM;
  * @used-by ju_fs()
  * @used-by ju_layout()
  * @used-by ju_magento_version_m()
+ * @used-by ju_message_m()
  * @used-by ju_module_dir_reader()
  * @used-by ju_module_m()
  * @used-by ju_msi_allowed_for_pt()
@@ -42,6 +42,7 @@ use Magento\Framework\ObjectManagerInterface as IOM;
  * @used-by ju_stock_r()
  * @used-by ju_store_cookie_m()
  * @used-by ju_store_m()
+ * @used-by ju_url_frontend_o()
  * @used-by ju_url_o()
  * @used-by ju_visitor_ip()
  * @used-by \Justuno\Core\Theme\Model\View\Design::isThemeInitialized()
