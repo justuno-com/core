@@ -103,7 +103,6 @@ class Backend extends \Magento\Framework\App\Config\Value {
 	/**
 	 * 2015-12-07
 	 * @used-by save()
-	 * @see \Justuno\M2\Config\Backend\Debug::dfSaveBefore()
 	 */
 	protected function dfSaveBefore() {}
 

@@ -43,7 +43,7 @@ function ju_kv(array $a, $pad = null) {return ju_cc_n(ju_map_k(ju_clean($a), fun
 /**
  * 2019-06-13
  * 2021-03-07 "Port the `df_kv_table` function": https://github.com/justuno-com/core/issues/362
- * @used-by \Justuno\M2\Config\Backend\Debug::dfSaveBefore()
+ * 2021-08-05 @deprecated It is unused.
  * @param array(string => string) $a
  * @return string
  */

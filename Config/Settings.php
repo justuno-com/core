@@ -19,7 +19,7 @@ abstract class Settings {
 
 	/**
 	 * 2015-11-09
-	 * @used-by \Justuno\M2\Settings::debug()
+	 * 2021-08-05 @deprecated It is unused.
 	 * @param string|null $k [optional]
 	 * @param null|string|int|S|Store $s [optional]
 	 * @param bool $d [optional]
@@ -81,8 +81,6 @@ abstract class Settings {
 	/**
 	 * 2016-07-12 http://php.net/manual/function.get-called-class.php#115790
 	 * @used-by \Justuno\M2\Block\Js::_toHtml()
-	 * @used-by \Justuno\M2\Config\Backend\Debug::dfSaveBefore()
-	 * @used-by \Justuno\M2\Controller\Db\Index::execute()
 	 * @used-by \Justuno\M2\Controller\Response\Catalog::execute()
 	 * @param Store|int|null $s [optional]
 	 * @param string $c [optional]

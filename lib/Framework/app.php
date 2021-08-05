@@ -2,7 +2,7 @@
 use Magento\Framework\App\DeploymentConfig as DC;
 /**
  * 2021-02-24
- * @used-by \Justuno\M2\Config\Backend\Debug::dfSaveBefore()
+ * 2021-08-05 @deprecated It is unused.
  * @param string|string[]|null $k [optional]
  * @return DC|string|string[]|null
  */

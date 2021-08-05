@@ -5,7 +5,7 @@ use Magento\Store\Model\Store;
  * 2016-12-01 If $path is null, '', or '/', then the function will return the frontend root URL.
  * 2016-12-01 On the frontend side, the @see df_url() behaves identical to df_url_frontend()
  * 2021-03-07 "Port the `df_url_frontend` function": https://github.com/justuno-com/core/issues/363
- * @used-by \Justuno\M2\Config\Backend\Debug::dfSaveBefore()
+ * 2021-08-05 @deprecated It is unused.
  * @param string|null $path [optional]
  * @param array(string => mixed) $p [optional]
  * @param Store|int|string|null $store [optional]

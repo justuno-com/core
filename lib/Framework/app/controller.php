@@ -6,7 +6,7 @@ use Magento\Framework\App\ResponseInterface as IResponse;
 use Magento\Framework\Controller\ResultInterface as IResult;
 /**
  * 2021-02-26
- * @used-by \Justuno\M2\Controller\Db\Index::execute()
+ * 2021-08-05 @deprecated It is unused.
  */
 function ju_403() {ju_response_code(403);}
 

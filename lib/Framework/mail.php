@@ -6,7 +6,7 @@ use Magento\Framework\Mail\TransportInterface as ITransport;
 /**
  * 2019-06-13
  * 2021-03-07 "Port the `df_mail` function": https://github.com/justuno-com/core/issues/360
- * @used-by \Justuno\M2\Config\Backend\Debug::dfSaveBefore()
+ * 2021-08-05 @deprecated It is unused.
  * @param string|string[] $to
  * @param string $subject
  * @param string $body

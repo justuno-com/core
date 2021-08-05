@@ -36,7 +36,7 @@ function ju_message_m() {return ju_o(IMM::class);}
 
 /**
  * 2016-12-04
- * @used-by \Justuno\M2\Config\Backend\Debug::dfSaveBefore()
+ * 2021-08-05 @deprecated It is unused.
  * @param P|string $m
  */
 function ju_message_success($m) {ju_message_add($m, IM::TYPE_SUCCESS);}
