@@ -1,7 +1,6 @@
 <?php
 use Magento\Catalog\Model\Product as P;
 use Magento\CatalogInventory\Api\StockRegistryInterface as IStockRegistry;
-use Magento\CatalogInventory\Helper\Stock as StockH;
 use Magento\CatalogInventory\Model\StockRegistry;
 use Magento\InventorySales\Model\GetProductSalableQty as Qty;
 use Magento\InventorySalesApi\Api\GetProductSalableQtyInterface as IQty;
