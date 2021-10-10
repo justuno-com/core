@@ -90,7 +90,7 @@ function ju_module_dir_reader() {return ju_o(Reader::class);}
  * @return array(string => mixed)
  */
 function ju_module_file($m, $name, $ext = '', $req = true, \Closure $parser = null) {return jucf(
-	function($m, $name, $ext, $req, $parser) {return
+	function($m, $name, $ext = '', $req = true, \Closure $parser = null) {return
 		file_exists($f = ju_module_path_etc($m, ju_file_ext_add($name, $ext)))
 			? (!$parser ? $f : $parser($f))
 			: (!$req ? [] : ju_error('The required file «%1» is absent.', $f))
