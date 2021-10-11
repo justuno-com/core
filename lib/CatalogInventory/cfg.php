@@ -35,6 +35,7 @@ function ju_msi_allowed_for_pt() {return ju_o(IAllowedForPT::class);}
 /**
  * 2021-10-11
  * @used-by ju_assert_qty_supported()
+ * @used-by \Justuno\M2\Catalog\Variants::variant()
  * @param P|string $t
  * @throws bool
  */
