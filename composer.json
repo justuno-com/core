@@ -1,6 +1,6 @@
 {
 	"name": "justuno.com/core"
-	,"version": "1.1.9"
+	,"version": "1.2.0"
 	,"description": "A core package for `justuno.com/m2` (instead of `mage2pro/core`)"
 	,"type": "magento2-module"
 	,"homepage": "https://github.com/justuno-com/core"
