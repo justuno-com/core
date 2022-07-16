@@ -9,6 +9,7 @@
  * @used-by \Justuno\Core\Format\Html\Tag::openTagWithAttributesAsText()
  * @used-by \Justuno\Core\Sentry\Client::capture()
  * @used-by \Justuno\Core\Sentry\Client::send()
+ * @used-by \Justuno\M2\Block\Js::_toHtml()
  * @param mixed[] $r
  * @param mixed ...$k [optional]
  * @return mixed[]

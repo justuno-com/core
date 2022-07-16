@@ -48,6 +48,8 @@ abstract class Settings {
 	/**
 	 * @used-by b()
 	 * @used-by \Justuno\M2\Settings::accid()
+	 * @used-by \Justuno\M2\Settings::brand_attribute()
+	 * @used-by \Justuno\M2\Settings::domain()
 	 * @param string|null $k [optional]
 	 * @param null|string|int|S|Store|array(string, int) $s [optional]
 	 * @param mixed|callable $d [optional]
