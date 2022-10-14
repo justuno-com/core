@@ -1,4 +1,5 @@
 <?php
+use Justuno\Core\Zf\Filter\StringTrim as Trim;
 /**
  * 2017-06-09
  * 2021-02-22
@@ -41,8 +42,7 @@ function ju_trim($s, $charlist = null, $throw = false) {return ju_try(function()
 				}
 			}
 		}
-		/** @var \Justuno\Core\Zf\Filter\StringTrim $filter */
-		$filter = new \Justuno\Core\Zf\Filter\StringTrim($charlist);
+		$filter = new Trim($charlist); /** @var Trim $filter */
 		$r = $filter->filter($s);
 		$r = ju_nts($r);
 		if (' ' === $r) {
