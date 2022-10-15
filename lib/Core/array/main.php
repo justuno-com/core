@@ -81,8 +81,8 @@ function juaf($a, $b) {
 		$r = $ca ? [ju_assert_traversable($b), $a] : [ju_assert_traversable($a), $b];
 	}
 	else {
-		$ta = ju_check_traversable($a); /** @var bool $ta */
-		$tb = ju_check_traversable($b); /** @var bool $tb */
+		$ta = is_iterable($a); /** @var bool $ta */
+		$tb = is_iterable($b); /** @var bool $tb */
 		if ($ta && $tb) {
 			ju_error('juaf(): both arguments are callable and traversable: %s and %s.', ju_type($a), ju_type($b));
 		}
