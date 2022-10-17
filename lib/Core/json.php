@@ -65,7 +65,7 @@ function ju_json_encode_partial($v) {return ju_json_encode($v, JSON_PARTIAL_OUTP
 
 /**
  * 2017-09-07
- * I use the @uses ju_is_assoc() check,
+ * I use @uses ju_is_assoc() check,
  * because otherwise @uses ju_ksort_r_ci() will convert the numeric arrays to associative ones,
  * and their numeric keys will be ordered as strings.
  * 2020-06-18 "Port the `df_json_sort` function": https://github.com/justuno-com/core/issues/66

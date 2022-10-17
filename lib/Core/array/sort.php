@@ -42,7 +42,7 @@ function ju_ksort_r(array $a, $f = null) {return ju_ksort(ju_map_k(function($k, 
  * @return array(int|string => mixed)
  */
 function ju_ksort_r_ci(array $a) {return
-	!ju_is_assoc($a)
+	array_is_list($a)
 	/**
 	 * 2017-09-08
 	 * @todo It would be nice to use df_sort($a) here,
@@ -75,16 +75,16 @@ function ju_ksort_r_ci(array $a) {return
  * @return array(int|string => mixed)
  */
 function ju_sort(array $a, $f = null) {
-	$isAssoc = ju_is_assoc($a); /** @var bool $isAssoc */
+	$isList = array_is_list($a); /** @var bool $isList */
 	if (!$f) {
-		$isAssoc ? asort($a) : sort($a);
+		$isList ? sort($a) : asort($a);
 	}
 	else {
 		if (!$f instanceof \Closure) {
 			$f = function($a, $b) use($f) {return !is_object($a) ? $a - $b : $a->$f() - $b->$f();};
 		}
 		/** @noinspection PhpUsageOfSilenceOperatorInspection */
-		$isAssoc ? @uasort($a, $f) : @usort($a, $f);
+		$isList ? @usort($a, $f) : @uasort($a, $f);
 	}
 	return $a;
 }
