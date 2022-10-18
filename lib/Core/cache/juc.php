@@ -35,8 +35,31 @@ function juc($o, \Closure $m, array $a = [], $unique = true, $offset = 0) {
 	}
 	/** @var string $k */
 	$k = "{$b['class']}::{$b['function']}" . (!$a ? null : ju_hash_a($a)) . ($unique ? null : spl_object_hash($m));
-	# 2017-01-12 https://3v4l.org/0shto
-	return property_exists($o, $k) ? $o->$k : $o->$k = $m(...$a);
+	# 2022-10-17
+	# Dynamic properties are deprecated since PHP 8.2:
+	# https://www.php.net/manual/migration82.deprecated.php#migration82.deprecated.core.dynamic-properties
+	# https://wiki.php.net/rfc/deprecate_dynamic_properties
+	/** @var mixed $r */
+	static $hasWeakMap; /** @var bool $hasWeakMap */
+	$hasWeakMap = !is_null($hasWeakMap) ? $hasWeakMap : @class_exists('WeakMap');
+	if (!$hasWeakMap) {
+		# 2017-01-12 ... works correctly here: https://3v4l.org/0shto
+		# 2022-10-17 The ternary operator works correctly here: https://3v4l.org/MutM4
+		$r = property_exists($o, $k) ? $o->$k : $o->$k = $m(...$a);
+	}
+	else {
+		static $map; /** @var WeakMap $map */
+		$map = $map ?: new WeakMap;
+		if (!$map->offsetExists($o)) {
+			$map[$o] = [];
+		}
+		# 2022-10-17 https://3v4l.org/6cVAu
+		$map2 =& $map[$o]; /** @var array(string => mixed) $map2 */
+		# 2017-01-12 ... works correctly here: https://3v4l.org/0shto
+		# 2022-10-17 The ternary operator works correctly here: https://3v4l.org/MutM4
+		$r = isset($map2, $k) ? $map2[$k] : $map2[$k] = $m(...$a);
+	}
+	return $r;
 }
 
 /**
