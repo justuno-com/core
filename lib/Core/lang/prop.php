@@ -56,6 +56,13 @@ function ju_prop($o, $v, $d = null, $type = null) {/** @var object|mixed|null $r
 			}
 		}
 		else {
+			/**
+			 * 2022-10-18
+			 * 1) Dynamic properties are deprecated since PHP 8.2:
+			 * https://www.php.net/manual/migration82.deprecated.php#migration82.deprecated.core.dynamic-properties
+			 * https://wiki.php.net/rfc/deprecate_dynamic_properties
+			 * 2) @see juc()
+			 */
 			$a = '_' . __FUNCTION__; /** @var string $a */
 			if (!isset($o->$a)) {
 				$o->$a = [];

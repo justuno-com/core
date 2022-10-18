@@ -35,11 +35,14 @@ function juc($o, \Closure $m, array $a = [], $unique = true, $offset = 0) {
 	}
 	/** @var string $k */
 	$k = "{$b['class']}::{$b['function']}" . (!$a ? null : ju_hash_a($a)) . ($unique ? null : spl_object_hash($m));
-	# 2022-10-17
-	# Dynamic properties are deprecated since PHP 8.2:
-	# https://www.php.net/manual/migration82.deprecated.php#migration82.deprecated.core.dynamic-properties
-	# https://wiki.php.net/rfc/deprecate_dynamic_properties
-	/** @var mixed $r */
+	/**
+	 * 2022-10-17
+	 * 1) Dynamic properties are deprecated since PHP 8.2:
+	 * https://www.php.net/manual/migration82.deprecated.php#migration82.deprecated.core.dynamic-properties
+	 * https://wiki.php.net/rfc/deprecate_dynamic_properties
+	 * 2) @see ju_prop()
+	 * @var mixed $r
+	 */
 	static $hasWeakMap; /** @var bool $hasWeakMap */
 	$hasWeakMap = !is_null($hasWeakMap) ? $hasWeakMap : @class_exists('WeakMap');
 	if (!$hasWeakMap) {
