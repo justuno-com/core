@@ -64,7 +64,7 @@ function ju_prop($o, $v, $d = null, $type = null) {/** @var object|mixed|null $r
 				$r = jua($o->$a, $k, $d);
 			}
 			else {
-				$prop = &$o->$a;
+				$prop =& $o->$a;
 				$prop[$k] = $v;
 				$r = $o;
 			}
