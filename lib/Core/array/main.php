@@ -12,6 +12,9 @@ function ju_array($v) {return is_array($v) ? $v : [$v];}
 
 /**
  * 2020-06-13 "Port the `df_ita` function": https://github.com/justuno-com/core/issues/15
+ * 2022-10-18
+ * @uses iterator_to_array() allows an array as the first argument since PHP 8.2:
+ * https://www.php.net/manual/migration82.other-changes.php#migration82.other-changes.functions.spl
  * @used-by ju_filter()
  * @used-by ju_map()
  * @used-by jua_select_ordered()
