@@ -40,18 +40,16 @@ class O implements \ArrayAccess {
 	 * @override
 	 * @see \ArrayAccess::offsetExists()
 	 * @param string $k
-	 * @return bool
 	 */
-	function offsetExists($k) {return !is_null(jua_deep($this->_a, $k));}
+	function offsetExists($k): bool {return !is_null(jua_deep($this->_a, $k));}
 
 	/**
 	 * 2017-07-13
 	 * @override
 	 * @see \ArrayAccess::offsetGet()
 	 * @param string $k
-	 * @return array(string => mixed)|mixed|null
 	 */
-	function offsetGet($k) {return jua_deep($this->_a, $k);}
+	function offsetGet($k): mixed {return jua_deep($this->_a, $k);}
 
 	/**
 	 * 2017-07-13
@@ -60,7 +58,7 @@ class O implements \ArrayAccess {
 	 * @param string $k
 	 * @param mixed $v
 	 */
-	function offsetSet($k, $v) {jua_deep_set($this->_a, $k, $v);}
+	function offsetSet($k, $v): void {jua_deep_set($this->_a, $k, $v);}
 
 	/**
 	 * 2017-07-13
@@ -68,7 +66,7 @@ class O implements \ArrayAccess {
 	 * @see \ArrayAccess::offsetUnset()
 	 * @param string $k
 	 */
-	function offsetUnset($k) {jua_deep_unset($this->_a, $k);}
+	function offsetUnset($k): void {jua_deep_unset($this->_a, $k);}
 
 	/**
 	 * 2017-07-13
