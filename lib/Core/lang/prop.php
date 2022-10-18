@@ -56,24 +56,53 @@ function ju_prop($o, $v, $d = null, $type = null) {/** @var object|mixed|null $r
 			}
 		}
 		else {
+			$a = '_' . __FUNCTION__; /** @var string $a */
 			/**
 			 * 2022-10-18
 			 * 1) Dynamic properties are deprecated since PHP 8.2:
 			 * https://www.php.net/manual/migration82.deprecated.php#migration82.deprecated.core.dynamic-properties
 			 * https://wiki.php.net/rfc/deprecate_dynamic_properties
-			 * 2) @see juc()
+			 * 2) @see dfc()
 			 */
-			$a = '_' . __FUNCTION__; /** @var string $a */
-			if (!isset($o->$a)) {
-				$o->$a = [];
-			}
-			if ($isGet) {
-				$r = jua($o->$a, $k, $d);
+			static $hasWeakMap; /** @var bool $hasWeakMap */
+			$hasWeakMap = !is_null($hasWeakMap) ? $hasWeakMap : @class_exists('WeakMap');
+			if (!$hasWeakMap) {
+				if (!isset($o->$a)) {
+					$o->$a = [];
+				}
+				if ($isGet) {
+					$r = jua($o->$a, $k, $d);
+				}
+				else {
+					# 2022-10-18
+					# The previous code was:
+					# 		$prop =& $o->$a;
+					#		$prop[$k] = $v;
+					# The new code works correctly in PHP ≤ 8.2: https://3v4l.org/8agSI1
+					$o->{$a}[$k] = $v;
+					$r = $o;
+				}
 			}
 			else {
-				$prop =& $o->$a;
-				$prop[$k] = $v;
-				$r = $o;
+				static $map; /** @var WeakMap $map */
+				$map = $map ?: new WeakMap;
+				if (!$map->offsetExists($o)) {
+					$map[$o] = [];
+				}
+				# 2022-10-17 https://3v4l.org/6cVAu
+				$map2 =& $map[$o]; /** @var array(string => mixed) $map2 */
+				if (!isset($map2[$a])) {
+					$map2[$a] = [];
+				}
+				# 2022-10-18 https://3v4l.org/1tS4v
+				$prop =& $map2[$a]; /** array(string => mixed) $prop */
+				if ($isGet) {
+					$r = jua($prop, $k, $d);
+				}
+				else {
+					$prop[$k] = $v;
+					$r = $o;
+				}
 			}
 		}
 	}
