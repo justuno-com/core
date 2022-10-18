@@ -1,1 +1,2 @@
-A core package for [`justuno.com/m2`](https://github.com/justuno-com/m2) (instead of [`mage2pro/core`](https://github.com/mage2pro/core)).
+A core package for [`JustunoCom/m2`](https://github.com/JustunoCom/m2) and [`JustunoCom/magento-2-v4`](https://github.com/JustunoCom/magento-2-v4).  
+It is ported from [`mage2pro/core`](https://github.com/mage2pro/core).
