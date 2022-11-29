@@ -47,9 +47,8 @@ final class Trace implements \IteratorAggregate, \Countable {
 	 * @override
 	 * @see \IteratorAggregate::getIterator() https://www.php.net/manual/iteratoraggregate.getiterator.php
 	 * @used-by \Justuno\Qa\Trace\Formatter::p()
-	 * @return AI
 	 */
-	function getIterator() {return new AI($this->_frames);}
+	function getIterator():AI {return new AI($this->_frames);}
 
 	/**
 	 * 2020-02-27
