@@ -42,7 +42,7 @@ function ju_translate_a($strings, $now = false) {
  * @see df_translit_url_lc => allpay
  *
  * @used-by df_translit_url_lc()
- * @used-by \Df\Sentry\Client::tags()
+ * @used-by \Justuno\Sentry\Client::tags()
  * @param string $s
  * @return string
  */
