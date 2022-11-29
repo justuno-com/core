@@ -37,7 +37,7 @@ final class Trace implements \IteratorAggregate, \Countable {
 	 * 2020-02-27
 	 * @override
 	 * @see \Countable::count() https://www.php.net/manual/countable.count.php
-	 * @used-by \Justuno\Qa\Trace\Formatter::p()
+	 * @used-by \Justuno\Core\Qa\Trace\Formatter::p()
 	 * @return int
 	 */
 	function count() {return count($this->_frames);}
@@ -46,7 +46,7 @@ final class Trace implements \IteratorAggregate, \Countable {
 	 * 2020-02-27
 	 * @override
 	 * @see \IteratorAggregate::getIterator() https://www.php.net/manual/iteratoraggregate.getiterator.php
-	 * @used-by \Justuno\Qa\Trace\Formatter::p()
+	 * @used-by \Justuno\Core\Qa\Trace\Formatter::p()
 	 */
 	function getIterator():AI {return new AI($this->_frames);}
 
