@@ -38,9 +38,8 @@ final class Trace implements \IteratorAggregate, \Countable {
 	 * @override
 	 * @see \Countable::count() https://www.php.net/manual/countable.count.php
 	 * @used-by \Justuno\Core\Qa\Trace\Formatter::p()
-	 * @return int
 	 */
-	function count() {return count($this->_frames);}
+	function count():int {return count($this->_frames);}
 
 	/**
 	 * 2020-02-27
