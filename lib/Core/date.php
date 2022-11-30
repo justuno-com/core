@@ -43,7 +43,6 @@ function ju_date_lt(ZD $d1, ZD $d2) {return $d1->getTimestamp() < $d2->getTimest
  * 2015-02-07
  * 2020-06-22 "Port the `df_dts` function": https://github.com/justuno-com/core/issues/105
  * @used-by ju_file_name()
- * @param ZD|null $date [optional]
  * @param string|null $format [optional]
  * @param Zend_Locale|string|null $locale [optional]
  * @return string
