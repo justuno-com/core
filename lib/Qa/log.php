@@ -72,13 +72,9 @@ function ju_log_l($m, $p2, $p3 = [], $suf = null) {
  * @used-by ju_bt()
  * @used-by ju_log_l()
  * @used-by \Justuno\Core\Qa\Message::log()
- * @param string $f
- * @param string $m
- * @param bool $append [optional]
  */
-function ju_report($f, $m, $append = false) {
+function ju_report(string $f, string $m, bool $append = false) {
 	if ('' !== $m) {
-		ju_param_s($m, 1);
 		$f = ju_file_ext_def($f, 'log');
 		$p = BP . '/var/log'; /** @var string $p */
 		ju_file_write($append ? "$p/$f" : ju_file_name($p, $f), $m, $append);
