@@ -94,7 +94,6 @@ function ju_explode_path($p) {return ju_explode_xpath(ju_path_n($p));}
  * @used-by jua_deep()
  * @used-by jua_deep_set()
  * @used-by jua_deep_unset()
- * @used-by \Justuno\Core\Config\Backend::value()
  * @param string|string[] $p
  * @return string[]
  */
