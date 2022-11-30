@@ -31,5 +31,5 @@ function ju_param_s($v, $ord, $sl = 0) {$sl++;
  */
 function ju_param_sne($v, $ord, $sl = 0) {$sl++;
 	Q::assertValueIsString($v, $sl);
-	return '' !== strval($v) ? $v : Q::raiseErrorParam(__FUNCTION__, $ms = [Q::NES], $ord, $sl);
+	return '' !== strval($v) ? $v : Q::raiseErrorParam(__FUNCTION__, [Q::NES], $ord, $sl);
 }
