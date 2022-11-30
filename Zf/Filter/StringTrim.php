@@ -47,7 +47,7 @@ class StringTrim extends \Zend_Filter_StringTrim {
 	}
 
 	/**
-	 * @used-by _slowUnicodeTrim()
+	 * @used-by self::_slowUnicodeTrim()
 	 * @param $v
 	 * @return array|bool
 	 */
