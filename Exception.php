@@ -7,7 +7,7 @@ use Magento\Framework\Phrase;
  * 2020-06-15 "Port the `Df\Core\Exception` class": https://github.com/justuno-com/core/issues/23
  * @used-by ju_param_sne()
  */
-class Exception extends LE implements \ArrayAccess {
+final class Exception extends LE implements \ArrayAccess {
 	/**
 	 * @used-by ju_error_create()
 	 * @param mixed ...$args
