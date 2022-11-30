@@ -81,17 +81,6 @@ class Exception extends LE implements \ArrayAccess {
 	function message():string {return $this->getMessage();}
 
 	/**
-	 * A message for a buyer.
-	 * 2016-10-24
-	 * Раньше этот метод возвращал $this->message().
-	 * Теперь я думаю, что null логичнее:
-	 * низкоуровневые сообщения покупателям показывать всегда неправильно,
-	 * а потомки этого класса могут переопределить у себя этот метод
-	 * (так, в частности, поступают потмки в платёжных модулях).
-	 */
-	function messageC():string {return '';}
-
-	/**
 	 * @used-by messageL()
 	 * @used-by messageSentry()
 	 * @return string
