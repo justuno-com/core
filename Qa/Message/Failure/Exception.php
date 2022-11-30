@@ -44,9 +44,9 @@ final class Exception extends \Justuno\Core\Qa\Message\Failure {
 	protected function trace() {return ju_ef($this->e())->getTrace();}
 
 	/**
-	 * @used-by main()
-	 * @used-by stackLevel()
-	 * @used-by trace()
+	 * @used-by self::main()
+	 * @used-by self::stackLevel()
+	 * @used-by self::trace()
 	 * @return \Justuno\Core\Exception
 	 */
 	private function e() {return juc($this, function() {return ju_ewrap($this[self::P__EXCEPTION]);});}
