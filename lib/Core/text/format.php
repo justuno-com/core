@@ -82,7 +82,7 @@ function ju_sprintf($s) {/** @var string $r */ /** @var mixed[] $args */
  * @used-by ju_sprintf()
  * @param string|mixed[] $s
  * @return string
- * @throws \Exception
+ * @throws Exception
  */
 function ju_sprintf_strict($s) {/** @var string $r */ /** @var mixed[] $args */
 	# 2020-03-02
