@@ -74,6 +74,7 @@ class Exception extends LE implements \ArrayAccess {
 	function getStackLevelsCountToSkip():int {return $this->_stackLevelsCountToSkip;}
 
 	/**
+	 * @used-by ju_ets()
 	 * @used-by self::messageD()
 	 * @used-by self::standard()
 	 */
