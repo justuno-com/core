@@ -8,7 +8,6 @@ use Magento\Framework\ObjectManagerInterface as IOM;
  * @used-by ju_asset()
  * @used-by ju_asset_source()
  * @used-by ju_backend_session()
- * @used-by ju_cache_pool()
  * @used-by ju_cart()
  * @used-by ju_catalog_image_h()
  * @used-by ju_catalog_locator()
