@@ -25,7 +25,7 @@ final class Dumper {
 	;}));}
 
 	/**
-	 * @used-by dump()
+	 * @used-by self::dump()
 	 * @param mixed $a
 	 * @return string
 	 */
