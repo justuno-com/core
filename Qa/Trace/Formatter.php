@@ -70,7 +70,7 @@ final class Formatter {
 	}
 	
 	/**
-	 * @used-by p()
+	 * @used-by self::p()
 	 * @param array $p
 	 * @return string|null
 	 */
