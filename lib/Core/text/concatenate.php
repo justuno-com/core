@@ -33,7 +33,6 @@ function ju_cc_n(...$args) {return ju_ccc("\n", jua_flatten($args));}
  * @used-by ju_js_x()
  * @used-by ju_module_path()
  * @used-by ju_module_path_etc()
- * @used-by ju_url_trim_index()
  * @param string|string[] ...$args
  * @return string
  */
