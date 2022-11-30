@@ -143,7 +143,7 @@ final class Client {
 
 	/**
 	 * 2020-06-27
-	 * @used-by capture()
+	 * @used-by self::capture()
 	 * @return array|array[]|null[]
 	 */
 	private function get_user_data() {
