@@ -3,7 +3,6 @@ namespace Justuno\Core\Helper;
 # 2020-06-26 "Port the `Df\Core\Helper\Text` class": https://github.com/justuno-com/core/issues/160
 class Text {
 	/**
-	 * @used-by ju_quote_double()
 	 * @used-by ju_quote_russian()
 	 * @used-by ju_quote_single()
 	 * @param string|string[]|array(string => string) $s
