@@ -1,6 +1,4 @@
 <?php
-use Justuno\Core\Exception as DFE;
-
 /**
  * 2020-06-16 "Port the `df_find` function": https://github.com/justuno-com/core/issues/31
  * @used-by ju_ends_with()
