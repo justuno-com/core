@@ -107,8 +107,8 @@ function ju_map($a1, $a2, $pAppend = [], $pPrepend = [], $keyPosition = 0, $retu
  * @used-by \Justuno\Core\Qa\Trace\Formatter::p()
  * @used-by \Justuno\Core\Sentry\Client::send()
  * @used-by \Justuno\Core\Sentry\Client::send_http()
- * @param array|callable|\Traversable $a1
- * @param array|callable|\Traversable $a2
+ * @param array|callable|Traversable $a1
+ * @param array|callable|Traversable $a2
  * @return array(int|string => mixed)
  */
 function ju_map_k($a1, $a2) {return ju_map($a1, $a2, [], [], JU_BEFORE);}
@@ -119,8 +119,8 @@ function ju_map_k($a1, $a2) {return ju_map($a1, $a2, [], [], JU_BEFORE);}
  * @used-by juak_transform()
  * @used-by \Justuno\M2\Catalog\Images::p()
  * @used-by \Justuno\M2\Catalog\Variants::variant()
- * @param array|callable|\Traversable $a1
- * @param array|callable|\Traversable $a2
+ * @param array|callable|Traversable $a1
+ * @param array|callable|Traversable $a2
  * @return array(int|string => mixed)
  * @throws DFE
  */
