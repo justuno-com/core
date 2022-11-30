@@ -44,9 +44,6 @@ function ju_date_lt(ZD $d1, ZD $d2) {return $d1->getTimestamp() < $d2->getTimest
  * 2020-06-22 "Port the `df_dts` function": https://github.com/justuno-com/core/issues/105
  * @used-by ju_file_name()
  * @param string|null $fmt [optional]
- * @param Zend_Locale|string|null $locale [optional]
- * @return string
+ * @param Zend_Locale|string|null $l [optional]
  */
-function ju_dts(ZD $date = null, $fmt = null, $locale = null) {return ju_result_sne(ju_date($date)->toString(
-	$format, null, $locale
-));}
+function ju_dts(ZD $date = null, $fmt = null, $l = null):string {return ju_result_sne(ju_date($date)->toString($fmt, null, $l));}
