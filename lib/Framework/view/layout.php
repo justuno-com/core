@@ -53,7 +53,7 @@ function ju_layout() {return ju_o(ILayout::class);}
  * 2017-10-16
  * 2020-08-23 "Port the `df_layout_update` function" https://github.com/justuno-com/core/issues/301
  * @used-by ju_handles()
- * @param \Closure|bool|mixed $onError [optional]
+ * @param Closure|bool|mixed $onError [optional]
  * @return IProcessor|Merge
  */
 function ju_layout_update($onError = true) {return ju_try(function() {
