@@ -15,7 +15,7 @@ use Magento\Store\Model\Website as W;
  * @used-by ju_website_code()
  * @param W|Store|int|string|null|bool $v [optional]
  * @return W
- * @throws NSE|\Exception
+ * @throws NSE|Exception
  */
 function ju_website($v = null) {return $v instanceof Store ? $v->getWebsite() : ju_store_m()->getWebsite($v);}
 
