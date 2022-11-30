@@ -10,7 +10,6 @@ abstract class Failure extends \Justuno\Core\Qa\Message {
 	/**
 	 * @abstract
 	 * @used-by self::postface()
-	 * @see \Justuno\Core\Qa\Message\Failure\Error::trace()
 	 * @see \Justuno\Core\Qa\Message\Failure\Exception::trace()
 	 * @return array(array(string => string|int))
 	 */
