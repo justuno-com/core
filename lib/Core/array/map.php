@@ -57,7 +57,6 @@ function ju_each($c, $f, ...$p) {return ju_map(function($v) use($f, $p) {return 
  * @param int $keyPosition [optional]
  * @param bool $returnKey [optional]
  * @return array(int|string => mixed)
- * @throws DFE
  */
 function ju_map($a1, $a2, $pAppend = [], $pPrepend = [], $keyPosition = 0, $returnKey = false) {
 	# 2020-03-02
