@@ -87,9 +87,11 @@ final class Exception extends LE implements \ArrayAccess {
 	 * 2015-10-10
 	 * @override
 	 * @see \ArrayAccess::offsetGet()
-	 * @param string $offset
+	 * @param string $k
+	 * @return mixed
 	 */
-	function offsetGet($offset): mixed {return jua($this->_data, $offset);}
+	#[\ReturnTypeWillChange]
+	function offsetGet($k) {return jua($this->_data, $k);}
 
 	/**
 	 * 2015-10-10
@@ -98,7 +100,7 @@ final class Exception extends LE implements \ArrayAccess {
 	 * @param string $offset
 	 * @param mixed $value
 	 */
-	function offsetSet($offset, $value): void {$this->_data[$offset] = $value;}
+	function offsetSet($offset, $value):void {$this->_data[$offset] = $value;}
 
 	/**
 	 * 2015-10-10
@@ -106,7 +108,7 @@ final class Exception extends LE implements \ArrayAccess {
 	 * @see \ArrayAccess::offsetUnset()
 	 * @param string $offset
 	 */
-	function offsetUnset($offset): void {unset($this->_data[$offset]);}
+	function offsetUnset($offset):void {unset($this->_data[$offset]);}
 
 	/**
 	 * 2016-10-24
