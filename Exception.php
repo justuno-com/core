@@ -84,9 +84,8 @@ final class Exception extends LE implements \ArrayAccess {
 	/**
 	 * 2017-01-09
 	 * @used-by \Justuno\Core\Sentry\Client::captureException()
-	 * @return string
 	 */
-	function messageSentry() {return $this->message();}
+	function messageSentry():string {return $this->message();}
 
 	/**
 	 * @return bool
