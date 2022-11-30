@@ -149,16 +149,6 @@ final class Exception extends LE implements \ArrayAccess {
 	protected function module() {return $this;}
 
 	/**
-	 * Цель этого метода — предоставить потомкам возможность
-	 * указывать тип предыдущей исключительной ситуации в комментарии PHPDoc для потомка.
-	 * Метод @uses \Exception::getPrevious() объявлен как final,
-	 * поэтому потомки не могут в комментариях PHPDoc указывать его тип: IntelliJ IDEA ругается.
-	 * 2016-08-19
-	 * @return E
-	 */
-	protected function prev() {return $this->getPrevious();}
-
-	/**
 	 * @used-by comments()
 	 * @var string[]
 	 */
