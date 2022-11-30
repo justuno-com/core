@@ -46,16 +46,6 @@ function jua(array $a, $k, $d = null) {return
 ;}
 
 /**
- * 2020-01-29
- * 2020-06-18 "Port the `dfad` function": https://github.com/justuno-com/core/issues/73
- * @param _DO|AE $o
- * @param string|string[]|null $k [optional]
- * @param mixed|callable|null $d [optional]
- * @return _DO|AE|mixed
- */
-function juad($o, $k = null, $d = null) {return is_null($k) ? $o : jua(ju_gd($o), $k, $d);}
-
-/**
  * 2020-06-13 "Port the `jua_select_ordered` function": https://github.com/justuno-com/core/issues/13
  * 1) It returns a subset of $a with $k keys in the same order as in $k.
  * 2) Normally, you should use @see jua() instead because it is shorter and calls jua_select_ordered() internally.

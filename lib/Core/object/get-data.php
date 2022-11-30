@@ -19,7 +19,6 @@ function ju_assert_gd($v) {return ju_has_gd($v) ? $v : ju_error(ju_ucfirst(
 /**
  * 2020-02-04
  * 2020-06-18 "Port the `df_gd` function": https://github.com/justuno-com/core/issues/74
- * @used-by juad()
  * @param mixed|_DO|AE $v
  * @param F|bool|mixed $onE [optional]
  * @return array(string => mixed)
