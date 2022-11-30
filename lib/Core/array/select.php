@@ -1,9 +1,4 @@
 <?php
-use Closure as F;
-use Magento\Config\Model\Config\Structure\AbstractElement as AE;
-use Magento\Framework\DataObject as _DO;
-use Traversable as T;
-
 /**
  * 2020-06-13 "Port the `dfa` function": https://github.com/justuno-com/core/issues/12
  * @used-by ju_asset_create()
