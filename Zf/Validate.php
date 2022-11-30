@@ -4,20 +4,14 @@ namespace Justuno\Core\Zf;
 /**
  * @see \Justuno\Core\Zf\Validate\StringT
  * @see \Justuno\Core\Zf\Validate\StringT\IntT
- * @see \Justuno\Core\Zf\Validate\StringT\Iso2
- * @see \Justuno\Core\Zf\Validate\StringT\Parser
  * @used-by \Justuno\Core\Zf\Validate\StringT::s()
  * @used-by \Justuno\Core\Zf\Validate\StringT\IntT::s()
- * @used-by \Justuno\Core\Zf\Validate\StringT\Iso2::s()
- * @used-by \Justuno\Core\Zf\Validate\StringT\FloatT::s()
  */
 abstract class Validate implements \Zend_Validate_Interface {
 	/**
 	 * @used-by self::message()
 	 * @see \Justuno\Core\Zf\Validate\StringT::expected()
-	 * @see \Justuno\Core\Zf\Validate\StringT\FloatT::expected()
 	 * @see \Justuno\Core\Zf\Validate\StringT\IntT::expected()
-	 * @see \Justuno\Core\Zf\Validate\StringT\Iso2::expected()
 	 */
 	abstract protected function expected():string;
 
@@ -40,10 +34,7 @@ abstract class Validate implements \Zend_Validate_Interface {
 
 	/**
 	 * @used-by \Justuno\Core\Zf\Validate\StringT::isValid()
-	 * @used-by \Justuno\Core\Zf\Validate\StringT\FloatT::isValid()
 	 * @used-by \Justuno\Core\Zf\Validate\StringT\IntT::isValid()
-	 * @used-by \Justuno\Core\Zf\Validate\StringT\Iso2::isValid()
-	 * @used-by \Justuno\Core\Zf\Validate\StringT\Parser::isValid()
 	 * @param mixed $v [optional]
 	 * @return self|mixed
 	 */
