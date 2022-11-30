@@ -97,13 +97,13 @@ class Backend extends \Magento\Framework\App\Config\Value {
 	 * 2015-12-07
 	 * @used-by save()
 	 */
-	protected function dfSaveAfter() {}
+	protected function dfSaveAfter():void {}
 
 	/**
 	 * 2015-12-07
 	 * @used-by save()
 	 */
-	protected function dfSaveBefore() {}
+	protected function dfSaveBefore():void {}
 
 	/**
 	 * 2016-07-31
