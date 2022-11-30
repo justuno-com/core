@@ -80,12 +80,6 @@ class Exception extends LE implements \ArrayAccess {
 	function isMessageHtml():bool {return $this->_messageIsHtml;}
 
 	/**
-	 * 2016-07-31
-	 * @return $this
-	 */
-	function markMessageAsHtml() {$this->_messageIsHtml = true; return $this;}
-
-	/**
 	 * @return string
 	 */
 	function message() {return $this->getMessage();}
@@ -233,14 +227,6 @@ class Exception extends LE implements \ArrayAccess {
 	 * @var array(string => mixed)
 	 */
 	private $_data = [];
-
-	/**
-	 * 2016-07-31
-	 * @used-by isMessageHtml()
-	 * @used-by markMessageAsHtml()
-	 * @var bool
-	 */
-	private $_messageIsHtml = false;
 
 	/**
 	 * Количество последних элементов стека вызовов,
