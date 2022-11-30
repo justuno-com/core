@@ -34,8 +34,8 @@ abstract class Message extends \Justuno\Core\O {
 	}
 
 	/**
-	 * @used-by log()
-	 * @used-by mail()
+	 * @used-by self::log()
+	 * @used-by self::mail()
 	 * @used-by ju_log_l()
 	 * @return string
 	 */
