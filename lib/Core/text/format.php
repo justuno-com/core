@@ -105,7 +105,6 @@ function ju_sprintf_strict($s) {/** @var string $r */ /** @var mixed[] $args */
 					. "\nParameters:\n{params}."
 					,['{message}' => ju_ets($e), '{params}' => print_r(ju_tail($args), true)]
 				);
-				$inProcess = false;
 			}
 		}
 	}
