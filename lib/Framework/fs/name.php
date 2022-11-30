@@ -20,7 +20,7 @@ function ju_file_name($directory, $template, $ds = '-') { /** @var string $r */
 	}
 	$counter = 1; /** @var int $counter */
 	$hasOrderingPosition = ju_contains($template, '{ordering}');/** @var bool $hasOrderingPosition */
-	$now = \Zend_Date::now()->setTimezone('Europe/Moscow'); /** @var \Zend_Date $now */
+	$now = Zend_Date::now()->setTimezone('Europe/Moscow'); /** @var Zend_Date $now */
 	/** @var array(string => string) $vars */
 	$vars = ju_map_k(function($k, $v) use($ds, $now) {return
 		ju_dts($now, implode($ds, $v))
