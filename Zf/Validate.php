@@ -53,7 +53,7 @@ abstract class Validate implements \Zend_Validate_Interface {
 	 */
 	protected function prepareValidation($v) {$this->setValue($v);}
 
-	/** @used-by setValue() */
+	/** @used-by self::setValue() */
 	protected function reset() {
 		unset($this->_message);
 		unset($this->_params[self::$PARAM__VALUE]);
