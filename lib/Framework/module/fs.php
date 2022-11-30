@@ -86,7 +86,7 @@ function ju_module_dir_reader() {return ju_o(Reader::class);}
  * @param string $name
  * @param string $ext [optional]
  * @param bool $req [optional]
- * @param \Closure|null $parser [optional]
+ * @param Closure|null $parser [optional]
  * @return array(string => mixed)
  */
 function ju_module_file($m, $name, $ext = '', $req = true, \Closure $parser = null) {return jucf(
