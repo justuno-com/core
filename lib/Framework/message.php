@@ -10,7 +10,6 @@ use Magento\Framework\Phrase as P;
  * @see \Magento\Framework\View\Element\Message\InterpretationMediator::interpret()
  * https://github.com/magento/magento2/blob/2.1.0/lib/internal/Magento/Framework/View/Element/Message/InterpretationMediator.php#L26-L43
  * 2021-03-06 "Port the `df_message_add` function": https://github.com/justuno-com/core/issues/351
- * @used-by ju_message_success()
  * @param P|string $s
  * @param string $type
  */
