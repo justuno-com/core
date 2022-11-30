@@ -8,10 +8,7 @@ final class Exception extends \Justuno\Core\Qa\Message\Failure {
 	 * @used-by \Justuno\Core\Qa\Message::report()
 	 * @return string
 	 */
-	protected function main() {
-		$r = $this->e()->messageL(); /** @var string $r */
-		return !$this->e()->isMessageHtml() ? $r : strip_tags($r);
-	}
+	protected function main() {return $this->e()->messageL();}
 
 	/**
 	 * @override
