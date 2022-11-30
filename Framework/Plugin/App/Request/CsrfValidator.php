@@ -27,8 +27,6 @@ final class CsrfValidator {
 	 *			}
 	 *		}
 	 * https://github.com/magento/magento2/blob/2.3.4/lib/internal/Magento/Framework/App/Request/CsrfValidator.php#L111-L135
-	 * @param Sb $sb
-	 * @param \Closure $f
 	 * @param IR|R $r
 	 * @param IA $a
 	 * @return bool
