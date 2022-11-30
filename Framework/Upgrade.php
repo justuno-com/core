@@ -1,6 +1,5 @@
 <?php
 namespace Justuno\Core\Framework;
-use Magento\Eav\Setup\EavSetup;
 use Magento\Framework\DB\Adapter\AdapterInterface as IAdapter;
 use Magento\Framework\DB\Adapter\Pdo\Mysql as Adapter;
 use Magento\Framework\Module\Setup as FSetup;
