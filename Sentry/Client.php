@@ -487,7 +487,6 @@ final class Client {
 	 * @var int
 	 */
 	private $_projectId;
-	private $reprSerializer;
 	private $serializer;
 	const DEBUG = 'debug';
 	const ERROR = 'error';
