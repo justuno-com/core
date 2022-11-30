@@ -43,7 +43,7 @@ class Text extends \Justuno\Core\Framework\W\Result {
 
 	/**
 	 * 2016-08-24
-	 * @used-by render()
+	 * @used-by self::render()
 	 * @see \Justuno\Core\Framework\W\Result\Json::contentType()
 	 * @return string
 	 */
@@ -51,7 +51,7 @@ class Text extends \Justuno\Core\Framework\W\Result {
 
 	/**
 	 * 2016-08-24
-	 * @used-by i()
+	 * @used-by self::i()
 	 * @see \Justuno\Core\Framework\W\Result\Json::prepare()
 	 * @param mixed $body
 	 * @return string
