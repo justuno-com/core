@@ -225,8 +225,7 @@ final class Client {
 		if (function_exists('gzcompress')) {
 			$r = gzcompress($r);
 		}
-		$r = base64_encode($r);
-		return $r;
+		return base64_encode($r);
 	}
 
 	/**
