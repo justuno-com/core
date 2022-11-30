@@ -95,9 +95,9 @@ final class Method {
 	const S = 'A string is required.';
 
 	/**
-	 * @used-by raiseErrorParam()
-	 * @used-by raiseErrorResult()
-	 * @used-by raiseErrorVariable()
+	 * @used-by self::raiseErrorParam()
+	 * @used-by self::raiseErrorResult()
+	 * @used-by self::raiseErrorVariable()
 	 * @param int $offset [optional]
 	 * @return Frame
 	 */
