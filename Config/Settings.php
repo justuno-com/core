@@ -27,7 +27,7 @@ abstract class Settings {
 	 * https://github.com/mage2pro/portal/blob/0.4.4/Plugin/Theme/Model/View/Design.php#L13-L33
 	 * Maybe @see \Dfe\Portal\Plugin\Store\Model\PathConfig::afterGetDefaultPath() is also an offender...
 	 * https://github.com/mage2pro/portal/blob/0.4.4/Plugin/Store/Model/PathConfig.php#L7-L17
-	 * @used-by v()
+	 * @used-by self::v()
 	 * @param null|string|int|S|Store|array(string, int) $s [optional]
 	 * @return null|string|int|S|Store|array(string, int)
 	 */
@@ -36,7 +36,6 @@ abstract class Settings {
 	);}
 
 	/**
-	 * @used-by b()
 	 * @used-by \Justuno\M2\Settings::accid()
 	 * @used-by \Justuno\M2\Settings::brand_attribute()
 	 * @used-by \Justuno\M2\Settings::domain()
