@@ -84,9 +84,8 @@ final class Exception extends LE implements \ArrayAccess {
 	/**
 	 * 2016-08-19 Сообщение для журнала.
 	 * @used-by \Justuno\Core\Qa\Message\Failure\Exception::main()
-	 * @return string
 	 */
-	function messageL() {return $this->message();}
+	function messageL():string {return $this->message();}
 
 	/**
 	 * 2017-01-09
