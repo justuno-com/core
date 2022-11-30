@@ -75,10 +75,9 @@ final class Exception extends LE implements \ArrayAccess {
 
 	/**
 	 * @used-by ju_ets()
+	 * @used-by self::standard()
 	 * @used-by \Justuno\Core\Qa\Message\Failure\Exception::main()
 	 * @used-by \Justuno\Core\Sentry\Client::captureException()
-	 * @used-by self::messageSentry()
-	 * @used-by self::standard()
 	 */
 	function message():string {return $this->getMessage();}
 
