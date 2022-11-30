@@ -82,7 +82,6 @@ function ju_explode_n($s) {return explode("\n", ju_normalize(ju_trim($s)));}
 /**
  * 2016-09-03 Another implementation: df_explode_multiple(['/', DS], $path)
  * 2021-03-07 "Port the `df_explode_path` function": https://github.com/justuno-com/core/issues/368
- * @used-by ju_url_trim_index()
  * @param string $p
  * @return string[]
  */
