@@ -1,6 +1,4 @@
 <?php
-use Magento\Framework\Config\Composer\Package;
-
 /**
  * 2017-01-25
  * 2020-06-26 "Port the `df_core_version` function": https://github.com/justuno-com/core/issues/143
