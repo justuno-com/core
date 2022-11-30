@@ -81,24 +81,18 @@ final class Exception extends LE implements \ArrayAccess {
 	function message():string {return $this->getMessage();}
 
 	/**
-	 * @used-by messageL()
-	 * @used-by messageSentry()
-	 */
-	function messageD():string {return $this->message();}
-
-	/**
 	 * 2016-08-19 Сообщение для журнала.
 	 * @used-by \Justuno\Core\Qa\Message\Failure\Exception::main()
 	 * @return string
 	 */
-	function messageL() {return $this->messageD();}
+	function messageL() {return $this->message();}
 
 	/**
 	 * 2017-01-09
 	 * @used-by \Justuno\Core\Sentry\Client::captureException()
 	 * @return string
 	 */
-	function messageSentry() {return $this->messageD();}
+	function messageSentry() {return $this->message();}
 
 	/**
 	 * @return bool
