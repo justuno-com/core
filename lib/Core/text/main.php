@@ -5,10 +5,8 @@ use Justuno\Core\Helper\Text;
  * 2020-06-18 "Port the `df_bts` function": https://github.com/justuno-com/core/issues/83
  * @used-by \Justuno\Core\Qa\Dumper::dump()
  * @used-by \Justuno\M2\Catalog\Variants::variant()
- * @param boolean $v
- * @return string
  */
-function ju_bts($v) {return $v ? 'true' : 'false';}
+function ju_bts(bool $v):string {return $v ? 'true' : 'false';}
 
 /**
  * 2020-06-13 "Port the `df_contains` function": https://github.com/justuno-com/core/issues/16
