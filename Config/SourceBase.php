@@ -23,13 +23,13 @@ abstract class SourceBase extends _P implements ArrayInterface {
 	 *		public function toOptionArray() {
 	 *			return $this->getAllOptions();
 	 *		}
+	 * It is used by backend forms, e.g. @see \KingPalm\B2B\Source\Type
 	 * @used-by \Magento\Customer\Model\AttributeMetadataConverter::createMetadataAttribute():
 	 *		$options = [];
 	 *	 	if ($attribute->usesSource()) {
 	 *			foreach ($attribute->getSource()->getAllOptions() as $option) { 
 	 * https://github.com/magento/magento2/blob/2.3.1/app/code/Magento/Customer/Model/AttributeMetadataConverter.php#L66-L68
-	 * @param bool $withEmpty [optional]
 	 * @return array(array('label' => string, 'value' => int|string))
 	 */
-	final function getAllOptions($withEmpty = true) {return $this->toOptionArray();}
+	final function getAllOptions():array {return $this->toOptionArray();}
 }
