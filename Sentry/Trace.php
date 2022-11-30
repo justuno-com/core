@@ -154,7 +154,7 @@ final class Trace {
 
 	/**
 	 * 2020-06-28
-	 * @used-by info()
+	 * @used-by self::info()
 	 * @param array(string => mixed) $frame
 	 * @return array(string => mixed)
 	 */
