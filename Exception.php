@@ -75,7 +75,8 @@ final class Exception extends LE implements \ArrayAccess {
 
 	/**
 	 * @used-by ju_ets()
-	 * @used-by self::messageD()
+	 * @used-by self::messageL()
+	 * @used-by self::messageSentry()
 	 * @used-by self::standard()
 	 */
 	function message():string {return $this->getMessage();}
