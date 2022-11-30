@@ -51,7 +51,7 @@ abstract class Message extends \Justuno\Core\O {
 	protected function postface() {return '';}
 
 	/**
-	 * @used-by report()
+	 * @used-by self::report()
 	 * @return string
 	 */
 	protected function preface() {return '';}
@@ -65,7 +65,7 @@ abstract class Message extends \Justuno\Core\O {
 
 	/**
 	 * 2016-08-20
-	 * @used-by reportName()
+	 * @used-by self::reportName()
 	 * @see \Justuno\Core\Qa\Message\Failure\Exception::reportNamePrefix()
 	 * @return string|string[]
 	 */
