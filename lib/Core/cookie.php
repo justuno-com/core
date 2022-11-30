@@ -1,8 +1,4 @@
 <?php
-use Magento\Framework\Stdlib\Cookie\CookieMetadataFactory;
-use Magento\Framework\Stdlib\Cookie\PhpCookieManager;
-use Magento\Framework\Stdlib\CookieManagerInterface;
-use Magento\Framework\Stdlib\Cookie\PublicCookieMetadata;
 use Magento\Store\Model\StoreCookieManager;
 use Magento\Store\Api\StoreCookieManagerInterface;
 
