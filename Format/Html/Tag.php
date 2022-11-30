@@ -4,7 +4,7 @@ namespace Justuno\Core\Format\Html;
 final class Tag {
 	/**
 	 * 2022-11-21
-	 * @used-by df_tag()
+	 * @used-by ju_tag()
 	 * @param array(string => string) $attrs [optional]
 	 * @param string|null|string[] $content [optional]
 	 * @param bool|null $multiline [optional]

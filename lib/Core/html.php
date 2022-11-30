@@ -34,6 +34,7 @@ function ju_resource_inline(string $r, Closure $f):string {
  * @param string|null|string[] $content [optional]
  * @param bool|null $multiline [optional]
  */
-function ju_tag(string $tag, $attrs = [], $content = null, $multiline = null):string {return Tag::render(
-	$tag, is_array($attrs) ? $attrs : ['class' => $attrs], $content, $multiline
-);}
+function ju_tag(string $tag, $attrs = [], $content = null, $multiline = null):string {
+	$t = new Tag($tag, is_array($attrs) ? $attrs : ['class' => $attrs], $content, $multiline); /** @vat Tag $t */
+	return $t->render();
+}
