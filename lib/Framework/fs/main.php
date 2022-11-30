@@ -19,11 +19,8 @@ use Magento\Framework\Filesystem\File\WriteInterface as IFileWrite;
  * 2020-06-21 "Port the `ju_file_write` function": https://github.com/justuno-com/core/issues/99
  * @used-by ju_report()
  * @param string|string[] $p
- * @param string $contents
- * @param bool $append [optional]
  */
-function ju_file_write($p, $contents, $append = false) {
-	ju_param_s($contents, 1);
+function ju_file_write($p, string $contents, bool $append = false) {
 	/** @var string $type */ /** @var string $relative */
 	# 2020-03-02
 	# The square bracket syntax for array destructuring assignment (`[…] = […]`) requires PHP ≥ 7.1:
