@@ -13,7 +13,6 @@ use Magento\Framework\Phrase;
  * @used-by ju_assert_ne()
  * @used-by ju_assert_nef()
  * @used-by ju_assert_traversable()
- * @used-by ju_bool()
  * @used-by ju_call()
  * @used-by ju_caller_m()
  * @used-by ju_customer()
