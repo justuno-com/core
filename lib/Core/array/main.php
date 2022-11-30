@@ -56,7 +56,6 @@ function jua_flatten(array $a) {
  * I replaced it with:
  * 		$this->unsetData(['can_use_default_value', 'can_use_website_value', 'scope']);
  * 2021-03-06 "Port the `dfa_unset` function": https://github.com/justuno-com/core/issues/350
- * @used-by \Justuno\Core\Config\Backend::value()
  * @param array(string => mixed) $a
  * @param string ...$k
  * @return array(string => mixed)
