@@ -57,7 +57,7 @@ abstract class Settings {
 
 	/**
 	 * 2019-01-12
-	 * @used-by s()
+	 * @used-by self::s()
 	 * @param int|S|Store|null|string $s
 	 */
 	private function __construct($s = null) {$this->_scope = $s;}
