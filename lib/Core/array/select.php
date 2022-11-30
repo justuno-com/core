@@ -48,7 +48,6 @@ function jua(array $a, $k, $d = null) {return
 /**
  * 2020-01-29
  * 2020-06-18 "Port the `dfad` function": https://github.com/justuno-com/core/issues/73
- * @used-by ju_call()
  * @param _DO|AE $o
  * @param string|string[]|null $k [optional]
  * @param mixed|callable|null $d [optional]
