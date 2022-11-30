@@ -47,7 +47,7 @@ abstract class Upgrade {
 	 * 2017-08-01
 	 * Override this method if the initially installed module has not included this class.
 	 * In this case provide here the number of the version when the class has been added.
-	 * @used-by isInitial()
+	 * @used-by self::isInitial()
 	 * @return string
 	 */
 	protected function initial() {return '0.0.1';}
