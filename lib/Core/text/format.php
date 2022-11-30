@@ -3,7 +3,6 @@
  * 2020-06-17 "Port the `df_format` function": https://github.com/justuno-com/core/issues/40
  * @used-by ju_error_create()
  * @used-by \Justuno\Core\Exception::comment()
- * @used-by \Justuno\Core\Exception::commentPrepend()
  * @param mixed ...$args
  * @return string
  */

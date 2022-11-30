@@ -58,11 +58,6 @@ final class Exception extends LE implements \ArrayAccess {
 	function comment(...$args):void {$this->_comments[]= ju_format($args);}
 
 	/**
-	 * @param mixed ...$args
-	 */
-	function commentPrepend(...$args):void {array_unshift($this->_comments, ju_format($args));}
-
-	/**
 	 * @used-by \Justuno\Core\Qa\Message_Failure_Exception::preface()
 	 * @return string[]
 	 */
