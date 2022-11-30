@@ -2,12 +2,10 @@
 namespace Justuno\Core\Zf;
 # 2020-06-22 "Port the `Df\Zf\Validate` class": https://github.com/justuno-com/core/issues/112
 /**
- * @see \Justuno\Core\Zf\Validate\ArrayT
  * @see \Justuno\Core\Zf\Validate\StringT
  * @see \Justuno\Core\Zf\Validate\StringT\IntT
  * @see \Justuno\Core\Zf\Validate\StringT\Iso2
  * @see \Justuno\Core\Zf\Validate\StringT\Parser
- * @used-by \Justuno\Core\Zf\Validate\ArrayT::s()
  * @used-by \Justuno\Core\Zf\Validate\StringT::s()
  * @used-by \Justuno\Core\Zf\Validate\StringT\IntT::s()
  * @used-by \Justuno\Core\Zf\Validate\StringT\Iso2::s()
@@ -16,7 +14,6 @@ namespace Justuno\Core\Zf;
 abstract class Validate implements \Zend_Validate_Interface {
 	/**
 	 * @used-by self::message()
-	 * @see \Justuno\Core\Zf\Validate\ArrayT::expected()
 	 * @see \Justuno\Core\Zf\Validate\StringT::expected()
 	 * @see \Justuno\Core\Zf\Validate\StringT\FloatT::expected()
 	 * @see \Justuno\Core\Zf\Validate\StringT\IntT::expected()
@@ -42,7 +39,6 @@ abstract class Validate implements \Zend_Validate_Interface {
 	;}
 
 	/**
-	 * @used-by \Justuno\Core\Zf\Validate\ArrayT::isValid()
 	 * @used-by \Justuno\Core\Zf\Validate\StringT::isValid()
 	 * @used-by \Justuno\Core\Zf\Validate\StringT\FloatT::isValid()
 	 * @used-by \Justuno\Core\Zf\Validate\StringT\IntT::isValid()
