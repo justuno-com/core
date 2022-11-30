@@ -7,11 +7,11 @@ use Magento\Framework\App\Area as A;
  * @used-by ju_area_code_is()
  * @param bool $throw [optional]
  * @return string|null
- * @throws \Exception
+ * @throws Exception
  */
 function ju_area_code($throw = true) {
 	try {return ju_app_state()->getAreaCode();}
-	catch (\Exception $e) {
+	catch (Exception $e) {
 		if ($throw) {
 			throw $e;
 		}
