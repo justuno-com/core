@@ -23,7 +23,6 @@ function ju_domain($u, $www = false, $throw = true) {return
  * 2016-05-30
  * 2020-06-24 "Port the `df_zuri` function": https://github.com/justuno-com/core/issues/134
  * @used-by ju_domain()
- * @used-by ju_url_bp()
  * @param string $u
  * @param F|bool|mixed $throw [optional]
  * @return zUri|zUriH|mixed
