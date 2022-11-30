@@ -3,7 +3,6 @@ namespace Justuno\Core\Framework\Plugin\App\Request;
 use Justuno\Core\Framework\Action as DfA;
 use Magento\Framework\App\ActionInterface as IA;
 use Magento\Framework\App\Request\CsrfValidator as Sb;
-use Magento\Framework\App\Request\Http as R;
 use Magento\Framework\App\RequestInterface as IR;
 /**
  * 2021-02-23
