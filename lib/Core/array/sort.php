@@ -71,7 +71,7 @@ function ju_ksort_r_ci(array $a) {return
  * @used-by \Justuno\M2\Catalog\Images::p()
  * @used-by \Justuno\M2\Store::v()
  * @param array(int|string => mixed) $a
- * @param \Closure|string|null $f [optional]
+ * @param Closure|string|null $f [optional]
  * @return array(int|string => mixed)
  */
 function ju_sort(array $a, $f = null) {
@@ -80,7 +80,7 @@ function ju_sort(array $a, $f = null) {
 		$isList ? sort($a) : asort($a);
 	}
 	else {
-		if (!$f instanceof \Closure) {
+		if (!$f instanceof Closure) {
 			$f = function($a, $b) use($f) {return !is_object($a) ? $a - $b : $a->$f() - $b->$f();};
 		}
 		/** @noinspection PhpUsageOfSilenceOperatorInspection */
