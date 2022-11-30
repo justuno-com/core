@@ -10,7 +10,6 @@ namespace Justuno\Core;
 class O implements \ArrayAccess {
 	/**
 	 * 2017-07-13
-	 * @used-by \Justuno\Core\Qa\Message\Failure\Error::i()
 	 * @used-by \Justuno\Core\Qa\Message\Failure\Exception::i()
 	 * @param array(string => mixed) $a [optional]
 	 */
