@@ -388,7 +388,7 @@ final class Client {
 	}
 
 	/**
-	 * @used-by captureException()
+	 * @used-by self::captureException()
 	 * @param string $severity  PHP E_$x error constant
 	 * @return string           Sentry log level group
 	 */
