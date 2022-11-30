@@ -4,7 +4,6 @@ use Justuno\Core\RAM;
 /**
  * 2016-08-31
  * 2020-08-14 "Port the `dfc` function" https://github.com/justuno-com/core/issues/194
- * @used-by \Justuno\Core\Config\Backend::value()
  * @used-by \Justuno\Core\Config\Source::pathA()
  * @used-by \Justuno\Core\Format\Html\Tag::content()
  * @used-by \Justuno\Core\Format\Html\Tag::shouldAttributesBeMultiline()
