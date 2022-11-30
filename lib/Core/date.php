@@ -1,8 +1,4 @@
 <?php
-use DateTime as DT;
-use DateTimeZone as DTZ;
-use Magento\Framework\App\ScopeInterface as ScopeA;
-use Magento\Store\Model\Store;
 use Zend_Date as ZD;
 /**
  * 2016-07-19
