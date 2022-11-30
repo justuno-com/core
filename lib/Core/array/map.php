@@ -28,7 +28,7 @@ const JU_BEFORE = -1;
  * df_column() preserves the keys.
  * 2020-06-18 "Port the `df_each` function": https://github.com/justuno-com/core/issues/71
  * @used-by \Justuno\Core\Qa\Context::render()
- * @param \Traversable|array(int|string => _DO|array(string => mixed)) $c
+ * @param Traversable|array(int|string => _DO|array(string => mixed)) $c
  * @param string|callable $f
  * @param mixed ...$p
  * @return mixed[]|string[]
