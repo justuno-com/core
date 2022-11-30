@@ -39,25 +39,6 @@ function ju_kv(array $a, $pad = null) {return ju_cc_n(ju_map_k(ju_clean($a), fun
 ;}));}
 
 /**
- * 2019-06-13
- * 2021-03-07 "Port the `df_kv_table` function": https://github.com/justuno-com/core/issues/362
- * 2021-08-05 @deprecated It is unused.
- * @param array(string => string) $a
- * @return string
- */
-function ju_kv_table(array $a) {return ju_tag('table', [], ju_map_k(
-	ju_clean($a), function($k, $v) {return
-		ju_tag('tr', [], [
-			ju_tag('td', [], $k)
-			,ju_tag('td', [],
-				is_array($v) || (is_object($v) && !method_exists($v, '__toString'))
-					? "\n" . ju_json_encode($v) : $v
-			)
-		])
-	;}
-));}
-
-/**
  * 2020-06-17 "Port the `df_sprintf` function": https://github.com/justuno-com/core/issues/42
  * @used-by ju_format()
  * @param string|mixed[] $s
