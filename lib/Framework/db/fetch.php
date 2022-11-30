@@ -72,5 +72,5 @@ function ju_fetch_one($t, $cols, $compare) {
 	 * @uses \Zend_Db_Adapter_Abstract::fetchOne() возвращает false при пустом результате запроса.
 	 * https://mage2.pro/t/853
 	 */
-	return '*' !== $cols ? ju_ftn(ju_conn()->fetchOne($s)) : ju_eta(ju_conn()->fetchRow($s, [], \Zend_Db::FETCH_ASSOC));
+	return '*' !== $cols ? ju_ftn(ju_conn()->fetchOne($s)) : ju_eta(ju_conn()->fetchRow($s, [], Zend_Db::FETCH_ASSOC));
 }
