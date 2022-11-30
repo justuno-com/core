@@ -11,7 +11,6 @@ use Justuno\Core\Exception as DFE;
  * @param mixed|mixed[] $pPrepend [optional]
  * @param int $keyPosition [optional]
  * @return mixed|null
- * @throws DFE
  */
 function ju_find($a1, $a2, $pAppend = [], $pPrepend = [], $keyPosition = 0) {
 	# 2020-03-02
