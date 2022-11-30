@@ -35,8 +35,7 @@ function ju_resource_inline(string $r, Closure $f):string {
  * @param string|array(string => string|string[]|int|null) $attrs [optional]
  * @param string|null|string[] $content [optional]
  * @param bool|null $multiline [optional]
- * @return string
  */
-function ju_tag($tag, $attrs = [], $content = null, $multiline = null) {return Tag::render(
+function ju_tag($tag, $attrs = [], $content = null, $multiline = null):string {return Tag::render(
 	$tag, is_array($attrs) ? $attrs : ['class' => $attrs], $content, $multiline
 );}
