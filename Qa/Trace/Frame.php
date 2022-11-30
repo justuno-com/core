@@ -117,8 +117,8 @@ final class Frame extends \Justuno\Core\O {
 
 	/**
 	 * 2020-02-27
-	 * @used-by __toString()
-	 * @used-by i()
+	 * @used-by self::__toString()
+	 * @used-by self::i()
 	 * @used-by \Justuno\Core\Qa\Trace\Formatter::p()
 	 * @param string $v
 	 * @return bool|null
@@ -126,8 +126,8 @@ final class Frame extends \Justuno\Core\O {
 	function showContext($v = JU_N) {return ju_prop($this, $v);}
 
 	/**
-	 * @used-by method()
-	 * @used-by methodName()
+	 * @used-by self::method()
+	 * @used-by self::methodName()
 	 * @return string
 	 */
 	private function className() {return ju_nts($this['class']);}
