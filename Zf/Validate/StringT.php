@@ -6,7 +6,6 @@ class StringT extends Type implements \Zend_Filter_Interface {
 	/**
 	 * @override
 	 * @param mixed $v
-	 * @throws \Zend_Filter_Exception
 	 * @return string|mixed
 	 */
 	function filter($v) {return is_null($v) || is_int($v) ? strval($v) : $v;}
