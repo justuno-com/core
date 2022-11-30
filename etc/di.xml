@@ -20,15 +20,6 @@ despite of the `cataloginventory/options/show_out_of_stock` option's value": htt
 			type='Justuno\Core\CatalogInventory\Plugin\Model\ResourceModel\Stock\Status'
 		/>
 	</type>
-<!-- 2021-02-23
-1) https://github.com/mage2pro/core/blob/7.1.7/Framework/etc/di.xml#L85-L116
-2) "Implement a database diagnostic tool": https://github.com/justuno-com/core/issues/347 -->
-	<type name='Magento\Framework\App\Request\CsrfValidator'>
-		<plugin
-			name='Justuno\Core\Framework\Plugin\App\Request\CsrfValidator'
-			type='Justuno\Core\Framework\Plugin\App\Request\CsrfValidator'
-		/>
-	</type>
 <!-- 2015-10-09
 2020-08-22
 "Port the `Df\Framework\Plugin\Data\Form\Element\AbstractElement` plugin" https://github.com/justuno-com/core/issues/237 -->
