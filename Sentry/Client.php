@@ -169,8 +169,8 @@ final class Client {
 
 	/**
 	 * 2017-04-08
-	 * @used-by captureException()
-	 * @used-by captureMessage()
+	 * @used-by self::captureException()
+	 * @used-by self::captureMessage()
 	 * @param mixed $data
 	 * @param mixed[] $trace [optional]
 	 * @return mixed
