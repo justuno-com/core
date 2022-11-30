@@ -67,9 +67,9 @@ function ju_assert_sne($v, $sl = 0) {
  * 2016-08-09
  * 2020-08-21 "Port the `ju_assert_traversable` function" https://github.com/justuno-com/core/issues/222
  * @used-by juaf()
- * @param \Traversable|array $v
+ * @param Traversable|array $v
  * @param string|E|null $m [optional]
- * @return \Traversable|array
+ * @return Traversable|array
  * @throws DFE
  */
 function ju_assert_traversable($v, $m = null) {return is_iterable($v) ? $v : ju_error($m ?:
