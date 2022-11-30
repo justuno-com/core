@@ -12,11 +12,11 @@ const JU_N = 'df-null';
  * 2019-09-08 Now it supports static properties.
  * 2020-08-19 "Port the `df_prop` function" https://github.com/justuno-com/core/issues/204
  * @used-by \Justuno\Core\Qa\Trace\Frame::showContext()
- * @param object|null|\ArrayAccess $o
+ * @param object|null|ArrayAccess $o
  * @param mixed|string $v
  * @param string|mixed|null $d [optional]
  * @param string|null $type [optional]
- * @return mixed|object|\ArrayAccess|null
+ * @return mixed|object|ArrayAccess|null
  */
 function ju_prop($o, $v, $d = null, $type = null) {/** @var object|mixed|null $r */
 	/**
