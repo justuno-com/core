@@ -13,7 +13,7 @@ use Magento\Framework\DB\Select;
  *		}
  * https://github.com/zendframework/zf1/blob/release-1.12.16/library/Zend/Db/Select.php#L929-L931
  * 2) The function always returns @see Select
- * I added @see \Zend_Db_Select to the PHPDoc return type declaration just for my IDE convenience.
+ * I added @see Zend_Db_Select to the PHPDoc return type declaration just for my IDE convenience.
  * 2020-08-22 "Port the `ju_db_from` function" https://github.com/justuno-com/core/issues/267
  * @used-by ju_fetch()
  * @used-by ju_fetch_col()
@@ -22,7 +22,7 @@ use Magento\Framework\DB\Select;
  * @param string|Entity|array(string => string) $t
  * @param string|string[] $cols [optional]
  * @param string|null $schema [optional]
- * @return Select|\Zend_Db_Select
+ * @return Select|Zend_Db_Select
  */
 function ju_db_from($t, $cols = '*', $schema = null) {return ju_select()->from(
 	$t instanceof Entity ? $t->getEntityTable() : (is_array($t) ? $t : ju_table($t)), $cols, $schema
