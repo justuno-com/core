@@ -4,7 +4,7 @@ namespace Justuno\Core\Qa;
 final class Dumper {
 	/**
 	 * @used-by ju_dump()
-	 * @used-by dumpArrayElements()
+	 * @used-by self::dumpArrayElements()
 	 * @param mixed $v
 	 * @return string
 	 */
