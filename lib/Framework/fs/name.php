@@ -36,25 +36,23 @@ function ju_file_name($directory, $template, $ds = '-') { /** @var string $r */
 			$r = $fileFullPath;
 			break;
 		}
+		elseif ($counter > 999) {
+			ju_error("The counter has exceeded the $counter limit.");
+		}
 		else {
-			if ($counter > 999) {
-				ju_error("The counter has exceeded the $counter limit.");
-			}
-			else {
-				$counter++;
-				if (!$hasOrderingPosition && (2 === $counter)) {
-					/** @var string[] $fileNameTemplateExploded */
-					$fileNameTemplateExploded = explode('.', $template);
-					/** @var int $secondFromLastPartIndex*/
-					$secondFromLastPartIndex =  max(0, count($fileNameTemplateExploded) - 2);
-					/** @var string $secondFromLastPart */
-					$secondFromLastPart = jua($fileNameTemplateExploded, $secondFromLastPartIndex);
-					ju_assert_sne($secondFromLastPart);
-					$fileNameTemplateExploded[$secondFromLastPartIndex] =
-						implode('--', [$secondFromLastPart, '{ordering}'])
-					;
-					$template = ju_assert_ne($template, implode('.', $fileNameTemplateExploded));
-				}
+			$counter++;
+			if (!$hasOrderingPosition && (2 === $counter)) {
+				/** @var string[] $fileNameTemplateExploded */
+				$fileNameTemplateExploded = explode('.', $template);
+				/** @var int $secondFromLastPartIndex*/
+				$secondFromLastPartIndex =  max(0, count($fileNameTemplateExploded) - 2);
+				/** @var string $secondFromLastPart */
+				$secondFromLastPart = jua($fileNameTemplateExploded, $secondFromLastPartIndex);
+				ju_assert_sne($secondFromLastPart);
+				$fileNameTemplateExploded[$secondFromLastPartIndex] =
+					implode('--', [$secondFromLastPart, '{ordering}'])
+				;
+				$template = ju_assert_ne($template, implode('.', $fileNameTemplateExploded));
 			}
 		}
 	}
