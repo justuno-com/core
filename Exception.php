@@ -66,7 +66,7 @@ class Exception extends LE implements \ArrayAccess {
 	 * @used-by \Justuno\Core\Qa\Message_Failure_Exception::preface()
 	 * @return string[]
 	 */
-	function comments() {return $this->_comments;}
+	function comments():array {return $this->_comments;}
 
 	/**
 	 * @used-by \Justuno\Core\Qa\Message_Failure_Exception::stackLevel()
