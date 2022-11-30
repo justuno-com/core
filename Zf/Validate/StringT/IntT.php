@@ -1,16 +1,15 @@
 <?php
 namespace Justuno\Core\Zf\Validate\StringT;
 # 2020-08-23 "Port the `Df\Zf\Validate\StringT\IntT` class" https://github.com/justuno-com/core/issues/288
-class IntT extends \Justuno\Core\Zf\Validate\Type {
+final class IntT extends \Justuno\Core\Zf\Validate {
 	/**
 	 * @override
 	 * @see \Zend_Validate_Interface::isValid()
-	 * @used-by ju_int()
+	 * @used-by df_int()
 	 * @param string $v
-	 * @return bool
 	 */
-	function isValid($v) {
-		$this->prepareValidation($v);
+	function isValid($v):bool {
+		$this->v($v);
 		/**
 		 * 1) Думаю, правильно будет конвертировать строки типа «09» в целые числа без сбоев.
 		 * 2) 9 === (int)'09'.
@@ -31,19 +30,11 @@ class IntT extends \Justuno\Core\Zf\Validate\Type {
 
 	/**
 	 * @override
-	 * @return string
+	 * @see \Justuno\Core\Zf\Validate::expected()
+	 * @used-by \Justuno\Core\Zf\Validate::message()
 	 */
-	protected function getExpectedTypeInAccusativeCase() {return 'целое число';}
+	protected function expected():string {return 'an integer';}
 
-	/**
-	 * @override
-	 * @return string
-	 */
-	protected function getExpectedTypeInGenitiveCase() {return 'целого числа';}
-
-	/**
-	 * @used-by ju_int()
-	 * @return self
-	 */
-	static function s() {static $r; return $r ? $r : $r = new self;}
+	/** @used-by df_int() */
+	static function s():self {static $r; return $r ? $r : $r = new self;}
 }
