@@ -110,19 +110,19 @@ abstract class Upgrade {
 
 	/**
 	 * 2016-12-02
-	 * @used-by process()
-	 * @used-by v()
+	 * @used-by self::process()
+	 * @used-by self::v()
 	 * @var IModuleContext|ModuleContext
 	 */
 	private $_context;
 
 	/**
 	 * 2016-12-02
-	 * @used-by c()
-	 * @used-by process()
-	 * @used-by sEav()
-	 * @used-by setup()
-	 * @used-by t()
+	 * @used-by self::c()
+	 * @used-by self::process()
+	 * @used-by self::sEav()
+	 * @used-by self::setup()
+	 * @used-by self::t()
 	 * @var FSetup|SSetup
 	 */
 	private $_setup;
