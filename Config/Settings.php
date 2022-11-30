@@ -50,7 +50,7 @@ abstract class Settings {
 
 	/**
 	 * 2017-03-27
-	 * @used-by scope()
+	 * @used-by self::scope()
 	 * @return int|S|Store|null|string
 	 */
 	protected function scopeDefault() {return $this->_scope;}
