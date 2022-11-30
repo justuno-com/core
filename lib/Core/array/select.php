@@ -39,9 +39,18 @@ use Traversable as T;
  * @return mixed|null|array(string => mixed)
  */
 function jua(array $a, $k, $d = null) {return
-	is_null($k) ? $a : (is_array($k) ? jua_select_ordered($a, $k) : (isset($a[$k]) ? $a[$k] : (
-		ju_contains($k, '/') ? jua_deep($a, $k, $d) : ju_call_if($d, $k)
-	)))
+	ju_nes($k) ? $a : (is_array($k)
+		/**
+		 * 2022-11-26
+		 * Added `!$k`.
+		 * @see df_arg() relies on it if its argument is an empty array:
+		 *		df_arg([]) => []
+		 *		dfa($a, df_arg([])) => $a
+		 * https://3v4l.org/C09vn
+		 */
+		? (!$k ? $a : jua_select_ordered($a, $k))
+		: (isset($a[$k]) ? $a[$k] : (ju_contains($k, '/') ? jua_deep($a, $k, $d) : ju_call_if($d, $k)))
+	)
 ;}
 
 /**
