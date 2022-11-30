@@ -52,7 +52,7 @@ final class Dumper {
 	}
 
 	/**
-	 * @used-by dumpObject()
+	 * @used-by self::dumpObject()
 	 * @var array(string => bool)
 	 */
 	private $_dumped = [];
