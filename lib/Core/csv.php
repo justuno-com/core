@@ -2,7 +2,6 @@
 /**
  * 2015-02-07
  * 2021-03-07 "Port the `df_csv_parse` function": https://github.com/justuno-com/core/issues/361
- * @used-by ju_mail()
  * @param string|null $s
  * @param string $d [optional]
  * @return string[]
