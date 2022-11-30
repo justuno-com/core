@@ -3,7 +3,6 @@ use Justuno\Core\RAM;
 use Magento\Framework\App\Cache\Frontend\Pool;
 /**
  * 2017-06-30
- * @used-by ju_cache_clean()
  * @return Pool
  */
 function ju_cache_pool() {return ju_o(Pool::class);}
