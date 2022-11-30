@@ -52,7 +52,7 @@ final class Exception extends LE implements \ArrayAccess {
 	}
 
 	/**
-	 * @used-by __construct()
+	 * @used-by self::__construct()
 	 * @param mixed ...$args
 	 */
 	function comment(...$args):void {$this->_comments[]= ju_format($args);}
