@@ -15,7 +15,6 @@ function ju_lcfirst(...$args) {return ju_call_a(function($s) {return
 /**
  * 2020-06-18 "Port the `df_ucfirst` function": https://github.com/justuno-com/core/issues/78
  * @see ju_lcfirst()
- * @used-by ju_assert_gd()
  * @param string ...$args
  * @return string|string[]
  */
