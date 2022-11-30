@@ -14,7 +14,7 @@ use Justuno\Core\Exception as DFE;
  * @throws DFE
  */
 function ju_param_s($v, $ord, $sl = 0) {$sl++;
-	return Q::assertValueIsString($v, $sl) ? $v : Q::raiseErrorParam(__FUNCTION__, $ms = [Q::S], $ord, $sl);
+	return Q::assertValueIsString($v, $sl) ? $v : Q::raiseErrorParam(__FUNCTION__, [Q::S], $ord, $sl);
 }
 
 /**
