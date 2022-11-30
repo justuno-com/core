@@ -1,90 +1,55 @@
 <?php
 namespace Justuno\Core\Zf;
 # 2020-06-22 "Port the `Df\Zf\Validate` class": https://github.com/justuno-com/core/issues/112
+/**
+ * @see \Justuno\Core\Zf\Validate\ArrayT
+ * @see \Justuno\Core\Zf\Validate\StringT
+ * @see \Justuno\Core\Zf\Validate\StringT\IntT
+ * @see \Justuno\Core\Zf\Validate\StringT\Iso2
+ * @see \Justuno\Core\Zf\Validate\StringT\Parser
+ * @used-by \Justuno\Core\Zf\Validate\ArrayT::s()
+ * @used-by \Justuno\Core\Zf\Validate\StringT::s()
+ * @used-by \Justuno\Core\Zf\Validate\StringT\IntT::s()
+ * @used-by \Justuno\Core\Zf\Validate\StringT\Iso2::s()
+ * @used-by \Justuno\Core\Zf\Validate\StringT\FloatT::s()
+ */
 abstract class Validate implements \Zend_Validate_Interface {
-	/** @return string */
-	abstract protected function getMessageInternal();
-
-	/** @param array(string => mixed) $params */
-	function __construct(array $params = []) {$this->_params = $params;}
+	/**
+	 * @used-by self::message()
+	 * @see \Justuno\Core\Zf\Validate\ArrayT::expected()
+	 * @see \Justuno\Core\Zf\Validate\StringT::expected()
+	 * @see \Justuno\Core\Zf\Validate\StringT\FloatT::expected()
+	 * @see \Justuno\Core\Zf\Validate\StringT\IntT::expected()
+	 * @see \Justuno\Core\Zf\Validate\StringT\Iso2::expected()
+	 */
+	abstract protected function expected():string;
 
 	/**
-	 * @deprecated Since 1.5.0
 	 * @override
+	 * @see \Zend_Validate_Interface::getMessages()
 	 * @return array(string => string)
 	 */
-	function getErrors() {return array_keys($this->getMessages());}
+	final function getMessages():array {return [__CLASS__ => $this->message()];}
 
 	/**
-	 * @override
-	 * @return string
+	 * @used-by df_float()
+	 * @used-by df_int()
+	 * @used-by \Justuno\Core\Zf\Validate::getMessages()
 	 */
-	function getMessage() {
-		if (!isset($this->_message)) {
-			$this->_message = $this->getMessageInternal();
-			if ($this->getExplanation()) {
-				$this->_message .= ("\n" . $this->getExplanation());
-			}
-		}
-		return $this->_message;
-	}
+	final function message():string {$v = $this->v(); return is_null($v)
+		? "Got `NULL` instead of {$this->expected()}."
+		: sprintf("Unable to recognize the value «%s» of type «%s» as {$this->expected()}.", ju_string_debug($v), gettype($v))
+	;}
 
 	/**
-	 * @override
-	 * @return array(string => string)
+	 * @used-by \Justuno\Core\Zf\Validate\ArrayT::isValid()
+	 * @used-by \Justuno\Core\Zf\Validate\StringT::isValid()
+	 * @used-by \Justuno\Core\Zf\Validate\StringT\FloatT::isValid()
+	 * @used-by \Justuno\Core\Zf\Validate\StringT\IntT::isValid()
+	 * @used-by \Justuno\Core\Zf\Validate\StringT\Iso2::isValid()
+	 * @used-by \Justuno\Core\Zf\Validate\StringT\Parser::isValid()
+	 * @param mixed $v [optional]
+	 * @return self|mixed
 	 */
-	function getMessages() {return [__CLASS__ => $this->getMessage()];}
-
-	/**
-	 * @param string $paramName
-	 * @param mixed $d [optional]
-	 * @return mixed
-	 */
-	final protected function cfg($paramName, $d = null) {return jua($this->_params, $paramName, $d);}
-
-	/** @return string|null */
-	protected function getExplanation() {return $this->cfg(self::$PARAM__EXPLANATION);}
-
-	/** @return mixed */
-	protected function getValue() {return $this->cfg(self::$PARAM__VALUE);}
-
-	/**
-	 * @param mixed $v
-	 */
-	protected function prepareValidation($v) {$this->setValue($v);}
-
-	/** @used-by self::setValue() */
-	protected function reset() {
-		unset($this->_message);
-		unset($this->_params[self::$PARAM__VALUE]);
-		unset($this->_params[self::$PARAM__EXPLANATION]);
-	}
-
-	/**
-	 * @param string $value
-	 */
-	protected function setExplanation($value) {$this->_params[self::$PARAM__EXPLANATION] = $value;}
-
-	/**
-	 * @param string $message
-	 */
-	protected function setMessage($message) {$this->_message = $message;}
-
-	/**
-	 * @param mixed $value
-	 */
-	private function setValue($value) {
-		$this->reset();
-		$this->_params[self::$PARAM__VALUE] = $value;
-	}
-
-	/** @var string */
-	private $_message;
-	/** @var array(string => mixed) */
-	private $_params = [];
-
-	/** @var string */
-	private static $PARAM__EXPLANATION = 'explanation';
-	/** @var string */
-	private static $PARAM__VALUE = 'value';
+	final protected function v($v = JU_N) {return ju_prop($this, $v);}
 }
