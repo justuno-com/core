@@ -32,7 +32,7 @@ final class Dumper {
 	private function dumpArray(array $a) {return "[\n" . ju_tab_multiline($this->dumpArrayElements($a)) . "\n]";}
 
 	/**
-	 * @used-by dump()
+	 * @used-by self::dump()
 	 * @param object $o
 	 * @return string
 	 */
