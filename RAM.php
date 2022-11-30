@@ -54,7 +54,6 @@ final class RAM {
 
 	/**
 	 * 2017-08-10
-	 * @used-by clean()
 	 * @used-by exists()
 	 * @used-by get()
 	 * @used-by set()
@@ -64,7 +63,6 @@ final class RAM {
 
 	/**
 	 * 2017-08-10
-	 * @used-by clean()
 	 * @used-by set()
 	 * @var array(string => string[])  «Tag ID => Cache Keys»
 	 */
