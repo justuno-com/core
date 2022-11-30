@@ -433,14 +433,14 @@ final class Client {
 
 	/**
 	 * 2016-12-23
-	 * @used-by get_curl_options()
+	 * @used-by self::get_curl_options()
 	 * @return string
 	 */
 	private function getUserAgent() {return 'mage2.pro/' . ju_core_version();}
 
 	/**
 	 * 2016-12-23
-	 * @used-by captureException()
+	 * @used-by self::captureException()
 	 * @param array(string => string|int|array) $frame
 	 * @return bool
 	 */
