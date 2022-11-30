@@ -135,7 +135,7 @@ final class Trace {
 
 	/**
 	 * 2020-06-28
-	 * @used-by get_frame_context()
+	 * @used-by self::get_frame_context()
 	 * @param array(string => mixed) $frame
 	 * @return array(string => mixed)
 	 */
