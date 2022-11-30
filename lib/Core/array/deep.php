@@ -75,7 +75,6 @@ function jua_deep_set(array &$array, $path, $value) {
 /**
  * 2017-07-13
  * 2020-08-21 "Port the `dfa_deep_unset` function" https://github.com/justuno-com/core/issues/225
- * @see jua_unset()
  * @used-by jua_deep_unset()
  * @used-by \Justuno\Core\O::offsetUnset()
  * @param array(string => mixed) $a
