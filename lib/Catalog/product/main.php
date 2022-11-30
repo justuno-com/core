@@ -48,9 +48,9 @@ function ju_product($p, $s = false) {return $p instanceof P ? $p : ju_product_r(
  * 2018-09-27
  * 2020-08-24 "Port the `df_product_current` function" https://github.com/justuno-com/core/issues/306
  * @used-by ju_product_current_id()
- * @param \Closure|bool|mixed $onError
+ * @param Closure|bool|mixed $onError
  * @return P|null
- * @throws NotFound|\Exception
+ * @throws NotFound|Exception
  */
 function ju_product_current($onError = null) {return ju_try(function() {return
 	ju_is_backend() ? ju_catalog_locator()->getProduct() : (ju_registry('current_product') ?: ju_error())
