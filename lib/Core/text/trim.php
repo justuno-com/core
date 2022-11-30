@@ -23,7 +23,7 @@ function ju_chop($s, $max = null) {return !$max || (mb_strlen($s = ju_trim($s)) 
  * @used-by \Justuno\Core\Qa\Trace\Frame::context()
  * @param string|string[] $s
  * @param string|null $charlist [optional]
- * @param bool|mixed|\Closure $throw [optional]
+ * @param bool|mixed|Closure $throw [optional]
  * @return string|string[]
  */
 function ju_trim($s, $charlist = null, $throw = false) {return ju_try(function() use($s, $charlist, $throw) {
