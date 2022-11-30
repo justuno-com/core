@@ -12,7 +12,7 @@ use Magento\Framework\Data\Form\Element\AbstractElement as AE;
  * @param array(string => string) $params [optional]
  * @param string|null $path [optional]
  */
-function ju_fe_init(AE $e, $class = null, $css = [], $params = [], $path = null) {
+function ju_fe_init(AE $e, $class = null, $css = [], $params = [], $path = null):void {
 	$class = ju_cts($class ?: $e);
 	$moduleName = ju_module_name($class); /** @var string $moduleName */
 	if (is_null($path)) {
