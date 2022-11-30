@@ -30,7 +30,6 @@ abstract class Failure extends \Justuno\Core\Qa\Message {
 	/**
 	 * @used-by self::postface()
 	 * @see \Justuno\Core\Qa\Message\Failure\Exception::stackLevel()
-	 * @see \Justuno\Core\Qa\Message\Failure\Error::stackLevel()
 	 * @return int
 	 */
 	protected function stackLevel() {return 0;}
