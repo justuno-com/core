@@ -229,8 +229,8 @@ final class Client {
 
 	/**
 	 * 2020-06-27
-	 * @used-by __construct()
-	 * @used-by capture()
+	 * @used-by self::__construct()
+	 * @used-by self::capture()
 	 * @param array $data
 	 */
 	private function send(&$data) {
