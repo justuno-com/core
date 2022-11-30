@@ -76,9 +76,8 @@ class Exception extends LE implements \ArrayAccess {
 	/**
 	 * 2016-07-31
 	 * @used-by \Justuno\Core\Qa\Message\Failure\Exception::main()
-	 * @return bool
 	 */
-	function isMessageHtml() {return $this->_messageIsHtml;}
+	function isMessageHtml():bool {return $this->_messageIsHtml;}
 
 	/**
 	 * 2016-07-31
