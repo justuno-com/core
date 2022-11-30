@@ -22,7 +22,7 @@ use Magento\Store\Model\StoreResolver;
  * @used-by \Justuno\M2\Store::v()
  * @param int|string|null|bool|IStore|O $v [optional]
  * @return IStore|Store
- * @throws NSE|\Exception
+ * @throws NSE|Exception
  */
 function ju_store($v = null) {/** @var string|null $c */return
 	!is_null($v) ? (ju_is_o($v) ? $v->getStore() : (is_object($v) ? $v : ju_store_m()->getStore($v))) :
