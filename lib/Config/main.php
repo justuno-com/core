@@ -36,7 +36,6 @@ use Magento\Store\Model\Store;
  * 2020-08-23 "Port the `ju_cfg` function" https://github.com/justuno-com/core/issues/292
  *
  * @used-by ju_currency_base()
- * @used-by ju_mail()
  * @used-by \Justuno\Core\Config\Settings::v()
  * @used-by \Justuno\M2\Filter::byDate()
  * @used-by \Justuno\M2\Response::p()
