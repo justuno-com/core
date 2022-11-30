@@ -11,13 +11,3 @@
 function ju_lcfirst(...$args) {return ju_call_a(function($s) {return
 	mb_strtolower(mb_substr($s, 0, 1)) . mb_substr($s, 1)
 ;}, $args);}
-
-/**
- * 2020-06-18 "Port the `df_ucfirst` function": https://github.com/justuno-com/core/issues/78
- * @see ju_lcfirst()
- * @param string ...$args
- * @return string|string[]
- */
-function ju_ucfirst(...$args) {return ju_call_a(function($s) {return
-	mb_strtoupper(mb_substr($s, 0, 1)) . mb_substr($s, 1)
-;}, $args);}
