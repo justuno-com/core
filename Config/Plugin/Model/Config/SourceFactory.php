@@ -12,10 +12,7 @@ final class SourceFactory {
 	 * for each `<source_model>` occurence.
 	 * 2016-01-01 We got there during the `<source_model>` tag handling by the Magento core.
 	 * @see \Magento\Config\Model\Config\SourceFactory::create()
-	 * @param Sb $sb
-	 * @param \Closure $f
-	 * @param string $c
 	 * @return \Magento\Framework\Option\ArrayInterface|mixed
 	 */
-	function aroundCreate(Sb $sb, \Closure $f, $c) {return ju_class_my($c) ? new $c : $f($c);}
+	function aroundCreate(Sb $sb, \Closure $f, string $c) {return ju_class_my($c) ? new $c : $f($c);}
 }
