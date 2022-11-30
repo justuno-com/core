@@ -44,24 +44,6 @@ function ju_url_bp($u) {
 }
 
 /**
- * 2017-02-13 It removes the following endinds: «/», «index/», «index/index/».
- * 2021-03-07 "Port the `df_url_trim_index` function": https://github.com/justuno-com/core/issues/364
- * @param string $u
- * @return string
- */
-function ju_url_trim_index($u) {
-	# 2020-03-02
-	# The square bracket syntax for array destructuring assignment (`[…] = […]`) requires PHP ≥ 7.1:
-	# https://github.com/mage2pro/core/issues/96#issuecomment-593392100
-	# We should support PHP 7.0.
-	list($base, $path) = ju_url_bp($u); /** @var string $base */ /** @var string $path */
-	$a = ju_explode_path($path); /** @var string[] $a */
-	$i = count($a) - 1; /** @var int $i */
-	while ($a && in_array($a[$i--], ['', 'index'], true)) {array_pop($a);}
-	return ju_cc_path($base, ju_cc_path($a));
-}
-
-/**
  * 2016-05-30
  * 2020-06-24 "Port the `df_zuri` function": https://github.com/justuno-com/core/issues/134
  * @used-by ju_domain()
