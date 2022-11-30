@@ -15,25 +15,6 @@ abstract class Message extends \Justuno\Core\O {
 	abstract protected function main();
 
 	/**
-	 * @used-by \Justuno\Core\Qa\Message\Failure\Error::check()
-	 * @throws \Exception
-	 */
-	final function log() {
-		static $inProcess;
-		if (!$inProcess) {
-			$inProcess = true;
-			try {
-				ju_report($this->reportName(), $this->report());
-				$inProcess = false;
-			}
-			catch (\Exception $e) {
-				ju_log(ju_ets($e));
-				throw $e;
-			}
-		}
-	}
-
-	/**
 	 * @used-by self::log()
 	 * @used-by self::mail()
 	 * @used-by ju_log_l()
