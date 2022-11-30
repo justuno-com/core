@@ -218,9 +218,8 @@ final class Client {
 	 * 2020-06-27
 	 * @used-by send()
 	 * @param array(string => mixed) $data
-	 * @return string
 	 */
-	private function encode($data) {
+	private function encode(array $data):string {
 		$r = ju_json_encode($data);
 		if (function_exists('gzcompress')) {
 			$r = gzcompress($r);
