@@ -60,7 +60,7 @@ function ju_assert_sne($v, $sl = 0) {
 	$sl++;
 	Q::assertValueIsString($v, $sl);
 	# The previous code `if (!$v)` was wrong because it rejected the '0' string.
-	return '' !== strval($v) ? $v : Q::raiseErrorVariable(__FUNCTION__, $ms = [Q::NES], $sl);
+	return '' !== strval($v) ? $v : Q::raiseErrorVariable(__FUNCTION__, [Q::NES], $sl);
 }
 
 /**
