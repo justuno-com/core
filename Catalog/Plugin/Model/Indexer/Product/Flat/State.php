@@ -13,8 +13,8 @@ final class State {
 
 	/**
 	 * 2020-11-24
-	 * @used-by aroundIsFlatEnabled()
 	 * @used-by ju_pc_disable_flat()
+	 * @used-by self::aroundIsFlatEnabled()
 	 * @var bool
 	 */
 	static $DISABLE;
