@@ -74,8 +74,8 @@ final class Frame extends \Justuno\Core\O {
 	 * https://www.php.net/manual/reflectionfunction.construct.php
 	 * https://www.php.net/manual/class.reflectionexception.php
 	 * @see functionA()
-	 * @used-by functionA()
-	 * @used-by methodParameter()
+	 * @used-by self::functionA()
+	 * @used-by self::methodParameter()
 	 * @used-by \Justuno\Core\Qa\Method::raiseErrorParam()
 	 * @return RM|null
 	 */
@@ -87,8 +87,8 @@ final class Frame extends \Justuno\Core\O {
 
 	/**
 	 * 2015-04-03 Для простых функций (не методов) вернёт название функции.
-	 * @used-by __toString()
-	 * @used-by methodParameter()
+	 * @used-by self::__toString()
+	 * @used-by self::methodParameter()
 	 * @used-by \Justuno\Core\Qa\Method::raiseErrorParam()
 	 * @used-by \Justuno\Core\Qa\Method::raiseErrorResult()
 	 * @used-by \Justuno\Core\Qa\Method::raiseErrorVariable()
