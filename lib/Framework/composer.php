@@ -44,15 +44,6 @@ function ju_package($m = null, $k = null, $d = null) {
 }
 
 /**
- * 2017-04-16
- * 2020-08-21 "Port the `df_package_name_l` function" https://github.com/justuno-com/core/issues/215
- * @used-by ju_report_prefix()
- * @param string|object|null $m [optional]
- * @return string|null
- */
-function ju_package_name_l($m = null) {return ju_last(explode('/', ju_package($m, 'name')));}
-
-/**
  * 2016-06-26
  * The method can be used not only for custom packages, but for standard Magento packages too.
  * «How to programmatically get an extension's version from its composer.json file?» https://mage2.pro/t/1798
