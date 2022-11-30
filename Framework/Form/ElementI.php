@@ -11,7 +11,7 @@ interface ElementI {
 	 * @used-by \Justuno\Framework\Plugin\Data\Form\Element\AbstractElement::afterSetForm()
 	 * @see \Justuno\M2\Block\GenerateToken::onFormInitialized()
 	 */
-	function onFormInitialized();
+	function onFormInitialized():void;
 
 	# 2015-11-24
 	const AFTER = 'after';
