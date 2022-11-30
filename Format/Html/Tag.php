@@ -13,7 +13,7 @@ final class Tag extends \Justuno\Core\O {
 	private function attributes() {return $this->a(self::$P__ATTRIBUTES, []);}
 	
 	/**
-	 * @used-by _render()
+	 * @used-by self::_render()
 	 * @return string
 	 */
 	private function content() {return juc($this, function() {
