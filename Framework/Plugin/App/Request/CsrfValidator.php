@@ -27,9 +27,6 @@ final class CsrfValidator {
 	 *			}
 	 *		}
 	 * https://github.com/magento/magento2/blob/2.3.4/lib/internal/Magento/Framework/App/Request/CsrfValidator.php#L111-L135
-	 * @param IR|R $r
-	 * @param IA $a
-	 * @return bool
 	 */
-	function aroundValidate(Sb $sb, \Closure $f, IR $r, IA $a) {return $a instanceof DfA || $f($r, $a);}
+	function aroundValidate(Sb $sb, \Closure $f, IR $r, IA $a):bool {return $a instanceof DfA || $f($r, $a);}
 }
