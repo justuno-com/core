@@ -88,9 +88,8 @@ class Exception extends LE implements \ArrayAccess {
 	 * низкоуровневые сообщения покупателям показывать всегда неправильно,
 	 * а потомки этого класса могут переопределить у себя этот метод
 	 * (так, в частности, поступают потмки в платёжных модулях).
-	 * @return string|null
 	 */
-	function messageC() {return null;}
+	function messageC():string {return '';}
 
 	/**
 	 * @used-by messageL()
