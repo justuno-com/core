@@ -13,7 +13,6 @@ function ju_ef(E $e) {while ($e->getPrevious()) {$e = $e->getPrevious();} return
 
 /**
  * 2020-06-15 "Port the `df_ets` function": https://github.com/justuno-com/core/issues/24
- * @used-by ju_message_error()
  * @used-by ju_sprintf_strict()
  * @used-by \Justuno\Core\Exception::__construct()
  * @used-by \Justuno\Core\Qa\Message::log()
