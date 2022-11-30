@@ -3,7 +3,6 @@ use Justuno\Core\Qa\Dumper;
 
 /**
  * 2020-06-18 "Port the `df_dump` function": https://github.com/justuno-com/core/issues/81
- * @used-by ju_bool()
  * @used-by ju_extend()
  * @used-by ju_sentry()
  * @used-by ju_type()
