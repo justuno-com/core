@@ -73,6 +73,12 @@ function ju_cts($c, $del = '\\') {/** @var string $r */
 }
 
 /**
+ * 2016-04-11 Dfe_CheckoutCom => dfe_checkout_com
+ * @used-by ju_report_prefix()
+ */
+function ju_cts_lc_camel(string $c, string $del):string {return implode($del, ju_explode_class_lc_camel($c));}
+
+/**
  * 2020-06-26 "Port the `df_explode_class` function": https://github.com/justuno-com/core/issues/139
  * @used-by ju_class_f()
  * @used-by ju_class_l()
@@ -110,6 +116,7 @@ function ju_explode_class_lc($c) {return ju_lcfirst(ju_explode_class($c));}
  * 1) Making $c optional leads to the error «get_class() called without object from outside a class»: https://3v4l.org/k6Hd5
  * 2) Dfe_CheckoutCom => [dfe, checkout, com]
  * 2020-08-21 "Port the `df_explode_class_lc_camel` function" https://github.com/justuno-com/core/issues/217
+ * @used-by ju_cts_lc_camel()
  * @used-by ju_module_name_lc()
  * @param string|object $c
  * @return string[]

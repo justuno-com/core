@@ -93,4 +93,6 @@ function ju_report($f, $m, $append = false) {
  * @param string|object|null $m [optional]
  * @return string|null
  */
-function ju_report_prefix($m = null) {return !$m ? null : (ju_package_name_l($m) ?: ju_report_prefix($m, '-'));}
+function ju_report_prefix($m = null, $pref = null) {return ju_ccc('--',
+	mb_strtolower($pref), !$m ? null : ju_cts_lc_camel($m, '-')
+);}
