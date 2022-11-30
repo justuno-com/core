@@ -42,7 +42,7 @@ use Magento\Framework\Phrase;
  * @used-by \Justuno\Core\Zf\Validate\IntT::filter()
  * @used-by \Justuno\M2\Catalog\Diagnostic::p()
  * @used-by \Justuno\M2\Store::v()
- * @param string ...$args
+ * @param ...$args
  * @throws DFE
  */
 function ju_error(...$args) {
