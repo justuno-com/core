@@ -48,15 +48,14 @@ class StringTrim extends \Zend_Filter_StringTrim {
 
 	/**
 	 * @used-by self::_slowUnicodeTrim()
-	 * @param $v
 	 * @return array|bool
 	 */
-	private function _splitUtf8($v) {
+	private function _splitUtf8(string $s) {
 		try {
-			$r = str_split(iconv('UTF-8', 'UTF-32BE', $v), 4);
+			$r = str_split(iconv('UTF-8', 'UTF-32BE', $s), 4);
 		}
 		catch (\Exception $e) {
-			ju_error("The value is not encoded in UTF-8: «{$v}».");
+			ju_error("The value is not encoded in UTF-8: «{$s}».");
 		}
 		array_walk($r, function(&$c) {$c = iconv('UTF-32BE', 'UTF-8', $c);});
 		return $r;
