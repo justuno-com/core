@@ -216,7 +216,7 @@ final class Client {
 
 	/**
 	 * 2020-06-27
-	 * @used-by send()
+	 * @used-by self::send()
 	 * @param array(string => mixed) $data
 	 */
 	private function encode(array $data):string {
