@@ -69,6 +69,7 @@ function ju_prop($o, $v, $d = null, $type = null) {/** @var object|mixed|null $r
 			if (!$hasWeakMap) {
 				/** @noinspection PhpVariableVariableInspection */
 				if (!isset($o->$a)) {
+					/** @noinspection PhpVariableVariableInspection */
 					$o->$a = [];
 				}
 				if ($isGet) {
