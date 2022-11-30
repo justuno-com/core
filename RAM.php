@@ -4,19 +4,6 @@ namespace Justuno\Core;
 final class RAM {
 	/**
 	 * 2020-06-13
-	 * @param string $tag
-	 */
-	function clean($tag) {
-		if (isset($this->_tags[$tag])) {
-			foreach ($this->_tags[$tag] as $k) { /** @var string $k */
-				unset($this->_data[$k]);
-			}
-			unset($this->_tags[$tag]);
-		}
-	}
-
-	/**
-	 * 2020-06-13
 	 * The following code will return `1`:
 	 * 		$a = ['a' => null];
 	 * 		echo intval(array_key_exists('a', $a));
