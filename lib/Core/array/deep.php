@@ -16,7 +16,7 @@ function jua_deep(array $a, $path, $d = null) {/** @var mixed|null $r */
 	if (ju_nes($path)) {
 		$r = $a;
 	}
-	else if (is_array($path)) {
+	elseif (is_array($path)) {
 		$pathParts = $path;
 	}
 	else {
