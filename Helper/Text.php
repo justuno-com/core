@@ -42,8 +42,8 @@ class Text {
 	function singleLine($s) {return str_replace(["\r\n", "\r", "\n", "\t"], ' ', $s);}
 
 	/**
-	 * @used-by quote()
 	 * @used-by df_quote_double()
+	 * @used-by self::quote()
 	 */
 	const QUOTE__DOUBLE = 'double';
 
