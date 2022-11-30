@@ -72,7 +72,7 @@ abstract class Message extends \Justuno\Core\O {
 	protected function reportNamePrefix() {return [];}
 
 	/**
-	 * @used-by report()
+	 * @used-by self::report()
 	 * @used-by \Justuno\Core\Qa\Message\Failure\Exception::postface()
 	 * @param string|string[] $items
 	 * @return string
