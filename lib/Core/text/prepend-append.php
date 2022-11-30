@@ -42,7 +42,6 @@ function ju_pad($phrase, $length, $pattern = ' ', $position = STR_PAD_RIGHT) {/*
 				break;
 			default:
 				ju_error();
-				break;
 		}
 		$r = '';
 		for ($i = 0; $i < $left_pad; ++$i) {
