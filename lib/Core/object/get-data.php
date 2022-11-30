@@ -30,7 +30,6 @@ function ju_gd($v, $onE = true) {return ju_try(function() use($v) {return ju_ass
  * 2020-02-04
  * 2020-06-18 "Port the `df_has_gd` function": https://github.com/justuno-com/core/issues/77
  * @used-by ju_assert_gd()
- * @used-by ju_call()
  * @used-by \Justuno\Core\Qa\Dumper::dumpObject()
  * @param mixed $v
  * @return bool
