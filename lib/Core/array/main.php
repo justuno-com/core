@@ -36,7 +36,6 @@ function ju_ita($t) {return is_array($t) ? $t : iterator_to_array($t);}
  * @used-by ju_csv_pretty()
  * @used-by ju_explode_class_camel()
  * @used-by ju_explode_xpath()
- * @used-by ju_mail()
  * @param array $a
  * @return mixed[]
  */
