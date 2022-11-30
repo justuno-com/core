@@ -4,7 +4,6 @@ use Justuno\Core\Qa\Trace;
 use Justuno\Core\Qa\Trace\Formatter;
 /**
  * 2020-06-17 "Port the `Df\Qa\Message\Failure` class": https://github.com/justuno-com/core/issues/53
- * @see \Justuno\Core\Qa\Message\Failure\Error
  * @see \Justuno\Core\Qa\Message\Failure\Exception
  */
 abstract class Failure extends \Justuno\Core\Qa\Message {
