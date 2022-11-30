@@ -169,7 +169,7 @@ final class Trace {
 			if (!$f || ju_contains($f, '__lambda_func') || 'Closure' === $c || ju_ends_with($f, '{closure}')) {
 				$r = self::get_default_context($frame);
 			}
-			else if (in_array($f, ['include', 'include_once', 'require', 'require_once'])) {
+			elseif (in_array($f, ['include', 'include_once', 'require', 'require_once'])) {
 				$r = empty($args) ? [] : ['param1' => $args[0]];
 			}
 			else {
