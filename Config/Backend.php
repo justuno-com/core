@@ -106,11 +106,6 @@ class Backend extends \Magento\Framework\App\Config\Value {
 	protected function dfSaveBefore():void {}
 
 	/**
-	 * 2016-07-31
-	 */
-	final protected function isSaving():bool {return isset($this->_data['field_config']);}
-
-	/**
 	 * 2015-12-07
 	 * 2016-01-01
 	 * Magento 2 (unlike Magento 1) allows configurations paths with more than 3 segments (nesting levels), e.g.:
