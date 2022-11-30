@@ -2,7 +2,6 @@
 /**
  * 2016-01-14
  * 2020-08-21 "Port the `df_lcfirst` function" https://github.com/justuno-com/core/issues/219
- * @see ju_ucfirst()
  * @used-by ju_explode_class_lc()
  * @used-by ju_explode_class_lc_camel()
  * @param string ...$args
