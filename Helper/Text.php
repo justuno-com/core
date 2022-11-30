@@ -48,14 +48,14 @@ class Text {
 	const QUOTE__DOUBLE = 'double';
 
 	/**
-	 * @used-by quote()
 	 * @used-by df_quote_russian()
+	 * @used-by self::quote()
 	 */
 	const QUOTE__RUSSIAN = 'russian';
 
 	/**
-	 * @used-by quote()
 	 * @used-by df_quote_single()
+	 * @used-by self::quote()
 	 */
 	const QUOTE__SINGLE = 'single';
 
