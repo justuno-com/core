@@ -83,9 +83,8 @@ class Exception extends LE implements \ArrayAccess {
 	/**
 	 * @used-by messageL()
 	 * @used-by messageSentry()
-	 * @return string
 	 */
-	function messageD() {return $this->message();}
+	function messageD():string {return $this->message();}
 
 	/**
 	 * 2016-08-19 Сообщение для журнала.
