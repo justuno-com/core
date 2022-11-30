@@ -18,16 +18,6 @@ abstract class Settings {
 	abstract protected function prefix();
 
 	/**
-	 * 2015-11-09
-	 * 2021-08-05 @deprecated It is unused.
-	 * @param string|null $k [optional]
-	 * @param null|string|int|S|Store $s [optional]
-	 * @param bool $d [optional]
-	 * @return int
-	 */
-	final function b($k = null, $s = null, $d = false) {return ju_bool($this->v($k ?: ju_caller_f(), $s, $d));}
-
-	/**
 	 * 2016-03-08
 	 * 2017-10-25
 	 * @uses df_is_backend() is a dirty hack here:
