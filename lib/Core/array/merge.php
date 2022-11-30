@@ -28,23 +28,21 @@ function ju_extend(array $defaults, array $newValues) {/** @var array(string => 
 		elseif (is_array($newValue)) {
 			$r[$key] = ju_extend($defaultValue, $newValue);
 		}
+		elseif (is_null($newValue)) {
+			unset($r[$key]);
+		}
 		else {
-			if (is_null($newValue)) {
-				unset($r[$key]);
-			}
-			else {
-				ju_error(
-					"ju_extend: the default value of key «{$key}» is an array {defaultValue},"
-					. "\nbut the programmer mistakenly tries to substitute it"
-					. ' with the value {newValue} of type «{newType}».'
-					. "\nThe new value should be an array or `null`."
-					,[
-						'{defaultValue}' => ju_t()->singleLine(ju_dump($defaultValue))
-						,'{newType}' => gettype($newValue)
-						,'{newValue}' => ju_dump($newValue)
-					]
-				);
-			}
+			ju_error(
+				"ju_extend: the default value of key «{$key}» is an array {defaultValue},"
+				. "\nbut the programmer mistakenly tries to substitute it"
+				. ' with the value {newValue} of type «{newType}».'
+				. "\nThe new value should be an array or `null`."
+				,[
+					'{defaultValue}' => ju_t()->singleLine(ju_dump($defaultValue))
+					,'{newType}' => gettype($newValue)
+					,'{newValue}' => ju_dump($newValue)
+				]
+			);
 		}
 	}
 	return $r;
