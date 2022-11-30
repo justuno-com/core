@@ -57,7 +57,6 @@ function ju_cc_s(...$args) {return ju_ccc(' ', jua_flatten($args));}
  * @used-by ju_cc_s()
  * @used-by ju_fe_init()
  * @used-by ju_log_l()
- * @used-by ju_url_bp()
  * @used-by \Justuno\Core\Qa\Message::reportName()
  * @used-by \Justuno\M2\Setup\UpgradeSchema::tr()
  * @param string $glue
