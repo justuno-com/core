@@ -151,6 +151,6 @@ function ju_module_path($m, $localPath = '') {return ju_cc_path(ju_module_dir($m
  * @param string|object|null $m
  * @param string $localPath [optional]
  * @return string
- * @throws \InvalidArgumentException
+ * @throws InvalidArgumentException
  */
 function ju_module_path_etc($m, $localPath = '') {return ju_cc_path(ju_module_dir($m, Dir::MODULE_ETC_DIR), $localPath);}
