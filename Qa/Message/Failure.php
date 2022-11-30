@@ -30,7 +30,7 @@ abstract class Failure extends \Justuno\Core\Qa\Message {
 	);}
 
 	/**
-	 * @used-by postface()
+	 * @used-by self::postface()
 	 * @see \Justuno\Core\Qa\Message\Failure\Exception::stackLevel()
 	 * @see \Justuno\Core\Qa\Message\Failure\Error::stackLevel()
 	 * @return int
@@ -39,7 +39,7 @@ abstract class Failure extends \Justuno\Core\Qa\Message {
 
 	/**
 	 * @used-by ju_log_l()
-	 * @used-by postface()
+	 * @used-by self::postface()
 	 */
 	const P__SHOW_CODE_CONTEXT = 'show_code_context';
 }
