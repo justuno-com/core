@@ -282,7 +282,7 @@ final class Client {
 
 	/**
 	 * 2020-06-27
-	 * @used-by send_http()
+	 * @used-by self::send_http()
 	 * @return array(string => mixed)
 	 */
 	private function get_curl_options() {
