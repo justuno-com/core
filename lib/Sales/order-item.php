@@ -69,11 +69,10 @@ function ju_oqi_discount_b($i) {return ju_oqi_amount($i);}
  * @used-by \Justuno\M2\Controller\Response\Orders::execute()
  *
  * @param O|Q $oq
- * @param \Closure|null $f [optional]
- * @param string|null $locale [optional] Используется для упорядочивания элементов.
+ * @param Closure|null $f [optional]
  * @return array(int => mixed)|OI[]|QI[]
  */
-function ju_oqi_leafs($oq, \Closure $f = null, $locale = null) {
+function ju_oqi_leafs($oq, Closure $f = null, string $locale = '') {
 	$r = ju_sort_names(array_values(array_filter(
 		$oq->getItems(), function($i) {/** @var OI|QI $i */ return ju_oqi_is_leaf($i);}
 	)), $locale, function($i) {/** @var OI|QI $i */ return $i->getName();}); /** @var OI[]|QI[] $r */
