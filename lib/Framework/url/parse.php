@@ -20,29 +20,6 @@ function ju_domain($u, $www = false, $throw = true) {return
 ;}
 
 /**
- * 2017-02-13 «https://mage2.pro/sandbox/dfe-paymill» => [«https://mage2.pro»,  «sandbox/dfe-paymill»]
- * 2021-03-07 "Port the `df_url_bp` function": https://github.com/justuno-com/core/issues/367
- * @param string $u
- * @return string[]
- */
-function ju_url_bp($u) {
-	/** @var string $base */ /** @var string $path */
-	if (!ju_check_url($u)) {
-		# 2020-03-02
-		# The square bracket syntax for array destructuring assignment (`[…] = […]`) requires PHP ≥ 7.1:
-		# https://github.com/mage2pro/core/issues/96#issuecomment-593392100
-		# We should support PHP 7.0.
-		list($base, $path) = ['', $u];
-	}
-	else {
-		$z = ju_zuri($u); /** @var zUriH $z */
-		$base = ju_ccc(':', "{$z->getScheme()}://{$z->getHost()}", jutr($z->getPort(), ['80' => '']));
-		$path = ju_trim_ds($z->getPath());
-	}
-	return [$base, $path];
-}
-
-/**
  * 2016-05-30
  * 2020-06-24 "Port the `df_zuri` function": https://github.com/justuno-com/core/issues/134
  * @used-by ju_domain()
