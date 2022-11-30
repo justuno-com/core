@@ -92,9 +92,8 @@ abstract class Result implements ResultInterface {
 	 * @param string $name
 	 * @param string $value
 	 * @param boolean $replace
-	 * @return $this
 	 */
-	function setHeader($name, $value, $replace = false) {
+	function setHeader($name, $value, $replace = false):self {
 		$this->_headers[] = ['name' => $name, 'replace' => $replace, 'value' => $value]; return $this;
 	}
 
