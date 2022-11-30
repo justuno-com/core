@@ -34,7 +34,7 @@ final class Formatter {
 
 	/**     
 	 * 2020-02-27          
-	 * @used-by p()
+	 * @used-by self::p()
 	 * @param Frame $f 
 	 * @return string
 	 */
