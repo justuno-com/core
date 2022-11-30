@@ -17,7 +17,6 @@ function ju_first(array $a) {return !$a ? null : reset($a);}
  * @see ju_first()
  * @see ju_tail()
  * @used-by ju_class_l()
- * @used-by ju_package_name_l()
  * @param mixed[] $array
  * @return mixed|null
  */
