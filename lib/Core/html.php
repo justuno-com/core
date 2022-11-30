@@ -4,12 +4,11 @@ use Justuno\Core\Format\Html\Tag;
  * 2015-10-27
  * 2020-08-22 "Port the `ju_link_inline` function" https://github.com/justuno-com/core/issues/247
  * @used-by df_fe_init()
- * @param string ...$args
- * @return string
+ * @param string|string[] $a
  */
-function ju_link_inline(...$args) {return ju_call_a(function($res) {return ju_resource_inline(
+function ju_link_inline(...$a):string {return ju_call_a(function($res) {return ju_resource_inline(
 	$res, function($url) {return ju_tag('link', ['href' => $url, 'rel' => 'stylesheet', 'type' => 'text/css'], null, false);}
-);}, $args);}
+);}, $a);}
 
 /**
  * 2015-12-11
