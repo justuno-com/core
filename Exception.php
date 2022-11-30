@@ -149,7 +149,8 @@ final class Exception extends LE implements \ArrayAccess {
 	protected function module() {return $this;}
 
 	/**
-	 * @used-by comments()
+	 * @used-by self::comment()
+	 * @used-by self::comments()
 	 * @var string[]
 	 */
 	private $_comments = [];
