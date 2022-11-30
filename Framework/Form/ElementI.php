@@ -12,10 +12,6 @@ interface ElementI {
 	 * @see \Justuno\M2\Block\GenerateToken::onFormInitialized()
 	 */
 	function onFormInitialized():void;
-
-	# 2015-11-24
-	const AFTER = 'after';
-	const BEFORE = 'before';
 }
 
 
