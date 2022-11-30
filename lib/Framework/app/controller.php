@@ -31,7 +31,6 @@ function ju_response($r = null) {return $r ?: ju_o(IResponse::class);}
 
 /**
  * 2015-11-29
- * @used-by ju_403()
  * @param int $v
  */
 function ju_response_code($v) {ju_response()->setHttpResponseCode($v);}
