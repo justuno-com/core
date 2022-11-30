@@ -30,14 +30,14 @@ use Magento\Setup\Module\Setup as SSetup;
 abstract class Upgrade {
 	/**
 	 * 2016-12-08
-	 * @used-by process()
+	 * @used-by self::process()
 	 * @see \Justuno\M2\Setup\UpgradeSchema::_process()
 	 */
 	abstract protected function _process();
 
 	/**
 	 * 2016-12-08
-	 * @used-by column()
+	 * @used-by self::column()
 	 * @return Adapter|IAdapter
 	 */
 	final protected function c() {return $this->_setup->getConnection();}
