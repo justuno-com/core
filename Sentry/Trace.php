@@ -82,7 +82,7 @@ final class Trace {
 	 *		"prefix": [<5 previous lines of the source code>],
 	 *		"suffix": [<5 next lines of the source code>]
 	 *	}
-	 * @used-by info()
+	 * @used-by self::info()
 	 * @param $file
 	 * @param $line
 	 * @return array(string => mixed)
