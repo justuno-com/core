@@ -250,7 +250,7 @@ final class Client {
 
 	/**
 	 * 2020-06-27
-	 * @used-by send()
+	 * @used-by self::send()
 	 * @param string $url
 	 * @param array $data
 	 * @param array $headers
