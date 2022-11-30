@@ -31,7 +31,6 @@ function ju_resource_inline(string $r, Closure $f):string {
  * @used-by ju_js_x()
  * @used-by ju_kv_table()
  * @used-by ju_link_inline()
- * @param string $tag
  * @param string|array(string => string|string[]|int|null) $attrs [optional]
  * @param string|null|string[] $content [optional]
  * @param bool|null $multiline [optional]
