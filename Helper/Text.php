@@ -4,7 +4,6 @@ namespace Justuno\Core\Helper;
 class Text {
 	/**
 	 * @used-by ju_quote_russian()
-	 * @used-by ju_quote_single()
 	 * @param string|string[]|array(string => string) $s
 	 * @param string $t [optional]
 	 * @return string|string[]
