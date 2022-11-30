@@ -20,27 +20,11 @@ const JU_AFTER = 1;
 const JU_BEFORE = -1;
 
 /**
- * 2015-02-07
- * 2017-07-09
- * Now the function accepts an array as $object.
- * Even in this case it differs from @see array_column():
- * array_column() misses the keys: https://3v4l.org/llMrL
- * df_column() preserves the keys.
- * 2020-06-18 "Port the `df_each` function": https://github.com/justuno-com/core/issues/71
- * @param Traversable|array(int|string => _DO|array(string => mixed)) $c
- * @param string|callable $f
- * @param mixed ...$p
- * @return mixed[]|string[]
- */
-function ju_each($c, $f, ...$p) {return ju_map(function($v) use($f, $p) {return ju_call($v, $f, $p);}, $c);}
-
-/**
  * 2015-02-11
  * 2020-06-18 "Port the `df_map` function": https://github.com/justuno-com/core/issues/60
  * @used-by ju_cache_clean()
  * @used-by ju_call_a()
  * @used-by ju_clean_r()
- * @used-by ju_each()
  * @used-by ju_int()
  * @used-by ju_mail()
  * @used-by ju_map_k()

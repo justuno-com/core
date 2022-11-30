@@ -5,7 +5,6 @@ use Closure as F;
  * 2015-12-30
  * 2017-07-09 Now the function can accept an array as $object.
  * 2020-06-18 "Port the `df_call` function": https://github.com/justuno-com/core/issues/72
- * @used-by ju_each()
  * @param object|mixed|array $o
  * @param string|callable|F $m
  * @param mixed[] $p [optional]
