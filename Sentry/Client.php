@@ -220,7 +220,7 @@ final class Client {
 	 * @param array(string => mixed) $data
 	 * @return string
 	 */
-	private function encode(&$data) {
+	private function encode($data) {
 		$r = ju_json_encode($data);
 		if (function_exists('gzcompress')) {
 			$r = gzcompress($r);
