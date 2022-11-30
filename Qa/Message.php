@@ -18,7 +18,7 @@ abstract class Message extends \Justuno\Core\O {
 	 * @used-by \Justuno\Core\Qa\Message\Failure\Error::check()
 	 * @throws \Exception
 	 */
-	public final function log() {
+	final function log() {
 		static $inProcess;
 		if (!$inProcess) {
 			$inProcess = true;
