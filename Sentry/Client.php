@@ -494,15 +494,15 @@ final class Client {
 	/**
 	 * 2020-06-28
 	 * @used-by self::__construct()
-	 * @used-by send()
+	 * @used-by self::send()
 	 * @var string
 	 */
 	private $_keyPublic;
 	/**
 	 * 2020-06-28
-	 * @used-by __construct()
-	 * @used-by capture()
-	 * @used-by send()
+	 * @used-by self::__construct()
+	 * @used-by self::capture()
+	 * @used-by self::send()
 	 * @var int
 	 */
 	private $_projectId;
