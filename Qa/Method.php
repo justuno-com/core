@@ -9,7 +9,6 @@ use Zend_Validate_Interface as Vd;
 final class Method {
 	/**
 	 * @used-by ju_assert_sne()
-	 * @used-by ju_param_s()
 	 * @used-by ju_param_sne()
 	 * @param string $v
 	 * @param int $sl [optional]
