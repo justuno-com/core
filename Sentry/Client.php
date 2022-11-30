@@ -478,9 +478,9 @@ final class Client {
 	public $severity_map;
 	/**
 	 * 2020-06-27
-	 * @used-by capture()
-	 * @used-by captureException()
-	 * @used-by setAppPath()
+	 * @used-by self::capture()
+	 * @used-by self::captureException()
+	 * @used-by self::setAppPath()
 	 * @var string|null
 	 */
 	private $app_path;
