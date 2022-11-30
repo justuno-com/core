@@ -30,8 +30,8 @@ class Context {
 	}
 
 	/**
-	 * @used-by render()
-	 * @used-by uasort()
+	 * @used-by self::render()
+	 * @used-by self::uasort()
 	 * @param array(string => string|int) $a
 	 * @param array(string => string|int) $b
 	 * @return int
