@@ -70,9 +70,8 @@ class Exception extends LE implements \ArrayAccess {
 
 	/**
 	 * @used-by \Justuno\Core\Qa\Message_Failure_Exception::stackLevel()
-	 * @return int
 	 */
-	function getStackLevelsCountToSkip() {return $this->_stackLevelsCountToSkip;}
+	function getStackLevelsCountToSkip():int {return $this->_stackLevelsCountToSkip;}
 
 	/**
 	 * 2016-07-31
