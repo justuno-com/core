@@ -4,7 +4,6 @@
  * 2020-06-18 "Port the `df_clean` function": https://github.com/justuno-com/core/issues/58
  * @used-by ju_ccc()
  * @used-by ju_kv()
- * @used-by ju_page_result()
  * @used-by \Justuno\Core\Format\Html\Tag::openTagWithAttributesAsText()
  * @used-by \Justuno\Core\Sentry\Client::capture()
  * @used-by \Justuno\Core\Sentry\Client::send()
