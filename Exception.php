@@ -86,7 +86,7 @@ final class Exception extends LE implements \ArrayAccess {
 	 * @see \ArrayAccess::offsetExists()
 	 * @param string $offset
 	 */
-	function offsetExists($offset): bool {return isset($this->_data[$offset]);}
+	function offsetExists($offset):bool {return isset($this->_data[$offset]);}
 
 	/**
 	 * 2015-10-10
