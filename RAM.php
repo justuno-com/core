@@ -54,9 +54,9 @@ final class RAM {
 
 	/**
 	 * 2017-08-10
-	 * @used-by exists()
-	 * @used-by get()
-	 * @used-by set()
+	 * @used-by self::exists()
+	 * @used-by self::get()
+	 * @used-by self::set()
 	 * @var array(string => mixed)	«Cache Key => Cached Data»
 	 */
 	private $_data = [];
