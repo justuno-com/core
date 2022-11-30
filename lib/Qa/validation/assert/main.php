@@ -77,33 +77,6 @@ function ju_assert_traversable($v, $m = null) {return is_iterable($v) ? $v : ju_
 );}
 
 /**
- * 2021-03-06 "Port the `df_bool` function": https://github.com/justuno-com/core/issues/356
- * @param mixed $v
- * @return bool
- */
-function ju_bool($v) {
-	/**
-	 * Unfortunately, we can not replace @uses in_array() with @see array_flip() + @see isset() to speedup the execution,
-	 * because it could lead to the warning: «Warning: array_flip(): Can only flip STRING and INTEGER values!».
-	 * Moreover, @see array_flip() + @see isset() fails the following test:
-	 *	$a = array(null => 3, 0 => 4, false => 5);
-	 *	$this->assertNotEquals($a[0], $a[false]);
-	 * Though, @see array_flip() + @see isset() does not fail the tests:
-	 * $this->assertNotEquals($a[null], $a[0]);
-	 * $this->assertNotEquals($a[null], $a[false]);
-	 */
-	static $no = [0, '0', 'false', false, null, 'no', 'off', '']; /** @var mixed[] $no */
-	static $yes = [1, '1', 'true', true, 'yes', 'on']; /** @var mixed[] $yes */
-	/**
-	 * Passing $strict = true to the @uses in_array() call is required here,
-	 * otherwise any true-compatible value (e.g., a non-empty string) will pass the check.
-	 */
-	return in_array($v, $no, true) ? false : (in_array($v, $yes, true) ? true :
-		ju_error('A boolean value is expected, but got «%s».', ju_dump($v))
-	);
-}
-
-/**
  * 2020-08-23 "Port the `ju_int` function" https://github.com/justuno-com/core/issues/287
  * @used-by ju_nat()
  * @used-by ju_product_id()
