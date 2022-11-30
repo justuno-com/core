@@ -1,13 +1,4 @@
 <?php
-use Magento\Framework\Phrase as P;
-/**
- * 2016-07-14
- * 2021-03-06 "Port the `df_phrase` function": https://github.com/justuno-com/core/issues/353
- * @param P|string $s
- * @return P
- */
-function ju_phrase($s) {return $s instanceof P ? $s : __($s);}
-
 /**
  * 2015-09-29
  * 2020-08-22 "Port the `ju_translate_a` function" https://github.com/justuno-com/core/issues/262
