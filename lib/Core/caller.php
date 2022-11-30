@@ -53,7 +53,6 @@ function ju_caller_entry($o = 0) {
  * @used-by ju_log_l()
  * @used-by ju_oqi_amount()
  * @used-by ju_prop()
- * @used-by \Justuno\Core\Config\Settings::b()
  * @used-by \Justuno\Core\Config\Settings::v()
  * @param int $o [optional]
  * @return string
