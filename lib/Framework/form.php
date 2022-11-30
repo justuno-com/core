@@ -1,11 +1,9 @@
 <?php
-use Df\Framework\Form\Element as E;
 use Magento\Framework\Data\Form\Element\AbstractElement as AE;
 /**
  * 2015-11-28
  * 2020-08-22 "Port the `df_fe_init` function" https://github.com/justuno-com/core/issues/242
  * @used-by \Justuno\M2\Block\GenerateToken::onFormInitialized()
- * @param AE|E $e
  * @param string|object|null $class [optional]
  * $class could be:
  * 1) A class name: «A\B\C».
