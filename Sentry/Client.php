@@ -487,13 +487,13 @@ final class Client {
 	private $error_types;
 	/**
 	 * 2020-06-28
-	 * @used-by __construct()
+	 * @used-by self::__construct()
 	 * @var string
 	 */
 	private $_keyPrivate;
 	/**
 	 * 2020-06-28
-	 * @used-by __construct()
+	 * @used-by self::__construct()
 	 * @used-by send()
 	 * @var string
 	 */
