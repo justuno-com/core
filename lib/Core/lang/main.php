@@ -1,7 +1,6 @@
 <?php
 use Closure as F;
 use Exception as E;
-use Magento\Framework\App\Filesystem\DirectoryList;
 
 /**
  * 2020-06-17 "Port the `df_args` function": https://github.com/justuno-com/core/issues/41
