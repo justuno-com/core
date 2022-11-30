@@ -450,7 +450,7 @@ final class Client {
 
 	/**
 	 * 2020-06-27
-	 * @used-by capture()
+	 * @used-by self::capture()
 	 * @param $data
 	 */
 	private function sanitize(&$data) {
