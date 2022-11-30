@@ -19,7 +19,7 @@ function ju_array($v) {return is_array($v) ? $v : [$v];}
  * @used-by ju_map()
  * @used-by jua_select_ordered()
  * @used-by juak_transform()
- * @param \Traversable|array $t
+ * @param Traversable|array $t
  * @return array
  */
 function ju_ita($t) {return is_array($t) ? $t : iterator_to_array($t);}
