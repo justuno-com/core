@@ -2,38 +2,42 @@
 namespace Justuno\Core\Zf\Validate;
 use Magento\Framework\Phrase;
 # 2020-06-22 "Port the `Df\Zf\Validate\StringT` class": https://github.com/justuno-com/core/issues/110
-class StringT extends Type implements \Zend_Filter_Interface {
+final class StringT extends \Justuno\Core\Zf\Validate implements \Zend_Filter_Interface {
 	/**
 	 * @override
+	 * @see \Zend_Filter_Interface::filter()
 	 * @param mixed $v
-	 * @return string|mixed
 	 */
-	function filter($v) {return is_null($v) || is_int($v) ? strval($v) : $v;}
+	function filter($v):string {return is_null($v) || is_int($v) ? strval($v) : $v;}
 
 	/**
 	 * @override
 	 * @see \Zend_Validate_Interface::isValid()
-	 * @used-by ju_check_s()
 	 * @param mixed $v
-	 * @return bool
 	 */
-	function isValid($v) {
-		$this->prepareValidation($v);
+	function isValid($v):bool {
+		$this->v($v);
+		# 2015-02-16
+		# Раньше здесь стояло просто `is_string($value)`
+		# Однако интерпретатор PHP способен неявно и вполне однозначно
+		# (без двусмысленностей, как, скажем, с вещественными числами)
+		# конвертировать целые числа и null в строки,
+		# поэтому пусть целые числа и null всегда проходят валидацию как строки.
+		# 2016-07-01 Добавил `|| $value instanceof Phrase`
+		# 2017-01-13 Добавил `|| is_bool($value)`
 		return is_string($v) || is_int($v) || is_null($v) || is_bool($v) || $v instanceof Phrase;
 	}
 
 	/**
 	 * @override
-	 * @return string
+	 * @see \Justuno\Core\Zf\Validate::expected()
+	 * @used-by \Justuno\Core\Zf\Validate::message()
 	 */
-	protected function getExpectedTypeInAccusativeCase() {return 'строку';}
+	protected function expected():string {return 'a string';}
 
 	/**
-	 * @override
-	 * @return string
+	 * @used-by df_check_s()
+	 * @used-by \Justuno\Core\Zf\Validate\StringT::isValid()
 	 */
-	protected function getExpectedTypeInGenitiveCase() {return 'строки';}
-
-	/** @return self */
-	static function s() {static $r; return $r ? $r : $r = new self;}
+	static function s():self {static $r; return $r ? $r : $r = new self;}
 }
