@@ -83,14 +83,14 @@ function juc($o, Closure $m, array $a = [], $unique = true, $offset = 0) {
  * @used-by \Justuno\Core\Config\Settings::s()
  * @used-by \Justuno\Core\Qa\Trace\Formatter::p()
  * @used-by \Justuno\M2\Store::v()
- * @param \Closure $f
+ * @param Closure $f
  * @param mixed[] $a [optional]
  * @param string[] $tags [optional]
  * @param bool $unique [optional]
  * @param int $offset [optional]
  * @return mixed
  */
-function jucf(\Closure $f, array $a = [], array $tags = [], $unique = true, $offset = 0) {
+function jucf(Closure $f, array $a = [], array $tags = [], $unique = true, $offset = 0) {
 	$b = debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS, 2 + $offset)[1 + $offset]; /** @var array(string => string) $b */
 	/** @var string $k */
 	$k = (!isset($b['class']) ? null : $b['class'] . '::') . $b['function']
