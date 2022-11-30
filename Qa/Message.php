@@ -7,7 +7,6 @@ namespace Justuno\Core\Qa;
 abstract class Message extends \Justuno\Core\O {
 	/**
 	 * @used-by self::report()
-	 * @see \Justuno\Core\Qa\Message\Failure\Error::main()
 	 * @see \Justuno\Core\Qa\Message\Failure\Exception::main()
 	 * @see \Justuno\Core\Qa\Message\Notification::main()
 	 * @return string
