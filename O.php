@@ -68,7 +68,7 @@ class O implements \ArrayAccess {
 	 * @see \ArrayAccess::offsetUnset()
 	 * @param string $k
 	 */
-	function offsetUnset($k): void {jua_deep_unset($this->_a, $k);}
+	function offsetUnset($k):void {jua_deep_unset($this->_a, $k);}
 
 	/**
 	 * 2017-07-13
