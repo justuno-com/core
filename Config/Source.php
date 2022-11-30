@@ -17,7 +17,7 @@ namespace Justuno\Core\Config;
 abstract class Source extends SourceBase {
 	/**
 	 * 2015-11-14
-	 * @used-by toOptionArray()
+	 * @used-by self::toOptionArray()
 	 * @return array(<value> => <label>)
 	 */
 	abstract protected function map();
@@ -26,7 +26,7 @@ abstract class Source extends SourceBase {
 	 * 2015-11-27
 	 * @override
 	 * @see \Magento\Framework\Option\ArrayInterface::toOptionArray()                             
-	 * @used-by getAllOptions()
+	 * @used-by self::getAllOptions()
 	 * @used-by \Magento\Config\Model\Config\Structure\Element\Field::_getOptionsFromSourceModel()
 	 * @return array(array('label' => string, 'value' => int|string))
 	 */
