@@ -32,7 +32,7 @@ function ju_db_resource() {return ju_o(RC::class);}
  * 2015-09-29
  * 2016-12-01
  * The function always returns @see Select
- * I added @see \Zend_Db_Select to the PHPDoc return type declaration just for my IDE convenience.
+ * I added @see Zend_Db_Select to the PHPDoc return type declaration just for my IDE convenience.
  * 2020-08-23 "Port the `df_select` function" https://github.com/justuno-com/core/issues/269
  * @used-by ju_db_from()
  * @return Select|Zend_Db_Select
