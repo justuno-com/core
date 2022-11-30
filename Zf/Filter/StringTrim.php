@@ -29,7 +29,7 @@ class StringTrim extends \Zend_Filter_StringTrim {
 	}
 
 	/**
-	 * @used-by _unicodeTrim()
+	 * @used-by self::_unicodeTrim()
 	 * @param $value
 	 * @param $chars
 	 * @return string
