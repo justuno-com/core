@@ -6,7 +6,6 @@ if (!defined('DS')) {
 /**
  * 2016-10-14
  * 2021-03-07 "Port the `df_trim_ds` function": https://github.com/justuno-com/core/issues/370
- * @used-by ju_url_bp()
  * @param string $p
  * @return string
  */
