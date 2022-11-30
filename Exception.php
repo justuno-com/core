@@ -76,26 +76,11 @@ final class Exception extends LE implements \ArrayAccess {
 	/**
 	 * @used-by ju_ets()
 	 * @used-by \Justuno\Core\Qa\Message\Failure\Exception::main()
+	 * @used-by \Justuno\Core\Sentry\Client::captureException()
 	 * @used-by self::messageSentry()
 	 * @used-by self::standard()
 	 */
 	function message():string {return $this->getMessage();}
-
-	/**
-	 * 2017-01-09
-	 * @used-by \Justuno\Core\Sentry\Client::captureException()
-	 */
-	function messageSentry():string {return $this->message();}
-
-	/**
-	 * @return bool
-	 */
-	function needNotifyAdmin() {return true;}
-
-	/**
-	 * @return bool
-	 */
-	function needNotifyDeveloper() {return true;}
 
 	/**
 	 * 2015-10-10
