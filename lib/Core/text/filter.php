@@ -4,10 +4,8 @@
  * 2019-11-15 https://stackoverflow.com/a/1253417
  * 2020-08-23 "Port the `df_is_guid` function" https://github.com/justuno-com/core/issues/297
  * @used-by \Justuno\M2\Block\Js::_toHtml()
- * @param string $s
- * @return bool
  */
-function ju_is_guid($s) {return 36 === strlen($s) && preg_match(
+function ju_is_guid(string $s):bool {return 36 === strlen($s) && preg_match(
 	'#^\{?[A-Z0-9]{8}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{12}\}?$#', $s
 );}
 
