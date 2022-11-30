@@ -476,14 +476,6 @@ final class Client {
 	public $context;
 	public $extra_data;
 	public $severity_map;
-	/**
-	 * 2020-06-27
-	 * @used-by self::capture()
-	 * @used-by self::captureException()
-	 * @used-by self::setAppPath()
-	 * @var string|null
-	 */
-	private $app_path;
 	private $error_types;
 	/**
 	 * 2020-06-28
