@@ -5,12 +5,6 @@ use Magento\Framework\App\Response\HttpInterface as IHttpResponse;
 use Magento\Framework\App\ResponseInterface as IResponse;
 use Magento\Framework\Controller\ResultInterface as IResult;
 /**
- * 2021-02-26
- * 2021-08-05 @deprecated It is unused.
- */
-function ju_403() {ju_response_code(403);}
-
-/**
  * 2017-02-01
  * 2017-11-17
  * You can read here more about the IResult/wResult and IResponse/HttpResponse difference:
