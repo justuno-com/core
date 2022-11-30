@@ -73,7 +73,7 @@ class O implements \ArrayAccess {
 	/**
 	 * 2017-07-13
 	 * @used-by self::__construct()
-	 * @used-by a()
+	 * @used-by self::a()
 	 * @var array(string => mixed)
 	 */
 	private $_a;
