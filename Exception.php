@@ -74,9 +74,10 @@ class Exception extends LE implements \ArrayAccess {
 	function getStackLevelsCountToSkip():int {return $this->_stackLevelsCountToSkip;}
 
 	/**
-	 * @return string
+	 * @used-by self::messageD()
+	 * @used-by self::standard()
 	 */
-	function message() {return $this->getMessage();}
+	function message():string {return $this->getMessage();}
 
 	/**
 	 * A message for a buyer.
