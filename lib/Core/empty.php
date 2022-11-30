@@ -1,5 +1,12 @@
 <?php
 /**
+ * @see ju_nes()
+ * @used-by \Justuno\Core\Format\Html\Tag::openTagWithAttributesAsText()
+ * @param mixed $v
+ */
+function ju_es($v):bool {return '' === $v;}
+
+/**
  * 2017-04-26
  * 2020-08-26 "Port the `df_eta` function" https://github.com/justuno-com/core/issues/329
  * @used-by ju_fetch_one()
@@ -33,6 +40,7 @@ function ju_ftn($v) {return (false === $v) ? null : $v;}
 
 /**
  * 2020-06-14 "Port the `df_nes` function": https://github.com/justuno-com/core/issues/19
+ * @see ju_es()
  * @used-by jua_deep()
  * @param mixed $v
  * @return bool
