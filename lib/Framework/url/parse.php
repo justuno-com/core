@@ -46,7 +46,6 @@ function ju_url_bp($u) {
 /**
  * 2017-02-13 It removes the following endinds: «/», «index/», «index/index/».
  * 2021-03-07 "Port the `df_url_trim_index` function": https://github.com/justuno-com/core/issues/364
- * @used-by ju_url_frontend()
  * @param string $u
  * @return string
  */
