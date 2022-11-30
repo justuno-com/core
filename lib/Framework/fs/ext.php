@@ -25,11 +25,8 @@ function ju_file_ext_add($f, $ext) {return !$ext ? $f : ju_append($f, ".$ext");}
  * 2018-07-06
  * 2020-06-21 "Port the `df_file_ext_def` function": https://github.com/justuno-com/core/issues/96
  * @used-by ju_report()
- * @param string $f
- * @param string $ext
- * @return string
  */
-function ju_file_ext_def($f, $ext) {return ($e = ju_file_ext($f)) ? $f : ju_trim_right($f, '.') . ".$ext";}
+function ju_file_ext_def(string $f, string $ext):string {return ju_file_ext($f) ? $f : ju_trim_right($f, '.') . ".$ext";}
 
 /**
  * 2015-04-01
