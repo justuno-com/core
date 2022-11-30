@@ -4,7 +4,6 @@
  * http://www.php.net/manual/en/function.filter-var.php
  * filter_var('/C/A/CA559AWLE574_1.jpg', FILTER_VALIDATE_URL) returns `false`.
  * 2021-03-07 "Port the `df_check_url` function": https://github.com/justuno-com/core/issues/369
- * @used-by ju_url_bp()
  * @param $s $string
  * @return bool
  */
