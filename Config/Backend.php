@@ -107,9 +107,8 @@ class Backend extends \Magento\Framework\App\Config\Value {
 
 	/**
 	 * 2016-07-31
-	 * @return bool
 	 */
-	final protected function isSaving() {return isset($this->_data['field_config']);}
+	final protected function isSaving():bool {return isset($this->_data['field_config']);}
 
 	/**
 	 * 2015-12-07
