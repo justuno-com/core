@@ -75,7 +75,6 @@ final class Exception extends LE implements \ArrayAccess {
 
 	/**
 	 * @used-by ju_ets()
-	 * @used-by self::standard()
 	 * @used-by \Justuno\Core\Qa\Message\Failure\Exception::main()
 	 * @used-by \Justuno\Core\Sentry\Client::captureException()
 	 */
@@ -134,20 +133,6 @@ final class Exception extends LE implements \ArrayAccess {
 	 * @return string
 	 */
 	function sentryType() {return get_class($this);}
-
-	/**
-	 * 2015-11-27
-	 * Мы не можем перекрыть метод @see \Exception::getMessage(), потому что он финальный.
-	 * С другой стороны, наш метод @see \Justuno\Core\Exception::message()
-	 * не будет понят стандартной средой,
-	 * и мы в стандартной среде не будем иметь диагностического сообщения вовсе.
-	 * Поэтому если мы сами не в состоянии обработать исключительную ситуацию,
-	 * то вызываем метод @see \Justuno\Core\Exception::standard().
-	 * Этот метод конвертирует исключительную ситуацию в стандартную,
-	 * и стандартная среда её успешно обработает.
-	 * @return \Exception
-	 */
-	function standard() {return juc($this, function() {return new \Exception($this->message(), 0, $this);});}
 
 	/**
 	 * 2017-10-03
