@@ -101,7 +101,7 @@ abstract class Upgrade {
 	/**
 	 * 2016-08-21
 	 * 2017-08-01 It checks whether the installed version of the current module is lower than $v.
-	 * @used-by isInitial()
+	 * @used-by self::isInitial()
 	 * @used-by \Justuno\M2\Setup\UpgradeSchema::_process()
 	 * @param string $v
 	 * @return bool
