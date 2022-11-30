@@ -22,9 +22,8 @@ final class CustomerId {
 	/**
 	 * 2019-11-17
 	 * @see \Magento\Customer\CustomerData\Customer::getSectionData()
-	 * @param Sb $sb
 	 * @param array(string => mixed) $r
 	 * @return array(string => mixed)
 	 */
-	function afterGetSectionData(Sb $sb, array $r) {return ['id' => ju_customer_id()] + $r;}
+	function afterGetSectionData(Sb $sb, array $r):array {return ['id' => ju_customer_id()] + $r;}
 }
