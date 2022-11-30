@@ -9,8 +9,8 @@
  * @used-by juak_transform()
  * @used-by \Justuno\Core\Sentry\Client::tags()
  * @used-by \Justuno\Core\Sentry\Extra::adjust()
- * @param array|callable|\Traversable $a1
- * @param array|callable|\Traversable $a2
+ * @param array|callable|Traversable $a1
+ * @param array|callable|Traversable $a2
  * @param bool $req [optional]
  * @return array(string => mixed)
  */
@@ -19,7 +19,7 @@ function juak_transform($a1, $a2, $req = false) {
 	# The square bracket syntax for array destructuring assignment (`[…] = […]`) requires PHP ≥ 7.1:
 	# https://github.com/mage2pro/core/issues/96#issuecomment-593392100
 	# We should support PHP 7.0.
-	list($a, $f) = juaf($a1, $a2); /** @var array|\Traversable $a */ /** @var callable $f */
+	list($a, $f) = juaf($a1, $a2); /** @var array|Traversable $a */ /** @var callable $f */
 	$a = ju_ita($a);
 	$l = array_is_list($a); /** @var bool $l */
 	return ju_map_kr($a, function($k, $v) use($f, $req, $l) {return [
