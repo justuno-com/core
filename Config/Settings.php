@@ -64,7 +64,7 @@ abstract class Settings {
 
 	/**
 	 * 2019-01-11
-	 * @used-by scopeDefault()
+	 * @used-by self::scopeDefault()
 	 * @var int|S|Store|string|null
 	 */
 	private $_scope;
