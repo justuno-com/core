@@ -236,7 +236,6 @@ class Exception extends LE implements \ArrayAccess {
 
 	/**
 	 * @used-by ju_ewrap()
-	 * @return $this
 	 */
-	static function wrap(E $e) {return $e instanceof self ? $e : new self($e);}
+	static function wrap(E $e):self {return $e instanceof self ? $e : new self($e);}
 }
