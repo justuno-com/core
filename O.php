@@ -27,12 +27,6 @@ class O implements \ArrayAccess {
 
 	/**
 	 * 2017-07-13
-	 * @return string
-	 */
-	function j() {return ju_json_encode($this->_a);}
-
-	/**
-	 * 2017-07-13
 	 * «This method is executed when using isset() or empty() on objects implementing ArrayAccess.
 	 * When using empty() ArrayAccess::offsetGet() will be called and checked if empty
 	 * only if ArrayAccess::offsetExists() returns TRUE».
