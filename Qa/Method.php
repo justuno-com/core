@@ -87,12 +87,6 @@ final class Method {
 	const NES = 'A non-empty string is required, but got an empty one.';
 
 	/**
-	 * 2017-04-22
-	 * @used-by ju_param_s()
-	 */
-	const S = 'A string is required.';
-
-	/**
 	 * @used-by self::raiseErrorParam()
 	 * @used-by self::raiseErrorResult()
 	 * @used-by self::raiseErrorVariable()
