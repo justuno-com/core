@@ -8,7 +8,7 @@ namespace Justuno\Core\Framework\Form;
 interface ElementI {
 	/**
 	 * 2015-11-24 Many operations on the element require the form's existance, so we do them here.
-	 * @used-by \Justuno\Framework\Plugin\Data\Form\Element\AbstractElement::afterSetForm()
+	 * @used-by \Justuno\Core\Framework\Plugin\Data\Form\Element\AbstractElement::afterSetForm()
 	 * @see \Justuno\M2\Block\GenerateToken::onFormInitialized()
 	 */
 	function onFormInitialized():void;
