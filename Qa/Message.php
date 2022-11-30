@@ -44,7 +44,7 @@ abstract class Message extends \Justuno\Core\O {
 	);});}
 
 	/**
-	 * @used-by report()
+	 * @used-by self::report()
 	 * @see \Justuno\Core\Qa\Message\Failure::postface()
 	 * @return string
 	 */
