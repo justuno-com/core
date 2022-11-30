@@ -22,7 +22,6 @@ function ju_domain($u, $www = false, $throw = true) {return
 /**
  * 2017-02-13 «https://mage2.pro/sandbox/dfe-paymill» => [«https://mage2.pro»,  «sandbox/dfe-paymill»]
  * 2021-03-07 "Port the `df_url_bp` function": https://github.com/justuno-com/core/issues/367
- * @used-by ju_url_trim_index()
  * @param string $u
  * @return string[]
  */
