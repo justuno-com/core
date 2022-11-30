@@ -59,7 +59,7 @@ final class RAM {
 			if (!isset($this->_tags[$tag])) {
 				$this->_tags[$tag] = [$k];
 			}
-			else if (!in_array($k, $this->_tags[$tag])) {
+			elseif (!in_array($k, $this->_tags[$tag])) {
 				$this->_tags[$tag][] = $k;
 			}
 		}
