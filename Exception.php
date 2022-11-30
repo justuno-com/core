@@ -74,12 +74,6 @@ class Exception extends LE implements \ArrayAccess {
 	function getStackLevelsCountToSkip():int {return $this->_stackLevelsCountToSkip;}
 
 	/**
-	 * 2016-07-31
-	 * @used-by \Justuno\Core\Qa\Message\Failure\Exception::main()
-	 */
-	function isMessageHtml():bool {return $this->_messageIsHtml;}
-
-	/**
 	 * @return string
 	 */
 	function message() {return $this->getMessage();}
