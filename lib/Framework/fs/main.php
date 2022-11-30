@@ -2,16 +2,11 @@
 use Magento\Framework\App\Filesystem\DirectoryList as DL;
 use Magento\Framework\Filesystem;
 use Magento\Framework\Filesystem\Directory\Read as DirectoryRead;
-use Magento\Framework\Filesystem\Directory\ReadFactory as DirectoryReadFactory;
 use Magento\Framework\Filesystem\Directory\ReadInterface as IDirectoryRead;
 use Magento\Framework\Filesystem\Directory\Write as DirectoryWrite;
 use Magento\Framework\Filesystem\Directory\WriteInterface as IDirectoryWrite;
-use Magento\Framework\Filesystem\File\Read as FileRead;
-use Magento\Framework\Filesystem\File\ReadInterface as IFileRead;
 use Magento\Framework\Filesystem\File\Write as FileWrite;
 use Magento\Framework\Filesystem\File\WriteInterface as IFileWrite;
-use Magento\Framework\Filesystem\Io\File as File;
-use Magento\Framework\Filesystem\Io\Sftp;
 
 /**
  * 2015-11-29
