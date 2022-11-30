@@ -72,9 +72,9 @@ class Text extends \Justuno\Core\Framework\W\Result {
 
 	/**
 	 * 2016-07-04
-	 * @used-by __toString()
-	 * @used-by i()
-	 * @used-by render()
+	 * @used-by self::__toString()
+	 * @used-by self::i()
+	 * @used-by self::render()
 	 * @var string
 	 */
 	private $_body;
