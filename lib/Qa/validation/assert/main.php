@@ -78,7 +78,6 @@ function ju_assert_traversable($v, $m = null) {return is_iterable($v) ? $v : ju_
 
 /**
  * 2021-03-06 "Port the `df_bool` function": https://github.com/justuno-com/core/issues/356
- * @used-by \Justuno\Core\Config\Settings::b()
  * @param mixed $v
  * @return bool
  */
