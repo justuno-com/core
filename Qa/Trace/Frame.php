@@ -145,8 +145,8 @@ final class Frame extends \Justuno\Core\O {
 	 * «Function include() does not exist»: https://github.com/tradefurniturecompany/site/issues/60
 	 * https://www.php.net/manual/reflectionfunction.construct.php
 	 * https://www.php.net/manual/class.reflectionexception.php
-	 * @see method()
-	 * @used-by context()
+	 * @see self::method()
+	 * @used-by self::context()
 	 * @return RFA|RF|RM|null
 	 */
 	private function functionA() {return juc($this, function() {return $this->method() ?: (
@@ -154,23 +154,23 @@ final class Frame extends \Justuno\Core\O {
 	);});}
 	
 	/**
-	 * @used-by method()
-	 * @used-by methodName()
+	 * @used-by self::method()
+	 * @used-by self::methodName()
 	 * @return string
 	 */
 	private function functionName() {return ju_nts($this['function']);}
 
 	/**
 	 * 2016-07-31
-	 * @used-by functionA()
-	 * @used-by method()
+	 * @used-by self::functionA()
+	 * @used-by self::method()
 	 * @return bool
 	 */
 	private function isClosure() {return ju_ends_with($this->functionName(), '{closure}');}
 
 	/**
-	 * @used-by context()
-	 * @used-by i()
+	 * @used-by self::context()
+	 * @used-by self::i()
 	 * @var self|null
 	 */
 	private $_next;
