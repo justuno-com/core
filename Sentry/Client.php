@@ -514,8 +514,8 @@ final class Client {
 	const INFO = 'info';
 	/**
 	 * 2020-06-28
-	 * @used-by capture()
-	 * @used-by captureException()
+	 * @used-by self::capture()
+	 * @used-by self::captureException()
 	 * @used-by \Justuno\Core\Sentry\Trace::get_default_context()
 	 * @used-by \Justuno\Core\Sentry\Trace::get_frame_context()
 	 * @used-by \Justuno\Core\Sentry\Trace::info()
