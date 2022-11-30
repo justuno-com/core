@@ -45,7 +45,7 @@ abstract class Result implements ResultInterface {
 	/**
 	 * 2016-08-24
 	 * @see \Magento\Framework\Controller\AbstractResult::render()
-	 * @used-by renderResult()
+	 * @used-by self::renderResult()
 	 * @see \Justuno\Core\Framework\W\Result\Text::render()
 	 * @see \Justuno\M2\W\Result\Js::render()
 	 * @param IHttpResponse|HttpResponse $r
