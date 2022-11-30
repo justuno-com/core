@@ -48,6 +48,6 @@ function ju_date_lt(ZD $d1, ZD $d2) {return $d1->getTimestamp() < $d2->getTimest
  * @param Zend_Locale|string|null $locale [optional]
  * @return string
  */
-function ju_dts(ZD $date = null, $format = null, $locale = null) {return ju_result_sne(
-	ju_date($date)->toString($format, null, $locale)
-);}
+function ju_dts(ZD $date = null, $format = null, $locale = null) {return ju_result_sne(ju_date($date)->toString(
+	$format, null, $locale
+));}
