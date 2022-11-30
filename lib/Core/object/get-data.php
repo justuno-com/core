@@ -7,7 +7,6 @@ use Magento\Framework\DataObject as _DO;
 /**
  * 2020-02-04
  * 2020-06-18 "Port the `df_gd` function": https://github.com/justuno-com/core/issues/76
- * @used-by ju_gd()
  * @param mixed $v
  * @return _DO|AE
  * @throws DFE
