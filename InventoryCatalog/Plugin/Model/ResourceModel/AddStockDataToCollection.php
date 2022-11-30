@@ -87,7 +87,7 @@ final class AddStockDataToCollection {
 	 * @see \Magento\InventoryCatalog\Model\ResourceModel\AddStockDataToCollection
 	 * it still proverly serves the @see PRESERVE_ABSENT constant
 	 * and @see $PRESERVE_ABSENT_F static property (I have checked it).
-	 * @used-by aroundExecute()
+	 * @used-by self::aroundExecute()
 	 * @used-by ju_pc_preserve_absent_f()
 	 * @used-by \Justuno\Core\CatalogInventory\Plugin\Model\ResourceModel\Stock\Status::beforeAddStockDataToCollection()
 	 * @var bool
