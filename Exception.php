@@ -85,6 +85,12 @@ final class Exception extends LE implements \ArrayAccess {
 
 	/**
 	 * 2015-10-10
+	 * 2022-11-30
+	 * 1) `mixed` as a return type is not supported by PHP < 8:
+	 * https://github.com/mage2pro/core/issues/168#user-content-mixed
+	 * 2) `ReturnTypeWillChange` allows us to suppress the return type absence notice:
+	 * https://github.com/mage2pro/core/issues/168#user-content-absent-return-type-deprecation
+	 * https://github.com/mage2pro/core/issues/168#user-content-returntypewillchange
 	 * @override
 	 * @see \ArrayAccess::offsetGet()
 	 * @param string $k
