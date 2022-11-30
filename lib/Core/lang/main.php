@@ -7,7 +7,6 @@ use Magento\Framework\App\Filesystem\DirectoryList;
  * 2020-06-17 "Port the `df_args` function": https://github.com/justuno-com/core/issues/41
  * @used-by ju_clean()
  * @used-by ju_format()
- * @used-by jua_unset()
  * @param mixed[] $a
  * @return mixed[]
  */
