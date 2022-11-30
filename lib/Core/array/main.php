@@ -69,8 +69,8 @@ function jua_unset(array $a, ...$k) {return array_diff_key($a, array_flip(ju_arg
  * @used-by ju_find()
  * @used-by ju_map()
  * @used-by juak_transform()
- * @param array|callable|\Traversable $a
- * @param array|callable|\Traversable $b
+ * @param array|callable|Traversable $a
+ * @param array|callable|Traversable $b
  * @return array(int|string => mixed)
  */
 function juaf($a, $b) {
