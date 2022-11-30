@@ -49,7 +49,7 @@ use Magento\Framework\Module\Dir\Reader;
  * @param string|object|null $m
  * @param string $type [optional]
  * @return string
- * @throws \InvalidArgumentException
+ * @throws InvalidArgumentException
  */
 function ju_module_dir($m, $type = '') {
 	if ('Magento_Framework' !== ($m = ju_module_name($m))) {
