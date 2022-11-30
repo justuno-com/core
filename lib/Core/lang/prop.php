@@ -73,6 +73,7 @@ function ju_prop($o, $v, $d = null, $type = null) {/** @var object|mixed|null $r
 					$o->$a = [];
 				}
 				if ($isGet) {
+					/** @noinspection PhpVariableVariableInspection */
 					$r = jua($o->$a, $k, $d);
 				}
 				else {
