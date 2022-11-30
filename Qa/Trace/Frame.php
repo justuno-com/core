@@ -47,7 +47,7 @@ final class Frame extends \Justuno\Core\O {
 
 	/**
 	 * 2015-04-03 Путь к файлу отсутствует при вызовах типа @see call_user_func()
-	 * @used-by context()
+	 * @used-by self::context()
 	 * @used-by \Justuno\Core\Qa\Trace\Formatter::frame()
 	 * @return string|null
 	 */
@@ -55,7 +55,7 @@ final class Frame extends \Justuno\Core\O {
 
 	/**
 	 * 2015-04-03 Строка отсутствует при вызовах типа @see call_user_func()
-	 * @used-by context()
+	 * @used-by self::context()
 	 * @used-by \Justuno\Core\Qa\Trace\Formatter::frame()
 	 * @return int|null
 	 */
