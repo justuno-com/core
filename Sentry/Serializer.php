@@ -26,7 +26,7 @@ class Serializer {
 
 	/**
 	 * 2020-06-28
-	 * @used-by serialize()
+	 * @used-by self::serialize()
 	 * @see \Justuno\Core\Sentry\ReprSerializer::_serialize()
 	 * @param mixed $v
 	 * @return bool|false|float|int|string|string[]|null
