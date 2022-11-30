@@ -114,7 +114,7 @@ class Backend extends \Magento\Framework\App\Config\Value {
 	 * In Magento 1, configurations paths always contain 3 segments: section / group / field
 	 * @return array(string => mixed)
 	 */
-	final protected function value() {return juc($this, function() {
+	final protected function value():array {return juc($this, function() {
 		# 2020-02-02
 		# This code supports a custom `config_path` for a field.
 		# "Magento\Config\Model\Config\Structure\AbstractElement::getPath() ignores a custom `config_path` value":
