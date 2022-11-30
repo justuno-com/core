@@ -7,7 +7,7 @@ namespace Justuno\Core\Sentry;
 final class Extra {
 	/**
 	 * 2017-01-03
-	 * @used-by adjust() Recursion.
+	 * @used-by self::adjust() Recursion.
 	 * @used-by \Justuno\Core\Sentry\Client::capture()
 	 * @param array(string => mixed) $a
 	 * @return array(string => string)
