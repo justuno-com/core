@@ -82,7 +82,7 @@ abstract class Message extends \Justuno\Core\O {
 			$items = func_get_args();
 		}
 		/** @var string $s */
-		static $s; if (!$s) {$s = "\n" . str_repeat('*', 36) . "\n";};
+		static $s; if (!$s) {$s = "\n" . str_repeat('*', 36) . "\n";}
 		return implode($s, array_filter(ju_trim(ju_xml_output_plain($items))));
 	}
 }
