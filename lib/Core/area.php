@@ -18,10 +18,8 @@ function ju_area_code($onE = null) {return ju_try(function() {return ju_app_stat
  * 2020-06-24 "Port the `df_area_code_is` function": https://github.com/justuno-com/core/issues/126
  * @used-by ju_is_backend()
  * @used-by ju_is_frontend()
- * @param string ...$values
- * @return bool
  */
-function ju_area_code_is(...$values) {return ($a = ju_area_code(false)) && in_array($a, $values);}
+function ju_area_code_is(string ...$v):bool {return in_array(ju_area_code(), $v);}
 
 /**
  * 2015-08-14
