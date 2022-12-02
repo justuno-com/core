@@ -50,7 +50,7 @@ abstract class Result implements ResultInterface {
 	 * @see \Justuno\M2\W\Result\Js::render()
 	 * @param IHttpResponse|HttpResponse $r
 	 */
-	abstract protected function render(IHttpResponse $r);
+	abstract protected function render(IHttpResponse $r):void;
 
 	/**
 	 * 2016-08-24 Render content.
