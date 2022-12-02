@@ -13,9 +13,8 @@ abstract class Settings {
 	 * 2016-11-24 From now on, the value should not include the trailing `/`.
 	 * @used-by \Justuno\Core\Config\Settings::v()
 	 * @see \Justuno\M2\Settings::prefix()
-	 * @return string
 	 */
-	abstract protected function prefix();
+	abstract protected function prefix():string;
 
 	/**
 	 * 2016-03-08
