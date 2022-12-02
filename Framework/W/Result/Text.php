@@ -44,9 +44,8 @@ class Text extends \Justuno\Core\Framework\W\Result {
 	 * 2016-08-24
 	 * @used-by self::render()
 	 * @see \Justuno\Core\Framework\W\Result\Json::contentType()
-	 * @return string
 	 */
-	protected function contentType() {return 'text/plain';}
+	protected function contentType():string {return 'text/plain';}
 
 	/**
 	 * 2016-08-24
