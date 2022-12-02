@@ -29,7 +29,7 @@ use Magento\Store\Model\Store;
  * @used-by \Justuno\Core\Config\Settings::scope()
  * @return array(string, int)
  */
-function ju_scope() {
+function ju_scope():array {
 	$r = null; /** @var array(string, int) $r */
 	foreach ([SS::SCOPE_WEBSITE => SS::SCOPE_WEBSITES, SS::SCOPE_STORE => SS::SCOPE_STORES] as $s => $ss) {
 		if (!is_null($id = ju_request($s))) { /** @var int|null $id */
