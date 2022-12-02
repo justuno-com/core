@@ -16,10 +16,9 @@ final class RAM {
 	/**
 	 * 2020-06-13
 	 * @used-by jucf()
-	 * @param string $k
 	 * @return mixed
 	 */
-	function get($k) {return $this->exists($k) ? $this->_data[$k] : null;}
+	function get(string $k) {return $this->exists($k) ? $this->_data[$k] : null;}
 
 	/**
 	 * 2020-06-13
