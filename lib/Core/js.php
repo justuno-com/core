@@ -19,7 +19,6 @@
  * @used-by \Justuno\M2\Block\Js::_toHtml()
  * @param string|object|null $m
  * @param array(string => mixed) $p [optional]
- * @return string
  */
 function ju_js($m, string $s = '', array $p = []) {$s = $s ?: 'main'; return ju_js_x(
 	'*', ju_check_url_absolute($s) ? null : $m, $s, $p
