@@ -19,14 +19,9 @@ function ju_hash_a(array $a):string {
  * 2020-06-13 "Port the `df_hash_o` function": https://github.com/justuno-com/core/issues/7
  * @used-by ju_hash_a()
  * @param object $o
- * @return string
  */
-function ju_hash_o($o) {
-	/**
-	 * 2016-09-05
-	 * Для ускорения заменил вызов df_id($o, true) на инлайновыый код.
-	 * @see df_id()
-	 */
+function ju_hash_o($o):string {
+	/** 2016-09-05 Для ускорения заменил вызов df_id($o, true) на инлайновыый код. @see df_id() */
 	$r = $o instanceof M || method_exists($o, 'getId') ? $o->getId() : null; /** @var string $r */
 	return $r ? get_class($o) . "::$r" : spl_object_hash($o);
 }
