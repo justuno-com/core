@@ -20,7 +20,18 @@ function ju_json_decode($s, bool $throw = true) {/** @var mixed|bool|null $r */
 		$r = $s;
 	}
 	else {
+		# 2016-10-30
+		# json_decode('7700000000000000000000000') возвращает 7.7E+24
+		# https://3v4l.org/NnUhk
+		# http://stackoverflow.com/questions/28109419
+		# Такие длинные числоподобные строки используются как идентификаторы КЛАДР
+		# (модулем доставки «Деловые Линии»), и поэтому их нельзя так корёжить.
+		# Поэтому используем константу JSON_BIGINT_AS_STRING
+		# https://3v4l.org/vvFaF
 		$r = json_decode($s, true, 512, JSON_BIGINT_AS_STRING);
+		# 2016-10-28
+		# json_encode(null) возвращает строку 'null', а json_decode('null') возвращает null.
+		# Добавил проверку для этой ситуации, чтобы не считать её сбоем.
 		if (is_null($r) && 'null' !== $s && $throw) {
 			ju_assert_ne(JSON_ERROR_NONE, json_last_error());
 			ju_error(
