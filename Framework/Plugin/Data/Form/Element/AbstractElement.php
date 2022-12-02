@@ -29,10 +29,8 @@ class AbstractElement extends Sb {
 	 * https://github.com/magento/magento2/blob/487f5f45/lib/internal/Magento/Framework/Data/Form/Element/AbstractElement.php#L350-L353
 	 * @see \Magento\Framework\Data\Form\Element\AbstractElement::getElementHtml()
 	 * @param Sb $sb
-	 * @param string $r
-	 * @return string
 	 */
-	function afterGetElementHtml(Sb $sb, $r) {return
+	function afterGetElementHtml(Sb $sb, string $r):string {return
 		ju_starts_with($r, '<label class="addbefore"') ? $r : ju_prepend($r, $sb->getBeforeElementHtml())
 	;}
 
