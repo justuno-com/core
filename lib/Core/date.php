@@ -19,11 +19,9 @@ function ju_date_from_db(string $s, bool $onE = true) {
 /**
  * 2016-07-19
  * @used-by \Justuno\M2\Catalog\Diagnostic::p()
- * @param ZD $d1
- * @param ZD $d2
  * @return bool
  */
-function ju_date_lt(ZD $d1, ZD $d2) {return $d1->getTimestamp() < $d2->getTimestamp();}
+function ju_date_lt(ZD $d1, ZD $d2):bool {return $d1->getTimestamp() < $d2->getTimestamp();}
 
 /**
  * 2015-02-07
