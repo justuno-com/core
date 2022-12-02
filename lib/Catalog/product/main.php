@@ -69,9 +69,8 @@ function ju_product_current_id() {return !($p = ju_product_current() /** @var P 
  * @used-by ju_qty()
  * @used-by ju_review_summary()
  * @param P|int $p
- * @return int
  */
-function ju_product_id($p) {return ju_int($p instanceof P ? $p->getId() : $p);}
+function ju_product_id($p):int {return ju_int($p instanceof P ? $p->getId() : $p);}
 
 /**
  * 2019-02-26
