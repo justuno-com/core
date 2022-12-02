@@ -24,4 +24,4 @@ function ju_map_to_options_t(array $m):array {return array_map('ju_option', arra
  * @param string|int $v
  * @return array(string => string|int)
  */
-function ju_option($v, string $l) {return ['label' => $l, 'value' => $v];}
+function ju_option($v, string $l):array {return ['label' => $l, 'value' => $v];}
