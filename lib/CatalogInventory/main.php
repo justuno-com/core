@@ -11,9 +11,8 @@ use Magento\InventorySalesApi\Api\GetProductSalableQtyInterface as IQty;
  * @used-by \Justuno\M2\Catalog\Variants::variant()
  * @used-by \Justuno\M2\Inventory\Variants::variant()
  * @param P|int $p
- * @return float
  */
-function ju_qty($p) {
+function ju_qty($p):float {
 	ju_assert_qty_supported($p);
 	# 2019-11-21 https://devdocs.magento.com/guides/v2.3/inventory/reservations.html#checkout-services
 	if (!ju_msi()) {
