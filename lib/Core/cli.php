@@ -22,9 +22,8 @@ function ju_cli_cmd():string {return ju_cc_s(ju_cli_argv());}
  * 2020-02-15
  * 2020-06-17 "Port the `df_cli_script` function": https://github.com/justuno-com/core/issues/48
  * @used-by ju_is_bin_magento()
- * @return string
  */
-function ju_cli_script() {return ju_cli_argv(0);}
+function ju_cli_script():string {return ju_cli_argv(0);}
 
 /**
  * 2016-12-23 http://stackoverflow.com/a/7771601
