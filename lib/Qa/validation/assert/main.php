@@ -110,7 +110,7 @@ function ju_int($v, $allowNull = true) {/** @var int|int[] $r */
 
 /**
  * 2015-04-13
- * 1) It does not validate item types (unlike @see df_int() )
+ * 1) It does not validate item types (unlike @see ju_int() )
  * 2) It works only with arrays.
  * 3) Keys are preserved: http://3v4l.org/NHgdK
  * @used-by ju_fetch_col_int()
