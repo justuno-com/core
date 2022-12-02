@@ -83,8 +83,6 @@ abstract class Settings {
 	 * PHP methods for such keys should be prefixed with «_».
 	 * E.g., the @see \Dfe\Omise\Settings::_3DS() method handles the «test3DS» and «live3DS» keys.
 	 * @used-by self::v()
-	 * @param string $name
-	 * @return string
 	 */
-	final protected static function phpNameToKey($name) {return ju_trim_left($name, '_');}
+	final protected static function phpNameToKey(string $n):string {return ju_trim_left($n, '_');}
 }
