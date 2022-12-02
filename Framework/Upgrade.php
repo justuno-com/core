@@ -54,12 +54,6 @@ abstract class Upgrade {
 	}
 
 	/**
-	 * 2018-03-21
-	 * @return FSetup|SSetup
-	 */
-	final protected function setup() {return $this->_setup;}
-
-	/**
 	 * 2016-12-08
 	 * 2017-08-01 It does the same as @see df_table().
 	 * The sole difference: $this->t() expression can be used inside PHP strings, but df_table can not.
