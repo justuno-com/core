@@ -53,14 +53,10 @@ class AbstractElement extends Sb {
 	 * https://mage2.pro/t/901
 	 * That is why we use $sb->{__METHOD__}.
 	 * @see \Magento\Framework\Data\Form\Element\AbstractElement::setForm()
-	 * @param Sb $sb
-	 * @param Sb $r
-	 * @return Sb
 	 */
-	function afterSetForm(Sb $sb, Sb $r) {
-		if (!isset($sb->{__METHOD__}) && $sb instanceof ElementI) {
-			$sb->onFormInitialized();
-			$sb->{__METHOD__} = true;
+	function afterSetForm(Sb $sb, Sb $r):Sb {
+		if ($sb instanceof ElementI) {
+			juc($sb, function() use($sb) {$sb->onFormInitialized();});
 		}
 		return $r;
 	}
