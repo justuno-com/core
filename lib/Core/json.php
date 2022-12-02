@@ -65,9 +65,8 @@ function ju_json_encode($v, int $flags = 0):string {return json_encode(ju_json_s
  * 2020-06-18 "Port the `df_json_encode_partial` function": https://github.com/justuno-com/core/issues/91
  * @used-by \Justuno\Core\Qa\Dumper::dumpObject()
  * @param mixed $v
- * @return string
  */
-function ju_json_encode_partial($v) {return ju_json_encode($v, JSON_PARTIAL_OUTPUT_ON_ERROR);}
+function ju_json_encode_partial($v):string {return ju_json_encode($v, JSON_PARTIAL_OUTPUT_ON_ERROR);}
 
 /**
  * 2017-09-07
