@@ -9,7 +9,5 @@ use Magento\ConfigurableProduct\Model\Product\Type\Configurable as T;
  * @used-by \Justuno\M2\Controller\Cart\Add::execute()
  * @used-by \Justuno\M2\Controller\Response\Catalog::execute()
  * @used-by \Justuno\M2\Inventory\Variants::p()
- * @param P $p
- * @return bool
  */
-function ju_configurable(P $p) {return T::TYPE_CODE === $p->getTypeId();}
+function ju_configurable(P $p):bool {return T::TYPE_CODE === $p->getTypeId();}
