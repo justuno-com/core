@@ -55,7 +55,7 @@ function jua_deep(array $a, $path = '', $d = null) {/** @var mixed|null $r */
  * @param mixed $value
  * @return array(string => mixed)
  */
-function jua_deep_set(array &$array, $path, $value) {
+function jua_deep_set(array &$array, $path, $value):array {
 	$pathParts = ju_explode_xpath($path); /** @var string[] $pathParts */
 	$a = &$array; /** @var array(string => mixed) $a */
 	while ($pathParts) {
