@@ -95,7 +95,6 @@ abstract class Upgrade {
 	 * @used-by self::c()
 	 * @used-by self::process()
 	 * @used-by self::sEav()
-	 * @used-by self::setup()
 	 * @used-by self::t()
 	 * @var FSetup|SSetup
 	 */
