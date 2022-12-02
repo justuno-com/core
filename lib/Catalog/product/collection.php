@@ -22,7 +22,6 @@ function ju_pc(IS $s = null):C {
  * @see ju_pc_preserve_absent_f()
  * "Add an ability to temporary disable the flat mode for products": https://github.com/mage2pro/core/issues/149
  * @used-by \Justuno\M2\Controller\Response\Catalog::execute()
- * @param Closure|null $f [optional]
  * @return mixed|null
  */
 function ju_pc_disable_flat(F $f = null) {
