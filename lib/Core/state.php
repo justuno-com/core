@@ -15,9 +15,8 @@ function ju_app_state():State {return ju_o(State::class);}
  * 2020-06-24 "Port the `df_is_ajax` function": https://github.com/justuno-com/core/issues/129
  * @used-by ju_is_backend()
  * @used-by ju_is_frontend()
- * @return bool
  */
-function ju_is_ajax() {static $r; return !is_null($r) ? $r : $r = ju_request_o()->isXmlHttpRequest();}
+function ju_is_ajax():bool {static $r; return !is_null($r) ? $r : $r = ju_request_o()->isXmlHttpRequest();}
 
 /**
  * 2016-05-15 http://stackoverflow.com/a/2053295
