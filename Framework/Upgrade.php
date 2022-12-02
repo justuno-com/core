@@ -51,12 +51,6 @@ abstract class Upgrade {
 	protected function initial():string {return '0.0.1';}
 
 	/**
-	 * 2016-12-02
-	 * @return bool
-	 */
-	final protected function isInitial() {return $this->v($this->initial());}
-
-	/**
 	 * 2016-08-14
 	 * @used-by \Justuno\Core\Framework\Upgrade\Schema::upgrade()
 	 * @param FSetup|SSetup $setup
