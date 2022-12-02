@@ -46,7 +46,6 @@ abstract class Upgrade {
 	 * 2017-08-01
 	 * Override this method if the initially installed module has not included this class.
 	 * In this case provide here the number of the version when the class has been added.
-	 * @used-by self::isInitial()
 	 */
 	protected function initial():string {return '0.0.1';}
 
@@ -93,7 +92,6 @@ abstract class Upgrade {
 	/**
 	 * 2016-08-21
 	 * 2017-08-01 It checks whether the installed version of the current module is lower than $v.
-	 * @used-by self::isInitial()
 	 * @used-by \Justuno\M2\Setup\UpgradeSchema::_process()
 	 * @param string $v
 	 * @return bool
