@@ -36,9 +36,8 @@ function ju_msi_allowed_for_pt() {return ju_o(IAllowedForPT::class);}
  * @used-by ju_assert_qty_supported()
  * @used-by \Justuno\M2\Catalog\Variants::variant()
  * @param P|string $t
- * @throws bool
  */
-function ju_pt_has_qty($t) {
+function ju_pt_has_qty($t):bool {
 	$t = is_string($t) ? $t : $t->getTypeId();
 	return ju_msi() ? ju_msi_allowed_for_pt()->execute($t) : ju_stock_cfg()->isQty($t);
 }
