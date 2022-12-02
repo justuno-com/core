@@ -21,7 +21,9 @@ function ju_qty($p):float {
 	else {
 		$i = ju_o(IQty::class); /** @var IQty|Qty $i */
 		$sku = $p->getSku(); /** @var string $sku */
-		$r = array_sum(array_map(function(int $sid) use($i, $sku):float {return $i->execute($sku, $sid);}, ju_msi_stock_ids($p)));
+		$r = array_sum(ju_map(ju_msi_stock_ids($p), function(int $sid) use($i, $sku):float {return $i->execute(
+			$sku, $sid
+		);}));
 	}
 	return $r;
 }

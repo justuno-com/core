@@ -28,6 +28,7 @@ const JU_BEFORE = -1;
  * @used-by ju_int()
  * @used-by ju_map_k()
  * @used-by ju_map_kr()
+ * @used-by ju_qty()
  * @used-by ju_trim()
  * @used-by \Justuno\M2\Controller\Response\Catalog::execute()
  * @used-by \Justuno\M2\Controller\Response\Inventory::execute()
