@@ -55,10 +55,8 @@ function ju_json_decode($s, bool $throw = true) {/** @var mixed|bool|null $r */
  * @used-by \Justuno\Core\Sentry\Client::encode()
  * @used-by \Justuno\Core\Sentry\Extra::adjust()
  * @param mixed $v
- * @param int $flags [optional]
- * @return string
  */
-function ju_json_encode($v, $flags = 0) {return json_encode(ju_json_sort($v),
+function ju_json_encode($v, int $flags = 0):string {return json_encode(ju_json_sort($v),
 	JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE | $flags
 );}
 
