@@ -11,7 +11,7 @@ use Magento\Store\Model\Website as W;
  * @used-by ju_pt_has_qty()
  * @used-by ju_qty()
  */
-function ju_msi():bool {return jucf(function() {return ju_module_enabled('Magento_Inventory');});}
+function ju_msi():bool {return ju_module_enabled('Magento_Inventory');}
 
 /**
  * 2019-11-22
