@@ -60,9 +60,8 @@ function ju_cfg($k, $scope = null, $d = null) {
  * 2020-08-23 "Port the `df_cfg_empty` function" https://github.com/justuno-com/core/issues/295
  * @used-by ju_cfg()
  * @param array|string|null|mixed $v
- * @return bool
  */
-function ju_cfg_empty($v) {return is_null($v) || '' === $v;}
+function ju_cfg_empty($v):bool {return !ju_nes($v);}
 
 /**
  * 2016-02-09
