@@ -51,8 +51,6 @@ abstract class Schema extends \Justuno\Core\Framework\Upgrade implements IUpgrad
 	 *			}
 	 *		}
 	 * https://github.com/magento/magento2/blob/2.2.0-RC1.6/setup/src/Magento/Setup/Model/Installer.php#L844-L881
-	 * @param Setup|ISchemaSetup $setup
-	 * @param IModuleContext|ModuleContext $context
 	 */
-	function upgrade(ISchemaSetup $setup, IModuleContext $context) {$this->process($setup, $context);}
+	function upgrade(ISchemaSetup $setup, IModuleContext $context):void {$this->process($setup, $context);}
 }
