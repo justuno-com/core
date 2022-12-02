@@ -3,7 +3,7 @@ use Justuno\Core\Format\Html\Tag;
 /**
  * 2015-10-27
  * 2020-08-22 "Port the `ju_link_inline` function" https://github.com/justuno-com/core/issues/247
- * @used-by df_fe_init()
+ * @used-by ju_fe_init()
  * @param string|string[] $a
  */
 function ju_link_inline(...$a):string {return ju_call_a(function($res) {return ju_resource_inline(
