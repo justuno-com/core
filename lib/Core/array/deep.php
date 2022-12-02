@@ -37,7 +37,7 @@ function jua_deep(array $a, $path = '', $d = null) {/** @var mixed|null $r */
 			}
 			else {
 				if ($pathParts) {
-					$r = null;
+					$r = null; # Ещё не прошли весь путь, а уже наткнулись на не-массив.
 				}
 				break;
 			}
