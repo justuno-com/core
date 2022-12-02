@@ -38,12 +38,11 @@ abstract class Settings {
 	 * @used-by \Justuno\M2\Settings::accid()
 	 * @used-by \Justuno\M2\Settings::brand_attribute()
 	 * @used-by \Justuno\M2\Settings::domain()
-	 * @param string|null $k [optional]
 	 * @param null|string|int|S|Store|array(string, int) $s [optional]
 	 * @param mixed|callable $d [optional]
 	 * @return array|string|null|mixed
 	 */
-	final function v($k = null, $s = null, $d = null) {return ju_cfg(
+	final function v(string $k = '', $s = null, $d = null) {return ju_cfg(
 		$this->prefix() . '/' . self::phpNameToKey($k ?: ju_caller_f()), $this->scope($s), $d
 	);}
 
