@@ -39,9 +39,8 @@ abstract class Result implements ResultInterface {
 	 * @used-by \Justuno\M2\W\Result\Js::render()
 	 * @see \Justuno\Core\Framework\W\Result\Text::__toString()
 	 * @see \Justuno\M2\W\Result\Js::__toString()
-	 * @return string
 	 */
-	abstract function __toString();
+	abstract function __toString():string;
 
 	/**
 	 * 2016-08-24
