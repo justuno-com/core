@@ -29,7 +29,7 @@ function ju_clean_r(array $r, array $k = [], bool $req = true):array {/** @var m
 	if ($req) {
 		$r = ju_map($r, function($v) use($k) {return !is_array($v) ? $v : ju_clean_r($v, $k);});
 	}
-	return ju_filter($r, function($v) use($k) {return !in_array($v, $k, true);});
+	return ju_filter($r, function($v) use($k):bool {return !in_array($v, $k, true);});
 }
 
 /**
