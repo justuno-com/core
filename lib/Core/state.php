@@ -53,9 +53,8 @@ function ju_magento_version_m() {return ju_o(ProductMetadataInterface::class);}
 /**
  * 2017-04-17
  * @used-by ju_my_local()
- * @return bool
  */
-function ju_my() {return isset($_SERVER['DF_DEVELOPER']);}
+function ju_my():bool {return isset($_SERVER['DF_DEVELOPER']);}
 
 /**
  * 2017-06-09 «dfediuk» is the CLI user name on my localhost.
