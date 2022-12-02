@@ -30,4 +30,4 @@ function ju_date_lt(ZD $d1, ZD $d2):bool {return $d1->getTimestamp() < $d2->getT
  * @param string|null $fmt [optional]
  * @param Zend_Locale|string|null $l [optional]
  */
-function df_dts(ZD $d = null, $fmt = null, $l = null):string {return ju_result_sne(ju_date($d)->toString($fmt, null, $l));}
+function ju_dts(ZD $d = null, $fmt = null, $l = null):string {return ju_result_sne(ju_date($d)->toString($fmt, null, $l));}
