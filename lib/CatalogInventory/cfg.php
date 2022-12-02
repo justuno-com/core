@@ -9,7 +9,6 @@ use Magento\InventoryConfigurationApi\Model\IsSourceItemManagementAllowedForProd
  * 2019-11-22
  * 2020-08-23 "Port the `ju_assert_qty_supported` function" https://github.com/justuno-com/core/issues/275
  * @used-by ju_qty()
- * @param P $p
  * @throws DFE
  */
 function ju_assert_qty_supported(P $p) {ju_assert(
