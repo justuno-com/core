@@ -52,10 +52,8 @@ function ju_pc_disable_flat(F $f = null) {
  * then the products collection is loaded directly from a `catalog_product_flat_<store>` table,
  * and such tables do not contain disabled products at least in Magento 2.4.0.
  * @used-by \Justuno\M2\Controller\Response\Catalog::execute()
- * @param C $c
- * @return C
  */
-function ju_pc_preserve_absent(C $c) {return $c->setFlag(PAddStock::PRESERVE_ABSENT, true);}
+function ju_pc_preserve_absent(C $c):C {return $c->setFlag(PAddStock::PRESERVE_ABSENT, true);}
 
 /**
  * 2020-11-23
