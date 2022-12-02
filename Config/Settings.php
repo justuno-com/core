@@ -20,7 +20,7 @@ abstract class Settings {
 	 * 2016-03-08
 	 * 2017-10-25
 	 * @uses ju_is_backend() is a dirty hack here:
-	 * a call for @see df_is_system_config()
+	 * a call for @see ju_is_system_config()
 	 * from @see \Dfe\Portal\Plugin\Theme\Model\View\Design::beforeGetConfigurationDesignTheme()
 	 * breaks my frontend...
 	 * https://github.com/mage2pro/portal/blob/0.4.4/Plugin/Theme/Model/View/Design.php#L13-L33
