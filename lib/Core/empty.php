@@ -36,7 +36,7 @@ function ju_etn($v) {return $v ?: null;}
  * @param mixed|false $v
  * @return mixed|null
  */
-function ju_ftn($v) {return (false === $v) ? null : $v;}
+function ju_ftn($v) {return false === $v ? null : $v;}
 
 /**
  * 2020-06-14 "Port the `df_nes` function": https://github.com/justuno-com/core/issues/19
