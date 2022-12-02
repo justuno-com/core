@@ -41,7 +41,7 @@ function ju_clean_r(array $r, array $k = [], bool $req = true):array {/** @var m
  * @param callable|array(int|string => mixed)|array[]|\Traversable $a2
  * @return array(int|string => mixed)
  */
-function ju_filter($a1, $a2) { /** @var array $r */
+function ju_filter($a1, $a2):array { /** @var array $r */
 	# 2020-03-02, 2022-10-31
 	# 1) Symmetric array destructuring requires PHP ≥ 7.1:
 	#		[$a, $b] = [1, 2];
