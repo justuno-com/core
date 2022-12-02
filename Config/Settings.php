@@ -72,10 +72,8 @@ abstract class Settings {
 	 * @used-by \Justuno\M2\Block\Js::_toHtml()
 	 * @used-by \Justuno\M2\Controller\Response\Catalog::execute()
 	 * @param Store|int|null $s [optional]
-	 * @param string $c [optional]
-	 * @return self
 	 */
-	static function s($s = null, $c = null) {return jucf(
+	static function s($s = null, string $c = ''):self {return jucf(
 		function($s, $c) {return new $c($s);}, [ju_store($s), $c ?: static::class]
 	);}
 
