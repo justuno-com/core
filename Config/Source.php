@@ -31,5 +31,5 @@ abstract class Source extends SourceBase {
 	 * @used-by \Magento\Config\Model\Config\Structure\Element\Field::_getOptionsFromSourceModel()
 	 * @return array(array('label' => string, 'value' => int|string))
 	 */
-	final function toOptionArray() {return ju_map_to_options_t($this->map());}
+	final function toOptionArray():array {return ju_map_to_options_t($this->map());}
 }
