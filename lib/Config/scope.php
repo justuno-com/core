@@ -127,6 +127,5 @@ function ju_scope_code($s = null, string $type = SS::SCOPE_STORE):string {
  * 2016-12-16
  * 2020-06-26 "Port the `df_scope_resolver_pool` function": https://github.com/justuno-com/core/issues/157
  * @used-by ju_scope_code()
- * @return ScopeResolverPool
  */
-function ju_scope_resolver_pool() {return ju_o(ScopeResolverPool::class);}
+function ju_scope_resolver_pool():ScopeResolverPool {return ju_o(ScopeResolverPool::class);}
