@@ -51,6 +51,5 @@ function ju_is_bin_magento():bool {return ju_ends_with(ju_cli_script(), 'bin/mag
  * @used-by ju_sentry_m()
  * @used-by \Justuno\Core\Sentry\Client::__construct()
  * @used-by \Justuno\Core\Sentry\Client::capture()
- * @return bool
  */
-function ju_is_cli() {return 'cli' === php_sapi_name();}
+function ju_is_cli():bool {return 'cli' === php_sapi_name();}
