@@ -34,7 +34,6 @@ function ju_js($m, string $s = '', array $p = []) {$s = $s ?: 'main'; return ju_
  * 		2) A class name: «A\B\C».
  * 		3) An object: it comes down to the case 2 via @see get_class()
  * 		4) `null`.
- * @param string|null $s [optional]
  * @param array(string => mixed) $p [optional]
  */
 function ju_js_x(string $selector, $m, string $s = '', array $p = []):string {return ju_tag(
