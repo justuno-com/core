@@ -10,13 +10,6 @@ use Magento\Framework\App\State;
 function ju_app_state():State {return ju_o(State::class);}
 
 /**
- * http://mage2.ru/t/37
- * 2020-08-21 "Port the `df_current_url` function" https://github.com/justuno-com/core/issues/212
- * @used-by ju_log_l()
- */
-function ju_current_url():string {return ju_url_o()->getCurrentUrl();}
-
-/**
  * https://mage2.ru/t/94
  * https://mage2.pro/t/59
  * 2020-06-24 "Port the `df_is_ajax` function": https://github.com/justuno-com/core/issues/129
