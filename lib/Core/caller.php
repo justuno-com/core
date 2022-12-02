@@ -62,10 +62,8 @@ function ju_caller_f(int $o = 0):string {return ju_caller_entry(++$o)['function'
  * 2020-08-19 "Port the `df_caller_m` function" https://github.com/justuno-com/core/issues/205
  * @used-by ju_caller_c()
  * @used-by ju_prop()
- * @param int $o [optional]
- * @return string
  */
-function ju_caller_m($o = 0) {
+function ju_caller_m(int $o = 0):string {
 	$bt = ju_caller_entry(++$o); /** @var array(string => int) $bt */
 	$class = jua($bt, 'class'); /** @var string $class */
 	if (!$class) {
