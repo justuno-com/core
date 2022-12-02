@@ -11,7 +11,7 @@ use Magento\InventoryConfigurationApi\Model\IsSourceItemManagementAllowedForProd
  * @used-by ju_qty()
  * @throws DFE
  */
-function ju_assert_qty_supported(P $p) {ju_assert(
+function ju_assert_qty_supported(P $p):void {ju_assert(
 	ju_pt_has_qty($t = $p->getTypeId()), "Products of type `$t` do not have a quantity."
 );}
 
