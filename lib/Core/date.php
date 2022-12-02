@@ -4,10 +4,8 @@ use Zend_Date as ZD;
  * 2016-07-19
  * 2020-06-22 "Port the `df_date` function": https://github.com/justuno-com/core/issues/114
  * @used-by ju_dts()
- * @param Zend_Date|null $date [optional]
- * @return Zend_Date
  */
-function ju_date(ZD $date = null) {return $date ?: ZD::now();}
+function ju_date(ZD $d = null):ZD {return $d ?: ZD::now();}
 
 /**
  * @used-by \Justuno\M2\Catalog\Diagnostic::p()
