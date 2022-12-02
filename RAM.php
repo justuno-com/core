@@ -28,12 +28,11 @@ final class RAM {
 	/**
 	 * 2020-06-13
 	 * @used-by jucf()
-	 * @param string $k
 	 * @param mixed $v
 	 * @param string[] $tags [optional]
 	 * @return mixed
 	 */
-	function set($k, $v, $tags = []) {
+	function set(string $k, $v, array $tags = []) {
 		if ($v instanceof ICached) {
 			$tags += $v->tags();
 		}
@@ -65,6 +64,9 @@ final class RAM {
 	 */
 	private $_tags = [];
 
-	/** 2017-08-10 @return self */
-	static function s() {static $r; return $r ? $r : $r = new self;}
+	/**
+	 * 2017-08-10
+	 * @used-by ju_ram()
+	 */
+	static function s():self {static $r; return $r ? $r : $r = new self;}
 }
