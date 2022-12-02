@@ -71,7 +71,6 @@ function ju_pc_preserve_absent(C $c):C {return $c->setFlag(PAddStock::PRESERVE_A
  * then the products collection is loaded directly from a `catalog_product_flat_<store>` table,
  * and such tables do not contain disabled products at least in Magento 2.4.0.
  * @used-by \Justuno\M2\Catalog\Variants::p()
- * @param F $f
  * @return mixed
  */
 function ju_pc_preserve_absent_f(F $f) {
