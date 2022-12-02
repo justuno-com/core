@@ -66,7 +66,7 @@ function ju_ksort_r_ci(array $a) {return
  * https://bugs.php.net/bug.php?id=50688
  * По этой причине добавил собаку.
  * 2020-08-26 "Port the `df_sort` function" https://github.com/justuno-com/core/issues/334
- * @see df_ksort()
+ * @see ju_ksort()
  * @used-by ju_sort_names()
  * @used-by \Justuno\M2\Catalog\Images::p()
  * @used-by \Justuno\M2\Store::v()
