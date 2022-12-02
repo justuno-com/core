@@ -50,10 +50,8 @@ function ju_caller_entry(int $o = 0):array {
  * @used-by ju_oqi_amount()
  * @used-by ju_prop()
  * @used-by \Justuno\Core\Config\Settings::v()
- * @param int $o [optional]
- * @return string
  */
-function ju_caller_f($o = 0) {return ju_caller_entry(++$o)['function'];}
+function ju_caller_f(int $o = 0):string {return ju_caller_entry(++$o)['function'];}
 
 /**
  * 2016-08-10
