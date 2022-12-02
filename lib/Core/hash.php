@@ -6,12 +6,10 @@ use Magento\Framework\Model\AbstractModel as M;
  * @used-by juc()
  * @used-by jucf()
  * @param mixed[] $a
- * @return string
  */
-function ju_hash_a(array $a) {
+function ju_hash_a(array $a):string {
 	$resultA = []; /** @var string[] $resultA */
-	foreach ($a as $k => $v) {
-		/** @var int|string $k */ /** @var mixed $v */
+	foreach ($a as $k => $v) {/** @var int|string $k */ /** @var mixed $v */
 		$resultA[]= "$k=>" . (is_object($v) ? ju_hash_o($v) : (is_array($v) ? ju_hash_a($v) : $v));
 	}
 	return implode('::', $resultA);
