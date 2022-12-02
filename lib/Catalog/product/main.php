@@ -27,10 +27,9 @@ use Magento\Store\Api\Data\StoreInterface as IStore;
  * @used-by \Justuno\M2\Controller\Cart\Add::product()
  * @param int|string|P|OI|QI $p
  * @param int|string|null|bool|IStore $s [optional]
- * @return P
  * @throws NSE
  */
-function ju_product($p, $s = false) {return $p instanceof P ? $p : ju_product_r()->getById(
+function ju_product($p, $s = false):P {return $p instanceof P ? $p : ju_product_r()->getById(
 	/**
 	 * 2020-02-05
 	 * 1) I do not use @see \Magento\Sales\Model\Order\Item::getProduct()
