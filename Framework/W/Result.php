@@ -30,6 +30,7 @@ use Magento\Framework\Controller\ResultInterface;
  *
  * 2020-08-21 "Port the `Df\Framework\W\Result` class" https://github.com/justuno-com/core/issues/233
  *
+ * @see \Justuno\Core\Framework\W\Result\Text
  * @see \Justuno\M2\W\Result\Js
  */
 abstract class Result implements ResultInterface {
