@@ -32,7 +32,7 @@ abstract class Upgrade {
 	 * @used-by self::process()
 	 * @see \Justuno\M2\Setup\UpgradeSchema::_process()
 	 */
-	abstract protected function _process();
+	abstract protected function _process():void;
 
 	/**
 	 * 2016-12-08
