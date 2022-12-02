@@ -37,9 +37,8 @@ function ju_is_localhost():bool {return in_array(jua($_SERVER, 'REMOTE_ADDR', []
  * @used-by ju_log_l()
  * @used-by ju_sentry()
  * @used-by ju_sentry_m()
- * @return string
  */
-function ju_magento_version() {return jucf(function() {return ju_trim_text_left(
+function ju_magento_version():string {return jucf(function() {return ju_trim_text_left(
 	ju_magento_version_m()->getVersion()
 , 'dev-');});}
 
