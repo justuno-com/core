@@ -4,10 +4,9 @@
  * 2020-08-22 "Port the `df_map_0` function" https://github.com/justuno-com/core/issues/265
  * @used-by \Justuno\M2\Config\Source\Brand::map()
  * @param array(string => string) $tail
- * @param string|null $l [optional]
  * @return array(int => string)
  */
-function ju_map_0(array $tail, $l = null) {return [0 => $l ?: '-- select a value --'] + $tail;}
+function ju_map_0(array $tail, string $l = '') {return [0 => $l ?: '-- select a value --'] + $tail;}
 
 /**
  * 2015-11-13
