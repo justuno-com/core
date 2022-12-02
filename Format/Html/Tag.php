@@ -16,7 +16,7 @@ final class Tag {
 		$this->_multiline = !is_null($multiline) ? $multiline : 1 < count($attrs);
 	}
 
-	/** @used-by df_tag() */
+	/** @used-by ju_tag() */
 	function render():string {return
 		"<{$this->openTagWithAttributesAsText()}"
 		. ($this->_multiline ? "\n" : '')
