@@ -45,9 +45,8 @@ function ju_ftn($v) {return false === $v ? null : $v;}
  * @used-by jua()
  * @used-by jua_deep()
  * @param mixed $v
- * @return bool
  */
-function ju_nes($v) {return is_null($v) || '' === $v;}
+function ju_nes($v):bool {return is_null($v) || '' === $v;}
 
 /**
  * 2020-06-20 "Port the `df_nts` function": https://github.com/justuno-com/core/issues/89
