@@ -9,23 +9,11 @@ function ju_date(ZD $d = null):ZD {return $d ?: ZD::now();}
 
 /**
  * @used-by \Justuno\M2\Catalog\Diagnostic::p()
- * @param string $datetime
- * @param bool $throw [optional]
  * @return ZD|null
  * @throws Exception
  */
-function ju_date_from_db($datetime, $throw = true) {
-	ju_param_sne($datetime, 0);
-	$r = null; /** @var ZD|null $r */
-	if ($datetime) {
-		try {$r = new ZD($datetime, ZD::ISO_8601);}
-		catch (Exception $e) {
-			if ($throw) {
-				ju_error($e);
-			}
-		}
-	}
-	return $r;
+function ju_date_from_db(string $s, bool $onE = true) {
+	ju_param_sne($s, 0); return ju_try(function() use($s):ZD {return new ZD($s, ZD::ISO_8601);}, $onE);
 }
 
 /**
