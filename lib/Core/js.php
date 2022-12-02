@@ -31,10 +31,10 @@ function ju_js($m, string $s = '', array $p = []) {$s = $s ?: 'main'; return ju_
  * @param string $selector
  * @param string|object|null $m
  * $m could be:
- * 1) A module name: «A_B»
- * 2) A class name: «A\B\C».
- * 3) An object: it comes down to the case 2 via @see get_class()
- * 4) `null`.
+ * 		1) A module name: «A_B»
+ * 		2) A class name: «A\B\C».
+ * 		3) An object: it comes down to the case 2 via @see get_class()
+ * 		4) `null`.
  * @param string|null $s [optional]
  * @param array(string => mixed) $p [optional]
  * @return string
