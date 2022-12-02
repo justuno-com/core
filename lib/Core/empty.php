@@ -13,7 +13,7 @@ function ju_es($v):bool {return '' === $v;}
  * @param mixed|null $v
  * @return mixed[]
  */
-function ju_eta($v) {
+function ju_eta($v):array {
 	if (!is_array($v)) {
 		ju_assert(empty($v));
 		$v = [];
