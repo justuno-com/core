@@ -8,7 +8,7 @@ class Text {
 	 * @param string $t [optional]
 	 * @return string|string[]
 	 */
-	function quote($s, $t = self::QUOTE__RUSSIAN) {
+	function quote($s, string $t = self::QUOTE__RUSSIAN) {
 		if ('"' === $t) {
 			$t = self::QUOTE__DOUBLE;
 		}
