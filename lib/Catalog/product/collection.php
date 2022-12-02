@@ -9,10 +9,8 @@ use Magento\Store\Api\Data\StoreInterface as IS;
  * 2020-08-24 "Port the `df_product_c` function" https://github.com/justuno-com/core/issues/325
  * @used-by \Justuno\M2\Controller\Response\Catalog::execute()
  * @used-by \Justuno\M2\Controller\Response\Inventory::execute()
- * @param IS|null $s [optional]
- * @return C
  */
-function ju_pc(IS $s = null) {
+function ju_pc(IS $s = null):C {
 	$r = ju_new_om(C::class); /** @var C $r */
 	$r->addStoreFilter($s); # 2021-01-28 "Make the module multi-store aware": https://github.com/justuno-com/m2/issues/24
 	return $r;
