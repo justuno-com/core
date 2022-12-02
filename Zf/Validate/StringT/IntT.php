@@ -35,6 +35,6 @@ final class IntT extends \Justuno\Core\Zf\Validate {
 	 */
 	protected function expected():string {return 'an integer';}
 
-	/** @used-by df_int() */
+	/** @used-by ju_int() */
 	static function s():self {static $r; return $r ? $r : $r = new self;}
 }
