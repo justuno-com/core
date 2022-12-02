@@ -37,9 +37,8 @@ class Text extends \Justuno\Core\Framework\W\Result {
 	 * because the method is absent in @see \Magento\Framework\Controller\ResultInterface
 	 * @override
 	 * @see \Justuno\Core\Framework\W\Result::__toString()
-	 * @return string
 	 */
-	final function __toString() {return $this->_body;}
+	final function __toString():string {return $this->_body;}
 
 	/**
 	 * 2016-08-24
