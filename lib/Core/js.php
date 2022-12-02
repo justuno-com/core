@@ -28,7 +28,6 @@ function ju_js($m, string $s = '', array $p = []) {$s = $s ?: 'main'; return ju_
  * 2019-06-01
  * 2020-08-22 "Port the `df_js_x` function" https://github.com/justuno-com/core/issues/252
  * @used-by ju_js()
- * @param string $selector
  * @param string|object|null $m
  * $m could be:
  * 		1) A module name: «A_B»
@@ -39,7 +38,7 @@ function ju_js($m, string $s = '', array $p = []) {$s = $s ?: 'main'; return ju_
  * @param array(string => mixed) $p [optional]
  * @return string
  */
-function ju_js_x($selector, $m, $s = null, array $p = []) {return ju_tag(
+function ju_js_x(string $selector, $m, $s = null, array $p = []) {return ju_tag(
 	'script', ['type' => 'text/x-magento-init'], ju_json_encode([$selector => [
 		ju_cc_path(is_null($m) ? null : ju_module_name($m), $s ?: 'main') => $p
 	]])
