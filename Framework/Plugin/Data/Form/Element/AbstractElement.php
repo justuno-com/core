@@ -51,7 +51,7 @@ class AbstractElement extends Sb {
 	 * 2016-03-08
 	 * «@see \Magento\Framework\Data\Form\Element\AbstractElement::setForm() is called 3 times for the same element and form.»
 	 * https://mage2.pro/t/901
-	 * That is why we use $sb->{__METHOD__}.
+	 * That is why we use @uses juc()
 	 * @see \Magento\Framework\Data\Form\Element\AbstractElement::setForm()
 	 */
 	function afterSetForm(Sb $sb, Sb $r):Sb {
