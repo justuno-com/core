@@ -8,7 +8,6 @@
  * @see df_csv()
  * @used-by \Justuno\Core\Sentry\Client::send()
  * @used-by \Justuno\M2\Catalog\Diagnostic::p()
- * @param string ...$args
- * @return string
+ * @param string|string[] $a
  */
-function ju_csv_pretty(...$args) {return implode(', ', jua_flatten($args));}
+function ju_csv_pretty(...$a):string {return implode(', ', jua_flatten($a));}
