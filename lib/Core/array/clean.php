@@ -19,7 +19,7 @@ function ju_clean(array $r, ...$k) {/** @var mixed[] $r */return ju_clean_r(
 /**
  * 2020-02-05
  * 2020-06-18 "Port the `df_clean_r` function": https://github.com/justuno-com/core/issues/59
- * @see df_clean()
+ * @see ju_clean()
  * 1) It works recursively.
  * 2) I does not remove `false`.
  * @used-by ju_clean()
