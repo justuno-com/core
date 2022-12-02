@@ -36,7 +36,7 @@ final class StringT extends \Justuno\Core\Zf\Validate implements \Zend_Filter_In
 	protected function expected():string {return 'a string';}
 
 	/**
-	 * @used-by df_check_s()
+	 * @used-by ju_check_s()
 	 * @used-by \Justuno\Core\Zf\Validate\StringT::isValid()
 	 */
 	static function s():self {static $r; return $r ? $r : $r = new self;}
