@@ -19,7 +19,7 @@ abstract class Settings {
 	/**
 	 * 2016-03-08
 	 * 2017-10-25
-	 * @uses df_is_backend() is a dirty hack here:
+	 * @uses ju_is_backend() is a dirty hack here:
 	 * a call for @see df_is_system_config()
 	 * from @see \Dfe\Portal\Plugin\Theme\Model\View\Design::beforeGetConfigurationDesignTheme()
 	 * breaks my frontend...
