@@ -69,9 +69,8 @@ abstract class Upgrade {
 	 *		");
 	 * https://github.com/mage2pro/markdown/blob/1.0.24/Setup/UpgradeSchema.php#L74-L82
 	 * @param string|array $t
-	 * @return string
 	 */
-	final protected function t($t) {return $this->_setup->getTable($t);}
+	final protected function t($t):string {return $this->_setup->getTable($t);}
 
 	/**
 	 * 2016-08-21
