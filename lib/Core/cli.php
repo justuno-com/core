@@ -14,10 +14,9 @@ function ju_cli_argv($i = null) {return jua_deep($_SERVER, ['argv', $i]);}
  * 2020-05-24
  * 2020-08-21 "Port the `df_cli_cmd` function" https://github.com/justuno-com/core/issues/209
  * @used-by ju_log_l()
- * @return string
  *
  */
-function ju_cli_cmd() {return ju_cc_s(ju_cli_argv());}
+function ju_cli_cmd():string {return ju_cc_s(ju_cli_argv());}
 
 /**
  * 2020-02-15
