@@ -33,19 +33,19 @@ class Text {
 	function singleLine(string $s):string {return str_replace(["\r\n", "\r", "\n", "\t"], ' ', $s);}
 
 	/**
-	 * @used-by df_quote_double()
+	 * @used-by ju_quote_double()
 	 * @used-by self::quote()
 	 */
 	const QUOTE__DOUBLE = 'double';
 
 	/**
-	 * @used-by df_quote_russian()
+	 * @used-by ju_quote_russian()
 	 * @used-by self::quote()
 	 */
 	const QUOTE__RUSSIAN = 'russian';
 
 	/**
-	 * @used-by df_quote_single()
+	 * @used-by ju_quote_single()
 	 * @used-by self::quote()
 	 */
 	const QUOTE__SINGLE = 'single';
