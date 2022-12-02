@@ -8,11 +8,9 @@
  * @used-by \Justuno\Core\Sentry\Client::capture()
  * @used-by \Justuno\Core\Sentry\Client::send()
  * @used-by \Justuno\M2\Block\Js::_toHtml()
- * @param mixed[] $r
  * @param mixed ...$k [optional]
- * @return mixed[]
  */
-function ju_clean(array $r, ...$k) {/** @var mixed[] $r */return ju_clean_r(
+function ju_clean(array $r, ...$k):array {/** @var mixed[] $r */return ju_clean_r(
 	$r, array_merge([false], ju_args($k)), false
 );}
 
