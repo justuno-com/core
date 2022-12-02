@@ -51,10 +51,9 @@ class Text extends \Justuno\Core\Framework\W\Result {
 	 * 2016-08-24
 	 * @used-by self::i()
 	 * @see \Justuno\Core\Framework\W\Result\Json::prepare()
-	 * @param mixed $body
-	 * @return string
+	 * @param mixed $s
 	 */
-	protected function prepare($body) {return $body;}
+	protected function prepare($s):string {return $s;}
 
 	/**
 	 * 2016-07-04
