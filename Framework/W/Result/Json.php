@@ -26,7 +26,6 @@ class Json extends Text {
 	 * @see \Justuno\Core\Framework\W\Result\Text::prepare()
 	 * @used-by \Justuno\Core\Framework\W\Result\Text::i()
 	 * @param string|object|mixed[] $b
-	 * @return string
 	 */
-	final protected function prepare($b) {return !is_array($b) && !is_object($b) ? $b : ju_json_encode($b);}
+	final protected function prepare($b):string {return !is_array($b) && !is_object($b) ? $b : ju_json_encode($b);}
 }
