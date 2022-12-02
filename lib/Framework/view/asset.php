@@ -30,7 +30,7 @@ function ju_asset_create($u) {$a = ju_asset(); return !ju_check_url_absolute($u)
  * https://github.com/magento/magento2/blob/2.0.0/lib/internal/Magento/Framework/View/Asset/File.php#L147-L156
  * 2) $name could be:
  * 1) a short name;
- * 2) a full name composed with @see df_asset_name()
+ * 2) a full name composed with @see ju_asset_name()
  * 2020-08-22 "Port the `df_asset_exists` function" https://github.com/justuno-com/core/issues/244
  * @used-by ju_fe_init()
  * @param string $name
