@@ -30,9 +30,8 @@ function ju_area_code_is(string ...$v):bool {return in_array(ju_area_code(), $v)
  * @used-by ju_product_current()
  * @used-by ju_store()
  * @used-by \Justuno\Core\Config\Settings::scope()
- * @return bool
  */
-function ju_is_backend() {return ju_area_code_is(A::AREA_ADMINHTML) || ju_is_ajax() && ju_backend_user();}
+function ju_is_backend():bool {return ju_area_code_is(A::AREA_ADMINHTML) || ju_is_ajax() && ju_backend_user();}
 
 /**
  * 2016-06-02 By analogy with @see ju_is_backend()
