@@ -80,7 +80,6 @@ class Text extends \Justuno\Core\Framework\W\Result {
 	 * 2016-07-04
 	 * @used-by \Justuno\M2\Response::p()
 	 * @param mixed $body
-	 * @return self
 	 */
 	static function i($body):self {
 		$r = new static; /** @var self $r */
