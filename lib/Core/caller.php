@@ -3,10 +3,8 @@
  * 2017-11-19
  * 2021-02-24
  * @used-by \Justuno\M2\Response::p()
- * @param int $o [optional]
- * @return string
  */
-function ju_caller_c($o = 0) {return ju_first(ju_explode_method(ju_caller_m(++$o)));}
+function ju_caller_c(int $o = 0):string {return ju_first(ju_explode_method(ju_caller_m(++$o)));}
 
 /**
  * 2017-03-28 If the function is called from a closure, then it will go up through the stask until it leaves all closures.
