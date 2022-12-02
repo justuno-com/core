@@ -76,10 +76,8 @@ abstract class Upgrade {
 	 * 2016-08-21
 	 * 2017-08-01 It checks whether the installed version of the current module is lower than $v.
 	 * @used-by \Justuno\M2\Setup\UpgradeSchema::_process()
-	 * @param string $v
-	 * @return bool
 	 */
-	final protected function v($v) {return -1 === version_compare($this->_context->getVersion(), $v);}
+	final protected function v(string $v):bool {return -1 === version_compare($this->_context->getVersion(), $v);}
 
 	/**
 	 * 2016-12-02
