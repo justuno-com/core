@@ -5,7 +5,7 @@ final class IntT extends \Justuno\Core\Zf\Validate {
 	/**
 	 * @override
 	 * @see \Zend_Validate_Interface::isValid()
-	 * @used-by df_int()
+	 * @used-by ju_int()
 	 * @param string $v
 	 */
 	function isValid($v):bool {
