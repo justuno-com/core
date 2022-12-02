@@ -5,7 +5,6 @@ class Text {
 	/**
 	 * @used-by ju_quote_russian()
 	 * @param string|string[]|array(string => string) $s
-	 * @param string $t [optional]
 	 * @return string|string[]
 	 */
 	function quote($s, string $t = self::QUOTE__RUSSIAN) {
