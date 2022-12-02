@@ -42,14 +42,6 @@ abstract class Upgrade {
 	final protected function c() {return $this->_setup->getConnection();}
 
 	/**
-	 * 2016-12-02
-	 * 2017-08-01
-	 * Override this method if the initially installed module has not included this class.
-	 * In this case provide here the number of the version when the class has been added.
-	 */
-	protected function initial():string {return '0.0.1';}
-
-	/**
 	 * 2016-08-14
 	 * @used-by \Justuno\Core\Framework\Upgrade\Schema::upgrade()
 	 * @param FSetup|SSetup $setup
