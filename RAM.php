@@ -10,10 +10,8 @@ final class RAM {
 	 * https://3v4l.org/9cQOO
 	 * @used-by jucf()
 	 * @used-by get()
-	 * @param string $k
-	 * @return bool
 	 */
-	function exists($k) {return array_key_exists($k, $this->_data);}
+	function exists(string $k):bool {return array_key_exists($k, $this->_data);}
 
 	/**
 	 * 2020-06-13
