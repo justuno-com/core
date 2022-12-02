@@ -44,10 +44,8 @@ abstract class Upgrade {
 	/**
 	 * 2016-08-14
 	 * @used-by \Justuno\Core\Framework\Upgrade\Schema::upgrade()
-	 * @param FSetup|SSetup $setup
-	 * @param IModuleContext|ModuleContext $context
 	 */
-	final protected function process(FSetup $setup, IModuleContext $context) {
+	final protected function process(FSetup $setup, IModuleContext $context):void {
 		$setup->startSetup();
 		$this->_context = $context;
 		$this->_setup = $setup;
