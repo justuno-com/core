@@ -49,7 +49,7 @@ function ju_fetch_col($t, $col, $compareK = null, $compareV = null, $distinct = 
  * @return int[]|string[]
  */
 function ju_fetch_col_int($t, $cSelect, $compareK = null, $compareV = null, $distinct = false) {return
-	/** I intentionally do not use @see df_int() to gain speed */
+	/** I intentionally do not use @see ju_int() to gain speed */
 	ju_int_simple(ju_fetch_col($t, $cSelect, $compareK, $compareV, $distinct))
 ;}
 
