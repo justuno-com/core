@@ -17,6 +17,8 @@ function ju_hash_a(array $a):string {
 
 /**
  * 2020-06-13 "Port the `df_hash_o` function": https://github.com/justuno-com/core/issues/7
+ * 2022-12-02
+ * `object` as an argument type is not supported by PHP < 7.2: https://github.com/mage2pro/core/issues/174#user-content-object
  * @used-by ju_hash_a()
  * @param object $o
  */
