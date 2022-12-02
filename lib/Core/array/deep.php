@@ -81,7 +81,7 @@ function jua_deep_set(array &$array, $path, $value):array {
  * @param string|string[] $path
  * @throws DFE
  */
-function jua_deep_unset(array &$a, $path) {
+function jua_deep_unset(array &$a, $path):void {
 	if (!is_array($path)) {
 		ju_param_sne($path, 1);
 		$path = ju_explode_xpath($path);
