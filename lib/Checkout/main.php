@@ -26,7 +26,7 @@ function ju_checkout_session() {return ju_o(Session::class);}
  * @return O|null
  * @throws DFE
  */
-function ju_order_last(bool $required = true) {
+function ju_order_last(bool $req = true) {
 	$s = ju_checkout_session(); /** @var Session|JuSession $s */
-	return $s->getLastRealOrderId() ? $s->getLastRealOrder() : (!$required ? null : ju_error());
+	return $s->getLastRealOrderId() ? $s->getLastRealOrder() : (!$req ? null : ju_error());
 }
