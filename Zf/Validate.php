@@ -23,8 +23,7 @@ abstract class Validate implements \Zend_Validate_Interface {
 	final function getMessages():array {return [__CLASS__ => $this->message()];}
 
 	/**
-	 * @used-by df_float()
-	 * @used-by df_int()
+	 * @used-by ju_int()
 	 * @used-by \Justuno\Core\Zf\Validate::getMessages()
 	 */
 	final function message():string {$v = $this->v(); return is_null($v)
