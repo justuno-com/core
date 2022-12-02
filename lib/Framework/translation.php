@@ -21,13 +21,13 @@ function ju_translate_a($strings, $now = false) {
  *
  * Example #1: '歐付寶 all/Pay':
  * @see df_fs_name => 歐付寶-allPay
- * @see df_translit =>  all/Pay
+ * @see ju_translit =>  all/Pay
  * @see ju_translit_url => all-Pay
  * @see df_translit_url_lc => all-pay
  *
  * Example #2: '歐付寶 O'Pay (allPay)':
  * @see df_fs_name => 歐付寶-allPay
- * @see df_translit =>  allPay
+ * @see ju_translit =>  allPay
  * @see ju_translit_url => allPay
  * @see df_translit_url_lc => allpay
  *
