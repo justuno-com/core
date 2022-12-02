@@ -43,6 +43,5 @@ function ju_is_backend():bool {return ju_area_code_is(A::AREA_ADMINHTML) || ju_i
  * https://github.com/magento/magento2/blob/2.0.0/lib/internal/Magento/Framework/App/Area.php
  * 2020-08-13 "Port the `df_is_frontend` function" https://github.com/justuno-com/core/issues/179
  * @used-by ju_sentry_m()
- * @return bool
  */
-function ju_is_frontend() {return ju_area_code_is(A::AREA_FRONTEND) || ju_is_ajax() && ju_customer_session_id();}
+function ju_is_frontend():bool {return ju_area_code_is(A::AREA_FRONTEND) || ju_is_ajax() && ju_customer_session_id();}
