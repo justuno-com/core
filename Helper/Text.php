@@ -8,15 +8,7 @@ class Text {
 	 * @return string|string[]
 	 */
 	function quote($s, string $t = self::QUOTE__RUSSIAN) {
-		if ('"' === $t) {
-			$t = self::QUOTE__DOUBLE;
-		}
-		elseif ("'" === $t) {
-			$t = self::QUOTE__SINGLE;
-		}
-		static $m = [
-			self::QUOTE__DOUBLE => ['"', '"'], self::QUOTE__RUSSIAN => ['«', '»'], self::QUOTE__SINGLE => ["'", "'"]
-		]; /** @var array(string => string[]) $m */
+		static $m = [self::QUOTE__RUSSIAN => ['«', '»']]; /** @var array(string => string[]) $m */
 		$quotes = jua($m, $t); /** @var string[] $quotes */
 		if (!is_array($quotes)) {
 			ju_error("An unknown quote: «{$t}».");
@@ -33,22 +25,10 @@ class Text {
 	function singleLine(string $s):string {return str_replace(["\r\n", "\r", "\n", "\t"], ' ', $s);}
 
 	/**
-	 * @used-by ju_quote_double()
-	 * @used-by self::quote()
-	 */
-	const QUOTE__DOUBLE = 'double';
-
-	/**
 	 * @used-by ju_quote_russian()
 	 * @used-by self::quote()
 	 */
 	const QUOTE__RUSSIAN = 'russian';
-
-	/**
-	 * @used-by ju_quote_single()
-	 * @used-by self::quote()
-	 */
-	const QUOTE__SINGLE = 'single';
 
 	/**
 	 * @used-by ju_t()
