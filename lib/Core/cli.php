@@ -8,7 +8,7 @@
  * @param int|null $i [optional]
  * @return string|string[]
  */
-function ju_cli_argv($i = null) {return jua(jua($_SERVER, 'argv', []), $i);}
+function ju_cli_argv($i = null) {return jua_deep($_SERVER, ['argv', $i]);}
 
 /**
  * 2020-05-24

@@ -11,7 +11,7 @@ use Justuno\Core\Exception as DFE;
  * @return mixed|null
  * @throws DFE
  */
-function jua_deep(array $a, $path, $d = null) {/** @var mixed|null $r */
+function jua_deep(array $a, $path = '', $d = null) {/** @var mixed|null $r */
 	if (ju_nes($path)) {
 		$r = $a;
 	}
