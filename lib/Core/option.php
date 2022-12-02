@@ -22,7 +22,6 @@ function ju_map_to_options_t(array $m):array {return array_map('ju_option', arra
  * 2020-08-22 "Port the `df_option` function" https://github.com/justuno-com/core/issues/261
  * @used-by ju_map_to_options_t()
  * @param string|int $v
- * @param string $l
  * @return array(string => string|int)
  */
-function ju_option($v, $l) {return ['label' => $l, 'value' => $v];}
+function ju_option($v, string $l) {return ['label' => $l, 'value' => $v];}
