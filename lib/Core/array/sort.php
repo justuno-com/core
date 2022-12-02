@@ -45,7 +45,7 @@ function ju_ksort_r_ci(array $a) {return
 	array_is_list($a)
 	/**
 	 * 2017-09-08
-	 * @todo It would be nice to use df_sort($a) here,
+	 * @todo It would be nice to use ju_sort($a) here,
 	 * but now it will break the «Sales Documents Numeration» extension,
 	 * because @see \Justuno\Core\Config\Settings::_matrix() relies on an exact items ordering, e.g:
 	 * [["ORD-{Y/m}-",null],["INV-",null],["SHIP-{Y-M}",null],["RET-{STORE-ID}-",null]]
