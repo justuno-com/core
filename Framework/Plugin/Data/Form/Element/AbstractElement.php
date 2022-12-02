@@ -15,6 +15,16 @@ class AbstractElement extends Sb {
 	function __construct() {}
 
 	/**
+	 * 2015-10-09
+	 * Цель метода — отключение автозаполнения полей.
+	 * https://developers.google.com/web/fundamentals/input/form/label-and-name-inputs?hl=en#recommended-input-name-and-autocomplete-attribute-values
+	 * @see \Magento\Framework\Data\Form\Element\AbstractElement::getHtmlAttributes()
+	 * @param string[] $r
+	 * @return string[]
+	 */
+	function afterGetHtmlAttributes(Sb $sb, array $r):array {return array_merge($r, ['autocomplete']);}
+
+	/**
 	 * 2016-03-08
 	 * 1) Many built-in classes do not call getBeforeElementHtml():
 	 * *) @see \Magento\Framework\Data\Form\Element\Textarea::getElementHtml()
