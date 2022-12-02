@@ -30,9 +30,8 @@ function ju_cli_script():string {return ju_cli_argv(0);}
  * 2020-08-13 "Port the `df_cli_user` function" https://github.com/justuno-com/core/issues/178
  * @see \Magento\Framework\Shell::execute()
  * @used-by ju_sentry_m()
- * @return string
  */
-function ju_cli_user() {return jucf(function() {return exec('whoami');});}
+function ju_cli_user():string {return jucf(function() {return exec('whoami');});}
 
 /**
  * 2020-02-15
