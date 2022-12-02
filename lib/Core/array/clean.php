@@ -22,12 +22,8 @@ function ju_clean(array $r, ...$k):array {/** @var mixed[] $r */return ju_clean_
  * 2) I does not remove `false`.
  * @used-by ju_clean()
  * @used-by ju_clean_r()
- * @param mixed[] $r
- * @param mixed[] $k
- * @param bool $req [optional]
- * @return mixed[]
  */
-function ju_clean_r(array $r, $k = [], $req = true) {/** @var mixed[] $r */
+function ju_clean_r(array $r, array $k = [], bool $req = true):array {/** @var mixed[] $r */
 	/** 2020-02-05 @see array_unique() does not work correctly here, even with the @see SORT_REGULAR flag. */
 	$k = array_merge($k, ['', null, []]);
 	if ($req) {
