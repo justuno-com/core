@@ -17,9 +17,8 @@ class Json extends Text {
 	 * @override
 	 * @see \Justuno\Core\Framework\W\Result\Text::contentType()
 	 * @used-by \Justuno\Core\Framework\W\Result\Text::render()
-	 * @return mixed
 	 */
-	final protected function contentType() {return 'application/json';}
+	final protected function contentType():string {return 'application/json';}
 
 	/**
 	 * 2016-08-24
