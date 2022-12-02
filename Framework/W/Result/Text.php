@@ -82,7 +82,7 @@ class Text extends \Justuno\Core\Framework\W\Result {
 	 * @param mixed $body
 	 * @return self
 	 */
-	static function i($body) {
+	static function i($body):self {
 		$r = new static; /** @var self $r */
 		$r->_body = $r->prepare($body);
 		return $r;
