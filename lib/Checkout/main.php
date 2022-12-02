@@ -1,5 +1,5 @@
 <?php
-use Justuno\Core\Checkout\Model\Session as DfSession;
+use Justuno\Core\Checkout\Model\Session as JuSession;
 use Justuno\Core\Exception as DFE;
 use Magento\Checkout\Model\Cart;
 use Magento\Checkout\Model\Session;
@@ -15,7 +15,7 @@ function ju_cart():Cart {return ju_o(Cart::class);}
  * 2016-05-06
  * 2020-08-24 "Port the `df_checkout_session` function" https://github.com/justuno-com/core/issues/312
  * @used-by ju_order_last()
- * @return Session|DfSession
+ * @return Session|JuSession
  */
 function ju_checkout_session() {return ju_o(Session::class);}
 
@@ -27,6 +27,6 @@ function ju_checkout_session() {return ju_o(Session::class);}
  * @throws DFE
  */
 function ju_order_last(bool $required = true) {
-	$s = ju_checkout_session(); /** @var Session|DfSession $s */
+	$s = ju_checkout_session(); /** @var Session|JuSession $s */
 	return $s->getLastRealOrderId() ? $s->getLastRealOrder() : (!$required ? null : ju_error());
 }
