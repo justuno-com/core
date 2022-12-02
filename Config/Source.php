@@ -20,7 +20,7 @@ abstract class Source extends SourceBase {
 	 * @used-by self::toOptionArray()
 	 * @return array(<value> => <label>)
 	 */
-	abstract protected function map();
+	abstract protected function map():array;
 
 	/**
 	 * 2015-11-27
