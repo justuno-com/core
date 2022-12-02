@@ -18,10 +18,11 @@ function ju_msi():bool {return ju_module_enabled('Magento_Inventory');}
  * 2020-08-23 "Port the `df_msi_stock_ids` function" https://github.com/justuno-com/core/issues/279
  * @used-by ju_qty()
  * @uses ju_msi_website2stockId()
- * @param P $p
  * @return int[]
  */
-function ju_msi_stock_ids(P $p) {return array_filter(array_unique(array_map('ju_msi_website2stockId', $p->getWebsiteIds())));}
+function ju_msi_stock_ids(P $p):array {return array_filter(array_unique(array_map(
+	'ju_msi_website2stockId', $p->getWebsiteIds()
+)));}
 
 /**
  * 2019-11-22
