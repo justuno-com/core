@@ -61,8 +61,7 @@ function ju_my():bool {return isset($_SERVER['DF_DEVELOPER']);}
  * 2020-08-14 "Port the `df_my_local` function" https://github.com/justuno-com/core/issues/184
  * @used-by ju_visitor_ip()
  * @used-by \Justuno\M2\Store::v()
- * @return bool
  */
-function ju_my_local() {return jucf(function() {return
+function ju_my_local():bool {return jucf(function() {return
 	ju_my() && (ju_is_localhost() || 'dfediuk' === jua($_SERVER, 'USERNAME'))
 ;});}
