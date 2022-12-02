@@ -16,7 +16,7 @@ function ju_json_decode($s, bool $throw = true) {/** @var mixed|bool|null $r */
 	# 2022-10-14
 	# «an empty string is no longer considered valid JSON»:
 	# https://www.php.net/manual/migration70.incompatible.php#migration70.incompatible.other.json-to-jsond
-	if ('' === $s || is_null($s)) {
+	if (ju_nes($s)) {
 		$r = $s;
 	}
 	else {
