@@ -115,14 +115,12 @@ function ju_scope():array {
  *
  * @used-by ju_store_code()
  * @param null|string|int|ScopeA|Store $scope [optional]
- * @param string $scopeType [optional]
- * @return string
  */
-function ju_scope_code($scope = null, $scopeType = SS::SCOPE_STORE) {
-	if (($scope === null || is_numeric($scope)) && $scopeType !== IScopeConfig::SCOPE_TYPE_DEFAULT) {
-		$scope = ju_scope_resolver_pool()->get($scopeType)->getScope($scope);
+function ju_scope_code($s = null, string $type = SS::SCOPE_STORE):string {
+	if (($s === null || is_numeric($s)) && $type !== IScopeConfig::SCOPE_TYPE_DEFAULT) {
+		$s = ju_scope_resolver_pool()->get($type)->getScope($s);
 	}
-	return $scope instanceof ScopeA ? $scope->getCode() : $scope;
+	return $s instanceof ScopeA ? $s->getCode() : $s;
 }
 
 /**
