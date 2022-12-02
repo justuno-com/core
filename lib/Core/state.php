@@ -23,9 +23,8 @@ function ju_is_ajax():bool {static $r; return !is_null($r) ? $r : $r = ju_reques
  * 2017-06-09 It intentionally returns false in the CLI mode.
  * 2020-08-14 "Port the `df_is_localhost` function" https://github.com/justuno-com/core/issues/186
  * @used-by ju_my_local()
- * @return bool
  */
-function ju_is_localhost() {return in_array(jua($_SERVER, 'REMOTE_ADDR', []), ['127.0.0.1', '::1']);}
+function ju_is_localhost():bool {return in_array(jua($_SERVER, 'REMOTE_ADDR', []), ['127.0.0.1', '::1']);}
 
 /**
  * 2016-06-25 https://mage2.pro/t/543
