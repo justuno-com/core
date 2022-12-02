@@ -62,7 +62,7 @@ class Text extends \Justuno\Core\Framework\W\Result {
 	 * @used-by \Justuno\Core\Framework\W\Result::renderResult()
 	 * @param IHttpResponse|HttpResponse $r
 	 */
-	final protected function render(IHttpResponse $r) {
+	final protected function render(IHttpResponse $r):void {
 		$r->setBody($this->_body);
 		ju_response_content_type(implode('; ', [$this->contentType(), 'charset=utf-8']), $r);
 	}
