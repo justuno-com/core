@@ -18,6 +18,7 @@ abstract class Source extends SourceBase {
 	/**
 	 * 2015-11-14
 	 * @used-by self::toOptionArray()
+	 * @see \Justuno\M2\Config\Source\Brand::map()
 	 * @return array(<value> => <label>)
 	 */
 	abstract protected function map():array;
