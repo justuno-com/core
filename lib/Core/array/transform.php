@@ -11,10 +11,9 @@
  * @used-by \Justuno\Core\Sentry\Extra::adjust()
  * @param array|callable|Traversable $a1
  * @param array|callable|Traversable $a2
- * @param bool $req [optional]
  * @return array(string => mixed)
  */
-function juak_transform($a1, $a2, $req = false) {
+function juak_transform($a1, $a2, bool $req = false):array {
 	# 2020-03-02
 	# The square bracket syntax for array destructuring assignment (`[…] = […]`) requires PHP ≥ 7.1:
 	# https://github.com/mage2pro/core/issues/96#issuecomment-593392100
