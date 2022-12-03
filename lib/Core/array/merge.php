@@ -12,7 +12,7 @@ use Justuno\Core\Exception as DFE;
  * @return array(string => mixed)
  * @throws DFE
  */
-function ju_extend(array $defaults, array $newValues) {/** @var array(string => mixed) $r */
+function ju_extend(array $defaults, array $newValues):array {/** @var array(string => mixed) $r */
 	$r = $defaults;
 	foreach ($newValues as $key => $newValue) {
 		/** @var int|string $key */ /** @var mixed $newValue */ /** @var mixed $defaultValue */
