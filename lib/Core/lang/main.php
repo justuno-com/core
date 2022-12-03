@@ -14,12 +14,11 @@ function ju_if(bool $cond, $onTrue, $onFalse = null) {return $cond ? ju_call_if(
 /**
  * 2020-06-13 "Port the `df_if1` function": https://github.com/justuno-com/core/issues/10
  * @used-by ju_request()
- * @param bool $cond
  * @param mixed|callable $onTrue
  * @param mixed|null $onFalse [optional]
  * @return mixed
  */
-function ju_if1($cond, $onTrue, $onFalse = null) {return $cond ? ju_call_if($onTrue) : $onFalse;}
+function ju_if1(bool $cond, $onTrue, $onFalse = null) {return $cond ? ju_call_if($onTrue) : $onFalse;}
 
 /**
  * 2020-08-22 "Port the `df_nop` function" https://github.com/justuno-com/core/issues/255
