@@ -41,7 +41,7 @@ const JU_BEFORE = -1;
  * @param bool $returnKey [optional]
  * @return array(int|string => mixed)
  */
-function ju_map($a1, $a2, $pAppend = [], $pPrepend = [], $keyPosition = 0, $returnKey = false) {
+function ju_map($a1, $a2, $pAppend = [], $pPrepend = [], $keyPosition = 0, $returnKey = false):array {
 	# 2020-03-02
 	# The square bracket syntax for array destructuring assignment (`[…] = […]`) requires PHP ≥ 7.1:
 	# https://github.com/mage2pro/core/issues/96#issuecomment-593392100
