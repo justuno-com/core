@@ -8,7 +8,6 @@ if (!function_exists('array_is_list')) {
 	 * @used-by ju_sort()
 	 * @used-by juak_transform()
 	 * @param array(int|string => mixed) $a
-	 * @return bool
 	 */
 	function array_is_list(array $a):bool {
 		$r = true; /** @var bool $r */
@@ -30,6 +29,5 @@ if (!function_exists('array_is_list')) {
  * @used-by ju_filter()
  * @used-by ju_ksort()
  * @param array(int|string => mixed) $a
- * @return bool
  */
-function ju_is_assoc(array $a) {return !$a || !array_is_list($a);}
+function ju_is_assoc(array $a):bool {return !$a || !array_is_list($a);}
