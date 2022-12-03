@@ -37,8 +37,6 @@ const JU_BEFORE = -1;
  * @param array|callable|Traversable $a2
  * @param mixed|mixed[] $pAppend [optional]
  * @param mixed|mixed[] $pPrepend [optional]
- * @param int $keyPosition [optional]
- * @param bool $returnKey [optional]
  * @return array(int|string => mixed)
  */
 function ju_map($a1, $a2, $pAppend = [], $pPrepend = [], int $keyPosition = 0, bool $returnKey = false):array {
