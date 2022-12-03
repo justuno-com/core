@@ -23,10 +23,9 @@ function ju_ksort(array $a, callable $f = null):array {
  * @used-by ju_ksort_r()
  * @used-by ju_ksort_r_ci()
  * @param array(int|string => mixed) $a
- * @param callable|null $f [optional]
  * @return array(int|string => mixed)
  */
-function ju_ksort_r(array $a, $f = null) {return ju_ksort(ju_map_k(function($k, $v) use($f) {return
+function ju_ksort_r(array $a, callable $f = null) {return ju_ksort(ju_map_k(function($k, $v) use($f) {return
 	!is_array($v) ? $v : ju_ksort_r($v, $f)
 ;}, $a), $f);}
 
