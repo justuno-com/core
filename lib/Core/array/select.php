@@ -57,7 +57,7 @@ function jua(array $a, $k, $d = null) {return
  * @param string[] $k
  * @return array(string => string)
  */
-function jua_select_ordered($a, array $k)  {
+function jua_select_ordered($a, array $k):array  {
 	$resultKeys = array_fill_keys($k, null); /** @var array(string => null) $resultKeys */
 	/**
 	 * 2017-10-28
