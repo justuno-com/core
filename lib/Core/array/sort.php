@@ -72,7 +72,7 @@ function ju_ksort_r_ci(array $a):array {return
  * @param Closure|string|null $f [optional]
  * @return array(int|string => mixed)
  */
-function ju_sort(array $a, $f = null) {
+function ju_sort(array $a, $f = null):array {
 	$isList = array_is_list($a); /** @var bool $isList */
 	if (!$f) {
 		$isList ? sort($a) : asort($a);
