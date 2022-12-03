@@ -11,8 +11,7 @@ use Magento\Framework\DataObject as _DO;
  * @used-by ju_pc()
  * @used-by ju_review_summary()
  * @used-by ju_trigger()
- * @param string $c
  * @param array(string => mixed) $p [optional]
  * @return _DO|object
  */
-function ju_new_om($c, array $p = []) {return ju_om()->create($c, $p);}
+function ju_new_om(string $c, array $p = []) {return ju_om()->create($c, $p);}
