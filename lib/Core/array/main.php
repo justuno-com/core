@@ -20,9 +20,8 @@ function ju_array($v):array {return is_array($v) ? $v : [$v];}
  * @used-by jua_select_ordered()
  * @used-by juak_transform()
  * @param Traversable|array $t
- * @return array
  */
-function ju_ita($t) {return is_array($t) ? $t : iterator_to_array($t);}
+function ju_ita($t):array {return is_array($t) ? $t : iterator_to_array($t);}
 
 /**
  * 2020-06-14 "Port the `dfa_flatten` function": https://github.com/justuno-com/core/issues/17
