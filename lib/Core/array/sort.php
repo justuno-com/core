@@ -5,10 +5,9 @@
  * @used-by ju_ksort_r()
  * @used-by \Justuno\Core\Qa\Dumper::dumpArrayElements()
  * @param array(int|string => mixed) $a
- * @param callable|null $f [optional]
  * @return array(int|string => mixed)
  */
-function ju_ksort(array $a, $f = null) {
+function ju_ksort(array $a, callable $f = null):array {
 	// 2020-08-25
 	// «`exception.values.0.stacktrace.frames`: Discarded invalid value» / «Reason: expected an array» in Sentry:
 	// https://github.com/mage2pro/core/issues/139
