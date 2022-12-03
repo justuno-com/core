@@ -81,8 +81,6 @@ function juc($o, Closure $m, array $a = [], bool $unique = true, int $offset = 0
  * @used-by \Justuno\Core\Config\Settings::s()
  * @used-by \Justuno\Core\Qa\Trace\Formatter::p()
  * @used-by \Justuno\M2\Store::v()
- * @param Closure $f
- * @param mixed[] $a [optional]
  * @param string[] $tags [optional]
  * @param bool $unique [optional]
  * @param int $offset [optional]
