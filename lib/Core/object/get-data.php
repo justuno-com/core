@@ -9,6 +9,5 @@ use Magento\Framework\DataObject as _DO;
  * 2020-06-18 "Port the `df_has_gd` function": https://github.com/justuno-com/core/issues/77
  * @used-by \Justuno\Core\Qa\Dumper::dumpObject()
  * @param mixed $v
- * @return bool
  */
-function ju_has_gd($v) {return $v instanceof _DO || $v instanceof AE;}
+function ju_has_gd($v):bool {return $v instanceof _DO || $v instanceof AE;}
