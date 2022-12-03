@@ -41,10 +41,9 @@ use Magento\Framework\ObjectManagerInterface as IOM;
  * @used-by ju_url_o()
  * @used-by ju_visitor_ip()
  * @used-by \Justuno\Core\Theme\Model\View\Design::isThemeInitialized()
- * @param string $t
  * @return mixed
  */
-function ju_o($t) {return jucf(function($t) {return ju_om()->get($t);}, [$t]);}
+function ju_o(string $t) {return jucf(function($t) {return ju_om()->get($t);}, [$t]);}
 
 /**
  * 2020-06-13 "Port the `df_om` function": https://github.com/justuno-com/core/issues/4
