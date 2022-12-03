@@ -3,11 +3,10 @@
  * 2020-08-19 "Port the `df_cc` function" https://github.com/justuno-com/core/issues/198
  * @see ju_ccc()
  * @used-by \Justuno\Core\Qa\Trace\Formatter::frame()
- * @param string $glue
  * @param string|string[] ...$elements
  * @return string
  */
-function ju_cc($glue, ...$elements) {return implode($glue, jua_flatten($elements));}
+function ju_cc(string $glue, ...$elements) {return implode($glue, jua_flatten($elements));}
 
 /**
  * 2020-06-18 "Port the `df_cc_n` function": https://github.com/justuno-com/core/issues/63
