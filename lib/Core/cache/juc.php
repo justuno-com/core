@@ -15,13 +15,9 @@ use Justuno\Core\RAM;
  * @used-by \Justuno\Core\Qa\Trace\Frame::method()
  * @used-by \Justuno\Core\Qa\Trace\Frame::methodParameter()
  * @param object $o
- * @param Closure $m
- * @param mixed[] $a [optional]
- * @param bool $unique [optional]
- * @param int $offset [optional]
  * @return mixed
  */
-function juc($o, Closure $m, array $a = [], $unique = true, $offset = 0) {
+function juc($o, Closure $m, array $a = [], bool $unique = true, int $offset = 0) {
 	/**
 	 * 2021-10-05
 	 * I do not use @see ju_bt() to make the implementation faster. An implementation via ju_bt() is:
