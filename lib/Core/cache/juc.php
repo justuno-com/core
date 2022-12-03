@@ -92,13 +92,11 @@ function jucf(Closure $f, array $a = [], array $tags = [], bool $unique = true, 
 		. ($unique ? null : '--' . spl_object_hash($f))
 	;
 	$r = ju_ram(); /** @var RAM $r */
-	/**
-	 * 2017-01-12
-	 * The following code will return `3`:
-	 * 		$a = function($a, $b) {return $a + $b;};
-	 * 		$b = [1, 2];
-	 * 		echo $a(...$b);
-	 * https://3v4l.org/0shto
-	 */
+	# 2017-01-12
+	# The following code will return `3`:
+	# 		$a = function($a, $b) {return $a + $b;};
+	# 		$b = [1, 2];
+	# 		echo $a(...$b);
+	# https://3v4l.org/0shto
 	return $r->exists($k) ? $r->get($k) : $r->set($k, $f(...$a), $tags);
 }
