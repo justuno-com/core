@@ -39,7 +39,7 @@ function ju_ksort_r(array $a, callable $f = null):array {return ju_ksort(ju_map_
  * @param array(int|string => mixed) $a       
  * @return array(int|string => mixed)
  */
-function ju_ksort_r_ci(array $a) {return
+function ju_ksort_r_ci(array $a):array {return
 	array_is_list($a)
 	/**
 	 * 2017-09-08
