@@ -10,7 +10,7 @@ if (!function_exists('array_is_list')) {
 	 * @param array(int|string => mixed) $a
 	 * @return bool
 	 */
-	function array_is_list(array $a) {
+	function array_is_list(array $a):bool {
 		$r = true; /** @var bool $r */
 		foreach (array_keys($a) as $k => $v) {
 			if ($k !== $v) {
