@@ -4,6 +4,8 @@ use Justuno\Core\RAM;
 /**
  * 2016-08-31
  * 2020-08-14 "Port the `dfc` function" https://github.com/justuno-com/core/issues/194
+ * 2022-11-17
+ * `object` as an argument type is not supported by PHP < 7.2: https://github.com/mage2pro/core/issues/174#user-content-object
  * @used-by \Justuno\Core\Config\Source::pathA()
  * @used-by \Justuno\Core\Format\Html\Tag::content()
  * @used-by \Justuno\Core\Format\Html\Tag::shouldAttributesBeMultiline()
