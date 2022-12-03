@@ -90,7 +90,7 @@ function ju_map($a1, $a2, $pAppend = [], $pPrepend = [], int $keyPosition = 0, b
  * @param array|callable|Traversable $a2
  * @return array(int|string => mixed)
  */
-function ju_map_k($a1, $a2) {return ju_map($a1, $a2, [], [], JU_BEFORE);}
+function ju_map_k($a1, $a2):array {return ju_map($a1, $a2, [], [], JU_BEFORE);}
 
 /**
  * 2016-11-08
