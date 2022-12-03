@@ -8,7 +8,7 @@
  * @param mixed|mixed[] $v
  * @return mixed[]|string[]|float[]|int[]
  */
-function ju_array($v) {return is_array($v) ? $v : [$v];}
+function ju_array($v):array {return is_array($v) ? $v : [$v];}
 
 /**
  * 2020-06-13 "Port the `df_ita` function": https://github.com/justuno-com/core/issues/15
