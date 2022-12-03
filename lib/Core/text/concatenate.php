@@ -20,9 +20,8 @@ function ju_cc(string $glue, ...$a):string {return implode($glue, jua_flatten($a
  * @used-by \Justuno\Core\Qa\Method::raiseErrorVariable()
  * @used-by \Justuno\Core\Qa\Trace\Formatter::frame()
  * @param string|string[] ...$a
- * @return string
  */
-function ju_cc_n(...$a) {return ju_ccc("\n", jua_flatten($a));}
+function ju_cc_n(...$a):string {return ju_ccc("\n", jua_flatten($a));}
 
 /**
  * 2020-06-21 "Port the `df_cc_path` function": https://github.com/justuno-com/core/issues/103
