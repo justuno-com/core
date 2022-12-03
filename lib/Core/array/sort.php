@@ -100,7 +100,7 @@ function ju_sort(array $a, $f = null):array {
  * @param callable|null $get
  * @return string[]|mixed[]
  */
-function ju_sort_names(array $a, string $l = '', callable $get = null) {
+function ju_sort_names(array $a, string $l = '', callable $get = null):array {
 	$c = new Collator($l); /** @var Collator $c */
 	return ju_sort($a, function($a, $b) use($c, $get) {return $c->compare(!$get ? $a : $get($a), !$get ? $b : $get($b));});
 }
