@@ -101,6 +101,5 @@ function ju_map_k($a1, $a2):array {return ju_map($a1, $a2, [], [], JU_BEFORE);}
  * @param array|callable|Traversable $a1
  * @param array|callable|Traversable $a2
  * @return array(int|string => mixed)
- * @throws DFE
  */
 function ju_map_kr($a1, $a2):array {return ju_map($a1, $a2, [], [], JU_BEFORE, true);}
