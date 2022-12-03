@@ -5,12 +5,11 @@ use Exception as E;
 /**
  * 2020-08-23 "Port the `df_if` function" https://github.com/justuno-com/core/issues/294
  * @used-by ju_cfg()
- * @param bool $cond
  * @param mixed|callable $onTrue
  * @param mixed|null|callable $onFalse [optional]
  * @return mixed
  */
-function ju_if($cond, $onTrue, $onFalse = null) {return $cond ? ju_call_if($onTrue) : ju_call_if($onFalse);}
+function ju_if(bool $cond, $onTrue, $onFalse = null) {return $cond ? ju_call_if($onTrue) : ju_call_if($onFalse);}
 
 /**
  * 2020-06-13 "Port the `df_if1` function": https://github.com/justuno-com/core/issues/10
