@@ -59,7 +59,7 @@ function ju_extend(array $defaults, array $newValues):array {/** @var array(stri
  * @param array(string|int => mixed) $b
  * @return array(string|int => mixed)
  */
-function jua_merge_numeric(array $r, array $b) {
+function jua_merge_numeric(array $r, array $b):array {
 	foreach ($b as $k => $v) {
 		$r[$k] = $v;
 	}
