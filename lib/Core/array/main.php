@@ -38,7 +38,7 @@ function ju_ita($t):array {return is_array($t) ? $t : iterator_to_array($t);}
  * @param array $a
  * @return mixed[]
  */
-function jua_flatten(array $a) {
+function jua_flatten(array $a):array {
 	$r = []; /** @var mixed[] $r */
 	array_walk_recursive($a, function($a) use(&$r) {$r[]= $a;});
 	return $r;
