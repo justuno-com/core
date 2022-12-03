@@ -54,7 +54,7 @@ function jua_flatten(array $a):array {
  * @param array|callable|Traversable $b
  * @return array(int|string => mixed)
  */
-function juaf($a, $b) {
+function juaf($a, $b):array {
 	# 2020-02-15
 	# «A variable is expected to be a traversable or an array, but actually it is a «object»»:
 	# https://github.com/tradefurniturecompany/site/issues/36
