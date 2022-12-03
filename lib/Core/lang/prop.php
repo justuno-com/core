@@ -17,10 +17,9 @@ const JU_N = 'df-null';
  * @param object|null|ArrayAccess $o
  * @param mixed|string $v
  * @param string|mixed|null $d [optional]
- * @param string|null $type [optional]
  * @return mixed|object|ArrayAccess|null
  */
-function ju_prop($o, $v, $d = null, $type = null) {/** @var object|mixed|null $r */
+function ju_prop($o, $v, $d = null, string $type = '') {/** @var object|mixed|null $r */
 	/**
 	 * 2019-09-08
 	 * 1) My 1st solution was comparing $v with `null`,
