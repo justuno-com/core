@@ -3,15 +3,6 @@ use Closure as F;
 use Exception as E;
 
 /**
- * 2020-06-17 "Port the `df_args` function": https://github.com/justuno-com/core/issues/41
- * @used-by ju_clean()
- * @used-by ju_format()
- * @param mixed[] $a
- * @return mixed[]
- */
-function ju_args(array $a) {return !$a || !is_array($a[0]) ? $a : $a[0];}
-
-/**
  * 2020-08-23 "Port the `df_if` function" https://github.com/justuno-com/core/issues/294
  * @used-by ju_cfg()
  * @param bool $cond
