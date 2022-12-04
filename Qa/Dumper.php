@@ -31,9 +31,8 @@ final class Dumper {
 	/**
 	 * @used-by self::dump()
 	 * @param object $o
-	 * @return string
 	 */
-	private function dumpObject($o) {/** @var string $r */
+	private function dumpObject($o):string {/** @var string $r */
 		$hash = spl_object_hash($o); /** @var string $hash */
 		if (isset($this->_dumped[$hash])) {
 			$r = sprintf('[recursion: %s]', get_class($o));
