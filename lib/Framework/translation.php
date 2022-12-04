@@ -6,7 +6,7 @@
  * @param string[] $s
  * @return string[]
  */
-function ju_translate_a(array $s, bool $now = false) {
+function ju_translate_a(array $s, bool $now = false):array {
 	$r = array_map('__', $s); /** @var string[] $r */
 	return !$now ? $r : array_map('strval', $r);
 }
