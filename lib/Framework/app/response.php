@@ -34,7 +34,6 @@ function ju_response($r = null) {return $r ?: ju_o(IResponse::class);}
  * 2020-08-21 "Port the `df_response_content_type` function" https://github.com/justuno-com/core/issues/234
  * @used-by \Justuno\Core\Framework\W\Result\Text::render()
  * @used-by \Justuno\M2\W\Result\Js::render()
- * @param string $contentType
  * @param IResult|wResult|IHttpResponse|HttpResponse|null $r [optional]
  */
-function ju_response_content_type($contentType, $r = null) {ju_response($r)->setHeader('Content-Type', $contentType, true);}
+function ju_response_content_type(string $contentType, $r = null):void {ju_response($r)->setHeader('Content-Type', $contentType, true);}
