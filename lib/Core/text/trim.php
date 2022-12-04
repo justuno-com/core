@@ -3,11 +3,8 @@ use Justuno\Core\Zf\Filter\StringTrim as Trim;
 /**
  * 2017-06-09
  * 2021-02-22
- * @param string $s
- * @param int|null $max [optional]
- * @return string
  */
-function ju_chop($s, $max = null) {return !$max || (mb_strlen($s = ju_trim($s)) <= $max) ? $s :
+function ju_chop(string $s, int $max = 0):string {return !$max || (mb_strlen($s = ju_trim($s)) <= $max) ? $s :
 	ju_trim_right(mb_substr($s, 0, $max - 1)) . '…'
 ;}
 
