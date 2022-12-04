@@ -10,7 +10,7 @@ use Justuno\Core\RAM;
  * @used-by \Justuno\Core\Format\Html\Tag::content()
  * @used-by \Justuno\Core\Format\Html\Tag::shouldAttributesBeMultiline()
  * @used-by \Justuno\Core\Format\Html\Tag::tag()
- * @used-by \Justuno\Core\Qa\Message::report()
+ * @used-by \Justuno\Core\Qa\Failure::report()
  * @used-by \Justuno\Core\Qa\Failure\Exception::e()
  * @used-by \Justuno\Core\Qa\Trace\Frame::context()
  * @used-by \Justuno\Core\Qa\Trace\Frame::functionA()
