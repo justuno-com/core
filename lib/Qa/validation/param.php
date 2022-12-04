@@ -8,13 +8,9 @@ use Justuno\Core\Exception as DFE;
  * @used-by jua_deep()
  * @used-by jua_deep_unset()
  * @used-by \Justuno\Core\Format\Html\Tag::openTagWithAttributesAsText()
- * @param string $v
- * @param int $ord	zero-based
- * @param int $sl [optional]
- * @return string
  * @throws DFE
  */
-function ju_param_sne($v, $ord, $sl = 0) {$sl++;
+function ju_param_sne(string $v, int $ord, int $sl = 0):string {$sl++;
 	Q::assertValueIsString($v, $sl);
 	return '' !== strval($v) ? $v : Q::raiseErrorParam(__FUNCTION__, [Q::NES], $ord, $sl);
 }
