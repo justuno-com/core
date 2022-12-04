@@ -42,7 +42,7 @@ use Magento\Framework\Phrase;
  * @param ...$a
  * @throws DFE
  */
-function ju_error(...$a) {
+function ju_error(...$a):void {
 	ju_header_utf();
 	$e = ju_error_create(...$a); /** @var DFE $e */
 	/**
