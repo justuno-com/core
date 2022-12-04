@@ -16,10 +16,11 @@ function ju_bt_inc($p, $o = 1) {return is_array($p) || $p instanceof E ? $p : $o
 
 /**
  * 2020-06-16 "Port the `df_bt` function": https://github.com/justuno-com/core/issues/27
- * @used-by \Justuno\Core\Exception::__construct()
- * @param int $levelsToSkip
+ * @param int|E|array(array(string => string|int)) $p
+ * Позволяет при записи стека вызовов пропустить несколько последних вызовов функций,
+ * которые и так очевидны (например, вызов данной функции, вызов df_bt_log() и т.п.)
  */
-function ju_bt_log($levelsToSkip = 0) {ju_report('bt-{date}-{time}.log', ju_bt_s(++$levelsToSkip));}
+function ju_bt_log($p = 0):void {ju_report('bt-{date}-{time}.log', ju_bt_s(ju_bt_inc($p)));}
 
 /**
  * 2020-06-16 "Port the `df_bt_s` function": https://github.com/justuno-com/core/issues/28
