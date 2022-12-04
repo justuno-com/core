@@ -45,18 +45,16 @@ function ju_store($v = null) {/** @var string|null $c */return
  * 2020-06-26 "Port the `df_store_code` function": https://github.com/justuno-com/core/issues/155
  * @used-by ju_sentry()
  * @param null|string|int|IScope $s [optional]
- * @return string
  */
-function ju_store_code($s = null) {return ju_scope_code($s);}
+function ju_store_code($s = null):string {return ju_scope_code($s);}
 
 /**
  * 2016-01-11
  * 2020-08-24 "Port the `df_store_id` function" https://github.com/justuno-com/core/issues/320
  * @used-by ju_product()
  * @param int|string|null|bool|IStore $store [optional]
- * @return int
  */
-function ju_store_id($store = null) {return ju_store($store)->getId();}
+function ju_store_id($store = null):int {return ju_store($store)->getId();}
 
 /**
  * 2017-02-07
