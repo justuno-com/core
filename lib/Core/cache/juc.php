@@ -22,8 +22,8 @@ use Justuno\Core\RAM;
 function juc($o, Closure $m, array $a = [], bool $unique = true, int $offset = 0) {
 	/**
 	 * 2021-10-05
-	 * I do not use @see ju_bt() to make the implementation faster. An implementation via ju_bt() is:
-	 * 		$b = ju_bt(0, 2 + $offset)[1 + $offset];
+	 * I do not use @see ju_bt_log() to make the implementation faster. An implementation via ju_bt_log() is:
+	 * 		$b = ju_bt_log(0, 2 + $offset)[1 + $offset];
 	 */
 	$b = debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS, 2 + $offset)[1 + $offset]; /** @var array(string => string) $b */
 	if (!isset($b['class'], $b['function'])) {
