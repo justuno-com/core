@@ -3,26 +3,26 @@
  * 2020-06-17 "Port the `df_format` function": https://github.com/justuno-com/core/issues/40
  * @used-by ju_error_create()
  * @used-by \Justuno\Core\Exception::comment()
- * @param mixed ...$args
+ * @param mixed ...$a
  * @return string
  */
-function ju_format(...$args) { /** @var string $r */
-	$args = ju_args($args);
+function ju_format(...$a) { /** @var string $r */
+	$a = ju_args($a);
 	$r = null;
-	switch (count($args)) {
+	switch (count($a)) {
 		case 0:
 			$r = '';
 			break;
 		case 1:
-			$r = $args[0];
+			$r = $a[0];
 			break;
 		case 2:
-			if (is_array($args[1])) {
-				$r = strtr($args[0], $args[1]);
+			if (is_array($a[1])) {
+				$r = strtr($a[0], $a[1]);
 			}
 			break;
 	}
-	return !is_null($r) ? $r : ju_sprintf($args);
+	return !is_null($r) ? $r : ju_sprintf($a);
 }
 
 /**
