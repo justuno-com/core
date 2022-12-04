@@ -24,7 +24,7 @@ function ju_int($v, bool $allowNull = true) {/** @var int|int[] $r */
 		$r = 0;
 	}
 	elseif (!IntT::s()->isValid($v)) {
-		ju_error(IntT::s()->getMessage());
+		ju_error(IntT::s()->message());
 	}
 	else {
 		$r = (int)$v;
