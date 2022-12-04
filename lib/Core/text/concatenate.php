@@ -40,9 +40,8 @@ function ju_cc_path(...$args):string {return ju_ccc('/', jua_flatten($args));}
  * @used-by ju_cli_cmd()
  * @used-by \Justuno\Core\Format\Html\Tag::openTagWithAttributesAsText()
  * @param string|string[] ...$args
- * @return string
  */
-function ju_cc_s(...$args) {return ju_ccc(' ', jua_flatten($args));}
+function ju_cc_s(...$args):string {return ju_ccc(' ', jua_flatten($args));}
 
 /**
  * 2020-06-18 "Port the `df_ccc` function": https://github.com/justuno-com/core/issues/57
