@@ -25,7 +25,5 @@ function ju_framework_path():string {return ju_lib_path('magento/framework');}
  * or «C:/work/clients/royalwholesalecandy.com-2019-12-08/code/lib/internal/magento/framework»
  * 2020-06-26 "Port the `df_lib_path` function": https://github.com/justuno-com/core/issues/150
  * @used-by ju_framework_path()
- * @param string $l
- * @return string
  */
-function ju_lib_path($l) {return ju_component_r()->getPath(R::LIBRARY, $l);}
+function ju_lib_path(string $l):string {return ju_component_r()->getPath(R::LIBRARY, $l);}
