@@ -64,10 +64,10 @@ function ju_sentry_extra($m, ...$v):void {ju_sentry_m($m)->extra(!$v ? $v : (is_
 /**
  * 2016-12-22
  * $m could be:
- * 1) a module name: «A_B»
- * 2) a class name: «A\B\C».
- * 3) an object: it comes down to the case 2 via @see get_class()
- * 4) `null`: it comes down to the case 1 with the «Justuno_Core» module name.
+ * 		1) a module name: «A_B»
+ * 		2) a class name: «A\B\C».
+ * 		3) an object: it comes down to the case 2 via @see get_class()
+ * 		4) `null`: it comes down to the case 1 with the «Justuno_Core» module name.
  * 2020-06-26 "Port the `df_sentry_m` function": https://github.com/justuno-com/core/issues/161
  * @used-by ju_sentry()
  * @used-by ju_sentry_extra()
