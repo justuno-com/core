@@ -42,10 +42,14 @@ function ju_kv(array $a, int $pad = 0):string {return ju_cc_n(ju_map_k(ju_clean(
  * @throws Exception
  */
 function ju_sprintf($s):string {/** @var string $r */ /** @var mixed[] $args */
-	# 2020-03-02
-	# The square bracket syntax for array destructuring assignment (`[…] = […]`) requires PHP ≥ 7.1:
+	# 2020-03-02, 2022-10-31
+	# 1) Symmetric array destructuring requires PHP ≥ 7.1:
+	#		[$a, $b] = [1, 2];
 	# https://github.com/mage2pro/core/issues/96#issuecomment-593392100
 	# We should support PHP 7.0.
+	# https://3v4l.org/3O92j
+	# https://www.php.net/manual/migration71.new-features.php#migration71.new-features.symmetric-array-destructuring
+	# https://stackoverflow.com/a/28233499
 	list($s, $args) = is_array($s) ? [ju_first($s), $s] : [$s, func_get_args()];
 	try {$r = ju_sprintf_strict($args);}
 	catch (Exception $e) {$r = $s;}
