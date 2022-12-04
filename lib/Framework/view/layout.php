@@ -15,11 +15,10 @@ use Magento\Framework\View\Model\Layout\Merge;
  * @used-by \Justuno\M2\Block\GenerateToken::getElementHtml()
  * @param string|O|null $c
  * @param string|array(string => mixed) $data [optional]
- * @param string|null $template [optional]
  * @param array $vars [optional]
  * @return AbstractBlock|BlockInterface|Template
  */
-function ju_block($c, $data = [], $template = null, array $vars = []) {
+function ju_block($c, $data = [], string $template = '', array $vars = []) {
 	if (is_null($c)) {
 		$c = ju_is_backend() ? BackendTemplate::class : Template::class;
 	}
