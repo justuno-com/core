@@ -139,9 +139,8 @@ function ju_oqi_leafs($oq, Closure $f = null, string $locale = ''):array {
  * @param OI|QI $i
  * @param bool $withTax [optional]
  * @param bool $withDiscount [optional]
- * @return float
  */
-function ju_oqi_price($i, $withTax = false, $withDiscount = false) {/** @var float $r */
+function ju_oqi_price($i, $withTax = false, $withDiscount = false):float {/** @var float $r */
 	$r = floatval($withTax ? $i->getPriceInclTax() : (
 		ju_is_oi($i) ? $i->getPrice() :
 			# 2017-04-20 У меня $i->getPrice() для quote item возвращает значение в учётной валюте: видимо, из-за дефекта ядра.
