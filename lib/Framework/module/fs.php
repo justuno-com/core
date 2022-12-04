@@ -134,8 +134,6 @@ function ju_module_path($m, string $localPath = ''):string {return ju_cc_path(ju
  * 2020-06-27 "Port the `df_module_path_etc` function": https://github.com/justuno-com/core/issues/164
  * @used-by ju_module_file()
  * @param string|object|null $m
- * @param string $localPath [optional]
- * @return string
  * @throws InvalidArgumentException
  */
-function ju_module_path_etc($m, $localPath = '') {return ju_cc_path(ju_module_dir($m, Dir::MODULE_ETC_DIR), $localPath);}
+function ju_module_path_etc($m, string $localPath = ''):string {return ju_cc_path(ju_module_dir($m, Dir::MODULE_ETC_DIR), $localPath);}
