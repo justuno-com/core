@@ -173,8 +173,6 @@ final class Exception extends LE implements \ArrayAccess {
 	 */
 	private $_stackLevelsCountToSkip = 0;
 
-	/**
-	 * @used-by ju_ewrap()
-	 */
+	/** @used-by ju_error_create() */
 	static function wrap(E $e):self {return $e instanceof self ? $e : new self($e);}
 }
