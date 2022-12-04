@@ -89,11 +89,9 @@ function ju_trim_text_a(string $s, array $trimA, callable $f):string {
  * @used-by ju_magento_version()
  * @used-by ju_oqi_amount()
  * @used-by ju_path_relative()
- * @param string $s
  * @param string|string[] $trim
- * @return string
  */
-function ju_trim_text_left($s, $trim) {return is_array($trim) ? ju_trim_text_a($s, $trim, __FUNCTION__) : (
+function ju_trim_text_left(string $s, $trim):string {return is_array($trim) ? ju_trim_text_a($s, $trim, __FUNCTION__) : (
 	$trim === mb_substr($s, 0, $l = mb_strlen($trim)) ? mb_substr($s, $l) : $s
 );}
 
