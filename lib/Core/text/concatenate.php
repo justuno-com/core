@@ -31,9 +31,8 @@ function ju_cc_n(...$a):string {return ju_ccc("\n", jua_flatten($a));}
  * @used-by ju_module_path()
  * @used-by ju_module_path_etc()
  * @param string|string[] ...$args
- * @return string
  */
-function ju_cc_path(...$args) {return ju_ccc('/', jua_flatten($args));}
+function ju_cc_path(...$args):string {return ju_ccc('/', jua_flatten($args));}
 
 /**
  * 2016-08-10
