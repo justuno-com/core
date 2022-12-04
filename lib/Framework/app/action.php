@@ -24,9 +24,8 @@ function ju_action_name() {return ju_is_cli() ? null : ju_assert_ne('__', ju_req
  * 2021-03-06 "Port the `df_action_prefix` function": https://github.com/justuno-com/core/issues/359
  * @used-by ju_is_system_config()
  * @param string|string[] $p
- * @return bool
  */
-function ju_action_prefix($p) {return ju_starts_with(ju_action_name(), $p);}
+function ju_action_prefix($p):bool {return ju_starts_with(ju_action_name(), $p);}
 
 /**
  * 2019-12-26
