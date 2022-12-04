@@ -1,7 +1,6 @@
 <?php
 use Justuno\Core\Helper\Text as T;
 use Magento\Framework\Phrase as P;
-
 /**
  * @used-by \Justuno\M2\Catalog\Diagnostic::p()
  * @param string|string[]|P|P[] $s
