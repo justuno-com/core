@@ -3,7 +3,6 @@ use Magento\Quote\Model\Quote as Q;
 use Magento\Quote\Model\Quote\Item as QI;
 use Magento\Sales\Model\Order as O;
 use Magento\Sales\Model\Order\Item as OI;
-
 /**
  * 2017-04-10
  * 2020-06-24 "Port the `ju_is_o` function": https://github.com/justuno-com/core/issues/123
