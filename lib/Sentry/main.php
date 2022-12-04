@@ -59,7 +59,7 @@ function ju_sentry($m, $v, array $context = []):void {
  * @param string|object|null $m
  * @param mixed ...$v
  */
-function ju_sentry_extra($m, ...$v) {ju_sentry_m($m)->extra(!$v ? $v : (is_array($v[0]) ? $v[0] : [$v[0] => $v[1]]));}
+function ju_sentry_extra($m, ...$v):void {ju_sentry_m($m)->extra(!$v ? $v : (is_array($v[0]) ? $v[0] : [$v[0] => $v[1]]));}
 
 /**
  * 2016-12-22
