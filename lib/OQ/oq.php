@@ -45,9 +45,8 @@ function ju_is_oqi($v):bool {return ju_is_oi($v) || ju_is_qi($v);}
  * 2020-08-26 "Port the `df_is_q` function" https://github.com/justuno-com/core/issues/344
  * @used-by ju_is_oq()
  * @param mixed $v
- * @return bool
  */
-function ju_is_q($v) {return $v instanceof Q;}
+function ju_is_q($v):bool {return $v instanceof Q;}
 
 /**
  * 2017-04-20
