@@ -7,7 +7,6 @@
  * @used-by ju_explode_camel()
  * @used-by ju_lcfirst()
  * @used-by ju_link_inline()
- * @used-by ju_xml_output_plain()
  * @param callable $f
  * @param mixed[]|mixed[][] $parentArgs
  * @param mixed|mixed[] $pAppend [optional]
