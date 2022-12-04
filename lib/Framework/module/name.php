@@ -28,9 +28,9 @@
  * @used-by \Justuno\M2\Plugin\Framework\App\Router\ActionList::aroundGet()
  * @param string|object|null $c [optional]
  */
-function ju_module_name($c = null, string $del = '_'):string {return jucf(
-	function(string $c, string $del) {return implode($del, array_slice(ju_explode_class($c), 0, 2));}
-	,[$c ? ju_cts($c) : 'Justuno\Core', $del]
+function ju_module_name($c = null, string $d = '_'):string {return jucf(
+	function(string $c, string $d) {return implode($d, array_slice(ju_explode_class($c), 0, 2));}
+	,[$c ? ju_cts($c) : 'Justuno\Core', $d]
 );}
 
 /**
@@ -58,7 +58,5 @@ function ju_module_name_c($c = null):string {return ju_module_name($c, '\\');}
  * @used-by ju_report_prefix()
  * @used-by \Justuno\Core\Exception::reportNamePrefix()
  * @param string|object $c
- * @param string $del [optional]
- * @return string
  */
-function ju_module_name_lc($c, $del = '_') {return implode($del, ju_explode_class_lc_camel(ju_module_name_c($c)));}
+function ju_module_name_lc($c, string $d = '_'):string {return implode($d, ju_explode_class_lc_camel(ju_module_name_c($c)));}
