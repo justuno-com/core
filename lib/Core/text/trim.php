@@ -101,10 +101,8 @@ function ju_trim_text_left(string $s, $trim):string {return is_array($trim) ? ju
  * 2020-06-26 "Port the `df_trim_text_right` function": https://github.com/justuno-com/core/issues/142
  * @used-by ju_cts()
  * @used-by ju_oqi_amount()
- * @param string $s
  * @param string|string[] $trim
- * @return string
  */
-function ju_trim_text_right($s, $trim) {return is_array($trim) ? ju_trim_text_a($s, $trim, __FUNCTION__) : (
+function ju_trim_text_right(string $s, $trim):string {return is_array($trim) ? ju_trim_text_a($s, $trim, __FUNCTION__) : (
 	0 !== ($l = mb_strlen($trim)) && $trim === mb_substr($s, -$l) ? mb_substr($s, 0, -$l) : $s
 );}
