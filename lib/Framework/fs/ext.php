@@ -31,7 +31,5 @@ function ju_file_ext_def(string $f, string $ext):string {return ju_file_ext($f) 
  * strips the full path and returns the base name only.
  * 2020-08-24 "Port the `df_strip_ext` function" https://github.com/justuno-com/core/issues/323
  * @used-by \Justuno\M2\Controller\Js::execute()
- * @param string $s
- * @return mixed
  */
-function ju_strip_ext($s) {return preg_replace('#\.[^.]*$#', '', $s);}
+function ju_strip_ext(string $s):string {return preg_replace('#\.[^.]*$#', '', $s);}
