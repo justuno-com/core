@@ -10,7 +10,7 @@ final class Method {
 	 * @used-by ju_param_sne()
 	 * @throws E
 	 */
-	static function raiseErrorParam(string $method, array $messages, int $ord, int $sl = 1) {
+	static function raiseErrorParam(string $method, array $messages, int $ord, int $sl = 1):void {
 		$frame = self::caller($sl); /** @var Frame $frame */
 		$name = 'unknown'; /** @var string $name */
 		if ($frame->method()) {/** @var RP $param */
@@ -34,7 +34,7 @@ final class Method {
 	 * @param int $sl
 	 * @throws E
 	 */
-	static function raiseErrorResult($vd, array $messages, $sl = 1) {
+	static function raiseErrorResult(string $vd, array $messages, int $sl = 1):void {
 		$messagesS = ju_cc_n($messages); /** @var string $messagesS */
 		$method = self::caller($sl)->methodName(); /** @var string $method */
 		self::throwException(
