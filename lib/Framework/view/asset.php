@@ -15,10 +15,9 @@ function ju_asset():Repository {return ju_o(Repository::class);}
  * 2020-08-22 "Port the `df_asset_create` function" https://github.com/justuno-com/core/issues/249
  * @used-by ju_asset_exists()
  * @used-by ju_resource_inline()
- * @param string $u
- * @return File
+
  */
-function ju_asset_create($u) {$a = ju_asset(); return !ju_check_url_absolute($u)
+function ju_asset_create(string $u):File {$a = ju_asset(); return !ju_check_url_absolute($u)
 	? $a->createAsset($u)
 	: $a->createRemoteAsset($u, jua(['css' => 'text/css', 'js' => 'application/javascript'], ju_file_ext($u)))
 ;}
