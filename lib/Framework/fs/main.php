@@ -99,7 +99,7 @@ function ju_fs():Filesystem {return ju_o(Filesystem::class);}
  * @param string $p
  * @return DirectoryRead|IDirectoryRead
  */
-function ju_fs_r($p) {return ju_fs()->getDirectoryRead($p);}
+function ju_fs_r(string $p) {return ju_fs()->getDirectoryRead($p);}
 
 /**
  * 2015-11-29
