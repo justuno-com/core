@@ -54,8 +54,6 @@ function ju_cc_s(...$args):string {return ju_ccc(' ', jua_flatten($args));}
  * @used-by ju_log_l()
  * @used-by \Justuno\Core\Qa\Message::reportName()
  * @used-by \Justuno\M2\Setup\UpgradeSchema::tr()
- * @param string $glue
- * @param string|string[] ...$elements
- * @return string
+ * @param string|string[] ...$a
  */
-function ju_ccc($glue, ...$elements) {return implode($glue, ju_clean(jua_flatten($elements)));}
+function ju_ccc(string $glue, ...$a):string {return implode($glue, ju_clean(jua_flatten($a)));}
