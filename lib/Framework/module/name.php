@@ -36,9 +36,9 @@ function ju_module_name($c = null, string $del = '_'):string {return jucf(
 /**
  * 2017-01-04
  * $c could be:
- * 1) a module name. E.g.: «A_B».
- * 2) a class name. E.g.: «A\B\C».
- * 3) an object. It will be treated as case 2 after @see get_class()
+ * 		1) a module name. E.g.: «A_B».
+ * 		2) a class name. E.g.: «A\B\C».
+ * 		3) an object. It will be treated as case 2 after @see get_class()
  * 2020-08-21 "Port the `df_module_name_c` function" https://github.com/justuno-com/core/issues/218
  * @used-by ju_module_name_lc()
  * @param string|object|null $c [optional]
