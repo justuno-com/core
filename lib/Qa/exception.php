@@ -9,7 +9,7 @@ use Magento\Framework\Phrase as P;
  * @param E $e
  * @return E
  */
-function ju_ef(E $e) {while ($e->getPrevious()) {$e = $e->getPrevious();} return $e;}
+function ju_xf(E $e) {while ($e->getPrevious()) {$e = $e->getPrevious();} return $e;}
 
 /**
  * 2020-06-15 "Port the `df_ets` function": https://github.com/justuno-com/core/issues/24

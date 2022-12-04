@@ -41,7 +41,7 @@ final class Exception extends \Justuno\Core\Qa\Message\Failure {
 	 * @used-by \Justuno\Core\Qa\Message\Failure::frames()
 	 * @return array(array(string => string|int))
 	 */
-	protected function trace() {return ju_ef($this->e())->getTrace();}
+	protected function trace() {return ju_xf($this->e())->getTrace();}
 
 	/**
 	 * @used-by self::main()
