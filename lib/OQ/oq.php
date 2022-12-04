@@ -21,9 +21,8 @@ function ju_is_o($v):bool {return $v instanceof O;}
  * @used-by ju_oqi_price()
  * @used-by ju_oqi_qty()
  * @param mixed $v
- * @return bool
  */
-function ju_is_oi($v) {return $v instanceof OI;}
+function ju_is_oi($v):bool {return $v instanceof OI;}
 
 /**
  * 2017-04-08
