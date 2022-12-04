@@ -27,10 +27,8 @@
  * @used-by ju_sentry_module()
  * @used-by \Justuno\M2\Plugin\Framework\App\Router\ActionList::aroundGet()
  * @param string|object|null $c [optional]
- * @param string $del [optional]
- * @return string
  */
-function ju_module_name($c = null, $del = '_') {return jucf(function($c, $del) {return implode($del, array_slice(
+function ju_module_name($c = null, string $del = '_'):string {return jucf(function($c, $del) {return implode($del, array_slice(
 	ju_explode_class($c), 0, 2
 ));}, [$c ? ju_cts($c) : 'Justuno\Core', $del]);}
 
