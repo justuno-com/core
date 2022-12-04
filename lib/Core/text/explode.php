@@ -18,10 +18,9 @@ function ju_explode_multiple(array $delimiters, string $s):array {
  * 2018-04-24 I have added @uses trim() today.
  * 2020-06-20 "Port the `df_explode_n` function": https://github.com/justuno-com/core/issues/86
  * @used-by ju_tab_multiline()
- * @param string $s
  * @return string[]
  */
-function ju_explode_n($s) {return explode("\n", ju_normalize(ju_trim($s)));}
+function ju_explode_n(string $s) {return explode("\n", ju_normalize(ju_trim($s)));}
 
 /**
  * 2020-06-14 "Port the `df_explode_xpath` function": https://github.com/justuno-com/core/issues/20
