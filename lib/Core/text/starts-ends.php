@@ -8,7 +8,6 @@
  * @used-by \Justuno\Core\Sentry\Trace::get_frame_context()
  * @used-by \Justuno\M2\Plugin\Framework\App\Router\ActionList::aroundGet()
  * @param string|string[] $n
- * @return bool
  */
 function ju_ends_with(string $haystack, $n):bool {return is_array($n)
 	? null !== ju_find($n, __FUNCTION__, [], [$haystack])
