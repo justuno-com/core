@@ -67,26 +67,25 @@ function ju_error(...$args) {
  * @param string|string[]|mixed|E|Phrase|null $m [optional]
  * @return DFE
  */
-function ju_error_create($m = null) {return
-	$m instanceof E ? ju_ewrap($m) :
-		new DFE($m instanceof Phrase ? $m : (
-			/**
-			 * 2019-12-16
-			 * I have changed `!$m` to `is_null($m)`.
-			 * It passes an empty string ('') directly to @uses \Justuno\Core\Exception::__construct()
-			 * and it prevents @uses \Justuno\Core\Exception::__construct() from calling @see df_bt()
-			 * @see \Justuno\Core\Exception::__construct():
-			 *		if (is_null($m)) {
-			 *			$m = __($prev ? df_ets($prev) : 'No message');
-			 *			# 2017-02-20 To facilite the «No message» diagnostics.
-			 *			if (!$prev) {
-			 *				df_bt();
-			 *			}
-			 *		}
-			 */
-			is_null($m) ? null : (is_array($m) ? implode("\n\n", $m) : (
-				ju_contains($m, '%1') ? __($m, ...ju_tail(func_get_args())) :
-					ju_format(func_get_args())
-			))
+function ju_error_create($m = null) {return $m instanceof E ? DFE::wrap($m) :
+	new DFE($m instanceof Phrase ? $m : (
+		/**
+		 * 2019-12-16
+		 * I have changed `!$m` to `is_null($m)`.
+		 * It passes an empty string ('') directly to @uses \Justuno\Core\Exception::__construct()
+		 * and it prevents @uses \Justuno\Core\Exception::__construct() from calling @see df_bt()
+		 * @see \Justuno\Core\Exception::__construct():
+		 *		if (is_null($m)) {
+		 *			$m = __($prev ? df_ets($prev) : 'No message');
+		 *			# 2017-02-20 To facilite the «No message» diagnostics.
+		 *			if (!$prev) {
+		 *				df_bt();
+		 *			}
+		 *		}
+		 */
+		is_null($m) ? null : (is_array($m) ? implode("\n\n", $m) : (
+			ju_contains($m, '%1') ? __($m, ...ju_tail(func_get_args())) :
+				ju_format(func_get_args())
 		))
+	))
 ;}
