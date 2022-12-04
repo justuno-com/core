@@ -7,12 +7,12 @@
  * @used-by \Justuno\Core\Qa\Trace\Frame::isClosure()
  * @used-by \Justuno\Core\Sentry\Trace::get_frame_context()
  * @used-by \Justuno\M2\Plugin\Framework\App\Router\ActionList::aroundGet()
- * @param string|string[] $needle
+ * @param string|string[] $n
  * @return bool
  */
-function ju_ends_with(string $haystack, $needle):bool {return is_array($needle)
-	? null !== ju_find($needle, __FUNCTION__, [], [$haystack])
-	: 0 === ($l = mb_strlen($needle)) || $needle === mb_substr($haystack, -$l)
+function ju_ends_with(string $haystack, $n):bool {return is_array($n)
+	? null !== ju_find($n, __FUNCTION__, [], [$haystack])
+	: 0 === ($l = mb_strlen($n)) || $n === mb_substr($haystack, -$l)
 ;}
 
 /**
@@ -27,11 +27,11 @@ function ju_ends_with(string $haystack, $needle):bool {return is_array($needle)
  * @used-by \Justuno\Core\Qa\Trace::__construct()
  * @used-by \Justuno\Core\Zf\Validate\StringT\IntT::isValid()
  * @param string $haystack
- * @param string|string[] $needle
+ * @param string|string[] $n
  * @return bool
  */
-function ju_starts_with($haystack, $needle) {return is_array($needle)
-	? null !== ju_find($needle, __FUNCTION__, [], [$haystack])
-	: $needle === mb_substr($haystack, 0, mb_strlen($needle))
+function ju_starts_with($haystack, $n) {return is_array($n)
+	? null !== ju_find($n, __FUNCTION__, [], [$haystack])
+	: $n === mb_substr($haystack, 0, mb_strlen($n))
 ;}
 
