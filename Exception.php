@@ -42,7 +42,7 @@ final class Exception extends LE implements \ArrayAccess {
 			}
 		}
 		if (is_null($m)) {
-			$m = __($prev ? ju_ets($prev) : 'No message');
+			$m = __($prev ? ju_xts($prev) : 'No message');
 			# 2017-02-20 To facilite the «No message» diagnostics.
 			if (!$prev) {
 				ju_bt_log();
@@ -69,7 +69,7 @@ final class Exception extends LE implements \ArrayAccess {
 	function getStackLevelsCountToSkip():int {return $this->_stackLevelsCountToSkip;}
 
 	/**
-	 * @used-by ju_ets()
+	 * @used-by ju_xts()
 	 * @used-by \Justuno\Core\Qa\Message\Failure\Exception::main()
 	 * @used-by \Justuno\Core\Sentry\Client::captureException()
 	 */

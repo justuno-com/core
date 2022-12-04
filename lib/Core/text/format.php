@@ -85,7 +85,7 @@ function ju_sprintf_strict($s):string {/** @var string $r */ /** @var mixed[] $a
 					'ju_sprintf_strict failed: «{message}».'
 					. "\nPattern: {$s}."
 					. "\nParameters:\n{params}."
-					,['{message}' => ju_ets($e), '{params}' => print_r(ju_tail($args), true)]
+					,['{message}' => ju_xts($e), '{params}' => print_r(ju_tail($args), true)]
 				);
 			}
 		}

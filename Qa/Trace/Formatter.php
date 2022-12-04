@@ -49,7 +49,7 @@ final class Formatter {
 			$r = ju_cc_n($resultA);
 		}
 		catch (\Exception $e) {
-			$r = ju_ets($e);
+			$r = ju_xts($e);
 			/**
 			 * 2020-02-20
 			 * 1) «Function include() does not exist»: https://github.com/tradefurniturecompany/site/issues/60
