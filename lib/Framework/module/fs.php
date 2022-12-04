@@ -75,13 +75,10 @@ function ju_module_dir_reader():Reader {return ju_o(Reader::class);}
  * @used-by \Justuno\Core\Sentry\Client::send_http()
  * @used-by \Justuno\M2\W\Result\Js::i()
  * @param string|object|null $m
- * @param string $name
- * @param string $ext [optional]
- * @param bool $req [optional]
  * @param Closure|null $parser [optional]
  * @return array(string => mixed)
  */
-function ju_module_file($m, $name, $ext = '', $req = true, Closure $parser = null) {return jucf(
+function ju_module_file($m, string $name, string $ext = '', bool $req = true, Closure $parser = null):array {return jucf(
 	function($m, $name, $ext = '', $req = true, Closure $parser = null) {return
 		file_exists($f = ju_module_path_etc($m, ju_file_ext_add($name, $ext)))
 			? (!$parser ? $f : $parser($f))
