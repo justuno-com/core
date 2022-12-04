@@ -21,14 +21,11 @@ function ju_fetch(string $t, $cols = '*', $compareK = null, $compareV = null):ar
 /**
  * 2015-04-13
  * @used-by ju_fetch_col_int()
- * @param string $t
- * @param string $col
  * @param string|null $compareK [optional]
  * @param int|string|int[]|string[]|null $compareV [optional]
- * @param bool $distinct [optional]
  * @return int[]|string[]
  */
-function ju_fetch_col($t, $col, $compareK = null, $compareV = null, $distinct = false) {
+function ju_fetch_col(string $t, string $col, $compareK = null, $compareV = null, bool $distinct = false):array {
 	$s = ju_db_from($t, $col); /** @var S $s */
 	if (!is_null($compareV)) {
 		$s->where(($compareK ?: $col) . ' ' . ju_sql_predicate_simple($compareV), $compareV);
