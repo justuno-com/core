@@ -8,7 +8,7 @@ final class Formatter {
 	/**
 	 * 2020-02-27
 	 * @used-by ju_bt_s()
-	 * @used-by \Justuno\Core\Qa\Message\Failure::postface()
+	 * @used-by \Justuno\Core\Qa\Failure::postface()
 	 * @param T $t
 	 * @param bool $showContext [optional]
 	 * @return string

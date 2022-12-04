@@ -70,7 +70,7 @@ final class Exception extends LE implements \ArrayAccess {
 
 	/**
 	 * @used-by ju_xts()
-	 * @used-by \Justuno\Core\Qa\Message\Failure\Exception::main()
+	 * @used-by \Justuno\Core\Qa\Failure\Exception::main()
 	 * @used-by \Justuno\Core\Sentry\Client::captureException()
 	 */
 	function message():string {return $this->getMessage();}
@@ -118,7 +118,7 @@ final class Exception extends LE implements \ArrayAccess {
 
 	/**
 	 * 2016-10-24
-	 * @used-by \Justuno\Core\Qa\Message\Failure\Exception::reportNamePrefix()
+	 * @used-by \Justuno\Core\Qa\Failure\Exception::reportNamePrefix()
 	 * @return string|string[]
 	 */
 	final function reportNamePrefix() {return [ju_module_name_lc($this->module()), 'exception'];}

@@ -178,7 +178,7 @@ final class Frame extends \Justuno\Core\O {
 	/**           
 	 * 2020-02-27 `self $previous` works even in PHP 5.0.0: https://3v4l.org/pTl8l
 	 * @used-by \Justuno\Core\Qa\Method::caller()
-	 * @used-by \Justuno\Core\Qa\Message\Failure::frames()
+	 * @used-by \Justuno\Core\Qa\Failure::frames()
 	 * @param array(string => string|int) $frameA
 	 * @param self|null $previous [optional]
 	 * @param bool $showContext [optional]

@@ -9,14 +9,14 @@ namespace Justuno\Core;
 class O implements \ArrayAccess {
 	/**
 	 * 2017-07-13
-	 * @used-by \Justuno\Core\Qa\Message\Failure\Exception::i()
+	 * @used-by \Justuno\Core\Qa\Failure\Exception::i()
 	 * @param array(string => mixed) $a [optional]
 	 */
 	final function __construct(array $a = []) {$this->_a = $a;}
 
 	/**
 	 * 2017-07-13
-	 * @used-by \Justuno\Core\Qa\Message\Failure::postface()
+	 * @used-by \Justuno\Core\Qa\Failure::postface()
 	 * @param string|string[]|null $k [optional]
 	 * @param string|null $d [optional]
 	 * @return array(string => mixed)|mixed|null
