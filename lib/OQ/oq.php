@@ -55,9 +55,8 @@ function ju_is_q($v):bool {return $v instanceof Q;}
  * @used-by ju_oqi_is_leaf()
  * @used-by ju_oqi_qty()
  * @param mixed $v
- * @return bool
  */
-function ju_is_qi($v) {return $v instanceof QI;}
+function ju_is_qi($v):bool {return $v instanceof QI;}
 
 /**
  * 2017-04-20
