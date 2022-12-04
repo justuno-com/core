@@ -9,13 +9,11 @@ use Zend_Uri_Http as zUriH;
  * 2017-05-12
  * 2020-06-24 "Port the `df_domain` function": https://github.com/justuno-com/core/issues/133
  * @used-by ju_domain_current()
- * @param string $u
- * @param bool $www [optional]
  * @param F|bool|mixed $throw [optional]
  * @return string|null
  * @throws E|zUriE
  */
-function ju_domain($u, $www = false, $throw = true) {return
+function ju_domain(string $u, bool $www = false, $throw = true) {return
 	!($r = ju_zuri($u, $throw)->getHost()) ? null : ($www ? $r : ju_trim_text_left($r, 'www.'))
 ;}
 
