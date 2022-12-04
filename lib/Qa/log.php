@@ -69,7 +69,6 @@ function ju_log_l($m, $p2, $p3 = [], $suf = null):void {
  * 2020-06-20 "Port the `df_report` function": https://github.com/justuno-com/core/issues/93
  * @used-by ju_bt_log()
  * @used-by ju_log_l()
- * @used-by \Justuno\Core\Qa\Message::log()
  */
 function ju_report(string $f, string $m, bool $append = false):void {
 	if (!ju_es($m)) {
