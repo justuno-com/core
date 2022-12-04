@@ -5,9 +5,8 @@ use Magento\Framework\Component\ComponentRegistrar as R;
  * 2019-12-31
  * 2020-06-26 "Port the `df_component_r` function": https://github.com/justuno-com/core/issues/151
  * @used-by ju_lib_path()
- * @return R
  */
-function ju_component_r() {return ju_o(R::class);}
+function ju_component_r():R {return ju_o(R::class);}
 
 /**
  * 2019-12-31
