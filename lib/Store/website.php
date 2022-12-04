@@ -30,8 +30,7 @@ function ju_website($v = null):W {return $v instanceof Store ? $v->getWebsite() 
  * 2020-08-23 "Port the `df_website_code` function" https://github.com/justuno-com/core/issues/285
  * @used-by ju_msi_website2stockId()
  * @param W|Store|int|string|null|bool $v [optional]
- * @return string
  * @throws Exception
  * @throws NSE
  */
-function ju_website_code($v = null) {return ju_website($v)->getCode();}
+function ju_website_code($v = null):string {return ju_website($v)->getCode();}
