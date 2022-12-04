@@ -66,10 +66,10 @@ function ju_module_dir_reader():Reader {return ju_o(Reader::class);}
 /**
  * 2017-09-01
  * $m could be:
- * 1) a module name: «A_B»
- * 2) a class name: «A\B\C».
- * 3) an object: it comes down to the case 2 via @see get_class()
- * 4) `null`: it comes down to the case 1 with the «Justuno_Core» module name.
+ * 		1) a module name: «A_B»
+ * 		2) a class name: «A\B\C».
+ * 		3) an object: it comes down to the case 2 via @see get_class()
+ * 		4) `null`: it comes down to the case 1 with the «Justuno_Core» module name.
  * 2020-06-27 "Port the `df_module_file` function": https://github.com/justuno-com/core/issues/163
  * @used-by ju_module_json()
  * @used-by \Justuno\Core\Sentry\Client::send_http()
