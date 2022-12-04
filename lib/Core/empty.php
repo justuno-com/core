@@ -25,6 +25,7 @@ function ju_eta($v):array {
  * 2020-01-29
  * 2020-08-14 "Port the `df_etn` function" https://github.com/justuno-com/core/issues/181
  * @used-by ju_customer_session_id()
+ * @used-by ju_slice()
  * @param mixed $v
  * @return mixed|null
  */
