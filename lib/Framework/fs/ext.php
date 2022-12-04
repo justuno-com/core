@@ -5,10 +5,8 @@
  * 2020-06-21 "Port the `df_file_ext` function": https://github.com/justuno-com/core/issues/97
  * @used-by ju_asset_create()
  * @used-by ju_file_ext_def()
- * @param string $f
- * @return string
  */
-function ju_file_ext($f) {return pathinfo($f, PATHINFO_EXTENSION);}
+function ju_file_ext(string $f):string {return pathinfo($f, PATHINFO_EXTENSION);}
 
 /**
  * 2020-06-28
