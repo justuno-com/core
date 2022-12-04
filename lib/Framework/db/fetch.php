@@ -10,7 +10,7 @@ use Magento\Framework\DB\Select as S;
  * @param int|string|int[]|string[]|null $compareV [optional]
  * @return array(array(string => string))
  */
-function ju_fetch(string $t, $cols = '*', $compareK = null, $compareV = null) {
+function ju_fetch(string $t, $cols = '*', $compareK = null, $compareV = null):array {
 	$s = ju_db_from($t, $cols); /** @var S $s */
 	if (!is_null($compareV)) {
 		$s->where($compareK . ' ' . ju_sql_predicate_simple($compareV), $compareV);
