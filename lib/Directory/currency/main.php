@@ -41,8 +41,7 @@ function ju_currency($c = ''):C {/** @var C $r */
  * @used-by ju_currency()
  * @used-by ju_currency_convert_from_base()
  * @param ScopeA|Store|ConfigData|IConfigData|O|Q|array(int|string)|null|string|int $s [optional]
- * @return C
  */
-function ju_currency_base($s = null) {return ju_currency(ju_assert_sne(ju_cfg(
+function ju_currency_base($s = null):C {return ju_currency(ju_assert_sne(ju_cfg(
 	C::XML_PATH_CURRENCY_BASE, ju_is_oq($s) ? $s->getStore() : $s
 )));}
