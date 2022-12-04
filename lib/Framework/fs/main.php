@@ -96,7 +96,6 @@ function ju_fs():Filesystem {return ju_o(Filesystem::class);}
  * 2015-11-30
  * 2020-08-21 "Port the `df_fs_r` function" https://github.com/justuno-com/core/issues/226
  * @used-by ju_path_relative()
- * @param string $p
  * @return DirectoryRead|IDirectoryRead
  */
 function ju_fs_r(string $p) {return ju_fs()->getDirectoryRead($p);}
@@ -106,7 +105,6 @@ function ju_fs_r(string $p) {return ju_fs()->getDirectoryRead($p);}
  * 2017-04-03 The possible directory types for filesystem operations: https://mage2.pro/t/3591
  * 2020-06-21 "Port the `df_fs_w` function": https://github.com/justuno-com/core/issues/100
  * @used-by ju_file_write()
- * @param string $type
  * @return DirectoryWrite|IDirectoryWrite
  */
-function ju_fs_w($type) {return ju_fs()->getDirectoryWrite($type);}
+function ju_fs_w(string $t) {return ju_fs()->getDirectoryWrite($t);}
