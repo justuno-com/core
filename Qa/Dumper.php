@@ -6,9 +6,8 @@ final class Dumper {
 	 * @used-by ju_dump()
 	 * @used-by self::dumpArrayElements()
 	 * @param mixed $v
-	 * @return string
 	 */
-	function dump($v) {return is_object($v) ? $this->dumpObject($v) : (
+	function dump($v):string {return is_object($v) ? $this->dumpObject($v) : (
 		is_array($v) ? $this->dumpArray($v) : (is_bool($v) ? ju_bts($v) : (is_string($v) ? $v : print_r($v, true)))
 	);}
 
