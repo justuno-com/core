@@ -20,7 +20,7 @@ function ju_explode_multiple(array $delimiters, string $s):array {
  * @used-by ju_tab_multiline()
  * @return string[]
  */
-function ju_explode_n(string $s) {return explode("\n", ju_normalize(ju_trim($s)));}
+function ju_explode_n(string $s):array {return explode("\n", ju_normalize(ju_trim($s)));}
 
 /**
  * 2020-06-14 "Port the `df_explode_xpath` function": https://github.com/justuno-com/core/issues/20
