@@ -56,10 +56,10 @@ function ju_prepend(string $s, string $head):string {return ju_starts_with($s, $
 /**
  * 2020-06-18 "Port the `df_tab` function": https://github.com/justuno-com/core/issues/85
  * @used-by ju_tab_multiline()
- * @param string ...$args
+ * @param string|string[] $a
  * @return string|string[]|array(string => string)
  */
-function ju_tab(...$args) {return ju_call_a(function($text) {return "\t" . $text;}, $args);}
+function ju_tab(...$a) {return ju_call_a(function($text) {return "\t" . $text;}, $a);}
 
 /**
  * 2020-06-18 "Port the `df_tab_multiline` function": https://github.com/justuno-com/core/issues/84
