@@ -33,6 +33,5 @@ function ju_is_checkout_success():bool {return ju_handle('checkout_onepage_succe
  * https://github.com/mage2pro/moip/issues/22
  * 2021-03-06 "Port the `df_is_system_config` function": https://github.com/justuno-com/core/issues/357
  * @used-by \Justuno\Core\Config\Settings::scope()
- * @return bool
  */
-function ju_is_system_config() {return ju_action_prefix('adminhtml_system_config');}
+function ju_is_system_config():bool {return ju_action_prefix('adminhtml_system_config');}
