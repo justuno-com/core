@@ -136,4 +136,6 @@ function ju_module_path($m, string $localPath = ''):string {return ju_cc_path(ju
  * @param string|object|null $m
  * @throws InvalidArgumentException
  */
-function ju_module_path_etc($m, string $localPath = ''):string {return ju_cc_path(ju_module_dir($m, Dir::MODULE_ETC_DIR), $localPath);}
+function ju_module_path_etc($m, string $localPath = ''):string {return ju_cc_path(
+	ju_module_dir($m, Dir::MODULE_ETC_DIR), $localPath
+);}
