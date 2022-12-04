@@ -1,7 +1,6 @@
 <?php
 namespace Justuno\Core\Qa;
 use Justuno\Core\Qa\Trace\Frame;
-use Justuno\Core\Zf\Validate\StringT as VString;
 use Exception as E;
 use ReflectionParameter as RP;
 use Zend_Validate_Interface as Vd;

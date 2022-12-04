@@ -2,15 +2,12 @@
 namespace Justuno\Core\Zf;
 # 2020-06-22 "Port the `Df\Zf\Validate` class": https://github.com/justuno-com/core/issues/112
 /**
- * @see \Justuno\Core\Zf\Validate\StringT
  * @see \Justuno\Core\Zf\Validate\StringT\IntT
- * @used-by \Justuno\Core\Zf\Validate\StringT::s()
  * @used-by \Justuno\Core\Zf\Validate\StringT\IntT::s()
  */
 abstract class Validate implements \Zend_Validate_Interface {
 	/**
 	 * @used-by self::message()
-	 * @see \Justuno\Core\Zf\Validate\StringT::expected()
 	 * @see \Justuno\Core\Zf\Validate\StringT\IntT::expected()
 	 */
 	abstract protected function expected():string;
@@ -32,7 +29,6 @@ abstract class Validate implements \Zend_Validate_Interface {
 	;}
 
 	/**
-	 * @used-by \Justuno\Core\Zf\Validate\StringT::isValid()
 	 * @used-by \Justuno\Core\Zf\Validate\StringT\IntT::isValid()
 	 * @param mixed $v [optional]
 	 * @return self|mixed
