@@ -17,9 +17,8 @@ final class Dumper {
 	 * @used-by self::dumpArray()
 	 * @used-by self::dumpObject()
 	 * @param mixed[]|array(string => mixed) $a
-	 * @return string
 	 */
-	function dumpArrayElements(array $a) {return ju_cc_n(ju_map_k(ju_ksort($a), function($k, $v) {return
+	function dumpArrayElements(array $a):string {return ju_cc_n(ju_map_k(ju_ksort($a), function($k, $v) {return
 		"$k: {$this->dump($v)}"
 	;}));}
 
