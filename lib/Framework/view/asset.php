@@ -56,6 +56,5 @@ function ju_asset_name(string $name = '', $m = null, string $ext = ''):string {r
  * 2015-12-29
  * 2020-08-22 "Port the `df_asset_source` function" https://github.com/justuno-com/core/issues/248
  * @used-by ju_asset_exists()
- * @return Source
  */
-function ju_asset_source() {return ju_o(Source::class);}
+function ju_asset_source():Source {return ju_o(Source::class);}
