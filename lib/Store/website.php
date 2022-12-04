@@ -14,10 +14,9 @@ use Magento\Store\Model\Website as W;
  * 2020-08-23 "Port the `df_website` function" https://github.com/justuno-com/core/issues/286
  * @used-by ju_website_code()
  * @param W|Store|int|string|null|bool $v [optional]
- * @return W
  * @throws NSE|Exception
  */
-function ju_website($v = null) {return $v instanceof Store ? $v->getWebsite() : ju_store_m()->getWebsite($v);}
+function ju_website($v = null):W {return $v instanceof Store ? $v->getWebsite() : ju_store_m()->getWebsite($v);}
 
 /**
  * 2019-11-22
