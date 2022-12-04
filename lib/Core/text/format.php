@@ -29,10 +29,8 @@ function ju_format(...$a):string { /** @var string $r */
  * 2020-06-18 "Port the `df_kv` function": https://github.com/justuno-com/core/issues/56
  * @used-by \Justuno\Core\Sentry\Client::send_http()
  * @param array(string => string) $a
- * @param int|null $pad [optional]
- * @return string
  */
-function ju_kv(array $a, $pad = null) {return ju_cc_n(ju_map_k(ju_clean($a), function($k, $v) use($pad) {return
+function ju_kv(array $a, int $pad = 0):string {return ju_cc_n(ju_map_k(ju_clean($a), function($k, $v) use($pad) {return
 	(!$pad ? "$k: " : ju_pad("$k:", $pad))
 	.(is_array($v) || (is_object($v) && !method_exists($v, '__toString')) ? "\n" . ju_json_encode($v) : $v)
 ;}));}
