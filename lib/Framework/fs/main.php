@@ -89,9 +89,8 @@ function ju_file_write($p, string $contents, bool $append = false):void {
  * 2020-06-21 "Port the `df_fs` function": https://github.com/justuno-com/core/issues/101
  * @used-by ju_fs_r()
  * @used-by ju_fs_w()
- * @return Filesystem
  */
-function ju_fs() {return ju_o(Filesystem::class);}
+function ju_fs():Filesystem {return ju_o(Filesystem::class);}
 
 /**
  * 2015-11-30
