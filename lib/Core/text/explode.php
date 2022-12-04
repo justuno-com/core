@@ -30,4 +30,4 @@ function ju_explode_n(string $s):array {return explode("\n", ju_normalize(ju_tri
  * @param string|string[] $p
  * @return string[]
  */
-function ju_explode_xpath($p) {return jua_flatten(array_map(function($s) {return explode('/', $s);}, ju_array($p)));}
+function ju_explode_xpath($p):array {return jua_flatten(array_map(function($s) {return explode('/', $s);}, ju_array($p)));}
