@@ -65,9 +65,8 @@ function ju_error(...$a):void {
  * 2020-06-17 "Port the `df_error_create` function": https://github.com/justuno-com/core/issues/37
  * @used-by ju_error()
  * @param string|string[]|mixed|E|Phrase|null $m [optional]
- * @return DFE
  */
-function ju_error_create($m = null) {return $m instanceof E ? DFE::wrap($m) :
+function ju_error_create($m = null):DFE {return $m instanceof E ? DFE::wrap($m) :
 	new DFE($m instanceof Phrase ? $m : (
 		/**
 		 * 2019-12-16
