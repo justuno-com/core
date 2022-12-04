@@ -25,6 +25,5 @@ function ju_select() {return ju_conn()->select();}
  * 2019-11-22
  * 2020-08-21 "Port the `df_trigger` function" https://github.com/justuno-com/core/issues/231
  * @used-by \Justuno\M2\Setup\UpgradeSchema::tr()
- * @return Trigger
  */
-function ju_trigger() {return ju_new_om(Trigger::class);}
+function ju_trigger():Trigger {return ju_new_om(Trigger::class);}
