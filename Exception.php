@@ -64,7 +64,7 @@ final class Exception extends LE implements \ArrayAccess {
 	function comments():array {return $this->_comments;}
 
 	/**
-	 * @used-by \Justuno\Core\Qa\Message_Failure_Exception::stackLevel()
+	 * @used-by \Justuno\Core\Qa\Failure\Exception::stackLevel()
 	 */
 	function getStackLevelsCountToSkip():int {return $this->_stackLevelsCountToSkip;}
 
