@@ -7,9 +7,8 @@
  * @used-by \Justuno\M2\Setup\UpgradeSchema::_process()
  * @used-by \Justuno\M2\Setup\UpgradeSchema::tr()
  * @param string|string[] $n
- * @return string
  */
-function ju_table($n) {return jucf(function($n) {return ju_db_resource()->getTableName($n);}, [$n]);}
+function ju_table($n):string {return jucf(function($n) {return ju_db_resource()->getTableName($n);}, [$n]);}
 
 /**
  * 2019-11-30
