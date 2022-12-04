@@ -14,9 +14,8 @@ function ju_is_catalog_product_view():bool {return ju_handle('catalog_product_vi
  * How to detect the «checkout success» page programmatically in PHP? https://mage2.pro/t/3562
  * 2020-08-24 "Port the `df_is_checkout_success` function" https://github.com/justuno-com/core/issues/310
  * @used-by \Justuno\M2\Block\Js::_toHtml()
- * @return bool
  */
-function ju_is_checkout_success() {return ju_handle('checkout_onepage_success');}
+function ju_is_checkout_success():bool {return ju_handle('checkout_onepage_success');}
 
 /**
  * 2017-10-15
