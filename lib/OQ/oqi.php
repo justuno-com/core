@@ -154,7 +154,6 @@ function ju_oqi_price($i, bool $withTax = false, bool $withDiscount = false):flo
  * 2020-08-26 "Port the `ju_oqi_qty` function" https://github.com/justuno-com/core/issues/340
  * @used-by ju_oqi_price()
  * @param OI|QI $i
- * @return int
  */
 function ju_oqi_qty($i):int {return intval(ju_is_oi($i) ? $i->getQtyOrdered() : (ju_is_qi($i) ? $i->getQty() : ju_error()));}
 
