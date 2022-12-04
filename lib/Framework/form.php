@@ -15,6 +15,10 @@ use Magento\Framework\Data\Form\Element\AbstractElement as AE;
 function ju_fe_init(AE $e, $class = null, $css = [], array $params = [], $path = null):void {
 	$class = ju_cts($class ?: $e);
 	$moduleName = ju_module_name($class); /** @var string $moduleName */
+	# 2015-12-29
+	# Мы различаем ситуации, когда $path равно null и пустой строке.
+	# *) null означает, что имя ресурса должно определяться по имени класса.
+	# *) пустая строка означает, что ресурс не имеет префикса, т.е. его имя просто «main».
 	if (is_null($path)) {
 		$classA = ju_explode_class_lc($class); /** @var string[] $classA */
 		$classLast = array_pop($classA);
