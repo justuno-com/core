@@ -89,10 +89,10 @@ function ju_module_file($m, string $name, string $ext = '', bool $req = true, Cl
 /**
  * 2017-01-27
  * $m could be:
- * 1) a module name: «A_B»
- * 2) a class name: «A\B\C».
- * 3) an object: it comes down to the case 2 via @see get_class()
- * 4) `null`: it comes down to the case 1 with the «Justuno_Core» module name.
+ * 		1) a module name: «A_B»
+ * 		2) a class name: «A\B\C».
+ * 		3) an object: it comes down to the case 2 via @see get_class()
+ * 		4) `null`: it comes down to the case 1 with the «Justuno_Core» module name.
  * 2020-06-27 "Port the `df_module_json` function": https://github.com/justuno-com/core/issues/162
  * @used-by ju_sentry_m()
  * @param string|object|null $m
