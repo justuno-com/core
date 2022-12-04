@@ -2,7 +2,6 @@
 use Justuno\Core\Qa\Message\Failure\Exception as QE;
 use Exception as E;
 use Magento\Framework\DataObject as _DO;
-
 /**
  * 2020-06-22 "Port the `df_log` function": https://github.com/justuno-com/core/issues/117
  * 2022-11-30 @deprecated It is unused.
