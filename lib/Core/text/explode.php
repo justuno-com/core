@@ -4,10 +4,9 @@
  * 2020-06-26 "Port the `df_explode_multiple` function": https://github.com/justuno-com/core/issues/140
  * @used-by ju_explode_class()
  * @param string[] $delimiters
- * @param string $s
  * @return string[]
  */
-function ju_explode_multiple(array $delimiters, $s) {
+function ju_explode_multiple(array $delimiters, string $s):array {
 	$main = array_shift($delimiters); /** @var string $main */
 	/**
 	 * 2016-03-25
