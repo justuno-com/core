@@ -7,9 +7,8 @@ use Magento\Framework\DB\Select;
  * 2020-08-14 "Port the `df_db_resource` function" https://github.com/justuno-com/core/issues/192
  * @used-by ju_conn()
  * @used-by ju_table()
- * @return RC
  */
-function ju_db_resource() {return ju_o(RC::class);}
+function ju_db_resource():RC {return ju_o(RC::class);}
 
 /**
  * 2015-09-29
