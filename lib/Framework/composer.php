@@ -7,9 +7,8 @@
  * @used-by ju_sentry_m()
  * @used-by \Justuno\Core\Sentry\Client::__construct()
  * @used-by \Justuno\Core\Sentry\Client::getUserAgent()
- * @return string
  */
-function ju_core_version() {return jucf(function() {return ju_package_version('Justuno_Core');});}
+function ju_core_version():string {return jucf(function() {return ju_package_version('Justuno_Core');});}
 
 /**
  * 2017-01-10
