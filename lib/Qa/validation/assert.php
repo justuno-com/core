@@ -55,7 +55,6 @@ function ju_assert_nef($v, $m = null) {return false !== $v ? $v : ju_error($m ?:
  */
 function ju_assert_sne(string $v, int $sl = 0):string {
 	$sl++;
-	Q::assertValueIsString($v, $sl);
 	# The previous code `if (!$v)` was wrong because it rejected the '0' string.
 	return '' !== strval($v) ? $v : Q::raiseErrorVariable(__FUNCTION__, [Q::NES], $sl);
 }

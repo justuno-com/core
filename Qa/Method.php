@@ -8,16 +8,6 @@ use Zend_Validate_Interface as Vd;
 # 2020-06-20 "Port the `Df\Qa\Method` class": https://github.com/justuno-com/core/issues/95
 final class Method {
 	/**
-	 * @used-by ju_assert_sne()
-	 * @used-by ju_param_sne()
-	 * @param string $v
-	 * @param int $sl [optional]
-	 * @return string
-	 * @throws E
-	 */
-	static function assertValueIsString($v, $sl = 0) {return self::vv(VString::s(), $v, ++$sl);}
-
-	/**
 	 * @used-by ju_param_sne()
 	 * @used-by vp()
 	 * @param string $method
