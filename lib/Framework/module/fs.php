@@ -60,9 +60,8 @@ function ju_module_dir($m, string $type = ''):string {
  * 2019-12-31
  * 2020-06-26 "Port the `df_module_dir_reader` function": https://github.com/justuno-com/core/issues/148
  * @used-by ju_module_dir()
- * @return Reader
  */
-function ju_module_dir_reader() {return ju_o(Reader::class);}
+function ju_module_dir_reader():Reader {return ju_o(Reader::class);}
 
 /**
  * 2017-09-01
