@@ -22,10 +22,14 @@ use Magento\Framework\Filesystem\File\WriteInterface as IFileWrite;
  */
 function ju_file_write($p, string $contents, bool $append = false):void {
 	/** @var string $type */ /** @var string $relative */
-	# 2020-03-02
-	# The square bracket syntax for array destructuring assignment (`[…] = […]`) requires PHP ≥ 7.1:
+	# 2020-03-02, 2022-10-31
+	# 1) Symmetric array destructuring requires PHP ≥ 7.1:
+	#		[$a, $b] = [1, 2];
 	# https://github.com/mage2pro/core/issues/96#issuecomment-593392100
 	# We should support PHP 7.0.
+	# https://3v4l.org/3O92j
+	# https://www.php.net/manual/migration71.new-features.php#migration71.new-features.symmetric-array-destructuring
+	# https://stackoverflow.com/a/28233499
 	list($type, $relative) = is_array($p) ? $p : [DL::ROOT, ju_path_relative($p)];
 	$writer = ju_fs_w($type); /** @var DirectoryWrite|IDirectoryWrite $writer */
 	/**
