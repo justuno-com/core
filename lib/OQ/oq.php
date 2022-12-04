@@ -63,6 +63,5 @@ function ju_is_qi($v):bool {return $v instanceof QI;}
  * 2020-08-26 "Port the `ju_oqi_is_leaf` function" https://github.com/justuno-com/core/issues/333
  * @used-by ju_oqi_is_leaf()
  * @param OI|QI $i
- * @return bool
  */
-function ju_oqi_is_leaf($i) {return ju_is_oi($i) ? !$i->getChildrenItems() : (ju_is_qi($i) ? !$i->getChildren() : ju_error());}
+function ju_oqi_is_leaf($i):bool {return ju_is_oi($i) ? !$i->getChildrenItems() : (ju_is_qi($i) ? !$i->getChildren() : ju_error());}
