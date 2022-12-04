@@ -20,7 +20,7 @@ use Magento\Framework\Filesystem\File\WriteInterface as IFileWrite;
  * @used-by ju_report()
  * @param string|string[] $p
  */
-function ju_file_write($p, string $contents, bool $append = false) {
+function ju_file_write($p, string $contents, bool $append = false):void {
 	/** @var string $type */ /** @var string $relative */
 	# 2020-03-02
 	# The square bracket syntax for array destructuring assignment (`[…] = […]`) requires PHP ≥ 7.1:
