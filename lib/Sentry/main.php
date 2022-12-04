@@ -19,7 +19,7 @@ use Magento\User\Model\User;
  * @param _DO|mixed[]|mixed|E $v
  * @param array(string => mixed) $context [optional]
  */
-function ju_sentry($m, $v, array $context = []) {
+function ju_sentry($m, $v, array $context = []):void {
 	static $domainsToSkip = []; /** @var string[] $domainsToSkip */
 	if ($v instanceof E || !in_array(ju_domain_current(), $domainsToSkip)) {
 		$m = ju_sentry_module($m);
