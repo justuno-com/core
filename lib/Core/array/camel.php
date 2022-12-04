@@ -47,6 +47,6 @@
  * @param string|string[] $a
  * @return string[]|string[][]
  */
-function ju_explode_camel(...$a):array {return ju_call_a(function($name) {return preg_split(
-	'#(?<=[a-z])(?=[A-Z0-9])#x', $name
+function ju_explode_camel(...$a):array {return ju_call_a(function(string $n) {return preg_split(
+	'#(?<=[a-z])(?=[A-Z0-9])#x', $n
 );}, $a);}
