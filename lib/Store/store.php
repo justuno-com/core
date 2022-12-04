@@ -70,10 +70,8 @@ function ju_store_m() {return ju_o(IStoreManager::class);}
  * 2020-06-24 "Port the `df_store_url` function": https://github.com/justuno-com/core/issues/121
  * @used-by ju_store_url_web()
  * @param int|string|null|bool|IStore $s
- * @param string $type
- * @return string
  */
-function ju_store_url($s, $type) {return ju_store($s)->getBaseUrl($type);}
+function ju_store_url($s, string $type):string {return ju_store($s)->getBaseUrl($type);}
 
 /**
  * 2017-03-15 Returns an empty string if the store's root URL is absent in the Magento database.
