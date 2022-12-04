@@ -1,9 +1,7 @@
 <?php
 namespace Justuno\Core\Qa;
 use Justuno\Core\Qa\Trace\Formatter;
-/**
- * @see \Justuno\Core\Qa\Failure\Exception
- */
+/** @see \Justuno\Core\Qa\Failure\Exception */
 abstract class Failure {
 	/**
 	 * @used-by self::report()
