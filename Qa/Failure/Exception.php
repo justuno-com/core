@@ -44,7 +44,7 @@ final class Exception extends \Justuno\Core\Qa\Failure {
 	private $_e;
 
 	/**
-	 * @used-by df_log_l()
+	 * @used-by ju_log_l()
 	 * @param E $e
 	 */
 	static function i(E $e):self {$r = new self; $r->_e = DFE::wrap($e); return $r;}
