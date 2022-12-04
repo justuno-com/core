@@ -4,9 +4,8 @@
  * @used-by ju_error_create()
  * @used-by \Justuno\Core\Exception::comment()
  * @param mixed ...$a
- * @return string
  */
-function ju_format(...$a) { /** @var string $r */
+function ju_format(...$a):string { /** @var string $r */
 	$a = ju_args($a);
 	$r = null;
 	switch (count($a)) {
