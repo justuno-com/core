@@ -7,11 +7,10 @@ use Justuno\Core\Zf\Validate\StringT\IntT;
  * @used-by ju_product_id()
  * @used-by \Justuno\Core\Zf\Validate\IntT::filter()
  * @param mixed|mixed[] $v
- * @param bool $allowNull [optional]
  * @return int|int[]
  * @throws DFE
  */
-function ju_int($v, $allowNull = true) {/** @var int|int[] $r */
+function ju_int($v, bool $allowNull = true) {/** @var int|int[] $r */
 	if (is_array($v)) {
 		$r = ju_map(__FUNCTION__, $v, $allowNull);
 	}
