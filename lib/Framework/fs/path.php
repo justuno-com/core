@@ -51,10 +51,7 @@ function ju_path_n(string $p):string {return str_replace('//', '/', str_replace(
  * @used-by ju_file_write()
  * @used-by \Justuno\Core\Qa\Trace\Formatter::frame()
  * @used-by \Justuno\Core\Sentry\Trace::info()
- * @param string $p
- * @param string $b [optional]
- * @return string
  */
-function ju_path_relative($p, $b = DL::ROOT) {return ju_trim_text_left(ju_trim_ds_left(
+function ju_path_relative(string $p, string $b = DL::ROOT):string {return ju_trim_text_left(ju_trim_ds_left(
 	ju_path_n($p)), ju_trim_ds_left(ju_fs_r($b)->getAbsolutePath()
 ));}
