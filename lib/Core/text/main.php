@@ -44,9 +44,8 @@ function ju_contains(string $haystack, ...$n):bool {/** @var bool $r */
  * 2020-06-20 "Port the `df_string` function": https://github.com/justuno-com/core/issues/92
  * @used-by ju_type()
  * @param mixed $v
- * @return string
  */
-function ju_string($v) {
+function ju_string($v):string {
 	if (is_object($v)) {
 		if (!method_exists($v, '__toString')) {
 			ju_error('The developer wrongly treats an object of the class %s as a string.', get_class($v));
