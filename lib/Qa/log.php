@@ -1,5 +1,5 @@
 <?php
-use Justuno\Core\Qa\Message\Failure\Exception as QE;
+use Justuno\Core\Qa\Failure\Exception as QE;
 use Exception as E;
 use Magento\Framework\DataObject as _DO;
 /**
