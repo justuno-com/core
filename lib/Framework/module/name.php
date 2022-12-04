@@ -51,9 +51,9 @@ function ju_module_name_c($c = null):string {return ju_module_name($c, '\\');}
  * Making $c optional leads to the error «get_class() called without object from outside a class»: https://3v4l.org/k6Hd5
  * 2017-10-03
  * $c could be:
- * 1) a module name. E.g.: «A_B».
- * 2) a class name. E.g.: «A\B\C».
- * 3) an object. It will be treated as case 2 after @see get_class()
+ * 		1) a module name. E.g.: «A_B».
+ * 		2) a class name. E.g.: «A\B\C».
+ * 		3) an object. It will be treated as case 2 after @see get_class()
  * 2020-08-21 "Port the `df_module_name_lc` function" https://github.com/justuno-com/core/issues/216
  * @used-by ju_report_prefix()
  * @used-by \Justuno\Core\Exception::reportNamePrefix()
