@@ -8,7 +8,6 @@ use Zend_Validate_Interface as Vd;
 final class Method {
 	/**
 	 * @used-by ju_param_sne()
-	 * @used-by self::vp()
 	 * @throws E
 	 */
 	static function raiseErrorParam(string $method, array $messages, int $ord, int $sl = 1) {
