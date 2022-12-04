@@ -20,11 +20,9 @@ function ju_bts(bool $v):string {return $v ? 'true' : 'false';}
  * @used-by \Justuno\Core\Format\Html\Tag::content()
  * @used-by \Justuno\Core\Sentry\Trace::get_frame_context()
  * @used-by \Justuno\M2\Catalog\Images::p()
- * @param string $haystack
  * @param string|string[] ...$n
- * @return bool
  */
-function ju_contains($haystack, ...$n) {/** @var bool $r */
+function ju_contains(string $haystack, ...$n):bool {/** @var bool $r */
 	# 2017-07-10 This branch is exclusively for optimization.
 	if (1 === count($n) && !is_array($n0 = $n[0])) {
 		$r = false !== strpos($haystack, $n0);
