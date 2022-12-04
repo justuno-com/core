@@ -13,4 +13,4 @@ function ju_handle(string $n):bool {return in_array($n, ju_handles());}
  * @used-by ju_handle()
  * @return string[]
  */
-function ju_handles() {return ($u = ju_layout_update(null)) ? $u->getHandles() : [];}
+function ju_handles():array {return ($u = ju_layout_update(null)) ? $u->getHandles() : [];}
