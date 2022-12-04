@@ -15,12 +15,11 @@ function ju_log($v, $m = null):void {ju_log_l($m, $v); ju_sentry($m, $v);}
  * 2020-06-17 "Port the `df_log_e` function": https://github.com/justuno-com/core/issues/50
  * @used-by ju_error()
  * @used-by \Justuno\Core\Qa\Trace\Formatter::frame()
- * @param E $e
  * @param string|object|null $m [optional]
  * @param string|mixed[] $d [optional]
  * @param string|bool|null $suf [optional]
  */
-function ju_log_e($e, $m = null, $d = [], $suf = null) {ju_log_l($m, $e, $d, !is_null($suf) ? $suf : ju_caller_f());}
+function ju_log_e(E $e, $m = null, $d = [], $suf = null):void {ju_log_l($m, $e, $d, !is_null($suf) ? $suf : ju_caller_f());}
 
 /**
  * 2017-01-11
