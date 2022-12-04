@@ -71,7 +71,7 @@ function ju_log_l($m, $p2, $p3 = [], $suf = null):void {
  * @used-by ju_log_l()
  * @used-by \Justuno\Core\Qa\Message::log()
  */
-function ju_report(string $f, string $m, bool $append = false) {
+function ju_report(string $f, string $m, bool $append = false):void {
 	if ('' !== $m) {
 		$f = ju_file_ext_def($f, 'log');
 		$p = BP . '/var/log'; /** @var string $p */
