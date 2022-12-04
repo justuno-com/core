@@ -17,8 +17,7 @@ function ju_xf(E $e):E {while ($e->getPrevious()) {$e = $e->getPrevious();} retu
  * @used-by \Justuno\Core\Qa\Trace\Formatter::frame()
  * @used-by \Justuno\Core\Zf\Validate\IntT::filter()
  * @param E|P|string $e
- * @return P|string
  */
-function ju_xts($e) {return ju_adjust_paths_in_message(
+function ju_xts($e):string {return ju_adjust_paths_in_message(
 	!$e instanceof E ? $e : ($e instanceof DFE ? $e->message() : $e->getMessage())
 );}
