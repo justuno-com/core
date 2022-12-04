@@ -38,9 +38,8 @@ function ju_bt_log($p = 0):void {ju_report('bt-{date}-{time}.log', ju_bt_s(ju_bt
  * 2020-06-16 "Port the `df_bt_s` function": https://github.com/justuno-com/core/issues/28
  * @used-by ju_bt_log()
  * @used-by ju_log_l()
- * @param int|E $p
- * @return string
+ * @param int|E|array(array(string => string|int)) $p
+ * Позволяет при записи стека вызовов пропустить несколько последних вызовов функций,
+ * которые и так очевидны (например, вызов данной функции, вызов df_bt_log() и т.п.)
  */
-function ju_bt_s($p = 0) {return Formatter::p(
-	new Trace($p instanceof E ? $p->getTrace() : array_slice(debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS), $p))
-);}
+function ju_bt_s($p = 0):string {return Formatter::p(new Trace(ju_bt(ju_bt_inc($p))));}
