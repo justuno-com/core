@@ -12,9 +12,8 @@ use Magento\Sales\Model\Order\Item as OI;
  * @used-by ju_oqi_discount()
  * @used-by ju_oqi_discount_b()
  * @param OI|QI $i
- * @return float
  */
-function ju_oqi_amount($i) {
+function ju_oqi_amount($i):float {
 	$k0 = ju_trim_text_left(ju_caller_f(), 'ju_oqi_'); /** @var string $k0 */
 	$k1 = ju_trim_text_right($k0, '_b'); /** @var string $k1 */
 	$i = ju_oqi_top($i);
