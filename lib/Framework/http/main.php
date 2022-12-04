@@ -23,7 +23,7 @@ function ju_header_utf():void {ju_is_cli() || headers_sent() ?: header('Content-
  * @param string|null|callable $d [optional]
  * @return string|array(string => string)
  */
-function ju_request($k = null, $d = null) {$o = ju_request_o(); return is_null($k) ? $o->getParams() : (
+function ju_request($k = '', $d = null) {$o = ju_request_o(); return is_null($k) ? $o->getParams() : (
 	is_array($k) ? jua($o->getParams(), $k) : ju_if1(is_null($r = $o->getParam($k)) || '' === $r, $d, $r)
 );}
 
