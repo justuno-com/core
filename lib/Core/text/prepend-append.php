@@ -66,7 +66,5 @@ function ju_tab(...$a) {return ju_call_a(function($text) {return "\t" . $text;},
  * @used-by \Justuno\Core\Format\Html\Tag::content()
  * @used-by \Justuno\Core\Format\Html\Tag::openTagWithAttributesAsText()
  * @used-by \Justuno\Core\Qa\Dumper::dumpArray()
- * @param string $s
- * @return string
  */
-function ju_tab_multiline($s) {return ju_cc_n(ju_tab(ju_explode_n($s)));}
+function ju_tab_multiline(string $s):string {return ju_cc_n(ju_tab(ju_explode_n($s)));}
