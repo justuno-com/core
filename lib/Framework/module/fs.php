@@ -116,11 +116,9 @@ function ju_module_json($m, string $name, bool $req = true):array {return ju_mod
  * 2020-06-26 "Port the `df_module_path` function": https://github.com/justuno-com/core/issues/146
  * @used-by ju_package()
  * @param string|object|null $m
- * @param string $localPath [optional]
- * @return string
  * @throws InvalidArgumentException
  */
-function ju_module_path($m, $localPath = '') {return ju_cc_path(ju_module_dir($m), $localPath);}
+function ju_module_path($m, string $localPath = ''):string {return ju_cc_path(ju_module_dir($m), $localPath);}
 
 /**
  * 2016-07-19
