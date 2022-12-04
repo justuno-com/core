@@ -3,12 +3,12 @@
  * 2015-09-29
  * 2020-08-22 "Port the `ju_translate_a` function" https://github.com/justuno-com/core/issues/262
  * @used-by ju_map_to_options_t()
- * @param string[] $strings
+ * @param string[] $s
  * @param bool $now [optional]
  * @return string[]
  */
-function ju_translate_a($strings, $now = false) {
-	$r = array_map('__', $strings); /** @var string[] $r */
+function ju_translate_a($s, $now = false) {
+	$r = array_map('__', $s); /** @var string[] $r */
 	return !$now ? $r : array_map('strval', $r);
 }
 
