@@ -51,12 +51,9 @@ function ju_assert_nef($v, $m = null) {return false !== $v ? $v : ju_error($m ?:
  * 2020-06-22 "Port the `df_assert_sne` function": https://github.com/justuno-com/core/issues/115
  * @used-by ju_currency_base()
  * @used-by ju_file_name()
- * @param string $v
- * @param int $sl [optional]
- * @return string
  * @throws DFE
  */
-function ju_assert_sne($v, $sl = 0) {
+function ju_assert_sne(string $v, int $sl = 0):string {
 	$sl++;
 	Q::assertValueIsString($v, $sl);
 	# The previous code `if (!$v)` was wrong because it rejected the '0' string.
