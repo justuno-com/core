@@ -2,7 +2,6 @@
 use Justuno\Core\Exception as DFE;
 use Magento\Customer\Model\Customer as C;
 use Magento\Customer\Model\Data\Customer as DC;
-use Magento\Customer\Model\Session;
 use Magento\Framework\Exception\NoSuchEntityException;
 use Magento\Sales\Model\Order as O;
 
@@ -55,15 +54,6 @@ function ju_customer($c = null, $onE = null) {return ju_try(function() use($c) {
 function ju_customer_id($c = null) {return !$c && !ju_is_backend() ? ju_customer_session()->getId() : (
 	$c instanceof C || $c instanceof DC ? $c->getId() : $c
 );}
-
-/**
- * 2020-08-14 "Port the `df_customer_session` function" https://github.com/justuno-com/core/issues/182
- * @used-by ju_customer()
- * @used-by ju_customer_id()
- * @used-by ju_customer_session_id()
- * @return Session
- */
-function ju_customer_session() {return ju_o(Session::class);}
 
 /**
  * 2020-01-25
