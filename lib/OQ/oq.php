@@ -29,9 +29,8 @@ function ju_is_oi($v):bool {return $v instanceof OI;}
  * 2020-08-26 "Port the `ju_is_oq` function" https://github.com/justuno-com/core/issues/343
  * @used-by ju_currency_base()
  * @param mixed $v
- * @return bool
  */
-function ju_is_oq($v) {return ju_is_o($v) || ju_is_q($v);}
+function ju_is_oq($v):bool {return ju_is_o($v) || ju_is_q($v);}
 
 /**
  * 2020-02-05
