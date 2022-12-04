@@ -39,10 +39,9 @@ function ju_kv(array $a, int $pad = 0):string {return ju_cc_n(ju_map_k(ju_clean(
  * 2020-06-17 "Port the `df_sprintf` function": https://github.com/justuno-com/core/issues/42
  * @used-by ju_format()
  * @param string|mixed[] $s
- * @return string
  * @throws Exception
  */
-function ju_sprintf($s) {/** @var string $r */ /** @var mixed[] $args */
+function ju_sprintf($s):string {/** @var string $r */ /** @var mixed[] $args */
 	# 2020-03-02
 	# The square bracket syntax for array destructuring assignment (`[…] = […]`) requires PHP ≥ 7.1:
 	# https://github.com/mage2pro/core/issues/96#issuecomment-593392100
