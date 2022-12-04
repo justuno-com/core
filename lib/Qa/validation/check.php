@@ -7,9 +7,8 @@ if (!function_exists('is_iterable')) {
 	 * @used-by juaf()
 	 * @used-by ju_assert_traversable()
 	 * @param Traversable|array $v
-	 * @return bool
 	 */
-	function is_iterable($v) {return is_array($v) || $v instanceof Traversable;}
+	function is_iterable($v):bool {return is_array($v) || $v instanceof Traversable;}
 }
 
 /**
