@@ -60,7 +60,5 @@ function ju_normalize(string $s):string {return strtr($s, ["\r\n" => "\n", "\r" 
  * 2020-08-13 "Port the `df_translit` function" https://github.com/justuno-com/core/issues/169
  *
  * @used-by ju_translit_url()
- * @param string $s
- * @return string
  */
-function ju_translit($s) {return transliterator_transliterate('Any-Latin; Latin-ASCII', $s);}
+function ju_translit(string $s):string {return transliterator_transliterate('Any-Latin; Latin-ASCII', $s);}
