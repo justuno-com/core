@@ -5,8 +5,7 @@
  * @used-by ju_fetch()
  * @used-by ju_fetch_col()
  * @param int|string|int[]|string[] $v
- * @param bool $not [optional]
  */
-function ju_sql_predicate_simple($v, $not = false):string {return
+function ju_sql_predicate_simple($v, bool $not = false):string {return
 	is_array($v) ? ($not ? 'NOT IN (?)' : 'IN (?)') : ($not ? '<> ?' : '= ?')
 ;}
