@@ -13,11 +13,8 @@ function ju_file_ext(string $f):string {return pathinfo($f, PATHINFO_EXTENSION);
  * 2020-08-22 "Port the `df_file_ext_add` function" https://github.com/justuno-com/core/issues/240
  * @used-by ju_block()
  * @used-by ju_module_file()
- * @param string $f
- * @param string|null $ext
- * @return string
  */
-function ju_file_ext_add($f, $ext) {return !$ext ? $f : ju_append($f, ".$ext");}
+function ju_file_ext_add(string $f, string $ext = ''):string {return !$ext ? $f : ju_append($f, ".$ext");}
 
 /**
  * 2018-07-06
