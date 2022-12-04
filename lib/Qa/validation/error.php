@@ -39,12 +39,12 @@ use Magento\Framework\Phrase;
  * @used-by \Justuno\Core\Zf\Validate\IntT::filter()
  * @used-by \Justuno\M2\Catalog\Diagnostic::p()
  * @used-by \Justuno\M2\Store::v()
- * @param ...$args
+ * @param ...$a
  * @throws DFE
  */
-function ju_error(...$args) {
+function ju_error(...$a) {
 	ju_header_utf();
-	$e = ju_error_create(...$args); /** @var DFE $e */
+	$e = ju_error_create(...$a); /** @var DFE $e */
 	/**
 	 * 2020-02-15
 	 * 1) "The Cron log (`magento.cron.log`) should contain a backtrace for every exception logged":
