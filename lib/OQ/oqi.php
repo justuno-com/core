@@ -156,7 +156,7 @@ function ju_oqi_price($i, bool $withTax = false, bool $withDiscount = false):flo
  * @param OI|QI $i
  * @return int
  */
-function ju_oqi_qty($i) {return intval(ju_is_oi($i) ? $i->getQtyOrdered() : (ju_is_qi($i) ? $i->getQty() : ju_error()));}
+function ju_oqi_qty($i):int {return intval(ju_is_oi($i) ? $i->getQtyOrdered() : (ju_is_qi($i) ? $i->getQty() : ju_error()));}
 
 /**
  * 2016-08-18
