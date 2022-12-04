@@ -7,10 +7,10 @@ use Magento\User\Model\User;
 /**
  * 2016-12-22
  * $m could be:
- * 1) A module name: «A_B»
- * 2) A class name: «A\B\C».
- * 3) An object: it comes down to the case 2 via @see get_class()
- * 4) `null`: it comes down to the case 1 with the «Justuno_Core» module name.
+ * 		1) A module name: «A_B»
+ * 		2) A class name: «A\B\C».
+ * 		3) An object: it comes down to the case 2 via @see get_class()
+ * 		4) `null`: it comes down to the case 1 with the «Justuno_Core» module name.
  * 2020-06-24 "Port the `df_sentry` function": https://github.com/justuno-com/core/issues/118
  * @used-by ju_log()
  * @used-by \Justuno\M2\Controller\Response\Catalog::execute()
