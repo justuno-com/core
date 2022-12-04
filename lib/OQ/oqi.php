@@ -69,7 +69,7 @@ function ju_oqi_discount_b($i):float {return ju_oqi_amount($i);}
  * @param Closure|null $f [optional]
  * @return array(int => mixed)|OI[]|QI[]
  */
-function ju_oqi_leafs($oq, Closure $f = null, string $locale = '') {
+function ju_oqi_leafs($oq, Closure $f = null, string $locale = ''):array {
 	$r = ju_sort_names(array_values(array_filter(
 		$oq->getItems(), function($i) {/** @var OI|QI $i */ return ju_oqi_is_leaf($i);}
 	)), $locale, function($i) {/** @var OI|QI $i */ return $i->getName();}); /** @var OI[]|QI[] $r */
