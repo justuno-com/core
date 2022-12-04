@@ -61,5 +61,5 @@ final class Dumper {
 	 * потому что нам надо вести учёт выгруженных объектов,
 	 * чтобы не попасть в бесконечную рекурсию при циклических ссылках.
 	 */
-	static function i() {return new self;}
+	static function i():self {return new self;}
 }
