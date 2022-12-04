@@ -1,8 +1,8 @@
 <?php
 use Justuno\Core\Zf\Filter\StringTrim as Trim;
 /**
- * 2017-06-09
- * 2021-02-22
+ * 2017-06-09, 2021-02-22
+ * @used-by \Justuno\Core\Sentry\Serializer::chop()
  */
 function ju_chop(string $s, int $max = 0):string {return !$max || (mb_strlen($s = ju_trim($s)) <= $max) ? $s :
 	ju_trim_right(mb_substr($s, 0, $max - 1)) . '…'
