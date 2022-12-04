@@ -21,10 +21,9 @@ function ju_bt($p = 0, int $limit = 0):array {return is_array($p) ? $p : ($p ins
  * @used-by ju_bt_s()
  * @used-by ju_caller_entry()
  * @param E|int|null|array(array(string => string|int)) $p
- * @param int $o [optional]
  * @return E|int
  */
-function ju_bt_inc($p, $o = 1) {return is_array($p) || $p instanceof E ? $p : $o + $p;}
+function ju_bt_inc($p, int $o = 1) {return is_array($p) || $p instanceof E ? $p : $o + $p;}
 
 /**
  * 2020-06-16 "Port the `df_bt` function": https://github.com/justuno-com/core/issues/27
