@@ -37,14 +37,11 @@ function ju_fetch_col(string $t, string $col, $compareK = null, $compareV = null
 /**
  * 2015-04-13
  * @used-by \Justuno\M2\Catalog\Diagnostic::p()
- * @param string $t
- * @param string $cSelect
  * @param string|null $compareK [optional]
  * @param int|string|int[]|string[]|null $compareV [optional]
- * @param bool $distinct [optional]
  * @return int[]|string[]
  */
-function ju_fetch_col_int($t, $cSelect, $compareK = null, $compareV = null, $distinct = false) {return
+function ju_fetch_col_int(string $t, string $cSelect, $compareK = null, $compareV = null, bool $distinct = false):array {return
 	/** I intentionally do not use @see ju_int() to gain speed */
 	ju_int_simple(ju_fetch_col($t, $cSelect, $compareK, $compareV, $distinct))
 ;}
