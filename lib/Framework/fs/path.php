@@ -4,10 +4,8 @@ use Magento\Framework\App\Filesystem\DirectoryList as DL;
 /**
  * 2020-06-15 "Port the `df_adjust_paths_in_message` function": https://github.com/justuno-com/core/issues/25
  * @used-by ju_ets()
- * @param string $m
- * @return string
  */
-function ju_adjust_paths_in_message($m) {
+function ju_adjust_paths_in_message(string $m):string {
 	$bpLen = mb_strlen(BP); /** @var int $bpLen */
 	do {
 		$begin = mb_strpos($m, BP); /** @var int|false $begin */
