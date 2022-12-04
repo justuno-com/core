@@ -18,12 +18,12 @@ use Magento\Sales\Model\Order as O;
  * @used-by ju_customer()
  * @used-by ju_sentry_m()
  * @param string|int|DC|C|null $c [optional]
- * @param bool $throw [optional]
- * @return C|O|null|false
+ * @param Closure|bool|mixed $onE [optional]
+ * @return C|null
  * @throws NoSuchEntityException|DFE
  * 2020-08-14 "Port the `df_customer` function" https://github.com/justuno-com/core/issues/187
  */
-function ju_customer($c = null, $throw = false) {return ju_try(function() use($c) {return
+function ju_customer($c = null, $onE = null) {return ju_try(function() use($c) {return
 	/** @var int|string|null $id */
 	/**
 	 * 2016-08-22
@@ -43,7 +43,7 @@ function ju_customer($c = null, $throw = false) {return ju_try(function() use($c
 			? ju_customer_registry()->retrieve($id)
 			: ju_error('ju_customer(): the argument of type %s is unrecognizable.', ju_type($c))
 	))
-;}, $throw);}
+;}, $onE);}
 
 /**
  * 2016-12-04
