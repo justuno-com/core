@@ -28,7 +28,5 @@ function ju_translate_a(array $s, bool $now = false):array {
  * 		@see ju_translit_url => allPay
  * 		@see df_translit_url_lc => allpay
  * @used-by \Justuno\Core\Sentry\Client::tags()
- * @param string $s
- * @return string
  */
-function ju_translit_url($s) {return trim(preg_replace('#[^0-9a-z]+#i', '-', ju_translit($s)), '-');}
+function ju_translit_url(string $s):string {return trim(preg_replace('#[^0-9a-z]+#i', '-', ju_translit($s)), '-');}
