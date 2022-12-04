@@ -8,7 +8,7 @@ use Magento\Framework\DataObject as _DO;
  * @param _DO|mixed[]|mixed|E $v
  * @param string|object|null $m [optional]
  */
-function ju_log($v, $m = null) {ju_log_l($m, $v); ju_sentry($m, $v);}
+function ju_log($v, $m = null):void {ju_log_l($m, $v); ju_sentry($m, $v);}
 
 /**
  * 2017-01-11
