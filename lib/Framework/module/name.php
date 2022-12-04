@@ -29,7 +29,7 @@
  * @param string|object|null $c [optional]
  */
 function ju_module_name($c = null, string $del = '_'):string {return jucf(
-	function($c, $del) {return implode($del, array_slice(ju_explode_class($c), 0, 2));}
+	function(string $c, string $del) {return implode($del, array_slice(ju_explode_class($c), 0, 2));}
 	,[$c ? ju_cts($c) : 'Justuno\Core', $del]
 );}
 
