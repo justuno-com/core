@@ -41,7 +41,7 @@ function ju_int($v, bool $allowNull = true) {/** @var int|int[] $r */
  * @param mixed[] $values
  * @return int[]
  */
-function ju_int_simple(array $values) {return array_map('intval', $values);}
+function ju_int_simple(array $values):array {return array_map('intval', $values);}
 
 /**
  * 2020-08-23 "Port the `df_nat` function" https://github.com/justuno-com/core/issues/289
