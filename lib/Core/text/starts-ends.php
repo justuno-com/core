@@ -7,11 +7,10 @@
  * @used-by \Justuno\Core\Qa\Trace\Frame::isClosure()
  * @used-by \Justuno\Core\Sentry\Trace::get_frame_context()
  * @used-by \Justuno\M2\Plugin\Framework\App\Router\ActionList::aroundGet()
- * @param string $haystack
  * @param string|string[] $needle
  * @return bool
  */
-function ju_ends_with($haystack, $needle) {return is_array($needle)
+function ju_ends_with(string $haystack, $needle):bool {return is_array($needle)
 	? null !== ju_find($needle, __FUNCTION__, [], [$haystack])
 	: 0 === ($l = mb_strlen($needle)) || $needle === mb_substr($haystack, -$l)
 ;}
