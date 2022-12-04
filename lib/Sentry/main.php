@@ -110,4 +110,4 @@ function ju_sentry_m($m):Sentry {return jucf(function($m):Sentry {
  * @param string|object|null $m [optional]
  * @return string
  */
-function ju_sentry_module($m = null) {return !$m ? 'Justuno_Core' : ju_module_name($m);}
+function ju_sentry_module($m = null):string {return !$m ? 'Justuno_Core' : ju_module_name($m);}
