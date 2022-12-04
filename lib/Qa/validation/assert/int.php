@@ -48,11 +48,9 @@ function ju_int_simple(array $values):array {return array_map('intval', $values)
  * @used-by \Justuno\M2\Controller\Cart\Add::execute()
  * @used-by \Justuno\M2\Controller\Cart\Add::product()
  * @param mixed $v
- * @param bool $allow0 [optional]
- * @return int
  * @throws DFE
  */
-function ju_nat($v, $allow0 = false) {/** @var int $r */
+function ju_nat($v, bool $allow0 = false):int {/** @var int $r */
 	$r = ju_int($v, $allow0);
 	$allow0 ? ju_assert_ge(0, $r) : ju_assert_gt0($r);
 	return $r;
