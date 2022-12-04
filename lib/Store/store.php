@@ -8,7 +8,6 @@ use Magento\Store\Model\Store;
 use Magento\Store\Model\StoreManager;
 use Magento\Store\Model\StoreManagerInterface as IStoreManager;
 use Magento\Store\Model\StoreResolver;
-
 /**
  * 2015-02-04
  * 2015-11-04
