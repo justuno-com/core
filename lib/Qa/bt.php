@@ -4,6 +4,17 @@ use Justuno\Core\Qa\Trace;
 use Justuno\Core\Qa\Trace\Formatter;
 
 /**
+ * 2021-10-04
+ * @used-by ju_bt_log()
+ * @used-by ju_bt_s()
+ * @used-by ju_caller_entry()
+ * @param E|int|null|array(array(string => string|int)) $p
+ * @param int $o [optional]
+ * @return E|int
+ */
+function ju_bt_inc($p, $o = 1) {return is_array($p) || $p instanceof E ? $p : $o + $p;}
+
+/**
  * 2020-06-16 "Port the `df_bt` function": https://github.com/justuno-com/core/issues/27
  * @used-by \Justuno\Core\Exception::__construct()
  * @param int $levelsToSkip

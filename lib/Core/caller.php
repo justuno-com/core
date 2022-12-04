@@ -1,4 +1,7 @@
 <?php
+use Closure as F;
+use Exception as E;
+
 /**
  * 2017-11-19
  * 2021-02-24
@@ -11,9 +14,9 @@ function ju_caller_c(int $o = 0):string {return ju_first(ju_explode_method(ju_ca
  * 2020-08-19 "Port the `df_caller_entry` function" https://github.com/justuno-com/core/issues/207
  * @used-by ju_caller_f()
  * @used-by ju_caller_m()
+ * @param E|int|null|array(array(string => string|int)) $p [optional]
  */
-function ju_caller_entry(int $o = 0):array {
-	/** @var array(int => array(string => mixed)) $bt */
+function ju_caller_entry($p = 0, F $predicate = null):array {
 	/**
 	 * 2018-04-24
 	 * I do not understand why did I use `2 + $offset` here before.
@@ -23,19 +26,23 @@ function ju_caller_entry(int $o = 0):array {
 	 * 2019-01-14
 	 * It seems that we need `2 + $offset` because the stack contains:
 	 * 1) the current function: df_caller_entry
-	 * 2) the function who calls df_caller_entry: df_caller_ff or df_caller_mm
-	 * 3) the function who calls df_caller_ff or df_caller_mm: it should be the result.
+	 * 2) the function who calls df_caller_entry: df_caller_f, df_caller_m, or \Df\Framework\Log\Dispatcher::handle
+	 * 3) the function who calls df_caller_f, df_caller_m, or \Df\Framework\Log\Dispatcher::handle: it should be the result.
 	 * So the offset is 2.
 	 * The previous code failed the @see \Df\API\Facade::p() method in the inkifi.com store.
 	 */
-	$bt = array_slice(debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS), 2 + $o);
-	while ($r = array_shift($bt) /** @var array(string => string|int) $r */) {
+	$bt = ju_bt(ju_bt_inc($p, 2)); /** @var array(int => array(string => mixed)) $bt */
+	while ($r = array_shift($bt)) {/** @var array(string => string|int)|null $r */
 		$f = $r['function']; /** @var string $f */
-		if (!ju_contains($f, '{closure}') && !in_array($f, ['juc', 'jucf'])) {
+		# 2017-03-28
+		# Надо использовать именно df_contains(),
+		# потому что PHP 7 возвращает просто строку «{closure}», а PHP 5.6 и HHVM — «A::{closure}»: https://3v4l.org/lHmqk
+		# 2020-09-24 I added "unknown" to evaluate expressions in IntelliJ IDEA's with xDebug.
+		if (!ju_contains($f, '{closure}') && !in_array($f, ['juc', 'jucf', 'unknown']) && (!$predicate || $predicate($r))) {
 			break;
 		}
 	}
-	return $r;
+	return ju_eta($r); /** 2021-10-05 @uses array_shift() returns `null` for an empty array */
 }
 
 /**
