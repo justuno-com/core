@@ -78,6 +78,5 @@ function ju_store_url($s, string $type):string {return ju_store($s)->getBaseUrl(
  * 2020-06-24 "Port the `df_store_url_web` function": https://github.com/justuno-com/core/issues/120
  * @used-by ju_domain_current()
  * @param int|string|null|bool|IStore $s [optional]
- * @return string
  */
-function ju_store_url_web($s = null) {return ju_store_url($s, U::URL_TYPE_WEB);}
+function ju_store_url_web($s = null):string {return ju_store_url($s, U::URL_TYPE_WEB);}
