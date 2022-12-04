@@ -5,10 +5,9 @@ use Justuno\Core\Qa\Method as Q;
  * 2020-06-22 "Port the `df_result_s` function": https://github.com/justuno-com/core/issues/108
  * @used-by ju_result_sne()
  * @param mixed $v
- * @return string
  * @throws DFE
  */
-function ju_result_s($v, int $sl = 0) {return ju_check_s($v) ? $v : Q::raiseErrorResult(
+function ju_result_s($v, int $sl = 0):string {return ju_check_s($v) ? $v : Q::raiseErrorResult(
 	__FUNCTION__, [sprintf('A string is required, but got %s.', ju_type($v))], ++$sl
 );}
 
