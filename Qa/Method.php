@@ -8,17 +8,13 @@ use Zend_Validate_Interface as Vd;
 final class Method {
 	/**
 	 * @used-by ju_param_sne()
-	 * @used-by vp()
-	 * @param string $method
-	 * @param array $messages
-	 * @param int $ord  zero-based
-	 * @param int $sl
+	 * @used-by self::vp()
 	 * @throws E
 	 */
-	static function raiseErrorParam($method, array $messages, $ord, $sl = 1) {
+	static function raiseErrorParam(string $method, array $messages, int $ord, int $sl = 1) {
 		$frame = self::caller($sl); /** @var Frame $frame */
 		$name = 'unknown'; /** @var string $name */
-		if (!is_null($ord) && $frame->method()) {/** @var RP $param */
+		if ($frame->method()) {/** @var RP $param */
 			$name = $frame->methodParameter($ord)->getName();
 		}
 		$messagesS = ju_cc_n($messages); /** @var string $messagesS */
