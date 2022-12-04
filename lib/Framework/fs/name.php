@@ -3,12 +3,8 @@
 /**
  * 2020-06-21 "Port the `df_file_name` function": https://github.com/justuno-com/core/issues/102
  * @used-by ju_report()
- * @param string $directory
- * @param string $template
- * @param string $ds [optional]
- * @return string
  */
-function ju_file_name($directory, $template, $ds = '-') { /** @var string $r */
+function ju_file_name(string $directory, string $template, string $ds = '-'):string { /** @var string $r */
 	# 2016-11-09
 	# If $template contains the file's path, when it will be removed from $template and added to $directory.
 	$directory = ju_path_n($directory);
