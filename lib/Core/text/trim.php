@@ -68,12 +68,9 @@ function ju_trim_right(string $s, string $charlist = ''):string {return rtrim($s
  * 2020-06-25 "Port the `df_trim_text_a` function": https://github.com/justuno-com/core/issues/136
  * @used-by ju_trim_text_left()
  * @used-by ju_trim_text_right()
- * @param string $s
  * @param string[] $trimA
- * @param callable $f
- * @return string
  */
-function ju_trim_text_a($s, array $trimA, callable $f) {
+function ju_trim_text_a(string $s, array $trimA, callable $f):string {
 	$r = $s; /** @var string $r */
 	$l = mb_strlen($r); /** @var int $l */
 	foreach ($trimA as $trim) {/** @var string $trim */
