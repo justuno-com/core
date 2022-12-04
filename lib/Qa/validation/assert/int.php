@@ -20,7 +20,7 @@ function ju_int($v, bool $allowNull = true) {/** @var int|int[] $r */
 	elseif (is_bool($v)) {
 		$r = $v ? 1 : 0;
 	}
-	elseif ($allowNull && (is_null($v) || ('' === $v))) {
+	elseif ($allowNull && ju_nes($v)) {
 		$r = 0;
 	}
 	elseif (!IntT::s()->isValid($v)) {

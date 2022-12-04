@@ -44,6 +44,7 @@ function ju_ftn($v) {return false === $v ? null : $v;}
  * 2020-06-14 "Port the `df_nes` function": https://github.com/justuno-com/core/issues/19
  * @see ju_es()
  * @used-by ju_cfg_empty()
+ * @used-by ju_int()
  * @used-by ju_json_decode()
  * @used-by jua()
  * @used-by jua_deep()
