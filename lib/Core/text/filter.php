@@ -13,10 +13,8 @@ function ju_is_guid(string $s):bool {return 36 === strlen($s) && preg_match(
  * 2020-06-20 "Port the `df_normalize` function": https://github.com/justuno-com/core/issues/87
  * http://darklaunch.com/2009/05/06/php-normalize-newlines-line-endings-crlf-cr-lf-unix-windows-mac
  * @used-by ju_explode_n()
- * @param string $s
- * @return string
  */
-function ju_normalize($s) {return strtr($s, ["\r\n" => "\n", "\r" => "\n"]);}
+function ju_normalize(string $s):string {return strtr($s, ["\r\n" => "\n", "\r" => "\n"]);}
 
 /**
  * 2017-02-09
