@@ -10,9 +10,8 @@ use Magento\Sales\Model\Order\Item as OI;
  * @used-by ju_oqi_leafs()
  * @used-by ju_store()
  * @param mixed $v
- * @return bool
  */
-function ju_is_o($v) {return $v instanceof O;}
+function ju_is_o($v):bool {return $v instanceof O;}
 
 /**
  * 2017-04-20
