@@ -23,9 +23,14 @@ function ju_fe_init(AE $e, $class = null, $css = [], array $params = [], $path =
 		$classA = ju_explode_class_lc($class); /** @var string[] $classA */
 		$classLast = array_pop($classA);
 		switch ($classLast) {
+			# Если имя класса заканчивается на FormElement,
+			# то это окончание в пути к ресурсу отбрасываем.
 			case 'formElement':
-			case 'fE':
-				break;
+			case 'fE': # 2018-04-19
+				break; # $path будет равно null
+			# Если имя класса заканчивается на Element,
+			# то в качестве пути к ресурсу используем предыдущую часть класса.
+			# Пример: «Dfe\SalesSequence\Config\Matrix\Element» => «matrix»
 			case 'element':
 				$path = array_pop($classA);
 				break;
