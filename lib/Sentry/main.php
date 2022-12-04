@@ -75,7 +75,7 @@ function ju_sentry_extra($m, ...$v):void {ju_sentry_m($m)->extra(!$v ? $v : (is_
  * @param string|object|null $m
  * @return Sentry
  */
-function ju_sentry_m($m) {return jucf(function($m) {
+function ju_sentry_m($m):Sentry {return jucf(function($m):Sentry {
 	$r = null; /** @var Sentry $r */
 	/** @var array(string => $r) $a */ /** @var array(string => string)|null $sa */
 	if (($a = ju_module_json($m, 'df', false)) && ($sa = jua($a, 'sentry'))) {
