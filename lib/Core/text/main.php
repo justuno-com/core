@@ -61,9 +61,8 @@ function ju_string($v):string {
  * 2020-06-20 "Port the `df_string_debug` function": https://github.com/justuno-com/core/issues/113
  * @used-by \Justuno\Core\Zf\Validate\Type::getDiagnosticMessageForNotNull()
  * @param mixed $v
- * @return string
  */
-function ju_string_debug($v) {
+function ju_string_debug($v):string {
 	$r = ''; /** @var string $r */
 	if (is_object($v)) {
 		if (!method_exists($v, '__toString')) {
