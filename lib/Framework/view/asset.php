@@ -46,13 +46,10 @@ function ju_asset_exists(string $name, string $m = '', string $ext = ''):bool {r
  * 2020-08-22 "Port the `df_asset_name` function" https://github.com/justuno-com/core/issues/245
  * @used-by ju_asset_exists()
  * @used-by ju_fe_init()
- * @param string|null $name [optional]
  * @param string|object|null $m [optional]
- * @param string|null $extension [optional]
- * @return string
  */
-function ju_asset_name($name = null, $m = null, $extension = null) {return ju_ccc(
-	'.', ju_ccc('::', $m ? ju_module_name($m) : null, $name ?: 'main'), $extension
+function ju_asset_name(string $name = '', $m = null, string $ext = ''):string {return ju_ccc(
+	'.', ju_ccc('::', $m ? ju_module_name($m) : null, $name ?: 'main'), $ext
 );}
 
 /**
