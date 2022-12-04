@@ -44,7 +44,7 @@
  * 2020-08-21 "Port the `df_explode_camel` function" https://github.com/justuno-com/core/issues/221
  *
  * @used-by ju_explode_class_camel()
- * @param string ...$a
+ * @param string|string[] $a
  * @return string[]|string[][]
  */
 function ju_explode_camel(...$a):array {return ju_call_a(function($name) {return preg_split(
