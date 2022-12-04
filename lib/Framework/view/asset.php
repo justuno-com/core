@@ -7,9 +7,8 @@ use Magento\Framework\View\Asset\Source;
  * 2015-10-27
  * 2020-08-22 "Port the `df_asset` function" https://github.com/justuno-com/core/issues/250
  * @used-by ju_asset_create()
- * @return Repository
  */
-function ju_asset() {return ju_o(Repository::class);}
+function ju_asset():Repository {return ju_o(Repository::class);}
 
 /**
  * 2015-10-27 http://stackoverflow.com/questions/4659345
