@@ -26,4 +26,4 @@ function ju_domain(string $u, bool $www = false, $throw = true) {return
  * @return zUri|zUriH|mixed
  * @throws E|zUriE
  */
-function ju_zuri($u, $throw = true) {return ju_try(function() use($u) {return zUri::factory($u);}, $throw);}
+function ju_zuri(string $u, $throw = true) {return ju_try(function() use($u) {return zUri::factory($u);}, $throw);}
