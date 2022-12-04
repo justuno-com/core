@@ -41,7 +41,7 @@
  * Today I have changed «?=[A-Z0-9]» => «?=[A-Z0-9]», so now it handles the cases with digits, e.g.:
  * «Dynamics365» => [«Dynamics», «365»]
  *
- * 2020-08-21 "Port the `ju_explode_camel` function" https://github.com/justuno-com/core/issues/221
+ * 2020-08-21 "Port the `df_explode_camel` function" https://github.com/justuno-com/core/issues/221
  *
  * @used-by ju_explode_class_camel()
  * @param string ...$args
