@@ -11,10 +11,10 @@ use Magento\Store\Model\Store;
  * 2016-07-04 «How to load a currency by its ISO code?» https://mage2.pro/t/1840
  * 2020-08-26 "Port the `df_currency` function" https://github.com/justuno-com/core/issues/342
  * @used-by ju_currency_base()
- * @param C|string|null $c [optional]
+ * @param C|string $c [optional]
  * @return C
  */
-function ju_currency($c = null) {/** @var C $r */
+function ju_currency($c = ''):C {/** @var C $r */
 	if (!$c) {
 		$r = ju_currency_base();
 	}
