@@ -36,4 +36,4 @@ function ju_response($r = null) {return $r ?: ju_o(IResponse::class);}
  * @used-by \Justuno\M2\W\Result\Js::render()
  * @param IResult|wResult|IHttpResponse|HttpResponse|null $r [optional]
  */
-function ju_response_content_type(string $contentType, $r = null):void {ju_response($r)->setHeader('Content-Type', $contentType, true);}
+function ju_response_content_type(string $t, $r = null):void {ju_response($r)->setHeader('Content-Type', $t, true);}
