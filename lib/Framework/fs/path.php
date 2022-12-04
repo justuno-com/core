@@ -31,10 +31,8 @@ function ju_adjust_paths_in_message(string $m):string {
  * 2017-05-08
  * 2020-08-13 "Port the `df_path_is_internal` function" https://github.com/justuno-com/core/issues/177
  * @used-by \Justuno\Core\Sentry\Trace::info()
- * @param string $p
- * @return bool
  */
-function ju_path_is_internal($p) {return '' === $p || ju_starts_with(ju_path_n($p), ju_path_n(BP));}
+function ju_path_is_internal(string $p):bool {return '' === $p || ju_starts_with(ju_path_n($p), ju_path_n(BP));}
 
 /**
  * 2020-06-15 "Port the `df_path_n` function": https://github.com/justuno-com/core/issues/26
