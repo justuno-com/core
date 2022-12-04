@@ -3,11 +3,8 @@
  * 2016-03-08 It adds the $tail suffix to the $s string if the suffix is absent in $s.
  * 2020-08-22 "Port the `df_append` function" https://github.com/justuno-com/core/issues/241
  * @used-by ju_file_ext_add()
- * @param string $s
- * @param string $tail
- * @return string
  */
-function ju_append($s, $tail) {return ju_ends_with($s, $tail) ? $s : $s . $tail;}
+function ju_append(string $s, string $tail):string {return ju_ends_with($s, $tail) ? $s : $s . $tail;}
 
 /**
  * 2020-06-18 "Port the `df_pad` function": https://github.com/justuno-com/core/issues/64
