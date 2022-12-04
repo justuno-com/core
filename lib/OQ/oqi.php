@@ -29,9 +29,8 @@ function ju_oqi_amount($i):float {
  * @used-by ju_oqi_price()
  * @used-by \Justuno\M2\Controller\Response\Orders::execute()
  * @param OI|QI $i
- * @return float
  */
-function ju_oqi_discount($i) {return ju_oqi_amount($i);}
+function ju_oqi_discount($i):float {return ju_oqi_amount($i);}
 
 /**
  * 2019-11-20 It returns a value for the whole row.
