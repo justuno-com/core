@@ -34,6 +34,5 @@ function ju_action_prefix($p):bool {return ju_starts_with(ju_action_name(), $p);
  * 		df_response_redirect()->getRefererUrl()
  * @used-by ju_log_l()
  * @used-by https://github.com/royalwholesalecandy/core/issues/58#issuecomment-569049731
- * @return string
  */
-function ju_referer() {return jua($_SERVER, 'HTTP_REFERER');}
+function ju_referer():string {return jua($_SERVER, 'HTTP_REFERER');}
