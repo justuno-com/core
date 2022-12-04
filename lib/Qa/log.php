@@ -33,7 +33,7 @@ function ju_log_e(E $e, $m = null, $d = [], $suf = null):void {ju_log_l($m, $e, 
  * @param string|mixed[]|E $p3 [optional]
  * @param string|bool|null $suf [optional]
  */
-function ju_log_l($m, $p2, $p3 = [], $suf = null) {
+function ju_log_l($m, $p2, $p3 = [], $suf = null):void {
 	/** @var E|null $e */ /** @var array|string|mixed $d */ /** @var string|null $suf */
 	list($e, $d, $suf) = $p2 instanceof E ? [$p2, $p3, $suf] : [null, $p2, $p3];
 	$suf = $suf ?: ju_caller_f();
