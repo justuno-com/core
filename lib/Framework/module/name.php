@@ -42,9 +42,8 @@ function ju_module_name($c = null, string $del = '_'):string {return jucf(
  * 2020-08-21 "Port the `df_module_name_c` function" https://github.com/justuno-com/core/issues/218
  * @used-by ju_module_name_lc()
  * @param string|object|null $c [optional]
- * @return string
  */
-function ju_module_name_c($c = null) {return ju_module_name($c, '\\');}
+function ju_module_name_c($c = null):string {return ju_module_name($c, '\\');}
 
 /**
  * 2016-02-16 «Dfe\CheckoutCom\Method» => «dfe_checkout_com»
