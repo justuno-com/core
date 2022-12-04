@@ -1,5 +1,5 @@
 <?php
-use Justuno\Core\Helper\Text;
+use Justuno\Core\Helper\Text as T;
 
 /**
  * 2020-06-18 "Port the `df_bts` function": https://github.com/justuno-com/core/issues/83
@@ -85,6 +85,5 @@ function ju_string_debug($v):string {
  * 2020-06-26 "Port the `df_t` function": https://github.com/justuno-com/core/issues/159
  * @used-by ju_extend()
  * @used-by ju_quote_russian()
- * @return Text
  */
-function ju_t() {return Text::s();}
+function ju_t():T {return T::s();}
