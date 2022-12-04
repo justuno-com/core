@@ -42,11 +42,9 @@ use Magento\Framework\Module\Dir\Reader;
  * @used-by ju_module_path()
  * @used-by ju_module_path_etc()
  * @param string|object|null $m
- * @param string $type [optional]
- * @return string
  * @throws InvalidArgumentException
  */
-function ju_module_dir($m, $type = '') {
+function ju_module_dir($m, string $type = ''):string {
 	if ('Magento_Framework' !== ($m = ju_module_name($m))) {
 		$r = ju_module_dir_reader()->getModuleDir($type, $m);
 	}
