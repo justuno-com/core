@@ -50,12 +50,11 @@ function ju_fetch_col_int(string $t, string $cSelect, $compareK = null, $compare
  * 2015-11-03
  * 2020-08-24 "Port the `df_fetch_one` function" https://github.com/justuno-com/core/issues/327
  * @used-by \Justuno\M2\Catalog\Diagnostic::p()
- * @param string $t
  * @param string|string[] $cols
  * @param array(string => string) $compare
  * @return string|null|array(string => mixed)
  */
-function ju_fetch_one($t, $cols, $compare) {
+function ju_fetch_one(string $t, $cols, $compare) {
 	$s = ju_db_from($t, $cols); /** @var S $s */
 	foreach ($compare as $c => $v) {/** @var string $c */ /** @var string $v */
 		$s->where('? = ' . $c, $v);
