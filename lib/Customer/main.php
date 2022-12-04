@@ -1,7 +1,6 @@
 <?php
 use Justuno\Core\Exception as DFE;
 use Magento\Customer\Model\Customer as C;
-use Magento\Customer\Model\CustomerRegistry;
 use Magento\Customer\Model\Data\Customer as DC;
 use Magento\Customer\Model\Session;
 use Magento\Framework\Exception\NoSuchEntityException;
@@ -56,14 +55,6 @@ function ju_customer($c = null, $onE = null) {return ju_try(function() use($c) {
 function ju_customer_id($c = null) {return !$c && !ju_is_backend() ? ju_customer_session()->getId() : (
 	$c instanceof C || $c instanceof DC ? $c->getId() : $c
 );}
-
-/**
- * 2016-04-05
- * 2020-08-14 "Port the `df_customer_registry` function" https://github.com/justuno-com/core/issues/189
- * @used-by ju_customer()
- * @return CustomerRegistry
- */
-function ju_customer_registry() {return ju_o(CustomerRegistry::class);}
 
 /**
  * 2020-08-14 "Port the `df_customer_session` function" https://github.com/justuno-com/core/issues/182
