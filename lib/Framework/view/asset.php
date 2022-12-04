@@ -31,12 +31,8 @@ function ju_asset_create(string $u):File {$a = ju_asset(); return !ju_check_url_
  * 2) a full name composed with @see ju_asset_name()
  * 2020-08-22 "Port the `df_asset_exists` function" https://github.com/justuno-com/core/issues/244
  * @used-by ju_fe_init()
- * @param string $name
- * @param string|null $m [optional]
- * @param string|null $ext [optional]
- * @return bool
  */
-function ju_asset_exists($name, $m = null, $ext = null) {return jucf(
+function ju_asset_exists(string $name, string $m = '', string $ext = ''):bool {return jucf(
 	function($name, $m = null, $ext = null) {return
 		!!ju_asset_source()->findSource(ju_asset_create(ju_asset_name($name, $m, $ext)))
 	;}
