@@ -38,9 +38,8 @@ function ju_oqi_discount($i):float {return ju_oqi_amount($i);}
  * @see ju_oqi_discount()
  * @used-by ju_oqi_price()
  * @param OI|QI $i
- * @return float
  */
-function ju_oqi_discount_b($i) {return ju_oqi_amount($i);}
+function ju_oqi_discount_b($i):float {return ju_oqi_amount($i);}
 
 /**
  * 2016-09-07
