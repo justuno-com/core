@@ -30,18 +30,18 @@ function ju_cc_n(...$a):string {return ju_ccc("\n", jua_flatten($a));}
  * @used-by ju_js_x()
  * @used-by ju_module_path()
  * @used-by ju_module_path_etc()
- * @param string|string[] ...$args
+ * @param string|string[] ...$a
  */
-function ju_cc_path(...$args):string {return ju_ccc('/', jua_flatten($args));}
+function ju_cc_path(...$a):string {return ju_ccc('/', jua_flatten($a));}
 
 /**
  * 2016-08-10
  * 2020-08-21 "Port the `df_cc_s` function" https://github.com/justuno-com/core/issues/210
  * @used-by ju_cli_cmd()
  * @used-by \Justuno\Core\Format\Html\Tag::openTagWithAttributesAsText()
- * @param string|string[] ...$args
+ * @param string|string[] ...$a
  */
-function ju_cc_s(...$args):string {return ju_ccc(' ', jua_flatten($args));}
+function ju_cc_s(...$a):string {return ju_ccc(' ', jua_flatten($a));}
 
 /**
  * 2020-06-18 "Port the `df_ccc` function": https://github.com/justuno-com/core/issues/57
