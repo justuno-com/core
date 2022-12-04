@@ -96,13 +96,11 @@ function ju_module_file($m, string $name, string $ext = '', bool $req = true, Cl
  * 2020-06-27 "Port the `df_module_json` function": https://github.com/justuno-com/core/issues/162
  * @used-by ju_sentry_m()
  * @param string|object|null $m
- * @param string $name
- * @param bool $req [optional]
  * @return array(string => mixed)
  */
-function ju_module_json($m, $name, $req = true) {return ju_module_file($m, $name, 'json', $req, function($f) {return
-	ju_json_decode(file_get_contents($f)
-);});}
+function ju_module_json($m, string $name, bool $req = true):array {return ju_module_file($m, $name, 'json', $req,
+	function(string $f):array {return ju_json_decode(file_get_contents($f));}
+);}
 
 /**
  * 2015-11-15
