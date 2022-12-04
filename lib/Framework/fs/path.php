@@ -40,10 +40,8 @@ function ju_path_is_internal(string $p):bool {return '' === $p || ju_starts_with
  * @used-by ju_file_name()
  * @used-by ju_path_is_internal()
  * @used-by ju_path_relative()
- * @param string $p
- * @return string
  */
-function ju_path_n($p) {return str_replace('//', '/', str_replace('\\', '/', $p));}
+function ju_path_n(string $p):string {return str_replace('//', '/', str_replace('\\', '/', $p));}
 
 /**
  * 2015-12-06
