@@ -29,9 +29,6 @@ final class Method {
 	 * @used-by ju_result_s()
 	 * @used-by ju_result_sne()
 	 * @used-by vr()
-	 * @param string $vd
-	 * @param array $messages
-	 * @param int $sl
 	 * @throws E
 	 */
 	static function raiseErrorResult(string $vd, array $messages, int $sl = 1):void {
