@@ -44,12 +44,9 @@ final class Method {
 	/**
 	 * @used-by ju_assert_sne()
 	 * @used-by vv()
-	 * @param string $vd
-	 * @param array $messages
-	 * @param int $sl
 	 * @throws E
 	 */
-	static function raiseErrorVariable($vd, array $messages, $sl = 1) {
+	static function raiseErrorVariable(string $vd, array $messages, int $sl = 1) {
 		$messagesS = ju_cc_n($messages); /** @var string $messagesS */
 		$method = self::caller($sl)->methodName(); /** @var string $method */
 		self::throwException(
@@ -78,11 +75,9 @@ final class Method {
 
 	/**
 	 * 2015-01-28
-	 * @param string $message
-	 * @param int $sl [optional]
 	 * @throws E
 	 */
-	private static function throwException($message, $sl = 0) {ju_error(new E($message, ++$sl));}
+	private static function throwException(string $message, int $sl = 0):void {ju_error(new E($message, ++$sl));}
 	
 	/**
 	 * @param Vd $vd
