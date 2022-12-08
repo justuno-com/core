@@ -266,7 +266,7 @@ final class Client {
 	 * @param array $data
 	 * @param array $headers
 	 */
-	private function send_http($url, $data, $headers = []) {
+	private function send_http($url, $data, $headers = []):void {
 		# 2022-10-16 https://www.php.net/manual/migration80.incompatible.php#migration80.incompatible.resource2object
 		$c = curl_init($url); /** @var resource|\CurlHandle $c */
 		try {
