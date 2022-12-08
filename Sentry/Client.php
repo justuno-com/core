@@ -65,9 +65,8 @@ final class Client {
 	/**
 	 * @used-by ju_sentry_m()
 	 * @param array(string => mixed) $data
-	 * @param bool $merge [optional]
 	 */
-	function user(array $d, $merge = true) {
+	function user(array $d, bool $merge = true):void {
 		$this->context->user = $d + (!$merge || !$this->context->user ? [] : $this->context->user);
 	}
 
