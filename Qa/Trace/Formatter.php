@@ -10,7 +10,7 @@ final class Formatter {
 	 * @used-by ju_bt_s()
 	 * @used-by \Justuno\Core\Qa\Failure::postface()
 	 */
-	static function p(T $t, bool $showContext = false):string {return jucf(function($t, $showContext) {
+	static function p(T $t, bool $showContext = false):string {return jucf(function(T $t, bool $showContext:string {
 		$count = count($t); /** @var int $count */
 		return implode(ju_map_k($t, function($index, F $frame) use($count, $showContext) {
 			$index++;
