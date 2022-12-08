@@ -1,6 +1,7 @@
 <?php
 namespace Justuno\Core\Sentry;
 use Justuno\Core\Exception as DFE;
+use Magento\Framework\App\ErrorHandler;
 use \Exception as E;
 # 2020-08-13 "Port the `Df\Sentry\Client` class" https://github.com/justuno-com/core/issues/165
 final class Client {
