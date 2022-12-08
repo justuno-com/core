@@ -3,7 +3,6 @@
  * 2019-09-08
  * 2020-08-19 "Port the `df_prop` function" https://github.com/justuno-com/core/issues/204
  * @used-by ju_prop()
- * @used-by \Justuno\Core\Qa\Trace\Frame::showContext()
  * @used-by \Justuno\Core\Zf\Validate::v()
  */
 const JU_N = 'df-null';
