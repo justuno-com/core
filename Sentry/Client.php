@@ -418,6 +418,10 @@ final class Client {
 	 */
 	private $_projectId;
 	private $serializer;
+	/**
+	 * 2022-12-09
+	 * @used-by ju_sentry()
+	 */
 	const DEBUG = 'debug';
 	const ERROR = 'error';
 	const INFO = 'info';
