@@ -384,7 +384,7 @@ final class Client {
 		}
 	}
 	
-	public $context;
+	private $context;
 	/**
 	 * 2020-06-28
 	 * @used-by self::__construct()
