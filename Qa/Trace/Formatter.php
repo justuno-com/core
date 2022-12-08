@@ -62,11 +62,10 @@ final class Formatter {
 	
 	/**
 	 * @used-by self::p()
-	 * @return string|null
 	 */
-	private static function param(array $p) {/** @var string|null $r */ /** @var string|null $v */
+	private static function param(array $p):string {/** @var string $r */ /** @var string|null $v */
 		if (!($v = $p[1])) {
-			$r = null;
+			$r = '';
 		}
 		else {
 			$label = $p[0]; /** @var string $label */
