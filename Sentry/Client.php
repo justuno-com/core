@@ -16,7 +16,6 @@ final class Client {
 		$this->_user = null;
 		$this->context = new Context;
 		$this->curl_path = 'curl';
-		$this->error_types = null;
 		$this->extra_data = [];
 		$this->logger = 'php';
 		$this->site = jua($_SERVER, 'SERVER_NAME');
@@ -388,7 +387,6 @@ final class Client {
 	
 	public $context;
 	public $extra_data;
-	private $error_types;
 	/**
 	 * 2020-06-28
 	 * @used-by self::__construct()
