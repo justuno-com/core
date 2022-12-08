@@ -35,18 +35,6 @@ use Justuno\Core\Zf\Validate\StringT\IntT;
 function ju_assert($cond, $m = null) {return $cond ?: ju_error($m);}
 
 /**
- * 2017-01-14
- * 2020-08-19 "Port the `df_assert_nef` function" https://github.com/justuno-com/core/issues/201
- * @param mixed $v
- * @param string|E $m [optional]
- * @return mixed
- * @throws DFE
- */
-function ju_assert_nef($v, $m = null) {return false !== $v ? $v : ju_error($m ?:
-	'The «false» value is rejected, any others are allowed.'
-);}
-
-/**
  * 2020-06-22 "Port the `df_assert_sne` function": https://github.com/justuno-com/core/issues/115
  * @used-by ju_currency_base()
  * @used-by ju_file_name()
