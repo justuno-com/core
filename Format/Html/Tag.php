@@ -34,7 +34,7 @@ final class Tag {
 		$this->_tag
 		,$this->_multiline ? "\n" : null
 		,call_user_func(
-			$this->_multiline ? 'df_tab_multiline' : 'df_nop'
+			$this->_multiline ? 'ju_tab_multiline' : 'ju_nop'
 			,implode(
 				$this->_multiline ? "\n" :  ' '
 				,ju_clean(ju_map_k(
