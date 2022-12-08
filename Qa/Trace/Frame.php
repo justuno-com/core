@@ -53,7 +53,7 @@ final class Frame extends \Justuno\Core\O {
 	 * $ordering is zero-based
 	 * @used-by \Justuno\Core\Qa\Method::raiseErrorParam()
 	 */
-	function methodParameter(int $ordering):RP {return juc($this, function($ordering) {/** @var RP $r */
+	function methodParameter(int $ordering):RP {return juc($this, function(int $ordering) {/** @var RP $r */
 		ju_assert($m = $this->methodR()); /** @var RM|null $m */
 		if ($ordering >= count($m->getParameters())) { # Параметр должен существовать
 			ju_error(
