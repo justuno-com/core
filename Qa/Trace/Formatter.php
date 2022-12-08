@@ -10,11 +10,10 @@ final class Formatter {
 	 * @used-by ju_bt_s()
 	 * @used-by \Justuno\Core\Qa\Failure::postface()
 	 */
-	static function p(T $t, bool $showContext = false):string {return jucf(function(T $t, bool $showContext):string {
+	static function p(T $t):string {return jucf(function(T $t):string {
 		$count = count($t); /** @var int $count */
-		return implode(ju_map_k($t, function($index, F $frame) use($count, $showContext) {
+		return implode(ju_map_k($t, function($index, F $frame) use($count) {
 			$index++;
-			$frame->showContext($showContext);
 			$r = self::frame($frame); /** @var string $r */
 			if ($index !== $count) {
 				$indexS = (string)$index; /** @var string $indexS */
@@ -27,7 +26,7 @@ final class Formatter {
 			}
 			return $r;
 		}));
-	}, [$t, $showContext]);}
+	}, [$t]);}
 
 	/**     
 	 * 2020-02-27          
@@ -40,9 +39,6 @@ final class Formatter {
 			$resultA = array_filter(array_map([__CLASS__, 'param'], [
 				['Location', ju_cc(':', ju_path_relative($f->filePath()), $f->line())], ['Callee', $f->methodName()]
 			])); /** @var string[] $resultA */ /** @uses param() */
-			if ($f->showContext() && $f->context()) {
-				$resultA[]= self::param(['Context', "\n{$f->context()}"]);
-			}
 			$r = ju_cc_n($resultA);
 		}
 		catch (\Exception $e) {
