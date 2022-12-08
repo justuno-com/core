@@ -23,6 +23,7 @@ final class Frame extends \Justuno\Core\O {
 	function line() {return $this['line'];}
 
 	/**
+	 * 2015-04-03 Для простых функций (не методов) вернёт название функции.
 	 * 2020-02-20
 	 * $f could be `include`, `include_once`, `require`, ``require_once``:
 	 * https://www.php.net/manual/function.include.php
