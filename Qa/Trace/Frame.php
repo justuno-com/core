@@ -40,30 +40,30 @@ final class Frame extends \Justuno\Core\O {
 	 * https://www.php.net/manual/reflectionfunction.construct.php
 	 * https://www.php.net/manual/class.reflectionexception.php
 	 * @used-by self::methodParameter()
-	 * @used-by \Df\Qa\Method::raiseErrorParam()
+	 * @used-by \Justuno\Core\Qa\Method::raiseErrorParam()
 	 * @return RM|null
 	 */
-	function methodR() {return dfc($this, function() {return
+	function methodR() {return juc($this, function() {return
 		($c = $this->class_()) && ($f = $this->function_()) && !$this->isClosure()
-			? df_try(function() use($c, $f) {return new RM($c, $f);}, null)
+			? ju_try(function() use($c, $f) {return new RM($c, $f);}, null)
 			: null
 	;});}
 
 	/**
 	 * $ordering is zero-based
-	 * @used-by \Df\Qa\Method::raiseErrorParam()
+	 * @used-by \Justuno\Core\Qa\Method::raiseErrorParam()
 	 */
-	function methodParameter(int $ordering):RP {return dfc($this, function($ordering) {/** @var RP $r */
-		df_assert($m = $this->methodR()); /** @var RM|null $m */
+	function methodParameter(int $ordering):RP {return juc($this, function($ordering) {/** @var RP $r */
+		ju_assert($m = $this->methodR()); /** @var RM|null $m */
 		if ($ordering >= count($m->getParameters())) { # Параметр должен существовать
-			df_error(
+			ju_error(
 				"Программист ошибочно пытается получить значение параметра с индексом {$ordering}"
 				." метода «{$this->method()}», хотя этот метод принимает всего %d параметров."
 				,count($m->getParameters())
 			);
 		}
-		df_assert_lt(count($m->getParameters()), $ordering);
-		df_assert(($r = dfa($m->getParameters(), $ordering)) instanceof RP);
+		ju_assert_lt(count($m->getParameters()), $ordering);
+		ju_assert(($r = jua($m->getParameters(), $ordering)) instanceof RP);
 		return $r;
 	}, [$ordering]);}
 
@@ -71,23 +71,23 @@ final class Frame extends \Justuno\Core\O {
 	 * @used-by self::methodR()
 	 * @used-by self::method()
 	 */
-	private function class_():string {return df_nts($this['class']);}
+	private function class_():string {return ju_nts($this['class']);}
 
 	/**
 	 * @used-by self::methodR()
 	 * @used-by self::method()
 	 */
-	private function function_():string {return df_nts($this['function']);}
+	private function function_():string {return ju_nts($this['function']);}
 
 	/**
 	 * 2016-07-31
 	 * @used-by self::methodR()
 	 */
-	private function isClosure():bool {return df_ends_with($this->function_(), '{closure}');}
+	private function isClosure():bool {return ju_ends_with($this->function_(), '{closure}');}
 
 	/**
-	 * @used-by \Df\Qa\Method::caller()
-	 * @used-by \Df\Qa\Trace::__construct()
+	 * @used-by \Justuno\Core\Qa\Method::caller()
+	 * @used-by \Justuno\Core\Qa\Trace::__construct()
 	 * @param array(string => string|int) $a
 	 */
 	static function i(array $a):self {return new self($a);}
