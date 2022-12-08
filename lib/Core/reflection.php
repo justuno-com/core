@@ -2,7 +2,7 @@
 /**
  * 2016-08-10
  * 2020-08-19 "Port the `df_cc_method` function" https://github.com/justuno-com/core/issues/202
- * @used-by \Justuno\Core\Qa\Trace\Frame::methodName()
+ * @used-by \Justuno\Core\Qa\Trace\Frame::method()
  * @param string|object|null|array(object|string)|array(string = string) $a1
  * @param string|null $a2 [optional]
  * @return string
