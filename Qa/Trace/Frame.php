@@ -167,7 +167,7 @@ final class Frame extends \Justuno\Core\O {
 
 	/**
 	 * @used-by \Justuno\Core\Qa\Method::caller()
-	 * @used-by \Justuno\Core\Qa\Failure::frames()
+	 * @used-by \Justuno\Core\Qa\Trace::__construct()
 	 * @param array(string => string|int) $a
 	 */
 	static function i(array $a):self {return new self($a);}
