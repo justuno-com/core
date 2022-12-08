@@ -345,26 +345,12 @@ final class Client {
 	}
 
 	/** @used-by self::captureException() */
-	private function translateSeverity(string $s):string {
-		switch ($s) {
-			case E_COMPILE_ERROR:      return self::ERROR;
-			case E_COMPILE_WARNING:    return self::WARN;
-			case E_CORE_ERROR:         return self::ERROR;
-			case E_CORE_WARNING:       return self::WARN;
-			case E_ERROR:              return self::ERROR;
-			case E_NOTICE:             return self::INFO;
-			case E_PARSE:              return self::ERROR;
-			case E_RECOVERABLE_ERROR:  return self::ERROR;
-			case E_STRICT:             return self::INFO;
-			case E_USER_ERROR:         return self::ERROR;
-			case E_USER_NOTICE:        return self::INFO;
-			case E_USER_WARNING:       return self::WARN;
-			case E_WARNING:            return self::WARN;
-			case E_DEPRECATED:         return self::WARN;
-			case E_USER_DEPRECATED:    return self::WARN;
-		}
-		return self::ERROR;
-	}
+	private function translateSeverity(string $s):string {return in_array($s, [E_NOTICE, E_STRICT, E_USER_NOTICE])
+		? self::INFO
+		: (in_array($s, [E_COMPILE_WARNING, E_CORE_WARNING, E_DEPRECATED, E_USER_DEPRECATED, E_USER_WARNING, E_WARNING])
+			? self::WARN : self::ERROR
+		)
+	;}
 
 	/**
 	 * 2016-12-23
