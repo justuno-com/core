@@ -74,6 +74,9 @@ final class Method {
 	private static function caller(int $o):Frame {return Frame::i(ju_bt(0, 3 + $o)[2 + $o]);}
 
 	/**
+	 * @used-by self::raiseErrorParam()
+	 * @used-by self::raiseErrorResult()
+	 * @used-by self::raiseErrorVariable()
 	 * 2015-01-28
 	 * @throws E
 	 */
