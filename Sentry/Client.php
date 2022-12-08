@@ -198,9 +198,23 @@ final class Client {
 			$data += $this->get_http_data();
 		}
 		$data += $this->get_user_data();
+		/**
+		 * 2017-01-10
+		 * 1) $this->tags — это теги, которые были заданы в конструкторе: @see self::__construct()
+		 * Они имеют наинизший приоритет.
+		 * 2) Намеренно использую здесь + вместо @see df_extend(),
+		 * потому что массив tags должен быть одномерным (и поэтому для него + достаточно),
+		 * а массив extra хоть и может быть многомерен, однако вряд ли для нас имеет смысл
+		 * слияние его элементов на внутренних уровнях вложенности.
+		 */
 		$data['tags'] += $this->context->tags + $this->tags;
 		/** @var array(string => mixed) $extra */
 		$extra = $data['extra'] + $this->context->extra + $this->extra_data;
+		# 2017-01-03
+		# Этот полный JSON в конце массива может быть обрублен в интерфейсе Sentry
+		# (и, соответственно, так же обрублен при просмотре события в формате JSON
+		# по ссылке в шапке экрана события в Sentry),
+		# однако всё равно удобно видеть данные в JSON, пусть даже в обрубленном виде.
 		$data['extra'] = Extra::adjust($extra) + ['_json' => ju_json_encode($extra)];
 		$data = ju_clean($data);
 		if ($trace && !isset($data['stacktrace']) && !isset($data['exception'])) {
