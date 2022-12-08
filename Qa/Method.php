@@ -18,7 +18,7 @@ final class Method {
 		}
 		$messagesS = ju_cc_n($messages); /** @var string $messagesS */
 		self::throwException(
-			"[{$frame->methodName()}]"
+			"[{$frame->method()}]"
 			."\nThe argument «{$name}» is rejected by the «{$method}» validator."
 			."\nThe diagnostic message:\n{$messagesS}\n\n"
 			,$sl
@@ -33,7 +33,7 @@ final class Method {
 	 */
 	static function raiseErrorResult(string $vd, array $messages, int $sl = 1):void {
 		$messagesS = ju_cc_n($messages); /** @var string $messagesS */
-		$method = self::caller($sl)->methodName(); /** @var string $method */
+		$method = self::caller($sl)->method(); /** @var string $method */
 		self::throwException(
 			"[{$method}]\nA result of this method is rejected by the «{$vd}» validator."
 			."\nThe diagnostic message:\n{$messagesS}\n\n"
@@ -48,7 +48,7 @@ final class Method {
 	 */
 	static function raiseErrorVariable(string $vd, array $messages, int $sl = 1) {
 		$messagesS = ju_cc_n($messages); /** @var string $messagesS */
-		$method = self::caller($sl)->methodName(); /** @var string $method */
+		$method = self::caller($sl)->method(); /** @var string $method */
 		self::throwException(
 			"[{$method}]\nThe validator «{$vd}» has catched a variable with an invalid value."
 			."\nThe diagnostic message:\n{$messagesS}\n\n"
