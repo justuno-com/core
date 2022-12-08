@@ -37,7 +37,6 @@ function ju_assert($cond, $m = null) {return $cond ?: ju_error($m);}
 /**
  * 2017-01-14
  * 2020-08-19 "Port the `df_assert_nef` function" https://github.com/justuno-com/core/issues/201
- * @used-by \Justuno\Core\Qa\Trace\Frame::context()
  * @param mixed $v
  * @param string|E $m [optional]
  * @return mixed
