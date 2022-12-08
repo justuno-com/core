@@ -116,16 +116,6 @@ final class Frame extends \Justuno\Core\O {
 	}, [$ordering]);}
 
 	/**
-	 * 2020-02-27
-	 * @used-by self::__toString()
-	 * @used-by self::i()
-	 * @used-by \Justuno\Core\Qa\Trace\Formatter::p()
-	 * @param string $v
-	 * @return bool|null
-	 */
-	function showContext($v = JU_N) {return ju_prop($this, $v);}
-
-	/**
 	 * @used-by self::method()
 	 * @used-by self::methodName()
 	 * @return string
@@ -179,17 +169,7 @@ final class Frame extends \Justuno\Core\O {
 	 * 2020-02-27 `self $previous` works even in PHP 5.0.0: https://3v4l.org/pTl8l
 	 * @used-by \Justuno\Core\Qa\Method::caller()
 	 * @used-by \Justuno\Core\Qa\Failure::frames()
-	 * @param array(string => string|int) $frameA
-	 * @param self|null $previous [optional]
-	 * @param bool $showContext [optional]
-	 * @return self
+	 * @param array(string => string|int) $a
 	 */
-	static function i(array $frameA, self $previous = null, $showContext = false) { /** @var self $r */
-		$r = new self($frameA);
-		$r->showContext($showContext);
-		if ($previous) {
-			$previous->_next = $r;
-		}
-		return $r;
-	}
+	static function i(array $a):self {return new self($a);}
 }
