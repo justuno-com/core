@@ -18,7 +18,6 @@ final class Client {
 		$this->error_types = null;
 		$this->extra_data = [];
 		$this->logger = 'php';
-		$this->severity_map = null;
 		$this->site = jua($_SERVER, 'SERVER_NAME');
 		$this->tags = [];
 		$this->timeout = 2;
@@ -351,9 +350,6 @@ final class Client {
 	 * @return string           Sentry log level group
 	 */
 	private function translateSeverity($severity) {
-		if (is_array($this->severity_map) && isset($this->severity_map[$severity])) {
-			return $this->severity_map[$severity];
-		}
 		switch ($severity) {
 			case E_COMPILE_ERROR:      return Client::ERROR;
 			case E_COMPILE_WARNING:    return Client::WARN;
@@ -422,7 +418,6 @@ final class Client {
 	
 	public $context;
 	public $extra_data;
-	public $severity_map;
 	private $error_types;
 	/**
 	 * 2020-06-28
