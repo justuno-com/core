@@ -60,7 +60,7 @@ final class Client {
 	 * @uses ju_translit_url()
 	 * @param array(string => string) $a
 	 */
-	function tags(array $a) {$this->context->tags = juak_transform($a, 'ju_translit_url') + $this->context->tags;}
+	function tags(array $a:void {$this->context->tags = juak_transform($a, 'ju_translit_url') + $this->context->tags;}
 
 	/**
 	 * @used-by ju_sentry_m()
