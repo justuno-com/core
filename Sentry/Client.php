@@ -49,7 +49,7 @@ final class Client {
 	 * @used-by ju_sentry_extra_f()
 	 * @param array(string => mixed) $a
 	 */
-	function extra(array $a) {$this->context->extra = array_merge_recursive($this->context->extra, $a);}
+	function extra(array $a):void {$this->context->extra = array_merge_recursive($this->context->extra, $a);}
 
 	/**
 	 * 2017-01-10 «/» can not be used in a tag.
