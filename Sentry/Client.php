@@ -105,7 +105,7 @@ final class Client {
 				$data['level'] = self::ERROR;
 			}
 		}
-		return $this->capture($data, $trace);
+		$this->capture($data, $trace);
 	}
 	
 	private function get_http_data() {
