@@ -242,6 +242,7 @@ final class Client {
 	 * 2020-06-27
 	 * @used-by self::__construct()
 	 * @used-by self::capture()
+	 * @param array(string => mixed) $data
 	 */
 	private function send(array &$data):void {
 		$domain = 1000 > $this->_projectId ? 'log.mage2.pro' : 'sentry.io'; /** @var string $domain */ # 2018-08-25
