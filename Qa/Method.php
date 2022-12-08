@@ -83,13 +83,11 @@ final class Method {
 	private static function throwException(string $message, int $sl = 0):void {ju_error(new E($message, ++$sl));}
 	
 	/**
-	 * @param Vd $vd
 	 * @param mixed $v
-	 * @param int $sl
 	 * @return mixed
 	 * @throws E
 	 */
-	private static function vv(Vd $vd, $v, $sl = 1) {return $vd->isValid($v) ? $v : self::raiseErrorVariable(
+	private static function vv(Vd $vd, $v, int $sl = 1) {return $vd->isValid($v) ? $v : self::raiseErrorVariable(
 		get_class($vd), $vd->getMessages(), ++$sl
 	);}
 }
