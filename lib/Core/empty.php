@@ -55,8 +55,8 @@ function ju_nes($v):bool {return is_null($v) || '' === $v;}
 /**
  * 2020-06-20 "Port the `df_nts` function": https://github.com/justuno-com/core/issues/89
  * @used-by ju_trim()
- * @used-by \Justuno\Core\Qa\Trace\Frame::className()
- * @used-by \Justuno\Core\Qa\Trace\Frame::functionName()
+ * @used-by \Justuno\Core\Qa\Trace\Frame::class_()
+ * @used-by \Justuno\Core\Qa\Trace\Frame::function_()
  * @param mixed|null $v
  * @return mixed
  */
