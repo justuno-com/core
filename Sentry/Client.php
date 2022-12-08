@@ -76,7 +76,7 @@ final class Client {
 	 * @param E|DFE $e
 	 * @param array(string => mixed) $data
 	 */
-	function captureException(E $e, array $data) {
+	function captureException(E $e, array $data):void {
 		$eOriginal = $e; /** @var E $eOriginal */
 		do {
 			$isDFE = $e instanceof DFE; /** @var bool $isDFE */
@@ -107,8 +107,13 @@ final class Client {
 		}
 		$this->capture($data, $trace);
 	}
-	
-	private function get_http_data() {
+
+	/**
+	 * 2022-11-11
+	 * @used-by self::capture()
+	 * @return array(string => array(string => string))
+	 */
+	private function get_http_data():array {
 		$headers = [];
 		foreach ($_SERVER as $key => $value) {
 			if (0 === strpos($key, 'HTTP_')) {
