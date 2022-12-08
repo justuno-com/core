@@ -364,7 +364,7 @@ final class Client {
 	 * @param array(string => string|int|array) $frame
 	 * @return bool
 	 */
-	private static function needSkipFrame(array $frame) {return
+	private static function needSkipFrame(array $frame):bool {return
 		\Magento\Framework\App\ErrorHandler::class === jua($frame, 'class')
 	;}
 
