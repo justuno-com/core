@@ -13,6 +13,7 @@
  * @used-by ju_prop()
  * @used-by ju_referer()
  * @used-by ju_request()
+ * @used-by ju_request_method()
  * @used-by ju_sentry()
  * @used-by ju_sentry_m()
  * @used-by jutr()

@@ -123,7 +123,7 @@ final class Client {
 			}
 		}
 		$result = [
-			'method' => jua($_SERVER, 'REQUEST_METHOD'),
+			'method' => ju_request_method(),
 			'url' => $this->get_current_url(),
 			'query_string' => jua($_SERVER, 'QUERY_STRING'),
 		];

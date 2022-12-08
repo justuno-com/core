@@ -39,6 +39,12 @@ function ju_request($k = '', $d = null) {$o = ju_request_o(); return is_null($k)
 function ju_request_header(string $k) {return ju_request_o()->getHeader($k);}
 
 /**
+ * 2021-06-05
+ * @used-by \Justuno\Core\Sentry\Client::get_http_data()
+ */
+function ju_request_method():string {return jua($_SERVER, 'REQUEST_METHOD');}
+
+/**
  * 2020-06-13 "Port the `df_request_o` function": https://github.com/justuno-com/core/issues/2
  * @used-by ju_action_name()
  * @used-by ju_is_ajax()
