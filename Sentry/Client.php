@@ -295,7 +295,7 @@ final class Client {
 	 * @used-by self::send_http()
 	 * @return array(string => mixed)
 	 */
-	private function get_curl_options() {
+	private function get_curl_options():array {
 		$r = [
 			CURLOPT_IPRESOLVE => CURL_IPRESOLVE_V4
 			,CURLOPT_SSL_VERIFYHOST => 2
