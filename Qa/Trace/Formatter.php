@@ -12,7 +12,7 @@ final class Formatter {
 	 */
 	static function p(T $t):string {return jucf(function(T $t):string {
 		$count = count($t); /** @var int $count */
-		return implode(ju_map_k($t, function(int $index, F $frame) use($count) {
+		return implode(ju_map_k($t, function(int $index, F $frame) use($count):string {
 			$index++;
 			$r = self::frame($frame); /** @var string $r */
 			if ($index !== $count) {
