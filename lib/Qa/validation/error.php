@@ -10,7 +10,6 @@ use Magento\Framework\Phrase;
  * @used-by ju_assert_gt0()
  * @used-by ju_assert_lt()
  * @used-by ju_assert_ne()
- * @used-by ju_assert_nef()
  * @used-by ju_assert_traversable()
  * @used-by ju_caller_m()
  * @used-by ju_customer()
