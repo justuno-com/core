@@ -36,7 +36,7 @@ final class Formatter {
 		try {
 			$resultA = array_filter(array_map([__CLASS__, 'param'], [
 				['Location', ju_cc(':', ju_path_relative($f->filePath()), $f->line())], ['Callee', $f->method()]
-			])); /** @var string[] $resultA */ /** @uses param() */
+			])); /** @var string[] $resultA */ /** @uses self::param() */
 			$r = ju_cc_n($resultA);
 		}
 		catch (\Exception $e) {
