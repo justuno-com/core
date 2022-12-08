@@ -132,6 +132,7 @@ final class Client {
 		if (!empty($post = ju_request_o()->getPost()->toArray())) {
 			$result['data'] = $post;
 		}
+		# 2017-01-03 Отсюда куки тоже нужно удалить, потому что Sentry пытается их отсюда взять.
 		unset($headers['Cookie']);
 		if (!empty($headers)) {
 			$result['headers'] = $headers;
