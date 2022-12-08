@@ -171,10 +171,8 @@ final class Client {
 	 * @used-by self::captureException()
 	 * @used-by self::captureMessage()
 	 * @param mixed $data
-	 * @param mixed[] $trace [optional]
-	 * @return mixed
 	 */
-	private function capture($data, array $trace = []) {
+	private function capture($data, array $trace = []):string {
 		$data += [
 			'culprit' => $this->transaction->peek()
 			,'event_id' => $this->uuid4()
