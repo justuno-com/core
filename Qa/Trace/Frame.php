@@ -25,7 +25,7 @@ final class Frame extends \Justuno\Core\O {
 	 * @used-by \Justuno\Core\Qa\Method::raiseErrorResult()
 	 * @used-by \Justuno\Core\Qa\Method::raiseErrorVariable()
 	 */
-	function method():string {return df_cc_method($this->class_(), $this->function_());}
+	function method():string {return ju_cc_method($this->class_(), $this->function_());}
 
 	/**
 	 * 2020-02-20
