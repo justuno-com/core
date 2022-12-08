@@ -31,10 +31,8 @@ final class Formatter {
 	/**     
 	 * 2020-02-27          
 	 * @used-by self::p()
-	 * @param Frame $f 
-	 * @return string
 	 */
-	private static function frame(F $f) {/** @var string $r */
+	private static function frame(F $f):string {/** @var string $r */
 		try {
 			$resultA = array_filter(array_map([__CLASS__, 'param'], [
 				['Location', ju_cc(':', ju_path_relative($f->filePath()), $f->line())], ['Callee', $f->methodName()]
