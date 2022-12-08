@@ -28,7 +28,7 @@ final class Trace implements \IteratorAggregate, \Countable {
 			if (ju_starts_with(jua($frameA, 'file'), 'phar://')) {
 				break;
 			}
-			$this->_frames[]= $prev = F::i($frameA);
+			$this->_frames[]= F::i($frameA);
 		}
 	}
 
