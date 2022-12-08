@@ -62,7 +62,6 @@ final class Formatter {
 	
 	/**
 	 * @used-by self::p()
-	 * @param array $p
 	 * @return string|null
 	 */
 	private static function param(array $p) {/** @var string|null $r */ /** @var string|null $v */
