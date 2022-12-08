@@ -7,45 +7,6 @@ use ReflectionParameter as RP;
 # 2020-08-19 "Port the `Df\Qa\Trace\Frame` class" https://github.com/justuno-com/core/issues/197
 final class Frame extends \Justuno\Core\O {
 	/**
-	 * @used-by \Justuno\Core\Qa\Trace\Formatter::frame()
-	 * @return string
-	 */
-	function context() {return juc($this, function() {
-		$r = ''; /** @var string $r */
-		if (is_file($this->filePath()) && $this->line()) {
-			$fileContents = file($this->filePath());/** @var string[] $fileContents */
-			if (is_array($fileContents)) {
-				$fileLength = count($fileContents); /** @var int $fileLength */
-				$radius = 8; /** @var int $radius */
-				$start = max(0, $this->line() - $radius); /** @var int $start */
-				$end = min($fileLength, $start + 2 * $radius); /** @var int $end */
-				if ($this->_next) { # 2016-07-31 Нам нужна информация именно функции next (caller).
-					$func = $this->_next->functionA(); /** @var RFA|null $func */
-					/**
-					 * 2016-07-31
-					 * Если @uses \ReflectionFunctionAbstract::isInternal() вернёт true,
-					 * то @uses \ReflectionFunctionAbstract::getStartLine() и
-					 * @uses \ReflectionFunctionAbstract::getEndLine() вернут false.
-					 * http://stackoverflow.com/questions/2222142#comment25428181_2222404
-					 * isInternal() === TRUE means ->getFileName() and ->getStartLine() will return FALSE
-					 */
-					if ($func && !$func->isInternal()) {
-						$fStart = ju_assert_nef($func->getStartLine()); /** @var int $fStart */
-						$fEnd = ju_assert_nef($func->getEndLine()); /** @var int $fEnd */
-						# 2016-07-31
-						# http://stackoverflow.com/a/7027198
-						# It's actually - 1, otherwise you wont get the function() block.
-						$start = max($start, $fStart - 1);
-						$end = min($end, $fEnd);
-					}
-				}
-				$r = ju_trim(implode(array_slice($fileContents, $start, $end - $start)));
-			}
-		}
-		return $r;
-	});}
-
-	/**
 	 * 2015-04-03 Путь к файлу отсутствует при вызовах типа @see call_user_func()
 	 * @used-by self::context()
 	 * @used-by \Justuno\Core\Qa\Trace\Formatter::frame()
