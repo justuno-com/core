@@ -48,7 +48,7 @@ final class Tag {
 						 * и в то же время сконвертировать одинарные
 						 * (потому что значения атрибутов мы ниже обрамляем именно одинарными).
 						 * 2017-09-11
-						 * Today I have notices that `&apos;` does not work for me
+						 * Today I have noticed that `&apos;` does not work for me
 						 * on the Magento 2 backend configuration pages:
 						 * @see \Df\Payment\Comment\Description::a()
 						 * So I switched to the `&#39;` solution.
