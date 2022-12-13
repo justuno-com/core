@@ -361,7 +361,6 @@ final class Client {
 	 * 2016-12-23
 	 * @used-by self::captureException()
 	 * @param array(string => string|int|array) $frame
-	 * @return bool
 	 */
 	private static function needSkipFrame(array $frame):bool {return ErrorHandler::class === jua($frame, 'class');}
 
