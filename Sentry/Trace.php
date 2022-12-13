@@ -136,7 +136,7 @@ final class Trace {
 	 * @param array(string => mixed) $frame
 	 * @return array(string => mixed)
 	 */
-	private static function get_default_context($frame) {
+	private static function get_default_context(array $frame):array {
 		$r = []; /** @var array(string => mixed) $r */
 		$i = 1; /** @var int $i */
 		foreach (jua($frame, 'args', []) as $arg) {
