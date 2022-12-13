@@ -41,9 +41,8 @@ class Design extends mDesign {
 	 * https://github.com/magento/magento2/blob/2.2.0/app/etc/di.xml#L32
 	 * <preference for="Magento\Framework\View\DesignInterface" type="Magento\Theme\Model\View\Design\Proxy" />
 	 * @used-by ju_layout_update()
-	 * @return bool
 	 */
-	final static function isThemeInitialized() {
+	final static function isThemeInitialized():bool {
 		$d = ju_o(mDesign::class); /** @var mDesign $d */
 		return !!$d->_theme;
 	}
