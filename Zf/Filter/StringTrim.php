@@ -4,6 +4,7 @@ namespace Justuno\Core\Zf\Filter;
 /** @used-by ju_trim() */
 class StringTrim extends \Zend_Filter_StringTrim {
 	/**
+	 * 2022-12-14 We can not declare arguments types because they are undeclared in the overriden method.
 	 * @override
 	 * @param string $value
 	 * @param string $charlist
