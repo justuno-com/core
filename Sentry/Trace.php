@@ -9,9 +9,8 @@ final class Trace {
 	 * @used-by \Justuno\Core\Sentry\Client::capture()
 	 * @used-by \Justuno\Core\Sentry\Client::captureException()
 	 * @param $frames
-	 * @return array
 	 */
-	static function info($frames) {
+	static function info($frames):array {
 		$serializer = new Serializer;
 		$reprSerializer = new ReprSerializer;
 		$r = [];
