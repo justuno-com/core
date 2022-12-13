@@ -1,25 +1,11 @@
 <?php
 namespace Justuno\Core\Sentry;
-# 2020-08-13 "Port the `Df\Sentry\Context` class" https://github.com/justuno-com/core/issues/171
 class Context {
 	/**
 	 * 2020-06-27
 	 * @used-by \Justuno\Core\Sentry\Client::__construct()
 	 */
-	function __construct()
-	{
-		$this->clear();
-	}
-
-	/**
-	 * Clean up existing context.
-	 */
-	function clear()
-	{
-		$this->tags = [];
-		$this->extra = [];
-		$this->user = null;
-	}
+	function __construct() {$this->extra = []; $this->tags = []; $this->user = null;}
 
 	/**
 	 * 2017-01-10
