@@ -5,8 +5,9 @@ use Justuno\Core\Format\Html\Tag;
  * 2020-08-22 "Port the `ju_link_inline` function" https://github.com/justuno-com/core/issues/247
  * @used-by ju_fe_init()
  * @param string|string[] $a
+ * @return string|string[]
  */
-function ju_link_inline(...$a):string {return ju_call_a(function($res) {return ju_resource_inline(
+function ju_link_inline(...$a) {return ju_call_a(function($res) {return ju_resource_inline(
 	$res, function($url) {return ju_tag('link', ['href' => $url, 'rel' => 'stylesheet', 'type' => 'text/css'], null, false);}
 );}, $a);}
 
