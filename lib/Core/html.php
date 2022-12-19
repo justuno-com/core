@@ -7,8 +7,10 @@ use Justuno\Core\Format\Html\Tag;
  * @param string|string[] $a
  * @return string|string[]
  */
-function ju_link_inline(...$a) {return ju_call_a(function($res) {return ju_resource_inline(
-	$res, function($url) {return ju_tag('link', ['href' => $url, 'rel' => 'stylesheet', 'type' => 'text/css'], null, false);}
+function ju_link_inline(...$a) {return ju_call_a(function(string $res):string {return ju_resource_inline(
+	$res, function(string $url):string {return ju_tag(
+		'link', ['href' => $url, 'rel' => 'stylesheet', 'type' => 'text/css'], null, false
+	);}
 );}, $a);}
 
 /**
