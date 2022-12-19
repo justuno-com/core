@@ -35,7 +35,7 @@ function juc($o, Closure $m, array $a = [], bool $unique = true, int $offset = 0
 	 * 1) Dynamic properties are deprecated since PHP 8.2:
 	 * https://www.php.net/manual/migration82.deprecated.php#migration82.deprecated.core.dynamic-properties
 	 * https://wiki.php.net/rfc/deprecate_dynamic_properties
-	 * 2) @see ju_prop()
+	 * 2) @see ju_prop_k()
 	 * @var mixed $r
 	 */
 	static $hasWeakMap; /** @var bool $hasWeakMap */
