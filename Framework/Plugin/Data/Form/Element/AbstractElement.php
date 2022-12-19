@@ -41,7 +41,7 @@ class AbstractElement extends Sb {
 	 * @param Sb $sb
 	 */
 	function afterGetElementHtml(Sb $sb, string $r):string {return
-		ju_starts_with($r, '<label class="addbefore"') ? $r : ju_prepend($r, $sb->getBeforeElementHtml())
+		ju_starts_with($r, '<label class="addbefore"') ? $r : ju_prepend($r, (string)$sb->getBeforeElementHtml())
 	;}
 
 	/**
