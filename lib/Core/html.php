@@ -20,9 +20,9 @@ function ju_link_inline(...$a) {return ju_call_a(function(string $res):string {r
  */
 function ju_resource_inline(string $u, Closure $f):string {
 	static $c; /** @var array(string => bool) $c */
-	if (!$u || isset($c[$u])) {$result = '';}
-	else {$c[$u] = true; $result = $f(ju_asset_create($u)->getUrl());}
-	return $result;
+	if (!$u || isset($c[$u])) {$r = '';}
+	else {$c[$u] = true; $r = $f(ju_asset_create($u)->getUrl());}
+	return $r;
 }
 
 /**
