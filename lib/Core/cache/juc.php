@@ -18,7 +18,7 @@ use Justuno\Core\RAM;
  * @param object $o
  * @return mixed
  */
-function juc($o, Closure $m, array $a = [], bool $unique = true, int $offset = 0) {
+function juc($o, Closure $f, array $a = [], bool $unique = true, int $offset = 0) {
 	/**
 	 * 2021-10-05
 	 * I do not use @see ju_bt_log() to make the implementation faster. An implementation via ju_bt_log() is:
@@ -29,7 +29,7 @@ function juc($o, Closure $m, array $a = [], bool $unique = true, int $offset = 0
 		ju_error("[juc] Invalid backtrace frame:\n" . ju_dump($b)); # 2017-01-02 Usually it means that $offset is wrong.
 	}
 	/** @var string $k */
-	$k = "{$b['class']}::{$b['function']}" . (!$a ? null : ju_hash_a($a)) . ($unique ? null : spl_object_hash($m));
+	$k = "{$b['class']}::{$b['function']}" . (!$a ? null : ju_hash_a($a)) . ($unique ? null : spl_object_hash($f));
 	/**
 	 * 2022-10-17
 	 * 1) Dynamic properties are deprecated since PHP 8.2:
@@ -44,7 +44,7 @@ function juc($o, Closure $m, array $a = [], bool $unique = true, int $offset = 0
 		# 2017-01-12 ... works correctly here: https://3v4l.org/0shto
 		# 2022-10-17 The ternary operator works correctly here: https://3v4l.org/MutM4
 		/** @noinspection PhpVariableVariableInspection */
-		$r = property_exists($o, $k) ? $o->$k : $o->$k = $m(...$a);
+		$r = property_exists($o, $k) ? $o->$k : $o->$k = $f(...$a);
 	}
 	else {
 		static $map; /** @var WeakMap $map */
@@ -54,9 +54,13 @@ function juc($o, Closure $m, array $a = [], bool $unique = true, int $offset = 0
 		}
 		# 2022-10-17 https://3v4l.org/6cVAu
 		$map2 =& $map[$o]; /** @var array(string => mixed) $map2 */
-		# 2017-01-12 ... works correctly here: https://3v4l.org/0shto
-		# 2022-10-17 The ternary operator works correctly here: https://3v4l.org/MutM4
-		$r = isset($map2[$k]) ? $map2[$k] : $map2[$k] = $m(...$a);
+		/**
+		 * 2017-01-12 ... works correctly here: https://3v4l.org/0shto
+		 * 2022-10-17 The ternary operator works correctly here: https://3v4l.org/MutM4
+		 * 2022-10-27 We can not use @see isset() here: https://3v4l.org/FhAUv
+		 * 2022-10-28 @see \Justuno\Core\RAM::exists()
+		 */
+		$r = array_key_exists($k, $map2) ? $map2[$k] : $map2[$k] = $f(...$a);
 	}
 	return $r;
 }
