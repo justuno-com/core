@@ -18,10 +18,10 @@ function ju_link_inline(...$a) {return ju_call_a(function(string $res):string {r
  * 2020-08-22 "Port the `df_resource_inline` function" https://github.com/justuno-com/core/issues/256
  * @used-by ju_link_inline()
  */
-function ju_resource_inline(string $r, Closure $f):string {
+function ju_resource_inline(string $u, Closure $f):string {
 	static $c; /** @var array(string => bool) $c */
-	if (!$r || isset($c[$r])) {$result = '';}
-	else {$c[$r] = true; $result = $f(ju_asset_create($r)->getUrl());}
+	if (!$u || isset($c[$u])) {$result = '';}
+	else {$c[$u] = true; $result = $f(ju_asset_create($u)->getUrl());}
 	return $result;
 }
 
