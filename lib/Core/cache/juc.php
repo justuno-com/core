@@ -56,7 +56,7 @@ function juc($o, Closure $m, array $a = [], bool $unique = true, int $offset = 0
 		$map2 =& $map[$o]; /** @var array(string => mixed) $map2 */
 		# 2017-01-12 ... works correctly here: https://3v4l.org/0shto
 		# 2022-10-17 The ternary operator works correctly here: https://3v4l.org/MutM4
-		$r = isset($map2, $k) ? $map2[$k] : $map2[$k] = $m(...$a);
+		$r = isset($map2[$k]) ? $map2[$k] : $map2[$k] = $m(...$a);
 	}
 	return $r;
 }
