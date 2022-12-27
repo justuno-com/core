@@ -34,10 +34,10 @@ function ju_resource_inline(string $u, Closure $f):string {
  * @used-by ju_js_x()
  * @used-by ju_link_inline()
  * @param string|array(string => string|string[]|int|null) $attrs [optional]
- * @param string|null|string[] $content [optional]
+ * @param string|string[] $content [optional]
  * @param bool|null $multiline [optional]
  */
-function ju_tag(string $tag, $attrs = [], $content = null, $multiline = null):string {
+function ju_tag(string $tag, $attrs = [], $content = '', $multiline = null):string {
 	$t = new Tag($tag, is_array($attrs) ? $attrs : ['class' => $attrs], $content, $multiline); /** @vat Tag $t */
 	return $t->render();
 }
