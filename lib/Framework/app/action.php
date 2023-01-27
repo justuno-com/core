@@ -32,7 +32,9 @@ function ju_action_prefix($p):bool {return ju_starts_with(ju_action_name(), $p);
  * 2020-08-21 "Port the `df_referer` function" https://github.com/justuno-com/core/issues/211
  * @see \Magento\Store\App\Response\Redirect::getRefererUrl():
  * 		df_response_redirect()->getRefererUrl()
+ * 2023-01-28
+ * «Return value of df_referer() must be of the type string, null returned»: https://github.com/mage2pro/core/issues/177
  * @used-by ju_log_l()
  * @used-by https://github.com/royalwholesalecandy/core/issues/58#issuecomment-569049731
  */
-function ju_referer():string {return jua($_SERVER, 'HTTP_REFERER');}
+function ju_referer():string {return jua($_SERVER, 'HTTP_REFERER', '');}
