@@ -4,7 +4,7 @@
  * 2020-06-17 "Port the `df_cli_argv` function": https://github.com/justuno-com/core/issues/49
  * 2022-11-23 With $i = null the function returns all `argv` data: @see ju_cli_cmd().
  * 2023-01-27
- * The previous code was: `dfa_deep($_SERVER, ['argv', $i])`.
+ * The previous code was: `jua_deep($_SERVER, ['argv', $i])`.
  * It did not handle correctly the non-CLI case (returned `null`):
  * ju_cli_script(): Return value must be of type string»: https://github.com/justuno-com/core/issues/384
  * @used-by ju_cli_cmd()
