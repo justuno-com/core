@@ -6,7 +6,7 @@
  * 2023-01-27
  * The previous code was: `jua_deep($_SERVER, ['argv', $i])`.
  * It did not handle correctly the non-CLI case (returned `null`):
- * ju_cli_script(): Return value must be of type string»: https://github.com/justuno-com/core/issues/384
+ * «ju_cli_script(): Return value must be of type string»: https://github.com/justuno-com/core/issues/384
  * @used-by ju_cli_cmd()
  * @used-by ju_cli_script()
  * @used-by ju_is_cron()
