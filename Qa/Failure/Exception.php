@@ -11,11 +11,14 @@ final class Exception extends \Justuno\Core\Qa\Failure {
 	protected function main():string {return !$this->_e->message();}
 
 	/**
+	 * I haved added `...` to overcome the error:
+	 * «Argument 1 passed to Df\Qa\Failure::sections() must be of the type string, array given,
+	 * called in vendor/mage2pro/core/Qa/Failure/Exception.php on line 21», https://github.com/mage2pro/core/issues/178
 	 * @override
 	 * @see \Justuno\Core\Qa\Failure::postface()
 	 * @used-by \Justuno\Core\Qa\Failure::report()
 	 */
-	protected function postface():string {return $this->sections($this->sections($this->_e->comments()), parent::postface());}
+	protected function postface():string {return $this->sections($this->sections(...$this->_e->comments()), parent::postface());}
 
 	/**
 	 * @override
