@@ -24,8 +24,23 @@ final class Trace implements \IteratorAggregate, \Countable {
 			 * а не возбуждает исключительную ситуацию.
 			 * Однако мне в стеке вызовов в любом случае не нужна бинарная каша,
 			 * поэтому я отсекаю ту часть стека, которая находится внутри Phar.
+			 * 2023-01-28
+			 * 1) The 'file' key can be absent in a stack frame, e.g.:
+			 *	{
+			 *		"function": "loadClass",
+			 *		"class": "Composer\\Autoload\\ClassLoader",
+			 *		"type": "->",
+			 *		"args": ["Df\\Framework\\Plugin\\App\\Router\\ActionList\\Interceptor"]
+			 *	},
+			 *	{
+			 *		"function": "spl_autoload_call",
+			 *		"args": ["Df\\Framework\\Plugin\\App\\Router\\ActionList\\Interceptor"]
+			 *	},
+			 * 2) «Argument 1 passed to df_starts_with() must be of the type string, null given,
+			 * called in vendor/mage2pro/core/Qa/Trace.php on line 28»: https://github.com/mage2pro/core/issues/186
+			 * 3) @see \Justuno\Core\Qa\Trace\Frame::filePath()
 			 */
-			if (ju_starts_with(jua($frameA, 'file'), 'phar://')) {
+			if (ju_starts_with(jua($frameA, 'file', ''), 'phar://')) {
 				break;
 			}
 			$this->_frames[]= F::i($frameA);
