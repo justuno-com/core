@@ -23,6 +23,7 @@ use Justuno\Core\Zf\Validate\StringT\IntT;
  * @used-by ju_eta()
  * @used-by ju_layout_update()
  * @used-by ju_module_dir()
+ * @used-by ju_module_file_name()
  * @used-by ju_oqi_amount()
  * @used-by juaf()
  * @used-by \Justuno\Core\Qa\Trace\Frame::methodParameter()

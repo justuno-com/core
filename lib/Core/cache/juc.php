@@ -73,7 +73,7 @@ function juc($o, Closure $f, array $a = [], bool $unique = true, int $offset = 0
  * @used-by ju_db_version()
  * @used-by ju_domain_current()
  * @used-by ju_magento_version()
- * @used-by ju_module_file()
+ * @used-by ju_module_file_read()
  * @used-by ju_module_name()
  * @used-by ju_msi()
  * @used-by ju_msi_website2stockId()

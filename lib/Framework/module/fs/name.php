@@ -1,4 +1,5 @@
 <?php
+use Closure as F;
 use Magento\Framework\Module\Dir;
 use Magento\Framework\Module\Dir\Reader;
 
@@ -57,50 +58,23 @@ function ju_module_dir($m, string $type = ''):string {
 }
 
 /**
- * 2019-12-31
- * 2020-06-26 "Port the `df_module_dir_reader` function": https://github.com/justuno-com/core/issues/148
- * @used-by ju_module_dir()
- */
-function ju_module_dir_reader():Reader {return ju_o(Reader::class);}
-
-/**
- * 2017-09-01
+ * 2023-01-28
  * $m could be:
  * 		1) a module name: «A_B»
  * 		2) a class name: «A\B\C».
  * 		3) an object: it comes down to the case 2 via @see get_class()
- * 		4) `null`: it comes down to the case 1 with the «Justuno_Core» module name.
- * 2020-06-27 "Port the `df_module_file` function": https://github.com/justuno-com/core/issues/163
- * @used-by ju_module_json()
+ * 		4) `null`: it comes down to the case 1 with the «Df_Core» module name.
+ * @used-by df_module_file_read()
  * @used-by \Justuno\Core\Sentry\Client::send_http()
- * @used-by \Justuno\M2\W\Result\Js::i()
  * @param string|object|null $m
- * @param Closure|null $parser [optional]
- * @return array(string => mixed)
+ * @param F|bool|mixed $onE [optional]
  */
-function ju_module_file($m, string $name, string $ext = '', bool $req = true, Closure $parser = null):array {return jucf(
-	function($m, string $name, string $ext = '', bool $req = true, Closure $parser = null):array {return
-		file_exists($f = ju_module_path_etc($m, ju_file_ext_add($name, $ext)))
-			? (!$parser ? $f : $parser($f))
-			: (!$req ? [] : ju_error('The required file «%1» is absent.', $f))
-		;}, func_get_args()
-);}
-
-/**
- * 2017-01-27
- * $m could be:
- * 		1) a module name: «A_B»
- * 		2) a class name: «A\B\C».
- * 		3) an object: it comes down to the case 2 via @see get_class()
- * 		4) `null`: it comes down to the case 1 with the «Justuno_Core» module name.
- * 2020-06-27 "Port the `df_module_json` function": https://github.com/justuno-com/core/issues/162
- * @used-by ju_sentry_m()
- * @param string|object|null $m
- * @return array(string => mixed)
- */
-function ju_module_json($m, string $name, bool $req = true):array {return ju_module_file($m, $name, 'json', $req,
-	function(string $f):array {return ju_json_decode(file_get_contents($f));}
-);}
+function ju_module_file_name($m, string $name, string $ext = '', $onE = true):string {
+	$r = ju_module_path_etc($m, ju_file_ext_add($name, $ext));
+	return ju_fts(ju_try(
+		function() use($r):string {ju_assert(file_exists($r), "The required file «{$r}» is absent."); return $r;}, $onE
+	));
+}
 
 /**
  * 2015-11-15
@@ -132,7 +106,7 @@ function ju_module_path($m, string $localPath = ''):string {return ju_cc_path(ju
  * 		3) an object: it comes down to the case 2 via @see get_class()
  * 		4) `null`: it comes down to the case 1 with the «Justuno_Core» module name.
  * 2020-06-27 "Port the `df_module_path_etc` function": https://github.com/justuno-com/core/issues/164
- * @used-by ju_module_file()
+ * @used-by ju_module_file_name()
  * @param string|object|null $m
  * @throws InvalidArgumentException
  */

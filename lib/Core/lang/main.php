@@ -34,6 +34,7 @@ function ju_nop($v) {return $v;}
  * @used-by ju_customer()
  * @used-by ju_date_from_db()
  * @used-by ju_layout_update()
+ * @used-by ju_module_file_name()
  * @used-by ju_product_current()
  * @used-by ju_trim()
  * @used-by ju_zuri()
