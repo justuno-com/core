@@ -9,7 +9,6 @@ function ju_append(string $s, string $tail):string {return ju_ends_with($s, $tai
 /**
  * 2020-06-18 "Port the `df_pad` function": https://github.com/justuno-com/core/issues/64
  * @used-by ju_kv()
- * @used-by \Justuno\Core\Qa\Trace\Formatter::param()
  */
 function ju_pad(string $phrase, int $length, string $pattern = ' ', int $position = STR_PAD_RIGHT):string {/** @var string $r */
 	$encoding = 'UTF-8'; /** @var string $encoding */

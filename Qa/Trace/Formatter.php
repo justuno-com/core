@@ -34,10 +34,9 @@ final class Formatter {
 	 */
 	private static function frame(F $f):string {/** @var string $r */
 		try {
-			$resultA = array_filter(array_map([__CLASS__, 'param'], [
-				['Location', ju_cc(':', ju_path_relative($f->filePath()), $f->line())], ['Callee', $f->method()]
-			])); /** @var string[] $resultA */ /** @uses self::param() */
-			$r = ju_cc_n($resultA);
+			$r = ju_kv([
+				'Location' => ju_cc(':', ju_path_relative($f->filePath()), $f->line()), 'Callee' => $f->method()
+			], 13);
 		}
 		catch (\Exception $e) {
 			$r = ju_xts($e);
@@ -59,23 +58,4 @@ final class Formatter {
 		}
 		return $r;		
 	}
-	
-	/**
-	 * Этот метод может быть приватным, несмотря на использование его как callable,
-	 * потому что он используется как callable только внутри своего класса:
-	 * @used-by self::p()
-	 * https://php.net/manual/language.types.callable.php#113447
-	 * Проверял, что это действительно допустимо, на различных версиях интерпретатора PHP: http://3v4l.org/OipEQ
-	 */
-	private static function param(array $p):string {/** @var string $r */ /** @var string|null $v */
-		if (!($v = $p[1])) {
-			$r = '';
-		}
-		else {
-			$label = $p[0]; /** @var string $label */
-			$pad = ju_pad(' ', 12 - mb_strlen($label)); /** @var string $pad */
-			$r = "{$label}:{$pad}{$v}";
-		}
-		return $r;
-	}	
 }
