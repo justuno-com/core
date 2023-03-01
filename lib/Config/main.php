@@ -61,7 +61,7 @@ function ju_cfg($k, $scope = null, $d = null) {
  * @used-by ju_cfg()
  * @param array|string|null|mixed $v
  */
-function ju_cfg_empty($v):bool {return !ju_nes($v);}
+function ju_cfg_empty($v):bool {return ju_nes($v);}
 
 /**
  * 2016-02-09
