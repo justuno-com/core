@@ -3,7 +3,6 @@
  * @see ju_nes()
  * @used-by ju_report()
  * @used-by \Justuno\Core\Format\Html\Tag::openTagWithAttributesAsText()
- * @used-by \Justuno\Core\Zf\Filter\StringTrim::_unicodeTrim()
  * @param mixed $v
  */
 function ju_es($v):bool {return '' === $v;}
