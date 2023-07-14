@@ -1,6 +1,6 @@
 {
 	"name": "justuno.com/core"
-	,"version": "1.4.6"
+	,"version": "1.4.7"
 	,"description": "A core package for `justuno.com/m2` (instead of `mage2pro/core`)"
 	,"type": "magento2-module"
 	,"homepage": "https://github.com/justuno-com/core"
@@ -12,7 +12,8 @@
 		,"role": "Developer"
 	}]
 	,"require": {
-		"laminas/laminas-filter": "*"
+		"ext-curl": "*"
+		,"laminas/laminas-filter": "*"
 		,"laminas/laminas-zendframework-bridge": "*"
 		,"magento/zendframework1": "*"
 	}
