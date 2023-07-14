@@ -11,6 +11,7 @@
 		,"homepage": "https://upwork.com/fl/mage2pro"
 		,"role": "Developer"
 	}]
+	,"require": {"laminas/laminas-filter": "*", "laminas/laminas-zendframework-bridge": "*"}
 	,"autoload": {"files": ["registration.php"], "psr-4": {"Justuno\\Core\\": ""}}
 	,"keywords": ["Magento 2"]
 }
