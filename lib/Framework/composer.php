@@ -58,6 +58,7 @@ function ju_package_name_l($m = null) {return ju_last(explode('/', ju_package($m
  * 2020-06-26 "Port the `df_package_version` function": https://github.com/justuno-com/core/issues/144
  * @used-by ju_core_version()
  * @used-by ju_sentry()
+ * @used-by ju_sentry_m()
  * @param string|object|null $m [optional]
  * @return string|null
  */
