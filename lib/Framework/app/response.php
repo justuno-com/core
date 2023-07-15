@@ -22,6 +22,7 @@ use Magento\Framework\Controller\ResultInterface as IResult;
  * 2) "[Question] To ResultInterface or not ResultInterface": https://github.com/magento/magento2/issues/1355
  * https://github.com/magento/magento2/issues/1355
  * 2020-08-21 "Port the `ju_response` function" https://github.com/justuno-com/core/issues/235
+ * @used-by ju_response_code()
  * @used-by ju_response_content_type()
  * @param IResult|wResult|IResponse|HttpResponse|null $r [optional]
  * @return IResponse|IHttpResponse|HttpResponse|IResult|wResult

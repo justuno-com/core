@@ -14,6 +14,7 @@ function ju_bts(bool $v):string {return $v ? 'true' : 'false';}
  * @used-by ju_caller_entry()
  * @used-by ju_error_create()
  * @used-by ju_file_name()
+ * @used-by ju_request_ua()
  * @used-by ju_rp_has()
  * @used-by ju_trim()
  * @used-by jua()

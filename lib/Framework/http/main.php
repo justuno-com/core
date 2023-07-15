@@ -33,6 +33,7 @@ function ju_request($k = '', $d = null) {$o = ju_request_o(); return is_null($k)
  * @see \Laminas\Http\Headers::createKey()
  * https://github.com/zendframework/zendframework/blob/release-2.4.6/library/Zend/Http/Headers.php#L462-L471
  * 2020-08-24 "Port the `df_request_header` function" https://github.com/justuno-com/core/issues/303
+ * @used-by ju_request_ua()
  * @used-by \Justuno\M2\Store::v()
  * @return string|false
  */
