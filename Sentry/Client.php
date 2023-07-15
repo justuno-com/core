@@ -260,10 +260,9 @@ final class Client {
 	/**
 	 * 2020-06-27
 	 * @used-by self::send()
-	 * @param array(string => mixed) $data
 	 * @param array(string => mixed) $headers
 	 */
-	private function send_http(string $url, array $data, array $headers = []):void {
+	private function send_http(string $url, string $data, array $headers = []):void {
 		# 2022-10-16 https://www.php.net/manual/migration80.incompatible.php#migration80.incompatible.resource2object
 		$c = curl_init($url); /** @var resource|\CurlHandle $c */
 		try {
@@ -272,6 +271,21 @@ final class Client {
 				function($k, $v) {return ju_kv([$k => $v]);}, $headers + ['Expect' => ''])
 			);
 			curl_setopt($c, CURLOPT_POST, 1);
+			/**
+			 * 2023-07-14
+			 * 1) «TypeError: Justuno\Core\Sentry\Client::send_http():
+			 * Argument #2 ($data) must be of type array, string given,
+			 * called in vendor/justuno.com/core/Sentry/Client.php on line 256»:
+			 * https://github.com/justuno-com/core/issues/388
+			 * 2) `CURLOPT_POSTFIELDS`:
+			 *		«The full dmata to post in a HTTP "POST" operation.
+			 *		This paraeter can either be passed as a urlencoded string like 'para1=val1&para2=val2&...'
+			 *		or as an array with the field name as key and field data as value.
+			 *		If value is an array, the `Content-Type` header will be set to `multipart/form-data`.
+			 *		Files can be sent using CURLFile or CURLStringFile, in which case value must be an array.»
+			 * https://www.php.net/manual/function.curl-setopt.php
+			 * 3) In my case the value is always a string: @see self::encode()
+			 */
 			curl_setopt($c, CURLOPT_POSTFIELDS, $data);
 			curl_setopt($c, CURLOPT_RETURNTRANSFER, true);
 			curl_setopt_array($c, $this->get_curl_options());
