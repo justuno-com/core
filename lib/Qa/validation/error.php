@@ -36,6 +36,7 @@ use Magento\Framework\Phrase;
  * @used-by \Justuno\Core\Qa\Trace\Frame::methodParameter()
  * @used-by \Justuno\Core\Zf\Validate\IntT::filter()
  * @used-by \Justuno\M2\Catalog\Diagnostic::p()
+ * @used-by \Justuno\M2\Controller\Cart\Add::product()
  * @used-by \Justuno\M2\Store::v()
  * @param ...$a
  * @throws DFE
