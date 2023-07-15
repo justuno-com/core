@@ -75,8 +75,9 @@ function ju_sentry_extra($m, ...$v):void {ju_sentry_m($m)->extra(!$v ? $v : (is_
  * @param string|object|null $m
  * @return Sentry
  */
-function ju_sentry_m($m):Sentry {return jucf(function($m):Sentry {
+function ju_sentry_m($m):Sentry {return jucf(function(string $m):Sentry {
 	$r = null; /** @var Sentry $r */
+	$isCore = 'Justuno_Core' === $m; /** @var bool $isCore */
 	/** @var array(string => $r) $a */ /** @var array(string => string)|null $sa */
 	if (($a = ju_module_json($m, 'df', false)) && ($sa = jua($a, 'sentry'))) {
 		$r = new Sentry(intval($sa['id']), $sa['key1'], $sa['key2']);
@@ -95,11 +96,10 @@ function ju_sentry_m($m):Sentry {return jucf(function($m):Sentry {
 			,'Magento' => ju_magento_version()
 			,'MySQL' => ju_db_version()
 			,'PHP' => phpversion()
-		]);
+		# 2023-07-15 "Improve diagnostic messages": https://github.com/JustunoCom/m2/issues/49
+		] + ($isCore ? [] : ['Justuno' => ju_package_version('Justuno_M2'),  'Justuno API' => ju_api_version()]));
 	}
-	return $r ?: ($m !== 'Justuno_Core' ? ju_sentry_m('Justuno_Core') :
-		ju_error('Sentry settings for Justuno_Core are absent.')
-	);
+	return $r ?: (!$isCore ? ju_sentry_m('Justuno_Core') : ju_error('Sentry settings for `Justuno_Core` are absent.'));
 }, [ju_sentry_module($m)]);}
 
 /**
