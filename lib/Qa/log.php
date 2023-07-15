@@ -28,6 +28,7 @@ function ju_log_e(E $e, $m = null, $d = [], $suf = null):void {ju_log_l($m, $e, 
  * @used-by ju_log()
  * @used-by ju_log_e()
  * @used-by \Justuno\Core\Qa\Trace\Formatter::frame()
+ * @used-by \Justuno\Core\Sentry\Client::send_http()
  * @param string|object|null $m
  * @param string|mixed[]|E $p2
  * @param string|mixed[]|E $p3 [optional]
