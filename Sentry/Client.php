@@ -369,7 +369,7 @@ final class Client {
 	 * 2016-12-23
 	 * @used-by self::get_curl_options()
 	 */
-	private function getUserAgent():string {return 'mage2.pro/' . ju_core_version();}
+	private function getUserAgent():string {return 'justuno/' . ju_core_version();}
 
 	/**
 	 * 2016-12-23
