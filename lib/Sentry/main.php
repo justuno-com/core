@@ -91,13 +91,11 @@ function ju_sentry_m($m):Sentry {return jucf(function(string $m):Sentry {
 				: ['id' => ju_customer_session_id()]
 			))
 			)) + ['ip_address' => ju_visitor_ip()], false);
-		$r->tags([
-			'Core' => ju_core_version()
-			,'Magento' => ju_magento_version()
-			,'MySQL' => ju_db_version()
-			,'PHP' => phpversion()
-		# 2023-07-15 "Improve diagnostic messages": https://github.com/JustunoCom/m2/issues/49
-		] + ($isCore ? [] : ['Justuno' => ju_package_version('Justuno_M2'),  'Justuno API' => ju_api_version()]));
+		$r->tags(
+			['Core' => ju_core_version(), 'Magento' => ju_magento_version(), 'MySQL' => ju_db_version(), 'PHP' => phpversion()]
+			# 2023-07-15 "Improve diagnostic messages": https://github.com/JustunoCom/m2/issues/49
+			+ ($isCore ? [] : ['Justuno' => ju_package_version('Justuno_M2'),  'Justuno API' => ju_api_version()])
+		);
 	}
 	return $r ?: (!$isCore ? ju_sentry_m('Justuno_Core') : ju_error('Sentry settings for `Justuno_Core` are absent.'));
 }, [ju_sentry_module($m)]);}
