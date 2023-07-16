@@ -1,6 +1,5 @@
 <?php
-use Magento\Framework\App\ProductMetadata;
-use Magento\Framework\App\ProductMetadataInterface;
+use Composer\InstalledVersions as IV;
 use Magento\Framework\App\State;
 /**
  * 2023-07-15
@@ -40,21 +39,32 @@ function ju_is_localhost():bool {return in_array(jua($_SERVER, 'REMOTE_ADDR', []
  * 2) Now Magento 2.3 (installed with Git) returns the «dev-2.3-develop» string from the
  * @see \Magento\Framework\App\ProductMetadata::getVersion() method.
  * 2020-06-26 "Port the `df_magento_version` function": https://github.com/justuno-com/core/issues/153
+ * 2023-07-16
+ * 1) @see \Magento\Framework\App\ProductMetadata::getVersion() has stopped working correctly for Magento installed via Git:
+ * https://github.com/mage2pro/core/issues/229
+ * 2) «Script error for "Magento_Ui/js/lib/ko/template/renderer"»: https://github.com/mage2pro/core/issues/228
  * @used-by ju_log_l()
  * @used-by ju_sentry()
  * @used-by ju_sentry_m()
  */
 function ju_magento_version():string {return jucf(function() {return ju_trim_text_left(
-	ju_magento_version_m()->getVersion()
-, 'dev-');});}
-
-/**
- * 2016-06-25
- * 2020-06-26 "Port the `df_magento_version_m` function": https://github.com/justuno-com/core/issues/154
- * @used-by ju_magento_version()
- * @return ProductMetadata|ProductMetadataInterface
- */
-function ju_magento_version_m() {return ju_o(ProductMetadataInterface::class);}
+	/**
+	 * 2023-07-16
+	 * 1) https://getcomposer.org/doc/07-runtime.md#installed-versions
+	 * 2) @uses \Composer\InstalledVersions::getRootPackage() returns:
+	 *	{
+	 *		"aliases": [],
+	 *		"dev": true,
+	 *		"install_path": "C:\\work\\clients\\m\\latest\\code\\vendor\\composer/../../",
+	 *		"name": "magento/magento2ce",
+	 *		"pretty_version": "dev-2.4-develop",
+	 *		"reference": "1bdf9dfaf502ab38f5174f33b05c0690f67bf572",
+	 *		"type": "project",
+	 *		"version": "dev-2.4-develop"
+	 *	}
+	 */
+	jua(IV::getRootPackage(), 'pretty_version'), 'dev-'
+);});}
 
 /**
  * 2017-04-17

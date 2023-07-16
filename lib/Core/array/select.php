@@ -8,6 +8,7 @@
  * @used-by ju_cli_argv()
  * @used-by ju_extend()
  * @used-by ju_is_localhost()
+ * @used-by ju_magento_version()
  * @used-by ju_my_local()
  * @used-by ju_package()
  * @used-by ju_prop()
