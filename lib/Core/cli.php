@@ -43,6 +43,7 @@ function ju_cli_user():string {return jucf(function() {return exec('whoami');});
  * 1) `bin/magento` can be called with a path prefix, so I use @uses ju_ends_with()
  * 2) df_cli_script() returns «bin/magento» even in the `php bin/magento ...` case.
  * 2020-06-17 "Port the `df_is_bin_magento` function": https://github.com/justuno-com/core/issues/46
+ * @used-by ju_context()
  * @used-by ju_is_cron()
  */
 function ju_is_bin_magento():bool {return ju_ends_with(ju_cli_script(), 'bin/magento');}

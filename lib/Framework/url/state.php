@@ -3,7 +3,7 @@ use Magento\Store\Api\Data\StoreInterface as IStore;
 /**
  * http://mage2.ru/t/37
  * 2020-08-21 "Port the `df_current_url` function" https://github.com/justuno-com/core/issues/212
- * @used-by ju_log_l()
+ * @used-by ju_context()
  * @used-by \Justuno\Core\Sentry\Client::get_http_data()
  */
 function ju_current_url():string {return ju_url_o()->getCurrentUrl();}

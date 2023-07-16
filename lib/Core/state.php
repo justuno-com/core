@@ -43,7 +43,7 @@ function ju_is_localhost():bool {return in_array(jua($_SERVER, 'REMOTE_ADDR', []
  * 1) @see \Magento\Framework\App\ProductMetadata::getVersion() has stopped working correctly for Magento installed via Git:
  * https://github.com/mage2pro/core/issues/229
  * 2) «Script error for "Magento_Ui/js/lib/ko/template/renderer"»: https://github.com/mage2pro/core/issues/228
- * @used-by ju_log_l()
+ * @used-by ju_context()
  * @used-by ju_sentry()
  * @used-by ju_sentry_m()
  */

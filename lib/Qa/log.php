@@ -39,16 +39,7 @@ function ju_log_l($m, $p2, $p3 = [], $suf = null):void {
 	list($e, $d, $suf) = $p2 instanceof E ? [$p2, $p3, $suf] : [null, $p2, $p3];
 	$suf = $suf ?: ju_caller_f();
 	if (is_array($d)) {
-		$d = ju_extend($d, ['Mage2.PRO' =>
-			['mage2pro/core' => ju_core_version(), 'Magento' => ju_magento_version(), 'PHP' => phpversion()]
-			+ (ju_is_cli()
-				? ['Command' => ju_cli_cmd()]
-				: (
-					['Referer' => ju_referer(), 'URL' => ju_current_url()]
-					+ (!ju_request_o()->isPost() ? [] : ['Post' => $_POST])
-				)
-			)
-		]);
+		$d = ju_extend($d, ['Mage2.PRO' => ju_context()]);
 	}
 	$d = !$d ? null : (is_string($d) ? $d : ju_json_encode($d));
 	ju_report(

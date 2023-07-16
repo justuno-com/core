@@ -48,8 +48,8 @@ function ju_request_method():string {return jua($_SERVER, 'REQUEST_METHOD');}
 /**
  * 2020-06-13 "Port the `df_request_o` function": https://github.com/justuno-com/core/issues/2
  * @used-by ju_action_name()
+ * @used-by ju_context()
  * @used-by ju_is_ajax()
- * @used-by ju_log_l()
  * @used-by ju_request()
  * @used-by ju_request_header()
  * @used-by ju_rp_has()
