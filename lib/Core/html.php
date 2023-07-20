@@ -1,5 +1,5 @@
 <?php
-use Justuno\Core\Format\Html\Tag;
+use Justuno\Core\Html\Tag;
 /**
  * 2015-10-27
  * 2020-08-22 "Port the `ju_link_inline` function" https://github.com/justuno-com/core/issues/247

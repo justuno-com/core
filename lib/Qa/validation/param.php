@@ -7,7 +7,7 @@ use Justuno\Core\Exception as DFE;
  * @used-by ju_date_from_db()
  * @used-by jua_deep()
  * @used-by jua_deep_unset()
- * @used-by \Justuno\Core\Format\Html\Tag::openTagWithAttributesAsText()
+ * @used-by \Justuno\Core\Html\Tag::openTagWithAttributesAsText()
  * @throws DFE
  */
 function ju_param_sne(string $v, int $ord, int $sl = 0):string {$sl++;

@@ -13,7 +13,7 @@ function ju_cc(string $glue, ...$a):string {return implode($glue, jua_flatten($a
  * @used-by ju_kv()
  * @used-by ju_log_l()
  * @used-by ju_tab_multiline()
- * @used-by \Justuno\Core\Format\Html\Tag::content()
+ * @used-by \Justuno\Core\Html\Tag::content()
  * @used-by \Justuno\Core\Qa\Dumper::dumpArrayElements()
  * @used-by \Justuno\Core\Qa\Method::raiseErrorParam()
  * @used-by \Justuno\Core\Qa\Method::raiseErrorResult()
@@ -38,7 +38,7 @@ function ju_cc_path(...$a):string {return ju_ccc('/', jua_flatten($a));}
  * 2016-08-10
  * 2020-08-21 "Port the `df_cc_s` function" https://github.com/justuno-com/core/issues/210
  * @used-by ju_cli_cmd()
- * @used-by \Justuno\Core\Format\Html\Tag::openTagWithAttributesAsText()
+ * @used-by \Justuno\Core\Html\Tag::openTagWithAttributesAsText()
  * @param string|string[] ...$a
  */
 function ju_cc_s(...$a):string {return ju_ccc(' ', jua_flatten($a));}

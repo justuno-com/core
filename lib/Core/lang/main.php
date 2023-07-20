@@ -22,7 +22,7 @@ function ju_if1(bool $cond, $onTrue, $onFalse = null) {return $cond ? ju_call_if
 
 /**
  * 2020-08-22 "Port the `df_nop` function" https://github.com/justuno-com/core/issues/255
- * @used-by \Justuno\Core\Format\Html\Tag::openTagWithAttributesAsText()
+ * @used-by \Justuno\Core\Html\Tag::openTagWithAttributesAsText()
  * @param mixed $v
  * @return mixed
  */

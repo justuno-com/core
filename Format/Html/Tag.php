@@ -1,5 +1,5 @@
 <?php
-namespace Justuno\Core\Format\Html;
+namespace Justuno\Core\Html;
 # 2020-08-22 "Port the `Df\Core\Format\Html\Tag` class" https://github.com/justuno-com/core/issues/254
 final class Tag {
 	/**
