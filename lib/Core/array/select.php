@@ -52,9 +52,11 @@ function jua(array $a, $k, $d = null) {return
 ;}
 
 /**
- * 2020-06-13 "Port the `jua_select_ordered` function": https://github.com/justuno-com/core/issues/13
+ * 2015-02-08
+ * 2020-01-29
  * 1) It returns a subset of $a with $k keys in the same order as in $k.
  * 2) Normally, you should use @see jua() instead because it is shorter and calls jua_select_ordered() internally.
+ * 2020-06-13 "Port the `jua_select_ordered` function": https://github.com/justuno-com/core/issues/13
  * @used-by jua()
  * @param array(string => string)|T $a
  * @param string[] $k
@@ -86,5 +88,15 @@ function jua_select_ordered($a, array $k):array  {
 	 * @var array(string => string) $resultWithGarbage
 	 */
 	$resultWithGarbage = jua_merge_numeric($resultKeys, ju_ita($a));
-	return array_intersect_key($resultWithGarbage, $resultKeys);
+	/**
+	 * 2023-07-20
+	 * 1) Today I found a bug (at least, in PHP 8.2) in this old function.
+	 * 		$a: {"EUR": "Euro", "USD": "US Dollar"}
+	 * 		$k: ["CAD", "PHP", "USD"]
+	 * 		Result (wrong because it is not a subset of $a): {"CAD": null, "PHP": null, "USD": "US Dollar"}
+	 * 2) It led to the error: «df_option(): Argument #2 ($l) must be of type string, null given»:
+	 * https://github.com/mage2pro/core/issues/238
+	 * 3) So I have added @uses ju_clean_null()
+	 */
+	return ju_clean_null(array_intersect_key($resultWithGarbage, $resultKeys));
 }
