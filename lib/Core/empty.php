@@ -2,7 +2,6 @@
 /**
  * @see ju_nes()
  * @used-by ju_report()
- * @used-by \Justuno\Core\Html\Tag::openTagWithAttributesAsText()
  * @param mixed $v
  */
 function ju_es($v):bool {return '' === $v;}

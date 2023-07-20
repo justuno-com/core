@@ -26,6 +26,7 @@ use Justuno\Core\Zf\Validate\StringT\IntT;
  * @used-by ju_module_file_name()
  * @used-by ju_oqi_amount()
  * @used-by juaf()
+ * @used-by \Justuno\Core\Html\Tag::openTagWithAttributesAsText()
  * @used-by \Justuno\Core\Qa\Trace\Frame::methodParameter()
  * @used-by \Justuno\M2\Store::v()
  * @param mixed $cond

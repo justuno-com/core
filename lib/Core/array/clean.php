@@ -4,7 +4,6 @@
  * 2020-06-18 "Port the `df_clean` function": https://github.com/justuno-com/core/issues/58
  * @used-by ju_ccc()
  * @used-by ju_kv()
- * @used-by \Justuno\Core\Html\Tag::openTagWithAttributesAsText()
  * @used-by \Justuno\Core\Sentry\Client::capture()
  * @used-by \Justuno\Core\Sentry\Client::send()
  * @used-by \Justuno\M2\Block\Js::_toHtml()
@@ -22,6 +21,7 @@ function ju_clean(array $r, ...$k):array {/** @var mixed[] $r */return ju_clean_
  * 2) I does not remove `false`.
  * @used-by ju_clean()
  * @used-by ju_clean_r()
+ * @used-by \Justuno\Core\Html\Tag::__construct()
  */
 function ju_clean_r(array $r, array $k = [], bool $req = true):array {/** @var mixed[] $r */
 	/** 2020-02-05 @see array_unique() does not work correctly here, even with the @see SORT_REGULAR flag. */
