@@ -32,25 +32,23 @@ function ju_log_e(E $e, $m = null, $d = [], $suf = null):void {ju_log_l($m, $e, 
  * @param string|object|null $m
  * @param string|mixed[]|E $p2
  * @param string|mixed[]|E $p3 [optional]
- * @param string|bool|null $suf [optional]
  */
-function ju_log_l($m, $p2, $p3 = [], $suf = null):void {
-	/** @var E|null $e */ /** @var array|string|mixed $d */ /** @var string|null $suf */
-	list($e, $d, $suf) = $p2 instanceof E ? [$p2, $p3, $suf] : [null, $p2, $p3];
+function ju_log_l($m, $p2, $p3 = [], string $p4 = ''):void {
+	/** @var E|null $e */ /** @var array|string|mixed $d */ /** @var string $suf */ /** @var string $pref */
+	list($e, $d, $suf, $pref) = $p2 instanceof E ? [$p2, $p3, $p4, ''] : [null, $p2, $p3, $p4];
+	if (!$m && $e) {
+		/** @var array(string => string) $en */
+		$en = ju_caller_entry($e, function(array $e) {return ($c = jua($e, 'class')) && ju_module_enabled($c);});
+		list($m, $suf) = [jua($en, 'class'), jua($en, 'function', 'exception')];
+	}
 	$suf = $suf ?: ju_caller_f();
 	if (is_array($d)) {
 		$d = ju_extend($d, ['Mage2.PRO' => ju_context()]);
 	}
 	$d = !$d ? null : (is_string($d) ? $d : ju_json_encode($d));
 	ju_report(
-		ju_ccc('--', 'mage2.pro/' . ju_ccc('-', ju_report_prefix($m), '{date}--{time}'), $suf) .  '.log'
-		,ju_cc_n(
-			$d
-			,!$e ? null : ['EXCEPTION', QE::i([
-				QE::P__EXCEPTION => $e, QE::P__REPORT_NAME_PREFIX => ju_report_prefix($m), QE::P__SHOW_CODE_CONTEXT => false
-			])->report(), "\n\n"]
-			,ju_bt_s(1)
-		)
+		ju_ccc('--', 'mage2.pro/' . ju_ccc('-', ju_report_prefix($m, $pref), '{date}--{time}'), $suf) .  '.log'
+		,ju_cc_n($d, !$e ? null : ['EXCEPTION', QE::i($e)->report(), "\n\n"], ju_bt_s(1))
 	);
 }
 
@@ -73,10 +71,12 @@ function ju_report(string $f, string $m, bool $append = false):void {
 /**
  * 2020-01-31
  * 2020-08-21 "Port the `df_report_prefix` function" https://github.com/justuno-com/core/issues/214
+ * 2023-07-20
+ * «mb_strtolower(): Passing null to parameter #1 ($string) of type string is deprecated
+ * in vendor/mage2pro/core/Qa/lib/log.php on line 122»: https://github.com/mage2pro/core/issues/233
  * @used-by ju_log_l()
  * @param string|object|null $m [optional]
- * @return string|null
  */
-function ju_report_prefix($m = null, $pref = null) {return ju_ccc('--',
+function ju_report_prefix($m = null, string $pref = ''):string {return ju_ccc('--',
 	mb_strtolower($pref), !$m ? null : ju_cts_lc_camel($m, '-')
 );}

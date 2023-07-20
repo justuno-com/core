@@ -14,6 +14,7 @@ function ju_caller_c(int $o = 0):string {return ju_first(ju_explode_method(ju_ca
  * 2020-08-19 "Port the `df_caller_entry` function" https://github.com/justuno-com/core/issues/207
  * @used-by ju_caller_f()
  * @used-by ju_caller_m()
+ * @used-by ju_log_l()
  * @param E|int|null|array(array(string => string|int)) $p [optional]
  */
 function ju_caller_entry($p = 0, F $predicate = null):array {
