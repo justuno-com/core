@@ -7,7 +7,7 @@ if (!function_exists('is_iterable')) {
 	 * 2020-08-21 "Port the `df_check_traversable` function" https://github.com/justuno-com/core/issues/223
 	 * @used-by juaf()
 	 * @used-by ju_assert_traversable()
-	 * @param Traversable|array $v
+	 * @param mixed $v
 	 */
 	function is_iterable($v):bool {return is_array($v) || $v instanceof Traversable;}
 }
