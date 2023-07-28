@@ -15,6 +15,7 @@ function ju_caller_c(int $o = 0):string {return ju_first(ju_explode_method(ju_ca
  * @used-by ju_caller_f()
  * @used-by ju_caller_m()
  * @used-by ju_log_l()
+ * @used-by ju_x_entry()
  * @param E|int|null|array(array(string => string|int)) $p [optional]
  */
 function ju_caller_entry($p = 0, F $predicate = null):array {
