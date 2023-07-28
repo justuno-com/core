@@ -1,8 +1,6 @@
 <?php
 use Magento\Framework\App\Filesystem\DirectoryList as DL;
 use Magento\Framework\Filesystem;
-use Magento\Framework\Filesystem\Directory\Read as DirectoryRead;
-use Magento\Framework\Filesystem\Directory\ReadInterface as IDirectoryRead;
 use Magento\Framework\Filesystem\Directory\Write as DirectoryWrite;
 use Magento\Framework\Filesystem\Directory\WriteInterface as IDirectoryWrite;
 use Magento\Framework\Filesystem\File\Write as FileWrite;
@@ -87,18 +85,10 @@ function ju_file_write($p, string $contents, bool $append = false):void {
 /**
  * 2015-11-29
  * 2020-06-21 "Port the `df_fs` function": https://github.com/justuno-com/core/issues/101
- * @used-by ju_fs_r()
+ * @used-by ju_sys_reader()
  * @used-by ju_fs_w()
  */
 function ju_fs():Filesystem {return ju_o(Filesystem::class);}
-
-/**
- * 2015-11-30
- * 2020-08-21 "Port the `df_fs_r` function" https://github.com/justuno-com/core/issues/226
- * @used-by ju_path_relative()
- * @return DirectoryRead|IDirectoryRead
- */
-function ju_fs_r(string $p) {return ju_fs()->getDirectoryRead($p);}
 
 /**
  * 2015-11-29
