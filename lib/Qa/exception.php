@@ -2,6 +2,22 @@
 use Justuno\Core\Exception as DFE;
 use Exception as E;
 use Magento\Framework\Phrase as P;
+
+/**
+ * 2023-07-25
+ * @used-by ju_log_l()
+ * @used-by ju_x_module()
+ */
+function ju_x_entry(E $e):array {return ju_caller_entry($e, function(array $a):bool {return
+	($c = jua($a, 'class')) && ju_module_enabled($c)
+;});}
+
+/**
+ * 2023-07-25
+ * @used-by ju_log()
+ */
+function ju_x_module(E $e):string {return ju_module_name(jua(ju_x_entry($e), 'class'));}
+
 /**
  * 2016-07-18
  * 2020-08-21 "Port the `df_ef` function" https://github.com/justuno-com/core/issues/208
