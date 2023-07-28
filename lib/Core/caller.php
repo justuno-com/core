@@ -1,5 +1,4 @@
 <?php
-use Closure as F;
 use Exception as E;
 
 /**
@@ -12,13 +11,16 @@ function ju_caller_c(int $o = 0):string {return ju_first(ju_explode_method(ju_ca
 /**
  * 2017-03-28 If the function is called from a closure, then it will go up through the stask until it leaves all closures.
  * 2020-08-19 "Port the `df_caller_entry` function" https://github.com/justuno-com/core/issues/207
+ * 2023-07-26 "Add the `$skip` optional parameter to `df_caller_entry()`": https://github.com/mage2pro/core/issues/281
  * @used-by ju_caller_f()
  * @used-by ju_caller_m()
  * @used-by ju_log_l()
  * @used-by ju_x_entry()
  * @param E|int|null|array(array(string => string|int)) $p [optional]
+ * @param callable|null $f [optional]
+ * @return array(string => string|int)
  */
-function ju_caller_entry($p = 0, F $predicate = null):array {
+function ju_caller_entry($p = 0, $f = null, array $skip = []):array {
 	/**
 	 * 2018-04-24
 	 * I do not understand why did I use `2 + $offset` here before.
@@ -32,15 +34,29 @@ function ju_caller_entry($p = 0, F $predicate = null):array {
 	 * 3) the function who calls df_caller_f, df_caller_m, or \Df\Framework\Log\Dispatcher::handle: it should be the result.
 	 * So the offset is 2.
 	 * The previous code failed the @see \Df\API\Facade::p() method in the inkifi.com store.
+	 * 2023-07-26
+	 * 1) "`df_caller_entry()` detects the current entry incorrectly": https://github.com/mage2pro/core/issues/260
+	 * 2) We do not need `2 + $offset` anymore because the current implementation of @uses df_bt() already uses `1 + $p`.
+	 * So I changed `df_bt(df_bt_inc($p, 2))` to `df_bt(df_bt_inc($p))`
+	 * 2023-07-27
+	 * We really need `2 + $offset`.
+	 * 1) The first entry in df_bt() is the caller of df_bt(). It is `df_caller_entry` in our case.
+	 * 2) The second entry in df_bt() is the caller of `df_caller_entry`. It should be skipped too.
 	 */
 	$bt = ju_bt(ju_bt_inc($p, 2)); /** @var array(int => array(string => mixed)) $bt */
+	$skip = array_merge($skip, ['juc', 'jucf', 'unknown']);
 	while ($r = array_shift($bt)) {/** @var array(string => string|int)|null $r */
-		$f = $r['function']; /** @var string $f */
+		$f2 = $r['function']; /** @var string $f2 */
 		# 2017-03-28
 		# Надо использовать именно df_contains(),
 		# потому что PHP 7 возвращает просто строку «{closure}», а PHP 5.6 и HHVM — «A::{closure}»: https://3v4l.org/lHmqk
 		# 2020-09-24 I added "unknown" to evaluate expressions in IntelliJ IDEA's with xDebug.
-		if (!ju_contains($f, '{closure}') && !in_array($f, ['juc', 'jucf', 'unknown']) && (!$predicate || $predicate($r))) {
+		if (
+			!ju_contains($f2, '{closure}')
+			# 2023-07-26 "Add the `$skip` optional parameter to `df_caller_entry()`": https://github.com/mage2pro/core/issues/281
+			&& !in_array($f2, $skip)
+			&& (!$f || call_user_func($f, $r))
+		) {
 			break;
 		}
 	}
