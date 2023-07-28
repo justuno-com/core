@@ -38,3 +38,23 @@ function ju_path_abs(string $p):string {
 	/** 2023-07-26 Similar to @see df_prepend() */
 	return ju_starts_with($p, $bp) ? $p : ju_cc_path($bp, ju_trim_ds_left($p));
 }
+
+/**
+ * 2017-05-08
+ * 2020-08-13 "Port the `df_path_is_internal` function" https://github.com/justuno-com/core/issues/177
+ * @used-by \Justuno\Core\Sentry\Trace::info()
+ */
+function ju_path_is_internal(string $p):bool {return '' === $p || ju_starts_with(ju_path_n($p), ju_path_n(BP));}
+
+/**
+ * 2015-12-06
+ * It trims the ending «/».
+ * @uses \Magento\Framework\Filesystem\Directory\Read::getAbsolutePath() produces a result with a trailing «/».
+ * 2020-08-13 "Port the `df_path_relative` function" https://github.com/justuno-com/core/issues/174
+ * @used-by ju_file_write()
+ * @used-by \Justuno\Core\Qa\Trace\Formatter::frame()
+ * @used-by \Justuno\Core\Sentry\Trace::info()
+ */
+function ju_path_relative(string $p, string $b = DL::ROOT):string {return ju_trim_text_left(ju_trim_ds_left(
+	ju_path_n($p)), ju_trim_ds_left(ju_fs_r($b)->getAbsolutePath()
+));}
