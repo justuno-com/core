@@ -84,15 +84,17 @@ function ju_caller_f(int $o = 0):string {return ju_caller_entry(++$o)['function'
  * The df_caller_mm() implementation: https://github.com/mage2pro/core/blob/6.7.3/Core/lib/caller.php#L155-L169
  * 2020-07-08 The function's new implementation is from the previous df_caller_mm() function.
  * 2020-08-19 "Port the `df_caller_m` function" https://github.com/justuno-com/core/issues/205
+ * 2023-07-26
+ *  1) «Array to string conversion in vendor/mage2pro/core/Core/lib/caller.php on line 114»
+ *  https://github.com/mage2pro/core/issues/257
+ *  2) The pevious error handling never worked correctly:
+ *  https://github.com/mage2pro/core/tree/9.8.4/Core/lib/caller.php#L114
  * @used-by ju_caller_c()
  * @used-by ju_prop()
  */
-function ju_caller_m(int $o = 0):string {
-	$bt = ju_caller_entry(++$o); /** @var array(string => int) $bt */
-	$class = jua($bt, 'class'); /** @var string $class */
-	if (!$class) {
-		ju_log_l(null, $m = "ju_caller_m(): no class.\nbt is:\n$bt", __FUNCTION__); /** @var string $m */
-		ju_error($m);
-	}
-	return "$class::{$bt['function']}";
-}
+function ju_caller_m(int $o = 0):string {return ju_cc_method(ju_assert(ju_caller_entry(++$o,
+	# 2023-07-26
+	# "«The required key «class» is absent» is `df_log()` is called from `*.phtml`":
+	# https://github.com/mage2pro/core/issues/259
+	'ju_bt_entry_is_method' /** @uses ju_bt_entry_is_method() */
+)));}
