@@ -44,7 +44,7 @@ function ju_path_abs(string $p):string {
  * 2020-08-13 "Port the `df_path_is_internal` function" https://github.com/justuno-com/core/issues/177
  * @used-by \Justuno\Core\Sentry\Trace::info()
  */
-function ju_path_is_internal(string $p):bool {return '' === $p || ju_starts_with(ju_path_n($p), ju_path_n(BP));}
+function ju_path_is_internal(string $p):bool {return ju_es($p) || ju_starts_with(ju_path_n($p), ju_path_n(BP));}
 
 /**
  * 2015-12-06
