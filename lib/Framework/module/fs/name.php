@@ -51,7 +51,10 @@ function ju_module_dir($m, string $type = ''):string {
 	else {
 		$r = ju_framework_path();
 		# 2019-12-31 'Magento_Framework' is not a module, so it does not have subpaths specific for modules.
-		ju_assert(!$type);
+		# 2023-07-26
+		# "Implement a meaningful message for `df_assert` in `df_module_dir()`":
+		# https://github.com/mage2pro/core/issues/266
+		ju_assert(!$type, "`Magento_Framework` is not a module, so it does not have subpaths specific for modules.");
 	}
 	return $r;
 }
