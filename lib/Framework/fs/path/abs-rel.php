@@ -26,3 +26,15 @@ function ju_adjust_paths_in_message(string $m):string {
 	} while(true);
 	return $m;
 }
+
+/**
+ * 2023-07-25 "`df_path_absolute()` is wrongly implemented": https://github.com/mage2pro/core/issues/270
+ * @see ju_sys_path_abs()
+ * @used-by ju_contents()
+ */
+function ju_path_abs(string $p):string {
+	$bp = ju_path_n(BP);
+	$p = ju_path_n($p);
+	/** 2023-07-26 Similar to @see df_prepend() */
+	return ju_starts_with($p, $bp) ? $p : ju_cc_path($bp, ju_trim_ds_left($p));
+}
