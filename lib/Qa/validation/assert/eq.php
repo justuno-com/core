@@ -2,6 +2,19 @@
 use Exception as E;
 use Justuno\Core\Exception as DFE;
 /**
+ * @used-by ju_module_name_by_path()
+ * @used-by \Justuno\Core\Qa\Trace\Frame::url()
+ * @param string|int|float|bool $expected
+ * @param string|int|float|bool $v
+ * @param string|E|null $m [optional]
+ * @return string|int|float|bool
+ * @throws DFE
+ */
+function ju_assert_eq($expected, $v, $m = null) {return $expected === $v ? $v : ju_error($m ?: sprintf(
+	"Expected «%s», got «%s».", ju_dump($expected), ju_dump($v)
+));}
+
+/**
  * 2020-08-23 "Port the `df_assert_ge` function" https://github.com/justuno-com/core/issues/290
  * @used-by ju_nat()
  * @param int|float $lowBound
