@@ -35,33 +35,6 @@ function ju_module_name($c = null, string $d = '_'):string {return jucf(
 );}
 
 /**
- * 2023-07-26
- * "If `df_log()` is called from a `*.phtml`,
- * then the `*.phtml`'s module should be used as the log source instead of `Magento_Framework`":
- * https://github.com/mage2pro/core/issues/268
- * @used-by ju_caller_module()
- */
-function ju_module_name_by_path(string $f):string {/** @var string $r */
-	$f = ju_path_relative($f);
-	$f2 = ju_trim_text_left($f, ['app/code/', 'vendor/']);
-	$err = "Unable to detect the module for the file: `$f`"; /** @var string $err */
-	ju_assert_ne($f, $f2, $err);
-	$isVendor = ju_starts_with($f, 'vendor'); /** @var bool $isVendor */
-	$a = array_slice(ju_explode_xpath($f2), 0, 2); /** @var string[] $a */
-	ju_assert_eq(2, count($a), $err);
-	if (!$isVendor) {
-		$r = implode('_', $a);
-	}
-	else {
-		$p = ju_cc_path('vendor', $a, 'etc/module.xml');
-		# 2023-07-26 "`df_contents()` should accept internal paths": https://github.com/mage2pro/core/issues/273
-		$x = ju_xml_parse(ju_contents($p));
-		$r = (string)$x->{'module'}['name'];
-	}
-	return $r;
-}
-
-/**
  * 2017-01-04
  * $c could be:
  * 		1) a module name. E.g.: «A_B».
