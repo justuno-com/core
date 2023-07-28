@@ -27,7 +27,7 @@ function ju_log($v, $m = null, array $d = []):void {
  * @param string|mixed[]|E $p2
  * @param string|mixed[]|E $p3 [optional]
  */
-function df_log_l($m, $p2, $p3 = [], string $p4 = ''):void {
+function ju_log_l($m, $p2, $p3 = [], string $p4 = ''):void {
 	/** @var E|null $e */ /** @var array|string|mixed $d */ /** @var string $suf */ /** @var string $pref */
 	list($e, $d, $suf, $pref) = $p2 instanceof E ? [$p2, $p3, $p4, ''] : [null, $p2, ju_ets($p3), $p4];
 	if (!$m) {
