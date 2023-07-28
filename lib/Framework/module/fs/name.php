@@ -66,7 +66,10 @@ function ju_module_dir($m, string $type = ''):string {
  * 		2) a class name: «A\B\C».
  * 		3) an object: it comes down to the case 2 via @see get_class()
  * 		4) `null`: it comes down to the case 1 with the «Df_Core» module name.
- * @used-by df_module_file_read()
+ * 2023-07-26
+ * `df_sentry_m()` fails: «`Magento_Framework` is not a module, so it does not have subpaths specific for modules»:
+ * https://github.com/mage2pro/core/issues/267
+ * @used-by ju_module_file_read()
  * @param string|object|null $m
  * @param F|bool|mixed $onE [optional]
  */
