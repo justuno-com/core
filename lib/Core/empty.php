@@ -32,6 +32,14 @@ function ju_eta($v):array {
 function ju_etn($v) {return $v ?: null;}
 
 /**
+ * 2023-07-26 "Implement `df_ets()`": https://github.com/mage2pro/core/issues/280
+ * @used-by ju_log_l()
+ * @param mixed $v
+ * @return mixed|string
+ */
+function ju_ets($v) {return $v ?: '';}
+
+/**
  * 2020-08-26 "Port the `df_ftn` function" https://github.com/justuno-com/core/issues/328
  * @used-by ju_fetch_one()
  * @param mixed|false $v
