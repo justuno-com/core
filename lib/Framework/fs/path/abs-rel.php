@@ -55,6 +55,6 @@ function ju_path_is_internal(string $p):bool {return ju_es($p) || ju_starts_with
  * @used-by \Justuno\Core\Qa\Trace\Formatter::frame()
  * @used-by \Justuno\Core\Sentry\Trace::info()
  */
-function ju_path_relative(string $p, string $b = DL::ROOT):string {return ju_trim_text_left(ju_trim_ds_left(
-	ju_path_n($p)), ju_trim_ds_left(ju_fs_r($b)->getAbsolutePath()
-));}
+function ju_path_relative(string $p, string $b = DL::ROOT):string {return ju_trim_text_left(
+	ju_trim_ds_left(ju_path_n($p)), ju_trim_ds_left(ju_fs_r($b)->getAbsolutePath())
+);}
