@@ -19,7 +19,7 @@ function ju_ends_with(string $haystack, $n):bool {return is_array($n)
  * 2020-06-16 "Port the `df_starts_with` function": https://github.com/justuno-com/core/issues/30
  * 2022-10-14 @see str_starts_with() has been added to PHP 8: https://www.php.net/manual/function.str-starts-with.php
  * @used-by ju_action_prefix()
- * @used-by ju_check_url_absolute()
+ * @used-by ju_is_url_absolute()
  * @used-by ju_package()
  * @used-by ju_path_abs()
  * @used-by ju_path_is_internal()

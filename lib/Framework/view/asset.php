@@ -17,7 +17,7 @@ function ju_asset():Repository {return ju_o(Repository::class);}
  * @used-by ju_resource_inline()
 
  */
-function ju_asset_create(string $u):File {$a = ju_asset(); return !ju_check_url_absolute($u)
+function ju_asset_create(string $u):File {$a = ju_asset(); return !ju_is_url_absolute($u)
 	? $a->createAsset($u)
 	: $a->createRemoteAsset($u, jua(['css' => 'text/css', 'js' => 'application/javascript'], ju_file_ext($u)))
 ;}

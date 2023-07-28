@@ -21,7 +21,7 @@
  * @param array(string => mixed) $p [optional]
  */
 function ju_js($m, string $s = '', array $p = []) {$s = $s ?: 'main'; return ju_js_x(
-	'*', ju_check_url_absolute($s) ? null : $m, $s, $p
+	'*', ju_is_url_absolute($s) ? null : $m, $s, $p
 );}
 
 /**
