@@ -54,7 +54,6 @@ function ju_caller_entry($p = 0, F $predicate = null):array {
  * The df_caller_ff() implementation: https://github.com/mage2pro/core/blob/6.7.3/Core/lib/caller.php#L113-L123
  * 2020-07-08 The function's new implementation is from the previous df_caller_ff() function.
  * 2020-08-19 "Port the `df_caller_f` function" https://github.com/justuno-com/core/issues/206
- * @used-by ju_log_e()
  * @used-by ju_log_l()
  * @used-by ju_oqi_amount()
  * @used-by ju_prop()

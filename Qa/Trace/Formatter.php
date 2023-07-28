@@ -52,7 +52,7 @@ final class Formatter {
 			}
 			else {
 				$loop = true;
-				ju_log_e($e, __CLASS__);
+				ju_log($e);
 				$loop = false;
 			}
 		}
