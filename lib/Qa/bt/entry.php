@@ -3,10 +3,10 @@
  * 2023-07-26 "Implement `df_bt_entry_file()`": https://github.com/mage2pro/core/issues/279
  * @see \Justuno\Core\Qa\Trace\Frame::file()
  * @see \Justuno\Core\Sentry\Trace::info()
- * @used-by df_bt()
- * @used-by df_log_l()
- * @used-by df_bt_entry_is_phtml()
- * @used-by df_caller_module()
+ * @used-by ju_bt()
+ * @used-by ju_log_l()
+ * @used-by ju_bt_entry_is_phtml()
+ * @used-by ju_caller_module()
  * @used-by \Justuno\Core\Qa\Trace::__construct()
  * @used-by \Justuno\Core\Sentry\Trace::info()
  */
@@ -34,28 +34,28 @@ function ju_bt_entry_file(array $e):string {return
 /**
  * 2023-07-28
  * @see \Justuno\Core\Qa\Trace\Frame::function_()
- * @used-by df_log_l()
+ * @used-by ju_log_l()
  */
 function ju_bt_entry_func(array $e):string {return jua($e, 'function', '');}
 
 /**
  * 2023-07-27 `line` is absent in @see call_user_func() calls.
  * @see \Justuno\Core\Qa\Trace\Frame::line()
- * @used-by df_bt()
+ * @used-by ju_bt()
  */
 function ju_bt_entry_line(array $e):int {return jua($e, 'line', 0);}
 
 /**
  * 2023-07-26
- * @used-by df_caller_m()
- * @used-by df_caller_module()
+ * @used-by ju_caller_m()
+ * @used-by ju_caller_module()
  */
 function ju_bt_entry_is_method(array $e):bool {return jua_has_keys($e, ['class', 'function']);}
 
 /**
  * 2023-07-26
  * @see jua()
- * @used-by df_caller_module()
- * @used-by df_log_l()
+ * @used-by ju_caller_module()
+ * @used-by ju_log_l()
  */
 function ju_bt_entry_is_phtml(array $e):bool {return ju_ends_with(ju_bt_entry_file($e), '.phtml');}

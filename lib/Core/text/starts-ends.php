@@ -3,6 +3,7 @@
  * 2020-06-17 "Port the `df_ends_with` function": https://github.com/justuno-com/core/issues/47
  * 2022-10-14 @see str_ends_with() has been added to PHP 8: https://www.php.net/manual/function.str-ends-with.php
  * @used-by ju_append()
+ * @used-by ju_bt_entry_is_phtml()
  * @used-by ju_is_bin_magento()
  * @used-by \Justuno\Core\Qa\Trace\Frame::isClosure()
  * @used-by \Justuno\Core\Sentry\Trace::get_frame_context()
