@@ -98,3 +98,29 @@ function ju_caller_m(int $o = 0):string {return ju_cc_method(ju_assert(ju_caller
 	# https://github.com/mage2pro/core/issues/259
 	'ju_bt_entry_is_method' /** @uses ju_bt_entry_is_method() */
 )));}
+
+/**
+ * 2023-07-25
+ * 2023-07-26
+ * The previous implementation:
+ * 		return df_module_name(df_caller_c(++$o))
+ * https://github.com/mage2pro/core/blob/9.9.5/Core/lib/caller.php#L147
+ * @used-by df_log()
+ * @used-by df_log_l()
+ * @used-by df_sentry()
+ * @used-by df_sentry_m()
+ */
+function ju_caller_module(int $o = 0):string {
+	$e = ju_assert(ju_caller_entry(++$o, function(array $e):bool {return
+		# 2023-07-26
+		# "«The required key «class» is absent» is `df_log()` is called from `*.phtml`":
+		# https://github.com/mage2pro/core/issues/259
+		ju_bt_entry_is_method($e)
+		# 2023-07-26
+		# "If `df_log()` is called from a `*.phtml`,
+		# then the `*.phtml`'s module should be used as the log source instead of `Magento_Framework`":
+		# https://github.com/mage2pro/core/issues/268
+		|| ju_bt_entry_is_phtml($e)
+	;}));
+	return ju_bt_entry_is_method($e) ? ju_module_name(ju_cc_method($e)) : ju_module_name_by_path(ju_bt_entry_file($e));
+}
