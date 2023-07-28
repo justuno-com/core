@@ -1,13 +1,16 @@
 <?php
 use Justuno\Core\Qa\Dumper;
 /**
+ * We do not use @uses \Justuno\Core\Qa\Dumper as a singleton
+ * because @param \Magento\Framework\DataObject|mixed[]|mixed $v
+ * @see \Justuno\Core\Qa\Dumper::$_dumped property to avoid a recursion.
  * 2020-06-18 "Port the `df_dump` function": https://github.com/justuno-com/core/issues/81
  * @used-by ju_extend()
  * @used-by ju_sentry()
  * @used-by ju_type()
  * @used-by juc()
- * @param \Magento\Framework\DataObject|mixed[]|mixed $v
- */
+ * @see \Df\Qa\Dumper::dumpObject()
+ *  uses the/
 function ju_dump($v):string {return Dumper::i()->dump($v);}
 
 /**
