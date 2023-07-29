@@ -1,7 +1,8 @@
 <?php
-use Justuno\Core\Sentry\Client as Sentry;
 use Exception as E;
 use Justuno\Core\Exception as DFE;
+use Justuno\Core\Qa\Trace\Frame;
+use Justuno\Core\Sentry\Client as Sentry;
 use Magento\Framework\DataObject as _DO;
 use Magento\User\Model\User;
 /**
@@ -62,7 +63,14 @@ function ju_sentry($m, $v, array $extra = []):void {
 			ju_sentry_m($m)->captureException($v, $context);
 		}
 		else {
-			$v = ju_dump($v);
+			if ($v) {
+				$v = ju_dump($v);
+			}
+			else {
+				# 2023-07-30 If not pass a title, the Sentry will use the «<unlabeled event>» title.
+				$f = Frame::i(ju_caller_entry(1, null, ['ju_log'])); /** @var Frame $f */
+				$v = $f->isPHTML() ? ju_ccc(':', $f->file(), $f->line()) : "{$f->method()}()";
+			}
 			# 2017-04-16
 			# Добавляем заголовок события к «fingerprint», потому что иначе сообщения с разными заголовками
 			# (например: «Robokassa: action» и «[Robokassa] request») будут сливаться вместе.

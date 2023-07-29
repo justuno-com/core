@@ -54,7 +54,7 @@ function ju_bt_entry_is_method(array $e):bool {return jua_has_keys($e, ['class',
 
 /**
  * 2023-07-26
- * @see jua()
+ * @see \Justuno\Core\Qa\Trace\Frame::isPHTML()
  * @used-by ju_caller_module()
  * @used-by ju_log_l()
  */

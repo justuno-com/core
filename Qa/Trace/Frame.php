@@ -22,14 +22,24 @@ final class Frame extends \Justuno\Core\O {
 	 * called in vendor/mage2pro/core/Qa/Trace/Formatter.php on line 37»: https://github.com/mage2pro/core/issues/187
 	 * @see ju_bt_entry_file()
 	 * @see \Justuno\Core\Sentry\Trace::info()
+	 * @used-by ju_sentry()
+	 * @used-by self::isPHTML()
 	 * @used-by self::url()
 	 * @used-by \Justuno\Core\Qa\Trace\Formatter::p()
 	 */
 	function file():string {return juc($this, function() {return !($r = (string)$this['file'])? $r : ju_path_relative($r);});}
 
 	/**
+	 * 2023-07-30
+	 * @see ju_bt_entry_is_phtml()
+	 * @used-by ju_sentry()
+	 */
+	function isPHTML():bool {return juc($this, function() {return ju_ends_with($this->file(), '.phtml');});}
+
+	/**
 	 * 2015-04-03 Строка отсутствует при вызовах типа @see call_user_func()
 	 * @see ju_bt_entry_line()
+	 * @used-by ju_sentry()
 	 * @used-by self::url()
 	 * @used-by \Justuno\Core\Qa\Trace\Formatter::p()
 	 */
@@ -37,6 +47,7 @@ final class Frame extends \Justuno\Core\O {
 
 	/**
 	 * 2015-04-03 Для простых функций (не методов) вернёт название функции.
+	 * @used-by ju_sentry()
 	 * @used-by self::methodParameter()
 	 * @used-by \Justuno\Core\Qa\Method::raiseErrorParam()
 	 * @used-by \Justuno\Core\Qa\Method::raiseErrorResult()
@@ -147,6 +158,7 @@ final class Frame extends \Justuno\Core\O {
 	private function isClosure():bool {return ju_ends_with($this->function_(), '{closure}');}
 
 	/**
+	 * @used-by ju_sentry()
 	 * @used-by \Justuno\Core\Qa\Method::caller()
 	 * @used-by \Justuno\Core\Qa\Trace::__construct()
 	 * @param array(string => string|int) $a
