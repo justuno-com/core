@@ -22,21 +22,60 @@ use Magento\Framework\App\ProductMetadataInterface as IMetadata;
  * @used-by ju_sentry_m()
  * @used-by \Justuno\Core\Qa\Trace\Frame::url()
  */
-function ju_magento_version():string {return jucf(function() {return ju_trim_text_left(
-	/**
-	 * 2023-07-16
-	 * 1) https://getcomposer.org/doc/07-runtime.md#installed-versions
-	 * 2) @uses \Composer\InstalledVersions::getRootPackage() returns:
-	 *	{
-	 *		"aliases": [],
-	 *		"dev": true,
-	 *		"install_path": "C:\\work\\clients\\m\\latest\\code\\vendor\\composer/../../",
-	 *		"name": "magento/magento2ce",
-	 *		"pretty_version": "dev-2.4-develop",
-	 *		"reference": "1bdf9dfaf502ab38f5174f33b05c0690f67bf572",
-	 *		"type": "project",
-	 *		"version": "dev-2.4-develop"
-	 *	}
-	 */
-	jua(IV::getRootPackage(), 'pretty_version'), 'dev-'
-);});}
+function ju_magento_version():string {return jucf(function() {
+	/** @var string $r */
+	if (
+		/**
+		 * 2023-07-21
+		 * "\Magento\Framework\App\ProductMetadata::getVersion() returns «1.0.0+no-version-set»
+		 * in Magento2.4.7-beta1 installed via Git": https://github.com/mage2pro/core/issues/229
+		 */
+		ROOT::DEFAULT_PRETTY_VERSION === ($r = ju_magento_version_m()->getVersion())
+		/**
+		 * 2023-07-23
+		 * 1) @uses \Composer\InstalledVersions::getRootPackage():
+		 * 		$installed = self::getInstalled();
+		 * 		return $installed[0]['root'];
+		 * 2) @see \Composer\InstalledVersions::getInstalled()
+		 * returns `[null]` in tradefurniturecompany.co.uk (Windows, PHP 7.4).
+		 * 3) It is because of the code:
+		 * 		self::$canGetVendors = method_exists('Composer\Autoload\ClassLoader', 'getRegisteredLoaders');
+		 * 4) The @see \Composer\Autoload\ClassLoader presents in Magento 2.3.7 in 2 different versions:
+		 * 4.1) vendor/composer/composer/src/Composer/Autoload/ClassLoader.php
+		 * 4.2) vendor/composer/ClassLoader.php
+		 * 5) The `vendor/composer/ClassLoader.php` class is outdated
+		 * and does not have the @see \Composer\Autoload\ClassLoader::getRegisteredLoaders() method.
+		 * 6) That is why @see \Composer\InstalledVersions::getInstalled() returns `[null].
+		 * 7) It leads to the failure:
+		 * «Trying to access array offset on value of type null
+		 * in vendor/composer/composer/src/Composer/InstalledVersions.php on line 198»:
+		 * https://github.com/mage2pro/core/issues/243
+		 */
+		&& method_exists(CL::class, 'getRegisteredLoaders')
+	) {
+		/**
+		 * 2023-07-16
+		 * 1) https://getcomposer.org/doc/07-runtime.md#installed-versions
+		 * 2) @uses \Composer\InstalledVersions::getRootPackage() returns:
+		 *	{
+		 *		"aliases": [],
+		 *		"dev": true,
+		 *		"install_path": "C:\\work\\clients\\m\\latest\\code\\vendor\\composer/../../",
+		 *		"name": "magento/magento2ce",
+		 *		"pretty_version": "dev-2.4-develop",
+		 *		"reference": "1bdf9dfaf502ab38f5174f33b05c0690f67bf572",
+		 *		"type": "project",
+		 *		"version": "dev-2.4-develop"
+		 *	}
+		 */
+		$r = jua(IV::getRootPackage(), 'pretty_version');
+	}
+	return ju_trim_text_left($r, 'dev-');
+});}
+
+/**
+ * 2016-06-25
+ * @used-by ju_magento_version()
+ * @return IMetadata|Metadata
+ */
+function ju_magento_version_m() {return ju_o(IMetadata::class);}
