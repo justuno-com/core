@@ -102,7 +102,8 @@ function ju_sentry_m($m):Sentry {return jucf(function(string $m):Sentry {
 		);
 	}
 	return $r ?: (!$isCore ? ju_sentry_m('Justuno_Core') : ju_error('Sentry settings for `Justuno_Core` are absent.'));
-}, [ju_sentry_module($m)]);}
+# 2020-09-09, 2023-07-25 We need `df_caller_module(2)` because it is nested inside `df_sentry_module()` and `dfcf`.
+}, [ju_sentry_module($m ?: ju_caller_module(2))]);}
 
 /**
  * 2017-03-15
