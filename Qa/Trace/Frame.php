@@ -42,6 +42,7 @@ final class Frame extends \Justuno\Core\O {
 	 * @used-by \Justuno\Core\Qa\Method::raiseErrorParam()
 	 * @used-by \Justuno\Core\Qa\Method::raiseErrorResult()
 	 * @used-by \Justuno\Core\Qa\Method::raiseErrorVariable()
+	 * @used-by \Justuno\Core\Qa\Trace\Formatter::p()
 	 */
 	function method():string {return ju_cc_method($this->class_(), $this->function_());}
 
