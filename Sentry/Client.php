@@ -214,7 +214,7 @@ final class Client {
 		# по ссылке в шапке экрана события в Sentry),
 		# однако всё равно удобно видеть данные в JSON, пусть даже в обрубленном виде.
 		/** 2023-07-25 @used-by \Justuno\Core\Sentry\Extra::adjust() */
-		$data['extra'] = Extra::adjust($extra) + ['_json' => ju_json_encode($extra)];
+		$data['extra'] = Extra::adjust($extra) + ['_dump' => ju_dump($extra)];
 		$data = ju_clean($data);
 		if ($trace && !isset($data['stacktrace']) && !isset($data['exception'])) {
 			$data['stacktrace'] = ['frames' => Trace::info($trace)];

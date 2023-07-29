@@ -9,6 +9,7 @@ use Justuno\Core\Qa\Dumper;
  * @used-by ju_sentry()
  * @used-by ju_type()
  * @used-by juc()
+ * @used-by \Justuno\Core\Sentry\Client::capture()
  * @param mixed $v
  */
 function ju_dump($v):string {return Dumper::i()->dump($v);}
