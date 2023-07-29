@@ -57,11 +57,11 @@ function jua_merge_numeric(array $r, array $b):array {
  * @used-by ju_log_l()
  * @used-by ju_sentry()
  */
-function jua_merge_r(array $defaults, array $newValues):array {/** @var array(string => mixed) $r */
-	$r = $defaults;
+function jua_merge_r(array $old, array $newValues):array {/** @var array(string => mixed) $r */
+	$r = $old;
 	foreach ($newValues as $key => $newValue) {
 		/** @var int|string $key */ /** @var mixed $newValue */ /** @var mixed $defaultValue */
-		$defaultValue = jua($defaults, $key);
+		$defaultValue = jua($old, $key);
 		if (!is_array($defaultValue)) {
 			if (is_null($newValue)) {
 				unset($r[$key]);
