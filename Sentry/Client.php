@@ -247,7 +247,7 @@ final class Client {
 	 * @used-by self::capture()
 	 * @param array(string => mixed) $d
 	 */
-	private function send(array $data):void {
+	private function send(array $d):void {
 		$domain = 1000 > $this->_projectId ? 'log.mage2.pro' : 'sentry.io'; /** @var string $domain */ # 2018-08-25
 		$this->send_http("https://$domain/api/{$this->_projectId}/store/", $this->encode($d), [
 			'Content-Type' => 'application/octet-stream'
