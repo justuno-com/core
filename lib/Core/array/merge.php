@@ -3,15 +3,41 @@ use Justuno\Core\Exception as DFE;
 
 /**
  * 2015-02-18
+ *  1) По смыслу функция @param array(string => mixed) $defaults
+ * @param array(string => mixed) $newValues
+ * @return array(string => mixed)
+ * @throws DFE
+ * @see ju_extend() аналогична методу @see \Magento\Framework\Simplexml\Element::extend()
+ *  и предназначена для слияния настроечных опций,
+ *  только, в отличие от @see \Magento\Framework\Simplexml\Element::extend(),
+ * @see ju_extend() сливает не XML, а ассоциативные массивы.
+ *  3) Вместо @see ju_extend() нельзя использовать ни
+ * @see array_replace_recursive(), ни @see array_merge_recursive(),
+ *  ни тем более @see array_replace() и @see array_merge()
+ *  3.1) Нерекурсивные аналоги отметаются сразу, потому что не способны сливать вложенные структуры.
+ *  3.2) Но и стандартные рекурсивные функции тоже не подходят:
+ *  3.2.1) array_merge_recursive(['width' => 180], ['width' => 200]) вернёт: ['width' => [180, 200]]
+ *  https://php.net/manual/function.array-merge-recursive.php
+ *  3.2.2) Наша функция ju_extend(['width' => 180], ['width' => 200])вернёт ['width' => 200]
+ *  3.2.3) array_replace_recursive(['x' => ['A', 'B']], ['x' => 'C']) вернёт: ['x' => ['С', 'B']]
+ *  https://php.net/manual/function.array-replace-recursive.php
+ *  3.2.4) Наша функция ju_extend(['x' => ['A', 'B']], ['x' => 'C']) вернёт ['x' => 'C']
+ *  2018-11-13
+ *  1) ju_extend(
+ *        ['TBCBank' => ['1111' => ['a' => 'b']]]
+ *        ,['TBCBank' => ['2222' => ['c' => 'd']]]
+ *  )
+ *  is: 'TBCBank' => ['1111' => ['a' => 'b'], '2222' => ['c' => 'd']]
+ *  2) ju_extend(
+ *        ['TBCBank' => [1111 => ['a' => 'b']]]
+ * 		,['TBCBank' => [2222 => ['c' => 'd']]]
+ *  )
+ *  is: 'TBCBank' => [1111 => ['a' => 'b'], 2222 => ['c' => 'd']]
  * 2020-06-26 "Port the `df_extend` function": https://github.com/justuno-com/core/issues/158
  * @used-by ju_extend()
  * @used-by ju_log()
  * @used-by ju_log_l()
  * @used-by ju_sentry()
- * @param array(string => mixed) $defaults
- * @param array(string => mixed) $newValues
- * @return array(string => mixed)
- * @throws DFE
  */
 function ju_extend(array $defaults, array $newValues):array {/** @var array(string => mixed) $r */
 	$r = $defaults;
