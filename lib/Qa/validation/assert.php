@@ -2,7 +2,6 @@
 use Exception as E;
 use Justuno\Core\Exception as DFE;
 use Justuno\Core\Qa\Method as Q;
-use Justuno\Core\Zf\Validate\StringT\IntT;
 
 /**
  * 2019-12-14
