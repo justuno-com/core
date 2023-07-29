@@ -239,13 +239,17 @@ final class Client {
 
 	/**
 	 * 2020-06-27
+	 * 2023-07-29
+	 * "`Justuno\Core\Sentry\Client::send()`:
+	 * «Reference is unnecessary because the argument is neither assigned nor further passed by reference»":
+	 * https://github.com/justuno-com/core/issues/394
 	 * @used-by self::__construct()
 	 * @used-by self::capture()
-	 * @param array(string => mixed) $data
+	 * @param array(string => mixed) $d
 	 */
-	private function send(array &$data):void {
+	private function send(array $data):void {
 		$domain = 1000 > $this->_projectId ? 'log.mage2.pro' : 'sentry.io'; /** @var string $domain */ # 2018-08-25
-		$this->send_http("https://$domain/api/{$this->_projectId}/store/", $this->encode($data), [
+		$this->send_http("https://$domain/api/{$this->_projectId}/store/", $this->encode($d), [
 			'Content-Type' => 'application/octet-stream'
 			,'User-Agent' => $this->getUserAgent()
 			,'X-Sentry-Auth' => 'Sentry ' . ju_csv_pretty(ju_map_k(ju_clean([
