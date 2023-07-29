@@ -18,6 +18,7 @@ function ju_dump($v):string {return Dumper::i()->dump($v);}
  * 2015-04-05
  * 2020-06-18 "Port the `df_type` function": https://github.com/justuno-com/core/issues/80
  * 2022-10-14 @see get_debug_type() has been added to PHP 8: https://www.php.net/manual/function.get-debug-type.php
+ * @used-by ju_assert_gd()
  * @used-by ju_assert_traversable()
  * @used-by ju_customer()
  * @used-by ju_result_s()

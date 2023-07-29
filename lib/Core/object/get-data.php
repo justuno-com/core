@@ -2,7 +2,19 @@
 use Closure as F;
 use Justuno\Core\Exception as DFE;
 use Magento\Config\Model\Config\Structure\AbstractElement as AE;
+use Magento\Framework\Api\AbstractSimpleObject as oAPI;
 use Magento\Framework\DataObject as _DO;
+
+/**
+ * 2020-02-04
+ * @used-by ju_gd()
+ * @param mixed $v
+ * @return _DO|AE|oAPI
+ * @throws DFE
+ */
+function ju_assert_gd($v) {return ju_has_gd($v) ? $v : ju_error(ju_ucfirst(
+	'Getting data from %s is not supported by `ju_gd()`.', ju_type($v)
+));}
 
 /**
  * 2020-02-04
