@@ -12,7 +12,7 @@ use Magento\Framework\DataObject as _DO;
 function ju_log($v, $m = null, array $d = []):void {
 	$isE = $v instanceof E; /** @var bool $isE */
 	$m = $m ? ju_module_name($m) : ($isE ? ju_x_module($v) : ju_caller_module());
-	ju_log_l($m, ...($isE ? [$v, $d] : [!$d ? $v : (is_array($v) ? ['extra' => $d] + $v : (['message' => $v] + $d)), []]));
+	ju_log_l($m, ...($isE ? [$v, $d] : [!$d ? $v : (is_array($v) ? ju_extend($v, $d) : (['message' => $v] + $d)), []]));
 	ju_sentry($m, $v, $d);
 }
 
