@@ -61,7 +61,7 @@ function ju_log_l($m, $p2, $p3 = [], string $p4 = ''):void {
 				? [ju_extend($d, ['Mage2.PRO' => ju_context()])]
 				: [$d, ju_context()])  /** @uses ju_dump() */
 			,!$e ? '' : ['EXCEPTION', QE::i($e)->report(), "\n\n"]
-			,$e ? null : "\n" . ju_bt_s($e ?: 1)
+			,($e ? null : "\n") . ju_bt_s($e ?: 1)
 		)
 	);
 }
