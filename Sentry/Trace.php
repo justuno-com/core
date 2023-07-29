@@ -33,7 +33,7 @@ final class Trace {
 			 *		"args": ["Df\\Framework\\Plugin\\App\\Router\\ActionList\\Interceptor"]
 			 *	},
 			 * @see \Justuno\Core\Qa\Trace::__construct()
-			 * @see \Justuno\Core\Qa\Trace\Frame::filePath()
+			 * @see \Justuno\Core\Qa\Trace\Frame::file()
 			 */
 			if ($file = ju_bt_entry_file($frame)) {
 				$context = self::code($file, (int)$frame['line']);

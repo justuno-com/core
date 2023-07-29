@@ -38,7 +38,7 @@ final class Trace implements \IteratorAggregate, \Countable {
 			 *	},
 			 * 2) «Argument 1 passed to df_starts_with() must be of the type string, null given,
 			 * called in vendor/mage2pro/core/Qa/Trace.php on line 28»: https://github.com/mage2pro/core/issues/186
-			 * 3) @see \Justuno\Core\Qa\Trace\Frame::filePath()
+			 * 3) @see \Justuno\Core\Qa\Trace\Frame::file()
 			 */
 			if (ju_starts_with(jua($frameA, 'file', ''), 'phar://')) {
 				break;
