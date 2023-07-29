@@ -52,7 +52,6 @@ function ju_path_is_internal(string $p):bool {return ju_es($p) || ju_starts_with
  * @uses \Magento\Framework\Filesystem\Directory\Read::getAbsolutePath() produces a result with a trailing «/».
  * 2020-08-13 "Port the `df_path_relative` function" https://github.com/justuno-com/core/issues/174
  * @used-by ju_file_write()
- * @used-by \Justuno\Core\Qa\Trace\Formatter::frame()
  * @used-by \Justuno\Core\Qa\Trace\Frame::file()
  * @used-by \Justuno\Core\Sentry\Trace::info()
  */

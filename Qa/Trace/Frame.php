@@ -38,7 +38,6 @@ final class Frame extends \Justuno\Core\O {
 	/**
 	 * 2015-04-03 Для простых функций (не методов) вернёт название функции.
 	 * @used-by self::methodParameter()
-	 * @used-by Formatter::frame()
 	 * @used-by \Justuno\Core\Qa\Method::raiseErrorParam()
 	 * @used-by \Justuno\Core\Qa\Method::raiseErrorResult()
 	 * @used-by \Justuno\Core\Qa\Method::raiseErrorVariable()

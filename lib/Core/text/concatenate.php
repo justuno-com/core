@@ -2,7 +2,7 @@
 /**
  * 2020-08-19 "Port the `df_cc` function" https://github.com/justuno-com/core/issues/198
  * @see ju_ccc()
- * @used-by \Justuno\Core\Qa\Trace\Formatter::frame()
+ * @used-by \Justuno\Core\Qa\Trace\Formatter::p()
  * @param string|string[] ...$a
  */
 function ju_cc(string $glue, ...$a):string {return implode($glue, jua_flatten($a));}
@@ -18,7 +18,6 @@ function ju_cc(string $glue, ...$a):string {return implode($glue, jua_flatten($a
  * @used-by \Justuno\Core\Qa\Method::raiseErrorParam()
  * @used-by \Justuno\Core\Qa\Method::raiseErrorResult()
  * @used-by \Justuno\Core\Qa\Method::raiseErrorVariable()
- * @used-by \Justuno\Core\Qa\Trace\Formatter::frame()
  * @param string|string[] ...$a
  */
 function ju_cc_n(...$a):string {return ju_ccc("\n", jua_flatten($a));}
@@ -54,6 +53,7 @@ function ju_cc_s(...$a):string {return ju_ccc(' ', jua_flatten($a));}
  * @used-by ju_cc_s()
  * @used-by ju_fe_init()
  * @used-by ju_log_l()
+ * @used-by \Justuno\Core\Qa\Trace\Formatter::p()
  * @used-by \Justuno\M2\Setup\UpgradeSchema::tr()
  * @param string|string[] ...$a
  */

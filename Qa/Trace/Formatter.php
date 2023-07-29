@@ -10,40 +10,18 @@ final class Formatter {
 	 * @used-by ju_bt_s()
 	 * @used-by \Justuno\Core\Qa\Failure::postface()
 	 */
-	static function p(T $t):string {return jucf(function(T $t):string {
-		$count = count($t); /** @var int $count */
-		return implode(ju_map_k($t, function(int $index, F $frame) use($count):string {
-			$index++;
-			$r = self::frame($frame); /** @var string $r */
-			if ($index !== $count) {
-				$indexS = (string)$index; /** @var string $indexS */
-				$indexLength = strlen($indexS); /** @var int $indexLength */
-				$delimiterLength = 36; /** @var int $delimiterLength */
-				$fillerLength = $delimiterLength - $indexLength; /** @var int $fillerLength */
-				$fillerLengthL = floor($fillerLength / 2); /** @var int $fillerLengthL */
-				$fillerLengthR = $fillerLength - $fillerLengthL; /** @var int $fillerLengthR */
-				$r .= "\n" . str_repeat('*', $fillerLengthL) . $indexS . str_repeat('*', $fillerLengthR) . "\n";
-			}
-			return $r;
-		}));
-	}, [$t]);}
-
-	/**     
-	 * 2020-02-27          
-	 * @used-by self::p()
-	 */
-	private static function frame(F $f):string {/** @var string $r */
-		try {
-			$r = ju_kv([
-				'Location' => ju_cc(':', ju_path_relative($f->file()), $f->line()), 'Callee' => $f->method()
-			], 13);
-		}
-		catch (\Exception $e) {
+	static function p(T $t):string {return jucf(function(T $t):string {return ju_try(
+		function() use($t) {return ju_cc("\n\n", ju_map_k($t, function(int $i, F $f):string {$i++; return ju_ccc("\n\t", [
+			"$i\t" . $f->method()
+			# 2023-07-27 "Add GitHub links to backtrace frames": https://github.com/mage2pro/core/issues/285
+			,$f->url() ?: ju_ccc(':', $f->file(), $f->line())
+		]);}));}
+		,function(\Exception $e) {
 			$r = ju_xts($e);
 			/**
 			 * 2020-02-20
 			 * 1) «Function include() does not exist»: https://github.com/tradefurniturecompany/site/issues/60
-			 * 2) It is be dangerous to call @see ju_log_e() here, because it will inderectly return us here,
+			 * 2) It is be dangerous to call @see df_log() here, because it will inderectly return us here,
 			 * and it could be an infinite loop.
 			 */
 			static $loop = false;
@@ -52,10 +30,9 @@ final class Formatter {
 			}
 			else {
 				$loop = true;
-				ju_log($e);
+				ju_log($e, __CLASS__);
 				$loop = false;
 			}
 		}
-		return $r;		
-	}
+	);}, [$t]);}
 }

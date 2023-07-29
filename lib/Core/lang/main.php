@@ -38,6 +38,7 @@ function ju_nop($v) {return $v;}
  * @used-by ju_product_current()
  * @used-by ju_trim()
  * @used-by ju_zuri()
+ * @used-by \Justuno\Core\Qa\Trace\Formatter::p()
  * @used-by \Justuno\Core\Qa\Trace\Frame::functionA()
  * @used-by \Justuno\Core\Qa\Trace\Frame::methodR()
  * @param F|bool|mixed $onE [optional]

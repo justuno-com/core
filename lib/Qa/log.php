@@ -5,7 +5,7 @@ use Magento\Framework\DataObject as _DO;
 /**
  * 2020-06-22 "Port the `df_log` function": https://github.com/justuno-com/core/issues/117
  * @used-by ju_error()
- * @used-by \Justuno\Core\Qa\Trace\Formatter::frame()
+ * @used-by \Justuno\Core\Qa\Trace\Formatter::p()
  * @param _DO|mixed[]|mixed|E $v
  * @param string|object|null $m [optional]
  */
@@ -21,7 +21,7 @@ function ju_log($v, $m = null, array $d = []):void {
  * 2020-06-17 "Port the `df_log_l` function": https://github.com/justuno-com/core/issues/51
  * @used-by ju_caller_m()
  * @used-by ju_log()
- * @used-by \Justuno\Core\Qa\Trace\Formatter::frame()
+ * @used-by \Justuno\Core\Qa\Trace\Formatter::p()
  * @used-by \Justuno\Core\Sentry\Client::send_http()
  * @param string|object|null $m
  * @param string|mixed[]|E $p2

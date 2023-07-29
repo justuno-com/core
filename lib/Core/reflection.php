@@ -32,7 +32,7 @@ function ju_class_f($c) {return ju_first(ju_explode_class($c));}
  * «get_class() called without object from outside a class»
  * https://3v4l.org/k6Hd5
  * 2020-08-19 "Port the `df_class_l` function" https://github.com/justuno-com/core/issues/199
- * @used-by \Justuno\Core\Qa\Trace\Formatter::frame()
+ * @used-by \Justuno\Core\Qa\Trace\Formatter::p()
  * @used-by \Justuno\M2\Response::p()
  * @param string|object $c
  * @return string
