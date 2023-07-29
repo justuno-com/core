@@ -20,7 +20,10 @@ final class Frame extends \Justuno\Core\O {
 	 * 2) @see \Justuno\Core\Qa\Trace::__construct()
 	 * 3) «Argument 1 passed to df_path_relative() must be of the type string, null given,
 	 * called in vendor/mage2pro/core/Qa/Trace/Formatter.php on line 37»: https://github.com/mage2pro/core/issues/187
-	 * @used-by \Justuno\Core\Qa\Trace\Formatter::frame()
+	 * @see ju_bt_entry_file()
+	 * @see \Justuno\Core\Sentry\Trace::info()
+	 * @used-by self::url()
+	 * @used-by \Justuno\Core\Qa\Trace\Formatter::p()
 	 */
 	function file():string {return juc($this, function() {return !($r = (string)$this['file'])? $r : ju_path_relative($r);});}
 
