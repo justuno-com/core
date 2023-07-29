@@ -29,10 +29,11 @@ final class Frame extends \Justuno\Core\O {
 
 	/**
 	 * 2015-04-03 Строка отсутствует при вызовах типа @see call_user_func()
-	 * @used-by \Justuno\Core\Qa\Trace\Formatter::frame()
-	 * @return int|null
+	 * @see ju_bt_entry_line()
+	 * @used-by self::url()
+	 * @used-by \Justuno\Core\Qa\Trace\Formatter::p()
 	 */
-	function line() {return $this['line'];}
+	function line():int {return (int)$this['line'];}
 
 	/**
 	 * 2015-04-03 Для простых функций (не методов) вернёт название функции.
