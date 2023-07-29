@@ -37,4 +37,4 @@ function ju_gd($v, $onE = true):array {return ju_try(function() use($v) {return
  * @used-by \Justuno\Core\Qa\Dumper::dumpObject()
  * @param mixed $v
  */
-function ju_has_gd($v):bool {return $v instanceof _DO || $v instanceof AE;}
+function ju_has_gd($v):bool {return $v instanceof _DO || $v instanceof AE || ju_is_api_o($v);}
