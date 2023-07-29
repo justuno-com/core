@@ -30,6 +30,7 @@ use Magento\Framework\Phrase;
  * @used-by ju_sprintf_strict()
  * @used-by ju_string()
  * @used-by ju_try()
+ * @used-by ju_xml_parse()
  * @used-by juaf()
  * @used-by juc()
  * @used-by \Justuno\Core\Helper\Text::quote()

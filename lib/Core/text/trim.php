@@ -18,6 +18,7 @@ function ju_chop(string $s, int $max = 0):string {return !$max || (mb_strlen($s 
  * @used-by ju_chop()
  * @used-by ju_explode_n()
  * @used-by ju_trim()
+ * @used-by ju_xml_parse()
  * @used-by \Justuno\Core\Html\Tag::content()
  * @used-by \Justuno\Core\Qa\Failure::sections()
  * @param string|string[] $s
