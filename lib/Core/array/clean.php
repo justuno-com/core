@@ -6,6 +6,7 @@
  * @see ju_clean_r()
  * @used-by ju_ccc()
  * @used-by ju_kv()
+ * @used-by ju_sentry()
  * @used-by \Justuno\Core\Sentry\Client::capture()
  * @used-by \Justuno\Core\Sentry\Client::send()
  * @used-by \Justuno\M2\Block\Js::_toHtml()

@@ -28,6 +28,9 @@ function ju_sentry($m, $v, array $extra = []):void {
 		$d = $d ?: ['extra' => [], 'fingerprint' => [
 			ju_core_version(), ju_domain_current(), ju_magento_version(), ju_package_version($m), ju_store_code()
 		]];
+		# 2023-07-25
+		# "Change the 3rd argument of `df_sentry` from `$context` to `$extra`": https://github.com/mage2pro/core/issues/249
+		$context = ju_clean(['extra' => $extra]);
 		# 2017-01-09
 		if ($v instanceof DFE) {
 			$context = ju_extend($context, $v->sentryContext());
