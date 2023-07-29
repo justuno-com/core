@@ -31,3 +31,11 @@ if (!function_exists('array_is_list')) {
  * @param array(int|string => mixed) $a
  */
 function ju_is_assoc(array $a):bool {return !$a || !array_is_list($a);}
+
+/**
+ * 2023-07-25
+ * @uses is_object()
+ * @used-by \Justuno\Core\Qa\Dumper::dumpArray()
+ * @param iterable $a
+ */
+function jua_has_objects($a):bool {return !!ju_find($a, 'is_object', [], [], 0, true);}

@@ -12,6 +12,14 @@ final class Dumper {
 		is_array($v) ? $this->dumpArray($v) : (is_bool($v) ? ju_bts($v) : (is_string($v) ? $v : print_r($v, true)))
 	);}
 
+	/** @used-by self::dump() */
+	private function dumpArray(array $a):string {return
+        # 2023-07-25
+        # "Return JSON from `\Df\Qa\Dumper::dumpArray()` for arrays without object elements":
+        # https://github.com/mage2pro/core/issues/252
+        !jua_has_objects($a) ? ju_json_encode($a) : "[\n" . ju_tab_multiline($this->dumpArrayElements($a)) . "\n]"
+    ;}
+
 	/**
 	 * 2015-01-25
 	 * @see ju_kv()
@@ -22,12 +30,6 @@ final class Dumper {
 	function dumpArrayElements(array $a):string {return ju_cc_n(ju_map_k(ju_ksort($a), function($k, $v) {return
 		"$k: {$this->dump($v)}"
 	;}));}
-
-	/**
-	 * @used-by self::dump()
-	 * @param mixed $a
-	 */
-	private function dumpArray(array $a):string {return "[\n" . ju_tab_multiline($this->dumpArrayElements($a)) . "\n]";}
 
 	/**
 	 * 2022-11-17

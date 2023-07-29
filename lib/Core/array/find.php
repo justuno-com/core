@@ -3,6 +3,7 @@
  * 2020-06-16 "Port the `df_find` function": https://github.com/justuno-com/core/issues/31
  * @used-by ju_ends_with()
  * @used-by ju_starts_with()
+ * @used-by jua_has_objects()
  * @param array|callable|Traversable $a1
  * @param array|callable|Traversable $a2
  * @param mixed|mixed[] $pAppend [optional]
