@@ -16,7 +16,7 @@ function ju_array($v):array {return is_array($v) ? $v : [$v];}
  * @uses iterator_to_array() allows an array as the first argument since PHP 8.2:
  * https://www.php.net/manual/migration82.other-changes.php#migration82.other-changes.functions.spl
  * 2023-07-26 "Replace `array|Traversable` with `iterable`": https://github.com/mage2pro/core/issues/255
- * @used-by ju_filter()
+ * @used-by ju_filter_f()
  * @used-by ju_map()
  * @used-by jua_select_ordered()
  * @used-by juak_transform()
@@ -48,7 +48,7 @@ function jua_flatten(array $a):array {
 
 /**
  * 2020-06-16 "Port the `dfaf` function": https://github.com/justuno-com/core/issues/32
- * @used-by ju_filter()
+ * @used-by ju_filter_f()
  * @used-by ju_find()
  * @used-by ju_map()
  * @used-by juak_transform()
