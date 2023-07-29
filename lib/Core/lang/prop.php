@@ -51,6 +51,10 @@ function ju_prop($o, $v = JU_N, $d = null, string $type = '') {/** @var object|m
 
 /**
  * 2022-10-28
+ * 2023-07-29
+ * 1) @noinspection PhpVariableVariableInspection
+ * 2) "Suppress the «Variable variable used» inspection for the code intended for PHP < 8.2":
+ * https://github.com/justuno-com/core/issues/395
  * @used-by ju_prop()
  * @param object|ArrayAccess $o
  * @param mixed|string $v [optional]
