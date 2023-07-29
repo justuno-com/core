@@ -1,6 +1,7 @@
 <?php
 namespace Justuno\Core\Qa;
 # 2020-06-18 "Port the `Df\Qa\Dumper` class": https://github.com/justuno-com/core/issues/82
+/** 2023-07-25 @todo Use YAML instead of JSON for `df_dump()` https://github.com/mage2pro/core/issues/254 */
 final class Dumper {
 	/**
 	 * @used-by ju_dump()
