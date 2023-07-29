@@ -26,6 +26,7 @@ function ju_ends_with(string $haystack, $n):bool {return is_array($n)
  * @used-by ju_prepend()
  * @used-by \Justuno\Core\Framework\Plugin\Data\Form\Element\AbstractElement::afterGetElementHtml()
  * @used-by \Justuno\Core\Qa\Trace::__construct()
+ * @used-by \Justuno\Core\Qa\Trace\Frame::url()
  * @used-by \Justuno\Core\Zf\Validate\StringT\IntT::isValid()
  * @param string|string[] $n
  */

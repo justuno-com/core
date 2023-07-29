@@ -5,6 +5,7 @@
  * @used-by ju_context()
  * @used-by ju_sentry()
  * @used-by ju_sentry_m()
+ * @used-by \Justuno\Core\Qa\Trace\Frame::url()
  * @used-by \Justuno\Core\Sentry\Client::__construct()
  * @used-by \Justuno\Core\Sentry\Client::getUserAgent()
  */

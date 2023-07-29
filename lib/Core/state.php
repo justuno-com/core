@@ -46,6 +46,7 @@ function ju_is_localhost():bool {return in_array(jua($_SERVER, 'REMOTE_ADDR', []
  * @used-by ju_context()
  * @used-by ju_sentry()
  * @used-by ju_sentry_m()
+ * @used-by \Justuno\Core\Qa\Trace\Frame::url()
  */
 function ju_magento_version():string {return jucf(function() {return ju_trim_text_left(
 	/**

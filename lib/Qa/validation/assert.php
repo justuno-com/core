@@ -28,6 +28,7 @@ use Justuno\Core\Zf\Validate\StringT\IntT;
  * @used-by juaf()
  * @used-by \Justuno\Core\Html\Tag::openTagWithAttributesAsText()
  * @used-by \Justuno\Core\Qa\Trace\Frame::methodParameter()
+ * @used-by \Justuno\Core\Qa\Trace\Frame::url()
  * @used-by \Justuno\M2\Store::v()
  * @param mixed $cond
  * @param string|E|null $m [optional]

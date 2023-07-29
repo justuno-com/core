@@ -16,6 +16,7 @@ use Justuno\Core\RAM;
  * @used-by \Justuno\Core\Qa\Trace\Frame::functionA()
  * @used-by \Justuno\Core\Qa\Trace\Frame::methodParameter()
  * @used-by \Justuno\Core\Qa\Trace\Frame::methodR()
+ * @used-by \Justuno\Core\Qa\Trace\Frame::url()
  * @param object $o
  * @return mixed
  */
