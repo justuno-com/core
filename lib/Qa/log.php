@@ -13,7 +13,7 @@ function ju_log($v, $m = null, array $d = []):void {
 	$isE = $v instanceof E; /** @var bool $isE */
 	$m = $m ? ju_module_name($m) : ($isE ? ju_x_module($v) : ju_caller_module());
 	ju_log_l($m, ...($isE ? [$v, $d] : [!$d ? $v : (jua_merge_r($d, is_array($v) ? $v : ['message' => $v])), []]));
-	ju_sentry($m, $v, $d);
+	ju_sentry($m, ...($isE || !is_array($v) ? [$v, $d] : ['', jua_merge_r($d, $v)]));
 }
 
 /**
