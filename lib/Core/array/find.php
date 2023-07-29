@@ -27,7 +27,7 @@ function ju_find($a1, $a2, $pAppend = [], $pPrepend = [], int $keyPosition = 0, 
 	# https://3v4l.org/3O92j
 	# https://www.php.net/manual/migration71.new-features.php#migration71.new-features.symmetric-array-destructuring
 	# https://stackoverflow.com/a/28233499
-	list($a, $f) = dfaf($a1, $a2); /** @var iterable $a */ /** @var callable $f */
+	list($a, $f) = juaf($a1, $a2); /** @var iterable $a */ /** @var callable $f */
 	$pAppend = ju_array($pAppend); $pPrepend = ju_array($pPrepend);
 	$r = null; /** @var mixed|null $r */
 	foreach ($a as $k => $v) {/** @var int|string $k */ /** @var mixed $v */ /** @var mixed[] $primaryArgument */
