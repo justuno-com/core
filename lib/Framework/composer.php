@@ -20,6 +20,7 @@ function ju_core_version():string {return jucf(function() {return ju_package_ver
  * 3) an object: it comes down to the case 2 via @see get_class()
  * 4) `null`: it comes down to the case 1 with the «Justuno_Core» module name.
  * 2020-06-26 "Port the `df_package` function": https://github.com/justuno-com/core/issues/145
+ * @used-by ju_package()
  * @used-by ju_package_name_l()
  * @used-by ju_package_version()
  * @param string|object|null $m [optional]
