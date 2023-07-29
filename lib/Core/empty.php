@@ -11,6 +11,7 @@ function ju_es($v):bool {return '' === $v;}
  * 2017-04-26
  * 2020-08-26 "Port the `df_eta` function" https://github.com/justuno-com/core/issues/329
  * @used-by ju_fetch_one()
+ * @used-by ju_package()
  * @param mixed|null $v
  * @return mixed[]
  */

@@ -36,7 +36,12 @@ function ju_package($m = null, $k = null, $d = null) {
 			$packagePath = dirname($packagePath);
 		}
 		$filePath = "$packagePath/composer.json"; /** @var string $filePath */
-		$cache[$m] = !file_exists($filePath) ? [] : ju_json_decode(file_get_contents($filePath));
+        # 2023-01-28
+        # 1) The `composer.json` file can be absent for a module, e.g.:
+        # https://github.com/elgentos/magento2-regenerate-catalog-urls/tree/0.2.14/Iazel/RegenProductUrl
+        # 2) "«Unable to read the file vendor/elgentos/regenerate-catalog-urls/Iazel/RegenProductUrl/composer.json»
+        # on `bin/magento setup:static-content:deploy`": https://github.com/tradefurniturecompany/site/issues/240
+		$cache[$m] = ju_eta(ju_json_decode(ju_contents($filePath, '')));
 	}
 	return jua($cache[$m], $k, $d);
 }
