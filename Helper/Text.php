@@ -20,7 +20,7 @@ class Text {
 
 	/**
 	 * 2015-03-03
-	 * @used-by jua_merge_r()
+	 * 2023-07-29 @deprecated It is unused.
 	 */
 	function singleLine(string $s):string {return str_replace(["\r\n", "\r", "\n", "\t"], ' ', $s);}
 

@@ -59,37 +59,19 @@ function jua_merge_numeric(array $r, array $b):array {
 function jua_merge_r(array $old, array $new):array {
 	# Здесь ошибочно было бы $r = [], потому что если ключ отсутствует в $new, то тогда он не попадёт в $r.
 	$r = $old; /** @var array(string => mixed) $r */
-	foreach ($new as $key => $newV) {/** @var int|string $key */ /** @var mixed $newV */
-		$defaultValue = jua($old, $key); /** @var mixed $defaultValue */
-		if (!is_array($defaultValue)) {
-			# 2016-08-23 unset добавил сегодня.
-			if (is_null($newV)) {
-				unset($r[$key]);
-			}
-			else {
-				$r[$key] = $newV;
-			}
-		}
-		elseif (is_array($newV)) {
-			$r[$key] = jua_merge_r($defaultValue, $newV);
-		}
-		elseif (is_null($newV)) {
-			unset($r[$key]);
+	foreach ($new as $k => $newV) {/** @var int|string $k */ /** @var mixed $newV */
+		if (is_null($newV))	{
+			unset($r[$k]); ## 2016-08-23
 		}
 		else {
-			# Если значение по умолчанию является массивом, а новое значение не является массивом,
-			# то это наверняка говорит об ошибке программиста.
-			ju_error(
-				"jua_merge_r: the default value of key «{$key}» is an array {defaultValue},"
-				. "\nbut the programmer mistakenly tries to substitute it"
-				. ' with the value {newValue} of type «{newType}».'
-				. "\nThe new value should be an array or `null`."
-				,[
-					'{defaultValue}' => ju_t()->singleLine(ju_dump($defaultValue))
-					,'{newType}' => gettype($newV)
-					,'{newV}' => ju_dump($newV)
-				]
-			);
+			/** 2023-07-29 I have removed @see jua() to improve speed. */
+			$oldV = isset($old[$k]) ? $old[$k] : null; /** @var mixed $oldV */
+			if (is_array($oldV) && is_array($newV)) {
+				$r[$k] = jua_merge_r($oldV, $newV);
+			}
+			else {
+				$r[$k] = $newV;
+			}
 		}
 	}
 	return $r;

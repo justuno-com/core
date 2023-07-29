@@ -6,7 +6,6 @@ use Justuno\Core\Qa\Dumper;
  * uses the @see \Justuno\Core\Qa\Dumper::$_dumped property to avoid a recursion.
  * 2020-06-18 "Port the `df_dump` function": https://github.com/justuno-com/core/issues/81
  * @used-by ju_assert_eq()
- * @used-by jua_merge_r()
  * @used-by ju_sentry()
  * @used-by ju_type()
  * @used-by juc()
