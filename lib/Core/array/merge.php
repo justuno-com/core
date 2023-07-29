@@ -57,10 +57,10 @@ function jua_merge_numeric(array $r, array $b):array {
  * @used-by ju_log_l()
  * @used-by ju_sentry()
  */
-function jua_merge_r(array $old, array $newValues):array {
-	# Здесь ошибочно было бы $r = [], потому что если ключ отсутствует в $newValues, то тогда он не попадёт в $r.
+function jua_merge_r(array $old, array $new):array {
+	# Здесь ошибочно было бы $r = [], потому что если ключ отсутствует в $new, то тогда он не попадёт в $r.
 	$r = $old; /** @var array(string => mixed) $r */
-	foreach ($newValues as $key => $newValue) {/** @var int|string $key */ /** @var mixed $newValue */
+	foreach ($new as $key => $newValue) {/** @var int|string $key */ /** @var mixed $newValue */
 		$defaultValue = jua($old, $key); /** @var mixed $defaultValue */
 		if (!is_array($defaultValue)) {
 			# 2016-08-23 unset добавил сегодня.
