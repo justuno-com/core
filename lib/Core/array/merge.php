@@ -57,12 +57,13 @@ function jua_merge_numeric(array $r, array $b):array {
  * @used-by ju_log_l()
  * @used-by ju_sentry()
  */
-function jua_merge_r(array $old, array $newValues):array {/** @var array(string => mixed) $r */
-	$r = $old;
-	foreach ($newValues as $key => $newValue) {
-		/** @var int|string $key */ /** @var mixed $newValue */ /** @var mixed $defaultValue */
-		$defaultValue = jua($old, $key);
+function jua_merge_r(array $old, array $newValues):array {
+	# Здесь ошибочно было бы $r = [], потому что если ключ отсутствует в $newValues, то тогда он не попадёт в $r.
+	$r = $old; /** @var array(string => mixed) $r */
+	foreach ($newValues as $key => $newValue) {/** @var int|string $key */ /** @var mixed $newValue */
+		$defaultValue = jua($old, $key); /** @var mixed $defaultValue */
 		if (!is_array($defaultValue)) {
+			# 2016-08-23 unset добавил сегодня.
 			if (is_null($newValue)) {
 				unset($r[$key]);
 			}
@@ -77,8 +78,10 @@ function jua_merge_r(array $old, array $newValues):array {/** @var array(string 
 			unset($r[$key]);
 		}
 		else {
+			# Если значение по умолчанию является массивом, а новое значение не является массивом,
+			# то это наверняка говорит об ошибке программиста.
 			ju_error(
-				"jua_merge_r: the default value of key «{$key}» is an array {defaultValue},"
+				"dfa_merge_r: the default value of key «{$key}» is an array {defaultValue},"
 				. "\nbut the programmer mistakenly tries to substitute it"
 				. ' with the value {newValue} of type «{newType}».'
 				. "\nThe new value should be an array or `null`."
