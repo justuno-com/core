@@ -7,39 +7,39 @@ use Justuno\Core\Exception as DFE;
  * @param array(string => mixed) $newValues
  * @return array(string => mixed)
  * @throws DFE
- * @see ju_extend() аналогична методу @see \Magento\Framework\Simplexml\Element::extend()
+ * @see jua_merge_r() аналогична методу @see \Magento\Framework\Simplexml\Element::extend()
  *  и предназначена для слияния настроечных опций,
  *  только, в отличие от @see \Magento\Framework\Simplexml\Element::extend(),
- * @see ju_extend() сливает не XML, а ассоциативные массивы.
- *  3) Вместо @see ju_extend() нельзя использовать ни
+ * @see jua_merge_r() сливает не XML, а ассоциативные массивы.
+ *  3) Вместо @see jua_merge_r() нельзя использовать ни
  * @see array_replace_recursive(), ни @see array_merge_recursive(),
  *  ни тем более @see array_replace() и @see array_merge()
  *  3.1) Нерекурсивные аналоги отметаются сразу, потому что не способны сливать вложенные структуры.
  *  3.2) Но и стандартные рекурсивные функции тоже не подходят:
  *  3.2.1) array_merge_recursive(['width' => 180], ['width' => 200]) вернёт: ['width' => [180, 200]]
  *  https://php.net/manual/function.array-merge-recursive.php
- *  3.2.2) Наша функция ju_extend(['width' => 180], ['width' => 200])вернёт ['width' => 200]
+ *  3.2.2) Наша функция jua_merge_r(['width' => 180], ['width' => 200]) вернёт ['width' => 200]
  *  3.2.3) array_replace_recursive(['x' => ['A', 'B']], ['x' => 'C']) вернёт: ['x' => ['С', 'B']]
  *  https://php.net/manual/function.array-replace-recursive.php
- *  3.2.4) Наша функция ju_extend(['x' => ['A', 'B']], ['x' => 'C']) вернёт ['x' => 'C']
+ *  3.2.4) Наша функция jua_merge_r(['x' => ['A', 'B']], ['x' => 'C']) вернёт ['x' => 'C']
  *  2018-11-13
- *  1) ju_extend(
+ *  1) jua_merge_r(
  *        ['TBCBank' => ['1111' => ['a' => 'b']]]
  *        ,['TBCBank' => ['2222' => ['c' => 'd']]]
  *  )
  *  is: 'TBCBank' => ['1111' => ['a' => 'b'], '2222' => ['c' => 'd']]
- *  2) ju_extend(
+ *  2) jua_merge_r(
  *        ['TBCBank' => [1111 => ['a' => 'b']]]
  * 		,['TBCBank' => [2222 => ['c' => 'd']]]
  *  )
  *  is: 'TBCBank' => [1111 => ['a' => 'b'], 2222 => ['c' => 'd']]
  * 2020-06-26 "Port the `df_extend` function": https://github.com/justuno-com/core/issues/158
- * @used-by ju_extend()
+ * @used-by jua_merge_r()
  * @used-by ju_log()
  * @used-by ju_log_l()
  * @used-by ju_sentry()
  */
-function ju_extend(array $defaults, array $newValues):array {/** @var array(string => mixed) $r */
+function jua_merge_r(array $defaults, array $newValues):array {/** @var array(string => mixed) $r */
 	$r = $defaults;
 	foreach ($newValues as $key => $newValue) {
 		/** @var int|string $key */ /** @var mixed $newValue */ /** @var mixed $defaultValue */
@@ -53,14 +53,14 @@ function ju_extend(array $defaults, array $newValues):array {/** @var array(stri
 			}
 		}
 		elseif (is_array($newValue)) {
-			$r[$key] = ju_extend($defaultValue, $newValue);
+			$r[$key] = jua_merge_r($defaultValue, $newValue);
 		}
 		elseif (is_null($newValue)) {
 			unset($r[$key]);
 		}
 		else {
 			ju_error(
-				"ju_extend: the default value of key «{$key}» is an array {defaultValue},"
+				"jua_merge_r: the default value of key «{$key}» is an array {defaultValue},"
 				. "\nbut the programmer mistakenly tries to substitute it"
 				. ' with the value {newValue} of type «{newType}».'
 				. "\nThe new value should be an array or `null`."

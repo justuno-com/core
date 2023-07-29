@@ -16,7 +16,7 @@ use Magento\Framework\Phrase;
  * @used-by ju_caller_m()
  * @used-by ju_customer()
  * @used-by ju_date_from_db()
- * @used-by ju_extend()
+ * @used-by jua_merge_r()
  * @used-by ju_file_name()
  * @used-by ju_int()
  * @used-by ju_json_decode()

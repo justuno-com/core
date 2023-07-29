@@ -33,9 +33,9 @@ function ju_sentry($m, $v, array $extra = []):void {
 		$context = ju_clean(['extra' => $extra]);
 		# 2017-01-09
 		if ($v instanceof DFE) {
-			$context = ju_extend($context, $v->sentryContext());
+			$context = jua_merge_r($context, $v->sentryContext());
 		}
-		$context = ju_extend($d, $context);
+		$context = jua_merge_r($d, $context);
 		if ($v instanceof E) {
 			# 2016-12-22 https://docs.sentry.io/clients/php/usage/#reporting-exceptions
 			ju_sentry_m($m)->captureException($v, $context);

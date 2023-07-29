@@ -84,7 +84,7 @@ function ju_string_debug($v):string {
 
 /**
  * 2020-06-26 "Port the `df_t` function": https://github.com/justuno-com/core/issues/159
- * @used-by ju_extend()
+ * @used-by jua_merge_r()
  * @used-by ju_quote_russian()
  */
 function ju_t():T {return T::s();}

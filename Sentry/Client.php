@@ -40,7 +40,7 @@ final class Client {
 	/**
 	 * 2017-01-10
 	 * 2019-05-20
-	 * I intentionally use array_merge_recursive() instead of @see ju_extend()
+	 * I intentionally use array_merge_recursive() instead of @see jua_merge_r()
 	 * because I want values to be merged for a duplicate key.
 	 * I is needed for @see ju_sentry_extra_f()
 	 * @used-by ju_sentry_extra()

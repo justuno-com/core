@@ -12,7 +12,7 @@ use Magento\Framework\DataObject as _DO;
 function ju_log($v, $m = null, array $d = []):void {
 	$isE = $v instanceof E; /** @var bool $isE */
 	$m = $m ? ju_module_name($m) : ($isE ? ju_x_module($v) : ju_caller_module());
-	ju_log_l($m, ...($isE ? [$v, $d] : [!$d ? $v : (ju_extend($d, is_array($v) ? $v : ['message' => $v])), []]));
+	ju_log_l($m, ...($isE ? [$v, $d] : [!$d ? $v : (jua_merge_r($d, is_array($v) ? $v : ['message' => $v])), []]));
 	ju_sentry($m, $v, $d);
 }
 
@@ -58,7 +58,7 @@ function ju_log_l($m, $p2, $p3 = [], string $p4 = ''):void {
 			# "`df_log_l` does not log the context if the message is not an array":
 			# https://github.com/mage2pro/core/issues/289
 			ju_map('ju_dump', is_array($d)
-				? [ju_extend($d, ['Mage2.PRO' => ju_context()])]
+				? [jua_merge_r($d, ['Mage2.PRO' => ju_context()])]
 				: [$d, ju_context()])  /** @uses ju_dump() */
 			,!$e ? '' : ['EXCEPTION', QE::i($e)->report(), "\n\n"]
 			,($e ? null : "\n") . ju_bt_s($e ?: 1)

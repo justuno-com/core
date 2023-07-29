@@ -9,7 +9,7 @@
  * @used-by ju_caller_m()
  * @used-by ju_cc_method()
  * @used-by ju_cli_argv()
- * @used-by ju_extend()
+ * @used-by jua_merge_r()
  * @used-by ju_is_localhost()
  * @used-by ju_log_l()
  * @used-by ju_magento_version()
