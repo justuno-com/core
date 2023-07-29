@@ -87,6 +87,49 @@ final class Frame extends \Justuno\Core\O {
 	}, [$ordering]);}
 
 	/**
+	 * 2023-07-27 "Add GitHub links to backtrace frames": https://github.com/mage2pro/core/issues/285
+	 * @used-by \Justuno\Core\Qa\Trace\Formatter::p()
+	 */
+	function url():string {return juc($this, function():string {
+		$r = ''; /** @var string $r */
+		$pa = ju_explode_path($this->file()); /** @var string[] $pa */
+		if ('vendor' === array_shift($pa)) {
+			$vendor = array_shift($pa); /** @var string $vendor */
+			$m = array_shift($pa); /** @var string $m */
+			$url = function(string $rep, string $v, string $prefix = '') use($pa):string {return
+				ju_cc_path("https://github.com/$rep/tree/$v", $prefix, $pa)
+				. (!($l = $this->line()) ? '' : "#L$l")
+			;};
+			# 2023-07-27
+			# 1Add GitHub links to backtrace frames related to the `mage2pro/core` repository":
+			# https://github.com/mage2pro/core/issues/287
+			if ('justuno-com' === $vendor && 'core' === $m) {
+				$r = $url('justuno-com/core', ju_core_version());
+			}
+			# 2023-07-27
+			# 1) "Add GitHub links to backtrace frames related to the `magento/magento2` repository"
+			# https://github.com/mage2pro/core/issues/286
+			# 2) @TODO "Add GitHub links to backtrace frames related to the `mage2pro/core` repository":
+			# https://github.com/mage2pro/core/issues/287
+			elseif ('magento' === $vendor) {
+				/** @var string $prefix */
+				if ('framework' === $m) {
+					$prefix = 'lib/internal/Magento/Framework';
+				}
+				else {
+					$ma = explode('-', $m); /** @var string[] $ma */
+					ju_assert(ju_starts_with($m, 'module-'));
+					ju_assert_eq('module', array_shift($ma));
+					$m = implode(ju_ucfirst($ma));
+					$prefix = "app/code/Magento/$m";
+				}
+				$r = $url('magento/magento2', ju_magento_version(), $prefix);
+			}
+		}
+		return $r;
+	});}
+
+	/**
 	 * @used-by self::methodR()
 	 * @used-by self::method()
 	 */
