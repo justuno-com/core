@@ -19,6 +19,7 @@ function ju_assert_gd($v) {return ju_has_gd($v) ? $v : ju_error(ju_ucfirst(
 /**
  * 2020-02-04
  * @used-by \Justuno\Core\Qa\Dumper::dumpObject()
+ * @used-by \Justuno\Core\Sentry\Extra::adjust()
  * @param mixed|_DO|AE|oAPI $v
  * @param F|bool|mixed $onE [optional]
  * @return array(string => mixed)
@@ -35,6 +36,7 @@ function ju_gd($v, $onE = true):array {return ju_try(function() use($v) {return
  * 2020-06-18 "Port the `df_has_gd` function": https://github.com/justuno-com/core/issues/77
  * @used-by ju_assert_gd()
  * @used-by \Justuno\Core\Qa\Dumper::dumpObject()
+ * @used-by \Justuno\Core\Sentry\Extra::adjust()
  * @param mixed $v
  */
 function ju_has_gd($v):bool {return $v instanceof _DO || $v instanceof AE || ju_is_api_o($v);}

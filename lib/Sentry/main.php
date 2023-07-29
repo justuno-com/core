@@ -24,28 +24,67 @@ function ju_sentry($m, $v, array $extra = []):void {
 	if ($v instanceof E || !in_array(ju_domain_current(), $domainsToSkip)) {
         # 2020-09-09, 2023-07-25 We need `df_caller_module(1)` (I checked it) because it is nested inside `df_sentry_module()`.
 		$m = ju_sentry_module($m ?: ju_caller_module(1));
-		static $d; /** @var array(string => mixed) $d */
-		$d = $d ?: ['extra' => [], 'fingerprint' => [
-			ju_core_version(), ju_domain_current(), ju_magento_version(), ju_package_version($m), ju_store_code()
-		]];
+		# 2016-22-22 https://docs.sentry.io/clients/php/usage/#optional-attributes
 		# 2023-07-25
 		# "Change the 3rd argument of `df_sentry` from `$context` to `$extra`": https://github.com/mage2pro/core/issues/249
-		$context = ju_clean(['extra' => $extra]);
+		$context = [
+			'extra' => $extra
+			/**
+			 * 2016-12-25
+			 * Чтобы события разных магазинов не группировались вместе.
+			 * https://docs.sentry.io/learn/rollups/#customize-grouping-with-fingerprints
+			 * 2017-03-15
+			 * Раньше здесь стоял код: 'fingerprint' => ['{{ default }}', df_domain_current()]
+			 * https://github.com/mage2pro/core/blob/2.2.0/Sentry/lib/main.php#L38
+			 * При этом коде уже игнорируемые события появлялись в журнале снова и не снова.
+			 * Поэтому я решил отныне не использовать {{ default }},
+			 * а строить fingerprint полностью самостоятельно.
+			 *
+			 * Осознанно не включаю в fingerprint текещий адрес запроса HTTP,
+			 * потому что он может содержать всякие уникальные параметры в конце, например:
+			 * https://<domain>/us/rest/us/V1/dfe-stripe/fab9c9a3bb3e745ca94eaeb7128692c9/place-order
+			 *
+			 * 2017-04-03
+			 * Раньше в fingerprint включалось ещё:
+			 * df_is_cli() ? df_hash_a(df_cli_argv()) : (df_is_rest() ? df_rest_action() : df_action_name())
+			 * Решил больше это не включать: пока нет в этом необходимости.
+			 */
+			,'fingerprint' => [
+				ju_core_version(), ju_domain_current(), ju_magento_version(), ju_package_version($m), ju_store_code()
+			]
+		];
 		# 2017-01-09
 		if ($v instanceof DFE) {
 			$context = jua_merge_r($context, $v->sentryContext());
 		}
-		$context = jua_merge_r($d, $context);
 		if ($v instanceof E) {
 			# 2016-12-22 https://docs.sentry.io/clients/php/usage/#reporting-exceptions
 			ju_sentry_m($m)->captureException($v, $context);
 		}
 		else {
 			$v = ju_dump($v);
+			# 2017-04-16
+			# Добавляем заголовок события к «fingerprint», потому что иначе сообщения с разными заголовками
+			# (например: «Robokassa: action» и «[Robokassa] request») будут сливаться вместе.
+			$context['fingerprint'][]= $v;
+			/**
+			 * 2016-12-23
+			 * «The record severity. Defaults to error.»
+			 * https://docs.sentry.io/clientdev/attributes/#optional-attributes
+			 *
+			 * @used-by \Justuno\Core\Sentry\Client::capture():
+			 *	if (!isset($data['level'])) {
+			 *		$data['level'] = self::ERROR;
+			 *	}
+			 * https://github.com/mage2pro/sentry/blob/1.6.4/lib/Raven/Client.php#L640-L642
+			 * При использовании @see \Justuno\Core\Sentry\Client::DEBUG у сообщения в списке сообщений
+			 * в интерфейсе Sentry не будет никакой метки.
+			 * При использовании @see \Justuno\Core\Sentry\Client::INFO у сообщения в списке сообщений
+			 * в интерфейсе Sentry будет синяя метка «Info».
+			 */
+			$context['level'] = Sentry::DEBUG;
 			# 2016-12-22 https://docs.sentry.io/clients/php/usage/#reporting-other-errors
-			ju_sentry_m($m)->captureMessage($v, [
-				'fingerprint' => array_merge(jua($context, 'fingerprint', []), [$v]), 'level' => Sentry::DEBUG
-			] + $context);
+			ju_sentry_m($m)->captureMessage($v, $context);
 		}
 	}
 }
