@@ -26,6 +26,7 @@
  * @used-by jutr()
  * @used-by \Justuno\Core\Helper\Text::quote()
  * @used-by \Justuno\Core\O::a()
+ * @used-by \Justuno\Core\Qa\Trace::__construct()
  * @used-by \Justuno\Core\Qa\Trace\Frame::methodParameter()
  * @used-by \Justuno\Core\Sentry\Client::__construct()
  * @used-by \Justuno\Core\Sentry\Client::capture()

@@ -30,6 +30,7 @@ const JU_BEFORE = -1;
  * @used-by ju_map_kr()
  * @used-by ju_qty()
  * @used-by ju_trim()
+ * @used-by \Justuno\Core\Qa\Trace::__construct()
  * @used-by \Justuno\M2\Controller\Response\Catalog::execute()
  * @used-by \Justuno\M2\Controller\Response\Inventory::execute()
  * @used-by \Justuno\M2\Inventory\Variants::p()

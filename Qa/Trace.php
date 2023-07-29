@@ -10,41 +10,29 @@ final class Trace implements \IteratorAggregate, \Countable {
 	 * @used-by \Justuno\Core\Qa\Failure::postface()
 	 * @param array(string => int|string) $frames
 	 */
-	function __construct(array $frames) {
-		$this->_frames = [];
-		foreach ($frames as $frameA) { /** @var array(string => string|int) $frameA */
-			/**
-			 * 2017-07-01
-			 * Сегодня при обработке исключительной ситуации при запуске теста из PHPUnit
-			 * столкнулся с проблемой, что стек вызовов внутри файла PHPUnit в формате Phar
-			 * в моём случае содержал какие-то бинарные символы, из-за которых падала моя функция @see ju_trim()
-			 * @see \Df\Zf\Filter\StringTrim::_splitUtf8()
-			 * Я эту проблему решил тем, что теперь df_trim() по-умолчанию
-			 * в случае исключительной ситуации просто возвращет исходную строку,
-			 * а не возбуждает исключительную ситуацию.
-			 * Однако мне в стеке вызовов в любом случае не нужна бинарная каша,
-			 * поэтому я отсекаю ту часть стека, которая находится внутри Phar.
-			 * 2023-01-28
-			 * 1) The 'file' key can be absent in a stack frame, e.g.:
-			 *	{
-			 *		"function": "loadClass",
-			 *		"class": "Composer\\Autoload\\ClassLoader",
-			 *		"type": "->",
-			 *		"args": ["Df\\Framework\\Plugin\\App\\Router\\ActionList\\Interceptor"]
-			 *	},
-			 *	{
-			 *		"function": "spl_autoload_call",
-			 *		"args": ["Df\\Framework\\Plugin\\App\\Router\\ActionList\\Interceptor"]
-			 *	},
-			 * 2) «Argument 1 passed to df_starts_with() must be of the type string, null given,
-			 * called in vendor/mage2pro/core/Qa/Trace.php on line 28»: https://github.com/mage2pro/core/issues/186
-			 * 3) @see \Justuno\Core\Qa\Trace\Frame::file()
-			 */
-			if (ju_starts_with(jua($frameA, 'file', ''), 'phar://')) {
-				break;
-			}
-			$this->_frames[]= F::i($frameA);
-		}
+	function __construct(array $ff) {
+		$ff = ju_filter_head($ff, function(array $f):bool {return in_array(jua($f, 'function'), [
+			# 2023-07-26
+			# "`df_error_create` should be excluded from exceptions traces": https://github.com/mage2pro/core/issues/262
+			'ju_error_create'
+			# 2023-07-27 "`df_log` should be excluded from exceptions traces": https://github.com/mage2pro/core/issues/284
+			,'ju_log'
+		]);});
+		/**
+		 * 2017-07-01
+		 * Сегодня при обработке исключительной ситуации при запуске теста из PHPUnit
+		 * столкнулся с проблемой, что стек вызовов внутри файла PHPUnit в формате Phar
+		 * в моём случае содержал какие-то бинарные символы, из-за которых падала моя функция @see df_trim()
+		 * @see \Df\Zf\Filter\StringTrim::_splitUtf8()
+		 * Я эту проблему решил тем, что теперь df_trim() по-умолчанию
+		 * в случае исключительной ситуации просто возвращет исходную строку,
+		 * а не возбуждает исключительную ситуацию.
+		 * Однако мне в стеке вызовов в любом случае не нужна бинарная каша,
+		 * поэтому я отсекаю ту часть стека, которая находится внутри Phar.
+		 * 2023-07-26 "Implement `df_filter_tail()`": https://github.com/mage2pro/core/issues/263
+		 */
+		$ff = ju_filter_tail($ff, function(array $f):bool {return ju_starts_with(ju_bt_entry_file($f), 'phar://');});
+		$this->_frames = ju_map($ff, function(array $f):F {return F::i($f);});
 	}
 
 	/**
