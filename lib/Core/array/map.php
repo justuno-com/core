@@ -1,6 +1,4 @@
 <?php
-use Justuno\Core\Exception as DFE;
-
 /**
  * 2020-06-16
  * PHP supports global constants since 5.3:
