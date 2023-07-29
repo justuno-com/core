@@ -73,12 +73,12 @@ function ju_module_dir($m, string $type = ''):string {
  * @param string|object|null $m
  * @param F|bool|mixed $onE [optional]
  */
-function ju_module_file_name($m, string $name, string $ext = '', $onE = true):string {
-	$r = ju_module_path_etc($m, ju_file_ext_add($name, $ext));
-	return ju_fts(ju_try(
-		function() use($r):string {ju_assert(file_exists($r), "The required file «{$r}» is absent."); return $r;}, $onE
-	));
-}
+function ju_module_file_name($m, string $name, string $ext = '', $onE = true):string {return ju_fts(ju_try(
+	function() use($m, $name, $ext):string {
+		$r = ju_module_path_etc($m, ju_file_ext_add($name, $ext));
+		ju_assert(file_exists($r), "The required file «{$r}» is absent."); return $r;
+	}, $onE
+));}
 
 /**
  * 2023-07-26
