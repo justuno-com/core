@@ -45,9 +45,12 @@ final class Dumper {
 		}
 		else {
 			$this->_dumped[$hash] = true;
-			$r = !ju_has_gd($o)
+			# 2023-07-26 "`df_dump()` should handle `Traversable` similar to arrays": https://github.com/mage2pro/core/issues/253
+			/** @var array(string => mixed)|null $a */
+			$a = ju_has_gd($o) ? ju_gd($o) : (is_iterable($o) ? ju_ita($o) : null);
+			$r = is_null($a)
 				? sprintf("%s %s", get_class($o), ju_json_encode_partial($o))
-				: sprintf("%s(%s\n)", get_class($o), ju_tab_multiline($this->dumpArrayElements($o->getData())))
+				: sprintf("%s(\n%s\n)", get_class($o), ju_tab_multiline($this->dumpArrayElements($a)))
 			;
 		}
 		return $r;

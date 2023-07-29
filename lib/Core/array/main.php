@@ -15,13 +15,15 @@ function ju_array($v):array {return is_array($v) ? $v : [$v];}
  * 2022-10-18
  * @uses iterator_to_array() allows an array as the first argument since PHP 8.2:
  * https://www.php.net/manual/migration82.other-changes.php#migration82.other-changes.functions.spl
+ * 2023-07-26 "Replace `array|Traversable` with `iterable`": https://github.com/mage2pro/core/issues/255
  * @used-by ju_filter()
  * @used-by ju_map()
  * @used-by jua_select_ordered()
  * @used-by juak_transform()
- * @param Traversable|array $t
+ * @used-by \Justuno\Core\Qa\Dumper::dumpObject()
+ * @param iterable $i
  */
-function ju_ita($t):array {return is_array($t) ? $t : iterator_to_array($t);}
+function ju_ita($i):array {return is_array($i) ? $i : iterator_to_array($i);}
 
 /**
  * 2020-06-14 "Port the `dfa_flatten` function": https://github.com/justuno-com/core/issues/17
