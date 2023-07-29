@@ -3,8 +3,6 @@ namespace Justuno\Core\Framework\Upgrade;
 use Magento\Framework\Setup\ModuleContextInterface as IModuleContext;
 use Magento\Framework\Setup\SchemaSetupInterface as ISchemaSetup;
 use Magento\Framework\Setup\UpgradeSchemaInterface as IUpgradeSchema;
-use Magento\Setup\Model\ModuleContext;
-use Magento\Setup\Module\Setup;
 /**
  * 2016-08-14
  * 2020-08-21 "Port the `Df\Framework\Upgrade\Schema` class" https://github.com/justuno-com/core/issues/227
