@@ -35,7 +35,7 @@ final class Formatter {
 	private static function frame(F $f):string {/** @var string $r */
 		try {
 			$r = ju_kv([
-				'Location' => ju_cc(':', ju_path_relative($f->filePath()), $f->line()), 'Callee' => $f->method()
+				'Location' => ju_cc(':', ju_path_relative($f->file()), $f->line()), 'Callee' => $f->method()
 			], 13);
 		}
 		catch (\Exception $e) {
