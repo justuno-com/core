@@ -53,6 +53,7 @@ function ju_path_is_internal(string $p):bool {return ju_es($p) || ju_starts_with
  * 2020-08-13 "Port the `df_path_relative` function" https://github.com/justuno-com/core/issues/174
  * @used-by ju_file_write()
  * @used-by \Justuno\Core\Qa\Trace\Formatter::frame()
+ * @used-by \Justuno\Core\Qa\Trace\Frame::file()
  * @used-by \Justuno\Core\Sentry\Trace::info()
  */
 function ju_path_relative(string $p, string $b = DL::ROOT):string {return ju_trim_text_left(

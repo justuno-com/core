@@ -12,9 +12,10 @@ use Justuno\Core\RAM;
  * @used-by \Justuno\Core\Html\Tag::tag()
  * @used-by \Justuno\Core\Qa\Failure::report()
  * @used-by \Justuno\Core\Qa\Failure\Exception::e()
+ * @used-by \Justuno\Core\Qa\Trace\Frame::file()
  * @used-by \Justuno\Core\Qa\Trace\Frame::functionA()
- * @used-by \Justuno\Core\Qa\Trace\Frame::methodR()
  * @used-by \Justuno\Core\Qa\Trace\Frame::methodParameter()
+ * @used-by \Justuno\Core\Qa\Trace\Frame::methodR()
  * @param object $o
  * @return mixed
  */

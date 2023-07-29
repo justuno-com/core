@@ -22,7 +22,7 @@ final class Frame extends \Justuno\Core\O {
 	 * called in vendor/mage2pro/core/Qa/Trace/Formatter.php on line 37»: https://github.com/mage2pro/core/issues/187
 	 * @used-by \Justuno\Core\Qa\Trace\Formatter::frame()
 	 */
-	function file():string {return (string)$this['file'];}
+	function file():string {return juc($this, function() {return !($r = (string)$this['file'])? $r : ju_path_relative($r);});}
 
 	/**
 	 * 2015-04-03 Строка отсутствует при вызовах типа @see call_user_func()
