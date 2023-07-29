@@ -105,10 +105,10 @@ function ju_caller_m(int $o = 0):string {return ju_cc_method(ju_assert(ju_caller
  * The previous implementation:
  * 		return df_module_name(df_caller_c(++$o))
  * https://github.com/mage2pro/core/blob/9.9.5/Core/lib/caller.php#L147
- * @used-by df_log()
- * @used-by df_log_l()
- * @used-by df_sentry()
- * @used-by df_sentry_m()
+ * @used-by ju_log()
+ * @used-by ju_log_l()
+ * @used-by ju_sentry()
+ * @used-by ju_sentry_m()
  */
 function ju_caller_module(int $o = 0):string {
 	$e = ju_assert(ju_caller_entry(++$o, function(array $e):bool {return

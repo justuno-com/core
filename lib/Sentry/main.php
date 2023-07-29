@@ -19,10 +19,11 @@ use Magento\User\Model\User;
  * @param _DO|mixed[]|mixed|E $v
  * @param array(string => mixed) $context [optional]
  */
-function ju_sentry($m, $v, array $context = []):void {
+function ju_sentry($m, $v, array $extra = []):void {
 	static $domainsToSkip = []; /** @var string[] $domainsToSkip */
 	if ($v instanceof E || !in_array(ju_domain_current(), $domainsToSkip)) {
-		$m = ju_sentry_module($m);
+        # 2020-09-09, 2023-07-25 We need `df_caller_module(1)` (I checked it) because it is nested inside `df_sentry_module()`.
+		$m = ju_sentry_module($m ?: ju_caller_module(1));
 		static $d; /** @var array(string => mixed) $d */
 		$d = $d ?: ['extra' => [], 'fingerprint' => [
 			ju_core_version(), ju_domain_current(), ju_magento_version(), ju_package_version($m), ju_store_code()
