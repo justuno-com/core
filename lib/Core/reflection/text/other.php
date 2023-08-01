@@ -1,18 +1,5 @@
 <?php
-/**
- * 2016-08-10
- * 2020-08-19 "Port the `df_cc_method` function" https://github.com/justuno-com/core/issues/202
- * @used-by \Justuno\Core\Qa\Trace\Frame::method()
- * @param string|object|null|array(object|string)|array(string = string) $a1
- * @param string|null $a2 [optional]
- * @return string
- */
-function ju_cc_method($a1, $a2 = null) {return ju_ccc('::',
-	$a2 ? [ju_cts($a1), $a2] : (
-		!isset($a1['function']) ? $a1 :
-			[jua($a1, 'class'), $a1['function']]
-	)
-);}
+
 
 /**
  * 2016-01-01
@@ -39,17 +26,7 @@ function ju_class_f($c) {return ju_first(ju_explode_class($c));}
  */
 function ju_class_l($c) {return ju_last(ju_explode_class($c));}
 
-/**
- * 2016-01-01
- * 2016-10-20
- * Making $c optional leads to the error «get_class() called without object from outside a class»: https://3v4l.org/k6Hd5
- * https://3v4l.org/k6Hd5
- * 2020-08-22 "Port the `df_class_my` function" https://github.com/justuno-com/core/issues/263
- * @used-by \Justuno\Core\Config\Plugin\Model\Config\SourceFactory::aroundCreate()
- * @param string|object $c
- * @return bool
- */
-function ju_class_my($c) {return in_array(ju_class_f($c), ['Justuno']);}
+
 
 /**
  * 2015-08-14 @uses get_class() does not add the leading slash `\` before the class name: http://3v4l.org/HPF9R
