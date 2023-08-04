@@ -37,7 +37,11 @@ function ju_prop($o, $v = JU_N, $d = null, string $type = '') {/** @var object|m
 	}
 	else {# 2019-09-08 A static call.
 		$k = ju_caller_m();
-		static $s; /** @var array(string => mixed) $s */
+		# 2023-08-04
+		# «dfa(): Argument #1 ($a) must be of type array, null given,
+		# called in vendor/mage2pro/core/Core/lib/lang/prop.php on line 109»:
+		# https://github.com/mage2pro/core/issues/314
+		static $s = []; /** @var array(string => mixed) $s */
 		if ($isGet) {
 			$r = jua($s, $k, $d);
 		}
