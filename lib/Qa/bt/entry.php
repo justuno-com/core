@@ -3,6 +3,7 @@
  * 2023-08-05
  * @see \Justuno\Core\Qa\Trace\Frame::class_()
  * @used-by df_caller_module()
+ * @used-by ju_x_entry()
  */
 function ju_bt_entry_class(array $e):string {return jua($e, 'class', '');}
 

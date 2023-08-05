@@ -9,7 +9,7 @@ use Magento\Framework\Phrase as P;
  * @used-by ju_x_module()
  */
 function ju_x_entry(E $e):array {return ju_caller_entry($e, function(array $a):bool {return
-	($c = jua($a, 'class')) && ju_module_enabled($c)
+	($c = ju_bt_entry_class($a)) && ju_module_enabled($c)
 ;});}
 
 /**
