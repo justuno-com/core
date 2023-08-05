@@ -5,11 +5,11 @@ use Exception as E;
  * 2017-03-28 If the function is called from a closure, then it will go up through the stask until it leaves all closures.
  * 2020-08-19 "Port the `df_caller_entry` function" https://github.com/justuno-com/core/issues/207
  * 2023-07-26 "Add the `$skip` optional parameter to `df_caller_entry()`": https://github.com/mage2pro/core/issues/281
+ * @used-by ju_caller_entry_m()
  * @used-by ju_caller_f()
  * @used-by ju_caller_m()
  * @used-by ju_log_l()
  * @used-by ju_sentry()
- * @used-by ju_x_entry()
  * @param E|int|null|array(array(string => string|int)) $p [optional]
  * @param callable|null $f [optional]
  * @return array(string => string|int)
@@ -56,3 +56,25 @@ function ju_caller_entry($p = 0, $f = null, array $skip = []):array {
 	}
 	return ju_eta($r); /** 2021-10-05 @uses array_shift() returns `null` for an empty array */
 }
+
+/**
+ * 2023-08-05
+ * @used-by ju_caller_module()
+ * @used-by ju_log_l()
+ * @param E|int $p
+ */
+function ju_caller_entry_m($p = 0):array {return ju_eta(ju_caller_entry(ju_bt_inc($p), function(array $e):bool {return
+	# 2023-07-26
+	# "«The required key «class» is absent» is `df_log()` is called from `*.phtml`":
+	# https://github.com/mage2pro/core/issues/259
+	# 2023-08-05
+	# 1) "«Module 'Monolog_Logger' is not correctly registered» in `lib/internal/Magento/Framework/Module/Dir.php:62`":
+	# https://github.com/mage2pro/core/issues/318
+	# 2) `Monolog_Logger` is not a Magento module, so I added `df_module_enabled()`.
+	($c = ju_bt_entry_class($e)) && ju_module_enabled($c) /** @var string|null $c */
+	# 2023-07-26
+	# "If `df_log()` is called from a `*.phtml`,
+	# then the `*.phtml`'s module should be used as the log source instead of `Magento_Framework`":
+	# https://github.com/mage2pro/core/issues/268
+	|| ju_bt_entry_is_phtml($e)
+;}));}

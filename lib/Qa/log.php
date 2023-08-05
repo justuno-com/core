@@ -11,7 +11,7 @@ use Magento\Framework\DataObject as _DO;
  */
 function ju_log($v, $m = null, array $d = []):void {
 	$isE = $v instanceof E; /** @var bool $isE */
-	$m = $m ? ju_module_name($m) : ($isE ? ju_x_module($v) : ju_caller_module());
+	$m = $m ? ju_module_name($m) : ($isE ? ju_caller_module($v) : ju_caller_module());
 	ju_log_l($m, ...($isE ? [$v, $d] : [!$d ? $v : (jua_merge_r($d, is_array($v) ? $v : ['message' => $v])), []]));
 	ju_sentry($m, ...($isE || !is_array($v) ? [$v, $d] : ['', jua_merge_r($d, $v)]));
 }
@@ -30,22 +30,14 @@ function ju_log($v, $m = null, array $d = []):void {
 function ju_log_l($m, $p2, $p3 = [], string $p4 = ''):void {
 	/** @var E|null $e */ /** @var array|string|mixed $d */ /** @var string $suf */ /** @var string $pref */
 	list($e, $d, $suf, $pref) = $p2 instanceof E ? [$p2, $p3, $p4, ''] : [null, $p2, ju_ets($p3), $p4];
-	if (!$m) {
-		if (!$e) {
-			$m = ju_caller_module();
-		}
-		else {
-			$en = ju_x_entry($e); /** @var array(string => string) $en */
-			list($m, $suf) = [jua($en, 'class'), jua($en, 'function', 'exception')];
-		}
-	}
+	$m = $m ?: ($e ? dju_caller_module($e) : ju_caller_module());
 	if (!$suf) {
 		# 2023-07-26
 		# 1) "If `df_log_l()` is called from a `*.phtml`,
 		# then the `*.phtml`'s base name  should be used as the log file name suffix instead of `df_log_l`":
 		# https://github.com/mage2pro/core/issues/269
 		# 2) 2023-07-26 "Add the `$skip` optional parameter to `df_caller_entry()`": https://github.com/mage2pro/core/issues/281
-		$entry = $e ? ju_x_entry($e) : ju_caller_entry(0, null, ['ju_log']); /** @var array(string => string|int) $entry */
+		$entry = $e ? ju_caller_entry_m($e) : ju_caller_entry(0, null, ['ju_log']); /** @var array(string => string|int) $entry */
 		$suf = ju_bt_entry_is_phtml($entry) ? basename(ju_bt_entry_file($entry)) : ju_bt_entry_func($entry);
 	}
 	ju_report(

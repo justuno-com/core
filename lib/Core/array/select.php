@@ -23,7 +23,6 @@
  * @used-by ju_sentry()
  * @used-by ju_sentry_m()
  * @used-by ju_x_entry()
- * @used-by ju_x_module()
  * @used-by jutr()
  * @used-by \Justuno\Core\Helper\Text::quote()
  * @used-by \Justuno\Core\O::a()

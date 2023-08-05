@@ -3,7 +3,7 @@
  * 2023-08-05
  * @see \Justuno\Core\Qa\Trace\Frame::class_()
  * @used-by df_caller_module()
- * @used-by ju_x_entry()
+ * @used-by ju_caller_entry_m()
  */
 function ju_bt_entry_class(array $e):string {return jua($e, 'class', '');}
 
@@ -63,6 +63,7 @@ function ju_bt_entry_is_method(array $e):bool {return jua_has_keys($e, ['class',
 /**
  * 2023-07-26
  * @see \Justuno\Core\Qa\Trace\Frame::isPHTML()
+ * @used-by ju_caller_entry_m()
  * @used-by ju_caller_module()
  * @used-by ju_log_l()
  */

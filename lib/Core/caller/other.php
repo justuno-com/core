@@ -53,22 +53,7 @@ function ju_caller_m(int $o = 0):string {return ju_cc_method(ju_assert(ju_caller
  * @used-by ju_sentry()
  * @used-by ju_sentry_m()
  */
-function ju_caller_module(int $o = 0):string {
-	$e = ju_assert(ju_caller_entry(++$o, function(array $e):bool {return
-		# 2023-07-26
-		# "«The required key «class» is absent» is `df_log()` is called from `*.phtml`":
-		# https://github.com/mage2pro/core/issues/259
-		# 2023-08-05
-		# 1) "«Module 'Monolog_Logger' is not correctly registered» in `lib/internal/Magento/Framework/Module/Dir.php:62`":
-		# https://github.com/mage2pro/core/issues/318
-		# 2) `Monolog_Logger` is not a Magento module, so I added `ju_module_enabled()`.
-		($c = ju_bt_entry_class($e)) && ju_module_enabled($c) /** @var string|null $c */
-		# 2023-07-26
-		# "If `df_log()` is called from a `*.phtml`,
-		# then the `*.phtml`'s module should be used as the log source instead of `Magento_Framework`":
-		# https://github.com/mage2pro/core/issues/268
-		|| ju_bt_entry_is_phtml($e)
-	;}));
+function ju_caller_module($p = 0):string {return !($e = ju_caller_entry_m(ju_bt_inc($p))) ? 'Df_Core' : (
 	# 2023-08-05 «Module 'Monolog_Logger::addRecord' is not correctly registered»: https://github.com/mage2pro/core/issues/317
-	return ju_bt_entry_is_method($e) ? ju_module_name(ju_bt_entry_class($e)) : ju_module_name_by_path(ju_bt_entry_file($e));
-}
+	ju_bt_entry_is_method($e) ? ju_module_name(ju_bt_entry_class($e)) : ju_module_name_by_path(ju_bt_entry_file($e))
+);}

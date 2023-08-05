@@ -30,6 +30,7 @@ function ju_bt($p = 0, int $limit = 0):array {
  * @used-by ju_bt_log()
  * @used-by ju_bt_s()
  * @used-by ju_caller_entry()
+ * @used-by ju_caller_entry_m()
  * @param E|int|null|array(array(string => string|int)) $p
  * @return E|int
  */
