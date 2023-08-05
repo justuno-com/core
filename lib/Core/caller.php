@@ -120,7 +120,7 @@ function ju_caller_module(int $o = 0):string {
 		# 1) "«Module 'Monolog_Logger' is not correctly registered» in `lib/internal/Magento/Framework/Module/Dir.php:62`":
 		# https://github.com/mage2pro/core/issues/318
 		# 2) `Monolog_Logger` is not a Magento module, so I added `ju_module_enabled()`.
-		ju_bt_entry_is_method($e) && ju_module_enabled(ju_bt_entry_class($e))
+		($c = ju_bt_entry_class($e)) && ju_module_enabled($c) /** @var string|null $c */
 		# 2023-07-26
 		# "If `df_log()` is called from a `*.phtml`,
 		# then the `*.phtml`'s module should be used as the log source instead of `Magento_Framework`":
