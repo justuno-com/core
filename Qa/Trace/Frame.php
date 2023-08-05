@@ -140,12 +140,14 @@ final class Frame extends \Justuno\Core\O {
 	});}
 
 	/**
+	 * @see ju_bt_entry_class()
 	 * @used-by self::methodR()
 	 * @used-by self::method()
 	 */
 	private function class_():string {return ju_nts($this['class']);}
 
 	/**
+	 * @see ju_bt_entry_func()
 	 * @used-by self::methodR()
 	 * @used-by self::method()
 	 */

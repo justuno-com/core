@@ -1,5 +1,12 @@
 <?php
 /**
+ * 2023-08-05
+ * @see \Justuno\Core\Qa\Trace\Frame::class_()
+ * @used-by df_caller_module()
+ */
+function ju_bt_entry_class(array $e):string {return jua($e, 'class', '');}
+
+/**
  * 2023-07-26 "Implement `df_bt_entry_file()`": https://github.com/mage2pro/core/issues/279
  * @see \Justuno\Core\Qa\Trace\Frame::file()
  * @see \Justuno\Core\Sentry\Trace::info()

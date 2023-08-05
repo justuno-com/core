@@ -3,6 +3,7 @@
  * 2020-06-13 "Port the `dfa` function": https://github.com/justuno-com/core/issues/12
  * @used-by ju_asset_create()
  * @used-by ju_block()
+ * @used-by ju_bt_entry_class()
  * @used-by ju_bt_entry_file()
  * @used-by ju_bt_entry_func()
  * @used-by ju_bt_entry_line()

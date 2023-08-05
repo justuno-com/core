@@ -123,5 +123,6 @@ function ju_caller_module(int $o = 0):string {
 		# https://github.com/mage2pro/core/issues/268
 		|| ju_bt_entry_is_phtml($e)
 	;}));
-	return ju_bt_entry_is_method($e) ? ju_module_name(ju_cc_method($e)) : ju_module_name_by_path(ju_bt_entry_file($e));
+	# 2023-08-05 «Module 'Monolog_Logger::addRecord' is not correctly registered»: https://github.com/mage2pro/core/issues/317
+	return ju_bt_entry_is_method($e) ? ju_module_name(ju_bt_entry_class($e)) : ju_module_name_by_path(ju_bt_entry_file($e));
 }
