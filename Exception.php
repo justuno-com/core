@@ -1,8 +1,9 @@
 <?php
 namespace Justuno\Core;
-use \Exception as E;
 use Magento\Framework\Exception\LocalizedException as LE;
 use Magento\Framework\Phrase;
+use \Exception as E;
+use \Throwable as Th; # 2023-08-30 "Treat `\Throwable` similar to `\Exception`": https://github.com/justuno-com/core/issues/401
 /**
  * 2020-06-15 "Port the `Df\Core\Exception` class": https://github.com/justuno-com/core/issues/23
  * @used-by ju_param_sne()
