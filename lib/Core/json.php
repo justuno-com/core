@@ -1,5 +1,7 @@
 <?php
+use Closure as F;
 use Justuno\Core\Exception as DFE;
+use Justuno\Core\Json as J;
 /**
  * «Returns the value encoded in json in appropriate PHP type.
  * Values true, false and null are returned as TRUE, FALSE and NULL respectively.
@@ -44,6 +46,20 @@ function ju_json_decode($s, bool $throw = true) {/** @var mixed|bool|null $r */
 }
 
 /**
+ * 2023-08-30 "Implement `ju_json_dont_sort()`": https://github.com/justuno-com/core/issues/402
+ * @see ju_json_sort()
+ * @used-by ju_dump_ds()
+ * @return mixed
+ */
+function ju_json_dont_sort(F $f) {/** @var mixed $r */
+	$prev = J::bSort(); /** @var bool $prev */
+	J::bSort(false);
+	try {$r = $f();}
+	finally {J::bSort($prev);}
+	return $r;
+}
+
+/**
  * 2015-12-06
  * 2020-06-18 "Port the `df_json_encode` function": https://github.com/justuno-com/core/issues/65
  * @used-by ju_js_x()
@@ -74,9 +90,10 @@ function ju_json_encode_partial($v):string {return ju_json_encode($v, JSON_PARTI
  * because otherwise @uses ju_ksort_r_ci() will convert the numeric arrays to associative ones,
  * and their numeric keys will be ordered as strings.
  * 2020-06-18 "Port the `df_json_sort` function": https://github.com/justuno-com/core/issues/66
+ * @see ju_json_dont_sort()
  * @used-by ju_json_decode()
  * @used-by ju_json_encode()
  * @param mixed $v
  * @return mixed
  */
-function ju_json_sort($v) {return !is_array($v) ? $v : ju_ksort_r_ci($v);}
+function ju_json_sort($v) {return !is_array($v) || !J::bSort() ? $v : ju_ksort_r_ci($v);}
