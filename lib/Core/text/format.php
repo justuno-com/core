@@ -63,7 +63,7 @@ function ju_sprintf($s):string {/** @var string $r */ /** @var mixed[] $args */
  * 2020-06-17 "Port the `df_sprintf_strict` function": https://github.com/justuno-com/core/issues/44
  * @used-by ju_sprintf()
  * @param string|mixed[] $s
- * @throws Exception
+ * @throws Th
  */
 function ju_sprintf_strict($s):string {/** @var string $r */ /** @var mixed[] $args */
 	# 2020-03-02, 2022-10-31
@@ -80,7 +80,8 @@ function ju_sprintf_strict($s):string {/** @var string $r */ /** @var mixed[] $a
 	}
 	else {
 		try {$r = vsprintf($s, ju_tail($args));}
-		catch (Exception $e) {/** @var bool $inProcess */
+		# 2023-08-30 "Treat `\Throwable` similar to `\Exception`": https://github.com/justuno-com/core/issues/401
+		catch (Th $th) {/** @var bool $inProcess */
 			static $inProcess = false;
 			if (!$inProcess) {
 				$inProcess = true;
@@ -88,7 +89,7 @@ function ju_sprintf_strict($s):string {/** @var string $r */ /** @var mixed[] $a
 					'ju_sprintf_strict failed: «{message}».'
 					. "\nPattern: {$s}."
 					. "\nParameters:\n{params}."
-					,['{message}' => ju_xts($e), '{params}' => print_r(ju_tail($args), true)]
+					,['{message}' => ju_xts($th), '{params}' => print_r(ju_tail($args), true)]
 				);
 			}
 		}
