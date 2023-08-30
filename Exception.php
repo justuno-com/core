@@ -27,12 +27,12 @@ final class Exception extends LE implements \ArrayAccess {
 		elseif (is_string($arg0)) {
 			$m = __($arg0);
 		}
-		elseif ($arg0 instanceof E) {
-			$prev = $arg0;
+		elseif (ju_is_th($arg0)) {
+			$prev = ju_th2x($arg0);
 		}
 		$arg1 = jua($args, 1); /** @var int|string|E|Phrase|null $arg1 */
 		if (!is_null($arg1)) {
-			if ($arg1 instanceof E) {
+			if (ju_is_th($arg1)) {
 				$prev = $arg1;
 			}
 			elseif (is_int($prev)) {
@@ -174,6 +174,10 @@ final class Exception extends LE implements \ArrayAccess {
 	 */
 	private $_stackLevelsCountToSkip = 0;
 
-	/** @used-by ju_error_create() */
-	static function wrap(E $e):self {return $e instanceof self ? $e : new self($e);}
+	/**
+	 * 2023-08-30 "Treat `\Throwable` similar to `\Exception`": https://github.com/justuno-com/core/issues/401
+	 * @used-by ju_error_create()
+	 * @used-by \Justuno\Core\Qa\Failure\Exception::i()
+	 */
+	final static function wrap(Th $th):self {return $th instanceof self ? $th : new self($th);}
 }
