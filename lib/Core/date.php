@@ -1,4 +1,5 @@
 <?php
+use Throwable as Th; # 2023-08-30 "Treat `\Throwable` similar to `\Exception`": https://github.com/justuno-com/core/issues/401
 use Zend_Date as ZD;
 /**
  * 2016-07-19
@@ -10,7 +11,7 @@ function ju_date(ZD $d = null):ZD {return $d ?: ZD::now();}
 /**
  * @used-by \Justuno\M2\Catalog\Diagnostic::p()
  * @return ZD|null
- * @throws Exception
+ * @throws Th
  */
 function ju_date_from_db(string $s, bool $onE = true) {
 	ju_param_sne($s, 0); return ju_try(function() use($s):ZD {return new ZD($s, ZD::ISO_8601);}, $onE);
