@@ -1,7 +1,7 @@
 <?php
 /**
  * 2020-06-17 "Port the `df_ends_with` function": https://github.com/justuno-com/core/issues/47
- * 2022-10-14 @see str_ends_with() has been added to PHP 8: https://www.php.net/manual/function.str-ends-with.php
+ * 2022-10-14 @see str_ends_with() has been added to PHP 8: https://php.net/manual/function.str-ends-with.php
  * @used-by ju_append()
  * @used-by ju_bt_entry_is_phtml()
  * @used-by ju_is_bin_magento()
@@ -18,7 +18,7 @@ function ju_ends_with(string $haystack, $n):bool {return is_array($n)
 
 /**
  * 2020-06-16 "Port the `df_starts_with` function": https://github.com/justuno-com/core/issues/30
- * 2022-10-14 @see str_starts_with() has been added to PHP 8: https://www.php.net/manual/function.str-starts-with.php
+ * 2022-10-14 @see str_starts_with() has been added to PHP 8: https://php.net/manual/function.str-starts-with.php
  * @used-by ju_action_prefix()
  * @used-by ju_is_url_absolute()
  * @used-by ju_package()

@@ -10,7 +10,7 @@ function ju_bts(bool $v):string {return $v ? 'true' : 'false';}
 
 /**
  * 2020-06-13 "Port the `df_contains` function": https://github.com/justuno-com/core/issues/16
- * 2022-10-14 @see str_contains() has been added to PHP 8: https://www.php.net/manual/function.str-contains.php
+ * 2022-10-14 @see str_contains() has been added to PHP 8: https://php.net/manual/function.str-contains.php
  * @used-by ju_caller_entry()
  * @used-by ju_error_create()
  * @used-by ju_file_name()

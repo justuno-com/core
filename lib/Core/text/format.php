@@ -48,7 +48,7 @@ function ju_sprintf($s):string {/** @var string $r */ /** @var mixed[] $args */
 	# https://github.com/mage2pro/core/issues/96#issuecomment-593392100
 	# We should support PHP 7.0.
 	# https://3v4l.org/3O92j
-	# https://www.php.net/manual/migration71.new-features.php#migration71.new-features.symmetric-array-destructuring
+	# https://php.net/manual/migration71.new-features.php#migration71.new-features.symmetric-array-destructuring
 	# https://stackoverflow.com/a/28233499
 	list($s, $args) = is_array($s) ? [ju_first($s), $s] : [$s, func_get_args()];
 	try {$r = ju_sprintf_strict($args);}
@@ -69,7 +69,7 @@ function ju_sprintf_strict($s):string {/** @var string $r */ /** @var mixed[] $a
 	# https://github.com/mage2pro/core/issues/96#issuecomment-593392100
 	# We should support PHP 7.0.
 	# https://3v4l.org/3O92j
-	# https://www.php.net/manual/migration71.new-features.php#migration71.new-features.symmetric-array-destructuring
+	# https://php.net/manual/migration71.new-features.php#migration71.new-features.symmetric-array-destructuring
 	# https://stackoverflow.com/a/28233499
 	list($s, $args) = is_array($s) ? [ju_first($s), $s] : [$s, func_get_args()];
 	if (1 === count($args)) {

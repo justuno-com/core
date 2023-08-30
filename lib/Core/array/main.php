@@ -14,7 +14,7 @@ function ju_array($v):array {return is_array($v) ? $v : [$v];}
  * 2020-06-13 "Port the `df_ita` function": https://github.com/justuno-com/core/issues/15
  * 2022-10-18
  * @uses iterator_to_array() allows an array as the first argument since PHP 8.2:
- * https://www.php.net/manual/migration82.other-changes.php#migration82.other-changes.functions.spl
+ * https://php.net/manual/migration82.other-changes.php#migration82.other-changes.functions.spl
  * 2023-07-26 "Replace `array|Traversable` with `iterable`": https://github.com/mage2pro/core/issues/255
  * @used-by ju_filter_f()
  * @used-by ju_map()

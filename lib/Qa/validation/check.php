@@ -1,6 +1,6 @@
 <?php
 use Magento\Framework\Phrase;
-/** 2022-10-15 @see is_iterable() has been added to PHP 7.1: https://www.php.net/manual/function.is-iterable.php */
+/** 2022-10-15 @see is_iterable() has been added to PHP 7.1: https://php.net/manual/function.is-iterable.php */
 if (!function_exists('is_iterable')) {
 	/**
 	 * 2016-08-09 http://stackoverflow.com/questions/31701517#comment59189177_31701556
