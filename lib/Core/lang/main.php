@@ -1,6 +1,6 @@
 <?php
 use Closure as F;
-use Exception as E;
+use Throwable as Th; # 2023-08-30 "Treat `\Throwable` similar to `\Exception`": https://github.com/justuno-com/core/issues/401
 
 /**
  * 2020-08-23 "Port the `df_if` function" https://github.com/justuno-com/core/issues/294
@@ -44,9 +44,9 @@ function ju_nop($v) {return $v;}
  * @used-by \Justuno\Core\Qa\Trace\Frame::methodR()
  * @param F|bool|mixed $onE [optional]
  * @return mixed
- * @throws E
+ * @throws Th
  */
 function ju_try(F $try, $onE = null) {
 	try {return $try();}
-	catch(E $e) {return $onE instanceof F ? $onE($e) : (true === $onE ? ju_error($e) : $onE);}
+	catch(Th $th) {return $onE instanceof F ? $onE($th) : (true === $onE ? ju_error($th) : $onE);}
 }
