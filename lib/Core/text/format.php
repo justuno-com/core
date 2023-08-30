@@ -1,4 +1,6 @@
 <?php
+use Throwable as Th; # 2023-08-30 "Treat `\Throwable` similar to `\Exception`": https://github.com/justuno-com/core/issues/401
+
 /**
  * 2020-06-17 "Port the `df_format` function": https://github.com/justuno-com/core/issues/40
  * @used-by ju_error_create()
@@ -39,7 +41,7 @@ function ju_kv(array $a, int $pad = 0):string {return ju_cc_n(ju_map_k(ju_clean(
  * 2020-06-17 "Port the `df_sprintf` function": https://github.com/justuno-com/core/issues/42
  * @used-by ju_format()
  * @param string|mixed[] $s
- * @throws Exception
+ * @throws Th
  */
 function ju_sprintf($s):string {/** @var string $r */ /** @var mixed[] $args */
 	# 2020-03-02, 2022-10-31
@@ -52,7 +54,8 @@ function ju_sprintf($s):string {/** @var string $r */ /** @var mixed[] $args */
 	# https://stackoverflow.com/a/28233499
 	list($s, $args) = is_array($s) ? [ju_first($s), $s] : [$s, func_get_args()];
 	try {$r = ju_sprintf_strict($args);}
-	catch (Exception $e) {$r = $s;}
+	# 2023-08-30 "Treat `\Throwable` similar to `\Exception`": https://github.com/justuno-com/core/issues/401
+	catch (Th $th) {$r = $s;}
 	return $r;
 }
 
