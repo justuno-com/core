@@ -16,7 +16,7 @@ function ju_xml_parse($x, bool $throw = true) {/** @var X $r */
 		ju_param_sne($x, 0);
 		$r = null;
 		try {$r = new X($x);}
-		catch (\Exception $e) {
+		catch (\Throwable $th) {
 			if ($throw) {
 				ju_error(
 					"При синтаксическом разборе документа XML произошёл сбой:\n"
@@ -24,7 +24,7 @@ function ju_xml_parse($x, bool $throw = true) {/** @var X $r */
 					. "********************\n"
 					. "%s\n"
 					. "********************\n"
-					, ju_xts($e)
+					, ju_xts($th)
 					, ju_trim($x)
 				);
 			}
