@@ -27,11 +27,11 @@ final class Formatter {
 			 */
 			static $loop = false;
 			if ($loop) {
-				ju_log_l(__CLASS__, "$r\n{$e->getTraceAsString()}", ju_class_l(__CLASS__));
+				ju_log_l(__CLASS__, "$r\n{$th->getTraceAsString()}", ju_class_l(__CLASS__));
 			}
 			else {
 				$loop = true;
-				ju_log($e, __CLASS__);
+				ju_log($th, __CLASS__);
 				$loop = false;
 			}
 		}
