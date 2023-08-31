@@ -47,6 +47,7 @@ function ju_xf(T $e):T {while ($e->getPrevious()) {$e = $e->getPrevious();} retu
  * @used-by \Justuno\Core\Exception::__construct()
  * @used-by \Justuno\Core\Qa\Failure\Exception::e()
  * @used-by \Justuno\Core\Qa\Trace\Formatter::p()
+ * @used-by \Justuno\Core\Sentry\Client::captureException()
  * @param T|P|string $e
  */
 function ju_xts($t):string {return ju_adjust_paths_in_message(
