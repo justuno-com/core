@@ -1,7 +1,7 @@
 <?php
 namespace Justuno\Core\Qa\Failure;
-use \Exception as E;
 use Justuno\Core\Exception as DFE;
+use \Throwable as Th; # 2023-08-31 "Treat `\Throwable` similar to `\Exception`": https://github.com/justuno-com/core/issues/401
 final class Exception extends \Justuno\Core\Qa\Failure {
 	/**
 	 * @override
@@ -34,7 +34,7 @@ final class Exception extends \Justuno\Core\Qa\Failure {
 	 * @used-by \Justuno\Core\Qa\Failure::postface()
 	 * @return array(array(string => string|int))
 	 */
-	protected function trace():array {return ju_xf($this->_e)->getTrace();}
+	protected function trace():array {return ju_bt_th(ju_xf($this->_e));}
 
 	/**
 	 * 2021-10-04
@@ -47,9 +47,6 @@ final class Exception extends \Justuno\Core\Qa\Failure {
 	 */
 	private $_e;
 
-	/**
-	 * @used-by ju_log_l()
-	 * @param E $e
-	 */
-	static function i(E $e):self {$r = new self; $r->_e = DFE::wrap($e); return $r;}
+	/** @used-by ju_log_l() */
+	static function i(Th $th):self {$r = new self; $r->_e = DFE::wrap($th); return $r;}
 }
