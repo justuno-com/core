@@ -5,7 +5,10 @@ use Magento\Framework\Data\Form\Element\AbstractElement as Sb;
 # 2015-12-13
 # 2020-08-22
 # "Port the `Df\Framework\Plugin\Data\Form\Element\AbstractElement` plugin" https://github.com/justuno-com/core/issues/237
-class AbstractElement extends Sb {
+# 2023-08-31
+# "Prevent interceptors generation for the plugins extended from interceptable classes":
+# https://github.com/justuno-com/core/issues/406
+class AbstractElement extends Sb implements \Magento\Framework\ObjectManager\NoninterceptableInterface {
 	/**
 	 * 2016-01-01
 	 * The empty constructor allows us to skip the parent's one.
