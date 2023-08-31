@@ -1,7 +1,7 @@
 <?php
 use Justuno\Core\Qa\Failure\Exception as QE;
 use Magento\Framework\DataObject as _DO;
-use Throwable as Th; # 2023-08-31 "Treat `\Throwable` similar to `\Exception`": https://github.com/justuno-com/core/issues/401
+use Throwable as T; # 2023-08-31 "Treat `\Throwable` similar to `\Exception`": https://github.com/justuno-com/core/issues/401
 /**
  * 2020-06-22 "Port the `df_log` function": https://github.com/justuno-com/core/issues/117
  * @used-by ju_error()
@@ -9,7 +9,7 @@ use Throwable as Th; # 2023-08-31 "Treat `\Throwable` similar to `\Exception`": 
  * @used-by \Justuno\Core\Framework\Plugin\App\Response\HttpInterface::beforeSetBody()
  * @used-by \Justuno\Core\Qa\Failure\Error::log()
  * @used-by \Justuno\Core\Qa\Trace\Formatter::p()
- * @param _DO|mixed[]|mixed|E $v
+ * @param _DO|mixed[]|mixed|T $v
  * @param string|object|null $m [optional]
  */
 function ju_log($v, $m = null, array $d = []):void {
@@ -29,22 +29,23 @@ function ju_log($v, $m = null, array $d = []):void {
  * @used-by \Justuno\Core\Qa\Trace\Formatter::p()
  * @used-by \Justuno\Core\Sentry\Client::send_http()
  * @param string|object|null $m
- * @param string|mixed[]|E $p2
- * @param string|mixed[]|E $p3 [optional]
+ * @param string|mixed[]|T $p2
+ * @param string|mixed[]|T $p3 [optional]
  */
 function ju_log_l($m, $p2, $p3 = [], string $p4 = ''):void {
-	/** @var E|null $e */ /** @var array|string|mixed $d */ /** @var string $suf */ /** @var string $pref */
-	list($e, $d, $suf, $pref) = $p2 instanceof E ? [$p2, $p3, $p4, ''] : [null, $p2, ju_ets($p3), $p4];
-	$m = $m ?: ($e ? ju_caller_module($e) : ju_caller_module());
+	/** @var T|null $t */ /** @var array|string|mixed $d */ /** @var string $suf */ /** @var string $pref */
+	list($t, $d, $suf, $pref) = ju_is_th($p2) ? [$p2, $p3, $p4, ''] : [null, $p2, ju_ets($p3), $p4];
+	$m = $m ?: ($t ? ju_caller_module($t) : ju_caller_module());
 	if (!$suf) {
 		# 2023-07-26
 		# 1) "If `df_log_l()` is called from a `*.phtml`,
 		# then the `*.phtml`'s base name  should be used as the log file name suffix instead of `df_log_l`":
 		# https://github.com/mage2pro/core/issues/269
 		# 2) 2023-07-26 "Add the `$skip` optional parameter to `df_caller_entry()`": https://github.com/mage2pro/core/issues/281
-		$entry = $e ? ju_caller_entry_m($e) : ju_caller_entry(0, null, ['ju_log']); /** @var array(string => string|int) $entry */
+		$entry = $t ? ju_caller_entry_m($t) : ju_caller_entry(0, null, ['df_log']); /** @var array(string => string|int) $entry */
 		$suf = ju_bt_entry_is_phtml($entry) ? basename(ju_bt_entry_file($entry)) : ju_bt_entry_func($entry);
 	}
+	$c = ju_context(); /** @var array(string => mixed) $c */
 	ju_report(
 		ju_ccc('--', 'mage2.pro/' . ju_ccc('-', ju_report_prefix($m, $pref), '{date}--{time}'), $suf) .  '.log'
 		# 2023-07-26
@@ -54,11 +55,10 @@ function ju_log_l($m, $p2, $p3 = [], string $p4 = ''):void {
 			# 2023-07-28
 			# "`df_log_l` does not log the context if the message is not an array":
 			# https://github.com/mage2pro/core/issues/289
-			ju_map('ju_dump', is_array($d)
-				? [jua_merge_r($d, ['Mage2.PRO' => ju_context()])]
-				: [$d, ju_context()])  /** @uses ju_dump() */
-			,!$e ? '' : ['EXCEPTION', QE::i($e)->report(), "\n\n"]
-			,($e ? null : "\n") . ju_bt_s($e ?: 1)
+			/** @uses ju_dump_ds() */
+			ju_map('ju_dump_ds', !$d ? [$c] : (is_array($d) ? [jua_merge_r($d, ['Mage2.PRO' => $c])] : [$d, $c]))
+			,!$t ? '' : ['EXCEPTION', QE::i($t)->report(), "\n\n"]
+			,($t ? null : "\n") . ju_bt_s($t ?: 1)
 		)
 	);
 }
