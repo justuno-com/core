@@ -1,10 +1,10 @@
 <?php
-use Exception as E;
 use Justuno\Core\Exception as DFE;
 use Justuno\Core\Qa\Trace\Frame;
 use Justuno\Core\Sentry\Client as Sentry;
 use Magento\Framework\DataObject as _DO;
 use Magento\User\Model\User;
+use Throwable as T; # 2023-08-31 "Treat `\Throwable` similar to `\Exception`": https://github.com/justuno-com/core/issues/401
 /**
  * 2016-12-22
  * $m could be:
@@ -18,15 +18,16 @@ use Magento\User\Model\User;
  * @used-by \Justuno\M2\Controller\Response\Catalog::execute()
  * @used-by \Justuno\M2\Response::p()
  * @param string|object|null $m
- * @param _DO|mixed[]|mixed|E $v
+ * @param _DO|mixed[]|mixed|T $v
  * @param array(string => mixed) $context [optional]
  */
 function ju_sentry($m, $v, array $extra = []):void {
 	static $domainsToSkip = []; /** @var string[] $domainsToSkip */
-	$isE = $v instanceof E; /** @var bool $isE */
-	if ($isE || !in_array(ju_domain_current(), $domainsToSkip)) {
+	# 2023-08-31 "Treat `\Throwable` similar to `\Exception`": https://github.com/justuno-com/core/issues/401
+	$isT = ju_is_th($v); /** @var bool $isT */
+	if ($isT || !in_array(ju_domain_current(), $domainsToSkip)) {
         # 2020-09-09, 2023-07-25 We need `df_caller_module(1)` (I checked it) because it is nested inside `df_sentry_module()`.
-		$m = ju_sentry_module($m ?: ($isE ? ju_caller_module($v) : ju_caller_module(1)));
+		$m = ju_sentry_module($m ?: ($isT ? ju_caller_module($v) : ju_caller_module(1)));
 		# 2016-22-22 https://docs.sentry.io/clients/php/usage/#optional-attributes
 		# 2023-07-25
 		# "Change the 3rd argument of `df_sentry` from `$context` to `$extra`": https://github.com/mage2pro/core/issues/249
@@ -60,7 +61,7 @@ function ju_sentry($m, $v, array $extra = []):void {
 		if ($v instanceof DFE) {
 			$context = jua_merge_r($context, $v->sentryContext());
 		}
-		if ($isE) {
+		if ($isT) {
 			# 2016-12-22 https://docs.sentry.io/clients/php/usage/#reporting-exceptions
 			ju_sentry_m($m)->captureException($v, $context);
 		}
