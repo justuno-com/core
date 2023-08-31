@@ -1,9 +1,9 @@
 <?php
 namespace Justuno\Core\Qa;
 use Justuno\Core\Qa\Trace\Frame;
-use Exception as E;
-use ReflectionParameter as RP;
 use Zend_Validate_Interface as Vd;
+use \Exception as E;
+use \ReflectionParameter as RP;
 # 2020-06-20 "Port the `Df\Qa\Method` class": https://github.com/justuno-com/core/issues/95
 final class Method {
 	/**
