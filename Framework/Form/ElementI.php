@@ -13,5 +13,3 @@ interface ElementI {
 	 */
 	function onFormInitialized():void;
 }
-
-
