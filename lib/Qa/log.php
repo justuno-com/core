@@ -1,7 +1,7 @@
 <?php
 use Justuno\Core\Qa\Failure\Exception as QE;
-use Exception as E;
 use Magento\Framework\DataObject as _DO;
+use Throwable as Th; # 2023-08-31 "Treat `\Throwable` similar to `\Exception`": https://github.com/justuno-com/core/issues/401
 /**
  * 2020-06-22 "Port the `df_log` function": https://github.com/justuno-com/core/issues/117
  * @used-by ju_error()
@@ -13,10 +13,10 @@ use Magento\Framework\DataObject as _DO;
  * @param string|object|null $m [optional]
  */
 function ju_log($v, $m = null, array $d = []):void {
-	$isE = $v instanceof E; /** @var bool $isE */
-	$m = $m ? ju_module_name($m) : ($isE ? ju_caller_module($v) : ju_caller_module());
-	ju_log_l($m, ...($isE ? [$v, $d] : [!$d ? $v : (jua_merge_r($d, is_array($v) ? $v : ['message' => $v])), []]));
-	ju_sentry($m, ...($isE || !is_array($v) ? [$v, $d] : ['', jua_merge_r($d, $v)]));
+	$isT = ju_is_th($v); /** @var bool $isT */
+	$m = $m ? ju_module_name($m) : ($isT ? ju_caller_module($v) : ju_caller_module());
+	ju_log_l($m, ...($isT ? [$v, $d] : [!$d ? $v : (jua_merge_r($d, is_array($v) ? $v : ['message' => $v])), []]));
+	ju_sentry($m, ...($isT || !is_array($v) ? [$v, $d] : ['', jua_merge_r($d, $v)]));
 }
 
 /**
