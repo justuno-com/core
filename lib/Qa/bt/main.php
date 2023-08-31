@@ -47,7 +47,7 @@ function ju_bt_has(string $c, string $m = '', Th $t = null):bool {
  * @used-by ju_bt_log()
  * @used-by ju_bt_s()
  * @used-by ju_caller_entry()
- * @used-by ju_caller_entry_m()
+ * @used-by ju_caller_module()
  * @param Th|int|null|array(array(string => string|int)) $p
  * @return Th|int
  */

@@ -53,7 +53,7 @@ function ju_caller_m(int $o = 0):string {return ju_cc_method(ju_assert(ju_caller
  * @used-by ju_sentry()
  * @used-by ju_sentry_m()
  */
-function ju_caller_module($p = 0):string {return !($e = ju_caller_entry_m(ju_bt_inc($p))) ? 'Df_Core' : (
+function ju_caller_module($p = 0):string {return !($e = ju_caller_entry_m(ju_bt_inc($p))) ? 'Justuno_Core' : (
 	# 2023-08-05 «Module 'Monolog_Logger::addRecord' is not correctly registered»: https://github.com/mage2pro/core/issues/317
 	ju_bt_entry_is_method($e) ? ju_module_name(ju_bt_entry_class($e)) : ju_module_name_by_path(ju_bt_entry_file($e))
 );}
