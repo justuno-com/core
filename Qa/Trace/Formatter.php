@@ -16,8 +16,9 @@ final class Formatter {
 			# 2023-07-27 "Add GitHub links to backtrace frames": https://github.com/mage2pro/core/issues/285
 			,$f->url() ?: ju_ccc(':', $f->file(), $f->line())
 		]);}));}
-		,function(\Exception $e) {
-			$r = ju_xts($e);
+		# 2023-08-31 "Treat `\Throwable` similar to `\Exception`": https://github.com/justuno-com/core/issues/401
+		,function(\Throwable $th) {
+			$r = ju_xts($th);
 			/**
 			 * 2020-02-20
 			 * 1) «Function include() does not exist»: https://github.com/tradefurniturecompany/site/issues/60
