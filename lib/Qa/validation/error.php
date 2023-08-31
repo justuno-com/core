@@ -1,7 +1,7 @@
 <?php
 use Justuno\Core\Exception as DFE;
-use Exception as E;
 use Magento\Framework\Phrase;
+use Throwable as Th; # 2023-08-31 "Treat `\Throwable` similar to `\Exception`": https://github.com/justuno-com/core/issues/401
 
 /**
  * 2020-06-17 "Port the `df_error` function": https://github.com/justuno-com/core/issues/34
@@ -40,7 +40,7 @@ use Magento\Framework\Phrase;
  * @used-by \Justuno\M2\Catalog\Diagnostic::p()
  * @used-by \Justuno\M2\Controller\Cart\Add::product()
  * @used-by \Justuno\M2\Store::v()
- * @param ...$a
+ * @param string|string[]|mixed|Th|Phrase|null ...$a
  * @throws DFE
  */
 function ju_error(...$a):void {
@@ -65,9 +65,9 @@ function ju_error(...$a):void {
  * 2016-07-31
  * 2020-06-17 "Port the `df_error_create` function": https://github.com/justuno-com/core/issues/37
  * @used-by ju_error()
- * @param string|string[]|mixed|E|Phrase|null $m [optional]
+ * @param string|string[]|mixed|Th|Phrase|null $m [optional]
  */
-function ju_error_create($m = null):DFE {return $m instanceof E ? DFE::wrap($m) :
+function ju_error_create($m = null):DFE {return ju_is_th($m) ? DFE::wrap($m) :
 	new DFE($m instanceof Phrase ? $m : (
 		/**
 		 * 2019-12-16
