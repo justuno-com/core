@@ -5,6 +5,7 @@ use Magento\Framework\DataObject as _DO;
 /**
  * 2020-06-22 "Port the `df_log` function": https://github.com/justuno-com/core/issues/117
  * @used-by ju_error()
+ * @used-by \Justuno\Core\Framework\Plugin\AppInterface::beforeCatchException()
  * @used-by \Justuno\Core\Framework\Plugin\App\Response\HttpInterface::beforeSetBody()
  * @used-by \Justuno\Core\Qa\Trace\Formatter::p()
  * @param _DO|mixed[]|mixed|E $v

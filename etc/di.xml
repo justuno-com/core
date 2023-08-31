@@ -54,6 +54,11 @@ failed to open stream: Is a directory»: https://github.com/tradefurniturecompan
 			</argument>
 		</arguments>
 	</virtualType>
+<!-- 2021-10-03
+"The backtrace is not logged for «no class registered for scheme» errors": https://github.com/mage2pro/core/issues/160 -->
+	<type name='Magento\Framework\AppInterface'>
+		<plugin name='Justuno\Core\Framework\Plugin\AppInterface' type='Justuno\Core\Framework\Plugin\AppInterface'/>
+	</type>
 <!-- 2023-08-31
 "Log errors passed to \Magento\Framework\App\Bootstrap::terminate() in the developer mode":
 https://github.com/justuno-com/core/issues/404 -->
