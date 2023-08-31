@@ -34,7 +34,7 @@ final class Frame extends \Justuno\Core\O {
 	 * @see ju_bt_entry_is_phtml()
 	 * @used-by ju_sentry()
 	 */
-	function isPHTML():bool {return juc($this, function() {return ju_ends_with($this->file(), '.phtml');});}
+	function isPHTML():bool {return juc($this, function() {return ju_is_phtml($this->file());});}
 
 	/**
 	 * 2015-04-03 Строка отсутствует при вызовах типа @see call_user_func()
