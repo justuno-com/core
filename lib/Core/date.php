@@ -19,6 +19,7 @@ function ju_date_from_db(string $s, bool $onE = true) {
 
 /**
  * 2016-07-19
+ * @used-by ju_context()
  * @used-by \Justuno\M2\Catalog\Diagnostic::p()
  * @return bool
  */

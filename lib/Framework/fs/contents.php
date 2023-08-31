@@ -4,6 +4,7 @@
  * 2023-07-26 "Unify `df_contents` and `df_file_read`": https://github.com/mage2pro/core/issues/275
  * @used-by ju_module_name_by_path()
  * @used-by ju_package()
+ * @used-by ju_request_body()
  * @param Closure|bool|mixed $onE [optional]
  * @param ?resource $rs [optional]
  */

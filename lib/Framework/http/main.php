@@ -28,6 +28,12 @@ function ju_request($k = '', $d = null) {$o = ju_request_o(); return is_null($k)
 );}
 
 /**
+ * 2017-03-09
+ * @used-by ju_context()
+ */
+function ju_request_body():string {return ju_contents('php://input');}
+
+/**
  * 2016-12-25
  * The @uses \Laminas\Http\Request::getHeader() method is insensitive to the argument's letter case:
  * @see \Laminas\Http\Headers::createKey()
@@ -41,6 +47,7 @@ function ju_request_header(string $k) {return ju_request_o()->getHeader($k);}
 
 /**
  * 2021-06-05
+ * @used-by ju_context()
  * @used-by \Justuno\Core\Sentry\Client::get_http_data()
  */
 function ju_request_method():string {return jua($_SERVER, 'REQUEST_METHOD');}
