@@ -21,3 +21,4 @@ $base = dirname(__FILE__); /** @var string $base */
 if (is_dir($libDir = "{$base}/lib")) { /** @var string $libDir */
 	$requireFiles($libDir);
 }
+register_shutdown_function(function() {\Justuno\Core\Qa\Failure\Error::check();});

@@ -7,6 +7,7 @@ use Magento\Framework\DataObject as _DO;
  * @used-by ju_error()
  * @used-by \Justuno\Core\Framework\Plugin\AppInterface::beforeCatchException()
  * @used-by \Justuno\Core\Framework\Plugin\App\Response\HttpInterface::beforeSetBody()
+ * @used-by \Justuno\Core\Qa\Failure\Error::log()
  * @used-by \Justuno\Core\Qa\Trace\Formatter::p()
  * @param _DO|mixed[]|mixed|E $v
  * @param string|object|null $m [optional]

@@ -29,6 +29,8 @@
  * @used-by \Justuno\Core\Framework\Log\Dispatcher::handle()
  * @used-by \Justuno\Core\Helper\Text::quote()
  * @used-by \Justuno\Core\O::a()
+ * @used-by \Justuno\Core\Qa\Failure\Error::info()
+ * @used-by \Justuno\Core\Qa\Failure\Error::type()
  * @used-by \Justuno\Core\Qa\Trace::__construct()
  * @used-by \Justuno\Core\Qa\Trace\Frame::methodParameter()
  * @used-by \Justuno\Core\Sentry\Client::__construct()

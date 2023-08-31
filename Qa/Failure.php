@@ -1,10 +1,14 @@
 <?php
 namespace Justuno\Core\Qa;
 use Justuno\Core\Qa\Trace\Formatter;
-/** @see \Justuno\Core\Qa\Failure\Exception */
+/**
+ * @see \Justuno\Core\Qa\Failure\Error
+ * @see \Justuno\Core\Qa\Failure\Exception
+ */
 abstract class Failure {
 	/**
 	 * @used-by self::report()
+	 * @see \Justuno\Core\Qa\Failure\Error::main()
 	 * @see \Justuno\Core\Qa\Failure\Exception::main()
 	 */
 	abstract protected function main():string;
@@ -12,6 +16,7 @@ abstract class Failure {
 	/**
 	 * @abstract
 	 * @used-by self::postface()
+	 * @see \Justuno\Core\Qa\Failure\Error::trace()
 	 * @see \Justuno\Core\Qa\Failure\Exception::trace()
 	 * @return array(array(string => string|int))
 	 */
@@ -29,7 +34,10 @@ abstract class Failure {
 	 */
 	protected function postface():string {return Formatter::p(new Trace(array_slice($this->trace(), $this->stackLevel())));}
 
-	/** @used-by self::report() */
+	/**
+	 * @used-by self::report()
+	 * @see \Justuno\Core\Qa\Failure\Error::preface()
+	 */
 	protected function preface():string {return '';}
 
 	/**
@@ -43,6 +51,7 @@ abstract class Failure {
 
 	/**
 	 * @used-by self::postface()
+	 * @see \Justuno\Core\Qa\Failure\Error::stackLevel()
 	 * @see \Justuno\Core\Qa\Failure\Exception::stackLevel()
 	 */
 	protected function stackLevel():int {return 0;}

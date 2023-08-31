@@ -29,6 +29,7 @@ function ju_format(...$a):string { /** @var string $r */
 /**
  * 2017-07-09
  * 2020-06-18 "Port the `df_kv` function": https://github.com/justuno-com/core/issues/56
+ * @used-by \Justuno\Core\Qa\Failure\Error::preface()
  * @used-by \Justuno\Core\Sentry\Client::send_http()
  * @param array(string => string) $a
  */

@@ -2,6 +2,7 @@
 /**
  * 2020-09-25, 2023-07-16
  * @used-by ju_log_l()
+ * @used-by \Justuno\Core\Qa\Failure\Error::preface()
  * @return array(string => mixed)
  */
 function ju_context():array {return
