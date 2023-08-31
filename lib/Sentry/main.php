@@ -14,6 +14,7 @@ use Magento\User\Model\User;
  * 		4) `null`: it comes down to the case 1 with the «Justuno_Core» module name.
  * 2020-06-24 "Port the `df_sentry` function": https://github.com/justuno-com/core/issues/118
  * @used-by ju_log()
+ * @used-by \Justuno\Core\Framework\Log\Dispatcher::handle()
  * @used-by \Justuno\M2\Controller\Response\Catalog::execute()
  * @used-by \Justuno\M2\Response::p()
  * @param string|object|null $m

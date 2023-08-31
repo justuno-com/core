@@ -10,6 +10,7 @@ use Exception as E;
  * @used-by ju_caller_m()
  * @used-by ju_log_l()
  * @used-by ju_sentry()
+ * @used-by \Justuno\Core\Framework\Log\Dispatcher::handle()
  * @param E|int|null|array(array(string => string|int)) $p [optional]
  * @param callable|null $f [optional]
  * @return array(string => string|int)

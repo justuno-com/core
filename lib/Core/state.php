@@ -41,6 +41,7 @@ function ju_my():bool {return isset($_SERVER['DF_DEVELOPER']);}
  * 2017-06-09 «dfediuk» is the CLI user name on my localhost.
  * 2020-08-14 "Port the `df_my_local` function" https://github.com/justuno-com/core/issues/184
  * @used-by ju_visitor_ip()
+ * @used-by \Justuno\Core\Cron\Model\LoggerHandler::p()
  * @used-by \Justuno\M2\Store::v()
  */
 function ju_my_local():bool {return jucf(function() {return

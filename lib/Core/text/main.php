@@ -18,6 +18,7 @@ function ju_bts(bool $v):string {return $v ? 'true' : 'false';}
  * @used-by ju_rp_has()
  * @used-by ju_trim()
  * @used-by jua()
+ * @used-by \Justuno\Core\Cron\Model\LoggerHandler::p()
  * @used-by \Justuno\Core\Html\Tag::content()
  * @used-by \Justuno\Core\Sentry\Trace::get_frame_context()
  * @used-by \Justuno\M2\Catalog\Images::p()

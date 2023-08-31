@@ -9,6 +9,7 @@
  * 2) https://php.net/manual/language.types.iterable.php
  * https://php.net/manual/en/migration82.other-changes.php#migration82.other-changes.core
  * 3) Using `iterable` as an argument type requires PHP ≥ 7.1: https://3v4l.org/SNUMI
+ * @used-by ju_bt_has()
  * @used-by ju_ends_with()
  * @used-by ju_find()
  * @used-by ju_starts_with()

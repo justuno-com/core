@@ -53,7 +53,7 @@ function ju_error(...$a):void {
 	 * 2) The @see \Exception 's backtrace is set when the exception is created, not when it is thrown:
 	 * https://3v4l.org/qhd7m
 	 * So we have a correct backtrace even without throwing the exception.
-	 * 2020-02-17 @see \Df\Cron\Plugin\Console\Command\CronCommand::aroundRun()
+	 * 2020-02-17 @see \Justuno\Core\Cron\Plugin\Console\Command\CronCommand::aroundRun()
 	 */
 	if (ju_is_cron()) {
 		ju_log($e);

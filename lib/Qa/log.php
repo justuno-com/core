@@ -22,6 +22,8 @@ function ju_log($v, $m = null, array $d = []):void {
  * 2020-06-17 "Port the `df_log_l` function": https://github.com/justuno-com/core/issues/51
  * @used-by ju_caller_m()
  * @used-by ju_log()
+ * @used-by \Justuno\Core\Cron\Model\LoggerHandler::p()
+ * @used-by \Justuno\Core\Framework\Log\Dispatcher::handle()
  * @used-by \Justuno\Core\Qa\Trace\Formatter::p()
  * @used-by \Justuno\Core\Sentry\Client::send_http()
  * @param string|object|null $m
@@ -31,7 +33,7 @@ function ju_log($v, $m = null, array $d = []):void {
 function ju_log_l($m, $p2, $p3 = [], string $p4 = ''):void {
 	/** @var E|null $e */ /** @var array|string|mixed $d */ /** @var string $suf */ /** @var string $pref */
 	list($e, $d, $suf, $pref) = $p2 instanceof E ? [$p2, $p3, $p4, ''] : [null, $p2, ju_ets($p3), $p4];
-	$m = $m ?: ($e ? dju_caller_module($e) : ju_caller_module());
+	$m = $m ?: ($e ? ju_caller_module($e) : ju_caller_module());
 	if (!$suf) {
 		# 2023-07-26
 		# 1) "If `df_log_l()` is called from a `*.phtml`,

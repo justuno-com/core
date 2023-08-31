@@ -20,6 +20,40 @@ despite of the `cataloginventory/options/show_out_of_stock` option's value": htt
 			type='Justuno\Core\CatalogInventory\Plugin\Model\ResourceModel\Stock\Status'
 		/>
 	</type>
+<!-- 2020-02-17
+"The Cron log (`magento.cron.log`) should contain a backtrace for every exception logged":
+https://github.com/tradefurniturecompany/site/issues/34 -->
+	<type name='Magento\Cron\Console\Command\CronCommand'>
+		<plugin name='Justuno\Core\Cron\Plugin\Console\Command\CronCommand' type='Justuno\Core\Cron\Plugin\Console\Command\CronCommand'/>
+	</type>
+<!-- 2020-02-08
+"The https://github.com/royalwholesalecandy/core/issues/57 solution works with Magento 2.2.5,
+but does not work with Magento 2.3.2.":
+https://github.com/tradefurniturecompany/core/issues/25#issuecomment-58373497 -->
+	<virtualType name='Justuno\Core\Cron\Model\VirtualLoggerHandler' type='Justuno\Core\Cron\Model\LoggerHandler'>
+		<arguments>
+			<argument name='fileName' xsi:type='string'>/var/log/cron.log</argument>
+		</arguments>
+	</virtualType>
+<!-- 2020-02-09
+The `Magento\Cron\Model\VirtualLogger` virtual class was introduced in Magento 2.3.1 by the following commit:
+https://github.com/magento/magento2/commit/a4f58c88
+It is absent in Magento ≤ 2.3.1, so I explicitly re-declare its base type as `type='Magento\Framework\Logger\Monolog'`
+to overcome the error:
+«Source class "\Magento\Cron\Model\Virtual" for "Magento\Cron\Model\VirtualLogger" generation does not exist». -->
+	<virtualType name='Magento\Cron\Model\VirtualLogger' type='Magento\Framework\Logger\Monolog'>
+		<arguments>
+			<argument name='handlers' xsi:type='array'>
+<!-- 2020-02-16
+The `Justuno\Core\Cron\Model\LoggerHandler` value instead of `Justuno\Core\Cron\Model\VirtualLoggerHandler`
+leads to the error:
+«In StreamHandler.php line 108:
+The stream or file "/var/www/vhosts/tradefurniturecompany.co.uk/htdocs/" could not be opened:
+failed to open stream: Is a directory»: https://github.com/tradefurniturecompany/site/issues/33 -->
+				<item name='system' xsi:type='object'>Justuno\Core\Cron\Model\VirtualLoggerHandler</item>
+			</argument>
+		</arguments>
+	</virtualType>
 <!-- 2023-08-31
 "Log errors passed to \Magento\Framework\App\Bootstrap::terminate() in the developer mode":
 https://github.com/justuno-com/core/issues/404 -->
@@ -37,6 +71,44 @@ https://github.com/justuno-com/core/issues/404 -->
 			name='Justuno\Core\Framework\Plugin\Data\Form\Element\AbstractElement'
 			type='Justuno\Core\Framework\Plugin\Data\Form\Element\AbstractElement'
 		/>
+	</type>
+	<type name='Magento\Framework\Logger\Monolog'>
+		<arguments>
+			<argument name='handlers' xsi:type='array'>
+<!-- 2019-10-13
+1) "Disable the logging of «Add of item with id %s was processed» messages to `system.log`":
+https://github.com/kingpalm-com/core/issues/36
+2) @see \Magento\Backend\Model\Menu::add()
+3) It is impossible to write a plugin to any of this:
+\Magento\Framework\Logger\Handler\System
+\Magento\Framework\Logger\Handler\Base
+\Monolog\Handler\AbstractProcessingHandle
+\Psr\Log\LoggerInterface
+It leads to the error: «Circular dependency:
+Magento\Framework\Logger\Monolog depends on Magento\Framework\Cache\InvalidateLogger and vice versa.»
+Magento 2 does not allow to write plugins to «objects that are instantiated before Magento\Framework\Interception is bootstrapped»:
+https://devdocs.magento.com/guides/v2.3/extension-dev-guide/plugins.html#limitations
+2020-02-08
+"The https://github.com/royalwholesalecandy/core/issues/57 solution works with Magento 2.2.5,
+but does not work with Magento 2.3.2.": https://github.com/tradefurniturecompany/core/issues/25#issuecomment-583734975
+2020-02-16
+1) `<item name='debug' xsi:type='object'>Df\Framework\Log\Dispatcher\Debug</item>` does not work for me
+at least in Magento 2.3.2
+2) "Prevent Magento from logging «cache_invalidate» records to `debug.log`":
+https://github.com/tradefurniturecompany/site/issues/43
+2020-08-31 Despite of the name, this handler processes the messages of all levels by default (including exceptions).
+2020-09-07
+In Magento 2.3.5 (dxmoto.com) my `handlers` declaration is not merged with the original one,
+but rewrites it instead (for an unknown reason): https://github.com/magento/magento2/blob/2.3.5-p1/app/etc/di.xml#L253-L262
+Because of it, my `Df\Framework\Log\Dispatcher` handler is the sole one, and all other handlers are discarded:
+	<item name="debug" xsi:type="object">Magento\Framework\Logger\Handler\Debug</item>
+	<item name="syslog" xsi:type="object">Magento\Framework\Logger\Handler\Syslog</item>
+https://github.com/magento/magento2/blob/2.3.5-p1/app/etc/di.xml#L258-L259
+Anyway, I think it is good, because the `debug.log` file is useless,
+and `Magento\Framework\Logger\Handler\Syslog` seems to be useless too. -->
+				<item name='system' xsi:type='object'>Justuno\Core\Framework\Log\Dispatcher</item>
+			</argument>
+		</arguments>
 	</type>
 <!-- 2020-11-23
 "Add an ability to preserve out of stock (including just disabled) products in a collection

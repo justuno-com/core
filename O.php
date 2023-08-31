@@ -8,6 +8,7 @@ namespace Justuno\Core;
 class O implements \ArrayAccess {
 	/**
 	 * 2017-07-13
+	 * @used-by \Justuno\Core\Framework\Log\Record::__construct()
 	 * @used-by \Justuno\Core\Qa\Failure\Exception::i()
 	 * @param array(string => mixed) $a [optional]
 	 */
@@ -15,6 +16,7 @@ class O implements \ArrayAccess {
 
 	/**
 	 * 2017-07-13
+	 * @used-by \Justuno\Core\Framework\Log\Record::d()
 	 * @used-by \Justuno\Core\Qa\Failure::postface()
 	 * @param string|string[]|null $k [optional]
 	 * @param string|null $d [optional]
