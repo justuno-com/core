@@ -1,7 +1,7 @@
 <?php
-use Exception as E;
 use Justuno\Core\Exception as DFE;
 use Justuno\Core\Qa\Method as Q;
+use Throwable as Th; # 2023-08-31 "Treat `\Throwable` similar to `\Exception`": https://github.com/justuno-com/core/issues/401
 
 /**
  * 2019-12-14
@@ -30,7 +30,7 @@ use Justuno\Core\Qa\Method as Q;
  * @used-by \Justuno\Core\Qa\Trace\Frame::url()
  * @used-by \Justuno\M2\Store::v()
  * @param mixed $cond
- * @param string|E|null $m [optional]
+ * @param string|Th|null $m [optional]
  * @return mixed
  * @throws DFE
  */
@@ -53,7 +53,7 @@ function ju_assert_sne(string $v, int $sl = 0):string {
  * 2020-08-21 "Port the `ju_assert_traversable` function" https://github.com/justuno-com/core/issues/222
  * @used-by juaf()
  * @param Traversable|array $v
- * @param string|E|null $m [optional]
+ * @param string|Th|null $m [optional]
  * @return Traversable|array
  * @throws DFE
  */
