@@ -22,7 +22,7 @@ function ju_cc(string $glue, ...$a):string {return implode($glue, jua_flatten($a
  * @used-by \Justuno\Core\Qa\Method::raiseErrorVariable()
  * @param string|string[] ...$a
  */
-function ju_cc_n(...$a):string {return ju_ccc("\n", jua_flatten($a));}
+function ju_cc_n(...$a):string {return ju_ccc("\n", ...$a);}
 
 /**
  * 2015-12-01 Отныне всегда используем / вместо DIRECTORY_SEPARATOR.

@@ -29,7 +29,6 @@ function ju_ita($i):array {return is_array($i) ? $i : iterator_to_array($i);}
  * 2020-06-14 "Port the `dfa_flatten` function": https://github.com/justuno-com/core/issues/17
  * http://stackoverflow.com/a/1320156
  * @used-by ju_cc()
- * @used-by ju_cc_n()
  * @used-by ju_cc_path()
  * @used-by ju_cc_s()
  * @used-by ju_ccc()
