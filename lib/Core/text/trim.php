@@ -104,8 +104,8 @@ function ju_trim_text_left(string $s, $trim):string {return is_array($trim) ? ju
  * It chops the $trim ending from the $s string.
  * 2016-10-28 It now supports multiple $trim.
  * 2020-06-26 "Port the `df_trim_text_right` function": https://github.com/justuno-com/core/issues/142
- * @used-by ju_cts()
  * @used-by ju_oqi_amount()
+ * @used-by ju_trim_interceptor()
  * @param string|string[] $trim
  */
 function ju_trim_text_right(string $s, $trim):string {return is_array($trim) ? ju_trim_text_a($s, $trim, __FUNCTION__) : (
