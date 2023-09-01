@@ -68,7 +68,7 @@ abstract class Settings {
 	private $_scope;
 
 	/**
-	 * 2016-07-12 http://php.net/manual/function.get-called-class.php#115790
+	 * 2016-07-12 https://php.net/manual/function.get-called-class.php#115790
 	 * @used-by \Justuno\M2\Block\Js::_toHtml()
 	 * @used-by \Justuno\M2\Controller\Response\Catalog::execute()
 	 * @param Store|int|null $s [optional]
