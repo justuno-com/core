@@ -6,9 +6,8 @@
  * 2020-08-22 "Port the `ju_class_f` function" https://github.com/justuno-com/core/issues/264
  * @used-by ju_class_my()
  * @param string|object $c
- * @return string
  */
-function ju_class_f($c) {return ju_first(ju_explode_class($c));}
+function ju_class_f($c):string {return ju_first(ju_explode_class($c));}
 
 /**
  * 2015-12-29
@@ -20,6 +19,5 @@ function ju_class_f($c) {return ju_first(ju_explode_class($c));}
  * @used-by \Justuno\Core\Qa\Trace\Formatter::p()
  * @used-by \Justuno\M2\Response::p()
  * @param string|object $c
- * @return string
  */
-function ju_class_l($c) {return ju_last(ju_explode_class($c));}
+function ju_class_l($c):string {return ju_last(ju_explode_class($c));}
