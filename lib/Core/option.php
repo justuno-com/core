@@ -9,7 +9,7 @@
 function ju_map_0(array $tail, string $l = ''):array {return [0 => $l ?: '-- select a value --'] + $tail;}
 
 /**
- * 2015-11-13
+ * 2015-02-11 Превращает массив вида ['value' => 'label'] в массив вида [['value' => '', 'label' => '']].
  * 2020-08-22 "Port the `df_map_to_options_t` function" https://github.com/justuno-com/core/issues/260
  * @used-by \Justuno\Core\Config\Source::toOptionArray()
  * @uses ju_option()
