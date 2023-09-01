@@ -3,6 +3,7 @@ use Justuno\Core\Html\Tag;
 /**
  * 2015-10-27
  * 2020-08-22 "Port the `ju_link_inline` function" https://github.com/justuno-com/core/issues/247
+ * 2022-11-26 We can not declare the argument as `string ...$a` because such a syntax will reject arrays: https://3v4l.org/jFdPm
  * @used-by ju_fe_init()
  * @param string|string[] $a
  * @return string|string[]
