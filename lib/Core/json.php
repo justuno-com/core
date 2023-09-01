@@ -15,9 +15,11 @@ use Justuno\Core\Json as J;
  * @throws DFE
  */
 function ju_json_decode($s, bool $throw = true) {/** @var mixed|bool|null $r */
+	# 2015-12-19 У PHP 7.0.1 декодировании пустой строки почему-то приводит к сбою: «Decoding failed: Syntax error».
 	# 2022-10-14
 	# «an empty string is no longer considered valid JSON»:
 	# https://php.net/manual/migration70.incompatible.php#migration70.incompatible.other.json-to-jsond
+	# 2022-11-24 `json_decode(false)` and `json_decode('')` return `NULL`: https://3v4l.org/PCdlG
 	if (ju_nes($s)) {
 		$r = $s;
 	}
