@@ -41,8 +41,7 @@ function juc($o, Closure $f, array $a = [], bool $unique = true, int $offset = 0
 	 * @var mixed $r
 	 */
 	static $hasWeakMap; /** @var bool $hasWeakMap */
-	$hasWeakMap = !is_null($hasWeakMap) ? $hasWeakMap : @class_exists('WeakMap');
-	if (!$hasWeakMap) {
+	if (!($hasWeakMap = !is_null($hasWeakMap) ? $hasWeakMap : @class_exists('WeakMap'))) {
 		# 2017-01-12 ... works correctly here: https://3v4l.org/0shto
 		# 2022-10-17 The ternary operator works correctly here: https://3v4l.org/MutM4
 		/** @noinspection PhpVariableVariableInspection */
