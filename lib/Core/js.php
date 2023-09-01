@@ -20,7 +20,7 @@
  * @param string|object|null $m
  * @param array(string => mixed) $p [optional]
  */
-function ju_js($m, string $s = '', array $p = []) {$s = $s ?: 'main'; return ju_js_x(
+function ju_js($m, string $s = '', array $p = []):string {$s = $s ?: 'main'; return ju_js_x(
 	'*', ju_is_url_absolute($s) ? null : $m, $s, $p
 );}
 
