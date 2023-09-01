@@ -44,7 +44,13 @@ function ju_trim($s, $charlist = null, $throw = false) {return ju_try(function()
 		}
 		$filter = new Trim($charlist); /** @var Trim $filter */
 		$r = $filter->filter($s);
+		/**
+		 * @see Zend_Filter_StringTrim::filter() теоретически может вернуть null,
+		 * потому что этот метод зачастую перепоручает вычисление результата функции @uses preg_replace()
+		 * @url https://php.net/manual/function.preg-replace.php
+		 */
 		$r = ju_nts($r);
+		# Как ни странно, Zend_Filter_StringTrim иногда выдаёт результат « ».
 		if (' ' === $r) {
 			$r = '';
 		}
