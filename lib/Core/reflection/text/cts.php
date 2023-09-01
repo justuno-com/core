@@ -18,9 +18,3 @@ function ju_cts($c, $del = '\\'):string {/** @var string $r */
 	$r = ju_trim_interceptor(is_object($c) ? get_class($c) : ltrim($c, '\\'));
 	return '\\' === $del ? $r : str_replace('\\', $del, $r);
 }
-
-/**
- * 2016-04-11 Dfe_CheckoutCom => dfe_checkout_com
- * @used-by ju_report_prefix()
- */
-function ju_cts_lc_camel(string $c, string $del):string {return implode($del, ju_explode_class_lc_camel($c));}

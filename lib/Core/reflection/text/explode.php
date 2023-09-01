@@ -38,7 +38,6 @@ function ju_explode_class_lc($c) {return ju_lcfirst(ju_explode_class($c));}
  * 1) Making $c optional leads to the error «get_class() called without object from outside a class»: https://3v4l.org/k6Hd5
  * 2) Dfe_CheckoutCom => [dfe, checkout, com]
  * 2020-08-21 "Port the `df_explode_class_lc_camel` function" https://github.com/justuno-com/core/issues/217
- * @used-by ju_cts_lc_camel()
  * @used-by ju_module_name_lc()
  * @param string|object $c
  * @return string[]
