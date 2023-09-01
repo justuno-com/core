@@ -58,7 +58,7 @@ function ju_prepend(string $s, string $head):string {return ju_starts_with($s, $
  * @param string|string[] $a
  * @return string|string[]|array(string => string)
  */
-function ju_tab(...$a) {return ju_call_a(function($text) {return "\t" . $text;}, $a);}
+function ju_tab(...$a) {return ju_call_a(function(string $s):string {return "\t" . $s;}, $a);}
 
 /**
  * 2020-06-18 "Port the `df_tab_multiline` function": https://github.com/justuno-com/core/issues/84
