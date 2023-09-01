@@ -80,9 +80,10 @@ function juaf($a, $b):array {
 
 /**
  * 2021-01-28
+ * 2022-11-27 Added the ju_nes() check.
  * @used-by \Justuno\M2\Store::v()
  * @param int|string $v
  * @param array(int|string => mixed) $map
  * @return int|string|mixed
  */
-function jutr($v, array $map) {return jua($map, $v, $v);}
+function jutr($v, array $map) {return ju_nes($v) ? $v : jua($map, $v, $v);}

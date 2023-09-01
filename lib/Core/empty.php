@@ -68,6 +68,7 @@ function ju_fts($v) {return false === $v ? '' : $v;}
  * @used-by ju_json_decode()
  * @used-by jua()
  * @used-by jua_deep()
+ * @used-by jutr()
  * @used-by \Justuno\Core\Framework\Log\Record::msg()
  * @param mixed $v
  */
