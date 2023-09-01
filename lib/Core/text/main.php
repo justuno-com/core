@@ -26,7 +26,8 @@ function ju_bts(bool $v):string {return $v ? 'true' : 'false';}
  */
 function ju_contains(string $haystack, ...$n):bool {/** @var bool $r */
 	# 2017-07-10 This branch is exclusively for optimization.
-	if (1 === count($n) && !is_array($n0 = $n[0])) {
+	# 2022-11-26 The previous (also correct) condition was: `1 === count($n) && !is_array($n0 = $n[0])`
+	if (!is_array($n0 = ju_arg($n))) {
 		$r = false !== strpos($haystack, $n0);
 	}
 	else {
