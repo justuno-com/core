@@ -1,17 +1,5 @@
 <?php
 /**
- * 2015-09-29
- * 2020-08-22 "Port the `ju_translate_a` function" https://github.com/justuno-com/core/issues/262
- * @used-by ju_map_to_options_t()
- * @param string[] $s
- * @return string[]
- */
-function ju_translate_a(array $s, bool $now = false):array {
-	$r = array_map('__', $s); /** @var string[] $r */
-	return !$now ? $r : array_map('strval', $r);
-}
-
-/**
  * 2017-02-09
  * It does the same as @see \Magento\Framework\Filter\TranslitUrl::filter(), but without lower-casing:
  * '歐付寶 all/Pay' => 'all-Pay'
