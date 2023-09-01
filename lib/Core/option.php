@@ -6,7 +6,7 @@
  * @param array(string => string) $tail
  * @return array(int => string)
  */
-function ju_map_0(array $tail, string $l = '') {return [0 => $l ?: '-- select a value --'] + $tail;}
+function ju_map_0(array $tail, string $l = ''):array {return [0 => $l ?: '-- select a value --'] + $tail;}
 
 /**
  * 2015-11-13
