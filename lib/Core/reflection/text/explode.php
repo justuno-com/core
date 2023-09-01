@@ -47,7 +47,6 @@ function ju_explode_class_lc_camel($c) {return ju_lcfirst(ju_explode_class_camel
 /**
  * 2021-02-24
  * @used-by ju_caller_c()
- * @param string $m
  * @return string[]
  */
-function ju_explode_method($m) {return explode('::', $m);}
+function ju_explode_method(string $m):array {return explode('::', $m);}
