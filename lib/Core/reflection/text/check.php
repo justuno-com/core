@@ -7,6 +7,5 @@
  * 2020-08-22 "Port the `df_class_my` function" https://github.com/justuno-com/core/issues/263
  * @used-by \Justuno\Core\Config\Plugin\Model\Config\SourceFactory::aroundCreate()
  * @param string|object $c
- * @return bool
  */
-function ju_class_my($c) {return in_array(ju_class_f($c), ['Justuno']);}
+function ju_class_my($c):bool {return in_array(ju_class_f($c), ['Justuno']);}
