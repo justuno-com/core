@@ -10,8 +10,9 @@ use Justuno\Core\Html\Tag;
  */
 function ju_link_inline(...$a) {return ju_call_a(function(string $res):string {return ju_resource_inline(
 	$res, function(string $url):string {return ju_tag(
-		'link', ['href' => $url, 'rel' => 'stylesheet', 'type' => 'text/css'], null, false
+		'link', ['href' => $url, 'rel' => 'stylesheet', 'type' => 'text/css'], '', false
 	);}
+	# 2023-01-06 $a is always an array here: https://3v4l.org/K6FVO
 );}, $a);}
 
 /**
