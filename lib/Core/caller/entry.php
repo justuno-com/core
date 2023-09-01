@@ -1,5 +1,5 @@
 <?php
-use Exception as E;
+use Throwable as T; # 2023-09-01 "Treat `\Throwable` similar to `\Exception`": https://github.com/justuno-com/core/issues/401
 
 /**
  * 2017-03-28 If the function is called from a closure, then it will go up through the stask until it leaves all closures.
@@ -11,7 +11,7 @@ use Exception as E;
  * @used-by ju_log_l()
  * @used-by ju_sentry()
  * @used-by \Justuno\Core\Framework\Log\Dispatcher::handle()
- * @param E|int|null|array(array(string => string|int)) $p [optional]
+ * @param T|int|null|array(array(string => string|int)) $p [optional]
  * @param callable|null $f [optional]
  * @return array(string => string|int)
  */
@@ -62,7 +62,7 @@ function ju_caller_entry($p = 0, $f = null, array $skip = []):array {
  * 2023-08-05
  * @used-by ju_caller_module()
  * @used-by ju_log_l()
- * @param E|int $p
+ * @param T|int $p
  */
 function ju_caller_entry_m($p = 0):array {return ju_eta(ju_caller_entry(ju_bt_inc($p), function(array $e):bool {return
 	# 2023-07-26
