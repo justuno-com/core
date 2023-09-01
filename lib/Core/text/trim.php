@@ -29,7 +29,7 @@ function ju_chop(string $s, int $max = 0):string {return !$max || (mb_strlen($s 
 function ju_trim($s, $charlist = null, $throw = false) {return ju_try(function() use($s, $charlist, $throw) {
 	/** @var string|string[] $r */
 	if (is_array($s)) {
-		$r = ju_map('ju_trim', $s, [$charlist, $throw]);
+		$r = ju_map('ju_trim', $s, [$charlist, $throw]); /** @uses ju_trim() */
 	}
 	else {
 		if (!is_null($charlist)) {
