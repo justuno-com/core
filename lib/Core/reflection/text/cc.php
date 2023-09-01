@@ -7,7 +7,7 @@
  * @param string|null $a2 [optional]
  * @return string
  */
-function ju_cc_method($a1, $a2 = null) {return ju_ccc('::',
+function ju_cc_method($a1, $a2 = null):string {return ju_ccc('::',
 	$a2 ? [ju_cts($a1), $a2] : (
 		!isset($a1['function']) ? $a1 :
 			[jua($a1, 'class'), $a1['function']]
