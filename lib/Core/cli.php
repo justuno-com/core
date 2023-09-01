@@ -1,6 +1,6 @@
 <?php
 /**
- * 2017-03-15
+ * 2017-03-15 Нулевой параметр argv — это имя текущего скрипта.
  * 2020-06-17 "Port the `df_cli_argv` function": https://github.com/justuno-com/core/issues/49
  * 2022-11-23 With $i = null the function returns all `argv` data: @see ju_cli_cmd().
  * 2023-01-27
