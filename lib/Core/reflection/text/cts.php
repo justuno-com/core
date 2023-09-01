@@ -13,9 +13,8 @@
  * @used-by ju_module_name()
  * @param string|object $c
  * @param string $del [optional]
- * @return string
  */
-function ju_cts($c, $del = '\\') {/** @var string $r */
+function ju_cts($c, $del = '\\'):string {/** @var string $r */
 	$r = ju_trim_text_right(is_object($c) ? get_class($c) : ltrim($c, '\\'), '\Interceptor');
 	return '\\' === $del ? $r : str_replace('\\', $del, $r);
 }
