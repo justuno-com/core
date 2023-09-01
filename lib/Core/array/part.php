@@ -14,4 +14,4 @@ function ju_slice(array $a, int $offset, int $length = 0):array {return array_sl
  * @param mixed[] $a
  * @return mixed[]|string[]
  */
-function ju_tail(array $a) {return array_slice($a, 1);}
+function ju_tail(array $a):array {return array_slice($a, 1);}
