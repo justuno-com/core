@@ -62,5 +62,5 @@ function ju_assert_lt($highBound, $v, $m = null) {return $highBound >= $v ? $v :
  * @throws DFE
  */
 function ju_assert_ne($neResult, $v, $m = null) {return $neResult !== $v ? $v : ju_error($m ?:
-	"The value {$v} is rejected, any other is allowed."
+	"The value $v is rejected, any other is allowed."
 );}
