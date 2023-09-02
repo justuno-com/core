@@ -1,7 +1,16 @@
 <?php
 use Justuno\Core\Exception as DFE;
 /**
+ * Этот метод предназначен для извлечения некоторого значения
+ * из многомерного массива посредством нотации 'ключ1/ключ2/ключ3'.
+ * Например: dfa_deep(['test' => array('eee' => 3)], 'test/eee') вернёт «3».
+ * Ядро Magento реализует аналогичный алгоритм в методе @see \Magento\Framework\DataObject::getData()
+ * Наша функция работает не только с объектами @see \Magento\Framework\DataObject, но и с любыми массивами.
+ * 2017-03-28
+ * Сегодня заметил, что успешно работают пути типа 'transactions/0'
+ * в том случае, когда ключ верхнего уровня возвращает массив с целочисленными индексами.
  * 2020-06-14 "Port the `dfa_deep` function": https://github.com/justuno-com/core/issues/18
+ * 2022-11-27 dfa_deep(['a' => ['b' => 3]], ['a', null]) will return ['b' => 3]. @see df_cli_argv()
  * @used-by jua()
  * @used-by \Justuno\Core\O::offsetExists()
  * @used-by \Justuno\Core\O::offsetGet()
