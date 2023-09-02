@@ -5,6 +5,7 @@
  * @used-by ju_param_sne()
  * @used-by ju_path_is_internal()
  * @used-by ju_report()
+ * @used-by ju_result_sne()
  * @param mixed $v
  */
 function ju_es($v):bool {return '' === $v;}
