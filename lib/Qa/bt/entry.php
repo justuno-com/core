@@ -67,4 +67,4 @@ function ju_bt_entry_is_method(array $e):bool {return jua_has_keys($e, ['class',
  * @used-by ju_caller_module()
  * @used-by ju_log_l()
  */
-function ju_bt_entry_is_phtml(array $e):bool {return ju_ends_with(ju_bt_entry_file($e), '.phtml');}
+function ju_bt_entry_is_phtml(array $e):bool {return ju_is_phtml(ju_bt_entry_file($e));}
