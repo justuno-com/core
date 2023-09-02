@@ -45,6 +45,11 @@ function ju_file_name(string $directory, string $template, string $ds = '-'):str
 		$fileName = ju_var($template, ['ordering' => sprintf('%03d', $counter)] + $vars);
 		$fileFullPath = $directory . DS . $fileName; /** @var string $fileFullPath */
 		if (!file_exists($fileFullPath)) {
+			/**
+			 * Раньше здесь стояло @see file_put_contents, и иногда почему-то возникал сбой:
+			 * failed to open stream: No such file or directory.
+			 * Может быть, такой сбой возникает, если папка не существует?
+			 */
 			$r = $fileFullPath;
 			break;
 		}
