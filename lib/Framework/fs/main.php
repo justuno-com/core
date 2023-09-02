@@ -97,4 +97,4 @@ function ju_fs():Filesystem {return ju_o(Filesystem::class);}
  * @used-by ju_file_write()
  * @return DirectoryWrite|IDirectoryWrite
  */
-function ju_fs_w(string $t) {return ju_fs()->getDirectoryWrite($t);}
+function ju_fs_w(string $type) {return ju_fs()->getDirectoryWrite($type);}
