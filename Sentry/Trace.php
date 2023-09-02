@@ -170,7 +170,7 @@ final class Trace {
 	 * @param array(string => mixed) $frame
 	 * @return array(string => mixed)
 	 */
-	private static function get_frame_context(array $frame) {
+	private static function get_frame_context(array $frame):array {
 		$r = []; /** @var array(string => mixed) $r */
 		if (isset($frame['args'])) {
 			$args = jua($frame, 'args'); /** @var array $args */
