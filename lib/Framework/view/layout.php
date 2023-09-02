@@ -19,23 +19,30 @@ use Magento\Framework\View\Model\Layout\Merge;
  * @return AbstractBlock|BlockInterface|Template
  */
 function ju_block($c, $data = [], string $template = '', array $vars = []) {
-	if (is_null($c)) {
-		$c = ju_is_backend() ? BackendTemplate::class : Template::class;
-	}
-	/** @var string|null $template */
 	if (is_string($data)) {
 		$template = $data;
 		$data = [];
 	}
+	/**
+	 * 2016-11-22
+	 * В отличие от Magento 1.x, в Magento 2 нам нужен синтаксис ['data' => $data]:
+	 * @see \Magento\Framework\View\Layout\Generator\Block::createBlock():
+	 * $block->addData(isset($arguments['data']) ? $arguments['data'] : []);
+	 * https://github.com/magento/magento2/blob/2.1.2/lib/internal/Magento/Framework/View/Layout/Generator/Block.php#L240
+	 * В Magento 1.x было не так:
+	 * https://github.com/OpenMage/magento-mirror/blob/1.9.3.1/app/code/core/Mage/Core/Model/Layout.php#L482-L491
+	 */
 	/** @var AbstractBlock|BlockInterface|Template $r */
-	$r = ju_layout()->createBlock($c, jua($data, 'name'), ['data' => $data]);
+	$r = ju_layout()->createBlock(
+		$c ?: (ju_is_backend() ? BackendTemplate::class : Template::class), jua($data, 'name'), ['data' => $data]
+	);
 	# 2019-06-11
 	if ($r instanceof Template) {
 		# 2016-11-22
 		$r->assign($vars);
 	}
 	if ($template && $r instanceof Template) {
-		$r->setTemplate(ju_file_ext_add($template, 'phtml'));
+		$r->setTemplate(ju_phtml_add_ext($template));
 	}
 	return $r;
 }
