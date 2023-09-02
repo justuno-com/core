@@ -12,7 +12,12 @@ use Magento\Framework\DB\Select as S;
  */
 function ju_fetch(string $t, $cols = '*', $compareK = null, $compareV = null):array {
 	$s = ju_db_from($t, $cols); /** @var S $s */
-	if (!is_null($compareV)) {
+	if (is_array($compareK)) {
+		foreach ($compareK as $c => $v) {/** @var string $c */ /** @var string $v */
+			$s->where('? = ' . $c, $v);
+		}
+	}
+	elseif (!is_null($compareV)) {
 		$s->where($compareK . ' ' . ju_sql_predicate_simple($compareV), $compareV);
 	}
 	return ju_conn()->fetchAll($s);
