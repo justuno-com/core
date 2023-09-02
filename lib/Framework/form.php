@@ -38,11 +38,39 @@ function ju_fe_init(AE $e, $class = null, $css = [], array $params = [], $path =
 				$path = $classLast;
 		}
 	}
+	# 2015-12-29
+	# Используем df_ccc, чтобы отбросить $path, равный пустой строке.
+	# Если имя класса заканчивается на FormElement, то это окончание в пути к ресурсу отбрасываем.
 	$path = ju_ccc('/', 'formElement', $path, 'main');
+	/**
+	 * 2015-12-29
+	 * На практике заметил, что основной файл CSS используется почти всегда,
+	 * и его имя имеет формат: Df_Framework::formElement/color/main.css.
+	 * Добавляем его обязательно в конец массива,
+	 * чтобы правила основного файла CSS элемента
+	 * имели приоритет над правилами библиотечных файлов CSS,
+	 * которые элемент мог включать в массив $css.
+	 * Обратите внимание, что мы даже не проверяем,
+	 * присутствует ли уже $mainCss в массиве $css,
+	 * потому что @uses df_link_inline делает это сама.
+	 */
 	$css = ju_array($css);
+	/**
+	 * 2015-12-30
+	 * Раньше я думал, что основной файл CSS используется всегда, однако нашлось исключение:
+	 * @see \Dfe\CurrencyFormat\FE обходится в настоящее время без CSS.
+	 */
 	if (ju_asset_exists($path, $moduleName, 'less')) {
 		$css[]= ju_asset_name($path, $moduleName, 'css');
 	}
+	/**
+	 * 2016-03-08
+	 * Отныне getBeforeElementHtml() будет гарантированно вызываться благодаря
+	 * @used-by \Justuno\Core\Framework\Plugin\Data\Form\Element\AbstractElement::afterGetElementHtml()
+	 * 2017-08-10
+	 * I have removed @see df_clean() for $params.
+	 * The previous edition: https://github.com/mage2pro/core/blob/2.10.11/Framework/lib/form.php#L177
+	 */
 	$e['before_element_html'] .= ju_cc_n(
 		!ju_asset_exists($path, $moduleName, 'js') ? null : ju_js($moduleName, $path, ['id' => $e->getHtmlId()] + $params)
 		,ju_link_inline($css)
