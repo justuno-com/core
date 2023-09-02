@@ -6,7 +6,7 @@
  * @used-by ju_sentry()
  * @used-by ju_sentry_m()
  * @used-by \Justuno\Core\Qa\Trace\Frame::url()
- * @used-by \Justuno\Core\Sentry\Client::__construct()
+ * @used-by \Justuno\Core\Sentry\Client::capture()
  * @used-by \Justuno\Core\Sentry\Client::getUserAgent()
  */
 function ju_core_version():string {return jucf(function() {return ju_package_version('Justuno_Core');});}
