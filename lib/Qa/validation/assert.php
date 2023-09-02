@@ -12,7 +12,7 @@ use Throwable as Th; # 2023-08-31 "Treat `\Throwable` similar to `\Exception`": 
  *			$m = __($prev ? df_ets($prev) : 'No message');
  *			# 2017-02-20 To facilite the «No message» diagnostics.
  *			if (!$prev) {
- *				df_bt();
+ *				ju_bt_log();
  *			}
  *		}
  * https://github.com/mage2pro/core/blob/5.5.7/Core/Exception.php#L61-L67
