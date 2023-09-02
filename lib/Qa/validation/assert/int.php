@@ -38,10 +38,10 @@ function ju_int($v, bool $allowNull = true) {/** @var int|int[] $r */
  * 2) It works only with arrays.
  * 3) Keys are preserved: http://3v4l.org/NHgdK
  * @used-by ju_fetch_col_int()
- * @param mixed[] $values
+ * @param mixed[] $v
  * @return int[]
  */
-function ju_int_simple(array $values):array {return array_map('intval', $values);}
+function ju_int_simple(array $v):array {return array_map('intval', $v);}
 
 /**
  * 2020-08-23 "Port the `df_nat` function" https://github.com/justuno-com/core/issues/289
