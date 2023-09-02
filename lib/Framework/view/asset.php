@@ -30,18 +30,16 @@ function ju_asset_create(string $u):IAsset {$a = ju_asset(); return !ju_is_url_a
 /**
  * 2015-12-29
  * 1) By analogy with @see \Magento\Framework\View\Asset\File::getSourceFile():
- * https://github.com/magento/magento2/blob/2.0.0/lib/internal/Magento/Framework/View/Asset/File.php#L147-L156
- * 2) $name could be:
- * 1) a short name;
- * 2) a full name composed with @see ju_asset_name()
+ *  https://github.com/magento/magento2/blob/2.0.0/lib/internal/Magento/Framework/View/Asset/File.php#L147-L156
+ *  2) $name could be:
+ *        1) a short name;
+ *        2) a full name composed with @see df_asset_name()
  * 2020-08-22 "Port the `df_asset_exists` function" https://github.com/justuno-com/core/issues/244
  * @used-by ju_fe_init()
  */
-function ju_asset_exists(string $name, string $m = '', string $ext = ''):bool {return jucf(
-	function($name, $m = null, $ext = null) {return
-		!!ju_asset_source()->findSource(ju_asset_create(ju_asset_name($name, $m, $ext)))
-	;}
-, func_get_args());}
+function ju_asset_exists(string $name, string $m = '', string $ext = ''):bool {return !!ju_asset_source()->findSource(
+	ju_asset_create(ju_asset_name($name, $m, $ext))
+);}
 
 /**
  * 2015-12-29
