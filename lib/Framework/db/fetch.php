@@ -64,7 +64,7 @@ function ju_fetch_col_int(string $t, string $cSelect, $compareK = null, $compare
  * @param array(string => string) $compare
  * @return string|null|array(string => mixed)
  */
-function ju_fetch_one(string $t, $cols, $compare) {
+function ju_fetch_one(string $t, $cols, array $compare) {
 	$s = ju_db_from($t, $cols); /** @var S $s */
 	foreach ($compare as $c => $v) {/** @var string $c */ /** @var string $v */
 		$s->where('? = ' . $c, $v);
