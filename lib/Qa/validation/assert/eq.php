@@ -47,7 +47,7 @@ function ju_assert_gt0($v, $m = null) {return 0 <= $v ? $v : ju_error($m ?: "A p
  * @throws DFE
  */
 function ju_assert_lt($highBound, $v, $m = null) {return $highBound >= $v ? $v : ju_error($m ?:
-	"A number < {$highBound} is expected, but got {$v}."
+	"A number < $highBound is expected, but got $v."
 );}
 
 /**
