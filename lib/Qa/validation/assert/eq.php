@@ -24,7 +24,7 @@ function ju_assert_eq($expected, $v, $m = null) {return $expected === $v ? $v : 
  * @throws DFE
  */
 function ju_assert_ge($lowBound, $v, $m = null) {return $lowBound <= $v ? $v : ju_error($m ?:
-	"A number >= {$lowBound} is expected, but got {$v}."
+	"A number >= $lowBound is expected, but got $v."
 );}
 
 /**
