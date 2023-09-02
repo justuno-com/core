@@ -30,6 +30,13 @@ function ju_explode_n(string $s):array {return explode("\n", ju_normalize(ju_tri
 function ju_explode_path(string $p):array {return ju_explode_xpath(ju_path_n($p));}
 
 /**
+ * 2022-11-17
+ * @used-by ju_file_name()
+ * @return string[]
+ */
+function ju_explode_space(string $s):array {return ju_trim(explode(' ', $s));}
+
+/**
  * 2020-06-14 "Port the `df_explode_xpath` function": https://github.com/justuno-com/core/issues/20
  * @used-by ju_explode_path()
  * @used-by jua_deep()

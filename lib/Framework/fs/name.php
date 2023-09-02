@@ -38,7 +38,7 @@ function ju_file_name(string $directory, string $template, string $ds = '-'):str
 	 * А вторая операция тупо делает из этого значения 0.
 	 */
 	$vars['time-full-ms'] = implode($ds, [$vars['time-full'], sprintf(
-		'%02d', round(100 * ju_first(explode(' ', microtime())))
+		'%02d', round(100 * ju_first(ju_explode_space(microtime())))
 	)]);
 	while (true) {
 		/** @var string $fileName */

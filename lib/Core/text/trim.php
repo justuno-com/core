@@ -17,6 +17,7 @@ function ju_chop(string $s, int $max = 0):string {return !$max || (mb_strlen($s 
  * 2020-06-20 "Port the `df_trim` function": https://github.com/justuno-com/core/issues/88
  * @used-by ju_chop()
  * @used-by ju_explode_n()
+ * @used-by ju_explode_space()
  * @used-by ju_trim()
  * @used-by ju_xml_parse()
  * @used-by \Justuno\Core\Html\Tag::content()
