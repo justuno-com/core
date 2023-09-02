@@ -52,7 +52,7 @@ function ju_fetch_col(string $t, string $col, $compareK = null, $compareV = null
  * @return int[]|string[]
  */
 function ju_fetch_col_int(string $t, string $cSelect, $compareK = null, $compareV = null, bool $distinct = false):array {return
-	/** I intentionally do not use @see ju_int() to gain speed */
+	/** I do not use @see ju_int() to make the function faster */
 	ju_int_simple(ju_fetch_col($t, $cSelect, $compareK, $compareV, $distinct))
 ;}
 
