@@ -32,7 +32,12 @@ function ju_fetch(string $t, $cols = '*', $compareK = null, $compareV = null):ar
  */
 function ju_fetch_col(string $t, string $col, $compareK = null, $compareV = null, bool $distinct = false):array {
 	$s = ju_db_from($t, $col); /** @var S $s */
-	if (!is_null($compareV)) {
+	if (is_array($compareK)) {
+		foreach ($compareK as $c => $v) {/** @var string $c */ /** @var string $v */
+			$s->where('? = ' . $c, $v);
+		}
+	}
+	elseif (!is_null($compareV)) {
 		$s->where(($compareK ?: $col) . ' ' . ju_sql_predicate_simple($compareV), $compareV);
 	}
 	$s->distinct($distinct);
