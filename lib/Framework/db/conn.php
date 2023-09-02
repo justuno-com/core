@@ -1,6 +1,8 @@
 <?php
+use Magento\Framework\App\ResourceConnection as RC;
 use Magento\Framework\DB\Adapter\AdapterInterface as IAdapter;
 use Magento\Framework\DB\Adapter\Pdo\Mysql;
+
 /**
  * 2020-08-14 "Port the `df_conn` function" https://github.com/justuno-com/core/issues/191
  * @used-by ju_db_version()
@@ -13,4 +15,4 @@ use Magento\Framework\DB\Adapter\Pdo\Mysql;
  * @used-by \Justuno\M2\Setup\UpgradeSchema::tr()
  * @return Mysql|IAdapter
  */
-function ju_conn() {return ju_db_resource()->getConnection();}
+function ju_conn(string $n = RC::DEFAULT_CONNECTION) {return ju_db_resource()->getConnection($n);}
