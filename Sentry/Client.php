@@ -13,7 +13,6 @@ final class Client {
 		$this->_projectId = $projectId;
 		$this->_keyPublic = $keyPublic;
 		$this->_keyPrivate = $keyPrivate;
-		$this->_user = null;
 		$this->_context = new Context;
 		$this->curl_path = 'curl';
 		$this->logger = 'php';
@@ -438,6 +437,7 @@ final class Client {
 	private $_projectId;
 
 	private $serializer;
+
 	/**
 	 * 2022-12-09
 	 * @used-by ju_sentry()
