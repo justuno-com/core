@@ -18,6 +18,7 @@ function ju_area_code($onE = null) {return ju_try(function() {return ju_app_stat
  * 2020-06-24 "Port the `df_area_code_is` function": https://github.com/justuno-com/core/issues/126
  * @used-by ju_is_backend()
  * @used-by ju_is_frontend()
+ * @used-by ju_is_rest()
  */
 function ju_area_code_is(string ...$v):bool {return in_array(ju_area_code(), $v);}
 
@@ -45,3 +46,12 @@ function ju_is_backend():bool {return ju_area_code_is(A::AREA_ADMINHTML) || ju_i
  * @used-by ju_sentry_m()
  */
 function ju_is_frontend():bool {return ju_area_code_is(A::AREA_FRONTEND) || ju_is_ajax() && ju_customer_session_id();}
+
+/**
+ * 2017-03-15
+ * @see ju_is_ajax()
+ * @see ju_is_backend()
+ * @see ju_is_frontend()
+ * @used-by ju_response()
+ */
+function ju_is_rest():bool {return ju_area_code_is(A::AREA_WEBAPI_REST);}
