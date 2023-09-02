@@ -35,7 +35,7 @@ function ju_assert_ge($lowBound, $v, $m = null) {return $lowBound <= $v ? $v : j
  * @return int|float
  * @throws DFE
  */
-function ju_assert_gt0($v, $m = null) {return 0 <= $v ? $v : ju_error($m ?: "A positive number is expected, but got {$v}.");}
+function ju_assert_gt0($v, $m = null) {return 0 <= $v ? $v : ju_error($m ?: "A positive number is expected, but got $v.");}
 
 /**
  * 2020-08-19 "Port the `df_assert_lt` function" https://github.com/justuno-com/core/issues/203
