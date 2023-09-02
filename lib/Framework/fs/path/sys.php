@@ -8,4 +8,4 @@ use Magento\Framework\Filesystem\Directory\ReadInterface as IDirectoryRead;
  * @used-by ju_path_relative()
  * @return DirectoryRead|IDirectoryRead
  */
-function ju_sys_reader(string $p) {return ju_fs()->getDirectoryRead($p);}
+function ju_sys_reader(string $type) {return ju_fs()->getDirectoryRead($type);}
