@@ -8,6 +8,7 @@ use Justuno\Core\Json as J;
  * NULL is returned if the json cannot be decoded or if the encoded data is deeper than the recursion limit.»
  * https://php.net/manual/function.json-decode.php
  * 2020-06-26 "Port the `df_json_decode` function": https://github.com/justuno-com/core/issues/152
+ * @used-by ju_json_file_read()
  * @used-by ju_module_json()
  * @used-by ju_package()
  * @param string|null $s
@@ -85,6 +86,15 @@ function ju_json_encode($v, int $flags = 0):string {return json_encode(ju_json_s
  * @param mixed $v
  */
 function ju_json_encode_partial($v):string {return ju_json_encode($v, JSON_PARTIAL_OUTPUT_ON_ERROR);}
+
+/**
+ * 2022-10-15
+ * 2023-07-26 `df_json_file_read` should accept internal paths: https://github.com/mage2pro/core/issues/278
+ * @used-by ju_module_json()
+ * @return array|bool|mixed|null
+ * @throws DFE
+ */
+function ju_json_file_read(string $p) {return ju_json_decode(ju_contents($p));}
 
 /**
  * 2017-09-07

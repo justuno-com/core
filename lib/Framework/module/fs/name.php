@@ -110,8 +110,8 @@ function ju_module_name_by_path(string $f):string {/** @var string $r */
 /**
  * 2015-11-15
  * 2015-09-02
- * @uses ju_module_dir() and indirectly called @see \Magento\Framework\Module\Dir\Reader::getModuleDir()
- * use `/` insteads @see DIRECTORY_SEPARATOR as a path separator, so I use `/` too.
+ * @uses ог_module_dir() and an indirectly called @see \Magento\Framework\Module\Dir\Reader::getModuleDir()
+ * use `/` insteads @see DIRECTORY_SEPARATOR as the path separator, so I use `/` too.
  * 2016-11-17
  * $m could be:
  * 		1) a module name: «A_B»

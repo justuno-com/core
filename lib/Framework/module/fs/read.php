@@ -40,6 +40,6 @@ function ju_module_file_read($m, string $name, string $ext, F $parser, $onE = tr
  * @param F|bool|mixed $onE [optional]
  * @return array(string => mixed)
  */
-function ju_module_json($m, string $name, $onE = true):array {return ju_module_file_read($m, $name, 'json',
-	function(string $f):array {return ju_json_decode(file_get_contents($f));}, $onE
+function ju_module_json($m, string $name, $onE = true):array {return ju_module_file_read(
+	$m, $name, 'json', function(string $f):array {return ju_json_file_read($f);}, $onE
 );}
