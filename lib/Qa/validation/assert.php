@@ -9,7 +9,7 @@ use Throwable as Th; # 2023-08-31 "Treat `\Throwable` similar to `\Exception`": 
  * then you can pass an empty string (instead of `null`) as the second argument:
  * @see \Justuno\Core\Exception::__construct():
  *		if (is_null($m)) {
- *			$m = __($prev ? df_ets($prev) : 'No message');
+ *			$m = __($prev ? ju_xts($prev) : 'No message');
  *			# 2017-02-20 To facilite the «No message» diagnostics.
  *			if (!$prev) {
  *				ju_bt_log();
