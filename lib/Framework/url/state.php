@@ -22,7 +22,7 @@ function ju_current_url():string {return ju_url_o()->getCurrentUrl();}
  * @param int|string|null|bool|IStore $s [optional]
  * @return string|null
  */
-function ju_domain_current($s = null, bool $www = false) {return jucf(function($s = null, $www = false) {return
+function ju_domain_current($s = null, bool $www = false) {return jucf(function($s = null, bool $www = false) {return
 	!($base = ju_store_url_web($s)) || !($r = ju_domain($base, false)) ? null : (
 		$www ? $r : ju_trim_text_left($r, 'www.')
 	)
