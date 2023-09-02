@@ -58,5 +58,5 @@ function ju_assert_sne(string $v, int $sl = 0):string {
  * @throws DFE
  */
 function ju_assert_traversable($v, $m = null) {return is_iterable($v) ? $v : ju_error($m ?:
-	'A variable is expected to be a traversable or an array, ' . 'but actually it is %s.', ju_type($v)
+	'A variable is expected to be a Traversable or an array, ' . 'but actually it is %s.', ju_type($v)
 );}
