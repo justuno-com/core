@@ -73,13 +73,13 @@ function ju_error_create($m = null):DFE {return ju_is_th($m) ? DFE::wrap($m) :
 		 * 2019-12-16
 		 * I have changed `!$m` to `is_null($m)`.
 		 * It passes an empty string ('') directly to @uses \Justuno\Core\Exception::__construct()
-		 * and it prevents @uses \Justuno\Core\Exception::__construct() from calling @see df_bt()
+		 * and it prevents @uses \Justuno\Core\Exception::__construct() from calling @see ju_bt_log()
 		 * @see \Justuno\Core\Exception::__construct():
 		 *		if (is_null($m)) {
-		 *			$m = __($prev ? df_ets($prev) : 'No message');
+		 *			$m = __($prev ? ju_xts($prev) : 'No message');
 		 *			# 2017-02-20 To facilite the «No message» diagnostics.
 		 *			if (!$prev) {
-		 *				df_bt();
+		 *				ju_bt_log();
 		 *			}
 		 *		}
 		 */
