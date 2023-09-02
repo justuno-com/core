@@ -1,6 +1,8 @@
 <?php
 
 /**
+ * Возвращает неиспользуемое имя файла в заданной папке $directory по заданному шаблону $template.
+ * Результатом всегда является непустая строка.
  * 2020-06-21 "Port the `df_file_name` function": https://github.com/justuno-com/core/issues/102
  * @used-by ju_report()
  */
