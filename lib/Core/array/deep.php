@@ -11,7 +11,7 @@ use Justuno\Core\Exception as DFE;
  * @return mixed|null
  * @throws DFE
  */
-function jua_deep(array $a, $path = '', $d = null) {/** @var mixed|null $r */
+function jua_deep(array $a, $path = '', $d = null) {/** @var mixed|null $r */ /** @var string[] $pathParts */
 	if (ju_nes($path)) {
 		$r = $a;
 	}
@@ -24,12 +24,17 @@ function jua_deep(array $a, $path = '', $d = null) {/** @var mixed|null $r */
 			$r = $a[$path];
 		}
 		else {
-			$pathParts = ju_explode_xpath($path); /** @var string[] $pathParts */
+			/**
+			 * 2015-02-06
+			 * Обратите внимание, что если разделитель отсутствует в строке,
+			 * то @uses explode() вернёт не строку, а массив со одим элементом — строкой.
+			 * Это вполне укладывается в наш универсальный алгоритм.
+			 */
+			$pathParts = ju_explode_xpath($path);
 		}
 	}
 	if (!isset($r)) {
 		$r = null;
-		/** @noinspection PhpUndefinedVariableInspection */
 		while ($pathParts) {
 			$r = jua($a, array_shift($pathParts));
 			if (is_array($r)) {
